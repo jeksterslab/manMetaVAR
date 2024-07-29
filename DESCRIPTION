@@ -1,0 +1,37 @@
+Package: manMetaVAR
+Title: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
+Version: 0.9.1
+Authors@R: 
+    person(given = "Ivan Jacob Agaloos",
+           family = "Pesigan",
+           role = c("aut", "cre", "cph"),
+           email = "r.jeksterslab@gmail.com",
+           comment = c(ORCID = "0000-0003-4818-8420"))
+Description: Research compendium for the manuscript
+    Pesigan, I. J. A., et al. (2024).
+    Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients.
+    <doi:10.0000/0000000000>.
+URL: https://github.com/jeksterslab/manMetaVAR, https://jeksterslab.github.io/manMetaVAR/,
+    https://osf.io/qwnmf/?view_only=855be2012b554f05bbc679946845bab8, https://doi.org/10.0000/0000000000
+BugReports: https://github.com/jeksterslab/manMetaVAR/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 3.5.0),
+    OpenMx,
+    fitDTVARMx,
+    metaVAR
+Imports:
+    simStateSpace,
+    MASS,
+    mlVAR
+Remotes:
+    jeksterslab/fitDTVARMx,
+    jeksterslab/metaVAR
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
+RoxygenNote: 7.3.2

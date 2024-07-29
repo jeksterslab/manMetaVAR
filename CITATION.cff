@@ -1,0 +1,44 @@
+# --------------------------------------------
+# CITATION file created with {cffr} R package
+# See also: https://docs.ropensci.org/cffr/
+# --------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "manMetaVAR" in publications use:'
+type: software
+license: MIT
+title: 'manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients'
+version: 0.9.1
+doi: 10.0000/0000000000
+identifiers:
+- type: url
+  value: https://osf.io/qwnmf/?view_only=855be2012b554f05bbc679946845bab8
+- type: url
+  value: https://doi.org/10.0000/0000000000
+abstract: Research compendium for the manuscript Pesigan, I. J. A., et al. (2024).
+  Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients. <https://doi.org/10.0000/0000000000>.
+authors:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+preferred-citation:
+  type: article
+  title: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
+  authors:
+  - family-names: Pesigan
+    given-names: Ivan Jacob Agaloos
+    email: r.jeksterslab@gmail.com
+    orcid: https://orcid.org/0000-0003-4818-8420
+  year: '2024'
+  doi: 10.0000/0000000000
+  journal: JOURNAL_TITLE_HERE
+  notes: R package version 0.9.1
+repository-code: https://github.com/jeksterslab/manMetaVAR
+url: https://jeksterslab.github.io/manMetaVAR/
+contact:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+

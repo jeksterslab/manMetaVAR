@@ -1,0 +1,39 @@
+---
+title: "manMetaVAR: Session"
+author: "Blind Melon"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{manMetaVAR: Session}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+```{r}
+#| include = FALSE
+if (!require("remotes")) install.packages("remotes")
+# TODO: add packages and versions used here
+remotes::install_version(
+  package = "MASS",
+  version = "7.3-58.1"
+)
+```
+
+```{r}
+#| message = FALSE
+library(manMetaVAR)
+```
+
+# Session
+
+```{r}
+sessionInfo()
+```
