@@ -26,22 +26,34 @@ data_process_params <- function(overwrite = FALSE) {
     }
   }
   if (write) {
-    n <- seq(
-      from = 50,
-      to = 250,
-      by = 50
+    n <- c(
+      5,
+      15,
+      25,
+      seq(
+        from = 50,
+        to = 250,
+        by = 50
+      )
     )
     time <- seq(
       from = 50,
       to = 250,
       by = 50
     )
+    theta <- c(
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    )
     taskid <- seq_len(
-      length(n) * length(time)
+      length(n) * length(time) * length(theta)
     )
     params <- expand.grid(
       n = n,
-      time = time
+      time = time,
+      theta = theta
     )
     params <- data.frame(
       taskid = taskid,

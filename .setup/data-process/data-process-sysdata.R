@@ -12,29 +12,9 @@ data_process_sysdata <- function() {
     ncol = p
   )
   mu0 <- null_vec
-  sigma0 <- null_mat
-  sigma0_l <- null_mat
-  alpha_mu <- c(
-    2.87,
-    2.04
-  )
-  alpha_d <- sqrt(
-    c(1.2, 1.1)
-  ) * iden
-  alpha_r <- matrix(
-    data = c(1, 0.4, 0.4, 1),
-    nrow = p
-  )
-  alpha_sigma <- alpha_d %*% alpha_r %*% alpha_d
-  alpha_sigma_l <- t(chol(alpha_sigma))
-  alpha_lbound <- rep(
-    x = -10,
-    times = k
-  )
-  alpha_ubound <- rep(
-    x = +10,
-    times = k
-  )
+  sigma0 <- iden
+  sigma0_l <- iden
+  alpha <- null_vec
   psi_d <- sqrt(
     c(1.3, 1.56)
   ) * iden
@@ -98,10 +78,9 @@ data_process_sysdata <- function() {
   )
   diag(psi_lbound) <- .Machine$double.xmin
   theta_lbound <- .Machine$double.xmin * diag(p)
-  theta_ubound <- diag(p)
+  theta_ubound <- 2 * diag(p)
   mu <- c(
-    c(beta_mu),
-    alpha_mu
+    beta_mu
   )
   q <- length(mu)
   mu_lbound <- rep(
@@ -118,7 +97,6 @@ data_process_sysdata <- function() {
     ncol = q
   )
   sigma[seq_len(p^2), seq_len(p^2)] <- beta_sigma
-  sigma[(p^2 + 1):q, (p^2 + 1):q] <- alpha_sigma
   sigma_lbound <- sigma_ubound <- matrix(
     data = NA,
     nrow = q,
@@ -131,9 +109,7 @@ data_process_sysdata <- function() {
     mu0 = mu0,
     sigma0 = sigma0,
     sigma0_l = sigma0_l,
-    alpha_mu = alpha_mu,
-    alpha_sigma = alpha_sigma,
-    alpha_sigma_l = alpha_sigma_l,
+    alpha = alpha,
     beta_mu = beta_mu,
     beta_sigma = beta_sigma,
     beta_sigma_l = beta_sigma_l,
@@ -145,8 +121,6 @@ data_process_sysdata <- function() {
     theta_l = theta_l,
     mu = mu,
     sigma = sigma,
-    alpha_lbound = alpha_lbound,
-    alpha_ubound = alpha_ubound,
     beta_lbound = beta_lbound,
     beta_ubound = beta_ubound,
     psi_lbound = psi_lbound,

@@ -4,7 +4,7 @@
 \alias{GenData}
 \title{Simulate Data}
 \usage{
-GenData(n, time)
+GenData(n, time, theta)
 }
 \arguments{
 \item{n}{Positive integer.
@@ -12,6 +12,9 @@ Sample size.}
 
 \item{time}{Positive integer.
 Number of time points.}
+
+\item{theta}{Numeric.
+Measurement error variance.}
 }
 \description{
 The function simulates data using
@@ -20,7 +23,7 @@ the \code{\link[simStateSpace:SimSSMIVary]{simStateSpace::SimSSMIVary()}} functi
 \examples{
 \dontrun{
 set.seed(42)
-data <- GenData(n = 50, time = 100)
+data <- GenData(n = 50, time = 100, theta = 0.2)
 plot(data)
 }
 }

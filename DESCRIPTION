@@ -25,7 +25,6 @@ Depends:
     metaVAR
 Imports:
     simStateSpace,
-    MASS,
     mlVAR
 Remotes:
     jeksterslab/fitDTVARMx,

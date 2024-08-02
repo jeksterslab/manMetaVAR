@@ -2,6 +2,8 @@
 #'   Sample size.
 #' @param time Positive integer.
 #'   Number of time points.
+#' @param theta Numeric.
+#'   Measurement error variance.
 #' @param data R object.
 #'   Output of the [GenData()] function.
 #' @param fit R object.

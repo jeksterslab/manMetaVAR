@@ -7,7 +7,7 @@
 #' @examples
 #' \dontrun{
 #' set.seed(42)
-#' data <- GenData(n = 50, time = 100)
+#' data <- GenData(n = 50, time = 100, theta = 0.2)
 #' FitDTVARMx(data)
 #' }
 #' @family Model Fitting Functions
@@ -21,10 +21,7 @@ FitDTVARMx <- function(data) {
       data = as.data.frame(data),
       observed = paste0("y", seq_len(model$k)),
       id = "id",
-      alpha_fixed = FALSE,
-      alpha_start = model$alpha_mu,
-      alpha_lbound = model$alpha_lbound,
-      alpha_ubound = model$alpha_ubound,
+      alpha_fixed = TRUE,
       beta_start = model$beta_mu,
       beta_lbound = model$beta_lbound,
       beta_ubound = model$beta_ubound,

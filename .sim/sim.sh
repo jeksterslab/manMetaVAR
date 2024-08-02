@@ -27,11 +27,11 @@ cd /scratch/ibp5092/manMetaVAR
 parallel                                                               \
         --tmpdir "$PARALLEL_TMP_FOLDER"                                \
         'apptainer exec                                                \
-        /scratch/ibp5092/manMetaVAR/.sif/manmetavar.sif                    \
-        Rscript /scratch/ibp5092/manMetaVAR/.sim/sim.R {1} {2};          \
+        /scratch/ibp5092/manMetaVAR/.sif/manmetavar.sif                \
+        Rscript /scratch/ibp5092/manMetaVAR/.sim/sim.R {1} {2};        \
         echo sim taskid $(printf "%05d" 1) repid $(printf "%05d" {1})' \
         ::: $(seq 1 1000)                                              \
-        ::: $(seq 1 10)
+        ::: $(seq 1 160)
 echo "sim.sh done"
 # ------------------------------------------------------------------------------
 

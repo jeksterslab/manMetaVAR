@@ -26,9 +26,7 @@ tryCatch(
       output_folder = output_folder,
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
-      params_taskid = params[which(params$taskid == taskid), ],
-      R = R,
-      delta_t = delta_t
+      params_taskid = params[which(params$taskid == taskid), ]
     )
   },
   error = function(e) {
