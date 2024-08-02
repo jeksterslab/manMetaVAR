@@ -43,8 +43,7 @@ Sim <- function(taskid,
     taskid = taskid,
     repid = repid
   )
-  error <- FALSE
-  tryCatch(
+  sim_1 <- tryCatch(
     {
       SimGenData(
         taskid = taskid,
@@ -56,20 +55,22 @@ Sim <- function(taskid,
         overwrite = overwrite,
         integrity = integrity
       )
+      return(TRUE)
     },
     error = function(cond) {
       message(paste("error:", "SimGenData"))
       message("Here's the original error message:")
       message(conditionMessage(cond))
-      error <- TRUE
+      return(FALSE)
     },
     warning = function(cond) {
       message(paste("warning:", "SimGenData"))
       message("Here's the original warning message:")
       message(conditionMessage(cond))
+      return(FALSE)
     }
   )
-  tryCatch(
+  sim_2 <- tryCatch(
     {
       SimFitDTVARMx(
         taskid = taskid,
@@ -80,20 +81,22 @@ Sim <- function(taskid,
         overwrite = overwrite,
         integrity = integrity
       )
+      return(TRUE)
     },
     error = function(cond) {
       message(paste("error:", "SimFitDTVARMx"))
       message("Here's the original error message:")
       message(conditionMessage(cond))
-      error <- TRUE
+      return(FALSE)
     },
     warning = function(cond) {
       message(paste("warning:", "SimFitDTVARMx"))
       message("Here's the original warning message:")
       message(conditionMessage(cond))
+      return(FALSE)
     }
   )
-  tryCatch(
+  sim_3 <- tryCatch(
     {
       SimFitMLVAR(
         taskid = taskid,
@@ -104,20 +107,22 @@ Sim <- function(taskid,
         overwrite = overwrite,
         integrity = integrity
       )
+      return(TRUE)
     },
     error = function(cond) {
       message(paste("error:", "SimFitMLVAR"))
       message("Here's the original error message:")
       message(conditionMessage(cond))
-      error <- TRUE
+      return(FALSE)
     },
     warning = function(cond) {
       message(paste("warning:", "SimFitMLVAR"))
       message("Here's the original warning message:")
       message(conditionMessage(cond))
+      return(FALSE)
     }
   )
-  tryCatch(
+  sim_4 <- tryCatch(
     {
       SimFitMetaVARMx(
         taskid = taskid,
@@ -128,20 +133,27 @@ Sim <- function(taskid,
         overwrite = overwrite,
         integrity = integrity
       )
+      return(TRUE)
     },
     error = function(cond) {
       message(paste("error:", "SimFitMetaVARMx"))
       message("Here's the original error message:")
       message(conditionMessage(cond))
-      error <- TRUE
+      return(FALSE)
     },
     warning = function(cond) {
       message(paste("warning:", "SimFitMetaVARMx"))
       message("Here's the original warning message:")
       message(conditionMessage(cond))
+      return(FALSE)
     }
   )
-  if (error) {
-    stop()
-  }
+  stopifnot(
+    all(
+      sim_1,
+      sim_2,
+      sim_3,
+      sim_4
+    )
+  )
 }
