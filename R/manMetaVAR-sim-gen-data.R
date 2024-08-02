@@ -35,7 +35,8 @@ SimGenData <- function(taskid,
     saveRDS(
       object = GenData(
         n = params_taskid$n,
-        time = params_taskid$time
+        time = params_taskid$time,
+        theta = params_taskid$theta
       ),
       file = con
     )

@@ -22,12 +22,12 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0), OpenMx, fitDTVARMx, metaVAR
-Imports: simStateSpace, MASS, mlVAR
+Imports: simStateSpace, mlVAR
 Remotes: jeksterslab/fitDTVARMx, jeksterslab/metaVAR
 Suggests: knitr, rmarkdown, testthat
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-07-29 05:41:56 UTC; root
+Packaged: 2024-08-02 19:33:22 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

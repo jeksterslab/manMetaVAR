@@ -16,7 +16,7 @@ The function fits the model using the \link{fitDTVARMx} package.
 \examples{
 \dontrun{
 set.seed(42)
-data <- GenData(n = 50, time = 100)
+data <- GenData(n = 50, time = 100, theta = 0.2)
 FitDTVARMx(data)
 }
 }

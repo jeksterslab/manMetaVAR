@@ -16,7 +16,7 @@ The function performs multivariate meta-snalysis using the \link{metaVAR} packag
 \examples{
 \dontrun{
 set.seed(42)
-data <- GenData(n = 50, time = 100)
+data <- GenData(n = 50, time = 100, theta = 0.2)
 fit <- FitDTVARMx(data)
 FitMetaVARMx(fit)
 }
