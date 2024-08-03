@@ -43,117 +43,41 @@ Sim <- function(taskid,
     taskid = taskid,
     repid = repid
   )
-  sim_1 <- tryCatch(
-    {
-      SimGenData(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        params_taskid = params_taskid,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-      return(TRUE)
-    },
-    error = function(cond) {
-      message(paste("error:", "SimGenData"))
-      message("Here's the original error message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    },
-    warning = function(cond) {
-      message(paste("warning:", "SimGenData"))
-      message("Here's the original warning message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    }
+  SimGenData(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    params_taskid = params_taskid,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity
   )
-  sim_2 <- tryCatch(
-    {
-      SimFitDTVARMx(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-      return(TRUE)
-    },
-    error = function(cond) {
-      message(paste("error:", "SimFitDTVARMx"))
-      message("Here's the original error message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    },
-    warning = function(cond) {
-      message(paste("warning:", "SimFitDTVARMx"))
-      message("Here's the original warning message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    }
+  SimFitDTVARMx(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity
   )
-  sim_3 <- tryCatch(
-    {
-      SimFitMLVAR(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-      return(TRUE)
-    },
-    error = function(cond) {
-      message(paste("error:", "SimFitMLVAR"))
-      message("Here's the original error message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    },
-    warning = function(cond) {
-      message(paste("warning:", "SimFitMLVAR"))
-      message("Here's the original warning message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    }
+  SimFitMLVAR(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity
   )
-  sim_4 <- tryCatch(
-    {
-      SimFitMetaVARMx(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-      return(TRUE)
-    },
-    error = function(cond) {
-      message(paste("error:", "SimFitMetaVARMx"))
-      message("Here's the original error message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    },
-    warning = function(cond) {
-      message(paste("warning:", "SimFitMetaVARMx"))
-      message("Here's the original warning message:")
-      message(conditionMessage(cond))
-      return(FALSE)
-    }
-  )
-  stopifnot(
-    all(
-      sim_1,
-      sim_2,
-      sim_3,
-      sim_4
-    )
+  SimFitMetaVARMx(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity
   )
 }

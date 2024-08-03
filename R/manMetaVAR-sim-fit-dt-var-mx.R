@@ -34,15 +34,49 @@ SimFitDTVARMx <- function(taskid,
     integrity = integrity
   )
   if (run) {
-    set.seed(seed)
-    con <- file(fn_output)
-    saveRDS(
-      object = FitDTVARMx(
-        data = readRDS(fn_input)
-      ),
-      file = con
+    tryCatch(
+      {
+        set.seed(seed)
+        con <- file(fn_output)
+        saveRDS(
+          object = FitDTVARMx(
+            data = readRDS(fn_input)
+          ),
+          file = con
+        )
+        close(con)
+        .SimChMod(fn_output)
+      },
+      error = function(cond) {
+        message(paste("error:", "SimFitDTVARMx"))
+        message("Here's the original error message:")
+        message(conditionMessage(cond))
+        cat(
+          paste(
+            "check",
+            "taskid:",
+            taskid,
+            "repid:",
+            repid,
+            "\n"
+          )
+        )
+      },
+      warning = function(cond) {
+        message(paste("error:", "SimFitDTVARMx"))
+        message("Here's the original warning message:")
+        message(conditionMessage(cond))
+        cat(
+          paste(
+            "check",
+            "taskid:",
+            taskid,
+            "repid:",
+            repid,
+            "\n"
+          )
+        )
+      }
     )
-    close(con)
-    .SimChMod(fn_output)
   }
 }
