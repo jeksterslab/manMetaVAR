@@ -30,17 +30,51 @@ SimGenData <- function(taskid,
     integrity = integrity
   )
   if (run) {
-    set.seed(seed)
-    con <- file(fn_output)
-    saveRDS(
-      object = GenData(
-        n = params_taskid$n,
-        time = params_taskid$time,
-        theta = params_taskid$theta
-      ),
-      file = con
+    tryCatch(
+      {
+        set.seed(seed)
+        con <- file(fn_output)
+        saveRDS(
+          object = GenData(
+            n = params_taskid$n,
+            time = params_taskid$time,
+            theta = params_taskid$theta
+          ),
+          file = con
+        )
+        close(con)
+        .SimChMod(fn_output)
+      },
+      error = function(cond) {
+        message(paste("error:", "SimGenData"))
+        message("Here's the original error message:")
+        message(conditionMessage(cond))
+        cat(
+          paste(
+            "check",
+            "taskid:",
+            taskid,
+            "repid:",
+            repid,
+            "\n"
+          )
+        )
+      },
+      warning = function(cond) {
+        message(paste("error:", "SimGenData"))
+        message("Here's the original warning message:")
+        message(conditionMessage(cond))
+        cat(
+          paste(
+            "check",
+            "taskid:",
+            taskid,
+            "repid:",
+            repid,
+            "\n"
+          )
+        )
+      }
     )
-    close(con)
-    .SimChMod(fn_output)
   }
 }

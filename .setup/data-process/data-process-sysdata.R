@@ -126,7 +126,11 @@ data_process_sysdata <- function() {
     psi_lbound = psi_lbound,
     psi_ubound = psi_ubound,
     theta_lbound = theta_lbound,
-    theta_ubound = theta_ubound
+    theta_ubound = theta_ubound,
+    parameter = c(
+      mu,
+      sigma
+    )
   )
   usethis::use_data(
     model,

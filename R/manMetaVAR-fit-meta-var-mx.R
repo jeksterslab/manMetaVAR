@@ -26,7 +26,7 @@ FitMetaVARMx <- function(fit) {
       sigma_l_lbound = NULL,
       sigma_l_ubound = NULL,
       diag = FALSE,
-      intercept = TRUE,
+      intercept = FALSE,
       noise = FALSE,
       error = FALSE,
       try = 10000,
