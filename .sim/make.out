@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmplOU5MF/dotfiles'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpZuYdnM/dotfiles'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2441[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2415[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m79d 21h 3m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 1h 10m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11313M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11213M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmplOU5MF/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmplOU5MF/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmplOU5MF/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpZuYdnM/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpZuYdnM/dotfiles'
 
 
 TinyTex...
@@ -100,7 +100,7 @@ Styling  59  files:
  R/manMetaVAR-fit-jags.R                                                   ✔ 
  R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
  R/manMetaVAR-fit-ml-var.R                                                 ✔ 
- R/manMetaVAR-gen-data.R                                                   ℹ 
+ R/manMetaVAR-gen-data.R                                                   ✔ 
  R/manMetaVAR-package.R                                                    ✔ 
  R/manMetaVAR-params.R                                                     ✔ 
  R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
@@ -117,8 +117,8 @@ Styling  59  files:
  vignettes/manMetaVAR.Rmd                                                  ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	57	File unchanged.
-ℹ 	2	File changed.
+✔ 	58	File unchanged.
+ℹ 	1	File changed.
 ✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
 Please review the changes carefully!
@@ -161,21 +161,21 @@ R/manMetaVAR-fit-jags.R:24:21: style: [object_name_linter] Variable and function
                     n.adapt = 2000,
                     ^~~~~~~
 R/manMetaVAR-fit-jags.R:25:21: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
-                    n.iter = 10000) {
+                    n.iter = 10000,
                     ^~~~~~
-R/manMetaVAR-fit-jags.R:31:4: style: [T_and_F_symbol_linter] Don't use T as a variable name, as it can break code relying on T being TRUE.
+R/manMetaVAR-fit-jags.R:41:4: style: [T_and_F_symbol_linter] Don't use T as a variable name, as it can break code relying on T being TRUE.
   T <- length(times)
   ~^
-R/manMetaVAR-fit-jags.R:33:36: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
+R/manMetaVAR-fit-jags.R:43:36: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
   y_array <- array(NA, dim = c(N, T, K))
                                   ~^
-R/manMetaVAR-fit-jags.R:41:10: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
+R/manMetaVAR-fit-jags.R:51:10: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
     T = T,
         ~^
-R/manMetaVAR-fit-jags.R:57:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
+R/manMetaVAR-fit-jags.R:67:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
     progress.bar <- "text"
     ^~~~~~~~~~~~
-R/manMetaVAR-fit-jags.R:60:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
+R/manMetaVAR-fit-jags.R:70:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
     progress.bar <- "none"
     ^~~~~~~~~~~~
 R/manMetaVAR-fit-meta-var-mx.R:31:20: warning: [object_usage_linter] no visible binding for global variable 'model'
@@ -371,7 +371,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpcF2IH7/file2c0968712920d0/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmpp1DJ1Y/file17c83a5abecb4/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -445,7 +445,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpcF2IH7/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmpp1DJ1Y/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -483,6 +483,16 @@ data_process_sysdata
 Precompiling vignettes...
 
 
+1/10                  
+2/10 [unnamed-chunk-1]
+3/10                  
+4/10 [unnamed-chunk-2]
+5/10                  
+6/10 [unnamed-chunk-3]
+7/10                  
+8/10 [unnamed-chunk-4]
+9/10                  
+10/10 [unnamed-chunk-5]
 1/34                   
 2/34 [unnamed-chunk-1] 
 3/34                   
@@ -517,37 +527,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpzbUW2X/dotfiles'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2441[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2415[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m79d 23h 58m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 4h 10m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11305M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11202M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpzbUW2X/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpzbUW2X/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmpz2AbtZ/dotfiles'
 
 
 TinyTex...
@@ -558,7 +568,7 @@ TinyTex...
 Styling...
 
 
-Styling  65  files:
+Styling  66  files:
  .Rprofile                                                                 ℹ 
  index.qmd                                                                 ✔ 
  .setup/cran/cran-check.R                                                  ✔ 
@@ -623,10 +633,11 @@ Styling  65  files:
  tests/testthat.R                                                          ✔ 
  tests/testthat/test-manMetaVAR.R                                          ✔ 
  vignettes/manMetaVAR.Rmd                                                  ✔ 
- vignettes/replication.Rmd                                                 ✔ 
+ vignettes/session.Rmd                                                     ✔ 
+ vignettes/sim-rep.Rmd                                                     ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	64	File unchanged.
+✔ 	65	File unchanged.
 ℹ 	1	File changed.
 ✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
@@ -643,21 +654,21 @@ R/manMetaVAR-fit-jags.R:24:21: style: [object_name_linter] Variable and function
                     n.adapt = 2000,
                     ^~~~~~~
 R/manMetaVAR-fit-jags.R:25:21: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
-                    n.iter = 10000) {
+                    n.iter = 10000,
                     ^~~~~~
-R/manMetaVAR-fit-jags.R:31:4: style: [T_and_F_symbol_linter] Don't use T as a variable name, as it can break code relying on T being TRUE.
+R/manMetaVAR-fit-jags.R:41:4: style: [T_and_F_symbol_linter] Don't use T as a variable name, as it can break code relying on T being TRUE.
   T <- length(times)
   ~^
-R/manMetaVAR-fit-jags.R:33:36: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
+R/manMetaVAR-fit-jags.R:43:36: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
   y_array <- array(NA, dim = c(N, T, K))
                                   ~^
-R/manMetaVAR-fit-jags.R:41:10: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
+R/manMetaVAR-fit-jags.R:51:10: style: [T_and_F_symbol_linter] Use TRUE instead of the symbol T.
     T = T,
         ~^
-R/manMetaVAR-fit-jags.R:57:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
+R/manMetaVAR-fit-jags.R:67:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
     progress.bar <- "text"
     ^~~~~~~~~~~~
-R/manMetaVAR-fit-jags.R:60:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
+R/manMetaVAR-fit-jags.R:70:5: style: [object_name_linter] Variable and function name style should match CamelCase, snake_case or symbols.
     progress.bar <- "none"
     ^~~~~~~~~~~~
 
@@ -712,7 +723,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpfcoy8n/file2c6bccc5506a7/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpzzSTHq/file182c993cc23f00/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -786,7 +797,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpfcoy8n/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpzzSTHq/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -824,16 +835,6 @@ data_process_sysdata
 Precompiling vignettes...
 
 
-1/10                  
-2/10 [unnamed-chunk-1]
-3/10                  
-4/10 [unnamed-chunk-2]
-5/10                  
-6/10 [unnamed-chunk-3]
-7/10                  
-8/10 [unnamed-chunk-4]
-9/10                  
-10/10 [unnamed-chunk-5]
 
 
 Building package...
@@ -866,7 +867,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpwlnanu/file2c756a806a6a4/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmp7YUjIg/file1836272d2a202f/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -928,6 +929,7 @@ Setting env vars:
 * DONE
 
 Status: OK
+
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
 * preparing ‘manMetaVAR’:
@@ -939,7 +941,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpwlnanu/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmp7YUjIg/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -1010,30 +1012,27 @@ No file Rd2.toc.
 [3]
 [4]
 [5]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 349--352
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 362--365
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 400--403
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 413--416
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 452--455
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 465--468
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 504--507
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 517--520
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 556--559
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 569--572
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-Overfull \hbox (56.38876pt too wide) in paragraph at lines 589--598
-[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
-
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 646--649
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 658--661
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11]
@@ -1065,7 +1064,7 @@ pdfTeX warning (dest): name{Rfn.adapt} has been referenced but does not exist, r
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (12 pages, 90953 bytes).
+Output written on Rd2.pdf (12 pages, 90865 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1089,29 +1088,26 @@ Writing index file Rd2.idx
 [4]
 [5]
 [6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 349--352
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 362--365
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 400--403
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 413--416
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 452--455
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 465--468
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 504--507
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 517--520
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 556--559
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 569--572
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-Overfull \hbox (56.38876pt too wide) in paragraph at lines 589--598
-[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
-
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 646--649
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 658--661
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11] (./Rd2.ind
@@ -1145,7 +1141,7 @@ pdfTeX warning (dest): name{Rfn.adapt} has been referenced but does not exist, r
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 106424 bytes).
+Output written on Rd2.pdf (14 pages, 106514 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1169,29 +1165,26 @@ Writing index file Rd2.idx
 [4]
 [5]
 [6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 349--352
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 362--365
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 400--403
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 413--416
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 452--455
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 465--468
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 504--507
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 517--520
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 556--559
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 569--572
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-Overfull \hbox (56.38876pt too wide) in paragraph at lines 589--598
-[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
-
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 646--649
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 658--661
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11] (./Rd2.ind
@@ -1219,7 +1212,7 @@ pdfTeX warning (dest): name{Rfn.adapt} has been referenced but does not exist, r
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 106876 bytes).
+Output written on Rd2.pdf (14 pages, 107113 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘manMetaVAR.pdf’ ...
 Done
@@ -1698,12 +1691,12 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-001-description.bbl' with encoding 'UTF-8'
@@ -2033,7 +2026,7 @@ Package biblatex Warning: Please (re)run Biber on the file:
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404038 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404049 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -2067,8 +2060,8 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
@@ -2427,43 +2420,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 No file manMetaVAR-presentation.bbl.
 No file manMetaVAR-presentation.nav.
 
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./.setup/latex/figures/profiles/profile-pesigan.png (PNG copy)> <./.setup/latex/figures/profiles/profile-russell.png (PNG copy)> <./.setup/latex/figures/profiles/profile-chow.png (PNG copy)>] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{eq:manMetaVAR-dt}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2509,42 +2466,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 279.
 
 
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
 [12]
 [13]
 
@@ -2574,8 +2495,8 @@ Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                and rerun LaTeX afterwards.
 
  )
-(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 262554 bytes).
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 4730953 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-presentation.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-presentation.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-presentation.fls'
@@ -2610,12 +2531,12 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-presentation.bbl' with encoding 'UTF-8'
@@ -2673,44 +2594,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (.setup/latex/pdf/manMetaVAR-presentation.out) (.setup/latex/pdf/manMetaVAR-presentation.out) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manMetaVAR-presentation.bbl) (.setup/latex/pdf/manMetaVAR-presentation.nav)
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./.setup/latex/figures/profiles/profile-pesigan.png (PNG copy)> <./.setup/latex/figures/profiles/profile-russell.png (PNG copy)> <./.setup/latex/figures/profiles/profile-chow.png (PNG copy)>] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{eq:manMetaVAR-dt}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2741,42 +2625,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 279.
 
 
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
 [12]
 [13]
 [14 </opt/TinyTeX/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
@@ -2798,8 +2646,8 @@ Package biblatex Warning: Please rerun LaTeX.
 (biblatex)                Page breaks have changed.
 
  )
-(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 269139 bytes).
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 4737564 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-presentation.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-presentation.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-presentation.fls'
@@ -2865,44 +2713,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (.setup/latex/pdf/manMetaVAR-presentation.out) (.setup/latex/pdf/manMetaVAR-presentation.out) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manMetaVAR-presentation.bbl) (.setup/latex/pdf/manMetaVAR-presentation.nav)
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./.setup/latex/figures/profiles/profile-pesigan.png (PNG copy)> <./.setup/latex/figures/profiles/profile-russell.png (PNG copy)> <./.setup/latex/figures/profiles/profile-chow.png (PNG copy)>] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{eq:manMetaVAR-dt}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2933,42 +2744,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 279.
 
 
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
 [12]
 [13]
 [14 </opt/TinyTeX/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
@@ -2977,8 +2752,8 @@ Package caption Warning: Unused \captionsetup[subfigure] on input line 66.
 See the caption package documentation for explanation.
 
 (.setup/latex/pdf/manMetaVAR-presentation.aux) )
-(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 269218 bytes).
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 4737680 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-presentation.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-presentation.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-presentation.fls'
@@ -3039,44 +2814,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (.setup/latex/pdf/manMetaVAR-presentation.out) (.setup/latex/pdf/manMetaVAR-presentation.out) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manMetaVAR-presentation.bbl) (.setup/latex/pdf/manMetaVAR-presentation.nav)
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 \end{frame}
-                 
-
-[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./.setup/latex/figures/profiles/profile-pesigan.png (PNG copy)> <./.setup/latex/figures/profiles/profile-russell.png (PNG copy)> <./.setup/latex/figures/profiles/profile-chow.png (PNG copy)>] (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{eq:manMetaVAR-dt}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -3107,42 +2845,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 279.
 
 
-LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-pesigan.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-russell.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
-LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
-
-
-! Package pdftex.def Error: File `.setup/latex/figures/png/profile-chow.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \end{frame}
-                 
-
 [12]
 [13]
 [14 </opt/TinyTeX/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
@@ -3151,8 +2853,8 @@ Package caption Warning: Unused \captionsetup[subfigure] on input line 66.
 See the caption package documentation for explanation.
 
 (.setup/latex/pdf/manMetaVAR-presentation.aux) )
-(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 269218 bytes).
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/sansmathfonts/cmssmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on .setup/latex/pdf/manMetaVAR-presentation.pdf (14 pages, 4737680 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-presentation.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-presentation.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-presentation.fls'
@@ -3164,10 +2866,7 @@ Latexmk: Bibliography file(s) from .bcf file:
 Sources for biber
   /scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib
   .setup/latex/pdf/manMetaVAR-presentation.bcf
-Latexmk: Errors, in force_mode: so I tried finishing targets
-Collected error summary (may duplicate other messages):
-  pdflatex: Command for 'pdflatex' gave return code 1
-      Refer to '.setup/latex/pdf/manMetaVAR-presentation.log' and/or above output for details
+Latexmk: All targets (.setup/latex/pdf/manMetaVAR-presentation.pdf) are up-to-date
 
 [1] TRUE
 
@@ -3303,10 +3002,10 @@ Writing `reference/params.html`
 Writing `articles/index.html`
 Reading vignettes/manMetaVAR.Rmd
 Writing `articles/manMetaVAR.html`
-Reading vignettes/replication.Rmd
-Writing `articles/replication.html`
 Reading vignettes/session.Rmd
 Writing `articles/session.html`
+Reading vignettes/sim-rep.Rmd
+Writing `articles/sim-rep.html`
 ── Building news ───────────────────────────────────────────────────────────────
 Writing `news/index.html`
 ── Building sitemap ────────────────────────────────────────────────────────────

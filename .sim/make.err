@@ -1,4 +1,4 @@
-make: Warning: File 'Makefile' has modification time 14220 s in the future
+make: Warning: File 'Makefile' has modification time 14203 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -39,25 +39,57 @@ Writing 'Sim.Rd'
 ✔ Saving "model" to "R/sysdata.rda".
 
 
-processing file: /scratch/ibp5092/manMetaVAR/vignettes/replication.Rmd.orig
+processing file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd.orig
+output file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd
+
+
+
+processing file: /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig
 Error in `eigen()`:
 ! infinite or missing values in 'x'
 Backtrace:
-    ▆
- 1. └─manMetaVAR::FitMetaVAR(dtvar)
- 2.   └─metaVAR::MetaVARMx(...)
- 3.     └─metaVAR::Meta(...)
- 4.       └─metaVAR:::.MetaGeneric(...)
- 5.         └─metaVAR:::.CheckEstimates(...)
- 6.           └─base::lapply(X = v, FUN = foo)
- 7.             └─metaVAR (local) FUN(X[[i]], ...)
- 8.               └─base::eigen(x = x, symmetric = TRUE, only.values = TRUE)
+     ▆
+  1. └─rProject::VignettesPrecompile("/scratch/ibp5092/manMetaVAR")
+  2.   └─knitr::knit(...)
+  3.     └─knitr:::process_file(text, output)
+  4.       ├─xfun:::handle_error(...)
+  5.       ├─base::withCallingHandlers(...)
+  6.       └─knitr:::process_group(group)
+  7.         └─knitr:::call_block(x)
+  8.           └─knitr:::block_exec(params)
+  9.             └─knitr:::eng_r(options)
+ 10.               ├─knitr:::in_input_dir(...)
+ 11.               │ └─knitr:::in_dir(input_dir(), expr)
+ 12.               └─knitr (local) evaluate(...)
+ 13.                 └─evaluate::evaluate(...)
+ 14.                   ├─base::withRestarts(...)
+ 15.                   │ └─base (local) withRestartList(expr, restarts)
+ 16.                   │   ├─base (local) withOneRestart(withRestartList(expr, restarts[-nr]), restarts[[nr]])
+ 17.                   │   │ └─base (local) doWithOneRestart(return(expr), restart)
+ 18.                   │   └─base (local) withRestartList(expr, restarts[-nr])
+ 19.                   │     └─base (local) withOneRestart(expr, restarts[[1L]])
+ 20.                   │       └─base (local) doWithOneRestart(return(expr), restart)
+ 21.                   ├─evaluate:::with_handlers(...)
+ 22.                   │ ├─base::eval(call)
+ 23.                   │ │ └─base::eval(call)
+ 24.                   │ └─base::withCallingHandlers(...)
+ 25.                   ├─base::withVisible(eval(expr, envir))
+ 26.                   └─base::eval(expr, envir)
+ 27.                     └─base::eval(expr, envir)
+ 28.                       └─manMetaVAR::FitMetaVAR(dtvar)
+ 29.                         └─metaVAR::MetaVARMx(...)
+ 30.                           └─metaVAR::Meta(...)
+ 31.                             └─metaVAR:::.MetaGeneric(...)
+ 32.                               └─metaVAR:::.CheckEstimates(...)
+ 33.                                 └─base::lapply(X = v, FUN = foo)
+ 34.                                   └─metaVAR (local) FUN(X[[i]], ...)
+ 35.                                     └─base::eigen(x = x, symmetric = TRUE, only.values = TRUE)
 
-Quitting from /scratch/ibp5092/manMetaVAR/vignettes/replication.Rmd.orig:68-72 [unnamed-chunk-9]
+Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:68-72 [unnamed-chunk-9]
 Execution halted
 make: *** [Makefile:75: vignettes] Error 1
 cp: cannot stat '/scratch/ibp5092/manMetaVAR/vignettes/*.png': No such file or directory
-make: Warning: File 'Makefile' has modification time 3710 s in the future
+make: Warning: File 'Makefile' has modification time 3415 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -77,11 +109,6 @@ Loading required package: metaVAR
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
 ✔ Setting active project to "/scratch/ibp5092/manMetaVAR".
 ✔ Saving "model" to "R/sysdata.rda".
-
-
-processing file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd.orig
-output file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd
-
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
 Loading required package: OpenMx
@@ -109,7 +136,7 @@ Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (71 entries accepted, 0 rejected).
 Sorting entries....done (442 comparisons).
-Generating output file Rd2.ind....done (106 lines written, 0 warnings).
+Generating output file Rd2.ind....done (107 lines written, 0 warnings).
 Output written in Rd2.ind.
 Transcript written in Rd2.ilg.
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
@@ -169,64 +196,12 @@ Latexmk: Missing bbl file '.setup/latex/pdf/manMetaVAR-presentation.bbl' in foll
  No file manMetaVAR-presentation.bbl.
 Latexmk: Missing input file 'manMetaVAR-presentation.nav' message in .log file:
   No file manMetaVAR-presentation.nav.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
 Latexmk: Using biber to make bibliography file(s).
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
 Latexmk: Using biber to make bibliography file(s).
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
 Latexmk: Using biber to make bibliography file(s).
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 124.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-pesigan.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-pesigan.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-russell.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-russell.png' not found on input line 285.
-Latexmk: Missing input file '.setup/latex/figures/png/profile-chow.png' message in .log file:
-  LaTeX Warning: File `.setup/latex/figures/png/profile-chow.png' not found on input line 285.
 Latexmk: Using biber to make bibliography file(s).
-
-------------
-Latexmk: Some operations failed, for the following tex file(s)
-  /scratch/ibp5092/manMetaVAR/detritus/tex/manMetaVAR-presentation.tex
 ── Installing package manMetaVAR into temporary library ────────────────────────
 ── Finished building pkgdown site for package manMetaVAR ───────────────────────
 make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 3427 s in the future
+make: Warning: File 'Makefile' has modification time 3133 s in the future
 Cloning into 'manMetaVAR'...

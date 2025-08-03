@@ -12,9 +12,9 @@ Ivan Jacob Agaloos Pesigan
 
 ## Description
 
-Research compendium for the manuscript Pesigan, I. J. A., et al. (2024).
-Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
-<https://doi.org/10.0000/0000000000>
+Research compendium for the manuscript Pesigan, I. J. A., et al. (In
+Preparation). Multivariate Meta-Analysis of Vector Autoregressive Model
+Coefficients <https://doi.org/10.0000/0000000000>
 
 ## Installation
 

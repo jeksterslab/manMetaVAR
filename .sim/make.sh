@@ -13,6 +13,9 @@ SIF=/scratch/$USER/sif/docs.sif
 
 # clean
 
+## vignettes
+rm -rf ${PROJECT}/vignettes/sim-*.Rmd
+
 ## data
 rm -rf ${PROJECT}/data/*.rda
 

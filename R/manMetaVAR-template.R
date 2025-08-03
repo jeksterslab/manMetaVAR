@@ -1,22 +1,17 @@
-#' @param n Positive integer.
-#'   Sample size.
-#' @param time Positive integer.
-#'   Number of time points.
-#' @param theta Numeric.
-#'   Measurement error variance.
 #' @param data R object.
 #'   Output of the [GenData()] function.
 #' @param fit R object.
 #'   Output of the [FitDTVARMx()] function.
+#' @param max_iter Positive integer.
+#'   Maximum number of reruns.
 #' @param output_type Character string.
 #'   Output type.
 #'   Valid values include
 #'   `"data"`,
-#'   `"fit-dynr"`,
-#'   `"dynr-delta-xmy"`,
-#'   `"dynr-delta-ymx"`,
-#'   `"dynr-mc-xmy"`, and
-#'   `"dynr-mc-ymx"`
+#'   `"fit-dt-var-mx"`,
+#'   `"fit-meta-var-mx"`,
+#'   `"fit-ml-var"`, and
+#'   `"fit-jags"`.
 #' @param suffix Character string.
 #'   Output of `manCTMed:::.SimSuffix()`.
 #' @param output_folder Character string.
