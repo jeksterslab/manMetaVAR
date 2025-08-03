@@ -41,19 +41,12 @@ data_process_params <- function(overwrite = FALSE) {
       to = 250,
       by = 50
     )
-    theta <- c(
-      0.2,
-      0.4,
-      0.6,
-      0.8
-    )
     taskid <- seq_len(
-      length(n) * length(time) * length(theta)
+      length(n) * length(time)
     )
     params <- expand.grid(
       n = n,
-      time = time,
-      theta = theta
+      time = time
     )
     params <- data.frame(
       taskid = taskid,

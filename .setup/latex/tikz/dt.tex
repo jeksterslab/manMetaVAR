@@ -1,0 +1,101 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+\usepackage{sansmathfonts}
+
+\usepackage{xcolor}
+
+\definecolor{myred}{HTML}{D7191C}
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 20mm,
+		latent/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 20mm,
+			align = center
+		},
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		inv/.style = {
+			ellipse,
+			draw=none,
+			thick,
+			inner sep = 0pt,
+			minimum size = 20mm,
+			align = center
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			thick,
+			>=stealth'
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[latent] (eta10) {$\eta_{1_{t}}$};
+    \node[latent] (eta20) [below = of eta10] {$\eta_{2_{t}}$};
+	\node[latent] (eta11) [right = 1cm of eta10] {$\eta_{1_{t + 1}}$};
+	\node[latent] (eta21) [right = 1cm of eta20] {$\eta_{2_{t + 1}}$};
+	\node[latent] (eta12) [right = 1cm of eta11] {$\eta_{1_{t + 2}}$};
+	\node[latent] (eta22) [right = 1cm of eta21] {$\eta_{2_{t + 2}}$};
+	\node[latent] (eta13) [right = 1cm of eta12] {$\eta_{1_{t + 3}}$};
+	\node[latent] (eta23) [right = 1cm of eta22] {$\eta_{2_{t + 3}}$};
+	\node[latent] (eta14) [right = 1cm of eta13] {$\dots$};
+    \node[latent] (eta24) [right = 1cm of eta23] {$\dots$};
+	\draw[path] (eta10) to node[above] {$\color{myred} Y_{1}$} (eta11);
+    \draw[path] (eta10) to node[near start, left] {$\color{myred} Y_{2}$} (eta21);
+	\draw[path] (eta20) to node[near start, left] {$\color{myred} Y_{3}$} (eta11);
+    \draw[path] (eta20) to node[below] {$\color{myred} Y_{4}$} (eta21);
+	\draw[path] (eta11) to node[above] {$\color{myred} Y_{1}$} (eta12);
+    \draw[path] (eta11) to node[near start, left] {$\color{myred} Y_{2}$} (eta22);
+	\draw[path] (eta21) to node[near start, left] {$\color{myred} Y_{3}$} (eta12);
+    \draw[path] (eta21) to node[below] {$\color{myred} Y_{4}$} (eta22);
+	\draw[path] (eta12) to node[above] {$\color{myred} Y_{1}$} (eta13);
+    \draw[path] (eta12) to node[near start, left] {$\color{myred} Y_{2}$} (eta23);
+	\draw[path] (eta22) to node[near start, left] {$\color{myred} Y_{3}$} (eta13);
+    \draw[path] (eta22) to node[below] {$\color{myred} Y_{4}$} (eta23);
+	\draw[path] (eta13) to node[above] {$\color{myred} Y_{1}$} (eta14);
+    \draw[path] (eta13) to node[near start, left] {$\color{myred} Y_{2}$} (eta24);
+	\draw[path] (eta23) to node[near start, left] {$\color{myred} Y_{3}$} (eta14);
+    \draw[path] (eta23) to node[below] {$\color{myred} Y_{4}$} (eta24);
+\end{tikzpicture}
+
+\end{document}
+

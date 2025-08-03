@@ -28,8 +28,6 @@
 #'   check for the output file integrity when `overwrite = FALSE`.
 #' @param seed Integer.
 #'   Random seed.
-#' @param params_taskid Data frame with a single row.
-#'   Simulation parameters for a specific `taskid`.
 #' @param taskid Positive integer.
 #'   Task ID.
 #' @param repid Positive integer.

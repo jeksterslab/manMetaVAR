@@ -17,6 +17,8 @@
 
 project <- "manMetaVAR"
 
+rproject_ver <- NULL
+
 pkg_cran <- c(
   "MASS",
   "mlVAR",

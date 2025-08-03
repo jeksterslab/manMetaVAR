@@ -1,0 +1,91 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+% convert -density 300 ml.pdf -quality 100 -background white -alpha remove -alpha off ml.png
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 20mm,
+		latent/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		inv/.style = {
+			rectangle,
+			draw=none,
+			fill=none,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			thick,
+			>=stealth'
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[manifest] (y1) {$Y_{1}$};
+    \node[manifest] (y2) [right = of y1] {$Y_{2}$};
+    \node[manifest] (y3) [right = of y2] {$Y_{3}$};
+    \node[manifest] (y4) [right = of y3] {$Y_{4}$};
+    \node[manifest] (z1) [below = of y1] {$Z_{1}$};
+    \node[manifest] (z2) [below = of y4] {$Z_{2}$};
+    \node[inv] (inv) [below = of y1] {};
+    \node[mean] (mean) [below = of inv] {$1$};
+    \draw[cov] (mean) to[out = -120, in = -60, looseness = 5] node[below] {$0$} (mean);
+    \draw[path] (y1) to node {$\gamma_{1, 1}$} (z1);
+    \draw[path] (y2) to node {$\gamma_{1, 2}$} (z1);
+    \draw[path] (y3) to node {$\gamma_{1, 3}$} (z1);
+    \draw[path] (y4) to node {$\gamma_{1, 4}$} (z1);
+    \draw[path] (y1) to node {$\gamma_{2, 1}$} (z2);
+    \draw[path] (y2) to node {$\gamma_{2, 2}$} (z2);
+    \draw[path] (y3) to node {$\gamma_{2, 3}$} (z2);
+    \draw[path] (y4) to node {$\gamma_{2, 3}$} (z2);
+    \draw[path] (mean) to node {$\kappa_{1}$} (z1);
+    \draw[path] (mean) to node {$\kappa_{2}$} (z2);
+    \draw[cov] (z1) to[out = 160, in = 200, looseness = 5] node[left] {$\psi_{1}^{2}$} (z1);
+    \draw[cov] (z2) to[out = 20, in = 340, looseness = 5] node[right] {$\psi_{2}^{2}$} (z2);
+\end{tikzpicture}
+
+\end{document}

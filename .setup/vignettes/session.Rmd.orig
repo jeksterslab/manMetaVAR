@@ -1,10 +1,10 @@
 ---
 title: "manMetaVAR: Session"
-author: "Blind Melon"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{manMetaVAR: Session}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -18,16 +18,6 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
-#| include = FALSE
-if (!require("remotes")) install.packages("remotes")
-# TODO: add packages and versions used here
-remotes::install_version(
-  package = "MASS",
-  version = "7.3-58.1"
-)
-```
-
-```{r}
 #| message = FALSE
 library(manMetaVAR)
 ```
@@ -36,4 +26,16 @@ library(manMetaVAR)
 
 ```{r}
 sessionInfo()
+```
+
+# CPU
+
+```{r}
+cat(system("lscpu", intern = TRUE), sep = "\n")
+```
+
+# Memory
+
+```{r}
+cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 ```

@@ -1,0 +1,67 @@
+model {
+  for (i in 1:N) {
+    # Initial latent state for subject i at time 1
+    # eta[i, 1, 1:K] ~ N(mu0, sigma0)
+    # mu0 is a fixed population-level mean vector
+    # tau_sigma0 is the precision matrix (inverse covariance) of the initial latent state
+    eta[i, 1, 1:K] ~ dmnorm(mu0[ ], tau_sigma0[ , ])
+
+    for (t in 2:T) {
+      # Dynamic model: latent state evolution
+      # eta[i, t, ] = alpha[i, ] + beta[i, , ] %*% eta[i, t - 1, ] + noise
+      # where noise ~ N(0, psi)
+      eta[i, t, 1:K] ~ dmnorm(mu_eta[i, t, 1:K], tau_psi[ , ])
+
+      for (k in 1:K) {
+        # Compute the mean of the latent state at time t for dimension k
+        # mu_eta[i, t, k] = alpha[i, k] + beta[i, k, ] %*% eta[i, t - 1, ]
+        mu_eta[i, t, k] <- alpha[i, k] + inprod(beta[i, k, 1:K], eta[i, t - 1, 1:K])
+      }
+
+      # Measurement model: observed y_t given latent state eta_t
+      # y[i, t, ] ~ N(eta[i, t, ], theta)
+      y[i, t, 1:K] ~ dmnorm(eta[i, t, 1:K], tau_theta[ , ])
+    }
+
+    # Individual-level random effects
+    # Intercepts for each latent dimension: alpha[i, ] ~ N(mu_alpha, sigma_alpha)
+    alpha[i, 1:K] ~ dmnorm(mu_alpha[ ], tau_alpha[ , ])
+
+    # Vectorized autoregressive coefficients: beta_vec[i,] ~ N(mu_beta_vec, sigma_beta)
+    beta_vec[i, 1:(K * K)] ~ dmnorm(mu_beta_vec[ ], tau_beta[ , ])
+
+    # Reshape beta_vec[i, ] into matrix form beta[i, , ]
+    for (k in 1:K) {
+      for (j in 1:K) {
+        beta[i, k, j] <- beta_vec[i, (k - 1) * K + j]
+      }
+    }
+  }
+
+  # Hyperpriors for population-level parameters
+  for (k in 1:K) {
+    mu_alpha[k] ~ dnorm(0, 1e-4)
+    for (j in 1:K) {
+      mu_beta[k,j] ~ dnorm(0, 1e-4)
+    }
+  }
+
+  # Flatten mu_beta into a vector for beta_vec mean
+  for (k in 1:K) {
+    for (j in 1:K) {
+      mu_beta_vec[(k - 1) * K + j] <- mu_beta[k, j]
+    }
+  }
+
+  # Priors on precision matrices (inverse covariance matrices)
+  tau_alpha[1:K, 1:K] ~ dwish(r_alpha[ , ], K + 1)
+  tau_beta[1:(K * K), 1:(K * K)] ~ dwish(r_beta[ , ], K * K + 1)
+  tau_psi[1:K, 1:K] ~ dwish(r_psi[ , ], K + 1)
+  tau_theta[1:K, 1:K] ~ dwish(r_theta[ , ], K + 1)
+
+  # Monitorable covariance matrices (useful for posterior summaries)
+  sigma_alpha[1:K, 1:K] <- inverse(tau_alpha[ , ])
+  sigma_beta[1:(K * K),1:(K * K)] <- inverse(tau_beta[ , ])
+  psi[1:K, 1:K] <- inverse(tau_psi[ , ])
+  theta[1:K, 1:K] <- inverse(tau_theta[ , ])
+}

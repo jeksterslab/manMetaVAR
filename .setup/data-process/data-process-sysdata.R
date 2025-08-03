@@ -11,10 +11,20 @@ data_process_sysdata <- function() {
     nrow = p,
     ncol = p
   )
-  mu0 <- null_vec
-  sigma0 <- iden
-  sigma0_l <- iden
-  alpha <- null_vec
+  alpha_mu <- c(2.87, 2.04)
+  alpha_d <- sqrt(
+    c(1.2, 1.1)
+  ) * iden
+  alpha_r <- matrix(
+    data = c(
+      1, 0.4,
+      0.4, 1
+    ),
+    nrow = p
+  )
+  alpha_sigma <- alpha_d %*% alpha_r %*% alpha_d
+  alpha_sigma[upper.tri(alpha_sigma)] <- t(alpha_sigma)[upper.tri(alpha_sigma)]
+  alpha_sigma_l <- t(chol(alpha_sigma))
   psi_d <- sqrt(
     c(1.3, 1.56)
   ) * iden
@@ -56,60 +66,37 @@ data_process_sysdata <- function() {
   lambda <- iden
   theta <- 0.2 * iden
   theta_l <- t(chol(theta))
-  beta_lbound <- matrix(
-    data = -1,
-    nrow = p,
-    ncol = p
+  mu0 <- simStateSpace::SSMMeanEta(
+    beta = beta_mu,
+    alpha = alpha_mu
   )
-  beta_ubound <- matrix(
-    data = +1,
-    nrow = p,
-    ncol = p
+  sigma0 <- simStateSpace::SSMCovEta(
+    beta = beta_mu,
+    psi = psi
   )
-  psi_lbound <- matrix(
-    data = -5,
-    nrow = p,
-    ncol = p
+  sigma0_l <- t(chol(sigma0))
+  beta0 <- c(
+    beta_mu,
+    alpha_mu
   )
-  psi_ubound <- matrix(
-    data = +5,
-    nrow = p,
-    ncol = p
-  )
-  diag(psi_lbound) <- .Machine$double.xmin
-  theta_lbound <- .Machine$double.xmin * diag(p)
-  theta_ubound <- 2 * diag(p)
-  mu <- c(
-    beta_mu
-  )
-  q <- length(mu)
-  mu_lbound <- rep(
-    x = -10,
-    times = q
-  )
-  mu_ubound <- rep(
-    x = +10,
-    times = q
-  )
-  sigma <- matrix(
+  q <- length(beta0)
+  tau_sqr <- matrix(
     data = 0,
     nrow = q,
     ncol = q
   )
-  sigma[seq_len(p^2), seq_len(p^2)] <- beta_sigma
-  sigma_lbound <- sigma_ubound <- matrix(
-    data = NA,
-    nrow = q,
-    ncol = q
-  )
-  diag(sigma_lbound) <- .Machine$double.xmin
+  tau_sqr[seq_len(p^2), seq_len(p^2)] <- beta_sigma
+  tau_sqr[(p^2 + 1):q, (p^2 + 1):q] <- alpha_sigma
   model <- list(
     p = p,
     k = k,
     mu0 = mu0,
     sigma0 = sigma0,
     sigma0_l = sigma0_l,
-    alpha = alpha,
+    tau_sigma0 = solve(sigma0),
+    alpha_mu = alpha_mu,
+    alpha_sigma = alpha_sigma,
+    alpha_sigma_l = alpha_sigma_l,
     beta_mu = beta_mu,
     beta_sigma = beta_sigma,
     beta_sigma_l = beta_sigma_l,
@@ -119,17 +106,16 @@ data_process_sysdata <- function() {
     lambda = lambda,
     theta = theta,
     theta_l = theta_l,
-    mu = mu,
-    sigma = sigma,
-    beta_lbound = beta_lbound,
-    beta_ubound = beta_ubound,
-    psi_lbound = psi_lbound,
-    psi_ubound = psi_ubound,
-    theta_lbound = theta_lbound,
-    theta_ubound = theta_ubound,
+    beta0 = beta0,
+    tau_sqr = tau_sqr,
     parameter = c(
-      mu,
-      sigma
+      beta0,
+      tau_sqr[
+        lower.tri(
+          x = tau_sqr,
+          diag = TRUE
+        )
+      ]
     )
   )
   usethis::use_data(

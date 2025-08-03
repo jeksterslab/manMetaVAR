@@ -6,14 +6,14 @@
 \alias{manMetaVAR-package}
 \title{manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients}
 \description{
-Research compendium for the manuscript Pesigan, I. J. A., et al. (2024). Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients. \doi{10.0000/0000000000}.
+Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients. \doi{10.0000/0000000000}.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/jeksterslab/manMetaVAR}
   \item \url{https://jeksterslab.github.io/manMetaVAR/}
-  \item \url{https://osf.io/qwnmf/?view_only=855be2012b554f05bbc679946845bab8}
+  \item \url{https://osf.io/uenr7/}
   \item \doi{10.0000/0000000000}
   \item Report bugs at \url{https://github.com/jeksterslab/manMetaVAR/issues}
 }

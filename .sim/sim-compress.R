@@ -7,8 +7,11 @@ suppressMessages(
   )
 )
 source(
-  paste0(
-    "/scratch/ibp5092/manMetaVAR/.sim/",
+  file.path(
+    "/scratch",
+    Sys.getenv("USER"),
+    "manMetaVAR",
+    ".sim",
     "sim-args.R"
   )
 )

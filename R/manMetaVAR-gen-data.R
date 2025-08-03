@@ -8,36 +8,51 @@
 #' @examples
 #' \dontrun{
 #' set.seed(42)
-#' data <- GenData(n = 50, time = 100, theta = 0.2)
-#' plot(data)
+#' data <- GenData(taskid = 1)
 #' }
 #' @family Data Generation Functions
 #' @keywords manMetaVAR gendata
 #' @import simStateSpace
 #' @export
-GenData <- function(n,
-                    time,
-                    theta) {
-  return(
-    simStateSpace::SimSSMIVary(
-      n = n,
-      time = time,
-      mu0 = list(model$mu0),
-      sigma0_l = list(model$sigma0_l),
-      alpha = list(model$alpha),
-      beta = simStateSpace::SimBetaN(
-        n = n,
-        beta = model$beta_mu,
-        vcov_beta_vec_l = model$beta_sigma_l
-      ),
-      psi_l = list(model$psi_l),
-      nu = list(model$nu),
-      lambda = list(model$lambda),
-      theta_l = list(t(chol(theta * diag(2)))),
-      type = 0,
-      x = NULL,
-      gamma = NULL,
-      kappa = NULL
-    )
+GenData <- function(taskid) {
+  param <- params[taskid, ]
+  n <- param$n
+  time <- param$time
+  alpha <- simStateSpace::SimAlphaN(
+    n = n,
+    alpha = model$alpha_mu,
+    vcov_alpha_l = model$alpha_sigma_l
   )
+  beta <- simStateSpace::SimBetaN(
+    n = n,
+    beta = model$beta_mu,
+    vcov_beta_vec_l = model$beta_sigma_l
+  )
+  sim <- simStateSpace::SimSSMIVary(
+    n = n,
+    time = time,
+    mu0 = list(model$mu0),
+    sigma0_l = list(model$sigma0_l),
+    alpha = alpha,
+    beta = beta,
+    psi_l = list(model$psi_l),
+    nu = list(model$nu),
+    lambda = list(model$lambda),
+    theta_l = list(model$theta_l),
+    type = 0,
+    x = NULL,
+    gamma = NULL,
+    kappa = NULL
+  )
+  out <- list(
+    sim = sim,
+    alpha = alpha,
+    beta = beta,
+    data = as.data.frame(sim)
+  )
+  class(out) <- c(
+    "gendata",
+    class(out)
+  )
+  out
 }

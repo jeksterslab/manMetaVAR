@@ -12,7 +12,7 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                params_taskid) {
+                seed) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -35,10 +35,12 @@ Sim <- function(taskid,
     )
     .SimChMod(output_folder)
   }
-  seed <- .SimSeed(
-    taskid = taskid,
-    repid = repid
-  )
+  if (is.null(seed)) {
+    seed <- .SimSeed(
+      taskid = taskid,
+      repid = repid
+    )
+  }
   suffix <- .SimSuffix(
     taskid = taskid,
     repid = repid
@@ -47,37 +49,53 @@ Sim <- function(taskid,
     taskid = taskid,
     repid = repid,
     output_folder = output_folder,
-    params_taskid = params_taskid,
     seed = seed,
     suffix = suffix,
     overwrite = overwrite,
     integrity = integrity
   )
-  SimFitDTVARMx(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity
+  try(
+    SimFitDTVAR(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity
+    )
   )
-  SimFitMLVAR(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity
+  try(
+    SimFitMetaVAR(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity
+    )
   )
-  SimFitMetaVARMx(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity
+  try(
+    SimFitMLVAR(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity
+    )
+  )
+  try(
+    SimFitJAGS(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity
+    )
   )
 }

@@ -7,5 +7,5 @@
 #' @export
 #' @keywords manMetaVAR simulation
 SimProj <- function() {
-  return("manMetaVAR")
+  "manMetaVAR"
 }

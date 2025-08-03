@@ -1,9 +1,15 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 160L
+tasks <- 40L
 reps <- 1000L
 overwrite <- FALSE
+seed <- NULL
 # ------------------------------------------------------------------------------
-output_root <- "/scratch/ibp5092/manMetaVAR/.sim"
+output_root <- file.path(
+  "/scratch",
+  Sys.getenv("USER"),
+  "manMetaVAR",
+  ".sim"
+)
 project <- manMetaVAR::SimProj()
 output_folder <- manMetaVAR:::.SimPath(
   root = output_root,
