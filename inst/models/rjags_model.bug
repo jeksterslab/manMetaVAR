@@ -24,11 +24,11 @@ model {
     }
 
     # Individual-level random effects
-    # Intercepts for each latent dimension: alpha[i, ] ~ N(mu_alpha, sigma_alpha)
-    alpha[i, 1:K] ~ dmnorm(mu_alpha[ ], tau_alpha[ , ])
+    # Intercepts for each latent dimension: alpha[i, ] ~ N(alpha_mu, alpha_sigma)
+    alpha[i, 1:K] ~ dmnorm(alpha_mu[ ], tau_alpha[ , ])
 
-    # Vectorized autoregressive coefficients: beta_vec[i,] ~ N(mu_beta_vec, sigma_beta)
-    beta_vec[i, 1:(K * K)] ~ dmnorm(mu_beta_vec[ ], tau_beta[ , ])
+    # Vectorized autoregressive coefficients: beta_vec[i,] ~ N(beta_mu_vec, beta_sigma)
+    beta_vec[i, 1:(K * K)] ~ dmnorm(beta_mu_vec[ ], tau_beta[ , ])
 
     # Reshape beta_vec[i, ] into matrix form beta[i, , ]
     for (k in 1:K) {
@@ -40,16 +40,16 @@ model {
 
   # Hyperpriors for population-level parameters
   for (k in 1:K) {
-    mu_alpha[k] ~ dnorm(0, 1e-4)
+    alpha_mu[k] ~ dnorm(0, 1e-4)
     for (j in 1:K) {
-      mu_beta[k,j] ~ dnorm(0, 1e-4)
+      beta_mu[k,j] ~ dnorm(0, 1e-4)
     }
   }
 
-  # Flatten mu_beta into a vector for beta_vec mean
+  # Flatten beta_mu into a vector for beta_vec mean
   for (k in 1:K) {
     for (j in 1:K) {
-      mu_beta_vec[(k - 1) * K + j] <- mu_beta[k, j]
+      beta_mu_vec[(k - 1) * K + j] <- beta_mu[k, j]
     }
   }
 
@@ -60,8 +60,8 @@ model {
   tau_theta[1:K, 1:K] ~ dwish(r_theta[ , ], K + 1)
 
   # Monitorable covariance matrices (useful for posterior summaries)
-  sigma_alpha[1:K, 1:K] <- inverse(tau_alpha[ , ])
-  sigma_beta[1:(K * K),1:(K * K)] <- inverse(tau_beta[ , ])
+  alpha_sigma[1:K, 1:K] <- inverse(tau_alpha[ , ])
+  beta_sigma[1:(K * K),1:(K * K)] <- inverse(tau_beta[ , ])
   psi[1:K, 1:K] <- inverse(tau_psi[ , ])
   theta[1:K, 1:K] <- inverse(tau_theta[ , ])
 }

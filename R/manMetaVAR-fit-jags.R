@@ -22,7 +22,17 @@
 FitJAGS <- function(data,
                     n.chains = 4,
                     n.adapt = 2000,
-                    n.iter = 10000) {
+                    n.iter = 10000,
+                    max_iter = 10000,
+                    seed = NULL) {
+  args <- list(
+    data = data,
+    n.chains = n.chains,
+    n.adapt = n.adapt,
+    n.iter = n.iter,
+    max_iter = max_iter,
+    seed = seed
+  )
   df <- data$data
   df <- df[order(df$id, df$time), ]
   ids <- unique(df$id)
@@ -60,6 +70,27 @@ FitJAGS <- function(data,
     progress.bar <- "none"
     quiet <- TRUE
   }
+  if (!is.null(seed)) {
+    set.seed(seed)
+  }
+  inits <- lapply(
+    X = seq_len(n.chains),
+    FUN = function(i) {
+      list(
+        alpha_mu = model$alpha_mu,
+        beta_mu = model$beta_mu,
+        alpha_sigma = model$alpha_sigma,
+        beta_sigma = model$beta_sigma,
+        psi = model$psi,
+        theta = model$theta,
+        .RNG.name = "base::Mersenne-Twister",
+        .RNG.seed = sample.int(
+          n = .Machine$integer.max,
+          size = 1
+        )
+      )
+    }
+  )
   model <- rjags::jags.model(
     file = model_file,
     data = data_for_jags,
@@ -67,27 +98,43 @@ FitJAGS <- function(data,
     n.adapt = n.adapt,
     quiet = quiet
   )
-  update(
-    object = model,
-    n.iter = n.iter,
-    progress.bar = progress.bar
-  )
-  samples <- rjags::coda.samples(
-    model = model,
-    variable.names = c(
-      "mu_alpha",
-      "mu_beta",
-      "sigma_alpha",
-      "sigma_beta",
-      "psi",
-      "theta"
-    ),
-    n.iter = n.iter,
-    progress.bar = progress.bar
-  )
+  # repeat until ESS >= 200 for all parameters
+  ess <- 0
+  samples <- NULL
+  iter <- 0
+  while (
+    any(ess < 200) && iter < max_iter
+  ) {
+    update(
+      object = model,
+      n.iter = n.iter,
+      progress.bar = progress.bar
+    )
+    samples <- rjags::coda.samples(
+      model = model,
+      variable.names = c(
+        "alpha_mu",
+        "beta_mu",
+        "alpha_sigma",
+        "beta_sigma",
+        "psi",
+        "theta"
+      ),
+      n.iter = n.iter,
+      progress.bar = progress.bar
+    )
+    ess <- coda::effectiveSize(
+      x = samples
+    )
+    iter <- iter + 1
+  }
   out <- list(
+    args = args,
+    inits = inits,
     model = model,
-    samples = samples
+    samples = samples,
+    iter = iter,
+    ess = ess
   )
   class(out) <- c(
     "fitjags",

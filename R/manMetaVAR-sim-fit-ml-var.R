@@ -24,7 +24,7 @@ SimFitMLVAR <- function(taskid,
     suffix = suffix
   )
   fn_output <- SimFN(
-    output_type = "fit-ml-var-mx",
+    output_type = "fit-ml-var",
     output_folder = output_folder,
     suffix = suffix
   )

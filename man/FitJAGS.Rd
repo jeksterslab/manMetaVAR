@@ -4,7 +4,14 @@
 \alias{FitJAGS}
 \title{Fit the Model using JAGS}
 \usage{
-FitJAGS(data, n.chains = 4, n.adapt = 2000, n.iter = 10000)
+FitJAGS(
+  data,
+  n.chains = 4,
+  n.adapt = 2000,
+  n.iter = 10000,
+  max_iter = 10000,
+  seed = NULL
+)
 }
 \arguments{
 \item{data}{R object.
@@ -17,6 +24,12 @@ Output of the \code{\link[=GenData]{GenData()}} function.}
     adaptation takes place.}
 
 \item{n.iter}{number of iterations to monitor}
+
+\item{max_iter}{Positive integer.
+Maximum number of reruns.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
 The function fits the model using JAGS.

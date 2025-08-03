@@ -11,11 +11,10 @@ SimFN(output_type, output_folder, suffix)
 Output type.
 Valid values include
 \code{"data"},
-\code{"fit-dynr"},
-\code{"dynr-delta-xmy"},
-\code{"dynr-delta-ymx"},
-\code{"dynr-mc-xmy"}, and
-\code{"dynr-mc-ymx"}}
+\code{"fit-dt-var-mx"},
+\code{"fit-meta-var-mx"},
+\code{"fit-ml-var"}, and
+\code{"fit-jags"}.}
 
 \item{output_folder}{Character string.
 Output folder.}
