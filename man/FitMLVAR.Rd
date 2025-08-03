@@ -16,13 +16,15 @@ The function fits the model using the \link{mlVAR} package.
 \examples{
 \dontrun{
 set.seed(42)
-data <- GenData(n = 50, time = 100, theta = 0.2)
-FitMLVAR(data)
+data <- GenData(taskid = 1)
+fit <- FitMLVAR(data = data)
+summary(fit)
 }
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitDTVARMx}()}
+\code{\link{FitDTVAR}()},
+\code{\link{FitJAGS}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

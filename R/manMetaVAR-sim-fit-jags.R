@@ -1,4 +1,4 @@
-#' Simulation Replication - FitDTVARMx
+#' Simulation Replication - FitJAGS
 #'
 #' @details This function is executed via the `Sim` function.
 #'
@@ -9,13 +9,13 @@
 #' @inheritParams Template
 #' @export
 #' @keywords manMetaVAR fit simulation
-SimFitDTVARMx <- function(taskid,
-                          repid,
-                          output_folder,
-                          seed,
-                          suffix,
-                          overwrite,
-                          integrity) {
+SimFitJAGS <- function(taskid,
+                       repid,
+                       output_folder,
+                       seed,
+                       suffix,
+                       overwrite,
+                       integrity) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sim` function.
   fn_input <- SimFN(
@@ -24,7 +24,7 @@ SimFitDTVARMx <- function(taskid,
     suffix = suffix
   )
   fn_output <- SimFN(
-    output_type = "fit-dt-var-mx",
+    output_type = "fit-jags",
     output_folder = output_folder,
     suffix = suffix
   )
@@ -39,7 +39,7 @@ SimFitDTVARMx <- function(taskid,
         set.seed(seed)
         con <- file(fn_output)
         saveRDS(
-          object = FitDTVARMx(
+          object = FitJAGS(
             data = readRDS(fn_input)
           ),
           file = con
@@ -48,7 +48,7 @@ SimFitDTVARMx <- function(taskid,
         .SimChMod(fn_output)
       },
       error = function(cond) {
-        message(paste("error:", "SimFitDTVARMx"))
+        message(paste("error:", "SimFitJAGS"))
         message("Here's the original error message:")
         message(conditionMessage(cond))
         cat(
@@ -63,7 +63,7 @@ SimFitDTVARMx <- function(taskid,
         )
       },
       warning = function(cond) {
-        message(paste("error:", "SimFitDTVARMx"))
+        message(paste("error:", "SimFitJAGS"))
         message("Here's the original warning message:")
         message(conditionMessage(cond))
         cat(

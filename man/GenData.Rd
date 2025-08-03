@@ -4,17 +4,11 @@
 \alias{GenData}
 \title{Simulate Data}
 \usage{
-GenData(n, time, theta)
+GenData(taskid)
 }
 \arguments{
-\item{n}{Positive integer.
-Sample size.}
-
-\item{time}{Positive integer.
-Number of time points.}
-
-\item{theta}{Numeric.
-Measurement error variance.}
+\item{taskid}{Positive integer.
+Task ID.}
 }
 \description{
 The function simulates data using
@@ -23,8 +17,7 @@ the \code{\link[simStateSpace:SimSSMIVary]{simStateSpace::SimSSMIVary()}} functi
 \examples{
 \dontrun{
 set.seed(42)
-data <- GenData(n = 50, time = 100, theta = 0.2)
-plot(data)
+data <- GenData(taskid = 1)
 }
 }
 \concept{Data Generation Functions}
