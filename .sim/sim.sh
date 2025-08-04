@@ -30,7 +30,7 @@ repid_start=1
 repid_end=1000
 
 taskid_start=1
-taskid_end=5
+taskid_end=40
 
 # script -----------------------------------------------------------------------
 cd /scratch/$USER/${PROJECT} || exit

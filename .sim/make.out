@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpvPPHuT/dotfiles'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2472[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5011[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 11h 2m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 23h 17m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11147M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m10475M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles'
 
 
 TinyTex...
@@ -349,7 +349,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpCku94D/file2fad002e980e6d/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpYDpiOV/file2b56c34c36afd1/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -423,7 +423,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpCku94D/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpYDpiOV/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -471,26 +471,14 @@ Precompiling vignettes...
 8/10 [unnamed-chunk-4]
 9/10                  
 10/10 [unnamed-chunk-5]
-1/36                   
-2/36 [unnamed-chunk-1] 
-3/36                   
-4/36 [unnamed-chunk-2] 
-5/36                   
-6/36 [unnamed-chunk-3] 
-7/36                   
-8/36 [unnamed-chunk-4] 
-9/36                   
-10/36 [unnamed-chunk-5] 
-11/36                   
-12/36 [unnamed-chunk-6] 
-13/36                   
-14/36 [unnamed-chunk-7] 
-15/36                   
-16/36 [unnamed-chunk-8] 
-17/36                   
-18/36 [unnamed-chunk-9] 
-19/36                   
-20/36 [unnamed-chunk-10]
+1/28                   
+2/28 [unnamed-chunk-1] 
+3/28                   
+4/28 [unnamed-chunk-2] 
+5/28                   
+6/28 [unnamed-chunk-3] 
+7/28                   
+8/28 [unnamed-chunk-4] 
 
 
 Building project...
@@ -507,37 +495,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2472[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5011[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 14h 4m[0m
+[14C[33m[1muptime[0m[6D[7C[39m81d 6h 9m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11132M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m10469M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles'
 
 
 TinyTex...
@@ -681,7 +669,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpgdhs1e/file3017d4776e8bcf/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpC5HCDP/file2c317b4a7e4b0b/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -741,7 +729,6 @@ Setting env vars:
   Running ‘testthat.R’
  OK
 * DONE
-
 Status: OK
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
@@ -754,7 +741,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpgdhs1e/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpC5HCDP/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -824,7 +811,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpOmsWXj/file30218263f3dae3/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpgllHrP/file2c3b9f66bbaa68/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -886,7 +873,6 @@ Setting env vars:
 * DONE
 
 Status: OK
-
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
 * preparing ‘manMetaVAR’:
@@ -898,7 +884,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpOmsWXj/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpgllHrP/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -1732,7 +1718,7 @@ Package biblatex Warning: Please (re)run Biber on the file:
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404049 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404043 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -1770,8 +1756,8 @@ INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = 
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -1894,8 +1880,8 @@ INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalizat
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -2218,10 +2204,6 @@ Reading vignettes/session.Rmd
 Writing `articles/session.html`
 Reading vignettes/sim-rep.Rmd
 Writing `articles/sim-rep.html`
-✖ Missing alt-text in 'vignettes/sim-rep.Rmd'
-• fig-vignettes-sim-rep-unnamed-chunk-6-1.png
-• fig-vignettes-sim-rep-unnamed-chunk-6-2.png
-ℹ Learn more in `vignette(pkgdown::accessibility)`.
 ── Building news ───────────────────────────────────────────────────────────────
 Writing `news/index.html`
 ── Building sitemap ────────────────────────────────────────────────────────────

@@ -1,4 +1,4 @@
-make: Warning: File 'Makefile' has modification time 14227 s in the future
+make: Warning: File 'Makefile' has modification time 14164 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -88,11 +88,10 @@ Backtrace:
  36.                                     └─parallel:::staticClusterApply(cl, fun, length(x), argfun)
  37.                                       └─parallel:::checkForRemoteErrors(val)
 
-Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:74-77 [unnamed-chunk-10]
+Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:38-48 [unnamed-chunk-4]
 Execution halted
 make: *** [Makefile:75: vignettes] Error 1
 cp: cannot stat '/scratch/ibp5092/manMetaVAR/vignettes/*.png': No such file or directory
-make: Warning: File 'Makefile' has modification time 3275 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -178,6 +177,4 @@ Latexmk: Using biber to make bibliography file(s).
 Latexmk: Using biber to make bibliography file(s).
 ── Installing package manMetaVAR into temporary library ────────────────────────
 ── Finished building pkgdown site for package manMetaVAR ───────────────────────
-make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 3014 s in the future
 Cloning into 'manMetaVAR'...
