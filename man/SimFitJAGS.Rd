@@ -51,6 +51,9 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 
 \item{thin}{Thinning interval for monitors.}
 
+\item{ess_crit}{Positive integer.
+Effective sample size critria.}
+
 \item{max_iter}{Positive integer.
 Maximum number of reruns to get effective sample size.}
 }

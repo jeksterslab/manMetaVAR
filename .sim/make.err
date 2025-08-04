@@ -1,10 +1,12 @@
-make: Warning: File 'Makefile' has modification time 13600 s in the future
+make: Warning: File 'Makefile' has modification time 14265 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
 ✔ Setting active project to "/scratch/ibp5092/manMetaVAR".
 ✔ Saving "model" to "R/sysdata.rda".
 ℹ Updating manMetaVAR documentation
+First time using roxygen2. Upgrading automatically...
+Setting `RoxygenNote` to "7.3.2"
 ℹ Loading manMetaVAR
 Loading required package: OpenMx
 To take full advantage of multiple cores, use:
@@ -12,20 +14,84 @@ To take full advantage of multiple cores, use:
   Sys.setenv(OMP_NUM_THREADS=parallel::detectCores()) #before library(OpenMx)
 Loading required package: fitDTVARMx
 Loading required package: metaVAR
-✖ manMetaVAR-template.R:9: @paran is not a known tag.
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
+Writing 'NAMESPACE'
+Writing 'Compress.Rd'
+Writing 'FitDTVAR.Rd'
+Writing 'FitJAGS.Rd'
+Writing 'FitMetaVAR.Rd'
+Writing 'FitMLVAR.Rd'
+Writing 'GenData.Rd'
+Writing 'manMetaVAR-package.Rd'
+Writing 'params.Rd'
+Writing 'SimFitDTVAR.Rd'
+Writing 'SimFitJAGS.Rd'
+Writing 'SimFitMetaVAR.Rd'
+Writing 'SimFitMLVAR.Rd'
+Writing 'SimFN.Rd'
+Writing 'SimGenData.Rd'
+Writing 'SimProj.Rd'
+Writing 'Sim.Rd'
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
-✖ manMetaVAR-template.R:9: @paran is not a known tag.
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
-Error: R CMD check found WARNINGs
+
+
+processing file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd.orig
+output file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd
+
+
+
+processing file: /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig
+Error in `eigen()`:
+! infinite or missing values in 'x'
+Backtrace:
+     ▆
+  1. └─rProject::VignettesPrecompile("/scratch/ibp5092/manMetaVAR")
+  2.   └─knitr::knit(...)
+  3.     └─knitr:::process_file(text, output)
+  4.       ├─xfun:::handle_error(...)
+  5.       ├─base::withCallingHandlers(...)
+  6.       └─knitr:::process_group(group)
+  7.         └─knitr:::call_block(x)
+  8.           └─knitr:::block_exec(params)
+  9.             └─knitr:::eng_r(options)
+ 10.               ├─knitr:::in_input_dir(...)
+ 11.               │ └─knitr:::in_dir(input_dir(), expr)
+ 12.               └─knitr (local) evaluate(...)
+ 13.                 └─evaluate::evaluate(...)
+ 14.                   ├─base::withRestarts(...)
+ 15.                   │ └─base (local) withRestartList(expr, restarts)
+ 16.                   │   ├─base (local) withOneRestart(withRestartList(expr, restarts[-nr]), restarts[[nr]])
+ 17.                   │   │ └─base (local) doWithOneRestart(return(expr), restart)
+ 18.                   │   └─base (local) withRestartList(expr, restarts[-nr])
+ 19.                   │     └─base (local) withOneRestart(expr, restarts[[1L]])
+ 20.                   │       └─base (local) doWithOneRestart(return(expr), restart)
+ 21.                   ├─evaluate:::with_handlers(...)
+ 22.                   │ ├─base::eval(call)
+ 23.                   │ │ └─base::eval(call)
+ 24.                   │ └─base::withCallingHandlers(...)
+ 25.                   ├─base::withVisible(eval(expr, envir))
+ 26.                   └─base::eval(expr, envir)
+ 27.                     └─base::eval(expr, envir)
+ 28.                       └─manMetaVAR::FitMetaVAR(dtvar)
+ 29.                         └─metaVAR::MetaVARMx(...)
+ 30.                           └─metaVAR::Meta(...)
+ 31.                             └─metaVAR:::.MetaGeneric(...)
+ 32.                               └─metaVAR:::.CheckEstimates(...)
+ 33.                                 └─base::lapply(X = v, FUN = foo)
+ 34.                                   └─metaVAR (local) FUN(X[[i]], ...)
+ 35.                                     └─base::eigen(x = x, symmetric = TRUE, only.values = TRUE)
+
+Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:70-74 [unnamed-chunk-9]
 Execution halted
-make: *** [Makefile:72: vignettes] Error 1
+make: *** [Makefile:75: vignettes] Error 1
 cp: cannot stat '/scratch/ibp5092/manMetaVAR/vignettes/*.png': No such file or directory
-make: Warning: File 'Makefile' has modification time 13515 s in the future
+make: Warning: File 'Makefile' has modification time 3442 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
+ℹ No lints found.
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
 Loading required package: OpenMx
@@ -34,14 +100,79 @@ To take full advantage of multiple cores, use:
   Sys.setenv(OMP_NUM_THREADS=parallel::detectCores()) #before library(OpenMx)
 Loading required package: fitDTVARMx
 Loading required package: metaVAR
-✖ manMetaVAR-template.R:9: @paran is not a known tag.
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
-✖ manMetaVAR-template.R:9: @paran is not a known tag.
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
-Error: R CMD check found WARNINGs
-Execution halted
-make: *** [Makefile:72: vignettes] Error 1
-make: Warning: File 'Makefile' has modification time 13437 s in the future
+ℹ Updating manMetaVAR documentation
+ℹ Loading manMetaVAR
+Loading required package: OpenMx
+To take full advantage of multiple cores, use:
+  mxOption(key='Number of Threads', value=parallel::detectCores()) #now
+  Sys.setenv(OMP_NUM_THREADS=parallel::detectCores()) #before library(OpenMx)
+Loading required package: fitDTVARMx
+Loading required package: metaVAR
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manMetaVAR documentation
+ℹ Loading manMetaVAR
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/manMetaVAR/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX .
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (70 entries accepted, 0 rejected).
+Sorting entries....done (456 comparisons).
+Generating output file Rd2.ind....done (103 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (70 entries accepted, 0 rejected).
+Sorting entries....done (457 comparisons).
+Generating output file Rd2.ind....done (102 lines written, 1 warning).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/manMetaVAR/.setup/latex/manMetaVAR-manuscript.Rtex
+output file: /scratch/ibp5092/manMetaVAR/detritus/tex/manMetaVAR-manuscript.tex
+
+Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Missing input file 'TS1xcmss.fd' message in .log file:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' message in .log file:
+  No file TS1cmsmf.fd.
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Missing input file 'TS1xcmss.fd' message in .log file:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' message in .log file:
+  No file TS1cmsmf.fd.
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Missing bbl file '.setup/latex/pdf/manMetaVAR-manuscript.bbl' in following:
+ No file manMetaVAR-manuscript.bbl.
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Using biber to make bibliography file(s).
+── Installing package manMetaVAR into temporary library ────────────────────────
+── Finished building pkgdown site for package manMetaVAR ───────────────────────
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 3193 s in the future
 Cloning into 'manMetaVAR'...

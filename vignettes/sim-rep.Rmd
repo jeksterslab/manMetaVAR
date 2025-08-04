@@ -1,0 +1,65 @@
+---
+title: "Single Replication from the Simulation Study"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Single Replication from the Simulation Study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+
+``` r
+library(manMetaVAR)
+```
+
+## Data Generation
+
+
+
+
+``` r
+seed <- 1
+set.seed(seed)
+data <- GenData(taskid = taskid)
+```
+
+## MetaVAR
+
+
+
+
+``` r
+dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
+```
+
+
+``` r
+summary(dtvar, means = TRUE)
+#>     beta_11     beta_21     beta_12     beta_22     alpha_1     alpha_2 
+#>  0.28250835 -0.12487789 -0.06698692  0.31746890  2.85331514  2.15799227 
+#>      psi_11      psi_21      psi_22    theta_11    theta_22 
+#>  1.11528170  0.54886238  1.31364748  0.34913071  0.41622729
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
