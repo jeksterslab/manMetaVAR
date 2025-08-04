@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpuTEA3q/dotfiles'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpvPPHuT/dotfiles'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2480[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2472[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 7h 39m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 11h 2m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11076M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11147M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpuTEA3q/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpuTEA3q/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpvPPHuT/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpvPPHuT/dotfiles'
 
 
 TinyTex...
@@ -55,7 +55,7 @@ TinyTex...
 Styling...
 
 
-Styling  60  files:
+Styling  61  files:
  .Rprofile                                                                 ℹ 
  index.qmd                                                                 ✔ 
  .setup/cran/cran-check.R                                                  ✔ 
@@ -101,6 +101,7 @@ Styling  60  files:
  R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
  R/manMetaVAR-fit-ml-var.R                                                 ✔ 
  R/manMetaVAR-gen-data.R                                                   ✔ 
+ R/manMetaVAR-methods.R                                                    ✔ 
  R/manMetaVAR-package.R                                                    ✔ 
  R/manMetaVAR-params.R                                                     ✔ 
  R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
@@ -118,7 +119,7 @@ Styling  60  files:
  vignettes/params.Rmd                                                      ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	59	File unchanged.
+✔ 	60	File unchanged.
 ℹ 	1	File changed.
 ✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
@@ -348,7 +349,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpw1mWXl/filec56191c9a2011/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpCku94D/file2fad002e980e6d/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -422,7 +423,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpw1mWXl/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpCku94D/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -470,24 +471,26 @@ Precompiling vignettes...
 8/10 [unnamed-chunk-4]
 9/10                  
 10/10 [unnamed-chunk-5]
-1/34                   
-2/34 [unnamed-chunk-1] 
-3/34                   
-4/34 [unnamed-chunk-2] 
-5/34                   
-6/34 [unnamed-chunk-3] 
-7/34                   
-8/34 [unnamed-chunk-4] 
-9/34                   
-10/34 [unnamed-chunk-5] 
-11/34                   
-12/34 [unnamed-chunk-6] 
-13/34                   
-14/34 [unnamed-chunk-7] 
-15/34                   
-16/34 [unnamed-chunk-8] 
-17/34                   
-18/34 [unnamed-chunk-9] 
+1/36                   
+2/36 [unnamed-chunk-1] 
+3/36                   
+4/36 [unnamed-chunk-2] 
+5/36                   
+6/36 [unnamed-chunk-3] 
+7/36                   
+8/36 [unnamed-chunk-4] 
+9/36                   
+10/36 [unnamed-chunk-5] 
+11/36                   
+12/36 [unnamed-chunk-6] 
+13/36                   
+14/36 [unnamed-chunk-7] 
+15/36                   
+16/36 [unnamed-chunk-8] 
+17/36                   
+18/36 [unnamed-chunk-9] 
+19/36                   
+20/36 [unnamed-chunk-10]
 
 
 Building project...
@@ -504,37 +507,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2480[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2472[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 10h 40m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 14h 4m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11064M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11132M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmpr6WQqP/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmp8DXTkI/dotfiles'
 
 
 TinyTex...
@@ -545,7 +548,7 @@ TinyTex...
 Styling...
 
 
-Styling  67  files:
+Styling  68  files:
  .Rprofile                                                                 ℹ 
  index.qmd                                                                 ✔ 
  .setup/cran/cran-check.R                                                  ✔ 
@@ -591,6 +594,7 @@ Styling  67  files:
  R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
  R/manMetaVAR-fit-ml-var.R                                                 ✔ 
  R/manMetaVAR-gen-data.R                                                   ✔ 
+ R/manMetaVAR-methods.R                                                    ✔ 
  R/manMetaVAR-package.R                                                    ✔ 
  R/manMetaVAR-params.R                                                     ✔ 
  R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
@@ -615,7 +619,7 @@ Styling  67  files:
  vignettes/sim-rep.Rmd                                                     ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	66	File unchanged.
+✔ 	67	File unchanged.
 ℹ 	1	File changed.
 ✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
@@ -677,7 +681,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpDwJKne/filecbaa64326e5b6/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmpgdhs1e/file3017d4776e8bcf/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -739,7 +743,6 @@ Setting env vars:
 * DONE
 
 Status: OK
-
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
 * preparing ‘manMetaVAR’:
@@ -751,7 +754,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpDwJKne/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmpgdhs1e/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -821,7 +824,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmp7wrxMr/filecc44446c5d8b4/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpOmsWXj/file30218263f3dae3/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -895,7 +898,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmp7wrxMr/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpOmsWXj/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -965,35 +968,36 @@ No file Rd2.toc.
 [2]
 [3]
 [4]
-[5]
-[6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 383--386
+[5] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[6{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 408--411
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 448--451
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 473--476
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 514--517
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 539--542
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 580--583
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 605--608
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 632--635
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 657--660
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 721--724
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [12]
+[13]
 No file Rd2.ind.
 
-[13] (./Rd2.aux)
+[14] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -1016,7 +1020,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (13 pages, 92089 bytes).
+Output written on Rd2.pdf (14 pages, 96649 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1039,34 +1043,38 @@ Writing index file Rd2.idx
 [3]
 [4]
 [5]
-[6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 383--386
-[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
-
-[7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 448--451
+[6] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[7{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 408--411
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 514--517
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 473--476
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 580--583
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 539--542
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 632--635
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 605--608
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 721--724
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 657--660
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-[12] (./Rd2.ind
-[13]
+[12]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-[14]) (./Rd2.aux)
+[13]
+[14] (./Rd2.ind
+[15]
+
+[16]
+
+[17]) (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -1089,7 +1097,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 107317 bytes).
+Output written on Rd2.pdf (17 pages, 113688 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1112,34 +1120,38 @@ Writing index file Rd2.idx
 [3]
 [4]
 [5]
-[6]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 383--386
-[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
-
-[7]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 448--451
+[6] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[7{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 408--411
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [8]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 514--517
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 473--476
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [9]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 580--583
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 539--542
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [10]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 632--635
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 605--608
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [11]
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 721--724
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 657--660
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-[12] (./Rd2.ind
-[13]
+[12]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
-[14]) (./Rd2.aux) )
+[13]
+[14] (./Rd2.ind
+[15]
+
+[16]
+
+[17]) (./Rd2.aux) )
 (see the transcript file for additional information)
 pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMIVary\(\)} has been referenced but does not exist, replaced by a fixed one
 
@@ -1156,7 +1168,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 107686 bytes).
+Output written on Rd2.pdf (17 pages, 114128 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘manMetaVAR.pdf’ ...
 Done
@@ -1754,12 +1766,12 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -1882,8 +1894,8 @@ INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalizat
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -2190,6 +2202,12 @@ Reading man/manMetaVAR-package.Rd
 Writing `reference/manMetaVAR-package.html`
 Reading man/params.Rd
 Writing `reference/params.html`
+Reading man/plot.gendata.Rd
+Writing `reference/plot.gendata.html`
+Reading man/summary.fitjags.Rd
+Writing `reference/summary.fitjags.html`
+Reading man/summary.gendata.Rd
+Writing `reference/summary.gendata.html`
 ── Building articles ───────────────────────────────────────────────────────────
 Writing `articles/index.html`
 Reading vignettes/manMetaVAR.Rmd
@@ -2200,6 +2218,10 @@ Reading vignettes/session.Rmd
 Writing `articles/session.html`
 Reading vignettes/sim-rep.Rmd
 Writing `articles/sim-rep.html`
+✖ Missing alt-text in 'vignettes/sim-rep.Rmd'
+• fig-vignettes-sim-rep-unnamed-chunk-6-1.png
+• fig-vignettes-sim-rep-unnamed-chunk-6-2.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
 ── Building news ───────────────────────────────────────────────────────────────
 Writing `news/index.html`
 ── Building sitemap ────────────────────────────────────────────────────────────

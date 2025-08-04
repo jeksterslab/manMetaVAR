@@ -12,7 +12,7 @@ vignette: >
 #| include = FALSE
 knitr::opts_chunk$set(
   collapse = TRUE,
-  fig.path = "fig-vignettes-replication-",
+  fig.path = "fig-vignettes-sim-rep-",
   fig.cap = "",
   fig.width = 11,
   fig.height = 8,
@@ -38,7 +38,7 @@ library(manMetaVAR)
 ```{r}
 #| include = FALSE
 taskid <- 40
-seed <- 1
+seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)
 ```
@@ -50,12 +50,16 @@ set.seed(seed)
 data <- GenData(taskid = taskid)
 ```
 
+```{r}
+plot(data)
+summary(data)
+```
+
 ## MetaVAR
 
 ```{r}
 #| include = FALSE
 dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
-summary(dtvar)
 ```
 
 ```{r}
@@ -69,13 +73,12 @@ summary(dtvar, means = TRUE)
 
 ```{r}
 #| include = FALSE
-metavar <- FitMetaVAR(dtvar)
-summary(metavar)
+metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
 ```
 
 ```{r}
 #| eval = FALSE
-metavar <- FitMetaVAR(dtvar)
+metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
 ```
 
 ```{r}
@@ -87,7 +90,6 @@ summary(metavar)
 ```{r}
 #| include = FALSE
 mlvar <- FitMLVAR(data)
-summary(mlvar)
 ```
 
 ```{r}
@@ -104,7 +106,6 @@ summary(mlvar)
 ```{r}
 #| include = FALSE
 jags <- FitJAGS(data)
-summary(jags$samples)
 ```
 
 ```{r}
@@ -113,5 +114,5 @@ jags <- FitJAGS(data)
 ```
 
 ```{r}
-summary(jags$samples)
+summary(jags)
 ```

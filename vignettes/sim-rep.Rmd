@@ -28,6 +28,24 @@ set.seed(seed)
 data <- GenData(taskid = taskid)
 ```
 
+
+``` r
+plot(data)
+```
+
+<img src="fig-vignettes-sim-rep-unnamed-chunk-6-1.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-6-2.png" width="3300" />
+
+``` r
+summary(data)
+#>        id             time             y1               y2        
+#>  Min.   :  1.0   Min.   :  0.0   Min.   :-4.244   Min.   :-8.366  
+#>  1st Qu.: 63.0   1st Qu.: 62.0   1st Qu.: 2.502   1st Qu.: 1.093  
+#>  Median :125.5   Median :124.5   Median : 3.829   Median : 2.529  
+#>  Mean   :125.5   Mean   :124.5   Mean   : 3.906   Mean   : 2.618  
+#>  3rd Qu.:188.0   3rd Qu.:187.0   3rd Qu.: 5.233   3rd Qu.: 4.025  
+#>  Max.   :250.0   Max.   :249.0   Max.   :12.180   Max.   :13.001
+```
+
 ## MetaVAR
 
 
@@ -41,9 +59,9 @@ dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
 ``` r
 summary(dtvar, means = TRUE)
 #>     beta_11     beta_21     beta_12     beta_22     alpha_1     alpha_2 
-#>  0.28250835 -0.12487789 -0.06698692  0.31746890  2.85331514  2.15799227 
+#>  0.30704102 -0.06024832 -0.04756774  0.32197360  2.74854148  1.91720148 
 #>      psi_11      psi_21      psi_22    theta_11    theta_22 
-#>  1.11528170  0.54886238  1.31364748  0.34913071  0.41622729
+#>  1.10385193  0.55361783  1.27545012  0.36328920  0.41597974
 ```
 
 

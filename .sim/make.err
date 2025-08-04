@@ -1,4 +1,4 @@
-make: Warning: File 'Makefile' has modification time 14265 s in the future
+make: Warning: File 'Makefile' has modification time 14227 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -22,6 +22,9 @@ Writing 'FitJAGS.Rd'
 Writing 'FitMetaVAR.Rd'
 Writing 'FitMLVAR.Rd'
 Writing 'GenData.Rd'
+Writing 'summary.fitjags.Rd'
+Writing 'summary.gendata.Rd'
+Writing 'plot.gendata.Rd'
 Writing 'manMetaVAR-package.Rd'
 Writing 'params.Rd'
 Writing 'SimFitDTVAR.Rd'
@@ -43,8 +46,8 @@ output file: /scratch/ibp5092/manMetaVAR/vignettes/session.Rmd
 
 
 processing file: /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig
-Error in `eigen()`:
-! infinite or missing values in 'x'
+Error in `checkForRemoteErrors()`:
+! one node produced an error: infinite or missing values in 'x'
 Backtrace:
      ▆
   1. └─rProject::VignettesPrecompile("/scratch/ibp5092/manMetaVAR")
@@ -74,20 +77,22 @@ Backtrace:
  25.                   ├─base::withVisible(eval(expr, envir))
  26.                   └─base::eval(expr, envir)
  27.                     └─base::eval(expr, envir)
- 28.                       └─manMetaVAR::FitMetaVAR(dtvar)
+ 28.                       └─manMetaVAR::FitMetaVAR(dtvar, ncores = parallel::detectCores())
  29.                         └─metaVAR::MetaVARMx(...)
  30.                           └─metaVAR::Meta(...)
  31.                             └─metaVAR:::.MetaGeneric(...)
  32.                               └─metaVAR:::.CheckEstimates(...)
- 33.                                 └─base::lapply(X = v, FUN = foo)
- 34.                                   └─metaVAR (local) FUN(X[[i]], ...)
- 35.                                     └─base::eigen(x = x, symmetric = TRUE, only.values = TRUE)
+ 33.                                 └─parallel::parLapply(cl = cl, X = v, fun = foo)
+ 34.                                   ├─base::do.call(...)
+ 35.                                   └─parallel::clusterApply(...)
+ 36.                                     └─parallel:::staticClusterApply(cl, fun, length(x), argfun)
+ 37.                                       └─parallel:::checkForRemoteErrors(val)
 
-Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:70-74 [unnamed-chunk-9]
+Quitting from /scratch/ibp5092/manMetaVAR/vignettes/sim-rep.Rmd.orig:74-77 [unnamed-chunk-10]
 Execution halted
 make: *** [Makefile:75: vignettes] Error 1
 cp: cannot stat '/scratch/ibp5092/manMetaVAR/vignettes/*.png': No such file or directory
-make: Warning: File 'Makefile' has modification time 3442 s in the future
+make: Warning: File 'Makefile' has modification time 3275 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
@@ -129,15 +134,15 @@ Converting parsed Rd's to LaTeX .
 Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
   texi2dvi script/program not available, using emulation
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (70 entries accepted, 0 rejected).
-Sorting entries....done (456 comparisons).
-Generating output file Rd2.ind....done (103 lines written, 0 warnings).
+Scanning input file Rd2.idx....done (76 entries accepted, 0 rejected).
+Sorting entries....done (489 comparisons).
+Generating output file Rd2.ind....done (110 lines written, 0 warnings).
 Output written in Rd2.ind.
 Transcript written in Rd2.ilg.
 This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (70 entries accepted, 0 rejected).
-Sorting entries....done (457 comparisons).
-Generating output file Rd2.ind....done (102 lines written, 1 warning).
+Scanning input file Rd2.idx....done (76 entries accepted, 0 rejected).
+Sorting entries....done (489 comparisons).
+Generating output file Rd2.ind....done (109 lines written, 1 warning).
 Output written in Rd2.ind.
 Transcript written in Rd2.ilg.
 sh: 1: /usr/bin/xdg-open: not found
@@ -174,5 +179,5 @@ Latexmk: Using biber to make bibliography file(s).
 ── Installing package manMetaVAR into temporary library ────────────────────────
 ── Finished building pkgdown site for package manMetaVAR ───────────────────────
 make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 3193 s in the future
+make: Warning: File 'Makefile' has modification time 3014 s in the future
 Cloning into 'manMetaVAR'...
