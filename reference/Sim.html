@@ -19,7 +19,8 @@
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/session.html">manMetaVAR: Session</a></li>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/params.html">Simulation Parameters</a></li>
+    <li><a class="dropdown-item" href="../articles/session.html">manMetaVAR: Session</a></li>
     <li><a class="dropdown-item" href="../articles/sim-rep.html">Single Replication from the Simulation Study</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -45,7 +46,20 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Sim</span><span class="op">(</span><span class="va">taskid</span>, <span class="va">repid</span>, <span class="va">output_folder</span>, <span class="va">overwrite</span>, <span class="va">integrity</span>, <span class="va">seed</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Sim</span><span class="op">(</span></span>
+<span>  <span class="va">taskid</span>,</span>
+<span>  <span class="va">repid</span>,</span>
+<span>  <span class="va">output_folder</span>,</span>
+<span>  <span class="va">overwrite</span>,</span>
+<span>  <span class="va">integrity</span>,</span>
+<span>  <span class="va">seed</span>,</span>
+<span>  <span class="va">n_chains</span>,</span>
+<span>  <span class="va">n_adapt</span>,</span>
+<span>  <span class="va">n_iter</span>,</span>
+<span>  <span class="va">thin</span>,</span>
+<span>  <span class="va">ess_crit</span>,</span>
+<span>  <span class="va">max_iter</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -81,6 +95,32 @@ check for the output file integrity when <code>overwrite = FALSE</code>.</p></dd
 <dt id="arg-seed">seed<a class="anchor" aria-label="anchor" href="#arg-seed"></a></dt>
 <dd><p>Integer.
 Random seed.</p></dd>
+
+
+<dt id="arg-n-chains">n_chains<a class="anchor" aria-label="anchor" href="#arg-n-chains"></a></dt>
+<dd><p>The number of parallel chains for the model.</p></dd>
+
+
+<dt id="arg-n-adapt">n_adapt<a class="anchor" aria-label="anchor" href="#arg-n-adapt"></a></dt>
+<dd><p>The number of iterations for adaptation.</p></dd>
+
+
+<dt id="arg-n-iter">n_iter<a class="anchor" aria-label="anchor" href="#arg-n-iter"></a></dt>
+<dd><p>Number of iterations to monitor.</p></dd>
+
+
+<dt id="arg-thin">thin<a class="anchor" aria-label="anchor" href="#arg-thin"></a></dt>
+<dd><p>Thinning interval for monitors.</p></dd>
+
+
+<dt id="arg-ess-crit">ess_crit<a class="anchor" aria-label="anchor" href="#arg-ess-crit"></a></dt>
+<dd><p>Positive integer.
+Effective sample size critria.</p></dd>
+
+
+<dt id="arg-max-iter">max_iter<a class="anchor" aria-label="anchor" href="#arg-max-iter"></a></dt>
+<dd><p>Positive integer.
+Maximum number of reruns to get effective sample size.</p></dd>
 
 </dl></div>
     <div class="section level2">
