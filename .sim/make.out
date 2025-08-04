@@ -14,483 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpxPNmQk/dotfiles'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2408[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2469[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 7h 20m[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 7h 30m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11252M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11205M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpxPNmQk/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpxPNmQk/dotfiles'
-
-
-TinyTex...
-
-
-
-
-Styling...
-
-
-Styling  60  files:
- .Rprofile                                                                 ℹ 
- index.qmd                                                                 ✔ 
- .setup/cran/cran-check.R                                                  ✔ 
- .setup/cran/validate.R                                                    ✔ 
- .setup/data-process/data-process-params.R                                 ✔ 
- .setup/data-process/data-process-sysdata.R                                ✔ 
- .setup/latex/r-scripts/detritus.R                                         ✔ 
- .setup/latex/r-scripts/knitr-options-custom.R                             ✔ 
- .setup/latex/r-scripts/knitr-options-default.R                            ✔ 
- .setup/latex/r-scripts/knitr.R                                            ✔ 
- .setup/latex/r-scripts/tests-benchmark.R                                  ✔ 
- .setup/latex/r-scripts/tests-external.R                                   ✔ 
- .setup/latex/r-scripts/tests.R                                            ✔ 
- .setup/load/load.R                                                        ✔ 
- .setup/quarto/intro/intro.qmd                                             ✔ 
- .setup/quarto/r-script/prerender.R                                        ✔ 
- .setup/quarto/references/references.qmd                                   ✔ 
- .setup/quarto/session/session.qmd                                         ✔ 
- .setup/quarto/tags/tags.qmd                                               ✔ 
- .setup/r-dependencies/simTools/simTools-sim-check-dot.R                   ✔ 
- .setup/r-dependencies/simTools/simTools-sim-chmod-dot.R                   ✔ 
- .setup/r-dependencies/simTools/simTools-sim-path-dot.R                    ✔ 
- .setup/r-dependencies/simTools/simTools-sim-seed-dot.R                    ✔ 
- .setup/r-dependencies/simTools/simTools-sim-suffix-dot.R                  ✔ 
- .setup/r-miscellaneous/texTools/texTools-array-dot.R                      ✔ 
- .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R ✔ 
- .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R          ✔ 
- .setup/readme/README.Rmd                                                  ✔ 
- .setup/scripts/make-config.R                                              ✔ 
- .setup/scripts/make-install.R                                             ✔ 
- .setup/scripts/make-packages.R                                            ✔ 
- .setup/scripts/make-project.R                                             ✔ 
- .setup/scripts/project.R                                                  ✔ 
- .setup/scripts/secrets.R                                                  ✔ 
- .sim/sim-args.R                                                           ✔ 
- .sim/sim-compress.R                                                       ✔ 
- .sim/sim.R                                                                ⚠ 
- .sim/sum.R                                                                ✔ 
- R/globals.R                                                               ✔ 
- R/manMetaVAR-compress.R                                                   ✔ 
- R/manMetaVAR-fit-dt-var.R                                                 ✔ 
- R/manMetaVAR-fit-jags.R                                                   ✔ 
- R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
- R/manMetaVAR-fit-ml-var.R                                                 ✔ 
- R/manMetaVAR-gen-data.R                                                   ✔ 
- R/manMetaVAR-package.R                                                    ✔ 
- R/manMetaVAR-params.R                                                     ✔ 
- R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
- R/manMetaVAR-sim-fit-jags.R                                               ✔ 
- R/manMetaVAR-sim-fit-meta-var.R                                           ✔ 
- R/manMetaVAR-sim-fit-ml-var.R                                             ✔ 
- R/manMetaVAR-sim-fn.R                                                     ✔ 
- R/manMetaVAR-sim-gen-data.R                                               ✔ 
- R/manMetaVAR-sim-proj.R                                                   ✔ 
- R/manMetaVAR-sim.R                                                        ✔ 
- R/manMetaVAR-template.R                                                   ✔ 
- tests/testthat.R                                                          ✔ 
- tests/testthat/test-manMetaVAR.R                                          ✔ 
- vignettes/manMetaVAR.Rmd                                                  ✔ 
- vignettes/params.Rmd                                                      ✔ 
-─────────────────────────────────────────────────────────────────────────
-Status	Count	Legend 
-✔ 	58	File unchanged.
-ℹ 	1	File changed.
-✖ 	1	Styling threw an error.
-─────────────────────────────────────────────────────────────────────────
-Please review the changes carefully!
-
-
-Linting...
-
-
-R/manMetaVAR-compress.R:28:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
-      SimProj(),
-      ^~~~~~~
-R/manMetaVAR-compress.R:47:9: warning: [object_usage_linter] no visible global function definition for '.SimSuffix'
-        .SimSuffix(
-        ^~~~~~~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
-    observed = paste0("y", seq_len(model$k)),
-                                   ^~~~~
-R/manMetaVAR-fit-meta-var-mx.R:31:20: warning: [object_usage_linter] no visible binding for global variable 'model'
-    alpha_values = model$beta0,
-                   ^~~~~
-R/manMetaVAR-fit-ml-var.R:26:32: warning: [object_usage_linter] no visible binding for global variable 'model'
-    vars = paste0("y", seq_len(model$k)),
-                               ^~~~~
-R/manMetaVAR-gen-data.R:18:12: warning: [object_usage_linter] no visible binding for global variable 'params'
-  param <- params[taskid, ]
-           ^~~~~~
-R/manMetaVAR-gen-data.R:23:13: warning: [object_usage_linter] no visible binding for global variable 'model'
-    alpha = model$alpha_mu,
-            ^~~~~
-R/manMetaVAR-gen-data.R:23:13: warning: [object_usage_linter] no visible binding for global variable 'model'
-    alpha = model$alpha_mu,
-            ^~~~~
-R/manMetaVAR-gen-data.R:28:12: warning: [object_usage_linter] no visible binding for global variable 'model'
-    beta = model$beta_mu,
-           ^~~~~
-R/manMetaVAR-gen-data.R:28:12: warning: [object_usage_linter] no visible binding for global variable 'model'
-    beta = model$beta_mu,
-           ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
-    mu0 = list(model$mu0),
-               ^~~~~
-R/manMetaVAR-sim-fit-dt-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_input <- SimFN(
-              ^~~~~
-R/manMetaVAR-sim-fit-dt-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_output <- SimFN(
-               ^~~~~
-R/manMetaVAR-sim-fit-dt-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
-  run <- .SimCheck(
-         ^~~~~~~~~
-R/manMetaVAR-sim-fit-dt-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitDTVAR'
-          object = FitDTVAR(
-                   ^~~~~~~~
-R/manMetaVAR-sim-fit-dt-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-        .SimChMod(fn_output)
-        ^~~~~~~~~
-R/manMetaVAR-sim-fit-jags.R:27:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_input <- SimFN(
-              ^~~~~
-R/manMetaVAR-sim-fit-jags.R:32:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_output <- SimFN(
-               ^~~~~
-R/manMetaVAR-sim-fit-jags.R:37:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
-  run <- .SimCheck(
-         ^~~~~~~~~
-R/manMetaVAR-sim-fit-jags.R:48:20: warning: [object_usage_linter] no visible global function definition for 'FitJAGS'
-          object = FitJAGS(
-                   ^~~~~~~
-R/manMetaVAR-sim-fit-jags.R:61:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-        .SimChMod(fn_output)
-        ^~~~~~~~~
-R/manMetaVAR-sim-fit-meta-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_input <- SimFN(
-              ^~~~~
-R/manMetaVAR-sim-fit-meta-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_output <- SimFN(
-               ^~~~~
-R/manMetaVAR-sim-fit-meta-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
-  run <- .SimCheck(
-         ^~~~~~~~~
-R/manMetaVAR-sim-fit-meta-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitMetaVAR'
-          object = FitMetaVAR(
-                   ^~~~~~~~~~
-R/manMetaVAR-sim-fit-meta-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-        .SimChMod(fn_output)
-        ^~~~~~~~~
-R/manMetaVAR-sim-fit-ml-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_input <- SimFN(
-              ^~~~~
-R/manMetaVAR-sim-fit-ml-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_output <- SimFN(
-               ^~~~~
-R/manMetaVAR-sim-fit-ml-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
-  run <- .SimCheck(
-         ^~~~~~~~~
-R/manMetaVAR-sim-fit-ml-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitMLVAR'
-          object = FitMLVAR(
-                   ^~~~~~~~
-R/manMetaVAR-sim-fit-ml-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-        .SimChMod(fn_output)
-        ^~~~~~~~~
-R/manMetaVAR-sim-fn.R:15:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
-      SimProj(),
-      ^~~~~~~
-R/manMetaVAR-sim-gen-data.R:21:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
-  fn_output <- SimFN(
-               ^~~~~
-R/manMetaVAR-sim-gen-data.R:26:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
-  run <- .SimCheck(
-         ^~~~~~~~~
-R/manMetaVAR-sim-gen-data.R:37:20: warning: [object_usage_linter] no visible global function definition for 'GenData'
-          object = GenData(
-                   ^~~~~~~
-R/manMetaVAR-sim-gen-data.R:43:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-        .SimChMod(fn_output)
-        ^~~~~~~~~
-R/manMetaVAR-sim.R:28:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
-      SimProj(),
-      ^~~~~~~
-R/manMetaVAR-sim.R:42:5: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
-    .SimChMod(output_folder)
-    ^~~~~~~~~
-R/manMetaVAR-sim.R:45:13: warning: [object_usage_linter] no visible global function definition for '.SimSeed'
-    seed <- .SimSeed(
-            ^~~~~~~~
-R/manMetaVAR-sim.R:50:13: warning: [object_usage_linter] no visible global function definition for '.SimSuffix'
-  suffix <- .SimSuffix(
-            ^~~~~~~~~~
-R/manMetaVAR-sim.R:54:3: warning: [object_usage_linter] no visible global function definition for 'SimGenData'
-  SimGenData(
-  ^~~~~~~~~~
-R/manMetaVAR-sim.R:64:5: warning: [object_usage_linter] no visible global function definition for 'SimFitDTVAR'
-    SimFitDTVAR(
-    ^~~~~~~~~~~
-R/manMetaVAR-sim.R:75:5: warning: [object_usage_linter] no visible global function definition for 'SimFitMetaVAR'
-    SimFitMetaVAR(
-    ^~~~~~~~~~~~~
-R/manMetaVAR-sim.R:86:5: warning: [object_usage_linter] no visible global function definition for 'SimFitMLVAR'
-    SimFitMLVAR(
-    ^~~~~~~~~~~
-R/manMetaVAR-sim.R:97:5: warning: [object_usage_linter] no visible global function definition for 'SimFitJAGS'
-    SimFitJAGS(
-    ^~~~~~~~~~
-
-
-Building data...
-
-
-
-data_process_params
-
-data_process_sysdata
-
-
-Building dependencies...
-
-
-[1] TRUE TRUE TRUE TRUE TRUE
-
-
-Cleaning project...
-
-
-
-
-Initial build...
-
-
-══ Documenting ═════════════════════════════════════════════════════════════════
-
-══ Building ════════════════════════════════════════════════════════════════════
-Setting env vars:
-• CFLAGS    : -Wall -pedantic
-• CXXFLAGS  : -Wall -pedantic
-• CXX11FLAGS: -Wall -pedantic
-• CXX14FLAGS: -Wall -pedantic
-• CXX17FLAGS: -Wall -pedantic
-• CXX20FLAGS: -Wall -pedantic
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
-* preparing ‘manMetaVAR’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘manMetaVAR_0.9.1.tar.gz’
-Warning: invalid uid value replaced by that for user 'nobody'
-Warning: invalid gid value replaced by that for user 'nobody'
-
-══ Checking ════════════════════════════════════════════════════════════════════
-Setting env vars:
-• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
-• _R_CHECK_CRAN_INCOMING_       : FALSE
-• _R_CHECK_FORCE_SUGGESTS_      : FALSE
-• NOT_CRAN                      : true
-── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpszbo4B/file38b84e23f60e99/manMetaVAR.Rcheck’
-* using R version 4.5.1 (2025-06-13)
-* using platform: x86_64-pc-linux-gnu
-* R was compiled by
-    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
-    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
-* running under: Ubuntu 24.04.2 LTS
-* using session charset: UTF-8
-* using option ‘--no-manual’
-* checking for file ‘manMetaVAR/DESCRIPTION’ ... OK
-* this is package ‘manMetaVAR’ version ‘0.9.1’
-* package encoding: UTF-8
-* checking package namespace information ... OK
-* checking package dependencies ... OK
-* checking if this is a source package ... OK
-* checking if there is a namespace ... OK
-* checking for executable files ... OK
-* checking for hidden files and directories ... OK
-* checking for portable file names ... OK
-* checking for sufficient/correct file permissions ... OK
-* checking whether package ‘manMetaVAR’ can be installed ... OK
-* checking installed package size ... OK
-* checking package directory ... OK
-* checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
-* checking for left-over files ... OK
-* checking index information ... OK
-* checking package subdirectories ... OK
-* checking code files for non-ASCII characters ... OK
-* checking R files for syntax errors ... OK
-* checking whether the package can be loaded ... OK
-* checking whether the package can be loaded with stated dependencies ... OK
-* checking whether the package can be unloaded cleanly ... OK
-* checking whether the namespace can be loaded with stated dependencies ... OK
-* checking whether the namespace can be unloaded cleanly ... OK
-* checking loading without being on the library search path ... OK
-* checking dependencies in R code ... OK
-* checking S3 generic/method consistency ... OK
-* checking replacement functions ... OK
-* checking foreign function calls ... OK
-* checking R code for possible problems ... OK
-* checking Rd files ... OK
-* checking Rd metadata ... OK
-* checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... WARNING
-Undocumented arguments in Rd file 'FitJAGS.Rd'
-  ‘ess_crit’
-Undocumented arguments in Rd file 'Sim.Rd'
-  ‘ess_crit’
-Undocumented arguments in Rd file 'SimFitJAGS.Rd'
-  ‘ess_crit’
-Functions with \usage entries need to have the appropriate \alias
-entries, and all their arguments documented.
-The \usage entries must correspond to syntactically valid R code.
-See chapter ‘Writing R documentation files’ in the ‘Writing R
-Extensions’ manual.
-* checking Rd contents ... OK
-* checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... OK
-* checking data for non-ASCII characters ... OK
-* checking LazyData ... OK
-* checking data for ASCII and uncompressed saves ... OK
-* checking R/sysdata.rda ... OK
-* checking examples ... OK
-* checking for unstated dependencies in ‘tests’ ... OK
-* checking tests ...
-  Running ‘testthat.R’
- OK
-* DONE
-
-Status: 1 WARNING
-See
-  ‘/tmp/Rtmpszbo4B/file38b84e23f60e99/manMetaVAR.Rcheck/00check.log’
-for details.
-── R CMD check results ─────────────────────────────────── manMetaVAR 0.9.1 ────
-Duration: 44.6s
-
-❯ checking Rd \usage sections ... WARNING
-  Undocumented arguments in Rd file 'FitJAGS.Rd'
-    ‘ess_crit’
-  
-  Undocumented arguments in Rd file 'Sim.Rd'
-    ‘ess_crit’
-  
-  Undocumented arguments in Rd file 'SimFitJAGS.Rd'
-    ‘ess_crit’
-  
-  Functions with \usage entries need to have the appropriate \alias
-  entries, and all their arguments documented.
-  The \usage entries must correspond to syntactically valid R code.
-  See chapter ‘Writing R documentation files’ in the ‘Writing R
-  Extensions’ manual.
-
-0 errors ✔ | 1 warning ✖ | 0 notes ✔
-
-
-Building project...
-
-
-Project directory: /scratch/ibp5092/manMetaVAR 
-
-
-Installing packages...
-
-
-
-
-Building dotfiles...
-
-
-make[1]: Entering directory '/tmp/RtmpkVexps/dotfiles'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/bash'
-Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/ssh'
-Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/tmux'
-[?7l[1m[33m         _
-[33m     ---(_)
-[33m _/  ---  \
-[33m(_) |   |
- [33m \  --- _/
-    [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2408[0m[39D[7C[39m[0m
-[14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
-[14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
-[14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 7h 21m[0m
-[14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11247M / 257838M[0m
-
-[?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpkVexps/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpkVexps/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpkVexps/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmp22ZUYA/dotfiles'
 
 
 TinyTex...
@@ -538,7 +92,7 @@ Styling  65  files:
  .setup/scripts/secrets.R                                                  ✔ 
  .sim/sim-args.R                                                           ✔ 
  .sim/sim-compress.R                                                       ✔ 
- .sim/sim.R                                                                ⚠ 
+ .sim/sim.R                                                                ✔ 
  .sim/sum.R                                                                ✔ 
  R/globals.R                                                               ✔ 
  R/manMetaVAR-compress.R                                                   ✔ 
@@ -569,9 +123,9 @@ Styling  65  files:
  vignettes/params.Rmd                                                      ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	63	File unchanged.
+✔ 	64	File unchanged.
 ℹ 	1	File changed.
-✖ 	1	Styling threw an error.
+✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
 Please review the changes carefully!
 
@@ -799,7 +353,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpX1d4Wl/file38c34f21fcf40c/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpjrDv0m/file18e69a55f979b1/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -873,10 +427,460 @@ Extensions’ manual.
 
 Status: 1 WARNING
 See
-  ‘/tmp/RtmpX1d4Wl/file38c34f21fcf40c/manMetaVAR.Rcheck/00check.log’
+  ‘/tmp/RtmpjrDv0m/file18e69a55f979b1/manMetaVAR.Rcheck/00check.log’
 for details.
 ── R CMD check results ─────────────────────────────────── manMetaVAR 0.9.1 ────
-Duration: 43s
+Duration: 43.6s
+
+❯ checking Rd \usage sections ... WARNING
+  Undocumented arguments in Rd file 'FitJAGS.Rd'
+    ‘ess_crit’
+  
+  Undocumented arguments in Rd file 'Sim.Rd'
+    ‘ess_crit’
+  
+  Undocumented arguments in Rd file 'SimFitJAGS.Rd'
+    ‘ess_crit’
+  
+  Functions with \usage entries need to have the appropriate \alias
+  entries, and all their arguments documented.
+  The \usage entries must correspond to syntactically valid R code.
+  See chapter ‘Writing R documentation files’ in the ‘Writing R
+  Extensions’ manual.
+
+0 errors ✔ | 1 warning ✖ | 0 notes ✔
+
+
+Building project...
+
+
+Project directory: /scratch/ibp5092/manMetaVAR 
+
+
+Installing packages...
+
+
+
+
+Building dotfiles...
+
+
+make[1]: Entering directory '/tmp/RtmpRKoY0x/dotfiles'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/bash'
+Building /storage/home/ibp5092/.bashrc
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/ssh'
+Keys already exist and will not be overwritten.
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/tmux'
+[?7l[1m[33m         _
+[33m     ---(_)
+[33m _/  ---  \
+[33m(_) |   |
+ [33m \  --- _/
+    [33m ---(_)
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2469[0m[39D[7C[39m[0m
+[14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
+[14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
+[14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
+[14C[33m[1muptime[0m[6D[7C[39m80d 7h 32m[0m
+[14C[33m[1mpkgs[0m[4D[7C[39m666[0m
+[14C[33m[1mmemory[0m[6D[7C[39m11199M / 257838M[0m
+
+[?7hIn tmux press "Prefix + r" to reload configuration.
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpRKoY0x/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpRKoY0x/dotfiles'
+
+
+TinyTex...
+
+
+
+
+Styling...
+
+
+Styling  65  files:
+ .Rprofile                                                                 ℹ 
+ index.qmd                                                                 ✔ 
+ .setup/cran/cran-check.R                                                  ✔ 
+ .setup/cran/validate.R                                                    ✔ 
+ .setup/data-process/data-process-params.R                                 ✔ 
+ .setup/data-process/data-process-sysdata.R                                ✔ 
+ .setup/latex/r-scripts/detritus.R                                         ✔ 
+ .setup/latex/r-scripts/knitr-options-custom.R                             ✔ 
+ .setup/latex/r-scripts/knitr-options-default.R                            ✔ 
+ .setup/latex/r-scripts/knitr.R                                            ✔ 
+ .setup/latex/r-scripts/tests-benchmark.R                                  ✔ 
+ .setup/latex/r-scripts/tests-external.R                                   ✔ 
+ .setup/latex/r-scripts/tests.R                                            ✔ 
+ .setup/load/load.R                                                        ✔ 
+ .setup/quarto/intro/intro.qmd                                             ✔ 
+ .setup/quarto/r-script/prerender.R                                        ✔ 
+ .setup/quarto/references/references.qmd                                   ✔ 
+ .setup/quarto/session/session.qmd                                         ✔ 
+ .setup/quarto/tags/tags.qmd                                               ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-check-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-chmod-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-path-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-seed-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-suffix-dot.R                  ✔ 
+ .setup/r-miscellaneous/texTools/texTools-array-dot.R                      ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R          ✔ 
+ .setup/readme/README.Rmd                                                  ✔ 
+ .setup/scripts/make-config.R                                              ✔ 
+ .setup/scripts/make-install.R                                             ✔ 
+ .setup/scripts/make-packages.R                                            ✔ 
+ .setup/scripts/make-project.R                                             ✔ 
+ .setup/scripts/project.R                                                  ✔ 
+ .setup/scripts/secrets.R                                                  ✔ 
+ .sim/sim-args.R                                                           ✔ 
+ .sim/sim-compress.R                                                       ✔ 
+ .sim/sim.R                                                                ✔ 
+ .sim/sum.R                                                                ✔ 
+ R/globals.R                                                               ✔ 
+ R/manMetaVAR-compress.R                                                   ✔ 
+ R/manMetaVAR-fit-dt-var.R                                                 ✔ 
+ R/manMetaVAR-fit-jags.R                                                   ✔ 
+ R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
+ R/manMetaVAR-fit-ml-var.R                                                 ✔ 
+ R/manMetaVAR-gen-data.R                                                   ✔ 
+ R/manMetaVAR-package.R                                                    ✔ 
+ R/manMetaVAR-params.R                                                     ✔ 
+ R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
+ R/manMetaVAR-sim-fit-jags.R                                               ✔ 
+ R/manMetaVAR-sim-fit-meta-var.R                                           ✔ 
+ R/manMetaVAR-sim-fit-ml-var.R                                             ✔ 
+ R/manMetaVAR-sim-fn.R                                                     ✔ 
+ R/manMetaVAR-sim-gen-data.R                                               ✔ 
+ R/manMetaVAR-sim-proj.R                                                   ✔ 
+ R/manMetaVAR-sim.R                                                        ✔ 
+ R/manMetaVAR-template.R                                                   ✔ 
+ R/simTools-sim-check-dot.R                                                ✔ 
+ R/simTools-sim-chmod-dot.R                                                ✔ 
+ R/simTools-sim-path-dot.R                                                 ✔ 
+ R/simTools-sim-seed-dot.R                                                 ✔ 
+ R/simTools-sim-suffix-dot.R                                               ✔ 
+ tests/testthat.R                                                          ✔ 
+ tests/testthat/test-manMetaVAR.R                                          ✔ 
+ vignettes/manMetaVAR.Rmd                                                  ✔ 
+ vignettes/params.Rmd                                                      ✔ 
+─────────────────────────────────────────────────────────────────────────
+Status	Count	Legend 
+✔ 	64	File unchanged.
+ℹ 	1	File changed.
+✖ 	0	Styling threw an error.
+─────────────────────────────────────────────────────────────────────────
+Please review the changes carefully!
+
+
+Linting...
+
+
+R/manMetaVAR-compress.R:28:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
+      SimProj(),
+      ^~~~~~~
+R/manMetaVAR-compress.R:47:9: warning: [object_usage_linter] no visible global function definition for '.SimSuffix'
+        .SimSuffix(
+        ^~~~~~~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+    observed = paste0("y", seq_len(model$k)),
+                                   ^~~~~
+R/manMetaVAR-fit-meta-var-mx.R:31:20: warning: [object_usage_linter] no visible binding for global variable 'model'
+    alpha_values = model$beta0,
+                   ^~~~~
+R/manMetaVAR-fit-ml-var.R:26:32: warning: [object_usage_linter] no visible binding for global variable 'model'
+    vars = paste0("y", seq_len(model$k)),
+                               ^~~~~
+R/manMetaVAR-gen-data.R:18:12: warning: [object_usage_linter] no visible binding for global variable 'params'
+  param <- params[taskid, ]
+           ^~~~~~
+R/manMetaVAR-gen-data.R:23:13: warning: [object_usage_linter] no visible binding for global variable 'model'
+    alpha = model$alpha_mu,
+            ^~~~~
+R/manMetaVAR-gen-data.R:23:13: warning: [object_usage_linter] no visible binding for global variable 'model'
+    alpha = model$alpha_mu,
+            ^~~~~
+R/manMetaVAR-gen-data.R:28:12: warning: [object_usage_linter] no visible binding for global variable 'model'
+    beta = model$beta_mu,
+           ^~~~~
+R/manMetaVAR-gen-data.R:28:12: warning: [object_usage_linter] no visible binding for global variable 'model'
+    beta = model$beta_mu,
+           ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-gen-data.R:34:16: warning: [object_usage_linter] no visible binding for global variable 'model'
+    mu0 = list(model$mu0),
+               ^~~~~
+R/manMetaVAR-sim-fit-dt-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_input <- SimFN(
+              ^~~~~
+R/manMetaVAR-sim-fit-dt-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_output <- SimFN(
+               ^~~~~
+R/manMetaVAR-sim-fit-dt-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
+  run <- .SimCheck(
+         ^~~~~~~~~
+R/manMetaVAR-sim-fit-dt-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitDTVAR'
+          object = FitDTVAR(
+                   ^~~~~~~~
+R/manMetaVAR-sim-fit-dt-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+        .SimChMod(fn_output)
+        ^~~~~~~~~
+R/manMetaVAR-sim-fit-jags.R:27:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_input <- SimFN(
+              ^~~~~
+R/manMetaVAR-sim-fit-jags.R:32:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_output <- SimFN(
+               ^~~~~
+R/manMetaVAR-sim-fit-jags.R:37:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
+  run <- .SimCheck(
+         ^~~~~~~~~
+R/manMetaVAR-sim-fit-jags.R:48:20: warning: [object_usage_linter] no visible global function definition for 'FitJAGS'
+          object = FitJAGS(
+                   ^~~~~~~
+R/manMetaVAR-sim-fit-jags.R:61:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+        .SimChMod(fn_output)
+        ^~~~~~~~~
+R/manMetaVAR-sim-fit-meta-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_input <- SimFN(
+              ^~~~~
+R/manMetaVAR-sim-fit-meta-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_output <- SimFN(
+               ^~~~~
+R/manMetaVAR-sim-fit-meta-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
+  run <- .SimCheck(
+         ^~~~~~~~~
+R/manMetaVAR-sim-fit-meta-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitMetaVAR'
+          object = FitMetaVAR(
+                   ^~~~~~~~~~
+R/manMetaVAR-sim-fit-meta-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+        .SimChMod(fn_output)
+        ^~~~~~~~~
+R/manMetaVAR-sim-fit-ml-var.R:21:15: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_input <- SimFN(
+              ^~~~~
+R/manMetaVAR-sim-fit-ml-var.R:26:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_output <- SimFN(
+               ^~~~~
+R/manMetaVAR-sim-fit-ml-var.R:31:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
+  run <- .SimCheck(
+         ^~~~~~~~~
+R/manMetaVAR-sim-fit-ml-var.R:42:20: warning: [object_usage_linter] no visible global function definition for 'FitMLVAR'
+          object = FitMLVAR(
+                   ^~~~~~~~
+R/manMetaVAR-sim-fit-ml-var.R:48:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+        .SimChMod(fn_output)
+        ^~~~~~~~~
+R/manMetaVAR-sim-fn.R:15:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
+      SimProj(),
+      ^~~~~~~
+R/manMetaVAR-sim-gen-data.R:21:16: warning: [object_usage_linter] no visible global function definition for 'SimFN'
+  fn_output <- SimFN(
+               ^~~~~
+R/manMetaVAR-sim-gen-data.R:26:10: warning: [object_usage_linter] no visible global function definition for '.SimCheck'
+  run <- .SimCheck(
+         ^~~~~~~~~
+R/manMetaVAR-sim-gen-data.R:37:20: warning: [object_usage_linter] no visible global function definition for 'GenData'
+          object = GenData(
+                   ^~~~~~~
+R/manMetaVAR-sim-gen-data.R:43:9: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+        .SimChMod(fn_output)
+        ^~~~~~~~~
+R/manMetaVAR-sim.R:28:7: warning: [object_usage_linter] no visible global function definition for 'SimProj'
+      SimProj(),
+      ^~~~~~~
+R/manMetaVAR-sim.R:42:5: warning: [object_usage_linter] no visible global function definition for '.SimChMod'
+    .SimChMod(output_folder)
+    ^~~~~~~~~
+R/manMetaVAR-sim.R:45:13: warning: [object_usage_linter] no visible global function definition for '.SimSeed'
+    seed <- .SimSeed(
+            ^~~~~~~~
+R/manMetaVAR-sim.R:50:13: warning: [object_usage_linter] no visible global function definition for '.SimSuffix'
+  suffix <- .SimSuffix(
+            ^~~~~~~~~~
+R/manMetaVAR-sim.R:54:3: warning: [object_usage_linter] no visible global function definition for 'SimGenData'
+  SimGenData(
+  ^~~~~~~~~~
+R/manMetaVAR-sim.R:64:5: warning: [object_usage_linter] no visible global function definition for 'SimFitDTVAR'
+    SimFitDTVAR(
+    ^~~~~~~~~~~
+R/manMetaVAR-sim.R:75:5: warning: [object_usage_linter] no visible global function definition for 'SimFitMetaVAR'
+    SimFitMetaVAR(
+    ^~~~~~~~~~~~~
+R/manMetaVAR-sim.R:86:5: warning: [object_usage_linter] no visible global function definition for 'SimFitMLVAR'
+    SimFitMLVAR(
+    ^~~~~~~~~~~
+R/manMetaVAR-sim.R:97:5: warning: [object_usage_linter] no visible global function definition for 'SimFitJAGS'
+    SimFitJAGS(
+    ^~~~~~~~~~
+
+
+Building data...
+
+
+
+data_process_params
+
+data_process_sysdata
+
+
+Building dependencies...
+
+
+[1] FALSE FALSE FALSE FALSE FALSE
+
+
+Cleaning project...
+
+
+
+
+Initial build...
+
+
+══ Documenting ═════════════════════════════════════════════════════════════════
+
+══ Building ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• CFLAGS    : -Wall -pedantic
+• CXXFLAGS  : -Wall -pedantic
+• CXX11FLAGS: -Wall -pedantic
+• CXX14FLAGS: -Wall -pedantic
+• CXX17FLAGS: -Wall -pedantic
+• CXX20FLAGS: -Wall -pedantic
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+══ Checking ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+• _R_CHECK_CRAN_INCOMING_       : FALSE
+• _R_CHECK_FORCE_SUGGESTS_      : FALSE
+• NOT_CRAN                      : true
+── R CMD check ─────────────────────────────────────────────────────────────────
+* using log directory ‘/tmp/Rtmpiwi5y4/file18f18811f6e65b/manMetaVAR.Rcheck’
+* using R version 4.5.1 (2025-06-13)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+* running under: Ubuntu 24.04.2 LTS
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘manMetaVAR/DESCRIPTION’ ... OK
+* this is package ‘manMetaVAR’ version ‘0.9.1’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘manMetaVAR’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in Rd file 'FitJAGS.Rd'
+  ‘ess_crit’
+Undocumented arguments in Rd file 'Sim.Rd'
+  ‘ess_crit’
+Undocumented arguments in Rd file 'SimFitJAGS.Rd'
+  ‘ess_crit’
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ...
+  Running ‘testthat.R’
+ OK
+* DONE
+Status: 1 WARNING
+See
+  ‘/tmp/Rtmpiwi5y4/file18f18811f6e65b/manMetaVAR.Rcheck/00check.log’
+for details.
+── R CMD check results ─────────────────────────────────── manMetaVAR 0.9.1 ────
+Duration: 42.7s
 
 ❯ checking Rd \usage sections ... WARNING
   Undocumented arguments in Rd file 'FitJAGS.Rd'

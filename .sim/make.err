@@ -1,17 +1,10 @@
-make: Warning: File 'Makefile' has modification time 14231 s in the future
+make: Warning: File 'Makefile' has modification time 13600 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
-Warning message:
-When processing .sim/sim.R: <text>:38:7: unexpected symbol
-37:       ess_crit = ess_crit
-38:       max_iter
-          ^ 
 ✔ Setting active project to "/scratch/ibp5092/manMetaVAR".
 ✔ Saving "model" to "R/sysdata.rda".
 ℹ Updating manMetaVAR documentation
-First time using roxygen2. Upgrading automatically...
-Setting `RoxygenNote` to "7.3.2"
 ℹ Loading manMetaVAR
 Loading required package: OpenMx
 To take full advantage of multiple cores, use:
@@ -21,23 +14,6 @@ Loading required package: fitDTVARMx
 Loading required package: metaVAR
 ✖ manMetaVAR-template.R:9: @paran is not a known tag.
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
-Writing 'NAMESPACE'
-Writing 'Compress.Rd'
-Writing 'FitDTVAR.Rd'
-Writing 'FitJAGS.Rd'
-Writing 'FitMetaVAR.Rd'
-Writing 'FitMLVAR.Rd'
-Writing 'GenData.Rd'
-Writing 'manMetaVAR-package.Rd'
-Writing 'params.Rd'
-Writing 'SimFitDTVAR.Rd'
-Writing 'SimFitJAGS.Rd'
-Writing 'SimFitMetaVAR.Rd'
-Writing 'SimFitMLVAR.Rd'
-Writing 'SimFN.Rd'
-Writing 'SimGenData.Rd'
-Writing 'SimProj.Rd'
-Writing 'Sim.Rd'
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
 ✖ manMetaVAR-template.R:9: @paran is not a known tag.
@@ -46,15 +22,10 @@ Error: R CMD check found WARNINGs
 Execution halted
 make: *** [Makefile:72: vignettes] Error 1
 cp: cannot stat '/scratch/ibp5092/manMetaVAR/vignettes/*.png': No such file or directory
-make: Warning: File 'Makefile' has modification time 14131 s in the future
+make: Warning: File 'Makefile' has modification time 13515 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manMetaVAR/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manMetaVAR/src’: No such file or directory
-Warning message:
-When processing .sim/sim.R: <text>:38:7: unexpected symbol
-37:       ess_crit = ess_crit
-38:       max_iter
-          ^ 
 ℹ Updating manMetaVAR documentation
 ℹ Loading manMetaVAR
 Loading required package: OpenMx
@@ -72,5 +43,5 @@ Loading required package: metaVAR
 Error: R CMD check found WARNINGs
 Execution halted
 make: *** [Makefile:72: vignettes] Error 1
-make: Warning: File 'Makefile' has modification time 14053 s in the future
+make: Warning: File 'Makefile' has modification time 13437 s in the future
 Cloning into 'manMetaVAR'...
