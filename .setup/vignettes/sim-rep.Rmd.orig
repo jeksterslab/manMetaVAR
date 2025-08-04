@@ -41,11 +41,16 @@ taskid <- 40
 seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)
+dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
+metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
+mlvar <- FitMLVAR(data)
+jags <- FitJAGS(data)
 ```
 
 ```{r}
 #| eval = FALSE
-seed <- 1
+taskid <- 40
+seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)
 ```
@@ -58,22 +63,12 @@ summary(data)
 ## MetaVAR
 
 ```{r}
-#| include = FALSE
-dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
-```
-
-```{r}
 #| eval = FALSE
 dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
 ```
 
 ```{r}
 summary(dtvar, means = TRUE)
-```
-
-```{r}
-#| include = FALSE
-metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
 ```
 
 ```{r}
@@ -88,11 +83,6 @@ summary(metavar)
 ## MLVAR
 
 ```{r}
-#| include = FALSE
-mlvar <- FitMLVAR(data)
-```
-
-```{r}
 #| eval = FALSE
 mlvar <- FitMLVAR(data)
 ```
@@ -102,11 +92,6 @@ summary(mlvar)
 ```
 
 ## JAGS
-
-```{r}
-#| include = FALSE
-jags <- FitJAGS(data)
-```
 
 ```{r}
 #| eval = FALSE
