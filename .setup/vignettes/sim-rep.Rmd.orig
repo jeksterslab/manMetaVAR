@@ -29,6 +29,7 @@ root <- rprojroot::is_rstudio_project
 ```
 
 ```{r}
+#| message = FALSE
 library(manMetaVAR)
 ```
 
@@ -36,33 +37,34 @@ library(manMetaVAR)
 
 ```{r}
 #| include = FALSE
+taskid <- 40
 seed <- 1
 set.seed(seed)
-data <- GenData(taskid = 40)
+data <- GenData(taskid = taskid)
 ```
 
 ```{r}
 #| eval = FALSE
 seed <- 1
 set.seed(seed)
-data <- GenData(taskid = 40)
+data <- GenData(taskid = taskid)
 ```
 
 ## MetaVAR
 
 ```{r}
 #| include = FALSE
-dtvar <- FitDTVAR(data)
+dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
 summary(dtvar)
 ```
 
 ```{r}
 #| eval = FALSE
-dtvar <- FitDTVAR(data)
+dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
 ```
 
 ```{r}
-summary(dtvar)
+summary(dtvar, means = TRUE)
 ```
 
 ```{r}

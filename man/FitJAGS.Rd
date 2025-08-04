@@ -6,9 +6,11 @@
 \usage{
 FitJAGS(
   data,
-  n.chains = 4,
-  n.adapt = 2000,
-  n.iter = 10000,
+  n_chains = 8,
+  n_adapt = 10000,
+  n_iter = 1e+05,
+  thin = 20,
+  ess_crit = 1000,
   max_iter = 10000,
   seed = NULL
 )
@@ -17,16 +19,16 @@ FitJAGS(
 \item{data}{R object.
 Output of the \code{\link[=GenData]{GenData()}} function.}
 
-\item{n.chains}{the number of parallel chains for the model}
+\item{n_chains}{The number of parallel chains for the model.}
 
-\item{n.adapt}{the number of iterations for adaptation. See 
-    \code{\link[rjags]{adapt}} for details. If \code{n.adapt = 0} then no 
-    adaptation takes place.}
+\item{n_adapt}{The number of iterations for adaptation.}
 
-\item{n.iter}{number of iterations to monitor}
+\item{n_iter}{Number of iterations to monitor.}
+
+\item{thin}{Thinning interval for monitors.}
 
 \item{max_iter}{Positive integer.
-Maximum number of reruns.}
+Maximum number of reruns to get effective sample size.}
 
 \item{seed}{Integer.
 Random seed.}

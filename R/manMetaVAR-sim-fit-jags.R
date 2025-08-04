@@ -15,7 +15,13 @@ SimFitJAGS <- function(taskid,
                        seed,
                        suffix,
                        overwrite,
-                       integrity) {
+                       integrity,
+                       n_chains,
+                       n_adapt,
+                       n_iter,
+                       thin,
+                       ess_crit,
+                       max_iter) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sim` function.
   fn_input <- SimFN(
@@ -40,7 +46,14 @@ SimFitJAGS <- function(taskid,
         con <- file(fn_output)
         saveRDS(
           object = FitJAGS(
-            data = readRDS(fn_input)
+            data = readRDS(fn_input),
+            n_chains = n_chains,
+            n_adapt = n_adapt,
+            n_iter = n_iter,
+            thin = thin,
+            ess_crit = ess_crit,
+            max_iter = max_iter,
+            seed = seed
           ),
           file = con
         )

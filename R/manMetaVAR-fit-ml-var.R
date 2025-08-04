@@ -16,7 +16,11 @@
 #' @import OpenMx
 #' @import fitDTVARMx
 #' @export
-FitMLVAR <- function(data) {
+FitMLVAR <- function(data,
+                     ncores = NULL) {
+  if (is.null(ncores)) {
+    ncores <- 1
+  }
   mlVAR::mlVAR(
     data = data$data,
     vars = paste0("y", seq_len(model$k)),
@@ -24,6 +28,6 @@ FitMLVAR <- function(data) {
     lags = 1,
     estimator = "lmer",
     verbose = FALSE,
-    nCores = 1
+    nCores = ncores
   )
 }

@@ -12,7 +12,13 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                seed) {
+                seed,
+                n_chains,
+                n_adapt,
+                n_iter,
+                thin,
+                ess_crit,
+                max_iter) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -95,7 +101,13 @@ Sim <- function(taskid,
       seed = seed,
       suffix = suffix,
       overwrite = overwrite,
-      integrity = integrity
+      integrity = integrity,
+      n_chains = n_chains,
+      n_adapt = n_adapt,
+      n_iter = n_iter,
+      thin = thin,
+      ess_crit = ess_crit,
+      max_iter = max_iter
     )
   )
 }

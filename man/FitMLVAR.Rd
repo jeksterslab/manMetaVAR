@@ -4,11 +4,14 @@
 \alias{FitMLVAR}
 \title{Fit the Model using the mlVAR Package}
 \usage{
-FitMLVAR(data)
+FitMLVAR(data, ncores = NULL)
 }
 \arguments{
 \item{data}{R object.
 Output of the \code{\link[=GenData]{GenData()}} function.}
+
+\item{ncores}{Positive integer.
+Number of cores to use.}
 }
 \description{
 The function fits the model using the \link{mlVAR} package.

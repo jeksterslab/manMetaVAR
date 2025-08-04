@@ -3,8 +3,6 @@
 #' The function fits the model using JAGS.
 #'
 #' @inheritParams Template
-#' @inheritParams rjags::jags.model
-#' @inheritParams rjags::coda.samples
 #'
 #' @examples
 #' \dontrun{
@@ -20,16 +18,18 @@
 #' @importFrom stats update
 #' @export
 FitJAGS <- function(data,
-                    n.chains = 4,
-                    n.adapt = 2000,
-                    n.iter = 10000,
+                    n_chains = 8,
+                    n_adapt = 10000,
+                    n_iter = 100000,
+                    thin = 20,
+                    ess_crit = 1000,
                     max_iter = 10000,
                     seed = NULL) {
   args <- list(
     data = data,
-    n.chains = n.chains,
-    n.adapt = n.adapt,
-    n.iter = n.iter,
+    n_chains = n_chains,
+    n_adapt = n_adapt,
+    n_iter = n_iter,
     max_iter = max_iter,
     seed = seed
   )
@@ -38,9 +38,9 @@ FitJAGS <- function(data,
   ids <- unique(df$id)
   times <- unique(df$time)
   N <- length(ids)
-  T <- length(times)
+  M <- length(times)
   K <- 2
-  y_array <- array(NA, dim = c(N, T, K))
+  y_array <- array(NA, dim = c(N, M, K))
   for (i in seq_len(N)) {
     rows <- which(df$id == ids[i])
     y_array[i, , 1] <- df$y1[rows]
@@ -48,7 +48,7 @@ FitJAGS <- function(data,
   }
   data_for_jags <- list(
     N = N,
-    T = T,
+    M = M,
     K = K,
     y = y_array,
     mu0 = model$mu0,
@@ -63,24 +63,17 @@ FitJAGS <- function(data,
     "rjags_model.bug",
     package = "manMetaVAR"
   )
-  if (interactive()) {
-    progress.bar <- "text"
-    quiet <- FALSE
-  } else {
-    progress.bar <- "none"
-    quiet <- TRUE
-  }
   if (!is.null(seed)) {
     set.seed(seed)
   }
   inits <- lapply(
-    X = seq_len(n.chains),
+    X = seq_len(n_chains),
     FUN = function(i) {
       list(
-        alpha_mu = model$alpha_mu,
         beta_mu = model$beta_mu,
-        alpha_sigma = model$alpha_sigma,
+        alpha_mu = model$alpha_mu,
         beta_sigma = model$beta_sigma,
+        alpha_sigma = model$alpha_sigma,
         psi = model$psi,
         theta = model$theta,
         .RNG.name = "base::Mersenne-Twister",
@@ -94,34 +87,33 @@ FitJAGS <- function(data,
   model <- rjags::jags.model(
     file = model_file,
     data = data_for_jags,
-    n.chains = n.chains,
-    n.adapt = n.adapt,
-    quiet = quiet
+    n.chains = n_chains,
+    n.adapt = n_adapt,
+    quiet = TRUE
   )
-  # repeat until ESS >= 200 for all parameters
+  # repeat until ESS >= ess_crit for all parameters
   ess <- 0
   samples <- NULL
   iter <- 0
   while (
-    any(ess < 200) && iter < max_iter
+    any(ess < ess_crit) && iter < max_iter
   ) {
     update(
       object = model,
-      n.iter = n.iter,
-      progress.bar = progress.bar
+      n.iter = n_iter
     )
     samples <- rjags::coda.samples(
       model = model,
       variable.names = c(
-        "alpha_mu",
         "beta_mu",
-        "alpha_sigma",
+        "alpha_mu",
         "beta_sigma",
+        "alpha_sigma",
         "psi",
         "theta"
       ),
-      n.iter = n.iter,
-      progress.bar = progress.bar
+      n.iter = n_iter,
+      thin = thin
     )
     ess <- coda::effectiveSize(
       x = samples
