@@ -6,7 +6,7 @@ articles:
   params: params.html
   session: session.html
   sim-rep: sim-rep.html
-last_built: 2025-08-04T06:58Z
+last_built: 2025-08-04T22:43Z
 urls:
   reference: https://github.com/jeksterslab/manMetaVAR/reference
   article: https://github.com/jeksterslab/manMetaVAR/articles

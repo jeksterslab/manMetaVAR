@@ -78,34 +78,6 @@ Agaloos Pesigan</h4>
 <div class="section level2">
 <h2 id="data-generation">Data Generation<a class="anchor" aria-label="anchor" href="#data-generation"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">seed</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/GenData.html">GenData</a></span><span class="op">(</span>taskid <span class="op">=</span> <span class="va">taskid</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-sim-rep-unnamed-chunk-6-1.png" width="3300"><img src="fig-vignettes-sim-rep-unnamed-chunk-6-2.png" width="3300"></p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        id             time             y1               y2        </span></span>
-<span><span class="co">#&gt;  Min.   :  1.0   Min.   :  0.0   Min.   :-4.244   Min.   :-8.366  </span></span>
-<span><span class="co">#&gt;  1st Qu.: 63.0   1st Qu.: 62.0   1st Qu.: 2.502   1st Qu.: 1.093  </span></span>
-<span><span class="co">#&gt;  Median :125.5   Median :124.5   Median : 3.829   Median : 2.529  </span></span>
-<span><span class="co">#&gt;  Mean   :125.5   Mean   :124.5   Mean   : 3.906   Mean   : 2.618  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:188.0   3rd Qu.:187.0   3rd Qu.: 5.233   3rd Qu.: 4.025  </span></span>
-<span><span class="co">#&gt;  Max.   :250.0   Max.   :249.0   Max.   :12.180   Max.   :13.001</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="metavar">MetaVAR<a class="anchor" aria-label="anchor" href="#metavar"></a>
-</h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dtvar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitDTVAR.html">FitDTVAR</a></span><span class="op">(</span><span class="va">data</span>, ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">dtvar</span>, means <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     beta_11     beta_21     beta_12     beta_22     alpha_1     alpha_2 </span></span>
-<span><span class="co">#&gt;  0.30704102 -0.06024832 -0.04756774  0.32197360  2.74854148  1.91720148 </span></span>
-<span><span class="co">#&gt;      psi_11      psi_21      psi_22    theta_11    theta_22 </span></span>
-<span><span class="co">#&gt;  1.10385193  0.55361783  1.27545012  0.36328920  0.41597974</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
