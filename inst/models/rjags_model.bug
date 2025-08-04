@@ -6,7 +6,7 @@ model {
     # tau_sigma0 is the precision matrix (inverse covariance) of the initial latent state
     eta[i, 1, 1:K] ~ dmnorm(mu0[ ], tau_sigma0[ , ])
 
-    for (t in 2:T) {
+    for (t in 2:M) {
       # Dynamic model: latent state evolution
       # eta[i, t, ] = alpha[i, ] + beta[i, , ] %*% eta[i, t - 1, ] + noise
       # where noise ~ N(0, psi)

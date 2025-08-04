@@ -4,7 +4,20 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(taskid, repid, output_folder, overwrite, integrity, seed)
+Sim(
+  taskid,
+  repid,
+  output_folder,
+  overwrite,
+  integrity,
+  seed,
+  n_chains,
+  n_adapt,
+  n_iter,
+  thin,
+  ess_crit,
+  max_iter
+)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -25,6 +38,20 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 
 \item{seed}{Integer.
 Random seed.}
+
+\item{n_chains}{The number of parallel chains for the model.}
+
+\item{n_adapt}{The number of iterations for adaptation.}
+
+\item{n_iter}{Number of iterations to monitor.}
+
+\item{thin}{Thinning interval for monitors.}
+
+\item{ess_crit}{Positive integer.
+Effective sample size critria.}
+
+\item{max_iter}{Positive integer.
+Maximum number of reruns to get effective sample size.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

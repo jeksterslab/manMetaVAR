@@ -2,8 +2,14 @@
 #'   Output of the [GenData()] function.
 #' @param fit R object.
 #'   Output of the [FitDTVARMx()] function.
+#' @param n_chains The number of parallel chains for the model.
+#' @param n_adapt The number of iterations for adaptation.
+#' @param n_iter Number of iterations to monitor.
+#' @param thin Thinning interval for monitors.
+#' @param ess_crit Positive integer.
+#'   Effective sample size critria.
 #' @param max_iter Positive integer.
-#'   Maximum number of reruns.
+#'   Maximum number of reruns to get effective sample size.
 #' @param output_type Character string.
 #'   Output type.
 #'   Valid values include
