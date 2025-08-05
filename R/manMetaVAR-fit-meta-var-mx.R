@@ -24,7 +24,8 @@
 #' @export
 FitMetaVAR <- function(fit,
                        ncores = NULL) {
-  metaVAR::MetaVARMx(
+  start_time <- Sys.time()
+  output <- metaVAR::MetaVARMx(
     object = fit,
     x = NULL,
     random = TRUE,
@@ -35,5 +36,14 @@ FitMetaVAR <- function(fit,
     error = FALSE,
     try = 10000,
     ncores = ncores
+  )
+  end_time <- Sys.time()
+  structure(
+    list(
+      output = output,
+      start_time = start_time,
+      end_time = end_time
+    ),
+    class = "manmetavar_fitmetavar"
   )
 }

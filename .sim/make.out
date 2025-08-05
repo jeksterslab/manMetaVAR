@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5011[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5047[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m80d 23h 17m[0m
+[14C[33m[1muptime[0m[6D[7C[39m81d 9h 44m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10475M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m9907M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmp6pgUCQ/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmp4zFLxD/dotfiles'
 
 
 TinyTex...
@@ -135,31 +135,31 @@ R/manMetaVAR-compress.R:28:7: warning: [object_usage_linter] no visible global f
 R/manMetaVAR-compress.R:47:9: warning: [object_usage_linter] no visible global function definition for '.SimSuffix'
         .SimSuffix(
         ^~~~~~~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-dt-var.R:26:36: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-dt-var.R:27:36: warning: [object_usage_linter] no visible binding for global variable 'model'
     observed = paste0("y", seq_len(model$k)),
                                    ^~~~~
-R/manMetaVAR-fit-meta-var-mx.R:31:20: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-meta-var-mx.R:32:20: warning: [object_usage_linter] no visible binding for global variable 'model'
     alpha_values = model$beta0,
                    ^~~~~
-R/manMetaVAR-fit-ml-var.R:26:32: warning: [object_usage_linter] no visible binding for global variable 'model'
+R/manMetaVAR-fit-ml-var.R:27:32: warning: [object_usage_linter] no visible binding for global variable 'model'
     vars = paste0("y", seq_len(model$k)),
                                ^~~~~
 R/manMetaVAR-gen-data.R:18:12: warning: [object_usage_linter] no visible binding for global variable 'params'
@@ -349,7 +349,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpYDpiOV/file2b56c34c36afd1/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmp1BldwF/file2b7f6b2331a160/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -423,7 +423,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpYDpiOV/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmp1BldwF/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -471,14 +471,18 @@ Precompiling vignettes...
 8/10 [unnamed-chunk-4]
 9/10                  
 10/10 [unnamed-chunk-5]
-1/28                   
-2/28 [unnamed-chunk-1] 
-3/28                   
-4/28 [unnamed-chunk-2] 
-5/28                   
-6/28 [unnamed-chunk-3] 
-7/28                   
-8/28 [unnamed-chunk-4] 
+1/36                   
+2/36 [unnamed-chunk-1] 
+3/36                   
+4/36 [unnamed-chunk-2] 
+5/36                   
+6/36 [unnamed-chunk-3] 
+7/36                   
+8/36 [unnamed-chunk-4] 
+9/36                   
+10/36 [unnamed-chunk-5] 
+11/36                   
+12/36 [unnamed-chunk-6] 
 
 
 Building project...
@@ -495,37 +499,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpKjEfvh/dotfiles'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5011[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5047[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m81d 6h 9m[0m
+[14C[33m[1muptime[0m[6D[7C[39m81d 9h 47m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10469M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m9901M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmpm0bv4F/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpKjEfvh/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpKjEfvh/dotfiles'
 
 
 TinyTex...
@@ -669,7 +673,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpC5HCDP/file2c317b4a7e4b0b/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpRZRVQj/file2b8bdd298eb22b/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -729,7 +733,9 @@ Setting env vars:
   Running ‘testthat.R’
  OK
 * DONE
+
 Status: OK
+
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
 * preparing ‘manMetaVAR’:
@@ -741,7 +747,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpC5HCDP/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpRZRVQj/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -811,7 +817,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpgllHrP/file2c3b9f66bbaa68/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmp1ogkPX/file2b95427e325bac/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -873,6 +879,7 @@ Setting env vars:
 * DONE
 
 Status: OK
+
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
 * preparing ‘manMetaVAR’:
@@ -884,7 +891,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpgllHrP/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmp1ogkPX/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -981,9 +988,10 @@ Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
 
 [12]
 [13]
+[14]
 No file Rd2.ind.
 
-[14] (./Rd2.aux)
+[15] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -1006,7 +1014,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 96649 bytes).
+Output written on Rd2.pdf (15 pages, 98556 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1055,12 +1063,13 @@ Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [13]
-[14] (./Rd2.ind
-[15]
-
+[14]
+[15] (./Rd2.ind
 [16]
 
-[17]) (./Rd2.aux)
+[17]
+
+[18]) (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -1083,7 +1092,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (17 pages, 113688 bytes).
+Output written on Rd2.pdf (18 pages, 115191 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1132,12 +1141,13 @@ Overfull \hbox (5.19925pt too wide) in paragraph at lines 746--749
 []\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
 
 [13]
-[14] (./Rd2.ind
-[15]
-
+[14]
+[15] (./Rd2.ind
 [16]
 
-[17]) (./Rd2.aux) )
+[17]
+
+[18]) (./Rd2.aux) )
 (see the transcript file for additional information)
 pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMIVary\(\)} has been referenced but does not exist, replaced by a fixed one
 
@@ -1154,7 +1164,7 @@ pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist,
 pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (17 pages, 114128 bytes).
+Output written on Rd2.pdf (18 pages, 115548 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘manMetaVAR.pdf’ ...
 Done
@@ -1718,7 +1728,7 @@ Package biblatex Warning: Please (re)run Biber on the file:
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404043 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (9 pages, 404046 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -1752,12 +1762,12 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -1845,7 +1855,7 @@ Package biblatex Warning: Please rerun LaTeX.
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408762 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408760 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -1960,7 +1970,7 @@ Underfull \vbox (badness 10000) detected at line 607
 [9]
 [10] (.setup/latex/pdf/manMetaVAR-manuscript.aux) )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408762 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408760 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -2044,7 +2054,7 @@ Underfull \vbox (badness 10000) detected at line 607
 [9]
 [10] (.setup/latex/pdf/manMetaVAR-manuscript.aux) )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408762 bytes).
+Output written on .setup/latex/pdf/manMetaVAR-manuscript.pdf (10 pages, 408760 bytes).
 Transcript written on .setup/latex/pdf/manMetaVAR-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manMetaVAR-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manMetaVAR-manuscript.fls'
@@ -2188,12 +2198,18 @@ Reading man/manMetaVAR-package.Rd
 Writing `reference/manMetaVAR-package.html`
 Reading man/params.Rd
 Writing `reference/params.html`
-Reading man/plot.gendata.Rd
-Writing `reference/plot.gendata.html`
-Reading man/summary.fitjags.Rd
-Writing `reference/summary.fitjags.html`
-Reading man/summary.gendata.Rd
-Writing `reference/summary.gendata.html`
+Reading man/plot.manmetavar_data.Rd
+Writing `reference/plot.manmetavar_data.html`
+Reading man/summary.manmetavar_data.Rd
+Writing `reference/summary.manmetavar_data.html`
+Reading man/summary.manmetavar_fitdtvar.Rd
+Writing `reference/summary.manmetavar_fitdtvar.html`
+Reading man/summary.manmetavar_fitjags.Rd
+Writing `reference/summary.manmetavar_fitjags.html`
+Reading man/summary.manmetavar_fitmetavar.Rd
+Writing `reference/summary.manmetavar_fitmetavar.html`
+Reading man/summary.manmetavar_fitmlvar.Rd
+Writing `reference/summary.manmetavar_fitmlvar.html`
 ── Building articles ───────────────────────────────────────────────────────────
 Writing `articles/index.html`
 Reading vignettes/manMetaVAR.Rmd

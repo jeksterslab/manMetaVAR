@@ -24,32 +24,100 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
-#| include = FALSE
-root <- rprojroot::is_rstudio_project
+#| message = FALSE
+library(manMetaVAR)
 ```
 
 ```{r}
-#| message = FALSE
-library(manMetaVAR)
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+data_raw <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+if (!dir.exists(data_raw)) {
+  dir.create(data_raw, recursive = TRUE)
+}
+```
+
+```{r}
+#| include = FALSE
+fn_data <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-data.Rds"
+)
+if (!file.exists(fn_data)) {
+  taskid <- 9
+  seed <- 42
+  set.seed(seed)
+  data <- GenData(taskid = taskid)
+  saveRDS(data, file = fn_data)
+}
+data <- readRDS(fn_data)
+```
+
+```{r}
+#| include = FALSE
+fn_dtvar <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-dtvar.Rds"
+)
+if (!file.exists(fn_dtvar)) {
+  dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
+  saveRDS(dtvar, file = fn_dtvar)
+}
+dtvar <- readRDS(fn_dtvar)
+```
+
+```{r}
+#| include = FALSE
+fn_metavar <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-metavar.Rds"
+)
+if (!file.exists(fn_metavar)) {
+  metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
+  saveRDS(metavar, file = fn_metavar)
+}
+metavar <- readRDS(fn_metavar)
+```
+
+```{r}
+#| include = FALSE
+fn_mlvar <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-mlvar.Rds"
+)
+if (!file.exists(fn_mlvar)) {
+  mlvar <- FitMLVAR(data)
+  saveRDS(mlvar, file = fn_mlvar)
+}
+mlvar <- readRDS(fn_mlvar)
+```
+
+```{r}
+#| include = FALSE
+fn_jags <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-jags.Rds"
+)
+if (!file.exists(fn_jags)) {
+  jags <- FitJAGS(data)
+  saveRDS(jags, file = fn_jags)
+}
+jags <- readRDS(fn_jags)
 ```
 
 ## Data Generation
 
 ```{r}
-#| include = FALSE
-taskid <- 40
-seed <- 42
-set.seed(seed)
-data <- GenData(taskid = taskid)
-dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
-metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
-mlvar <- FitMLVAR(data)
-jags <- FitJAGS(data)
-```
-
-```{r}
 #| eval = FALSE
-taskid <- 40
+taskid <- 9
 seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)

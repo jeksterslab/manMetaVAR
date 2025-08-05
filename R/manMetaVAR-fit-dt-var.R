@@ -21,7 +21,8 @@
 #' @export
 FitDTVAR <- function(data,
                      ncores = NULL) {
-  fitDTVARMx::FitDTVARIDMx(
+  start_time <- Sys.time()
+  output <- fitDTVARMx::FitDTVARIDMx(
     data = data$data,
     observed = paste0("y", seq_len(model$k)),
     id = "id",
@@ -39,5 +40,14 @@ FitDTVAR <- function(data,
     sigma0_values = model$sigma0,
     try = 10000,
     ncores = ncores
+  )
+  end_time <- Sys.time()
+  structure(
+    list(
+      output = output,
+      start_time = start_time,
+      end_time = end_time
+    ),
+    class = "manmetavar_fitdtvar"
   )
 }

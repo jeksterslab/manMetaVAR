@@ -29,7 +29,7 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 repid_start=1
 repid_end=1000
 taskid_start=1
-taskid_end=5
+taskid_end=9
 
 cmd="apptainer exec \
      --bind /scratch/\$USER/${PROJECT}:/scratch/\$USER/${PROJECT} \

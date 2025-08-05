@@ -27,19 +27,14 @@ data_process_params <- function(overwrite = FALSE) {
   }
   if (write) {
     n <- c(
-      5,
       15,
-      25,
-      seq(
-        from = 50,
-        to = 250,
-        by = 50
-      )
+      50,
+      150
     )
-    time <- seq(
-      from = 50,
-      to = 250,
-      by = 50
+    time <- c(
+      50,
+      150,
+      250
     )
     taskid <- seq_len(
       length(n) * length(time)

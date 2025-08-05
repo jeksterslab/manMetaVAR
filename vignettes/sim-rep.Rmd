@@ -11,13 +11,19 @@ vignette: >
 
 
 
-
-
 ``` r
 library(manMetaVAR)
 ```
 
-## Data Generation
+
+
+
+
+
+
+
+
+
 
 
 

@@ -42,7 +42,7 @@ repid_start_5=951
 repid_end_5=1000
 
 taskid_start=1
-taskid_end=40
+taskid_end=9
 
 # script -----------------------------------------------------------------------
 cd /scratch/$USER/${PROJECT} || exit
