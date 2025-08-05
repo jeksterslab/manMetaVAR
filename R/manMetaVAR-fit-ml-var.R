@@ -18,10 +18,11 @@
 #' @export
 FitMLVAR <- function(data,
                      ncores = NULL) {
+  start_time <- Sys.time()
   if (is.null(ncores)) {
     ncores <- 1
   }
-  mlVAR::mlVAR(
+  output <- mlVAR::mlVAR(
     data = data$data,
     vars = paste0("y", seq_len(model$k)),
     idvar = "id",
@@ -29,5 +30,14 @@ FitMLVAR <- function(data,
     estimator = "lmer",
     verbose = FALSE,
     nCores = ncores
+  )
+  end_time <- Sys.time()
+  structure(
+    list(
+      output = output,
+      start_time = start_time,
+      end_time = end_time
+    ),
+    class = "manmetavar_fitmlvar"
   )
 }

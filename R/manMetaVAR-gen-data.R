@@ -44,15 +44,13 @@ GenData <- function(taskid) {
     gamma = NULL,
     kappa = NULL
   )
-  out <- list(
-    sim = sim,
-    alpha = alpha,
-    beta = beta,
-    data = as.data.frame(sim)
+  structure(
+    list(
+      sim = sim,
+      alpha = alpha,
+      beta = beta,
+      data = as.data.frame(sim)
+    ),
+    class = "manmetavar_data"
   )
-  class(out) <- c(
-    "gendata",
-    class(out)
-  )
-  out
 }

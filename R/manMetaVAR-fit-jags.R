@@ -20,11 +20,12 @@
 FitJAGS <- function(data,
                     n_chains = 4,
                     n_adapt = 1000,
-                    n_iter = 10000,
+                    n_iter = 1000,
                     thin = 1,
-                    ess_crit = 1000,
+                    ess_crit = 200,
                     max_iter = 1000,
                     seed = NULL) {
+  start_time <- Sys.time()
   args <- list(
     data = data,
     n_chains = n_chains,
@@ -120,17 +121,18 @@ FitJAGS <- function(data,
     )
     iter <- iter + 1
   }
-  out <- list(
-    args = args,
-    inits = inits,
-    model = model,
-    samples = samples,
-    iter = iter,
-    ess = ess
+  end_time <- Sys.time()
+  structure(
+    list(
+      args = args,
+      inits = inits,
+      model = model,
+      samples = samples,
+      iter = iter,
+      ess = ess,
+      start_time = start_time,
+      end_time = end_time
+    ),
+    class = "manmetavar_fitjags"
   )
-  class(out) <- c(
-    "fitjags",
-    class(out)
-  )
-  out
 }
