@@ -10,7 +10,7 @@ model {
       # Dynamic model: latent state evolution
       # eta[i, t, ] = alpha[i, ] + beta[i, , ] %*% eta[i, t - 1, ] + noise
       # where noise ~ N(0, psi)
-      eta[i, t, 1:K] ~ dmnorm(mu_eta[i, t, 1:K], tau_psi[ , ])
+      eta[i, t, 1:K] ~ dmnorm(mu_eta[i, t, 1:K], psi_tau[ , ])
 
       for (k in 1:K) {
         # Compute the mean of the latent state at time t for dimension k
@@ -20,15 +20,15 @@ model {
 
       # Measurement model: observed y_t given latent state eta_t
       # y[i, t, ] ~ N(eta[i, t, ], theta)
-      y[i, t, 1:K] ~ dmnorm(eta[i, t, 1:K], tau_theta[ , ])
+      y[i, t, 1:K] ~ dmnorm(eta[i, t, 1:K], theta_tau[ , ])
     }
 
     # Individual-level random effects
     # Intercepts for each latent dimension: alpha[i, ] ~ N(alpha_mu, alpha_sigma)
-    alpha[i, 1:K] ~ dmnorm(alpha_mu[ ], tau_alpha[ , ])
+    alpha[i, 1:K] ~ dmnorm(alpha_mu[ ], alpha_tau[ , ])
 
     # Vectorized autoregressive coefficients: beta_vec[i,] ~ N(beta_mu_vec, beta_sigma)
-    beta_vec[i, 1:(K * K)] ~ dmnorm(beta_mu_vec[ ], tau_beta[ , ])
+    beta_vec[i, 1:(K * K)] ~ dmnorm(beta_mu_vec[ ], beta_tau[ , ])
 
     # Reshape beta_vec[i, ] into matrix form beta[i, , ]
     for (k in 1:K) {
@@ -54,14 +54,14 @@ model {
   }
 
   # Priors on precision matrices (inverse covariance matrices)
-  tau_alpha[1:K, 1:K] ~ dwish(r_alpha[ , ], K + 1)
-  tau_beta[1:(K * K), 1:(K * K)] ~ dwish(r_beta[ , ], K * K + 1)
-  tau_psi[1:K, 1:K] ~ dwish(r_psi[ , ], K + 1)
-  tau_theta[1:K, 1:K] ~ dwish(r_theta[ , ], K + 1)
+  alpha_tau[1:K, 1:K] ~ dwish(r_alpha[ , ], K + 1)
+  beta_tau[1:(K * K), 1:(K * K)] ~ dwish(r_beta[ , ], K * K + 1)
+  psi_tau[1:K, 1:K] ~ dwish(r_psi[ , ], K + 1)
+  theta_tau[1:K, 1:K] ~ dwish(r_theta[ , ], K + 1)
 
   # Monitorable covariance matrices (useful for posterior summaries)
-  alpha_sigma[1:K, 1:K] <- inverse(tau_alpha[ , ])
-  beta_sigma[1:(K * K),1:(K * K)] <- inverse(tau_beta[ , ])
-  psi[1:K, 1:K] <- inverse(tau_psi[ , ])
-  theta[1:K, 1:K] <- inverse(tau_theta[ , ])
+  alpha_sigma[1:K, 1:K] <- inverse(alpha_tau[ , ])
+  beta_sigma[1:(K * K),1:(K * K)] <- inverse(beta_tau[ , ])
+  psi[1:K, 1:K] <- inverse(psi_tau[ , ])
+  theta[1:K, 1:K] <- inverse(theta_tau[ , ])
 }
