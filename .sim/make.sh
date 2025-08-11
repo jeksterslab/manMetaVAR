@@ -19,7 +19,7 @@ rm -rf ${PROJECT}/vignettes/sim-*.Rmd
 ## data
 rm -rf ${PROJECT}/data/*.rda
 rm -rf ${PROJECT}/R/*.rda
-# rm -rf ${PROJECT}/.setup/data-raw/sim-rep-*.Rds
+rm -rf ${PROJECT}/.setup/data-raw/sim-rep-*.Rds
 
 ## latex
 rm -rf ${PROJECT}/.setup/latex/figures/pdf/*.pdf

@@ -53,6 +53,9 @@ Effective sample size critria.}
 
 \item{max_iter}{Positive integer.
 Maximum number of reruns to get effective sample size.}
+
+\item{run_jags}{Logical.
+If \code{run_jags = TRUE}, run JAGS model.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

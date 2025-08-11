@@ -37,6 +37,8 @@
 #'   Number of replications.
 #' @param ncores Positive integer.
 #'   Number of cores to use.
+#' @param run_jags Logical.
+#'   If `run_jags = TRUE`, run JAGS model.
 #'
 #' @name Template
 NULL
