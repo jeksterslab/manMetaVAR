@@ -26,7 +26,7 @@ FitMetaVAR <- function(fit,
                        ncores = NULL) {
   start_time <- Sys.time()
   output <- metaVAR::MetaVARMx(
-    object = fit,
+    object = fit$output,
     x = NULL,
     random = TRUE,
     alpha_values = model$beta0,

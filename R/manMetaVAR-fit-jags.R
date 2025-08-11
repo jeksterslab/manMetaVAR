@@ -23,7 +23,7 @@ FitJAGS <- function(data,
                     n_iter = 1000,
                     thin = 1,
                     ess_crit = 200,
-                    max_iter = 1000,
+                    max_iter = 1,
                     seed = NULL) {
   start_time <- Sys.time()
   args <- list(

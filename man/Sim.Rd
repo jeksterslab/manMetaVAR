@@ -16,7 +16,8 @@ Sim(
   n_iter,
   thin,
   ess_crit,
-  max_iter
+  max_iter,
+  run_jags
 )
 }
 \arguments{

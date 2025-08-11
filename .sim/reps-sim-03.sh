@@ -26,20 +26,20 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 # ------------------------------------------------------------------------------
 
 # indices ----------------------------------------------------------------------
-repid_start_1=101
-repid_end_1=150
+repid_start_1=51
+repid_end_1=75
 
-repid_start_2=301
-repid_end_2=350
+repid_start_2=151
+repid_end_2=175
 
-repid_start_3=501
-repid_end_3=550
+repid_start_3=251
+repid_end_3=275
 
-repid_start_4=701
-repid_end_4=750
+repid_start_4=351
+repid_end_4=375
 
-repid_start_5=901
-repid_end_5=950
+repid_start_5=451
+repid_end_5=475
 
 taskid_start=1
 taskid_end=9
