@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpjVWUn4/dotfiles'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpX9oVT0/dotfiles'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2534[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2432[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m88d 1h 2m[0m
+[14C[33m[1muptime[0m[6D[7C[39m88d 1h 52m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11102M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m14448M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpjVWUn4/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpjVWUn4/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpX9oVT0/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpX9oVT0/dotfiles'
 
 
 TinyTex...
@@ -349,7 +349,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpL8ySAV/file6eca46fb75d20/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/Rtmpr6UndG/file2594257627f8fd/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -423,7 +423,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpL8ySAV/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/Rtmpr6UndG/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -487,307 +487,26 @@ Precompiling vignettes...
 14/36 [unnamed-chunk-7] 
 15/36                   
 16/36 [unnamed-chunk-8] 
-
-
-Building project...
-
-
-Project directory: /scratch/ibp5092/manMetaVAR 
-
-
-Installing packages...
-
-
-
-
-Building dotfiles...
-
-
-make[1]: Entering directory '/tmp/RtmpAxFUqe/dotfiles'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/bash'
-Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/ssh'
-Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/tmux'
-[?7l[1m[33m         _
-[33m     ---(_)
-[33m _/  ---  \
-[33m(_) |   |
- [33m \  --- _/
-    [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2534[0m[39D[7C[39m[0m
-[14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
-[14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
-[14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m88d 1h 14m[0m
-[14C[33m[1mpkgs[0m[4D[7C[39m666[0m
-[14C[33m[1mmemory[0m[6D[7C[39m11092M / 257838M[0m
-
-[?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpAxFUqe/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpAxFUqe/dotfiles'
-
-
-TinyTex...
-
-
-
-
-Styling...
-
-
-Styling  68  files:
- .Rprofile                                                                 ℹ 
- index.qmd                                                                 ✔ 
- .setup/cran/cran-check.R                                                  ✔ 
- .setup/cran/validate.R                                                    ✔ 
- .setup/data-process/data-process-params.R                                 ✔ 
- .setup/data-process/data-process-sysdata.R                                ✔ 
- .setup/latex/r-scripts/detritus.R                                         ✔ 
- .setup/latex/r-scripts/knitr-options-custom.R                             ✔ 
- .setup/latex/r-scripts/knitr-options-default.R                            ✔ 
- .setup/latex/r-scripts/knitr.R                                            ✔ 
- .setup/latex/r-scripts/tests-benchmark.R                                  ✔ 
- .setup/latex/r-scripts/tests-external.R                                   ✔ 
- .setup/latex/r-scripts/tests.R                                            ✔ 
- .setup/load/load.R                                                        ✔ 
- .setup/quarto/intro/intro.qmd                                             ✔ 
- .setup/quarto/r-script/prerender.R                                        ✔ 
- .setup/quarto/references/references.qmd                                   ✔ 
- .setup/quarto/session/session.qmd                                         ✔ 
- .setup/quarto/tags/tags.qmd                                               ✔ 
- .setup/r-dependencies/simTools/simTools-sim-check-dot.R                   ✔ 
- .setup/r-dependencies/simTools/simTools-sim-chmod-dot.R                   ✔ 
- .setup/r-dependencies/simTools/simTools-sim-path-dot.R                    ✔ 
- .setup/r-dependencies/simTools/simTools-sim-seed-dot.R                    ✔ 
- .setup/r-dependencies/simTools/simTools-sim-suffix-dot.R                  ✔ 
- .setup/r-miscellaneous/texTools/texTools-array-dot.R                      ✔ 
- .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R ✔ 
- .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R          ✔ 
- .setup/readme/README.Rmd                                                  ✔ 
- .setup/scripts/make-config.R                                              ✔ 
- .setup/scripts/make-install.R                                             ✔ 
- .setup/scripts/make-packages.R                                            ✔ 
- .setup/scripts/make-project.R                                             ✔ 
- .setup/scripts/project.R                                                  ✔ 
- .setup/scripts/secrets.R                                                  ✔ 
- .sim/sim-args.R                                                           ✔ 
- .sim/sim-compress.R                                                       ✔ 
- .sim/sim.R                                                                ✔ 
- .sim/sum.R                                                                ✔ 
- R/globals.R                                                               ✔ 
- R/manMetaVAR-compress.R                                                   ✔ 
- R/manMetaVAR-fit-dt-var.R                                                 ✔ 
- R/manMetaVAR-fit-jags.R                                                   ✔ 
- R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
- R/manMetaVAR-fit-ml-var.R                                                 ✔ 
- R/manMetaVAR-gen-data.R                                                   ✔ 
- R/manMetaVAR-methods.R                                                    ✔ 
- R/manMetaVAR-package.R                                                    ✔ 
- R/manMetaVAR-params.R                                                     ✔ 
- R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
- R/manMetaVAR-sim-fit-jags.R                                               ✔ 
- R/manMetaVAR-sim-fit-meta-var.R                                           ✔ 
- R/manMetaVAR-sim-fit-ml-var.R                                             ✔ 
- R/manMetaVAR-sim-fn.R                                                     ✔ 
- R/manMetaVAR-sim-gen-data.R                                               ✔ 
- R/manMetaVAR-sim-proj.R                                                   ✔ 
- R/manMetaVAR-sim.R                                                        ✔ 
- R/manMetaVAR-template.R                                                   ✔ 
- R/simTools-sim-check-dot.R                                                ✔ 
- R/simTools-sim-chmod-dot.R                                                ✔ 
- R/simTools-sim-path-dot.R                                                 ✔ 
- R/simTools-sim-seed-dot.R                                                 ✔ 
- R/simTools-sim-suffix-dot.R                                               ✔ 
- tests/testthat.R                                                          ✔ 
- tests/testthat/test-manMetaVAR.R                                          ✔ 
- vignettes/manMetaVAR.Rmd                                                  ✔ 
- vignettes/params.Rmd                                                      ✔ 
- vignettes/session.Rmd                                                     ✔ 
- vignettes/sim-rep.Rmd                                                     ✔ 
-─────────────────────────────────────────────────────────────────────────
-Status	Count	Legend 
-✔ 	67	File unchanged.
-ℹ 	1	File changed.
-✖ 	0	Styling threw an error.
-─────────────────────────────────────────────────────────────────────────
-Please review the changes carefully!
-
-
-Linting...
-
-
-
-
-Building data...
-
-
-
-data_process_params
-
-data_process_sysdata
-
-
-Building dependencies...
-
-
-[1] FALSE FALSE FALSE FALSE FALSE
-
-
-Cleaning project...
-
-
-
-
-Initial build...
-
-
-══ Documenting ═════════════════════════════════════════════════════════════════
-
-══ Building ════════════════════════════════════════════════════════════════════
-Setting env vars:
-• CFLAGS    : -Wall -pedantic
-• CXXFLAGS  : -Wall -pedantic
-• CXX11FLAGS: -Wall -pedantic
-• CXX14FLAGS: -Wall -pedantic
-• CXX17FLAGS: -Wall -pedantic
-• CXX20FLAGS: -Wall -pedantic
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
-* preparing ‘manMetaVAR’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘manMetaVAR_0.9.1.tar.gz’
-Warning: invalid uid value replaced by that for user 'nobody'
-Warning: invalid gid value replaced by that for user 'nobody'
-
-══ Checking ════════════════════════════════════════════════════════════════════
-Setting env vars:
-• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
-• _R_CHECK_CRAN_INCOMING_       : FALSE
-• _R_CHECK_FORCE_SUGGESTS_      : FALSE
-• NOT_CRAN                      : true
-── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmplsyn7h/file6fdb623ef7078/manMetaVAR.Rcheck’
-* using R version 4.5.1 (2025-06-13)
-* using platform: x86_64-pc-linux-gnu
-* R was compiled by
-    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
-    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
-* running under: Ubuntu 24.04.2 LTS
-* using session charset: UTF-8
-* using option ‘--no-manual’
-* checking for file ‘manMetaVAR/DESCRIPTION’ ... OK
-* this is package ‘manMetaVAR’ version ‘0.9.1’
-* package encoding: UTF-8
-* checking package namespace information ... OK
-* checking package dependencies ... OK
-* checking if this is a source package ... OK
-* checking if there is a namespace ... OK
-* checking for executable files ... OK
-* checking for hidden files and directories ... OK
-* checking for portable file names ... OK
-* checking for sufficient/correct file permissions ... OK
-* checking whether package ‘manMetaVAR’ can be installed ... OK
-* checking installed package size ... OK
-* checking package directory ... OK
-* checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
-* checking for left-over files ... OK
-* checking index information ... OK
-* checking package subdirectories ... OK
-* checking code files for non-ASCII characters ... OK
-* checking R files for syntax errors ... OK
-* checking whether the package can be loaded ... OK
-* checking whether the package can be loaded with stated dependencies ... OK
-* checking whether the package can be unloaded cleanly ... OK
-* checking whether the namespace can be loaded with stated dependencies ... OK
-* checking whether the namespace can be unloaded cleanly ... OK
-* checking loading without being on the library search path ... OK
-* checking dependencies in R code ... OK
-* checking S3 generic/method consistency ... OK
-* checking replacement functions ... OK
-* checking foreign function calls ... OK
-* checking R code for possible problems ... OK
-* checking Rd files ... OK
-* checking Rd metadata ... OK
-* checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... OK
-* checking Rd contents ... OK
-* checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... OK
-* checking data for non-ASCII characters ... OK
-* checking LazyData ... OK
-* checking data for ASCII and uncompressed saves ... OK
-* checking R/sysdata.rda ... OK
-* checking examples ... OK
-* checking for unstated dependencies in ‘tests’ ... OK
-* checking tests ...
-  Running ‘testthat.R’
- OK
-* DONE
-
-Status: OK
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
-* preparing ‘manMetaVAR’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘manMetaVAR_0.9.1.tar.gz’
-Warning: invalid uid value replaced by that for user 'nobody'
-Warning: invalid gid value replaced by that for user 'nobody'
-
-Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmplsyn7h/manMetaVAR_0.9.1.tar.gz --install-tests 
-* installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
-* installing *source* package ‘manMetaVAR’ ...
-** this is package ‘manMetaVAR’ version ‘0.9.1’
-** using staged installation
-** R
-** data
-*** moving datasets to lazyload DB
-** inst
-** tests
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (manMetaVAR)
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
-* preparing ‘manMetaVAR’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘manMetaVAR_0.9.1.tar.gz’
-Warning: invalid uid value replaced by that for user 'nobody'
-Warning: invalid gid value replaced by that for user 'nobody'
-
-[1] "/scratch/ibp5092/manMetaVAR/.setup/build/manMetaVAR_0.9.1.tar.gz"
-
-data_process_params
-
-data_process_sysdata
-
-
-Precompiling vignettes...
-
-
+17/36                   
+18/36 [unnamed-chunk-9] 
+19/36                   
+20/36 [unnamed-chunk-10]
+21/36                   
+22/36 [unnamed-chunk-11]
+23/36                   
+24/36 [unnamed-chunk-12]
+25/36                   
+26/36 [unnamed-chunk-13]
+27/36                   
+28/36 [unnamed-chunk-14]
+29/36                   
+30/36 [unnamed-chunk-15]
+31/36                   
+32/36 [unnamed-chunk-16]
+33/36                   
+34/36 [unnamed-chunk-17]
+35/36                   
+36/36 [unnamed-chunk-18]
 
 
 Building package...
@@ -820,7 +539,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpb0Qkp6/file7096865473daf/manMetaVAR.Rcheck’
+* using log directory ‘/tmp/RtmpL4nysy/file25b15e6102eee7/manMetaVAR.Rcheck’
 * using R version 4.5.1 (2025-06-13)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -894,7 +613,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpb0Qkp6/manMetaVAR_0.9.1.tar.gz --install-tests 
+  /tmp/RtmpL4nysy/manMetaVAR_0.9.1.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
 * installing *source* package ‘manMetaVAR’ ...
 ** this is package ‘manMetaVAR’ version ‘0.9.1’
@@ -1765,8 +1484,8 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manMetaVAR/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
@@ -1893,8 +1612,8 @@ INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalizat
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manMetaVAR-manuscript.bbl' with encoding 'UTF-8'
@@ -2223,6 +1942,10 @@ Reading vignettes/session.Rmd
 Writing `articles/session.html`
 Reading vignettes/sim-rep.Rmd
 Writing `articles/sim-rep.html`
+✖ Missing alt-text in 'vignettes/sim-rep.Rmd'
+• fig-vignettes-sim-rep-unnamed-chunk-10-1.png
+• fig-vignettes-sim-rep-unnamed-chunk-10-2.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
 ── Building news ───────────────────────────────────────────────────────────────
 Writing `news/index.html`
 ── Building sitemap ────────────────────────────────────────────────────────────
@@ -2230,6 +1953,859 @@ Writing `sitemap.xml`
 ── Building redirects ──────────────────────────────────────────────────────────
 Adding redirect from reference/manMetaVAR.html to
 reference/manMetaVAR-package.html.
+── Building search index ───────────────────────────────────────────────────────
+── Checking for problems ───────────────────────────────────────────────────────
+── Finished building pkgdown site for package manMetaVAR ───────────────────────
+
+
+Rendering quarto...
+
+
+[1m[34m[1/5] index.qmd[39m[22m
+[1m[34m[2/5] .setup/quarto/intro/intro.qmd[39m[22m
+[31m
+
+processing file: intro.qmd
+[39m1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+[31moutput file: intro.knit.md
+
+[39m[1m[34m[3/5] .setup/quarto/references/references.qmd[39m[22m
+[1m[34m[4/5] .setup/quarto/tags/tags.qmd[39m[22m
+[31m
+
+processing file: tags.qmd
+[39m1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+[31moutput file: tags.knit.md
+
+[39m[1m[34m[5/5] .setup/quarto/session/session.qmd[39m[22m
+[31m
+
+processing file: session.qmd
+[39m1/5                  
+2/5 [unnamed-chunk-1]
+3/5                  
+4/5 [unnamed-chunk-2]
+5/5                  
+[31moutput file: session.knit.md
+
+[39m
+Output created: quarto/index.html
+
+
+
+Code coverage...
+
+
+
+
+Building project...
+
+
+Project directory: /scratch/ibp5092/manMetaVAR 
+
+
+Installing packages...
+
+
+
+
+Building dotfiles...
+
+
+make[1]: Entering directory '/tmp/RtmpxDRPYu/dotfiles'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/bash'
+Building /storage/home/ibp5092/.bashrc
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/ssh'
+Keys already exist and will not be overwritten.
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/tmux'
+[?7l[1m[33m         _
+[33m     ---(_)
+[33m _/  ---  \
+[33m(_) |   |
+ [33m \  --- _/
+    [33m ---(_)
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2432[0m[39D[7C[39m[0m
+[14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.2 LTS[0m
+[14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
+[14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
+[14C[33m[1muptime[0m[6D[7C[39m88d 2h 39m[0m
+[14C[33m[1mpkgs[0m[4D[7C[39m666[0m
+[14C[33m[1mmemory[0m[6D[7C[39m14459M / 257838M[0m
+
+[?7hIn tmux press "Prefix + r" to reload configuration.
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpxDRPYu/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpxDRPYu/dotfiles'
+
+
+TinyTex...
+
+
+
+
+Styling...
+
+
+Styling  68  files:
+ .Rprofile                                                                 ℹ 
+ index.qmd                                                                 ✔ 
+ .setup/cran/cran-check.R                                                  ✔ 
+ .setup/cran/validate.R                                                    ✔ 
+ .setup/data-process/data-process-params.R                                 ✔ 
+ .setup/data-process/data-process-sysdata.R                                ✔ 
+ .setup/latex/r-scripts/detritus.R                                         ✔ 
+ .setup/latex/r-scripts/knitr-options-custom.R                             ✔ 
+ .setup/latex/r-scripts/knitr-options-default.R                            ✔ 
+ .setup/latex/r-scripts/knitr.R                                            ✔ 
+ .setup/latex/r-scripts/tests-benchmark.R                                  ✔ 
+ .setup/latex/r-scripts/tests-external.R                                   ✔ 
+ .setup/latex/r-scripts/tests.R                                            ✔ 
+ .setup/load/load.R                                                        ✔ 
+ .setup/quarto/intro/intro.qmd                                             ✔ 
+ .setup/quarto/r-script/prerender.R                                        ✔ 
+ .setup/quarto/references/references.qmd                                   ✔ 
+ .setup/quarto/session/session.qmd                                         ✔ 
+ .setup/quarto/tags/tags.qmd                                               ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-check-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-chmod-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-path-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-seed-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-suffix-dot.R                  ✔ 
+ .setup/r-miscellaneous/texTools/texTools-array-dot.R                      ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R          ✔ 
+ .setup/readme/README.Rmd                                                  ✔ 
+ .setup/scripts/make-config.R                                              ✔ 
+ .setup/scripts/make-install.R                                             ✔ 
+ .setup/scripts/make-packages.R                                            ✔ 
+ .setup/scripts/make-project.R                                             ✔ 
+ .setup/scripts/project.R                                                  ✔ 
+ .setup/scripts/secrets.R                                                  ✔ 
+ .sim/sim-args.R                                                           ✔ 
+ .sim/sim-compress.R                                                       ✔ 
+ .sim/sim.R                                                                ✔ 
+ .sim/sum.R                                                                ✔ 
+ R/globals.R                                                               ✔ 
+ R/manMetaVAR-compress.R                                                   ✔ 
+ R/manMetaVAR-fit-dt-var.R                                                 ✔ 
+ R/manMetaVAR-fit-jags.R                                                   ✔ 
+ R/manMetaVAR-fit-meta-var-mx.R                                            ✔ 
+ R/manMetaVAR-fit-ml-var.R                                                 ✔ 
+ R/manMetaVAR-gen-data.R                                                   ✔ 
+ R/manMetaVAR-methods.R                                                    ✔ 
+ R/manMetaVAR-package.R                                                    ✔ 
+ R/manMetaVAR-params.R                                                     ✔ 
+ R/manMetaVAR-sim-fit-dt-var.R                                             ✔ 
+ R/manMetaVAR-sim-fit-jags.R                                               ✔ 
+ R/manMetaVAR-sim-fit-meta-var.R                                           ✔ 
+ R/manMetaVAR-sim-fit-ml-var.R                                             ✔ 
+ R/manMetaVAR-sim-fn.R                                                     ✔ 
+ R/manMetaVAR-sim-gen-data.R                                               ✔ 
+ R/manMetaVAR-sim-proj.R                                                   ✔ 
+ R/manMetaVAR-sim.R                                                        ✔ 
+ R/manMetaVAR-template.R                                                   ✔ 
+ R/simTools-sim-check-dot.R                                                ✔ 
+ R/simTools-sim-chmod-dot.R                                                ✔ 
+ R/simTools-sim-path-dot.R                                                 ✔ 
+ R/simTools-sim-seed-dot.R                                                 ✔ 
+ R/simTools-sim-suffix-dot.R                                               ✔ 
+ tests/testthat.R                                                          ✔ 
+ tests/testthat/test-manMetaVAR.R                                          ✔ 
+ vignettes/manMetaVAR.Rmd                                                  ✔ 
+ vignettes/params.Rmd                                                      ✔ 
+ vignettes/session.Rmd                                                     ✔ 
+ vignettes/sim-rep.Rmd                                                     ✔ 
+─────────────────────────────────────────────────────────────────────────
+Status	Count	Legend 
+✔ 	67	File unchanged.
+ℹ 	1	File changed.
+✖ 	0	Styling threw an error.
+─────────────────────────────────────────────────────────────────────────
+Please review the changes carefully!
+
+
+Linting...
+
+
+
+
+Building data...
+
+
+
+data_process_params
+
+data_process_sysdata
+
+
+Building dependencies...
+
+
+[1] FALSE FALSE FALSE FALSE FALSE
+
+
+Cleaning project...
+
+
+
+
+Initial build...
+
+
+══ Documenting ═════════════════════════════════════════════════════════════════
+
+══ Building ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• CFLAGS    : -Wall -pedantic
+• CXXFLAGS  : -Wall -pedantic
+• CXX11FLAGS: -Wall -pedantic
+• CXX14FLAGS: -Wall -pedantic
+• CXX17FLAGS: -Wall -pedantic
+• CXX20FLAGS: -Wall -pedantic
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+══ Checking ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+• _R_CHECK_CRAN_INCOMING_       : FALSE
+• _R_CHECK_FORCE_SUGGESTS_      : FALSE
+• NOT_CRAN                      : true
+── R CMD check ─────────────────────────────────────────────────────────────────
+* using log directory ‘/tmp/RtmpxMKyYg/file25c674f0a5642/manMetaVAR.Rcheck’
+* using R version 4.5.1 (2025-06-13)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+* running under: Ubuntu 24.04.2 LTS
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘manMetaVAR/DESCRIPTION’ ... OK
+* this is package ‘manMetaVAR’ version ‘0.9.1’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘manMetaVAR’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ...
+  Running ‘testthat.R’
+ OK
+* DONE
+
+Status: OK
+
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpxMKyYg/manMetaVAR_0.9.1.tar.gz --install-tests 
+* installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
+* installing *source* package ‘manMetaVAR’ ...
+** this is package ‘manMetaVAR’ version ‘0.9.1’
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** tests
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (manMetaVAR)
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+[1] "/scratch/ibp5092/manMetaVAR/.setup/build/manMetaVAR_0.9.1.tar.gz"
+
+data_process_params
+
+data_process_sysdata
+
+
+Precompiling vignettes...
+
+
+
+
+Building package...
+
+
+══ Documenting ═════════════════════════════════════════════════════════════════
+
+══ Building ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• CFLAGS    : -Wall -pedantic
+• CXXFLAGS  : -Wall -pedantic
+• CXX11FLAGS: -Wall -pedantic
+• CXX14FLAGS: -Wall -pedantic
+• CXX17FLAGS: -Wall -pedantic
+• CXX20FLAGS: -Wall -pedantic
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+══ Checking ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+• _R_CHECK_CRAN_INCOMING_       : FALSE
+• _R_CHECK_FORCE_SUGGESTS_      : FALSE
+• NOT_CRAN                      : true
+── R CMD check ─────────────────────────────────────────────────────────────────
+* using log directory ‘/tmp/RtmpSW7Na8/file25d00eb2cfd38/manMetaVAR.Rcheck’
+* using R version 4.5.1 (2025-06-13)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+* running under: Ubuntu 24.04.2 LTS
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘manMetaVAR/DESCRIPTION’ ... OK
+* this is package ‘manMetaVAR’ version ‘0.9.1’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘manMetaVAR’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ...
+  Running ‘testthat.R’
+ OK
+* DONE
+
+Status: OK
+
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpSW7Na8/manMetaVAR_0.9.1.tar.gz --install-tests 
+* installing to library ‘/scratch/ibp5092/manMetaVAR/.library’
+* installing *source* package ‘manMetaVAR’ ...
+** this is package ‘manMetaVAR’ version ‘0.9.1’
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** tests
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (manMetaVAR)
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manMetaVAR/DESCRIPTION’ ... OK
+* preparing ‘manMetaVAR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manMetaVAR_0.9.1.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+[1] "/scratch/ibp5092/manMetaVAR/.setup/build/manMetaVAR_0.9.1.tar.gz"
+
+
+Building README.md...
+
+
+1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+/usr/bin/pandoc +RTS -K512m -RTS README.knit.md --to gfm-tex_math_gfm-yaml_metadata_block --from markdown+autolink_bare_uris+tex_math_single_backslash --output /scratch/ibp5092/manMetaVAR/README.md --template /usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/default.md --citeproc 
+/usr/bin/pandoc +RTS -K512m -RTS /scratch/ibp5092/manMetaVAR/README.md --to html4 --from gfm-tex_math_gfm --output /scratch/ibp5092/manMetaVAR/README.html --embed-resources --standalone --highlight-style pygments --template /usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/preview.html --variable 'github-markdown-css:/usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/github.css' --metadata pagetitle=PREVIEW --mathjax 
+
+
+Building manual...
+
+
+Hmm ... looks like a package
+Creating pdf output from LaTeX ...
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file Rd2.aux.
+(/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+No file Rd2.toc.
+
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
+[2]
+[3]
+[4]
+[5] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[6{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 409--412
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[7]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 477--480
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[8]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 543--546
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[9]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 609--612
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[10]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 661--664
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[11]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 750--753
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[12]
+[13]
+[14]
+No file Rd2.ind.
+
+[15] (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMIVary\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.mlVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.FitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (15 pages, 98607 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (./Rd2.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (./Rd2.out) (./Rd2.out) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd) (./Rd2.toc
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}])
+[2]
+[3]
+[4]
+[5]
+[6] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[7{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 409--412
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[8]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 477--480
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[9]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 543--546
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[10]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 609--612
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[11]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 661--664
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[12]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 750--753
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[13]
+[14]
+[15] (./Rd2.ind
+[16]
+
+[17]
+
+[18]) (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMIVary\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.mlVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.FitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (18 pages, 115243 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (./Rd2.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (./Rd2.out) (./Rd2.out) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd) (./Rd2.toc
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}])
+[2]
+[3]
+[4]
+[5]
+[6] (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+[7{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 409--412
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[8]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 477--480
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[9]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 543--546
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[10]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 609--612
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[11]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 661--664
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[12]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 750--753
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[13]
+[14]
+[15] (./Rd2.ind
+[16]
+
+[17]
+
+[18]) (./Rd2.aux) )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMIVary\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.mlVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.FitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.metaVAR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.fitDTVARMx} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (18 pages, 115594 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘manMetaVAR.pdf’ ...
+Done
+
+
+Building CITATION.cff...
+
+
+══ Validating cff ══════════════════════════════════════════════════════════════
+
+
+Compiling latex...
+
+
+1/19                  
+2/19 [root]           
+3/19                  
+4/19 [knitr]          
+5/19                  
+6/19 [biblatex]       
+7/19                  
+8/19 [kbordermatrix]  
+9/19                  
+10/19 [unnamed-chunk-1]
+11/19                  
+12/19 [unnamed-chunk-2]
+13/19                  
+14/19 [unnamed-chunk-3]
+15/19                  
+16/19 [unnamed-chunk-4]
+17/19                  
+18/19 [unnamed-chunk-5]
+19/19                  
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/covariate.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/covariate.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/ct.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/ct.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/distal-outcomes.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/distal-outcomes.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/dt.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/name.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/name.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/random-effects.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/random-effects.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/tikz/within-between-variability.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/within-between-variability.pdf) are up-to-date
+
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+Latexmk: Nothing to do for '/scratch/ibp5092/manMetaVAR/detritus/tex/manMetaVAR-manuscript.tex'.
+Latexmk: All targets (.setup/latex/pdf/manMetaVAR-manuscript.pdf) are up-to-date
+
+[1] FALSE
+
+
+Building pkgdown website...
+
+
+── Building pkgdown site for package manMetaVAR ────────────────────────────────
+Reading from: /scratch/ibp5092/manMetaVAR
+Writing to: /scratch/ibp5092/manMetaVAR/pkgdown
+── Sitrep ──────────────────────────────────────────────────────────────────────
+✔ URLs ok.
+✔ Favicons ok.
+✔ Open graph metadata ok.
+✔ Articles metadata ok.
+✔ Reference metadata ok.
+── Initialising site ───────────────────────────────────────────────────────────
+── Building home ───────────────────────────────────────────────────────────────
+Reading LICENSE.md
+Reading README.md
+Writing `404.html`
+── Building function reference ─────────────────────────────────────────────────
+Loading required package: OpenMx
+To take full advantage of multiple cores, use:
+  mxOption(key='Number of Threads', value=parallel::detectCores()) #now
+  Sys.setenv(OMP_NUM_THREADS=parallel::detectCores()) #before library(OpenMx)
+Loading required package: fitDTVARMx
+Loading required package: metaVAR
+Reading man/Compress.Rd
+Reading man/FitDTVAR.Rd
+Reading man/FitJAGS.Rd
+Reading man/FitMLVAR.Rd
+Reading man/FitMetaVAR.Rd
+Reading man/GenData.Rd
+Reading man/Sim.Rd
+Reading man/SimFN.Rd
+Reading man/SimFitDTVAR.Rd
+Reading man/SimFitJAGS.Rd
+Reading man/SimFitMLVAR.Rd
+Reading man/SimFitMetaVAR.Rd
+Reading man/SimGenData.Rd
+Reading man/SimProj.Rd
+Reading man/manMetaVAR-package.Rd
+Reading man/params.Rd
+Reading man/plot.manmetavar_data.Rd
+Reading man/summary.manmetavar_data.Rd
+Reading man/summary.manmetavar_fitdtvar.Rd
+Reading man/summary.manmetavar_fitjags.Rd
+Reading man/summary.manmetavar_fitmetavar.Rd
+Reading man/summary.manmetavar_fitmlvar.Rd
+── Building articles ───────────────────────────────────────────────────────────
+Reading vignettes/manMetaVAR.Rmd
+Reading vignettes/params.Rmd
+Reading vignettes/session.Rmd
+Reading vignettes/sim-rep.Rmd
+✖ Missing alt-text in 'vignettes/sim-rep.Rmd'
+• fig-vignettes-sim-rep-unnamed-chunk-10-1.png
+• fig-vignettes-sim-rep-unnamed-chunk-10-2.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+── Building news ───────────────────────────────────────────────────────────────
+── Building sitemap ────────────────────────────────────────────────────────────
+── Building redirects ──────────────────────────────────────────────────────────
 ── Building search index ───────────────────────────────────────────────────────
 ── Checking for problems ───────────────────────────────────────────────────────
 ── Finished building pkgdown site for package manMetaVAR ───────────────────────
