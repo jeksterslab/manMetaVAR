@@ -23,9 +23,13 @@ FitJAGS <- function(data,
                     n_iter = 1000,
                     thin = 1,
                     ess_crit = 200,
-                    max_iter = 1,
+                    max_iter = 1L,
                     seed = NULL) {
   start_time <- Sys.time()
+  max_iter <- as.integer(max_iter)
+  stopifnot(
+    max_iter >= 1L
+  )
   args <- list(
     data = data,
     n_chains = n_chains,
@@ -88,22 +92,21 @@ FitJAGS <- function(data,
   model <- rjags::jags.model(
     file = model_file,
     data = data_for_jags,
+    inits = inits,
     n.chains = n_chains,
     n.adapt = n_adapt,
     quiet = TRUE
   )
   # repeat until ESS >= ess_crit for all parameters
-  ess <- 0
+  ess <- rep(x = 0, times = 1L)
   samples <- NULL
-  iter <- 0
-  while (
-    any(ess < ess_crit) && iter < max_iter
-  ) {
+  iter <- 0L
+  for (i in seq_len(max_iter)) {
     update(
       object = model,
       n.iter = n_iter
     )
-    samples <- rjags::coda.samples(
+    new_samps <- rjags::coda.samples(
       model = model,
       variable.names = c(
         "beta_mu",
@@ -116,10 +119,30 @@ FitJAGS <- function(data,
       n.iter = n_iter,
       thin = thin
     )
-    ess <- coda::effectiveSize(
-      x = samples
-    )
-    iter <- iter + 1
+    if (is.null(samples)) {
+      samples <- new_samps
+    } else {
+      samples <- coda::mcmc.list(
+        Map(
+          f = function(x, y) {
+            coda::mcmc(
+              data = rbind(
+                coda::as.mcmc(x = x),
+                coda::as.mcmc(x = y)
+              )
+            )
+          },
+          x = samples,
+          y = new_samps
+        )
+      )
+    }
+    ess <- coda::effectiveSize(x = samples)
+    if (isTRUE(all(ess >= ess_crit, na.rm = TRUE))) {
+      iter <- i
+      break
+    }
+    iter <- i
   }
   end_time <- Sys.time()
   structure(

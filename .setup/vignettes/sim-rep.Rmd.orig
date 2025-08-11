@@ -65,7 +65,7 @@ fn_dtvar <- root$find_file(
   "sim-rep-dtvar.Rds"
 )
 if (!file.exists(fn_dtvar)) {
-  dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
+  dtvar <- FitDTVAR(data)
   saveRDS(dtvar, file = fn_dtvar)
 }
 dtvar <- readRDS(fn_dtvar)
@@ -79,7 +79,7 @@ fn_metavar <- root$find_file(
   "sim-rep-metavar.Rds"
 )
 if (!file.exists(fn_metavar)) {
-  metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
+  metavar <- FitMetaVAR(dtvar)
   saveRDS(metavar, file = fn_metavar)
 }
 metavar <- readRDS(fn_metavar)
@@ -132,7 +132,7 @@ summary(data)
 
 ```{r}
 #| eval = FALSE
-dtvar <- FitDTVAR(data, ncores = parallel::detectCores())
+dtvar <- FitDTVAR(data)
 ```
 
 ```{r}
@@ -141,7 +141,7 @@ summary(dtvar, means = TRUE)
 
 ```{r}
 #| eval = FALSE
-metavar <- FitMetaVAR(dtvar, ncores = parallel::detectCores())
+metavar <- FitMetaVAR(dtvar)
 ```
 
 ```{r}
