@@ -8,7 +8,7 @@
 
 # Define project variables
 PROJECT=/scratch/$USER/manMetaVAR
-# SIF=/scratch/$USER/manMetaVAR/.sif/manculta.sif
+# SIF=/scratch/$USER/manMetaVAR/.sif/manmetavar.sif
 SIF=/scratch/$USER/sif/docs.sif
 
 # clean

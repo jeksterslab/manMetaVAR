@@ -19,9 +19,7 @@ SimFitJAGS <- function(taskid,
                        n_chains,
                        n_adapt,
                        n_iter,
-                       thin,
-                       ess_crit,
-                       max_iter) {
+                       thin) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sim` function.
   fn_input <- SimFN(
@@ -51,8 +49,6 @@ SimFitJAGS <- function(taskid,
             n_adapt = n_adapt,
             n_iter = n_iter,
             thin = thin,
-            ess_crit = ess_crit,
-            max_iter = max_iter,
             seed = seed
           ),
           file = con

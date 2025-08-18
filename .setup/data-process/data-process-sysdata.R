@@ -122,6 +122,10 @@ data_process_sysdata <- function(overwrite = FALSE) {
       theta_l = theta_l,
       beta0 = beta0,
       tau_sqr = tau_sqr,
+      alpha_sigma_inverse = solve(a = alpha_sigma),
+      beta_sigma_inverse = solve(a = beta_sigma),
+      psi_inverse = solve(a = psi),
+      theta_inverse = solve(a = theta),
       parameter = c(
         beta0,
         tau_sqr[

@@ -34,10 +34,9 @@ FitDTVAR <- function(data,
     theta_fixed = FALSE,
     theta_values = model$theta,
     mu0_fixed = TRUE,
-    mu0_values = model$mu0,
+    mu0_func = TRUE,
     sigma0_fixed = TRUE,
-    sigma0_diag = FALSE,
-    sigma0_values = model$sigma0,
+    sigma0_func = TRUE,
     try = 10000,
     ncores = ncores
   )

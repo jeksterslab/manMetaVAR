@@ -34,8 +34,6 @@ tryCatch(
       n_adapt = n_adapt,
       n_iter = n_iter,
       thin = thin,
-      ess_crit = ess_crit,
-      max_iter = max_iter,
       run_jags = run_jags
     )
   },

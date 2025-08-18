@@ -15,8 +15,6 @@ Sim(
   n_adapt,
   n_iter,
   thin,
-  ess_crit,
-  max_iter,
   run_jags
 )
 }
@@ -47,12 +45,6 @@ Random seed.}
 \item{n_iter}{Number of iterations to monitor.}
 
 \item{thin}{Thinning interval for monitors.}
-
-\item{ess_crit}{Positive integer.
-Effective sample size critria.}
-
-\item{max_iter}{Positive integer.
-Maximum number of reruns to get effective sample size.}
 
 \item{run_jags}{Logical.
 If \code{run_jags = TRUE}, run JAGS model.}

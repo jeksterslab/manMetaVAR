@@ -23,16 +23,32 @@ GenData <- function(taskid) {
     alpha = model$alpha_mu,
     vcov_alpha_l = model$alpha_sigma_l
   )
-  beta <- simStateSpace::SimBetaN(
+  beta <- simStateSpace::SimBetaN2(
     n = n,
     beta = model$beta_mu,
     vcov_beta_vec_l = model$beta_sigma_l
   )
+  mu0 <- mapply(
+    FUN = simStateSpace::SSMMeanEta,
+    beta = model$beta_mu,
+    alpha = model$alpha_mu
+  )
+  sigma0 <- lapply(
+    X = model$beta_mu,
+    FUN = simStateSpace::SSMCovEta,
+    psi = model$psi
+  )
+  sigma0_l <- lapply(
+    X = sigma0,
+    FUN = function(x) {
+      t(chol(x))
+    }
+  )
   sim <- simStateSpace::SimSSMIVary(
     n = n,
     time = time,
-    mu0 = list(model$mu0),
-    sigma0_l = list(model$sigma0_l),
+    mu0 = mu0,
+    sigma0_l = sigma0_l,
     alpha = alpha,
     beta = beta,
     psi_l = list(model$psi_l),

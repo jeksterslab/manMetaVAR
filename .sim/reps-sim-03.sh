@@ -12,7 +12,7 @@
 
 # Define project variables
 PROJECT=manMetaVAR
-SIF=manculta.sif
+SIF=manmetavar.sif
 
 # load parallel module ---------------------------------------------------------
 module load parallel

@@ -100,7 +100,7 @@ mlvar <- readRDS(fn_mlvar)
 ```
 
 ```{r}
-#| include = FALSE
+#| eval = FALSE
 fn_jags <- root$find_file(
   ".setup",
   "data-raw",
@@ -167,5 +167,6 @@ jags <- FitJAGS(data)
 ```
 
 ```{r}
+#| eval = FALSE
 summary(jags)
 ```
