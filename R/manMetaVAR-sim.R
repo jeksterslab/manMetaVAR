@@ -17,8 +17,6 @@ Sim <- function(taskid,
                 n_adapt,
                 n_iter,
                 thin,
-                ess_crit,
-                max_iter,
                 run_jags) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
@@ -107,9 +105,7 @@ Sim <- function(taskid,
         n_chains = n_chains,
         n_adapt = n_adapt,
         n_iter = n_iter,
-        thin = thin,
-        ess_crit = ess_crit,
-        max_iter = max_iter
+        thin = thin
       )
     )
   }
