@@ -49,11 +49,9 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">FitJAGS</span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  n_chains <span class="op">=</span> <span class="fl">4</span>,</span>
-<span>  n_adapt <span class="op">=</span> <span class="fl">1000</span>,</span>
-<span>  n_iter <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>  n_adapt <span class="op">=</span> <span class="fl">10000</span>,</span>
+<span>  n_iter <span class="op">=</span> <span class="fl">10000</span>,</span>
 <span>  thin <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>  ess_crit <span class="op">=</span> <span class="fl">200</span>,</span>
-<span>  max_iter <span class="op">=</span> <span class="fl">1L</span>,</span>
 <span>  seed <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -81,16 +79,6 @@ Output of the <code><a href="GenData.html">GenData()</a></code> function.</p></d
 
 <dt id="arg-thin">thin<a class="anchor" aria-label="anchor" href="#arg-thin"></a></dt>
 <dd><p>Thinning interval for monitors.</p></dd>
-
-
-<dt id="arg-ess-crit">ess_crit<a class="anchor" aria-label="anchor" href="#arg-ess-crit"></a></dt>
-<dd><p>Positive integer.
-Effective sample size critria.</p></dd>
-
-
-<dt id="arg-max-iter">max_iter<a class="anchor" aria-label="anchor" href="#arg-max-iter"></a></dt>
-<dd><p>Positive integer.
-Maximum number of reruns to get effective sample size.</p></dd>
 
 
 <dt id="arg-seed">seed<a class="anchor" aria-label="anchor" href="#arg-seed"></a></dt>
