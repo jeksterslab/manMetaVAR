@@ -17,6 +17,12 @@ Sample size.
 \item{time}{
 Number of measurement occassions.
 }
+\item{dynamics}{
+Process dynamics.
+\code{1} for stable reciprocal regulation,
+\code{2} for escalating co-activation, and
+\code{3} for adaptive recovery.
+}
 }
 }
 \usage{

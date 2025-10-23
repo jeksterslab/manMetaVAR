@@ -17,7 +17,11 @@
 #'   ncores = parallel::detectCores()
 #' )
 #' summary(pooled)
+#' print(pooled)
+#' coef(pooled)
+#' vcov(pooled)
 #' }
+#'
 #' @family Meta-Analysis Functions
 #' @keywords manMetaVAR meta
 #' @import metaVAR
@@ -29,21 +33,24 @@ FitMetaVAR <- function(fit,
     object = fit$output,
     x = NULL,
     random = TRUE,
-    alpha_values = model$beta0,
+    alpha_values = fit$data$ma_fixed,
     diag = FALSE,
-    intercept = TRUE,
-    noise = FALSE,
-    error = FALSE,
+    effects = TRUE,
+    int_meas = TRUE,
+    int_dyn = FALSE,
+    cov_meas = FALSE,
+    cov_dyn = FALSE,
     try = 10000,
     ncores = ncores
   )
   end_time <- Sys.time()
+  elapsed <- end_time - start_time
   structure(
     list(
+      data = fit$data,
       output = output,
-      start_time = start_time,
-      end_time = end_time
+      elapsed = elapsed
     ),
-    class = "manmetavar_fitmetavar"
+    class = "manmetavar.metavar"
   )
 }

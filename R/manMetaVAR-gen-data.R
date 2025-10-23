@@ -9,32 +9,40 @@
 #' \dontrun{
 #' set.seed(42)
 #' data <- GenData(taskid = 1)
+#' print(data)
+#' summary(data)
+#' plot(data)
 #' }
+#'
 #' @family Data Generation Functions
 #' @keywords manMetaVAR gendata
 #' @import simStateSpace
 #' @export
 GenData <- function(taskid) {
   param <- params[taskid, ]
+  burnin <- 10000
   n <- param$n
-  time <- param$time
-  alpha <- simStateSpace::SimAlphaN(
+  time <- param$time + burnin
+  dynamics <- param$dynamics
+  model <- Dynamics(dynamics = dynamics)
+  nu <- simStateSpace::SimNuN(
     n = n,
-    alpha = model$alpha_mu,
-    vcov_alpha_l = model$alpha_sigma_l
+    nu = model$nu_mu,
+    vcov_nu_l = model$nu_sigma_l
   )
-  beta <- simStateSpace::SimBetaN2(
+  beta <- simStateSpace::SimBetaN(
     n = n,
     beta = model$beta_mu,
-    vcov_beta_vec_l = model$beta_sigma_l
+    vcov_beta_vec_l = model$beta_sigma_l,
+    margin = 0.95
   )
-  mu0 <- mapply(
+  mu0 <- lapply(
+    X = beta,
     FUN = simStateSpace::SSMMeanEta,
-    beta = model$beta_mu,
-    alpha = model$alpha_mu
+    alpha = model$alpha
   )
   sigma0 <- lapply(
-    X = model$beta_mu,
+    X = beta,
     FUN = simStateSpace::SSMCovEta,
     psi = model$psi
   )
@@ -44,15 +52,31 @@ GenData <- function(taskid) {
       t(chol(x))
     }
   )
+  sigma0_ldl <- lapply(
+    X = sigma0,
+    FUN = fitDTVARMxID::LDL
+  )
+  sigma0_d_ldl <- lapply(
+    X = sigma0_ldl,
+    FUN = function(i) {
+      i$d_uc
+    }
+  )
+  sigma0_l_ldl <- lapply(
+    X = sigma0_ldl,
+    FUN = function(i) {
+      i$l_mat_strict
+    }
+  )
   sim <- simStateSpace::SimSSMIVary(
     n = n,
     time = time,
     mu0 = mu0,
     sigma0_l = sigma0_l,
-    alpha = alpha,
+    alpha = list(model$alpha),
     beta = beta,
     psi_l = list(model$psi_l),
-    nu = list(model$nu),
+    nu = nu,
     lambda = list(model$lambda),
     theta_l = list(model$theta_l),
     type = 0,
@@ -60,13 +84,27 @@ GenData <- function(taskid) {
     gamma = NULL,
     kappa = NULL
   )
+  out <- c(
+    as.list(param),
+    burnin = burnin,
+    model,
+    nu = list(nu),
+    beta = list(beta),
+    mu0 = list(mu0),
+    sigma0 = list(sigma0),
+    sigma0_l = list(sigma0_l),
+    sigma0_d_ldl = list(sigma0_d_ldl),
+    sigma0_l_ldl = list(sigma0_l_ldl),
+    sim = list(sim),
+    data = list(
+      as.data.frame(
+        sim,
+        burnin = burnin
+      )
+    )
+  )
   structure(
-    list(
-      sim = sim,
-      alpha = alpha,
-      beta = beta,
-      data = as.data.frame(sim)
-    ),
-    class = "manmetavar_data"
+    out,
+    class = "manmetavar.data"
   )
 }

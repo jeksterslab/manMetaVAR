@@ -7,6 +7,7 @@
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
+#'
 #' @export
 #' @keywords manMetaVAR fit simulation
 SimFitMetaVAR <- function(taskid,
@@ -40,7 +41,8 @@ SimFitMetaVAR <- function(taskid,
         con <- file(fn_output)
         saveRDS(
           object = FitMetaVAR(
-            fit = readRDS(fn_input)
+            fit = readRDS(fn_input),
+            ncores = NULL
           ),
           file = con
         )

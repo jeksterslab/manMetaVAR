@@ -12,9 +12,8 @@ Output type.
 Valid values include
 \code{"data"},
 \code{"fit-dt-var-mx"},
-\code{"fit-meta-var-mx"},
-\code{"fit-ml-var"}, and
-\code{"fit-jags"}.}
+\code{"fit-meta-var-mx"}, and
+\code{"fit-ml-var"}.}
 
 \item{output_folder}{Character string.
 Output folder.}

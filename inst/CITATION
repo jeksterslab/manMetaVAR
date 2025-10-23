@@ -1,5 +1,5 @@
-year <- 2024
-author_text <- "Melon. B."
+year <- 2025
+author_text <- "Pesigan, I. J. A."
 pkg <- meta$Package
 title <- meta$Title
 version <- meta$Version

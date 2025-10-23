@@ -1,19 +1,18 @@
+#' @param dynamics `1`, `2`, or `3`.
+#'   `1` for stable reciprocal regulation,
+#'   `2` for escalating co-activation, and
+#'   `3` for adaptive recovery.
 #' @param data R object.
 #'   Output of the [GenData()] function.
 #' @param fit R object.
-#'   Output of the [FitDTVARMx()] function.
-#' @param n_chains The number of parallel chains for the model.
-#' @param n_adapt The number of iterations for adaptation.
-#' @param n_iter Number of iterations to monitor.
-#' @param thin Thinning interval for monitors.
+#'   Output of the [FitDTVAR()] function.
 #' @param output_type Character string.
 #'   Output type.
 #'   Valid values include
 #'   `"data"`,
 #'   `"fit-dt-var-mx"`,
-#'   `"fit-meta-var-mx"`,
-#'   `"fit-ml-var"`, and
-#'   `"fit-jags"`.
+#'   `"fit-meta-var-mx"`, and
+#'   `"fit-ml-var"`.
 #' @param suffix Character string.
 #'   Output of `manCTMed:::.SimSuffix()`.
 #' @param output_folder Character string.
@@ -33,8 +32,10 @@
 #'   Number of replications.
 #' @param ncores Positive integer.
 #'   Number of cores to use.
-#' @param run_jags Logical.
-#'   If `run_jags = TRUE`, run JAGS model.
-#'
+#' @param alpha Numeric vector.
+#'   Significance level \eqn{\alpha}.
+#' @param digits Integer indicating the number of decimal places to display.
+#' @param show	Tables to show.
+#' @param ... additional arguments.
 #' @name Template
 NULL

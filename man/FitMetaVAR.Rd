@@ -8,13 +8,13 @@ FitMetaVAR(fit, ncores = NULL)
 }
 \arguments{
 \item{fit}{R object.
-Output of the \code{\link[=FitDTVARMx]{FitDTVARMx()}} function.}
+Output of the \code{\link[=FitDTVAR]{FitDTVAR()}} function.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
 }
 \description{
-The function performs multivariate meta-snalysis using the \link{metaVAR} package.
+The function performs multivariate meta-snalysis using the \link[metaVAR:metaVAR-package]{metaVAR::metaVAR} package.
 }
 \examples{
 \dontrun{
@@ -29,7 +29,11 @@ pooled <- FitMetaVAR(
   ncores = parallel::detectCores()
 )
 summary(pooled)
+print(pooled)
+coef(pooled)
+vcov(pooled)
 }
+
 }
 \concept{Meta-Analysis Functions}
 \keyword{manMetaVAR}

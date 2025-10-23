@@ -7,6 +7,8 @@
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
+#'
+#' @importFrom stats coef vcov
 #' @export
 #' @keywords manMetaVAR fit simulation
 SimFitDTVAR <- function(taskid,
@@ -40,7 +42,9 @@ SimFitDTVAR <- function(taskid,
         con <- file(fn_output)
         saveRDS(
           object = FitDTVAR(
-            data = readRDS(fn_input)
+            data = readRDS(fn_input),
+            ncores = NULL,
+            seed = seed
           ),
           file = con
         )
