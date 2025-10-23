@@ -14,6 +14,7 @@
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Single Replication from the Simulation Study">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -75,7 +76,147 @@ Agaloos Pesigan</h4>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/manMetaVAR">manMetaVAR</a></span><span class="op">)</span></span></code></pre></div>
-  </main>
+<div class="section level2">
+<h2 id="data-generation">Data Generation<a class="anchor" aria-label="anchor" href="#data-generation"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">taskid</span> <span class="op">&lt;-</span> <span class="fl">9</span></span>
+<span><span class="va">seed</span> <span class="op">&lt;-</span> <span class="fl">42</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/GenData.html">GenData</a></span><span class="op">(</span>taskid <span class="op">=</span> <span class="va">taskid</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-sim-rep-unnamed-chunk-9-1.png" width="3300"><img src="fig-vignettes-sim-rep-unnamed-chunk-9-2.png" width="3300"></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        id              time             y1                y2         </span></span>
+<span><span class="co">#&gt;  Min.   :  1.00   Min.   :  0.0   Min.   :-5.9822   Min.   :-5.6518  </span></span>
+<span><span class="co">#&gt;  1st Qu.: 50.75   1st Qu.:124.8   1st Qu.:-0.2349   1st Qu.:-1.2344  </span></span>
+<span><span class="co">#&gt;  Median :100.50   Median :249.5   Median : 0.4984   Median :-0.5300  </span></span>
+<span><span class="co">#&gt;  Mean   :100.50   Mean   :249.5   Mean   : 0.5099   Mean   :-0.5317  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:150.25   3rd Qu.:374.2   3rd Qu.: 1.2414   3rd Qu.: 0.1703  </span></span>
+<span><span class="co">#&gt;  Max.   :200.00   Max.   :499.0   Max.   : 8.2568   Max.   : 4.8031</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="metavar">MetaVAR<a class="anchor" aria-label="anchor" href="#metavar"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dtvar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitDTVAR.html">FitDTVAR</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">dtvar</span>, means <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; fitDTVARMxID::FitDTVARMxID(data = data$data, observed = paste0("y", </span></span>
+<span><span class="co">#&gt;     seq_len(data$k)), id = "id", alpha_fixed = TRUE, alpha_free = NULL, </span></span>
+<span><span class="co">#&gt;     alpha_values = NULL, alpha_lbound = NULL, alpha_ubound = NULL, </span></span>
+<span><span class="co">#&gt;     beta_fixed = FALSE, beta_free = NULL, beta_values = data$beta, </span></span>
+<span><span class="co">#&gt;     beta_lbound = NULL, beta_ubound = NULL, psi_diag = FALSE, </span></span>
+<span><span class="co">#&gt;     psi_d_free = NULL, psi_d_values = NULL, psi_d_lbound = NULL, </span></span>
+<span><span class="co">#&gt;     psi_d_ubound = NULL, psi_l_free = NULL, psi_l_values = NULL, </span></span>
+<span><span class="co">#&gt;     psi_l_lbound = NULL, psi_l_ubound = NULL, nu_fixed = FALSE, </span></span>
+<span><span class="co">#&gt;     nu_free = NULL, nu_values = data$nu, nu_lbound = NULL, nu_ubound = NULL, </span></span>
+<span><span class="co">#&gt;     theta_diag = TRUE, theta_fixed = TRUE, theta_d_free = NULL, </span></span>
+<span><span class="co">#&gt;     theta_d_values = coef(fixed_theta), theta_d_lbound = NULL, </span></span>
+<span><span class="co">#&gt;     theta_d_ubound = NULL, theta_d_equal = FALSE, theta_l_free = NULL, </span></span>
+<span><span class="co">#&gt;     theta_l_values = NULL, theta_l_lbound = NULL, theta_l_ubound = NULL, </span></span>
+<span><span class="co">#&gt;     mu0_fixed = TRUE, mu0_func = FALSE, mu0_free = NULL, mu0_values = data$mu0, </span></span>
+<span><span class="co">#&gt;     mu0_lbound = NULL, mu0_ubound = NULL, sigma0_fixed = TRUE, </span></span>
+<span><span class="co">#&gt;     sigma0_func = FALSE, sigma0_diag = FALSE, sigma0_d_free = NULL, </span></span>
+<span><span class="co">#&gt;     sigma0_d_values = data$sigma0_d_ldl, sigma0_d_lbound = NULL, </span></span>
+<span><span class="co">#&gt;     sigma0_d_ubound = NULL, sigma0_l_free = NULL, sigma0_l_values = data$sigma0_l_ldl, </span></span>
+<span><span class="co">#&gt;     sigma0_l_lbound = NULL, sigma0_l_ubound = NULL, tries_explore = 1000, </span></span>
+<span><span class="co">#&gt;     tries_local = 1000, max_attempts = 1000, grad_tol = 0.01, </span></span>
+<span><span class="co">#&gt;     hess_tol = 1e-08, eps = 1e-06, factor = 10, overwrite = FALSE, </span></span>
+<span><span class="co">#&gt;     path = path, prefix = "FitDTVAR", seed = seed, silent = TRUE, </span></span>
+<span><span class="co">#&gt;     ncores = ncores, clean = TRUE)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Means of the estimated paramaters per individual.</span></span>
+<span><span class="co">#&gt;  beta_1_1  beta_2_1  beta_1_2  beta_2_2    nu_1_1    nu_2_1 psi_l_2_1 psi_d_1_1 </span></span>
+<span><span class="co">#&gt;    0.6999   -0.1738   -0.1628    0.6344    0.5111   -0.5307   -0.3606   -1.7635 </span></span>
+<span><span class="co">#&gt; psi_d_2_1 </span></span>
+<span><span class="co">#&gt;   -2.4931</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">metavar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitMetaVAR.html">FitMetaVAR</a></span><span class="op">(</span><span class="va">dtvar</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">metavar</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; metaVAR::MetaVARMx(object = fit$output, x = NULL, alpha_values = fit$data$ma_fixed, </span></span>
+<span><span class="co">#&gt;     random = TRUE, diag = FALSE, effects = TRUE, int_meas = TRUE, </span></span>
+<span><span class="co">#&gt;     int_dyn = FALSE, cov_meas = FALSE, cov_dyn = FALSE, try = 10000, </span></span>
+<span><span class="co">#&gt;     ncores = ncores)</span></span>
+<span><span class="co">#&gt;                  est     se        z      p    2.5%   97.5%</span></span>
+<span><span class="co">#&gt; alpha[1,1]    0.7311 0.0107  68.4550 0.0000  0.7102  0.7520</span></span>
+<span><span class="co">#&gt; alpha[2,1]   -0.1208 0.0112 -10.7845 0.0000 -0.1428 -0.0989</span></span>
+<span><span class="co">#&gt; alpha[3,1]   -0.1399 0.0105 -13.3615 0.0000 -0.1605 -0.1194</span></span>
+<span><span class="co">#&gt; alpha[4,1]    0.7036 0.0115  61.2194 0.0000  0.6811  0.7262</span></span>
+<span><span class="co">#&gt; alpha[5,1]    0.5082 0.0247  20.5533 0.0000  0.4597  0.5566</span></span>
+<span><span class="co">#&gt; alpha[6,1]   -0.5319 0.0232 -22.8960 0.0000 -0.5774 -0.4863</span></span>
+<span><span class="co">#&gt; tau_sqr[1,1]  0.0122 0.0022   5.6274 0.0000  0.0079  0.0164</span></span>
+<span><span class="co">#&gt; tau_sqr[2,1]  0.0088 0.0017   5.2452 0.0000  0.0055  0.0121</span></span>
+<span><span class="co">#&gt; tau_sqr[3,1]  0.0016 0.0016   1.0086 0.3132 -0.0015  0.0046</span></span>
+<span><span class="co">#&gt; tau_sqr[4,1]  0.0050 0.0015   3.4016 0.0007  0.0021  0.0079</span></span>
+<span><span class="co">#&gt; tau_sqr[5,1]  0.0036 0.0035   1.0333 0.3014 -0.0033  0.0105</span></span>
+<span><span class="co">#&gt; tau_sqr[6,1] -0.0040 0.0033  -1.2073 0.2273 -0.0105  0.0025</span></span>
+<span><span class="co">#&gt; tau_sqr[2,2]  0.0138 0.0024   5.7543 0.0000  0.0091  0.0185</span></span>
+<span><span class="co">#&gt; tau_sqr[3,2] -0.0007 0.0013  -0.5593 0.5760 -0.0034  0.0019</span></span>
+<span><span class="co">#&gt; tau_sqr[4,2]  0.0048 0.0019   2.5566 0.0106  0.0011  0.0085</span></span>
+<span><span class="co">#&gt; tau_sqr[5,2]  0.0017 0.0035   0.4934 0.6217 -0.0052  0.0087</span></span>
+<span><span class="co">#&gt; tau_sqr[6,2] -0.0084 0.0035  -2.4172 0.0156 -0.0153 -0.0016</span></span>
+<span><span class="co">#&gt; tau_sqr[3,3]  0.0102 0.0018   5.6867 0.0000  0.0067  0.0137</span></span>
+<span><span class="co">#&gt; tau_sqr[4,3]  0.0061 0.0014   4.2358 0.0000  0.0033  0.0089</span></span>
+<span><span class="co">#&gt; tau_sqr[5,3] -0.0055 0.0034  -1.5990 0.1098 -0.0122  0.0012</span></span>
+<span><span class="co">#&gt; tau_sqr[6,3] -0.0002 0.0032  -0.0560 0.9554 -0.0064  0.0060</span></span>
+<span><span class="co">#&gt; tau_sqr[4,4]  0.0128 0.0025   5.1929 0.0000  0.0080  0.0177</span></span>
+<span><span class="co">#&gt; tau_sqr[5,4] -0.0009 0.0036  -0.2463 0.8054 -0.0079  0.0061</span></span>
+<span><span class="co">#&gt; tau_sqr[6,4] -0.0064 0.0035  -1.8134 0.0698 -0.0133  0.0005</span></span>
+<span><span class="co">#&gt; tau_sqr[5,5]  0.1048 0.0122   8.5963 0.0000  0.0809  0.1287</span></span>
+<span><span class="co">#&gt; tau_sqr[6,5] -0.0385 0.0087  -4.4017 0.0000 -0.0556 -0.0214</span></span>
+<span><span class="co">#&gt; tau_sqr[6,6]  0.0948 0.0107   8.8456 0.0000  0.0738  0.1158</span></span>
+<span><span class="co">#&gt; i_sqr[1,1]    0.8595 0.0215  40.0605 0.0000  0.8175  0.9016</span></span>
+<span><span class="co">#&gt; i_sqr[2,1]    0.9004 0.0154  58.3596 0.0000  0.8701  0.9306</span></span>
+<span><span class="co">#&gt; i_sqr[3,1]    0.9197 0.0097  94.5627 0.0000  0.9006  0.9388</span></span>
+<span><span class="co">#&gt; i_sqr[4,1]    0.9287 0.0087 106.3393 0.0000  0.9116  0.9459</span></span>
+<span><span class="co">#&gt; i_sqr[5,1]    0.9448 0.0061 155.7457 0.0000  0.9329  0.9567</span></span>
+<span><span class="co">#&gt; i_sqr[6,1]    0.9655 0.0036 271.4362 0.0000  0.9586  0.9725</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="mlvar">MLVAR<a class="anchor" aria-label="anchor" href="#mlvar"></a>
+</h2>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mlvar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitMLVAR.html">FitMLVAR</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mlvar</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; mlVAR estimation completed. Input was:</span></span>
+<span><span class="co">#&gt;      - Variables: y1 y2 </span></span>
+<span><span class="co">#&gt;      - Lags: 1 </span></span>
+<span><span class="co">#&gt;      - Estimator: lmer </span></span>
+<span><span class="co">#&gt;      - Temporal: correlated</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Information indices:</span></span>
+<span><span class="co">#&gt;  var      aic      bic</span></span>
+<span><span class="co">#&gt;   y1 242373.8 242478.4</span></span>
+<span><span class="co">#&gt;   y2 250819.8 250924.4</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Temporal effects:</span></span>
+<span><span class="co">#&gt;  from to lag   fixed     SE P ran_SD</span></span>
+<span><span class="co">#&gt;    y1 y1   1  0.3597 0.0107 0 0.1452</span></span>
+<span><span class="co">#&gt;    y1 y2   1 -0.1743 0.0077 0 0.0994</span></span>
+<span><span class="co">#&gt;    y2 y1   1 -0.1605 0.0048 0 0.0544</span></span>
+<span><span class="co">#&gt;    y2 y2   1  0.3098 0.0087 0 0.1152</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Contemporaneous effects (posthoc estimated):</span></span>
+<span><span class="co">#&gt;  v1 v2 P 1-&gt;2 P 1&lt;-2    pcor ran_SD_pcor     cor ran_SD_cor</span></span>
+<span><span class="co">#&gt;  y2 y1      0      0 -0.1556      0.0336 -0.1556     0.0336</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Between-subject effects:</span></span>
+<span><span class="co">#&gt;  v1 v2 P 1-&gt;2 P 1&lt;-2    pcor     cor</span></span>
+<span><span class="co">#&gt;  y2 y1      0      0 -0.4199 -0.4199</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
