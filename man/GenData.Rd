@@ -18,7 +18,15 @@ the \code{\link[simStateSpace:SimSSMIVary]{simStateSpace::SimSSMIVary()}} functi
 \dontrun{
 set.seed(42)
 data <- GenData(taskid = 1)
+print(data)
+summary(data)
+plot(data)
 }
+
+}
+\seealso{
+Other Data Generation Functions: 
+\code{\link{Dynamics}()}
 }
 \concept{Data Generation Functions}
 \keyword{gendata}

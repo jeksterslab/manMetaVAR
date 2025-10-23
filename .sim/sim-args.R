@@ -1,13 +1,8 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 9L
-reps <- 500L
+tasks <- 27L
+reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
-n_chains <- 4
-n_adapt <- 10000
-n_iter <- 10000
-thin <- 1
-run_jags <- FALSE
 # ------------------------------------------------------------------------------
 output_root <- file.path(
   "/scratch",

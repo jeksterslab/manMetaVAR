@@ -5,6 +5,7 @@
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
+#'
 #' @export
 #' @keywords manMetaVAR simulation
 Sim <- function(taskid,
@@ -12,12 +13,7 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                seed,
-                n_chains,
-                n_adapt,
-                n_iter,
-                thin,
-                run_jags) {
+                seed) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -92,21 +88,4 @@ Sim <- function(taskid,
       integrity = integrity
     )
   )
-  if (run_jags) {
-    try(
-      SimFitJAGS(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity,
-        n_chains = n_chains,
-        n_adapt = n_adapt,
-        n_iter = n_iter,
-        thin = thin
-      )
-    )
-  }
 }

@@ -26,8 +26,9 @@ pkg_cran <- c(
 )
 
 pkg_github <- c(
-  "jeksterslab/fitDTVARMx",
-  "jeksterslab/simStateSpace"
+  "jeksterslab/fitDTVARMxID",
+  "jeksterslab/simStateSpace",
+  "jeksterslab/metaVAR"
 )
 
 pkg_github_ref <- c()

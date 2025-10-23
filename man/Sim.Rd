@@ -4,19 +4,7 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(
-  taskid,
-  repid,
-  output_folder,
-  overwrite,
-  integrity,
-  seed,
-  n_chains,
-  n_adapt,
-  n_iter,
-  thin,
-  run_jags
-)
+Sim(taskid, repid, output_folder, overwrite, integrity, seed)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -37,17 +25,6 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 
 \item{seed}{Integer.
 Random seed.}
-
-\item{n_chains}{The number of parallel chains for the model.}
-
-\item{n_adapt}{The number of iterations for adaptation.}
-
-\item{n_iter}{Number of iterations to monitor.}
-
-\item{thin}{Thinning interval for monitors.}
-
-\item{run_jags}{Logical.
-If \code{run_jags = TRUE}, run JAGS model.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

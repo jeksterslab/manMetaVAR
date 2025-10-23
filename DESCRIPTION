@@ -21,18 +21,16 @@ Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.0.0),
     OpenMx,
-    fitDTVARMx,
+    fitDTVARMxID,
     metaVAR
 Imports:
     simStateSpace,
-    mlVAR,
-    rjags,
-    coda
+    mlVAR
 Remotes:
-    jeksterslab/fitDTVARMx,
+    jeksterslab/fitDTVARMxID,
     jeksterslab/metaVAR
 Suggests:
     knitr,
     rmarkdown,
     testthat
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3.9000

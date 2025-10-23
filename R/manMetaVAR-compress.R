@@ -5,6 +5,7 @@
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
+#'
 #' @export
 #' @family Compression Functions
 #' @keywords manMetaVAR compress

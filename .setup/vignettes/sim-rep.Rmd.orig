@@ -99,20 +99,6 @@ if (!file.exists(fn_mlvar)) {
 mlvar <- readRDS(fn_mlvar)
 ```
 
-```{r}
-#| eval = FALSE
-fn_jags <- root$find_file(
-  ".setup",
-  "data-raw",
-  "sim-rep-jags.Rds"
-)
-if (!file.exists(fn_jags)) {
-  jags <- FitJAGS(data)
-  saveRDS(jags, file = fn_jags)
-}
-jags <- readRDS(fn_jags)
-```
-
 ## Data Generation
 
 ```{r}
@@ -157,16 +143,4 @@ mlvar <- FitMLVAR(data)
 
 ```{r}
 summary(mlvar)
-```
-
-## JAGS
-
-```{r}
-#| eval = FALSE
-jags <- FitJAGS(data)
-```
-
-```{r}
-#| eval = FALSE
-summary(jags)
 ```

@@ -3,6 +3,21 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
 suppressMessages(
   suppressWarnings(
+    library(OpenMx)
+  )
+)
+suppressMessages(
+  suppressWarnings(
+    library(fitDTVARMxID)
+  )
+)
+suppressMessages(
+  suppressWarnings(
+    library(metaVAR)
+  )
+)
+suppressMessages(
+  suppressWarnings(
     library(manMetaVAR)
   )
 )
@@ -29,12 +44,7 @@ tryCatch(
       output_folder = output_folder,
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
-      seed = seed,
-      n_chains = n_chains,
-      n_adapt = n_adapt,
-      n_iter = n_iter,
-      thin = thin,
-      run_jags = run_jags
+      seed = seed
     )
   },
   error = function(e) {

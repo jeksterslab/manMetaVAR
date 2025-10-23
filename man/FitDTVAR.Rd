@@ -2,9 +2,9 @@
 % Please edit documentation in R/manMetaVAR-fit-dt-var.R
 \name{FitDTVAR}
 \alias{FitDTVAR}
-\title{Fit the Model using the fitDTVARMx Package}
+\title{Fit the Model using the fitDTVARMxID Package}
 \usage{
-FitDTVAR(data, ncores = NULL)
+FitDTVAR(data, ncores = NULL, seed = NULL)
 }
 \arguments{
 \item{data}{R object.
@@ -12,9 +12,12 @@ Output of the \code{\link[=GenData]{GenData()}} function.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
-The function fits the model using the \link{fitDTVARMx} package.
+The function fits the model using the \link[fitDTVARMxID:fitDTVARMxID-package]{fitDTVARMxID::fitDTVARMxID} package.
 }
 \examples{
 \dontrun{
@@ -24,12 +27,15 @@ fit <- FitDTVAR(
   data = data,
   ncores = parallel::detectCores()
 )
+print(fit)
 summary(fit)
+coef(fit)
+vcov(fit)
 }
+
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitJAGS}()},
 \code{\link{FitMLVAR}()}
 }
 \concept{Model Fitting Functions}

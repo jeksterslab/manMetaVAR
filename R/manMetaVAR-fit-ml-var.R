@@ -9,12 +9,13 @@
 #' set.seed(42)
 #' data <- GenData(taskid = 1)
 #' fit <- FitMLVAR(data = data)
+#' print(fit)
 #' summary(fit)
 #' }
+#'
 #' @family Model Fitting Functions
 #' @keywords manMetaVAR fit
-#' @import OpenMx
-#' @import fitDTVARMx
+#' @import mlVAR
 #' @export
 FitMLVAR <- function(data,
                      ncores = NULL) {
@@ -24,7 +25,7 @@ FitMLVAR <- function(data,
   }
   output <- mlVAR::mlVAR(
     data = data$data,
-    vars = paste0("y", seq_len(model$k)),
+    vars = paste0("y", seq_len(data$k)),
     idvar = "id",
     lags = 1,
     estimator = "lmer",
@@ -32,12 +33,13 @@ FitMLVAR <- function(data,
     nCores = ncores
   )
   end_time <- Sys.time()
+  elapsed <- end_time - start_time
   structure(
     list(
+      data = data,
       output = output,
-      start_time = start_time,
-      end_time = end_time
+      elapsed = elapsed
     ),
-    class = "manmetavar_fitmlvar"
+    class = "manmetavar.mlvar"
   )
 }

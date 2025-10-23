@@ -4,6 +4,7 @@
 #' in the OS-specific format.
 #'
 #' @inheritParams Template
+#'
 #' @export
 #' @keywords manCTMed simulation
 SimFN <- function(output_type,

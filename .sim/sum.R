@@ -1,6 +1,21 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
 suppressMessages(
   suppressWarnings(
+    library(OpenMx)
+  )
+)
+suppressMessages(
+  suppressWarnings(
+    library(fitDTVARMxID)
+  )
+)
+suppressMessages(
+  suppressWarnings(
+    library(metaVAR)
+  )
+)
+suppressMessages(
+  suppressWarnings(
     library(manMetaVAR)
   )
 )

@@ -27,21 +27,27 @@ data_process_params <- function(overwrite = FALSE) {
   }
   if (write) {
     n <- c(
-      15,
       50,
-      150
+      100,
+      200
     )
     time <- c(
-      50,
-      150,
-      250
+      100,
+      200,
+      500
+    )
+    dynamics <- c(
+      1,
+      2,
+      3
     )
     taskid <- seq_len(
-      length(n) * length(time)
+      length(n) * length(time) * length(dynamics)
     )
     params <- expand.grid(
       n = n,
-      time = time
+      time = time,
+      dynamics = dynamics
     )
     params <- data.frame(
       taskid = taskid,

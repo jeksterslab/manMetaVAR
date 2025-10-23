@@ -14,20 +14,21 @@ Output of the \code{\link[=GenData]{GenData()}} function.}
 Number of cores to use.}
 }
 \description{
-The function fits the model using the \link{mlVAR} package.
+The function fits the model using the \link[mlVAR:mlVAR]{mlVAR::mlVAR} package.
 }
 \examples{
 \dontrun{
 set.seed(42)
 data <- GenData(taskid = 1)
 fit <- FitMLVAR(data = data)
+print(fit)
 summary(fit)
 }
+
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitDTVAR}()},
-\code{\link{FitJAGS}()}
+\code{\link{FitDTVAR}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}
