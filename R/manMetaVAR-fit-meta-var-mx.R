@@ -40,7 +40,7 @@ FitMetaVAR <- function(fit,
     int_dyn = FALSE,
     cov_meas = FALSE,
     cov_dyn = FALSE,
-    try = 10000,
+    try = 1000,
     ncores = ncores
   )
   end_time <- Sys.time()
