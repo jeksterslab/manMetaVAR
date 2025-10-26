@@ -8,7 +8,7 @@ message: 'To cite package "manMetaVAR" in publications use:'
 type: software
 license: MIT
 title: 'manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients'
-version: 0.9.1
+version: 0.9.2
 doi: 10.0000/0000000000
 identifiers:
 - type: url
@@ -33,7 +33,7 @@ preferred-citation:
   year: '2025'
   doi: 10.0000/0000000000
   journal: JOURNAL_TITLE_HERE
-  notes: R package version 0.9.1
+  notes: R package version 0.9.2
 repository-code: https://github.com/jeksterslab/manMetaVAR
 url: https://jeksterslab.github.io/manMetaVAR/
 contact:
