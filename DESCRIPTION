@@ -1,6 +1,6 @@
 Package: manMetaVAR
 Title: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
-Version: 0.9.1
+Version: 0.9.2
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -33,4 +33,3 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-RoxygenNote: 7.3.3.9000
