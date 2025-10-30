@@ -36,6 +36,25 @@
 #'   Significance level \eqn{\alpha}.
 #' @param digits Integer indicating the number of decimal places to display.
 #' @param show	Tables to show.
+#' @param wd Character string.
+#'   Working directory.
+#' @param mplus_bin Character string.
+#'   Path to Mplus binary.
+#'   If `mplus_bin = NULL`,
+#'   the function will try to find
+#'   the appropriate binary.
+#' @param fn_data Character string.
+#'   Filename for data file.
+#' @param fn_estimates Character string.
+#'   Filename for estimates output.
+#' @param fn_results Character string.
+#'   Filename for results output.
+#' @param fn_posterior Character string.
+#'   Filename for posterior output.
+#' @param fn_factorscores Character string.
+#'   Filename for factor scores output.
+#' @param mplus Logical.
+#'   If `mplus = TRUE`, fit a DSEM model in `Mplus`.
 #' @param ... additional arguments.
 #' @name Template
 NULL

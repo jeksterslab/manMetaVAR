@@ -6,6 +6,7 @@
 #'
 #' @inheritParams Template
 #'
+#' @rdname print.manmetavar
 #' @method print manmetavar.data
 #' @keywords methods
 #' @export
@@ -24,6 +25,7 @@ print.manmetavar.data <- function(x,
 #'
 #' @inheritParams Template
 #'
+#' @rdname summary.manmetavar
 #' @method summary manmetavar.data
 #' @keywords methods
 #' @export
@@ -42,6 +44,7 @@ summary.manmetavar.data <- function(object,
 #'
 #' @inheritParams Template
 #'
+#' @rdname plot.manmetavar
 #' @method plot manmetavar.data
 #' @keywords methods
 #' @export

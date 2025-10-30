@@ -22,7 +22,7 @@
 #' vcov(pooled)
 #' }
 #'
-#' @family Meta-Analysis Functions
+#' @family Model Fitting Functions
 #' @keywords manMetaVAR meta
 #' @import metaVAR
 #' @export

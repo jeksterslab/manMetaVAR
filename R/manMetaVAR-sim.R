@@ -13,7 +13,8 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                seed) {
+                seed,
+                mplus = FALSE) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -88,4 +89,17 @@ Sim <- function(taskid,
       integrity = integrity
     )
   )
+  if (mplus) {
+    try(
+      SimFitMplus(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
+    )
+  }
 }

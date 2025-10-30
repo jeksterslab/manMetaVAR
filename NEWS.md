@@ -1,3 +1,7 @@
+# manMetaVAR 0.9.4
+
+* Added `FitMplus()`.
+
 # manMetaVAR 0.9.3
 
 * Edits to `.MxHelperEnsureGoodHessian()`.
@@ -9,5 +13,3 @@
 # manMetaVAR 0.9.1
 
 * Initial setup
-
-2025-08-04-14171915

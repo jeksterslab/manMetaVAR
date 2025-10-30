@@ -35,6 +35,13 @@ vcov(pooled)
 }
 
 }
-\concept{Meta-Analysis Functions}
+\seealso{
+Other Model Fitting Functions: 
+\code{\link{FitDTVAR}()},
+\code{\link{FitMLVAR}()},
+\code{\link{FitMplus}()},
+\code{\link{MplusInput}()}
+}
+\concept{Model Fitting Functions}
 \keyword{manMetaVAR}
 \keyword{meta}
