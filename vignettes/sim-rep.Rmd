@@ -1,0 +1,236 @@
+---
+title: "Single Replication from the Simulation Study"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Single Replication from the Simulation Study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+``` r
+library(OpenMx)
+library(fitDTVARMxID)
+library(metaVAR)
+library(manMetaVAR)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Data Generation
+
+
+``` r
+taskid <- 9
+seed <- 42
+set.seed(seed)
+data <- GenData(taskid = taskid)
+```
+
+
+``` r
+plot(data)
+```
+
+<img src="fig-vignettes-sim-rep-unnamed-chunk-10-1.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-10-2.png" width="3300" />
+
+``` r
+summary(data)
+#>        id              time             y1                y2         
+#>  Min.   :  1.00   Min.   :  0.0   Min.   :-5.9822   Min.   :-5.6518  
+#>  1st Qu.: 50.75   1st Qu.:124.8   1st Qu.:-0.2349   1st Qu.:-1.2344  
+#>  Median :100.50   Median :249.5   Median : 0.4984   Median :-0.5300  
+#>  Mean   :100.50   Mean   :249.5   Mean   : 0.5099   Mean   :-0.5317  
+#>  3rd Qu.:150.25   3rd Qu.:374.2   3rd Qu.: 1.2414   3rd Qu.: 0.1703  
+#>  Max.   :200.00   Max.   :499.0   Max.   : 8.2568   Max.   : 4.8031
+```
+
+## MetaVAR
+
+
+``` r
+dtvar <- FitDTVAR(data)
+```
+
+
+``` r
+summary(dtvar, means = TRUE)
+#> Call:
+#> fitDTVARMxID::FitDTVARMxID(data = data$data, observed = paste0("y", 
+#>     seq_len(data$k)), id = "id", alpha_fixed = TRUE, alpha_free = NULL, 
+#>     alpha_values = NULL, alpha_lbound = NULL, alpha_ubound = NULL, 
+#>     beta_fixed = FALSE, beta_free = NULL, beta_values = data$beta, 
+#>     beta_lbound = NULL, beta_ubound = NULL, psi_diag = FALSE, 
+#>     psi_d_free = NULL, psi_d_values = NULL, psi_d_lbound = NULL, 
+#>     psi_d_ubound = NULL, psi_l_free = NULL, psi_l_values = NULL, 
+#>     psi_l_lbound = NULL, psi_l_ubound = NULL, nu_fixed = FALSE, 
+#>     nu_free = NULL, nu_values = data$nu, nu_lbound = NULL, nu_ubound = NULL, 
+#>     theta_diag = TRUE, theta_fixed = TRUE, theta_d_free = NULL, 
+#>     theta_d_values = coef(fixed_theta), theta_d_lbound = NULL, 
+#>     theta_d_ubound = NULL, theta_d_equal = FALSE, theta_l_free = NULL, 
+#>     theta_l_values = NULL, theta_l_lbound = NULL, theta_l_ubound = NULL, 
+#>     mu0_fixed = TRUE, mu0_func = FALSE, mu0_free = NULL, mu0_values = data$mu0, 
+#>     mu0_lbound = NULL, mu0_ubound = NULL, sigma0_fixed = TRUE, 
+#>     sigma0_func = FALSE, sigma0_diag = FALSE, sigma0_d_free = NULL, 
+#>     sigma0_d_values = data$sigma0_d_ldl, sigma0_d_lbound = NULL, 
+#>     sigma0_d_ubound = NULL, sigma0_l_free = NULL, sigma0_l_values = data$sigma0_l_ldl, 
+#>     sigma0_l_lbound = NULL, sigma0_l_ubound = NULL, tries_explore = 100, 
+#>     tries_local = 100, max_attempts = 10, grad_tol = 0.01, hess_tol = 1e-08, 
+#>     eps = 1e-06, factor = 10, overwrite = FALSE, path = path, 
+#>     prefix = "FitDTVAR", seed = seed, silent = TRUE, ncores = ncores, 
+#>     clean = TRUE)
+#> 
+#> Means of the estimated paramaters per individual.
+#>  beta_1_1  beta_2_1  beta_1_2  beta_2_2    nu_1_1    nu_2_1 psi_l_2_1 psi_d_1_1 
+#>    0.6999   -0.1738   -0.1628    0.6344    0.5111   -0.5307   -0.3606   -1.7635 
+#> psi_d_2_1 
+#>   -2.4913
+```
+
+
+``` r
+metavar <- FitMetaVAR(dtvar)
+```
+
+
+``` r
+summary(metavar)
+#> Call:
+#> metaVAR::MetaVARMx(object = fit$output, x = NULL, alpha_values = fit$data$ma_fixed, 
+#>     random = TRUE, diag = FALSE, effects = TRUE, int_meas = TRUE, 
+#>     int_dyn = FALSE, cov_meas = FALSE, cov_dyn = FALSE, try = 1000, 
+#>     ncores = ncores)
+#>                  est     se        z      p    2.5%   97.5%
+#> alpha[1,1]    0.7313 0.0107  68.5382 0.0000  0.7103  0.7522
+#> alpha[2,1]   -0.1205 0.0112 -10.7694 0.0000 -0.1424 -0.0986
+#> alpha[3,1]   -0.1397 0.0105 -13.3505 0.0000 -0.1602 -0.1192
+#> alpha[4,1]    0.7041 0.0115  61.4747 0.0000  0.6816  0.7265
+#> alpha[5,1]    0.5083 0.0247  20.5573 0.0000  0.4598  0.5567
+#> alpha[6,1]   -0.5319 0.0232 -22.8975 0.0000 -0.5774 -0.4864
+#> tau_sqr[1,1]  0.0122 0.0022   5.6271 0.0000  0.0079  0.0164
+#> tau_sqr[2,1]  0.0088 0.0017   5.2344 0.0000  0.0055  0.0121
+#> tau_sqr[3,1]  0.0015 0.0016   0.9949 0.3198 -0.0015  0.0046
+#> tau_sqr[4,1]  0.0050 0.0015   3.3783 0.0007  0.0021  0.0078
+#> tau_sqr[5,1]  0.0035 0.0035   1.0082 0.3134 -0.0034  0.0104
+#> tau_sqr[6,1] -0.0038 0.0033  -1.1618 0.2453 -0.0103  0.0026
+#> tau_sqr[2,2]  0.0137 0.0024   5.7478 0.0000  0.0090  0.0184
+#> tau_sqr[3,2] -0.0008 0.0013  -0.5828 0.5600 -0.0034  0.0018
+#> tau_sqr[4,2]  0.0047 0.0019   2.5352 0.0112  0.0011  0.0084
+#> tau_sqr[5,2]  0.0016 0.0035   0.4574 0.6474 -0.0053  0.0086
+#> tau_sqr[6,2] -0.0082 0.0035  -2.3629 0.0181 -0.0150 -0.0014
+#> tau_sqr[3,3]  0.0101 0.0018   5.6927 0.0000  0.0066  0.0136
+#> tau_sqr[4,3]  0.0060 0.0014   4.2153 0.0000  0.0032  0.0088
+#> tau_sqr[5,3] -0.0056 0.0034  -1.6380 0.1014 -0.0123  0.0011
+#> tau_sqr[6,3]  0.0000 0.0032   0.0080 0.9936 -0.0062  0.0062
+#> tau_sqr[4,4]  0.0127 0.0024   5.1891 0.0000  0.0079  0.0175
+#> tau_sqr[5,4] -0.0010 0.0036  -0.2924 0.7700 -0.0080  0.0059
+#> tau_sqr[6,4] -0.0061 0.0035  -1.7486 0.0804 -0.0130  0.0007
+#> tau_sqr[5,5]  0.1048 0.0122   8.5966 0.0000  0.0809  0.1287
+#> tau_sqr[6,5] -0.0385 0.0087  -4.4018 0.0000 -0.0556 -0.0214
+#> tau_sqr[6,6]  0.0948 0.0107   8.8457 0.0000  0.0738  0.1158
+#> i_sqr[1,1]    0.8593 0.0215  39.9862 0.0000  0.8171  0.9014
+#> i_sqr[2,1]    0.9001 0.0155  58.1145 0.0000  0.8697  0.9304
+#> i_sqr[3,1]    0.9197 0.0097  94.5291 0.0000  0.9006  0.9387
+#> i_sqr[4,1]    0.9285 0.0088 106.0050 0.0000  0.9114  0.9457
+#> i_sqr[5,1]    0.9448 0.0061 155.7540 0.0000  0.9329  0.9567
+#> i_sqr[6,1]    0.9655 0.0036 271.4561 0.0000  0.9586  0.9725
+```
+
+## MLVAR
+
+
+``` r
+mlvar <- FitMLVAR(data)
+```
+
+
+``` r
+summary(mlvar)
+#> 
+#> mlVAR estimation completed. Input was:
+#>  	- Variables: y1 y2 
+#>  	- Lags: 1 
+#>  	- Estimator: lmer 
+#>  	- Temporal: correlated
+#> 
+#> Information indices:
+#>  var      aic      bic
+#>   y1 242373.8 242478.4
+#>   y2 250819.8 250924.4
+#> 
+#> 
+#> Temporal effects:
+#>  from to lag   fixed     SE P ran_SD
+#>    y1 y1   1  0.3597 0.0107 0 0.1452
+#>    y1 y2   1 -0.1743 0.0077 0 0.0994
+#>    y2 y1   1 -0.1605 0.0048 0 0.0544
+#>    y2 y2   1  0.3098 0.0087 0 0.1151
+#> 
+#> 
+#> Contemporaneous effects (posthoc estimated):
+#>  v1 v2 P 1->2 P 1<-2    pcor ran_SD_pcor     cor ran_SD_cor
+#>  y2 y1      0      0 -0.1556      0.0336 -0.1556     0.0336
+#> 
+#> 
+#> Between-subject effects:
+#>  v1 v2 P 1->2 P 1<-2    pcor     cor
+#>  y2 y1      0      0 -0.4199 -0.4199
+```
+
+## Mplus
+
+
+``` r
+mplus <- FitMplus(data)
+```
+
+
+``` r
+summary(mplus)
+#>                               est     se      R    2.5%   97.5%
+#> theta[1,1]                 0.5034 0.0128 481000  0.4911  0.5137
+#> theta[2,2]                 0.5024 0.0157 481000  0.4908  0.5132
+#> psi[1,1]                   0.1984 0.0184 481000  0.1884  0.2115
+#> psi[2,1]                  -0.0531 0.0030 481000 -0.0577 -0.0483
+#> psi[2,2]                   0.1764 0.0210 481000  0.1659  0.1883
+#> mean(nu[1,1])              0.5043 0.0299 481000  0.4478  0.5614
+#> mean(nu[2,1])             -0.5306 0.0263 481000 -0.5819 -0.4789
+#> mean(beta[1,1])            0.6709 0.0209 481000  0.6265  0.6991
+#> mean(beta[2,1])           -0.1589 0.0186 481000 -0.1984 -0.1311
+#> mean(beta[1,2])           -0.1802 0.0213 481000 -0.2373 -0.1494
+#> mean(beta[2,2])            0.6404 0.0254 481000  0.5837  0.6707
+#> cov(nu[1,1],nu[1,1])       0.1112 0.1902 481000  0.0863  0.8235
+#> cov(nu[2,1],nu[1,1])      -0.0407 0.0463 481000 -0.1420  0.1298
+#> cov(nu[2,1],nu[2,1])       0.1031 0.0710 481000  0.0801  0.3481
+#> cov(nu[1,1],beta[1,1])     0.0067 0.0333 481000 -0.0729  0.0726
+#> cov(nu[2,1],beta[1,1])    -0.0023 0.0460 481000 -0.0502  0.1228
+#> cov(beta[1,1],beta[1,1])   0.0175 0.0918 481000  0.0130  0.3500
+#> cov(nu[1,1],beta[2,1])     0.0028 0.0744 481000 -0.3451  0.0480
+#> cov(nu[2,1],beta[2,1])    -0.0088 0.0405 481000 -0.1406  0.0192
+#> cov(beta[2,1], beta[1,1])  0.0103 0.0624 481000 -0.1151  0.0536
+#> cov(beta[2,1],beta[2,1])   0.0165 0.0936 481000  0.0123  0.3288
+#> cov(nu[1,1],beta[1,2])    -0.0032 0.1191 481000 -0.5491  0.1181
+#> cov(nu[2,1],beta[1,2])     0.0018 0.0684 481000 -0.1631  0.1880
+#> cov(beta[1,2],beta[1,1])  -0.0010 0.0849 481000 -0.3224  0.0802
+#> cov(beta[1,2],beta[2,1])  -0.0016 0.0649 481000 -0.0932  0.2515
+#> cov(beta[1,2],beta[1,2])   0.0092 0.1515 481000  0.0062  0.6004
+#> cov(nu[1,1],beta[2,2])    -0.0013 0.0415 481000 -0.1399  0.0774
+#> cov(nu[2,1],beta[2,2])    -0.0043 0.0613 481000 -0.1684  0.1732
+#> cov(beta[2,2],beta[1,1])  -0.0010 0.0701 481000 -0.2732  0.0113
+#> cov(beta[2,2],beta[2,1])   0.0019 0.0551 481000 -0.0464  0.2174
+#> cov(beta[2,2],beta[1,2])   0.0052 0.0755 481000 -0.1312  0.2544
+#> cov(beta[2,2],beta[2,2])   0.0148 0.1093 481000  0.0107  0.3834
+```

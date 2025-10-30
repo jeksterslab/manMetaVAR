@@ -3,6 +3,7 @@ tasks <- 27L
 reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
+mplus <- FALSE
 # ------------------------------------------------------------------------------
 output_root <- file.path(
   "/scratch",

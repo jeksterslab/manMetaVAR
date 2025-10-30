@@ -28,7 +28,10 @@ summary(fit)
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitDTVAR}()}
+\code{\link{FitDTVAR}()},
+\code{\link{FitMetaVAR}()},
+\code{\link{FitMplus}()},
+\code{\link{MplusInput}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

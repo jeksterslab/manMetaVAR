@@ -45,7 +45,8 @@ tryCatch(
       output_folder = output_folder,
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
-      seed = seed
+      seed = seed,
+      mplus = mplus
     )
     # setTimeLimit(elapsed = Inf)
   },

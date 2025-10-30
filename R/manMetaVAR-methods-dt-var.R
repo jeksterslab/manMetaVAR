@@ -48,6 +48,7 @@
 #'
 #' @return Returns a list of vectors of parameter estimates.
 #'
+#' @rdname coef.manmetavar
 #' @method coef manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -89,6 +90,7 @@ coef.manmetavar.dtvar <- function(object,
 #' @inheritParams coef.manmetavar.dtvar
 #' @inheritParams Template
 #'
+#' @rdname vcov.manmetavar
 #' @method vcov manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -130,6 +132,7 @@ vcov.manmetavar.dtvar <- function(object,
 #' @inheritParams coef.manmetavar.dtvar
 #' @inheritParams Template
 #'
+#' @rdname print.manmetavar
 #' @method print manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -172,6 +175,7 @@ print.manmetavar.dtvar <- function(x,
 #' @inheritParams print.manmetavar.dtvar
 #' @inheritParams Template
 #'
+#' @rdname summary.manmetavar
 #' @method summary manmetavar.dtvar
 #' @keywords methods
 #' @import fitDTVARMxID

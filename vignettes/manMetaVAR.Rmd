@@ -1,6 +1,6 @@
 ---
 title: "manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients"
-author: "Blind Melon"
+author: "Ivan Jacob Agaloos Pesigan"
 date: "`r Sys.Date()`"
 bibliography: "vignettes.bib"
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl

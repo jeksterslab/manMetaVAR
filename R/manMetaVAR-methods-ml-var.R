@@ -6,6 +6,7 @@
 #'
 #' @inheritParams Template
 #'
+#' @rdname print.manmetavar
 #' @method print manmetavar.mlvar
 #' @keywords methods
 #' @import mlVAR
@@ -45,6 +46,7 @@ print.manmetavar.mlvar <- function(x,
 #'   and
 #'   confidence intervals.
 #'
+#' @rdname summary.manmetavar
 #' @method summary manmetavar.mlvar
 #' @keywords methods
 #' @import mlVAR

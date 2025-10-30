@@ -36,7 +36,10 @@ vcov(fit)
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitMLVAR}()}
+\code{\link{FitMLVAR}()},
+\code{\link{FitMetaVAR}()},
+\code{\link{FitMplus}()},
+\code{\link{MplusInput}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

@@ -4,7 +4,7 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(taskid, repid, output_folder, overwrite, integrity, seed)
+Sim(taskid, repid, output_folder, overwrite, integrity, seed, mplus = FALSE)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -25,6 +25,9 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 
 \item{seed}{Integer.
 Random seed.}
+
+\item{mplus}{Logical.
+If \code{mplus = TRUE}, fit a DSEM model in \code{Mplus}.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
