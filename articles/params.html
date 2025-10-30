@@ -24,7 +24,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manMetaVAR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,7 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../articles/manMetaVAR.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/params.html">Simulation Parameters</a></li>
-    <li><a class="dropdown-item" href="../articles/session.html">manMetaVAR: Session</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -79,8 +73,347 @@ Agaloos Pesigan</h4>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/manMetaVAR">manMetaVAR</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
+</h2>
 <div class="datatables html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],[50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200],[100,100,100,200,200,200,500,500,500,100,100,100,200,200,200,500,500,500,100,100,100,200,200,200,500,500,500],[1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>taskid<\/th>\n      <th>n<\/th>\n      <th>time<\/th>\n      <th>dynamics<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"taskid","targets":1},{"name":"n","targets":2},{"name":"time","targets":3},{"name":"dynamics","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></main>
+<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],[50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200,50,100,200],[100,100,100,200,200,200,500,500,500,100,100,100,200,200,200,500,500,500,100,100,100,200,200,200,500,500,500],[1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>taskid<\/th>\n      <th>n<\/th>\n      <th>time<\/th>\n      <th>dynamics<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"taskid","targets":1},{"name":"n","targets":2},{"name":"time","targets":3},{"name":"dynamics","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="section level2">
+<h2 id="stable-reciprocal-regulation">Stable Reciprocal Regulation<a class="anchor" aria-label="anchor" href="#stable-reciprocal-regulation"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Dynamics.html">Dynamics</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $p</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $k</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $lambda</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    1    0</span></span>
+<span><span class="co">#&gt; [2,]    0    1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_mu</span></span>
+<span><span class="co">#&gt; [1]  0.5 -0.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.10 -0.05</span></span>
+<span><span class="co">#&gt; [2,] -0.05  0.10</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma_l</span></span>
+<span><span class="co">#&gt;            [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.3162278 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] -0.1581139 0.2738613</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.5  0.0</span></span>
+<span><span class="co">#&gt; [2,]  0.0  0.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.7071068 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.0000000 0.7071068</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -0.4327521 -0.4327521</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    0    0</span></span>
+<span><span class="co">#&gt; [2,]    0    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $alpha</span></span>
+<span><span class="co">#&gt; [1] 0 0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_mu</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.70 -0.20</span></span>
+<span><span class="co">#&gt; [2,] -0.15  0.65</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma</span></span>
+<span><span class="co">#&gt;      [,1]  [,2]  [,3]  [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.02 0.010 0.000 0.000</span></span>
+<span><span class="co">#&gt; [2,] 0.01 0.015 0.000 0.000</span></span>
+<span><span class="co">#&gt; [3,] 0.00 0.000 0.010 0.005</span></span>
+<span><span class="co">#&gt; [4,] 0.00 0.000 0.005 0.015</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma_l</span></span>
+<span><span class="co">#&gt;            [,1] [,2] [,3]      [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.14142136  0.0 0.00 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.07071068  0.1 0.00 0.0000000</span></span>
+<span><span class="co">#&gt; [3,] 0.00000000  0.0 0.10 0.0000000</span></span>
+<span><span class="co">#&gt; [4,] 0.00000000  0.0 0.05 0.1118034</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.20 -0.05</span></span>
+<span><span class="co">#&gt; [2,] -0.05  0.18</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l</span></span>
+<span><span class="co">#&gt;            [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.4472136 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] -0.1118034 0.4092676</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -1.507772 -1.701853</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l_ldl</span></span>
+<span><span class="co">#&gt;       [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.00    0</span></span>
+<span><span class="co">#&gt; [2,] -0.25    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_fixed</span></span>
+<span><span class="co">#&gt; [1]  0.70 -0.15 -0.20  0.65  0.50 -0.50</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random</span></span>
+<span><span class="co">#&gt;      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]</span></span>
+<span><span class="co">#&gt; [1,] 0.02 0.010 0.000 0.000  0.00  0.00</span></span>
+<span><span class="co">#&gt; [2,] 0.01 0.015 0.000 0.000  0.00  0.00</span></span>
+<span><span class="co">#&gt; [3,] 0.00 0.000 0.010 0.005  0.00  0.00</span></span>
+<span><span class="co">#&gt; [4,] 0.00 0.000 0.005 0.015  0.00  0.00</span></span>
+<span><span class="co">#&gt; [5,] 0.00 0.000 0.000 0.000  0.10 -0.05</span></span>
+<span><span class="co">#&gt; [6,] 0.00 0.000 0.000 0.000 -0.05  0.10</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -3.902006 -4.600166 -4.600166 -4.375770 -2.252168 -2.552533</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6]</span></span>
+<span><span class="co">#&gt; [1,]  0.0    0  0.0    0  0.0    0</span></span>
+<span><span class="co">#&gt; [2,]  0.5    0  0.0    0  0.0    0</span></span>
+<span><span class="co">#&gt; [3,]  0.0    0  0.0    0  0.0    0</span></span>
+<span><span class="co">#&gt; [4,]  0.0    0  0.5    0  0.0    0</span></span>
+<span><span class="co">#&gt; [5,]  0.0    0  0.0    0  0.0    0</span></span>
+<span><span class="co">#&gt; [6,]  0.0    0  0.0    0 -0.5    0</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="escalating-co-activation">Escalating Co-activation<a class="anchor" aria-label="anchor" href="#escalating-co-activation"></a>
+</h2>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Dynamics.html">Dynamics</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $p</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $k</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $lambda</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    1    0</span></span>
+<span><span class="co">#&gt; [2,]    0    1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_mu</span></span>
+<span><span class="co">#&gt; [1] 1 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.25 0.20</span></span>
+<span><span class="co">#&gt; [2,] 0.20 0.25</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma_l</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.5  0.0</span></span>
+<span><span class="co">#&gt; [2,]  0.4  0.3</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.5  0.0</span></span>
+<span><span class="co">#&gt; [2,]  0.0  0.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.7071068 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.0000000 0.7071068</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -0.4327521 -0.4327521</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    0    0</span></span>
+<span><span class="co">#&gt; [2,]    0    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $alpha</span></span>
+<span><span class="co">#&gt; [1] 0 0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_mu</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.8 0.25</span></span>
+<span><span class="co">#&gt; [2,]  0.2 0.85</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]  [,3]  [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.040 0.020 0.015 0.010</span></span>
+<span><span class="co">#&gt; [2,] 0.020 0.030 0.010 0.015</span></span>
+<span><span class="co">#&gt; [3,] 0.015 0.010 0.030 0.020</span></span>
+<span><span class="co">#&gt; [4,] 0.010 0.015 0.020 0.040</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma_l</span></span>
+<span><span class="co">#&gt;       [,1]       [,2]       [,3]      [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.200 0.00000000 0.00000000 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.100 0.14142136 0.00000000 0.0000000</span></span>
+<span><span class="co">#&gt; [3,] 0.075 0.01767767 0.15512092 0.0000000</span></span>
+<span><span class="co">#&gt; [4,] 0.050 0.07071068 0.09669876 0.1521491</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.35  0.2</span></span>
+<span><span class="co">#&gt; [2,] 0.20  0.4</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.5916080 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.3380617 0.5345225</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -0.8697232 -1.1065068</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l_ldl</span></span>
+<span><span class="co">#&gt;           [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.0000000    0</span></span>
+<span><span class="co">#&gt; [2,] 0.5714286    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_fixed</span></span>
+<span><span class="co">#&gt; [1] 0.80 0.20 0.25 0.85 1.00 1.00</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]  [,3]  [,4] [,5] [,6]</span></span>
+<span><span class="co">#&gt; [1,] 0.040 0.020 0.015 0.010 0.00 0.00</span></span>
+<span><span class="co">#&gt; [2,] 0.020 0.030 0.010 0.015 0.00 0.00</span></span>
+<span><span class="co">#&gt; [3,] 0.015 0.010 0.030 0.020 0.00 0.00</span></span>
+<span><span class="co">#&gt; [4,] 0.010 0.015 0.020 0.040 0.00 0.00</span></span>
+<span><span class="co">#&gt; [5,] 0.000 0.000 0.000 0.000 0.25 0.20</span></span>
+<span><span class="co">#&gt; [6,] 0.000 0.000 0.000 0.000 0.20 0.25</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -3.198809 -3.902006 -3.715045 -3.754192 -1.258692 -2.362608</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_l_ldl</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]      [,3] [,4] [,5] [,6]</span></span>
+<span><span class="co">#&gt; [1,] 0.000 0.000 0.0000000    0  0.0    0</span></span>
+<span><span class="co">#&gt; [2,] 0.500 0.000 0.0000000    0  0.0    0</span></span>
+<span><span class="co">#&gt; [3,] 0.375 0.125 0.0000000    0  0.0    0</span></span>
+<span><span class="co">#&gt; [4,] 0.250 0.500 0.6233766    0  0.0    0</span></span>
+<span><span class="co">#&gt; [5,] 0.000 0.000 0.0000000    0  0.0    0</span></span>
+<span><span class="co">#&gt; [6,] 0.000 0.000 0.0000000    0  0.8    0</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="adaptive-recovery">Adaptive Recovery<a class="anchor" aria-label="anchor" href="#adaptive-recovery"></a>
+</h2>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Dynamics.html">Dynamics</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $p</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $k</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $lambda</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    1    0</span></span>
+<span><span class="co">#&gt; [2,]    0    1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_mu</span></span>
+<span><span class="co">#&gt; [1] 0.8 0.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.15 0.05</span></span>
+<span><span class="co">#&gt; [2,] 0.05 0.10</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $nu_sigma_l</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.3872983 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.1290994 0.2886751</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.5  0.0</span></span>
+<span><span class="co">#&gt; [2,]  0.0  0.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.7071068 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.0000000 0.7071068</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -0.4327521 -0.4327521</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $theta_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]    0    0</span></span>
+<span><span class="co">#&gt; [2,]    0    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $alpha</span></span>
+<span><span class="co">#&gt; [1] 0 0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_mu</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,] 0.60 -0.3</span></span>
+<span><span class="co">#&gt; [2,] 0.25  0.7</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma</span></span>
+<span><span class="co">#&gt;       [,1] [,2] [,3]  [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.025 0.01 0.00 0.000</span></span>
+<span><span class="co">#&gt; [2,] 0.010 0.02 0.00 0.000</span></span>
+<span><span class="co">#&gt; [3,] 0.000 0.00 0.02 0.010</span></span>
+<span><span class="co">#&gt; [4,] 0.000 0.00 0.01 0.025</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $beta_sigma_l</span></span>
+<span><span class="co">#&gt;            [,1]      [,2]       [,3]      [,4]</span></span>
+<span><span class="co">#&gt; [1,] 0.15811388 0.0000000 0.00000000 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] 0.06324555 0.1264911 0.00000000 0.0000000</span></span>
+<span><span class="co">#&gt; [3,] 0.00000000 0.0000000 0.14142136 0.0000000</span></span>
+<span><span class="co">#&gt; [4,] 0.00000000 0.0000000 0.07071068 0.1414214</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi</span></span>
+<span><span class="co">#&gt;       [,1]  [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.25 -0.10</span></span>
+<span><span class="co">#&gt; [2,] -0.10  0.22</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l</span></span>
+<span><span class="co">#&gt;      [,1]      [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.5 0.0000000</span></span>
+<span><span class="co">#&gt; [2,] -0.2 0.4242641</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -1.258692 -1.623449</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $psi_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2]</span></span>
+<span><span class="co">#&gt; [1,]  0.0    0</span></span>
+<span><span class="co">#&gt; [2,] -0.4    0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_fixed</span></span>
+<span><span class="co">#&gt; [1]  0.60  0.25 -0.30  0.70  0.80  0.50</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random</span></span>
+<span><span class="co">#&gt;       [,1] [,2] [,3]  [,4] [,5] [,6]</span></span>
+<span><span class="co">#&gt; [1,] 0.025 0.01 0.00 0.000 0.00 0.00</span></span>
+<span><span class="co">#&gt; [2,] 0.010 0.02 0.00 0.000 0.00 0.00</span></span>
+<span><span class="co">#&gt; [3,] 0.000 0.00 0.02 0.010 0.00 0.00</span></span>
+<span><span class="co">#&gt; [4,] 0.000 0.00 0.01 0.025 0.00 0.00</span></span>
+<span><span class="co">#&gt; [5,] 0.000 0.00 0.00 0.000 0.15 0.05</span></span>
+<span><span class="co">#&gt; [6,] 0.000 0.00 0.00 0.000 0.05 0.10</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_d_ldl</span></span>
+<span><span class="co">#&gt; [1] -3.676353 -4.127156 -3.902006 -3.902006 -1.821183 -2.442951</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ma_random_l_ldl</span></span>
+<span><span class="co">#&gt;      [,1] [,2] [,3] [,4]      [,5] [,6]</span></span>
+<span><span class="co">#&gt; [1,]  0.0    0  0.0    0 0.0000000    0</span></span>
+<span><span class="co">#&gt; [2,]  0.4    0  0.0    0 0.0000000    0</span></span>
+<span><span class="co">#&gt; [3,]  0.0    0  0.0    0 0.0000000    0</span></span>
+<span><span class="co">#&gt; [4,]  0.0    0  0.5    0 0.0000000    0</span></span>
+<span><span class="co">#&gt; [5,]  0.0    0  0.0    0 0.0000000    0</span></span>
+<span><span class="co">#&gt; [6,]  0.0    0  0.0    0 0.3333333    0</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
