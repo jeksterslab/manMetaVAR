@@ -108,7 +108,6 @@ Number of cores to use.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       NAMES = ID TIME Y1 Y2;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       USEVARIABLES = Y1 Y2;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       CLUSTER = ID;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       TINTERVAL = TIME(1);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ANALYSIS:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       TYPE = TWOLEVEL RANDOM;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       ESTIMATOR = BAYES;</span>
@@ -165,14 +164,16 @@ Number of cores to use.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH NU1 (c_n21);         ! cov(nu_2, nu_1)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH NU2 (c_n22);         ! cov(nu_2, nu_2)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     MODEL PRIORS:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b11 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b11 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b21 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b21 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b12 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b12 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b22 ~ N(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b22 ~ N(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         t11 ~ IG(8, 3.5);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         t22 ~ IG(8, 3.5);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b11 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b11 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b21 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b21 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b12 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b12 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b22 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b22 ~ N(0,1);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     PLOT:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       TYPE = PLOT1 PLOT2 PLOT3;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     OUTPUT:</span>
