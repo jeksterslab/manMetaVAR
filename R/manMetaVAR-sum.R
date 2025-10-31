@@ -42,6 +42,13 @@ Sum <- function(taskid,
     overwrite = overwrite,
     integrity = integrity
   )
+  SumFitMetaVARLB(
+    taskid = taskid,
+    reps = reps,
+    output_folder = output_folder,
+    overwrite = overwrite,
+    integrity = integrity
+  )
   SumFitMLVAR(
     taskid = taskid,
     reps = reps,

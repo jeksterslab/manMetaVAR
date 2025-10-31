@@ -4,8 +4,7 @@
 #SBATCH --mail-user=r.jeksterslab@gmail.com
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
-#SBATCH --cpus-per-task=1
+#SBATCH --exclusive
 #SBATCH --mem=128G
 #SBATCH --time=2-00:00:00
 #SBATCH --output=sim-06.out
@@ -27,8 +26,20 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 # ------------------------------------------------------------------------------
 
 # indices ----------------------------------------------------------------------
-repid_start=250
-repid_end=1
+repid_start_1=526
+repid_end_1=550
+
+repid_start_2=626
+repid_end_2=650
+
+repid_start_3=726
+repid_end_3=750
+
+repid_start_4=826
+repid_end_4=850
+
+repid_start_5=926
+repid_end_5=950
 
 taskid_start=1
 taskid_end=27
@@ -40,7 +51,31 @@ cd /scratch/$USER/${PROJECT} || exit
 JOBLIST="${PARALLEL_TMP_FOLDER}/joblist.txt"
 touch "$JOBLIST"
 
-for repid in $(seq $repid_start -1 $repid_end); do
+for repid in $(seq $repid_start_1 $repid_end_1); do
+    for taskid in $(seq $taskid_start $taskid_end); do
+        echo "$repid $taskid" >> "$JOBLIST"
+    done
+done
+
+for repid in $(seq $repid_start_2 $repid_end_2); do
+    for taskid in $(seq $taskid_start $taskid_end); do
+        echo "$repid $taskid" >> "$JOBLIST"
+    done
+done
+
+for repid in $(seq $repid_start_3 $repid_end_3); do
+    for taskid in $(seq $taskid_start $taskid_end); do
+        echo "$repid $taskid" >> "$JOBLIST"
+    done
+done
+
+for repid in $(seq $repid_start_4 $repid_end_4); do
+    for taskid in $(seq $taskid_start $taskid_end); do
+        echo "$repid $taskid" >> "$JOBLIST"
+    done
+done
+
+for repid in $(seq $repid_start_5 $repid_end_5); do
     for taskid in $(seq $taskid_start $taskid_end); do
         echo "$repid $taskid" >> "$JOBLIST"
     done
