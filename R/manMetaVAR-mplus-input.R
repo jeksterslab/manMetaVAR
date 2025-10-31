@@ -58,7 +58,6 @@ MplusInput <- function(fn_data = NULL,
       NAMES = ID TIME Y1 Y2;
       USEVARIABLES = Y1 Y2;
       CLUSTER = ID;
-      TINTERVAL = TIME(1);
     ANALYSIS:
       TYPE = TWOLEVEL RANDOM;
       ESTIMATOR = BAYES;
@@ -115,14 +114,16 @@ MplusInput <- function(fn_data = NULL,
         NU2 WITH NU1 (c_n21);         ! cov(nu_2, nu_1)
         NU2 WITH NU2 (c_n22);         ! cov(nu_2, nu_2)
     MODEL PRIORS:
-        c_n1b11 ~ N(0,10);
-        c_n2b11 ~ N(0,10);
-        c_n1b21 ~ N(0,10);
-        c_n2b21 ~ N(0,10);
-        c_n1b12 ~ N(0,10);
-        c_n2b12 ~ N(0,10);
-        c_n1b22 ~ N(0,10);
-        c_n2b22 ~ N(0,10);
+        t11 ~ IG(8, 3.5);
+        t22 ~ IG(8, 3.5);
+        c_n1b11 ~ N(0,1);
+        c_n2b11 ~ N(0,1);
+        c_n1b21 ~ N(0,1);
+        c_n2b21 ~ N(0,1);
+        c_n1b12 ~ N(0,1);
+        c_n2b12 ~ N(0,1);
+        c_n1b22 ~ N(0,1);
+        c_n2b22 ~ N(0,1);
     PLOT:
       TYPE = PLOT1 PLOT2 PLOT3;
     OUTPUT:
