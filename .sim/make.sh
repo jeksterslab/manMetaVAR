@@ -9,7 +9,7 @@
 # Define project variables
 PROJECT=/scratch/$USER/manMetaVAR
 # SIF=/scratch/$USER/manMetaVAR/.sif/manmetavar.sif
-SIF=/scratch/$USER/sif/docs.sif
+SIF=/scratch/$USER/sif/docs-mplus.sif
 
 # clean
 
