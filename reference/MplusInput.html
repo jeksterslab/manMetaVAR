@@ -47,6 +47,7 @@
 <span>  fn_estimates <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fn_results <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fn_posterior <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  fn_factorscores <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  default_priors <span class="op">=</span> <span class="cn">FALSE</span></span>
@@ -82,6 +83,11 @@ Filename for results output.</p></dd>
 <dt id="arg-fn-posterior">fn_posterior<a class="anchor" aria-label="anchor" href="#arg-fn-posterior"></a></dt>
 <dd><p>Character string.
 Filename for posterior output.</p></dd>
+
+
+<dt id="arg-fn-factorscores">fn_factorscores<a class="anchor" aria-label="anchor" href="#arg-fn-factorscores"></a></dt>
+<dd><p>Character string.
+Filename for factor scores output.</p></dd>
 
 
 <dt id="arg-ncores">ncores<a class="anchor" aria-label="anchor" href="#arg-ncores"></a></dt>
@@ -124,8 +130,8 @@ If <code>default_priors = TRUE</code>, use default priors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ANALYSIS:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       TYPE = TWOLEVEL RANDOM;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       ESTIMATOR = BAYES;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       CHAINS = 4;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       FBITER = (120000);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       CHAINS = 2;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       FBITER = (60000);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       PROCESSORS = 1;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     MODEL:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       %WITHIN%</span>
@@ -198,31 +204,36 @@ If <code>default_priors = TRUE</code>, use default priors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b21b11~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b11~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b11~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b11~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b11~N(0,0.01);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b11~N(0,0.01);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b21b21~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b21~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b21~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b21~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b21~N(0,0.01);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b21~N(0,0.01);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b12~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b12~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b12~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b12~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b12~N(0,0.01);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b12~N(0,0.01);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b22~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b22~IW(0,10);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b22~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b22~N(0,0.01);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b22~N(0,0.01);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11n11~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21n11~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21n21~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     PLOT:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       TYPE = PLOT1 PLOT2 PLOT3;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     DATA IMPUTATION:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       THIN = 100;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     OUTPUT:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       TECH1 TECH8;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       TECH1 TECH8 TECH9;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     SAVEDATA:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       ESTIMATES = estimates.dat;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       RESULTS = results.dat;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       BPARAMETERS = posterior.dat;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       SAVE = FSCORES(1000);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       FILE = factorscores.dat;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       FACTORS = ALL;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
