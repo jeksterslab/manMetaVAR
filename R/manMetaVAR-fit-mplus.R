@@ -72,6 +72,15 @@ FitMplus <- function(data,
     "_",
     "posterior.dat"
   )
+  fn_factorscores <- paste0(
+    prefix,
+    "_",
+    "factorscores.dat"
+  )
+  fn_gh5 <- paste0(
+    prefix,
+    ".gh5"
+  )
   utils::write.table(
     x = data$data,
     file = fn_data,
@@ -85,8 +94,9 @@ FitMplus <- function(data,
       fn_estimates = fn_estimates,
       fn_results = fn_results,
       fn_posterior = fn_posterior,
+      fn_factorscores = fn_factorscores,
       ncores = ncores,
-      plot = FALSE,
+      plot = TRUE,
       default_priors = default_priors
     ),
     con = fn_inp
@@ -131,6 +141,14 @@ FitMplus <- function(data,
     ),
     posterior = .ReadLines(
       con = fn_posterior
+    ),
+    factorscores = .ReadLines(
+      con = fn_factorscores
+    ),
+    gh5 = readBin(
+      con = fn_gh5,
+      what = "raw",
+      n = file.info(fn_gh5)$size
     )
   )
   end_time <- Sys.time()

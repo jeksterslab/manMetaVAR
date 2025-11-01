@@ -10,6 +10,7 @@ MplusInput(
   fn_estimates = NULL,
   fn_results = NULL,
   fn_posterior = NULL,
+  fn_factorscores = NULL,
   ncores = NULL,
   plot = TRUE,
   default_priors = FALSE
@@ -32,6 +33,9 @@ Filename for results output.}
 
 \item{fn_posterior}{Character string.
 Filename for posterior output.}
+
+\item{fn_factorscores}{Character string.
+Filename for factor scores output.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
