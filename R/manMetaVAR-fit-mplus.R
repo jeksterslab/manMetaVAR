@@ -19,8 +19,10 @@
 FitMplus <- function(data,
                      wd = ".",
                      mplus_bin = NULL,
-                     ncores = NULL) {
+                     ncores = NULL,
+                     default_priors = FALSE) {
   start_time <- Sys.time()
+  dynamics <- data$dynamics
   model <- "mplus"
   old_wd <- getwd()
   on.exit(
@@ -70,15 +72,6 @@ FitMplus <- function(data,
     "_",
     "posterior.dat"
   )
-  fn_factorscores <- paste0(
-    prefix,
-    "_",
-    "factorscores.dat"
-  )
-  fn_gh5 <- paste0(
-    prefix,
-    ".gh5"
-  )
   utils::write.table(
     x = data$data,
     file = fn_data,
@@ -87,16 +80,17 @@ FitMplus <- function(data,
   )
   writeLines(
     text = MplusInput(
+      dynamics = dynamics,
       fn_data = fn_data,
       fn_estimates = fn_estimates,
       fn_results = fn_results,
       fn_posterior = fn_posterior,
-      fn_factorscores = fn_factorscores,
-      ncores = ncores
+      ncores = ncores,
+      plot = FALSE,
+      default_priors = default_priors
     ),
     con = fn_inp
   )
-
   if (is.null(mplus_bin)) {
     mplus_bin <- .WhichMplus()
   }
@@ -119,7 +113,6 @@ FitMplus <- function(data,
     stdout = nullfile,
     stderr = nullfile
   )
-
   output <- list(
     data = .ReadLines(
       con = fn_data
@@ -138,14 +131,6 @@ FitMplus <- function(data,
     ),
     posterior = .ReadLines(
       con = fn_posterior
-    ),
-    factorscores = .ReadLines(
-      con = fn_factorscores
-    ),
-    gh5 = readBin(
-      con = fn_gh5,
-      what = "raw",
-      n = file.info(fn_gh5)$size
     )
   )
   end_time <- Sys.time()

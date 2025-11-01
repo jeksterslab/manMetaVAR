@@ -5,15 +5,22 @@
 \title{Create Mplus Input File}
 \usage{
 MplusInput(
+  dynamics,
   fn_data = NULL,
   fn_estimates = NULL,
   fn_results = NULL,
   fn_posterior = NULL,
-  fn_factorscores = NULL,
-  ncores = NULL
+  ncores = NULL,
+  plot = TRUE,
+  default_priors = FALSE
 )
 }
 \arguments{
+\item{dynamics}{\code{1}, \code{2}, or \code{3}.
+\code{1} for stable reciprocal regulation,
+\code{2} for escalating co-activation, and
+\code{3} for adaptive recovery.}
+
 \item{fn_data}{Character string.
 Filename for data file.}
 
@@ -26,17 +33,21 @@ Filename for results output.}
 \item{fn_posterior}{Character string.
 Filename for posterior output.}
 
-\item{fn_factorscores}{Character string.
-Filename for factor scores output.}
-
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{plot}{Logical.
+If \code{plot = TRUE}, add \verb{PLOT: TYPE = PLOT1 PLOT2 PLOT3;}
+to \code{Mplus} input file.}
+
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use default priors.}
 }
 \description{
 The function creates an Mplus input file.
 }
 \examples{
-cat(MplusInput())
+cat(MplusInput(dynamics = 1))
 
 }
 \seealso{

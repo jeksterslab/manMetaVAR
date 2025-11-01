@@ -4,7 +4,13 @@
 \alias{FitMplus}
 \title{Fit the Model using Mplus}
 \usage{
-FitMplus(data, wd = ".", mplus_bin = NULL, ncores = NULL)
+FitMplus(
+  data,
+  wd = ".",
+  mplus_bin = NULL,
+  ncores = NULL,
+  default_priors = FALSE
+)
 }
 \arguments{
 \item{data}{R object.
@@ -21,6 +27,9 @@ the appropriate binary.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use default priors.}
 }
 \description{
 The function fits the model using Mplus.
