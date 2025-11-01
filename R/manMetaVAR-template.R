@@ -55,6 +55,11 @@
 #'   Filename for factor scores output.
 #' @param mplus Logical.
 #'   If `mplus = TRUE`, fit a DSEM model in `Mplus`.
+#' @param plot Logical.
+#'   If `plot = TRUE`, add `PLOT: TYPE = PLOT1 PLOT2 PLOT3;`
+#'   to `Mplus` input file.
+#' @param default_priors Logical.
+#'   If `default_priors = TRUE`, use default priors.
 #' @param ... additional arguments.
 #' @name Template
 NULL
