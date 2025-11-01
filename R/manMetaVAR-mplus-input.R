@@ -15,6 +15,7 @@ MplusInput <- function(dynamics,
                        fn_estimates = NULL,
                        fn_results = NULL,
                        fn_posterior = NULL,
+                       fn_factorscores = NULL,
                        ncores = NULL,
                        plot = TRUE,
                        default_priors = FALSE) {
@@ -52,24 +53,16 @@ MplusInput <- function(dynamics,
   c_n21n11 <- if (model$ma_random[6, 5] == 0) 0.001 else model$ma_random[6, 5]
   c_n21n21 <- if (model$ma_random[6, 6] == 0) 0.001 else model$ma_random[6, 6]
   if (!default_priors) {
-    beta <- function(expected_value,
-                     alpha) {
-      expected_value * (alpha - 1)
-    }
     ig <- function(expected_value,
                    alpha,
                    label) {
-      beta <- beta(
-        expected_value = expected_value,
-        alpha = alpha
-      )
       paste0(
         label,
         "~",
         "IG(",
         alpha,
         ",",
-        beta,
+        expected_value * (alpha - 1),
         ")"
       )
     }
@@ -114,20 +107,20 @@ MplusInput <- function(dynamics,
     prior_c_b21b11 <- iw(scale = 0, df = 10, label = "c_b21b11")
     prior_c_b12b11 <- iw(scale = 0, df = 10, label = "c_b12b11")
     prior_c_b22b11 <- iw(scale = 0, df = 10, label = "c_b22b11")
-    prior_c_n11b11 <- iw(scale = 0, df = 10, label = "c_n11b11")
-    prior_c_n21b11 <- iw(scale = 0, df = 10, label = "c_n21b11")
+    prior_c_n11b11 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b11")
+    prior_c_n21b11 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b11")
     prior_c_b21b21 <- iw(scale = 0, df = 10, label = "c_b21b21")
     prior_c_b12b21 <- iw(scale = 0, df = 10, label = "c_b12b21")
     prior_c_b22b21 <- iw(scale = 0, df = 10, label = "c_b22b21")
-    prior_c_n11b21 <- iw(scale = 0, df = 10, label = "c_n11b21")
-    prior_c_n21b21 <- iw(scale = 0, df = 10, label = "c_n21b21")
+    prior_c_n11b21 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b21")
+    prior_c_n21b21 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b21")
     prior_c_b12b12 <- iw(scale = 0, df = 10, label = "c_b12b12")
     prior_c_b22b12 <- iw(scale = 0, df = 10, label = "c_b22b12")
-    prior_c_n11b12 <- iw(scale = 0, df = 10, label = "c_n11b12")
-    prior_c_n21b12 <- iw(scale = 0, df = 10, label = "c_n21b12")
+    prior_c_n11b12 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b12")
+    prior_c_n21b12 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b12")
     prior_c_b22b22 <- iw(scale = 0, df = 10, label = "c_b22b22")
-    prior_c_n11b22 <- iw(scale = 0, df = 10, label = "c_n11b22")
-    prior_c_n21b22 <- iw(scale = 0, df = 10, label = "c_n21b22")
+    prior_c_n11b22 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b22")
+    prior_c_n21b22 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b22")
     prior_c_n11n11 <- iw(scale = 0, df = 10, label = "c_n11n11")
     prior_c_n21n11 <- iw(scale = 0, df = 10, label = "c_n21n11")
     prior_c_n21n21 <- iw(scale = 0, df = 10, label = "c_n21n21")
@@ -280,6 +273,9 @@ MplusInput <- function(dynamics,
   if (is.null(fn_posterior)) {
     fn_posterior <- "posterior.dat"
   }
+  if (is.null(fn_factorscores)) {
+    fn_factorscores <- "factorscores.dat"
+  }
   if (is.null(ncores)) {
     ncores <- 1L
   } else {
@@ -289,8 +285,8 @@ MplusInput <- function(dynamics,
       if (ncores >= available_cores) {
         ncores <- available_cores
       }
-      if (ncores >= 4) {
-        ncores <- 4
+      if (ncores >= 2) {
+        ncores <- 2
       }
     } else {
       stop("'ncores' should be greater than 0.")
@@ -308,8 +304,8 @@ MplusInput <- function(dynamics,
     ANALYSIS:
       TYPE = TWOLEVEL RANDOM;
       ESTIMATOR = BAYES;
-      CHAINS = 4;
-      FBITER = (120000);
+      CHAINS = 2;
+      FBITER = (60000);
       PROCESSORS = __PROCESSORS__;
     MODEL:
       %WITHIN%
@@ -443,12 +439,17 @@ MplusInput <- function(dynamics,
   out <- paste0(
     out,
     "
+    DATA IMPUTATION:
+      THIN = 100;
     OUTPUT:
-      TECH1 TECH8;
+      TECH1 TECH8 TECH9;
     SAVEDATA:
       ESTIMATES = __ESTIMATES__;
       RESULTS = __RESULTS__;
-      BPARAMETERS = __POSTERIOR__;"
+      BPARAMETERS = __POSTERIOR__;
+      SAVE = FSCORES(1000);
+      FILE = __FACTORSCORES__;
+      FACTORS = ALL;"
   )
   out <- sub(
     pattern = "__DATA__",
@@ -473,6 +474,11 @@ MplusInput <- function(dynamics,
   out <- sub(
     pattern = "__POSTERIOR__",
     replacement = fn_posterior,
+    x = out
+  )
+  out <- sub(
+    pattern = "__FACTORSCORES__",
+    replacement = fn_factorscores,
     x = out
   )
   out
