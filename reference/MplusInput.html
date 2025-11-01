@@ -42,12 +42,14 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">MplusInput</span><span class="op">(</span></span>
+<span>  <span class="va">dynamics</span>,</span>
 <span>  fn_data <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fn_estimates <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fn_results <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fn_posterior <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  fn_factorscores <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  ncores <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  ncores <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  default_priors <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -55,7 +57,14 @@
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-fn-data">fn_data<a class="anchor" aria-label="anchor" href="#arg-fn-data"></a></dt>
+<dl><dt id="arg-dynamics">dynamics<a class="anchor" aria-label="anchor" href="#arg-dynamics"></a></dt>
+<dd><p><code>1</code>, <code>2</code>, or <code>3</code>.
+<code>1</code> for stable reciprocal regulation,
+<code>2</code> for escalating co-activation, and
+<code>3</code> for adaptive recovery.</p></dd>
+
+
+<dt id="arg-fn-data">fn_data<a class="anchor" aria-label="anchor" href="#arg-fn-data"></a></dt>
 <dd><p>Character string.
 Filename for data file.</p></dd>
 
@@ -75,14 +84,20 @@ Filename for results output.</p></dd>
 Filename for posterior output.</p></dd>
 
 
-<dt id="arg-fn-factorscores">fn_factorscores<a class="anchor" aria-label="anchor" href="#arg-fn-factorscores"></a></dt>
-<dd><p>Character string.
-Filename for factor scores output.</p></dd>
-
-
 <dt id="arg-ncores">ncores<a class="anchor" aria-label="anchor" href="#arg-ncores"></a></dt>
 <dd><p>Positive integer.
 Number of cores to use.</p></dd>
+
+
+<dt id="arg-plot">plot<a class="anchor" aria-label="anchor" href="#arg-plot"></a></dt>
+<dd><p>Logical.
+If <code>plot = TRUE</code>, add <code>PLOT: TYPE = PLOT1 PLOT2 PLOT3;</code>
+to <code>Mplus</code> input file.</p></dd>
+
+
+<dt id="arg-default-priors">default_priors<a class="anchor" aria-label="anchor" href="#arg-default-priors"></a></dt>
+<dd><p>Logical.
+If <code>default_priors = TRUE</code>, use default priors.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -96,14 +111,12 @@ Number of cores to use.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu">MplusInput</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu">MplusInput</span><span class="op">(</span>dynamics <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     TITLE:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       Multilevel Vector Autoregressive Model with Measurement Error</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     DATA:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       FILE = data.dat;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     DATA IMPUTATION:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       THIN = 100;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     VARIABLE:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       NAMES = ID TIME Y1 Y2;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       USEVARIABLES = Y1 Y2;</span>
@@ -118,74 +131,98 @@ Number of cores to use.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       %WITHIN%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         ETA1 BY Y1@1(&amp;1);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         ETA2 BY Y2@1(&amp;1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         Y1 (t11);                     ! theta_11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         Y2 (t22);                     ! theta_22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ! measurement error variances (theta)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Y1*0.500 (t11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Y2*0.500 (t22);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         [ETA1@0];</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         [ETA2@0];</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         BETA11 | ETA1 ON ETA1&amp;1;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         BETA21 | ETA2 ON ETA1&amp;1;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 | ETA1 ON ETA2&amp;1;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 | ETA2 ON ETA2&amp;1;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA1 WITH ETA1 (p11);         ! psi_11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA2 WITH ETA1 (p21);         ! psi_21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA2 WITH ETA2 (p22);         ! psi_22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ! process noise covariance matrix (psi)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA1*0.200 (p11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA2 WITH ETA1*-0.050 (p21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ETA2*0.180 (p22);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       %BETWEEN%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         Y1@0;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         Y2@0;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         [Y1@0];</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         [Y2@0];</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 BY Y1@1;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 BY Y2@1;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA11] (m_b11);             ! mean(beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA21] (m_b21);             ! mean(beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA12] (m_b12);             ! mean(beta_12)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA22] (m_b22);             ! mean(beta_22)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [NU1] (m_n1);                 ! mean(nu_1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         [NU2] (m_n2);                 ! mean(nu_2)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA11 WITH BETA11 (c_b1111); ! cov(beta_11, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA21 WITH BETA11 (c_b2111); ! cov(beta_21, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 WITH BETA11 (c_b1211); ! cov(beta_12, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA11 (c_b2211); ! cov(beta_22, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 WITH BETA11 (c_n1b11);    ! cov(nu_1, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH BETA11 (c_n2b11);    ! cov(nu_2, beta_11)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA21 WITH BETA21 (c_b2121); ! cov(beta_21, beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 WITH BETA21 (c_b1221); ! cov(beta_12, beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA21 (c_b2221); ! cov(beta_22, beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 WITH BETA21 (c_n1b21);    ! cov(nu_1, beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH BETA21 (c_n2b21);    ! cov(nu_2, beta_21)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 WITH BETA12 (c_b1212); ! cov(beta_12, beta_12)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA12 (c_b2212); ! cov(beta_22, beta_12)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 WITH BETA12 (c_n1b12);    ! cov(nu_1, beta_12)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH BETA12 (c_n2b12);    ! cov(nu_2, beta_12)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA22 (c_b2222); ! cov(beta_22, beta_22)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 WITH BETA22 (c_n1b22);    ! cov(nu_1, beta_22)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH BETA22 (c_n2b22);    ! cov(nu_2, beta_22)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU1 WITH NU1 (c_n11);         ! cov(nu_1, nu_1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH NU1 (c_n21);         ! cov(nu_2, nu_1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         NU2 WITH NU2 (c_n22);         ! cov(nu_2, nu_2)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11 BY Y1@1;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 BY Y2@1;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ! fixed effects</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         !! transition matrix (beta)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA11*0.700] (m_b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA21*-0.150] (m_b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA12*-0.200] (m_b12);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [BETA22*0.650] (m_b22);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         !! measurement model intercept (nu)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [NU11*0.500] (m_n11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [NU21*-0.500] (m_n21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ! random effects</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA11*0.020 (c_b11b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA21 WITH BETA11*0.010 (c_b21b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 WITH BETA11*0.001 (c_b12b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA11*0.001 (c_b22b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11 WITH BETA11*0.001 (c_n11b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 WITH BETA11*0.001 (c_n21b11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA21*0.015 (c_b21b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12 WITH BETA21*0.001 (c_b12b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA21*0.001 (c_b22b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11 WITH BETA21*0.001 (c_n11b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 WITH BETA21*0.001 (c_n21b21);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA12*0.010 (c_b12b12);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22 WITH BETA12*0.005 (c_b22b12);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11 WITH BETA12*0.001 (c_n11b12);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 WITH BETA12*0.001 (c_n21b12);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         BETA22*0.015 (c_b22b22);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11 WITH BETA22*0.001 (c_n11b22);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 WITH BETA22*0.001 (c_n21b22);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU11*0.100 (c_n11n11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21 WITH NU11*-0.050 (c_n21n11);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NU21*0.100 (c_n21n21);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     MODEL PRIORS:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         t11 ~ IG(8, 3.5);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         t22 ~ IG(8, 3.5);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b11 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b11 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b21 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b21 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b12 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b12 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n1b22 ~ N(0,1);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         c_n2b22 ~ N(0,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       t11~IG(3,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       t22~IG(3,1);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       p11~IW(1,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       p21~IW(1,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       p22~IW(1,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_b11~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_b21~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_b12~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_b22~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_n11~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       m_n21~N(0,100);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b11b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b21b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b21b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b21~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b12b12~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b12~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b12~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b12~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_b22b22~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11b22~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21b22~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n11n11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21n11~IW(0,10);</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       c_n21n21~IW(0,10);</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     PLOT:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       TYPE = PLOT1 PLOT2 PLOT3;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     OUTPUT:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       TECH1 TECH8 TECH9;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       TECH1 TECH8;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     SAVEDATA:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       ESTIMATES = estimates.dat;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       RESULTS = results.dat;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       BPARAMETERS = posterior.dat;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       SAVE = FSCORES(1000);</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       FILE = factorscores.dat;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       FACTORS = ALL;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
