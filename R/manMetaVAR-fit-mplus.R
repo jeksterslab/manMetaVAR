@@ -45,7 +45,7 @@ FitMplus <- function(data,
   setwd(new_wd)
   prefix <- .RandomFile(prefix = model)
   fn_data <- paste0(
-    model,
+    prefix,
     "_",
     "data.dat"
   )
