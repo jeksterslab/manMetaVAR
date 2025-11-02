@@ -107,20 +107,20 @@ MplusInput <- function(dynamics,
     prior_c_b21b11 <- iw(scale = 0, df = 10, label = "c_b21b11")
     prior_c_b12b11 <- iw(scale = 0, df = 10, label = "c_b12b11")
     prior_c_b22b11 <- iw(scale = 0, df = 10, label = "c_b22b11")
-    prior_c_n11b11 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b11")
-    prior_c_n21b11 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b11")
+    prior_c_n11b11 <- iw(scale = 0, df = 10, label = "c_n11b11")
+    prior_c_n21b11 <- iw(scale = 0, df = 10, label = "c_n21b11")
     prior_c_b21b21 <- iw(scale = 0, df = 10, label = "c_b21b21")
     prior_c_b12b21 <- iw(scale = 0, df = 10, label = "c_b12b21")
     prior_c_b22b21 <- iw(scale = 0, df = 10, label = "c_b22b21")
-    prior_c_n11b21 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b21")
-    prior_c_n21b21 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b21")
+    prior_c_n11b21 <- iw(scale = 0, df = 10, label = "c_n11b21")
+    prior_c_n21b21 <- iw(scale = 0, df = 10, label = "c_n21b21")
     prior_c_b12b12 <- iw(scale = 0, df = 10, label = "c_b12b12")
     prior_c_b22b12 <- iw(scale = 0, df = 10, label = "c_b22b12")
-    prior_c_n11b12 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b12")
-    prior_c_n21b12 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b12")
+    prior_c_n11b12 <- iw(scale = 0, df = 10, label = "c_n11b12")
+    prior_c_n21b12 <- iw(scale = 0, df = 10, label = "c_n21b12")
     prior_c_b22b22 <- iw(scale = 0, df = 10, label = "c_b22b22")
-    prior_c_n11b22 <- normal(expected_value = 0, sigma = 0.01, label = "c_n11b22")
-    prior_c_n21b22 <- normal(expected_value = 0, sigma = 0.01, label = "c_n21b22")
+    prior_c_n11b22 <- iw(scale = 0, df = 10, label = "c_n11b22")
+    prior_c_n21b22 <- iw(scale = 0, df = 10, label = "c_n21b22")
     prior_c_n11n11 <- iw(scale = 0, df = 10, label = "c_n11n11")
     prior_c_n21n11 <- iw(scale = 0, df = 10, label = "c_n21n11")
     prior_c_n21n21 <- iw(scale = 0, df = 10, label = "c_n21n21")
@@ -305,7 +305,7 @@ MplusInput <- function(dynamics,
       TYPE = TWOLEVEL RANDOM;
       ESTIMATOR = BAYES;
       CHAINS = 2;
-      FBITER = (60000);
+      FBITER = (40000);
       PROCESSORS = __PROCESSORS__;
     MODEL:
       %WITHIN%
@@ -433,7 +433,7 @@ MplusInput <- function(dynamics,
   if (plot) {
     out <- paste0(
       out,
-      "\n    PLOT:\n      TYPE = PLOT1 PLOT2 PLOT3;"
+      "\n    PLOT:\n      TYPE = PLOT3;"
     )
   }
   out <- paste0(
@@ -442,7 +442,7 @@ MplusInput <- function(dynamics,
     DATA IMPUTATION:
       THIN = 100;
     OUTPUT:
-      TECH1 TECH8 TECH9;
+      TECH1 TECH8;
     SAVEDATA:
       ESTIMATES = __ESTIMATES__;
       RESULTS = __RESULTS__;
