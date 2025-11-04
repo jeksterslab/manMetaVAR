@@ -67,7 +67,7 @@ Parameter Estimates (FitMplus)"><script id="MathJax-script" async src="https://c
 <span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S3 method for class 'manmetavar.mplus'</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">object</span>, median <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">object</span>, median <span class="op">=</span> <span class="cn">TRUE</span>, burnin <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -156,6 +156,11 @@ if <code>converged</code> and <code>theta_tol</code> are <code>TRUE</code>.</p><
 <dd><p>Logical.
 If <code>median = TRUE</code>, return median of the posterior.
 If <code>median = FALSE</code>, return mean of the posterior.</p></dd>
+
+
+<dt id="arg-burnin">burnin<a class="anchor" aria-label="anchor" href="#arg-burnin"></a></dt>
+<dd><p>Integer indicating initial samples to discard.
+If <code>burnin = NULL</code>, do not discard anything.</p></dd>
 
 </dl></div>
     <div class="section level2">
