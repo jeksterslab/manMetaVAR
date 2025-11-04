@@ -24,7 +24,7 @@
 
 \method{coef}{manmetavar.metavar}(object, ...)
 
-\method{coef}{manmetavar.mplus}(object, median = TRUE, ...)
+\method{coef}{manmetavar.mplus}(object, median = TRUE, burnin = NULL, ...)
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.mplus}.}
@@ -84,6 +84,9 @@ if \code{converged} and \code{theta_tol} are \code{TRUE}.}
 \item{median}{Logical.
 If \code{median = TRUE}, return median of the posterior.
 If \code{median = FALSE}, return mean of the posterior.}
+
+\item{burnin}{Integer indicating initial samples to discard.
+If \code{burnin = NULL}, do not discard anything.}
 }
 \value{
 Returns a list of vectors of parameter estimates.

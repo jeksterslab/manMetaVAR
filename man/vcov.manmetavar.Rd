@@ -24,7 +24,7 @@
 
 \method{vcov}{manmetavar.metavar}(object, ...)
 
-\method{vcov}{manmetavar.mplus}(object, ...)
+\method{vcov}{manmetavar.mplus}(object, burnin = NULL, ...)
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.mplus}.}
@@ -80,6 +80,9 @@ Tolerance for vanishing theta test
 if \code{converged} and \code{theta_tol} are \code{TRUE}.}
 
 \item{...}{additional arguments.}
+
+\item{burnin}{Integer indicating initial samples to discard.
+If \code{burnin = NULL}, do not discard anything.}
 }
 \value{
 Returns a list of sampling variance-covariance matrices.

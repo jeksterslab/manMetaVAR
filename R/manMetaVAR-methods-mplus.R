@@ -6,6 +6,7 @@
 #' @param median Logical.
 #'   If `median = TRUE`, return median of the posterior.
 #'   If `median = FALSE`, return mean of the posterior.
+#' @inheritParams Template
 #'
 #' @inheritParams Template
 #'
@@ -18,6 +19,7 @@
 #' @export
 coef.manmetavar.mplus <- function(object,
                                   median = TRUE,
+                                  burnin = NULL,
                                   ...) {
   thetahatstar <- as.matrix(
     utils::read.table(
@@ -105,6 +107,7 @@ coef.manmetavar.mplus <- function(object,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
+#' @inheritParams Template
 #'
 #' @inheritParams Template
 #'
@@ -116,6 +119,7 @@ coef.manmetavar.mplus <- function(object,
 #' @keywords methods
 #' @export
 vcov.manmetavar.mplus <- function(object,
+                                  burnin = NULL,
                                   ...) {
   thetahatstar <- as.matrix(
     utils::read.table(
@@ -153,7 +157,7 @@ vcov.manmetavar.mplus <- function(object,
   }
   thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
   out <- stats::cov(thetahatstar)
-  names(out) <- c(
+  rownames(out) <- colnames(out) <- c(
     "theta[1,1]",
     "theta[2,2]",
     "psi[1,1]",
@@ -231,7 +235,8 @@ vcov.manmetavar.mplus <- function(object,
   thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
   thetahat <- coef.manmetavar.mplus(
     object = object,
-    median = median
+    median = median,
+    burnin = burnin
   )
   stopifnot(
     all(alpha > 0 & alpha < 1)
