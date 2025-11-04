@@ -4,7 +4,20 @@
 \alias{SimFitMplus}
 \title{Simulation Replication - FitMplus}
 \usage{
-SimFitMplus(taskid, repid, output_folder, seed, suffix, overwrite, integrity)
+SimFitMplus(
+  taskid,
+  repid,
+  output_folder,
+  seed,
+  suffix,
+  overwrite,
+  integrity,
+  chains,
+  iter,
+  fscores,
+  plot,
+  default_priors
+)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -28,6 +41,22 @@ Overwrite existing output in \code{output_folder}.}
 \item{integrity}{Logical.
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
+
+\item{chains}{Integer.
+Number of chains.}
+
+\item{iter}{Integer.
+Number of iterations.}
+
+\item{fscores}{Integer.
+Number of iterations for factor scores.}
+
+\item{plot}{Logical.
+If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
+to \code{Mplus} input file.}
+
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use default priors.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

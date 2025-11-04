@@ -4,7 +4,23 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(taskid, repid, output_folder, overwrite, integrity, seed, mplus = FALSE)
+Sim(
+  taskid,
+  repid,
+  output_folder,
+  overwrite,
+  integrity,
+  seed,
+  data,
+  metavar,
+  mlvar,
+  mplus,
+  chains,
+  iter,
+  fscores,
+  plot,
+  default_priors
+)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -26,8 +42,33 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 \item{seed}{Integer.
 Random seed.}
 
+\item{data}{Logical.
+Simulate data.}
+
+\item{metavar}{Logical.
+If \code{metavar = TRUE}, fit the model using the \code{metaVAR} package.}
+
+\item{mlvar}{Logical.
+If \code{mlvar = TRUE}, fit the model using the \code{mlVAR} package.}
+
 \item{mplus}{Logical.
-If \code{mplus = TRUE}, fit a DSEM model in \code{Mplus}.}
+If \code{mplus = TRUE}, fit the model using DSEM in \code{Mplus}.}
+
+\item{chains}{Integer.
+Number of chains.}
+
+\item{iter}{Integer.
+Number of iterations.}
+
+\item{fscores}{Integer.
+Number of iterations for factor scores.}
+
+\item{plot}{Logical.
+If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
+to \code{Mplus} input file.}
+
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use default priors.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

@@ -6,14 +6,15 @@
 \usage{
 MplusInput(
   dynamics,
-  fn_data = NULL,
-  fn_estimates = NULL,
-  fn_results = NULL,
-  fn_posterior = NULL,
-  fn_factorscores = NULL,
-  ncores = NULL,
-  plot = TRUE,
-  default_priors = FALSE
+  fn_data,
+  fn_posterior,
+  fn_factorscores,
+  chains,
+  iter,
+  fscores,
+  plot,
+  default_priors,
+  ncores = NULL
 )
 }
 \arguments{
@@ -25,33 +26,49 @@ MplusInput(
 \item{fn_data}{Character string.
 Filename for data file.}
 
-\item{fn_estimates}{Character string.
-Filename for estimates output.}
-
-\item{fn_results}{Character string.
-Filename for results output.}
-
 \item{fn_posterior}{Character string.
 Filename for posterior output.}
 
 \item{fn_factorscores}{Character string.
 Filename for factor scores output.}
 
-\item{ncores}{Positive integer.
-Number of cores to use.}
+\item{chains}{Integer.
+Number of chains.}
+
+\item{iter}{Integer.
+Number of iterations.}
+
+\item{fscores}{Integer.
+Number of iterations for factor scores.}
 
 \item{plot}{Logical.
-If \code{plot = TRUE}, add \verb{PLOT: TYPE = PLOT1 PLOT2 PLOT3;}
+If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
 
 \item{default_priors}{Logical.
 If \code{default_priors = TRUE}, use default priors.}
+
+\item{ncores}{Positive integer.
+Number of cores to use.}
 }
 \description{
 The function creates an Mplus input file.
 }
 \examples{
-cat(MplusInput(dynamics = 1))
+cat(
+  MplusInput(
+    dynamics = 1,
+    fn_data = "data.dat",
+    fn_posterior = "posterior.dat",
+    fn_factorscores = "factorscores.dat",
+    chains = 2L,
+    iter = 60000L,
+    fscores = 1000L,
+    plot = TRUE,
+    default_priors = FALSE,
+    ncores = NULL
+  )
+)
 
 }
 \seealso{

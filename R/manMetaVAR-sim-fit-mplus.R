@@ -17,7 +17,12 @@ SimFitMplus <- function(taskid,
                         seed,
                         suffix,
                         overwrite,
-                        integrity) {
+                        integrity,
+                        chains,
+                        iter,
+                        fscores,
+                        plot,
+                        default_priors) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sim` function.
   fn_input <- SimFN(
@@ -43,6 +48,11 @@ SimFitMplus <- function(taskid,
         saveRDS(
           object = FitMplus(
             data = readRDS(fn_input),
+            chains = chains,
+            iter = iter,
+            fscores = fscores,
+            plot = plot,
+            default_priors = FALSE,
             wd = output_folder,
             mplus_bin = "mplus",
             ncores = NULL

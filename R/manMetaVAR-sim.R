@@ -5,6 +5,8 @@
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
+#' @param data Logical.
+#'   Simulate data.
 #'
 #' @export
 #' @keywords manMetaVAR simulation
@@ -14,7 +16,15 @@ Sim <- function(taskid,
                 overwrite,
                 integrity,
                 seed,
-                mplus = FALSE) {
+                data,
+                metavar,
+                mlvar,
+                mplus,
+                chains,
+                iter,
+                fscores,
+                plot,
+                default_priors) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -47,17 +57,8 @@ Sim <- function(taskid,
     taskid = taskid,
     repid = repid
   )
-  SimGenData(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity
-  )
-  try(
-    SimFitDTVAR(
+  if (data) {
+    SimGenData(
       taskid = taskid,
       repid = repid,
       output_folder = output_folder,
@@ -66,32 +67,52 @@ Sim <- function(taskid,
       overwrite = overwrite,
       integrity = integrity
     )
-  )
-  try(
-    SimFitMetaVAR(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity
-    )
-  )
-  try(
-    SimFitMLVAR(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity
-    )
-  )
+  }
   if (mplus) {
     try(
       SimFitMplus(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        chains = chains,
+        iter = iter,
+        fscores = fscores,
+        plot = plot,
+        default_priors = default_priors
+      )
+    )
+  }
+  if (metavar) {
+    try(
+      SimFitDTVAR(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
+    )
+    try(
+      SimFitMetaVAR(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
+    )
+  }
+  if (mlvar) {
+    try(
+      SimFitMLVAR(
         taskid = taskid,
         repid = repid,
         output_folder = output_folder,

@@ -17,11 +17,24 @@
 #' @keywords manMetaVAR fit
 #' @export
 FitMplus <- function(data,
+                     chains = 2L,
+                     iter = 60000L,
+                     fscores = NULL,
+                     plot = FALSE,
+                     default_priors = FALSE,
                      wd = ".",
                      mplus_bin = NULL,
-                     ncores = NULL,
-                     default_priors = FALSE) {
+                     ncores = NULL) {
   start_time <- Sys.time()
+  args <- list(
+    chains = chains,
+    iter = iter,
+    fscores = fscores,
+    default_priors = default_priors,
+    wd = wd,
+    mplus_bin = mplus_bin,
+    ncores = ncores
+  )
   dynamics <- data$dynamics
   model <- "mplus"
   old_wd <- getwd()
@@ -57,16 +70,6 @@ FitMplus <- function(data,
     prefix,
     ".out"
   )
-  fn_estimates <- paste0(
-    prefix,
-    "_",
-    "estimates.dat"
-  )
-  fn_results <- paste0(
-    prefix,
-    "_",
-    "results.dat"
-  )
   fn_posterior <- paste0(
     prefix,
     "_",
@@ -91,13 +94,14 @@ FitMplus <- function(data,
     text = MplusInput(
       dynamics = dynamics,
       fn_data = fn_data,
-      fn_estimates = fn_estimates,
-      fn_results = fn_results,
       fn_posterior = fn_posterior,
       fn_factorscores = fn_factorscores,
-      ncores = ncores,
-      plot = TRUE,
-      default_priors = default_priors
+      chains = chains,
+      iter = iter,
+      fscores = fscores,
+      plot = plot,
+      default_priors = default_priors,
+      ncores = ncores
     ),
     con = fn_inp
   )
@@ -123,6 +127,15 @@ FitMplus <- function(data,
     stdout = nullfile,
     stderr = nullfile
   )
+  if (plot) {
+    gh5 <- readBin(
+      con = fn_gh5,
+      what = "raw",
+      n = file.info(fn_gh5)$size
+    )
+  } else {
+    gh5 <- NA
+  }
   output <- list(
     data = .ReadLines(
       con = fn_data
@@ -133,28 +146,19 @@ FitMplus <- function(data,
     output = .ReadLines(
       con = fn_out
     ),
-    estimates = .ReadLines(
-      con = fn_estimates
-    ),
-    results = .ReadLines(
-      con = fn_results
-    ),
     posterior = .ReadLines(
       con = fn_posterior
     ),
     factorscores = .ReadLines(
       con = fn_factorscores
     ),
-    gh5 = readBin(
-      con = fn_gh5,
-      what = "raw",
-      n = file.info(fn_gh5)$size
-    )
+    gh5 = gh5
   )
   end_time <- Sys.time()
   elapsed <- end_time - start_time
   structure(
     list(
+      args = args,
       data = data,
       output = output,
       elapsed = elapsed

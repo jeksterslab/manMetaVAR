@@ -3,14 +3,12 @@
 #' @inheritParams Template
 #'
 #' @examples
-#' \dontrun{
 #' # stable reciprocal regulation,
 #' Dynamics(dynamics = 1)
 #' # escalating co-activation
 #' Dynamics(dynamics = 2)
 #' # adaptive recovery
 #' Dynamics(dynamics = 3)
-#' }
 #'
 #' @family Data Generation Functions
 #' @keywords manMetaVAR gendata

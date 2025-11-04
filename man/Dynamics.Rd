@@ -16,14 +16,12 @@ Dynamics(dynamics)
 Process Dynamics
 }
 \examples{
-\dontrun{
 # stable reciprocal regulation,
 Dynamics(dynamics = 1)
 # escalating co-activation
 Dynamics(dynamics = 2)
 # adaptive recovery
 Dynamics(dynamics = 3)
-}
 
 }
 \seealso{
