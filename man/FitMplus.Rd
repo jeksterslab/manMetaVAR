@@ -10,7 +10,7 @@ FitMplus(
   iter = 60000L,
   fscores = NULL,
   plot = FALSE,
-  default_priors = FALSE,
+  default_priors = TRUE,
   wd = ".",
   mplus_bin = NULL,
   ncores = NULL

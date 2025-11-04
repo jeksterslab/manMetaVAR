@@ -200,7 +200,19 @@ mplus <- FitMplus(data)
 
 ``` r
 summary(mplus)
-#> Error in utils::read.table(text = object$output$posterior): no lines available in input
+#> Error in coef.manmetavar.mplus(object = object, median = median): object 'burnin' not found
+```
+
+
+``` r
+coef(mplus)
+#> Error in coef.manmetavar.mplus(mplus): object 'burnin' not found
+```
+
+
+``` r
+vcov(mplus)
+#> Error in vcov.manmetavar.mplus(mplus): object 'burnin' not found
 ```
 
 ### Posterior Distributions
@@ -208,13 +220,15 @@ summary(mplus)
 
 ``` r
 plot(mplus, what = "posterior")
-#> Error in utils::read.table(text = x$output$posterior): no lines available in input
 ```
+
+<img src="fig-vignettes-sim-rep-unnamed-chunk-21-1.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-2.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-3.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-4.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-5.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-6.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-7.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-8.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-9.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-10.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-11.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-12.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-13.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-14.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-15.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-16.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-17.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-18.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-19.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-20.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-21.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-22.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-23.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-24.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-25.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-26.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-27.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-28.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-29.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-30.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-31.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-21-32.png" width="3300" />
 
 ### Trace Plots
 
 
 ``` r
 plot(mplus, what = "trace")
-#> Error in utils::read.table(text = x$output$posterior): no lines available in input
 ```
+
+<img src="fig-vignettes-sim-rep-unnamed-chunk-22-1.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-2.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-3.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-4.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-5.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-6.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-7.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-8.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-9.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-10.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-11.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-12.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-13.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-14.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-15.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-16.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-17.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-18.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-19.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-20.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-21.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-22.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-23.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-24.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-25.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-26.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-27.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-28.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-29.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-30.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-31.png" width="3300" /><img src="fig-vignettes-sim-rep-unnamed-chunk-22-32.png" width="3300" />

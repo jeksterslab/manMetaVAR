@@ -173,6 +173,14 @@ mplus <- FitMplus(data)
 summary(mplus)
 ```
 
+```{r}
+coef(mplus)
+```
+
+```{r}
+vcov(mplus)
+```
+
 ### Posterior Distributions
 
 ```{r}
