@@ -51,7 +51,7 @@ fn_data <- root$find_file(
   "sim-rep-data.Rds"
 )
 if (!file.exists(fn_data)) {
-  taskid <- 1
+  taskid <- 9
   seed <- 42
   set.seed(seed)
   data <- GenData(taskid = taskid)
@@ -120,7 +120,7 @@ mplus <- readRDS(fn_mplus)
 
 ```{r}
 #| eval = FALSE
-taskid <- 1
+taskid <- 9
 seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)
