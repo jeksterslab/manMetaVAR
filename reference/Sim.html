@@ -41,7 +41,23 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Sim</span><span class="op">(</span><span class="va">taskid</span>, <span class="va">repid</span>, <span class="va">output_folder</span>, <span class="va">overwrite</span>, <span class="va">integrity</span>, <span class="va">seed</span>, mplus <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Sim</span><span class="op">(</span></span>
+<span>  <span class="va">taskid</span>,</span>
+<span>  <span class="va">repid</span>,</span>
+<span>  <span class="va">output_folder</span>,</span>
+<span>  <span class="va">overwrite</span>,</span>
+<span>  <span class="va">integrity</span>,</span>
+<span>  <span class="va">seed</span>,</span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">metavar</span>,</span>
+<span>  <span class="va">mlvar</span>,</span>
+<span>  <span class="va">mplus</span>,</span>
+<span>  <span class="va">chains</span>,</span>
+<span>  <span class="va">iter</span>,</span>
+<span>  <span class="va">fscores</span>,</span>
+<span>  <span class="va">plot</span>,</span>
+<span>  <span class="va">default_priors</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -79,9 +95,50 @@ check for the output file integrity when <code>overwrite = FALSE</code>.</p></dd
 Random seed.</p></dd>
 
 
+<dt id="arg-data">data<a class="anchor" aria-label="anchor" href="#arg-data"></a></dt>
+<dd><p>Logical.
+Simulate data.</p></dd>
+
+
+<dt id="arg-metavar">metavar<a class="anchor" aria-label="anchor" href="#arg-metavar"></a></dt>
+<dd><p>Logical.
+If <code>metavar = TRUE</code>, fit the model using the <code>metaVAR</code> package.</p></dd>
+
+
+<dt id="arg-mlvar">mlvar<a class="anchor" aria-label="anchor" href="#arg-mlvar"></a></dt>
+<dd><p>Logical.
+If <code>mlvar = TRUE</code>, fit the model using the <code>mlVAR</code> package.</p></dd>
+
+
 <dt id="arg-mplus">mplus<a class="anchor" aria-label="anchor" href="#arg-mplus"></a></dt>
 <dd><p>Logical.
-If <code>mplus = TRUE</code>, fit a DSEM model in <code>Mplus</code>.</p></dd>
+If <code>mplus = TRUE</code>, fit the model using DSEM in <code>Mplus</code>.</p></dd>
+
+
+<dt id="arg-chains">chains<a class="anchor" aria-label="anchor" href="#arg-chains"></a></dt>
+<dd><p>Integer.
+Number of chains.</p></dd>
+
+
+<dt id="arg-iter">iter<a class="anchor" aria-label="anchor" href="#arg-iter"></a></dt>
+<dd><p>Integer.
+Number of iterations.</p></dd>
+
+
+<dt id="arg-fscores">fscores<a class="anchor" aria-label="anchor" href="#arg-fscores"></a></dt>
+<dd><p>Integer.
+Number of iterations for factor scores.</p></dd>
+
+
+<dt id="arg-plot">plot<a class="anchor" aria-label="anchor" href="#arg-plot"></a></dt>
+<dd><p>Logical.
+If <code>plot = TRUE</code>, add <code>PLOT: TYPE = PLOT3;</code>
+to <code>Mplus</code> input file.</p></dd>
+
+
+<dt id="arg-default-priors">default_priors<a class="anchor" aria-label="anchor" href="#arg-default-priors"></a></dt>
+<dd><p>Logical.
+If <code>default_priors = TRUE</code>, use default priors.</p></dd>
 
 </dl></div>
     <div class="section level2">

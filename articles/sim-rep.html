@@ -76,7 +76,7 @@ Agaloos Pesigan</h4>
 <h2 id="data-generation">Data Generation<a class="anchor" aria-label="anchor" href="#data-generation"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">taskid</span> <span class="op">&lt;-</span> <span class="fl">9</span></span>
+<code class="sourceCode R"><span><span class="va">taskid</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
 <span><span class="va">seed</span> <span class="op">&lt;-</span> <span class="fl">42</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/GenData.html">GenData</a></span><span class="op">(</span>taskid <span class="op">=</span> <span class="va">taskid</span><span class="op">)</span></span></code></pre></div>
@@ -85,13 +85,13 @@ Agaloos Pesigan</h4>
 <p><img src="fig-vignettes-sim-rep-unnamed-chunk-10-1.png" width="3300"><img src="fig-vignettes-sim-rep-unnamed-chunk-10-2.png" width="3300"></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        id              time             y1                y2         </span></span>
-<span><span class="co">#&gt;  Min.   :  1.00   Min.   :  0.0   Min.   :-5.9822   Min.   :-5.6518  </span></span>
-<span><span class="co">#&gt;  1st Qu.: 50.75   1st Qu.:124.8   1st Qu.:-0.2349   1st Qu.:-1.2344  </span></span>
-<span><span class="co">#&gt;  Median :100.50   Median :249.5   Median : 0.4984   Median :-0.5300  </span></span>
-<span><span class="co">#&gt;  Mean   :100.50   Mean   :249.5   Mean   : 0.5099   Mean   :-0.5317  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:150.25   3rd Qu.:374.2   3rd Qu.: 1.2414   3rd Qu.: 0.1703  </span></span>
-<span><span class="co">#&gt;  Max.   :200.00   Max.   :499.0   Max.   : 8.2568   Max.   : 4.8031</span></span></code></pre></div>
+<span><span class="co">#&gt;        id            time             y1                y2         </span></span>
+<span><span class="co">#&gt;  Min.   : 1.0   Min.   : 0.00   Min.   :-3.1668   Min.   :-4.3151  </span></span>
+<span><span class="co">#&gt;  1st Qu.:13.0   1st Qu.:24.75   1st Qu.:-0.1779   1st Qu.:-1.1083  </span></span>
+<span><span class="co">#&gt;  Median :25.5   Median :49.50   Median : 0.5447   Median :-0.3993  </span></span>
+<span><span class="co">#&gt;  Mean   :25.5   Mean   :49.50   Mean   : 0.5734   Mean   :-0.4059  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:38.0   3rd Qu.:74.25   3rd Qu.: 1.2960   3rd Qu.: 0.2786  </span></span>
+<span><span class="co">#&gt;  Max.   :50.0   Max.   :99.00   Max.   : 5.8231   Max.   : 3.9639</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="metavar">MetaVAR<a class="anchor" aria-label="anchor" href="#metavar"></a>
@@ -127,9 +127,9 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Means of the estimated paramaters per individual.</span></span>
 <span><span class="co">#&gt;  beta_1_1  beta_2_1  beta_1_2  beta_2_2    nu_1_1    nu_2_1 psi_l_2_1 psi_d_1_1 </span></span>
-<span><span class="co">#&gt;    0.6999   -0.1738   -0.1628    0.6344    0.5111   -0.5307   -0.3606   -1.7635 </span></span>
+<span><span class="co">#&gt;    0.5933   -0.2746   -0.1905    0.5842    0.5926   -0.4281   -0.9327   -2.4574 </span></span>
 <span><span class="co">#&gt; psi_d_2_1 </span></span>
-<span><span class="co">#&gt;   -2.4931</span></span></code></pre></div>
+<span><span class="co">#&gt;   -9.9852</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">metavar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitMetaVAR.html">FitMetaVAR</a></span><span class="op">(</span><span class="va">dtvar</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -140,39 +140,39 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt;     int_dyn = FALSE, cov_meas = FALSE, cov_dyn = FALSE, try = 1000, </span></span>
 <span><span class="co">#&gt;     ncores = ncores)</span></span>
 <span><span class="co">#&gt;                  est     se        z      p    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; alpha[1,1]    0.7311 0.0107  68.4550 0.0000  0.7102  0.7520</span></span>
-<span><span class="co">#&gt; alpha[2,1]   -0.1208 0.0112 -10.7845 0.0000 -0.1428 -0.0989</span></span>
-<span><span class="co">#&gt; alpha[3,1]   -0.1399 0.0105 -13.3615 0.0000 -0.1605 -0.1194</span></span>
-<span><span class="co">#&gt; alpha[4,1]    0.7036 0.0115  61.2194 0.0000  0.6811  0.7262</span></span>
-<span><span class="co">#&gt; alpha[5,1]    0.5082 0.0247  20.5533 0.0000  0.4597  0.5566</span></span>
-<span><span class="co">#&gt; alpha[6,1]   -0.5319 0.0232 -22.8960 0.0000 -0.5774 -0.4863</span></span>
-<span><span class="co">#&gt; tau_sqr[1,1]  0.0122 0.0022   5.6274 0.0000  0.0079  0.0164</span></span>
-<span><span class="co">#&gt; tau_sqr[2,1]  0.0088 0.0017   5.2452 0.0000  0.0055  0.0121</span></span>
-<span><span class="co">#&gt; tau_sqr[3,1]  0.0016 0.0016   1.0086 0.3132 -0.0015  0.0046</span></span>
-<span><span class="co">#&gt; tau_sqr[4,1]  0.0050 0.0015   3.4016 0.0007  0.0021  0.0079</span></span>
-<span><span class="co">#&gt; tau_sqr[5,1]  0.0036 0.0035   1.0333 0.3014 -0.0033  0.0105</span></span>
-<span><span class="co">#&gt; tau_sqr[6,1] -0.0040 0.0033  -1.2073 0.2273 -0.0105  0.0025</span></span>
-<span><span class="co">#&gt; tau_sqr[2,2]  0.0138 0.0024   5.7543 0.0000  0.0091  0.0185</span></span>
-<span><span class="co">#&gt; tau_sqr[3,2] -0.0007 0.0013  -0.5593 0.5760 -0.0034  0.0019</span></span>
-<span><span class="co">#&gt; tau_sqr[4,2]  0.0048 0.0019   2.5566 0.0106  0.0011  0.0085</span></span>
-<span><span class="co">#&gt; tau_sqr[5,2]  0.0017 0.0035   0.4934 0.6217 -0.0052  0.0087</span></span>
-<span><span class="co">#&gt; tau_sqr[6,2] -0.0084 0.0035  -2.4172 0.0156 -0.0153 -0.0016</span></span>
-<span><span class="co">#&gt; tau_sqr[3,3]  0.0102 0.0018   5.6867 0.0000  0.0067  0.0137</span></span>
-<span><span class="co">#&gt; tau_sqr[4,3]  0.0061 0.0014   4.2358 0.0000  0.0033  0.0089</span></span>
-<span><span class="co">#&gt; tau_sqr[5,3] -0.0055 0.0034  -1.5990 0.1098 -0.0122  0.0012</span></span>
-<span><span class="co">#&gt; tau_sqr[6,3] -0.0002 0.0032  -0.0560 0.9554 -0.0064  0.0060</span></span>
-<span><span class="co">#&gt; tau_sqr[4,4]  0.0128 0.0025   5.1929 0.0000  0.0080  0.0177</span></span>
-<span><span class="co">#&gt; tau_sqr[5,4] -0.0009 0.0036  -0.2463 0.8054 -0.0079  0.0061</span></span>
-<span><span class="co">#&gt; tau_sqr[6,4] -0.0064 0.0035  -1.8134 0.0698 -0.0133  0.0005</span></span>
-<span><span class="co">#&gt; tau_sqr[5,5]  0.1048 0.0122   8.5963 0.0000  0.0809  0.1287</span></span>
-<span><span class="co">#&gt; tau_sqr[6,5] -0.0385 0.0087  -4.4017 0.0000 -0.0556 -0.0214</span></span>
-<span><span class="co">#&gt; tau_sqr[6,6]  0.0948 0.0107   8.8456 0.0000  0.0738  0.1158</span></span>
-<span><span class="co">#&gt; i_sqr[1,1]    0.8595 0.0215  40.0605 0.0000  0.8175  0.9016</span></span>
-<span><span class="co">#&gt; i_sqr[2,1]    0.9004 0.0154  58.3596 0.0000  0.8701  0.9306</span></span>
-<span><span class="co">#&gt; i_sqr[3,1]    0.9197 0.0097  94.5627 0.0000  0.9006  0.9388</span></span>
-<span><span class="co">#&gt; i_sqr[4,1]    0.9287 0.0087 106.3393 0.0000  0.9116  0.9459</span></span>
-<span><span class="co">#&gt; i_sqr[5,1]    0.9448 0.0061 155.7457 0.0000  0.9329  0.9567</span></span>
-<span><span class="co">#&gt; i_sqr[6,1]    0.9655 0.0036 271.4362 0.0000  0.9586  0.9725</span></span></code></pre></div>
+<span><span class="co">#&gt; alpha[1,1]    0.6623 0.0463  14.2898 0.0000  0.5714  0.7531</span></span>
+<span><span class="co">#&gt; alpha[2,1]   -0.1941 0.0490  -3.9604 0.0001 -0.2901 -0.0980</span></span>
+<span><span class="co">#&gt; alpha[3,1]   -0.1625 0.0416  -3.9078 0.0001 -0.2440 -0.0810</span></span>
+<span><span class="co">#&gt; alpha[4,1]    0.6941 0.0437  15.8700 0.0000  0.6084  0.7798</span></span>
+<span><span class="co">#&gt; alpha[5,1]    0.5684 0.0681   8.3498 0.0000  0.4350  0.7019</span></span>
+<span><span class="co">#&gt; alpha[6,1]   -0.4131 0.0539  -7.6574 0.0000 -0.5188 -0.3073</span></span>
+<span><span class="co">#&gt; tau_sqr[1,1]  0.0527 0.0191   2.7593 0.0058  0.0153  0.0901</span></span>
+<span><span class="co">#&gt; tau_sqr[2,1]  0.0494 0.0143   3.4674 0.0005  0.0215  0.0774</span></span>
+<span><span class="co">#&gt; tau_sqr[3,1]  0.0255 0.0162   1.5760 0.1150 -0.0062  0.0573</span></span>
+<span><span class="co">#&gt; tau_sqr[4,1]  0.0439 0.0124   3.5326 0.0004  0.0195  0.0683</span></span>
+<span><span class="co">#&gt; tau_sqr[5,1]  0.0334 0.0197   1.6971 0.0897 -0.0052  0.0720</span></span>
+<span><span class="co">#&gt; tau_sqr[6,1]  0.0012 0.0145   0.0793 0.9368 -0.0273  0.0296</span></span>
+<span><span class="co">#&gt; tau_sqr[2,2]  0.0567 0.0208   2.7304 0.0063  0.0160  0.0974</span></span>
+<span><span class="co">#&gt; tau_sqr[3,2]  0.0143 0.0107   1.3300 0.1835 -0.0068  0.0353</span></span>
+<span><span class="co">#&gt; tau_sqr[4,2]  0.0431 0.0153   2.8134 0.0049  0.0131  0.0732</span></span>
+<span><span class="co">#&gt; tau_sqr[5,2]  0.0621 0.0216   2.8778 0.0040  0.0198  0.1044</span></span>
+<span><span class="co">#&gt; tau_sqr[6,2] -0.0222 0.0149  -1.4863 0.1372 -0.0515  0.0071</span></span>
+<span><span class="co">#&gt; tau_sqr[3,3]  0.0318 0.0167   1.9030 0.0570 -0.0010  0.0646</span></span>
+<span><span class="co">#&gt; tau_sqr[4,3]  0.0245 0.0107   2.2793 0.0226  0.0034  0.0455</span></span>
+<span><span class="co">#&gt; tau_sqr[5,3]  0.0044 0.0165   0.2663 0.7900 -0.0279  0.0367</span></span>
+<span><span class="co">#&gt; tau_sqr[6,3]  0.0062 0.0136   0.4543 0.6496 -0.0205  0.0329</span></span>
+<span><span class="co">#&gt; tau_sqr[4,4]  0.0474 0.0161   2.9474 0.0032  0.0159  0.0790</span></span>
+<span><span class="co">#&gt; tau_sqr[5,4]  0.0448 0.0196   2.2817 0.0225  0.0063  0.0833</span></span>
+<span><span class="co">#&gt; tau_sqr[6,4] -0.0022 0.0151  -0.1451 0.8846 -0.0318  0.0274</span></span>
+<span><span class="co">#&gt; tau_sqr[5,5]  0.1810 0.0442   4.0940 0.0000  0.0943  0.2676</span></span>
+<span><span class="co">#&gt; tau_sqr[6,5] -0.0687 0.0274  -2.5028 0.0123 -0.1225 -0.0149</span></span>
+<span><span class="co">#&gt; tau_sqr[6,6]  0.1011 0.0252   4.0078 0.0001  0.0517  0.1506</span></span>
+<span><span class="co">#&gt; i_sqr[1,1]    0.9240 0.0254  36.3168 0.0000  0.8741  0.9739</span></span>
+<span><span class="co">#&gt; i_sqr[2,1]    0.9663 0.0092 104.7536 0.0000  0.9483  0.9844</span></span>
+<span><span class="co">#&gt; i_sqr[3,1]    0.9249 0.0251  36.8088 0.0000  0.8757  0.9742</span></span>
+<span><span class="co">#&gt; i_sqr[4,1]    0.9864 0.0052 191.1449 0.0000  0.9763  0.9966</span></span>
+<span><span class="co">#&gt; i_sqr[5,1]    0.9135 0.0193  47.3335 0.0000  0.8757  0.9513</span></span>
+<span><span class="co">#&gt; i_sqr[6,1]    0.8835 0.0254  34.8155 0.0000  0.8338  0.9333</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="mlvar">MLVAR<a class="anchor" aria-label="anchor" href="#mlvar"></a>
@@ -190,26 +190,26 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Information indices:</span></span>
 <span><span class="co">#&gt;  var      aic      bic</span></span>
-<span><span class="co">#&gt;   y1 242373.8 242478.4</span></span>
-<span><span class="co">#&gt;   y2 250819.8 250924.4</span></span>
+<span><span class="co">#&gt;   y1 11983.28 12054.86</span></span>
+<span><span class="co">#&gt;   y2 12613.56 12685.14</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Temporal effects:</span></span>
 <span><span class="co">#&gt;  from to lag   fixed     SE P ran_SD</span></span>
-<span><span class="co">#&gt;    y1 y1   1  0.3597 0.0107 0 0.1452</span></span>
-<span><span class="co">#&gt;    y1 y2   1 -0.1743 0.0077 0 0.0994</span></span>
-<span><span class="co">#&gt;    y2 y1   1 -0.1605 0.0048 0 0.0544</span></span>
-<span><span class="co">#&gt;    y2 y2   1  0.3098 0.0087 0 0.1152</span></span>
+<span><span class="co">#&gt;    y1 y1   1  0.3348 0.0250 0 0.1485</span></span>
+<span><span class="co">#&gt;    y1 y2   1 -0.1873 0.0189 0 0.0871</span></span>
+<span><span class="co">#&gt;    y2 y1   1 -0.1673 0.0149 0 0.0533</span></span>
+<span><span class="co">#&gt;    y2 y2   1  0.3039 0.0188 0 0.0909</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Contemporaneous effects (posthoc estimated):</span></span>
 <span><span class="co">#&gt;  v1 v2 P 1-&gt;2 P 1&lt;-2    pcor ran_SD_pcor     cor ran_SD_cor</span></span>
-<span><span class="co">#&gt;  y2 y1      0      0 -0.1556      0.0336 -0.1556     0.0336</span></span>
+<span><span class="co">#&gt;  y2 y1      0      0 -0.1761      0.0568 -0.1761     0.0568</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Between-subject effects:</span></span>
-<span><span class="co">#&gt;  v1 v2 P 1-&gt;2 P 1&lt;-2    pcor     cor</span></span>
-<span><span class="co">#&gt;  y2 y1      0      0 -0.4199 -0.4199</span></span></code></pre></div>
+<span><span class="co">#&gt;  v1 v2 P 1-&gt;2 P 1&lt;-2   pcor    cor</span></span>
+<span><span class="co">#&gt;  y2 y1      0      0 -0.535 -0.535</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="mplus">Mplus<a class="anchor" aria-label="anchor" href="#mplus"></a>
@@ -218,39 +218,21 @@ Agaloos Pesigan</h4>
 <code class="sourceCode R"><span><span class="va">mplus</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FitMplus.html">FitMplus</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mplus</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                               est     se     R    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; theta[1,1]                 0.5061 0.0047 81000  0.4967  0.5152</span></span>
-<span><span class="co">#&gt; theta[2,2]                 0.5015 0.0053 81000  0.4911  0.5117</span></span>
-<span><span class="co">#&gt; psi[1,1]                   0.1961 0.0045 81000  0.1879  0.2053</span></span>
-<span><span class="co">#&gt; psi[2,1]                  -0.0543 0.0023 81000 -0.0587 -0.0500</span></span>
-<span><span class="co">#&gt; psi[2,2]                   0.1778 0.0052 81000  0.1678  0.1884</span></span>
-<span><span class="co">#&gt; mean(nu[1,1])              0.5029 0.0240 81000  0.4560  0.5502</span></span>
-<span><span class="co">#&gt; mean(nu[2,1])             -0.5307 0.0229 81000 -0.5759 -0.4859</span></span>
-<span><span class="co">#&gt; mean(beta[1,1])            0.6830 0.0105 81000  0.6622  0.7029</span></span>
-<span><span class="co">#&gt; mean(beta[2,1])           -0.1598 0.0107 81000 -0.1812 -0.1394</span></span>
-<span><span class="co">#&gt; mean(beta[1,2])           -0.1709 0.0093 81000 -0.1895 -0.1546</span></span>
-<span><span class="co">#&gt; mean(beta[2,2])            0.6424 0.0118 81000  0.6186  0.6645</span></span>
-<span><span class="co">#&gt; cov(nu[1,1],nu[1,1])       0.0952 0.0118 81000  0.0756  0.1219</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],nu[1,1])      -0.0349 0.0085 81000 -0.0536 -0.0200</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],nu[2,1])       0.0895 0.0106 81000  0.0717  0.1131</span></span>
-<span><span class="co">#&gt; cov(nu[1,1],beta[1,1])     0.0058 0.0030 81000  0.0002  0.0119</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],beta[1,1])    -0.0044 0.0027 81000 -0.0100  0.0008</span></span>
-<span><span class="co">#&gt; cov(beta[1,1],beta[1,1])   0.0121 0.0014 81000  0.0097  0.0153</span></span>
-<span><span class="co">#&gt; cov(nu[1,1],beta[2,1])     0.0024 0.0031 81000 -0.0036  0.0087</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],beta[2,1])    -0.0062 0.0030 81000 -0.0124 -0.0005</span></span>
-<span><span class="co">#&gt; cov(beta[2,1], beta[1,1])  0.0100 0.0014 81000  0.0076  0.0132</span></span>
-<span><span class="co">#&gt; cov(beta[2,1],beta[2,1])   0.0131 0.0018 81000  0.0102  0.0171</span></span>
-<span><span class="co">#&gt; cov(nu[1,1],beta[1,2])    -0.0022 0.0020 81000 -0.0063  0.0016</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],beta[1,2])     0.0000 0.0021 81000 -0.0043  0.0038</span></span>
-<span><span class="co">#&gt; cov(beta[1,2],beta[1,1])  -0.0033 0.0007 81000 -0.0048 -0.0020</span></span>
-<span><span class="co">#&gt; cov(beta[1,2],beta[2,1])  -0.0005 0.0008 81000 -0.0020  0.0010</span></span>
-<span><span class="co">#&gt; cov(beta[1,2],beta[1,2])   0.0050 0.0009 81000  0.0035  0.0070</span></span>
-<span><span class="co">#&gt; cov(nu[1,1],beta[2,2])    -0.0016 0.0029 81000 -0.0074  0.0040</span></span>
-<span><span class="co">#&gt; cov(nu[2,1],beta[2,2])    -0.0024 0.0029 81000 -0.0082  0.0031</span></span>
-<span><span class="co">#&gt; cov(beta[2,2],beta[1,1])   0.0003 0.0011 81000 -0.0018  0.0026</span></span>
-<span><span class="co">#&gt; cov(beta[2,2],beta[2,1])   0.0003 0.0012 81000 -0.0019  0.0028</span></span>
-<span><span class="co">#&gt; cov(beta[2,2],beta[1,2])   0.0055 0.0009 81000  0.0040  0.0076</span></span>
-<span><span class="co">#&gt; cov(beta[2,2],beta[2,2])   0.0111 0.0017 81000  0.0083  0.0149</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in utils::read.table(text = object$output$posterior): no lines available in input</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="posterior-distributions">Posterior Distributions<a class="anchor" aria-label="anchor" href="#posterior-distributions"></a>
+</h3>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mplus</span>, what <span class="op">=</span> <span class="st">"posterior"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in utils::read.table(text = x$output$posterior): no lines available in input</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="trace-plots">Trace Plots<a class="anchor" aria-label="anchor" href="#trace-plots"></a>
+</h3>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mplus</span>, what <span class="op">=</span> <span class="st">"trace"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in utils::read.table(text = x$output$posterior): no lines available in input</span></span></code></pre></div>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
