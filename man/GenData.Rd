@@ -15,13 +15,11 @@ The function simulates data using
 the \code{\link[simStateSpace:SimSSMIVary]{simStateSpace::SimSSMIVary()}} function.
 }
 \examples{
-\dontrun{
 set.seed(42)
 data <- GenData(taskid = 1)
 print(data)
 summary(data)
 plot(data)
-}
 
 }
 \seealso{

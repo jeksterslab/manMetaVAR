@@ -51,7 +51,7 @@ fn_data <- root$find_file(
   "sim-rep-data.Rds"
 )
 if (!file.exists(fn_data)) {
-  taskid <- 9
+  taskid <- 1
   seed <- 42
   set.seed(seed)
   data <- GenData(taskid = taskid)
@@ -120,7 +120,7 @@ mplus <- readRDS(fn_mplus)
 
 ```{r}
 #| eval = FALSE
-taskid <- 9
+taskid <- 1
 seed <- 42
 set.seed(seed)
 data <- GenData(taskid = taskid)
@@ -171,4 +171,16 @@ mplus <- FitMplus(data)
 
 ```{r}
 summary(mplus)
+```
+
+### Posterior Distributions
+
+```{r}
+plot(mplus, what = "posterior")
+```
+
+### Trace Plots
+
+```{r}
+plot(mplus, what = "trace")
 ```

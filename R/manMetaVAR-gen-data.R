@@ -6,13 +6,11 @@
 #' @inheritParams Template
 #'
 #' @examples
-#' \dontrun{
 #' set.seed(42)
 #' data <- GenData(taskid = 1)
 #' print(data)
 #' summary(data)
 #' plot(data)
-#' }
 #'
 #' @family Data Generation Functions
 #' @keywords manMetaVAR gendata

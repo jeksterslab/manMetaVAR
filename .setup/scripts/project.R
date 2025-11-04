@@ -37,6 +37,10 @@ pkg_ver <- c()
 
 ver <- c()
 
+pkg_bioconductor <- c(
+  "rhdf5"
+)
+
 ignore <- "^vignettes$"
 
 license <- "mit"

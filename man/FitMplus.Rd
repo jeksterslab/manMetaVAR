@@ -6,15 +6,35 @@
 \usage{
 FitMplus(
   data,
+  chains = 2L,
+  iter = 60000L,
+  fscores = NULL,
+  plot = FALSE,
+  default_priors = FALSE,
   wd = ".",
   mplus_bin = NULL,
-  ncores = NULL,
-  default_priors = FALSE
+  ncores = NULL
 )
 }
 \arguments{
 \item{data}{R object.
 Output of the \code{\link[=GenData]{GenData()}} function.}
+
+\item{chains}{Integer.
+Number of chains.}
+
+\item{iter}{Integer.
+Number of iterations.}
+
+\item{fscores}{Integer.
+Number of iterations for factor scores.}
+
+\item{plot}{Logical.
+If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
+to \code{Mplus} input file.}
+
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use default priors.}
 
 \item{wd}{Character string.
 Working directory.}
@@ -27,9 +47,6 @@ the appropriate binary.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
-
-\item{default_priors}{Logical.
-If \code{default_priors = TRUE}, use default priors.}
 }
 \description{
 The function fits the model using Mplus.

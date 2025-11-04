@@ -4,7 +4,7 @@
 \alias{Sum}
 \title{Summary}
 \usage{
-Sum(taskid, reps, output_folder, overwrite, integrity, mplus = FALSE)
+Sum(taskid, reps, output_folder, overwrite, integrity, metavar, mlvar, mplus)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -23,8 +23,14 @@ Overwrite existing output in \code{output_folder}.}
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
 
+\item{metavar}{Logical.
+If \code{metavar = TRUE}, fit the model using the \code{metaVAR} package.}
+
+\item{mlvar}{Logical.
+If \code{mlvar = TRUE}, fit the model using the \code{mlVAR} package.}
+
 \item{mplus}{Logical.
-If \code{mplus = TRUE}, fit a DSEM model in \code{Mplus}.}
+If \code{mplus = TRUE}, fit the model using DSEM in \code{Mplus}.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

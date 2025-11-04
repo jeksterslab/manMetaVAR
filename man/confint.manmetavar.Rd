@@ -8,7 +8,7 @@
 \usage{
 \method{confint}{manmetavar.metavar}(object, parm = NULL, level = 0.95, lb = TRUE, ...)
 
-\method{confint}{manmetavar.mplus}(object, parm = NULL, level = 0.95, ...)
+\method{confint}{manmetavar.mplus}(object, parm = NULL, level = 0.95, burnin = NULL, ...)
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.mplus}.}
@@ -25,6 +25,9 @@ If \code{TRUE}, returns profile likelihood-based confidence intervals.
 If \code{FALSE}, returns Wald confidence intervals.}
 
 \item{...}{additional arguments.}
+
+\item{burnin}{Integer indicating initial samples to discard.
+If \code{burnin = NULL}, do not discard anything.}
 }
 \value{
 Returns a matrix of confidence intervals.

@@ -38,7 +38,7 @@
   ...
 )
 
-\method{summary}{manmetavar.mplus}(object, alpha = 0.05, median = TRUE, digits = 4, ...)
+\method{summary}{manmetavar.mplus}(object, alpha = 0.05, median = TRUE, digits = 4, burnin = NULL, ...)
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.mplus}.}
@@ -103,6 +103,9 @@ if \code{converged} and \code{theta_tol} are \code{TRUE}.}
 \item{median}{Logical.
 If \code{median = TRUE}, return median of the posterior.
 If \code{median = FALSE}, return mean of the posterior.}
+
+\item{burnin}{Integer indicating initial samples to discard.
+If \code{burnin = NULL}, do not discard anything.}
 }
 \value{
 Returns a matrix of

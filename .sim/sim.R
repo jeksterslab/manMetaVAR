@@ -46,7 +46,15 @@ tryCatch(
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
       seed = seed,
-      mplus = mplus
+      data = data,
+      metavar = metavar,
+      mlvar = mlvar,
+      mplus = mplus,
+      chains = chains,
+      iter = iter,
+      fscores = fscores,
+      plot = plot,
+      default_priors = default_priors
     )
     # setTimeLimit(elapsed = Inf)
   },

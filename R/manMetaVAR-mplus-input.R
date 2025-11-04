@@ -5,20 +5,63 @@
 #' @inheritParams Template
 #'
 #' @examples
-#' cat(MplusInput(dynamics = 1))
+#' cat(
+#'   MplusInput(
+#'     dynamics = 1,
+#'     fn_data = "data.dat",
+#'     fn_posterior = "posterior.dat",
+#'     fn_factorscores = "factorscores.dat",
+#'     chains = 2L,
+#'     iter = 60000L,
+#'     fscores = 1000L,
+#'     plot = TRUE,
+#'     default_priors = FALSE,
+#'     ncores = NULL
+#'   )
+#' )
 #'
 #' @family Model Fitting Functions
 #' @keywords manMetaVAR fit
 #' @export
 MplusInput <- function(dynamics,
-                       fn_data = NULL,
-                       fn_estimates = NULL,
-                       fn_results = NULL,
-                       fn_posterior = NULL,
-                       fn_factorscores = NULL,
-                       ncores = NULL,
-                       plot = TRUE,
-                       default_priors = FALSE) {
+                       fn_data,
+                       fn_posterior,
+                       fn_factorscores,
+                       chains,
+                       iter,
+                       fscores,
+                       plot,
+                       default_priors,
+                       ncores = NULL) {
+  stopifnot(
+    chains > 1,
+    iter > 1
+  )
+  if (is.null(ncores)) {
+    ncores <- 1L
+  } else {
+    ncores <- as.integer(ncores)
+    available_cores <- parallel::detectCores()
+    if (ncores > 1) {
+      if (ncores >= available_cores) {
+        ncores <- available_cores
+      }
+      if (ncores >= 2) {
+        ncores <- 2
+      }
+    } else {
+      stop("'ncores' should be greater than 0.")
+    }
+  }
+  if (is.null(fn_data)) {
+    fn_data <- "data.dat"
+  }
+  if (is.null(fn_posterior)) {
+    fn_posterior <- "posterior.dat"
+  }
+  if (is.null(fn_factorscores)) {
+    fn_factorscores <- "factorscores.dat"
+  }
   model <- Dynamics(dynamics = dynamics)
   t11 <- if (model$theta[1, 1] == 0) 0.001 else model$theta[1, 1]
   t22 <- if (model$theta[2, 2] == 0) 0.001 else model$theta[2, 2]
@@ -94,36 +137,36 @@ MplusInput <- function(dynamics,
     }
     prior_t11 <- ig(expected_value = t11, alpha = 3, label = "t11")
     prior_t22 <- ig(expected_value = t11, alpha = 3, label = "t22")
-    prior_p11 <- iw(scale = 1, df = 10, label = "p11")
-    prior_p21 <- iw(scale = 1, df = 10, label = "p21")
-    prior_p22 <- iw(scale = 1, df = 10, label = "p22")
-    prior_m_b11 <- normal(expected_value = 0, sigma = 100, label = "m_b11")
-    prior_m_b21 <- normal(expected_value = 0, sigma = 100, label = "m_b21")
-    prior_m_b12 <- normal(expected_value = 0, sigma = 100, label = "m_b12")
-    prior_m_b22 <- normal(expected_value = 0, sigma = 100, label = "m_b22")
-    prior_m_n11 <- normal(expected_value = 0, sigma = 100, label = "m_n11")
-    prior_m_n21 <- normal(expected_value = 0, sigma = 100, label = "m_n21")
-    prior_c_b11b11 <- iw(scale = 0, df = 10, label = "c_b11b11")
-    prior_c_b21b11 <- iw(scale = 0, df = 10, label = "c_b21b11")
-    prior_c_b12b11 <- iw(scale = 0, df = 10, label = "c_b12b11")
-    prior_c_b22b11 <- iw(scale = 0, df = 10, label = "c_b22b11")
-    prior_c_n11b11 <- iw(scale = 0, df = 10, label = "c_n11b11")
-    prior_c_n21b11 <- iw(scale = 0, df = 10, label = "c_n21b11")
-    prior_c_b21b21 <- iw(scale = 0, df = 10, label = "c_b21b21")
-    prior_c_b12b21 <- iw(scale = 0, df = 10, label = "c_b12b21")
-    prior_c_b22b21 <- iw(scale = 0, df = 10, label = "c_b22b21")
-    prior_c_n11b21 <- iw(scale = 0, df = 10, label = "c_n11b21")
-    prior_c_n21b21 <- iw(scale = 0, df = 10, label = "c_n21b21")
-    prior_c_b12b12 <- iw(scale = 0, df = 10, label = "c_b12b12")
-    prior_c_b22b12 <- iw(scale = 0, df = 10, label = "c_b22b12")
-    prior_c_n11b12 <- iw(scale = 0, df = 10, label = "c_n11b12")
-    prior_c_n21b12 <- iw(scale = 0, df = 10, label = "c_n21b12")
-    prior_c_b22b22 <- iw(scale = 0, df = 10, label = "c_b22b22")
-    prior_c_n11b22 <- iw(scale = 0, df = 10, label = "c_n11b22")
-    prior_c_n21b22 <- iw(scale = 0, df = 10, label = "c_n21b22")
-    prior_c_n11n11 <- iw(scale = 0, df = 10, label = "c_n11n11")
-    prior_c_n21n11 <- iw(scale = 0, df = 10, label = "c_n21n11")
-    prior_c_n21n21 <- iw(scale = 0, df = 10, label = "c_n21n21")
+    prior_p11 <- iw(scale = 0.50, df = 12, label = "p11")
+    prior_p21 <- iw(scale = 0.50, df = 12, label = "p21")
+    prior_p22 <- iw(scale = 0.50, df = 12, label = "p22")
+    prior_m_b11 <- normal(expected_value = 0, sigma = 1, label = "m_b11")
+    prior_m_b21 <- normal(expected_value = 0, sigma = 1, label = "m_b21")
+    prior_m_b12 <- normal(expected_value = 0, sigma = 1, label = "m_b12")
+    prior_m_b22 <- normal(expected_value = 0, sigma = 1, label = "m_b22")
+    prior_m_n11 <- normal(expected_value = 0, sigma = 1, label = "m_n11")
+    prior_m_n21 <- normal(expected_value = 0, sigma = 1, label = "m_n21")
+    prior_c_b11b11 <- iw(scale = 0.50, df = 12, label = "c_b11b11")
+    prior_c_b21b11 <- iw(scale = 0.50, df = 12, label = "c_b21b11")
+    prior_c_b12b11 <- iw(scale = 0.50, df = 12, label = "c_b12b11")
+    prior_c_b22b11 <- iw(scale = 0.50, df = 12, label = "c_b22b11")
+    prior_c_n11b11 <- iw(scale = 0.50, df = 12, label = "c_n11b11")
+    prior_c_n21b11 <- iw(scale = 0.50, df = 12, label = "c_n21b11")
+    prior_c_b21b21 <- iw(scale = 0.50, df = 12, label = "c_b21b21")
+    prior_c_b12b21 <- iw(scale = 0.50, df = 12, label = "c_b12b21")
+    prior_c_b22b21 <- iw(scale = 0.50, df = 12, label = "c_b22b21")
+    prior_c_n11b21 <- iw(scale = 0.50, df = 12, label = "c_n11b21")
+    prior_c_n21b21 <- iw(scale = 0.50, df = 12, label = "c_n21b21")
+    prior_c_b12b12 <- iw(scale = 0.50, df = 12, label = "c_b12b12")
+    prior_c_b22b12 <- iw(scale = 0.50, df = 12, label = "c_b22b12")
+    prior_c_n11b12 <- iw(scale = 0.50, df = 12, label = "c_n11b12")
+    prior_c_n21b12 <- iw(scale = 0.50, df = 12, label = "c_n21b12")
+    prior_c_b22b22 <- iw(scale = 0.50, df = 12, label = "c_b22b22")
+    prior_c_n11b22 <- iw(scale = 0.50, df = 12, label = "c_n11b22")
+    prior_c_n21b22 <- iw(scale = 0.50, df = 12, label = "c_n21b22")
+    prior_c_n11n11 <- iw(scale = 0.50, df = 12, label = "c_n11n11")
+    prior_c_n21n11 <- iw(scale = 0.50, df = 12, label = "c_n21n11")
+    prior_c_n21n21 <- iw(scale = 0.50, df = 12, label = "c_n21n21")
     prior_value <- c(
       prior_t11,
       prior_t22,
@@ -261,37 +304,6 @@ MplusInput <- function(dynamics,
     "c_n21n11",
     "c_n21n21"
   )
-  if (is.null(fn_data)) {
-    fn_data <- "data.dat"
-  }
-  if (is.null(fn_estimates)) {
-    fn_estimates <- "estimates.dat"
-  }
-  if (is.null(fn_results)) {
-    fn_results <- "results.dat"
-  }
-  if (is.null(fn_posterior)) {
-    fn_posterior <- "posterior.dat"
-  }
-  if (is.null(fn_factorscores)) {
-    fn_factorscores <- "factorscores.dat"
-  }
-  if (is.null(ncores)) {
-    ncores <- 1L
-  } else {
-    ncores <- as.integer(ncores)
-    available_cores <- parallel::detectCores()
-    if (ncores > 1) {
-      if (ncores >= available_cores) {
-        ncores <- available_cores
-      }
-      if (ncores >= 2) {
-        ncores <- 2
-      }
-    } else {
-      stop("'ncores' should be greater than 0.")
-    }
-  }
   out <- "
     TITLE:
       Multilevel Vector Autoregressive Model with Measurement Error
@@ -304,8 +316,8 @@ MplusInput <- function(dynamics,
     ANALYSIS:
       TYPE = TWOLEVEL RANDOM;
       ESTIMATOR = BAYES;
-      CHAINS = 2;
-      FBITER = (40000);
+      CHAINS = __CHAINS__;
+      FBITER = (__FBITER__);
       PROCESSORS = __PROCESSORS__;
     MODEL:
       %WITHIN%
@@ -439,47 +451,44 @@ MplusInput <- function(dynamics,
   out <- paste0(
     out,
     "
-    DATA IMPUTATION:
-      THIN = 100;
     OUTPUT:
       TECH1 TECH8;
     SAVEDATA:
-      ESTIMATES = __ESTIMATES__;
-      RESULTS = __RESULTS__;
-      BPARAMETERS = __POSTERIOR__;
-      SAVE = FSCORES(1000);
-      FILE = __FACTORSCORES__;
-      FACTORS = ALL;"
+      BPARAMETERS = __POSTERIOR__;"
   )
-  out <- sub(
-    pattern = "__DATA__",
-    replacement = fn_data,
-    x = out
+  if (!is.null(fscores)) {
+    out <- paste0(
+      out,
+      "
+        SAVE = FSCORES(__FSCORES__ 1);
+        FILE = __FACTORSCORES__;
+        FACTORS = ALL;"
+    )
+  }
+  pattern <- c(
+    "__DATA__",
+    "__CHAINS__",
+    "__FBITER__",
+    "__PROCESSORS__",
+    "__POSTERIOR__",
+    "__FSCORES__",
+    "__FACTORSCORES__"
   )
-  out <- sub(
-    pattern = "__PROCESSORS__",
-    replacement = ncores,
-    x = out
+  replacement <- c(
+    fn_data,
+    as.integer(chains),
+    as.integer(iter),
+    as.integer(ncores),
+    fn_posterior,
+    fscores,
+    fn_factorscores
   )
-  out <- sub(
-    pattern = "__ESTIMATES__",
-    replacement = fn_estimates,
-    x = out
-  )
-  out <- sub(
-    pattern = "__RESULTS__",
-    replacement = fn_results,
-    x = out
-  )
-  out <- sub(
-    pattern = "__POSTERIOR__",
-    replacement = fn_posterior,
-    x = out
-  )
-  out <- sub(
-    pattern = "__FACTORSCORES__",
-    replacement = fn_factorscores,
-    x = out
-  )
+  for (i in seq_along(pattern)) {
+    out <- sub(
+      pattern = pattern[i],
+      replacement = replacement[i],
+      x = out
+    )
+  }
   out
 }

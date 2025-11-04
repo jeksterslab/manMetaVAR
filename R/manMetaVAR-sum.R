@@ -12,7 +12,9 @@ Sum <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                mplus = FALSE) {
+                metavar,
+                mlvar,
+                mplus) {
   # Do not include default arguments here.
   # All arguments should be set in `.sim/sim-args.R.R`.
   # Add taskid to output_folder
@@ -35,29 +37,33 @@ Sum <- function(taskid,
     )
     .SimChMod(output_folder)
   }
-  SumFitMetaVARNormal(
-    taskid = taskid,
-    reps = reps,
-    output_folder = output_folder,
-    overwrite = overwrite,
-    integrity = integrity
-  )
-  SumFitMetaVARLB(
-    taskid = taskid,
-    reps = reps,
-    output_folder = output_folder,
-    overwrite = overwrite,
-    integrity = integrity
-  )
-  SumFitMLVAR(
-    taskid = taskid,
-    reps = reps,
-    output_folder = output_folder,
-    overwrite = overwrite,
-    integrity = integrity
-  )
   if (mplus) {
     SumFitMplus(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      overwrite = overwrite,
+      integrity = integrity
+    )
+  }
+  if (metavar) {
+    SumFitMetaVARNormal(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      overwrite = overwrite,
+      integrity = integrity
+    )
+    SumFitMetaVARLB(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      overwrite = overwrite,
+      integrity = integrity
+    )
+  }
+  if (mlvar) {
+    SumFitMLVAR(
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,

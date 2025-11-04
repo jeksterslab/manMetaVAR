@@ -35,6 +35,8 @@
 #' @param alpha Numeric vector.
 #'   Significance level \eqn{\alpha}.
 #' @param digits Integer indicating the number of decimal places to display.
+#' @param burnin Integer indicating initial samples to discard.
+#'   If `burnin = NULL`, do not discard anything.
 #' @param show	Tables to show.
 #' @param wd Character string.
 #'   Working directory.
@@ -53,13 +55,23 @@
 #'   Filename for posterior output.
 #' @param fn_factorscores Character string.
 #'   Filename for factor scores output.
-#' @param mplus Logical.
-#'   If `mplus = TRUE`, fit a DSEM model in `Mplus`.
-#' @param plot Logical.
-#'   If `plot = TRUE`, add `PLOT: TYPE = PLOT1 PLOT2 PLOT3;`
-#'   to `Mplus` input file.
+#' @param chains Integer.
+#'   Number of chains.
+#' @param iter Integer.
+#'   Number of iterations.
+#' @param fscores Integer.
+#'   Number of iterations for factor scores.
 #' @param default_priors Logical.
 #'   If `default_priors = TRUE`, use default priors.
+#' @param mplus Logical.
+#'   If `mplus = TRUE`, fit the model using DSEM in `Mplus`.
+#' @param metavar Logical.
+#'   If `metavar = TRUE`, fit the model using the `metaVAR` package.
+#' @param mlvar Logical.
+#'   If `mlvar = TRUE`, fit the model using the `mlVAR` package.
+#' @param plot Logical.
+#'   If `plot = TRUE`, add `PLOT: TYPE = PLOT3;`
+#'   to `Mplus` input file.
 #' @param ... additional arguments.
 #' @name Template
 NULL
