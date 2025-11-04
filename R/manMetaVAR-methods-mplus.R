@@ -19,19 +19,49 @@
 coef.manmetavar.mplus <- function(object,
                                   median = TRUE,
                                   ...) {
-  posterior <- as.matrix(
+  thetahatstar <- as.matrix(
     utils::read.table(
       text = object$output$posterior
     )
-  )[, -c(1, 2), drop = FALSE]
+  )
+  if (!is.null(object$args$fscores)) {
+    thetahatstar <- thetahatstar[
+      1:(dim(thetahatstar)[1] - object$args$fscores), ,
+      drop = FALSE
+    ]
+  }
+  if (!is.null(burnin)) {
+    chain <- unique(thetahatstar[, 1])
+    thetahatstar_list <- lapply(
+      X = chain,
+      FUN = function(i) {
+        chain_i <- thetahatstar[
+          which(thetahatstar[, 1] == i), ,
+          drop = FALSE
+        ]
+        dims <- dim(chain_i)
+        if (burnin >= dims[1]) {
+          stop(
+            "`burnin` should be less than the number of iterations."
+          )
+        }
+        chain_i[-(1:burnin), , drop = FALSE]
+      }
+    )
+    thetahatstar <- do.call(
+      what = "rbind",
+      args = thetahatstar_list
+    )
+  }
+  thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
   if (median) {
     out <- apply(
-      X = posterior,
+      X = thetahatstar,
       MARGIN = 2,
       FUN = median
     )
   } else {
-    out <- colMeans(posterior)
+    out <- colMeans(thetahatstar)
   }
   names(out) <- c(
     "theta[1,1]",
@@ -87,12 +117,42 @@ coef.manmetavar.mplus <- function(object,
 #' @export
 vcov.manmetavar.mplus <- function(object,
                                   ...) {
-  posterior <- as.matrix(
+  thetahatstar <- as.matrix(
     utils::read.table(
       text = object$output$posterior
     )
-  )[, -c(1, 2), drop = FALSE]
-  out <- stats::cov(posterior)
+  )
+  if (!is.null(object$args$fscores)) {
+    thetahatstar <- thetahatstar[
+      1:(dim(thetahatstar)[1] - object$args$fscores), ,
+      drop = FALSE
+    ]
+  }
+  if (!is.null(burnin)) {
+    chain <- unique(thetahatstar[, 1])
+    thetahatstar_list <- lapply(
+      X = chain,
+      FUN = function(i) {
+        chain_i <- thetahatstar[
+          which(thetahatstar[, 1] == i), ,
+          drop = FALSE
+        ]
+        dims <- dim(chain_i)
+        if (burnin >= dims[1]) {
+          stop(
+            "`burnin` should be less than the number of iterations."
+          )
+        }
+        chain_i[-(1:burnin), , drop = FALSE]
+      }
+    )
+    thetahatstar <- do.call(
+      what = "rbind",
+      args = thetahatstar_list
+    )
+  }
+  thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
+  out <- stats::cov(thetahatstar)
   names(out) <- c(
     "theta[1,1]",
     "theta[2,2]",
