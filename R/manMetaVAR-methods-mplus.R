@@ -473,7 +473,10 @@ plot.manmetavar.mplus <- function(x,
     } else {
       if (any(!parm %in% varnames)) {
         stop(
-          "One or more elements of `parm` are not present in the parameter vector."
+          paste0(
+            "One or more elements of `parm` ",
+            "are not present in the parameter vector."
+          )
         )
       }
     }
