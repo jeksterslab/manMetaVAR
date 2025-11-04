@@ -48,7 +48,15 @@ Plot Method for an Object of Class manmetavar.mplus"><script id="MathJax-script"
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S3 method for class 'manmetavar.mplus'</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, what <span class="op">=</span> <span class="st">"posterior"</span>, parm <span class="op">=</span> <span class="cn">NULL</span>, level <span class="op">=</span> <span class="fl">0.95</span>, burnin <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  what <span class="op">=</span> <span class="st">"posterior"</span>,</span>
+<span>  parm <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  level <span class="op">=</span> <span class="fl">0.95</span>,</span>
+<span>  burnin <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  legend_loc <span class="op">=</span> <span class="st">"topright"</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -83,6 +91,11 @@ If missing, all parameters are considered.</p></dd>
 <dt id="arg-burnin">burnin<a class="anchor" aria-label="anchor" href="#arg-burnin"></a></dt>
 <dd><p>Integer indicating initial samples to discard.
 If <code>burnin = NULL</code>, do not discard anything.</p></dd>
+
+
+<dt id="arg-legend-loc">legend_loc<a class="anchor" aria-label="anchor" href="#arg-legend-loc"></a></dt>
+<dd><p>Charater string.
+Legend location.</p></dd>
 
 </dl></div>
     <div class="section level2">
