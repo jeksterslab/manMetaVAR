@@ -8,7 +8,15 @@
 \usage{
 \method{plot}{manmetavar.data}(x, ...)
 
-\method{plot}{manmetavar.mplus}(x, what = "posterior", parm = NULL, level = 0.95, burnin = NULL, ...)
+\method{plot}{manmetavar.mplus}(
+  x,
+  what = "posterior",
+  parm = NULL,
+  level = 0.95,
+  burnin = NULL,
+  legend_loc = "topright",
+  ...
+)
 }
 \arguments{
 \item{x}{Object of class \code{manmetavar.mplus}.}
@@ -28,6 +36,9 @@ If missing, all parameters are considered.}
 
 \item{burnin}{Integer indicating initial samples to discard.
 If \code{burnin = NULL}, do not discard anything.}
+
+\item{legend_loc}{Charater string.
+Legend location.}
 }
 \description{
 Plot Method for an Object of Class \code{manmetavar.data}

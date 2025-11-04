@@ -380,6 +380,8 @@ confint.manmetavar.mplus <- function(object,
 #'
 #' @inheritParams Template
 #' @inheritParams confint.manmetavar.mplus
+#' @param legend_loc Charater string.
+#'   Legend location.
 #'
 #' @rdname plot.manmetavar
 #' @method plot manmetavar.mplus
@@ -390,6 +392,7 @@ plot.manmetavar.mplus <- function(x,
                                   parm = NULL,
                                   level = 0.95,
                                   burnin = NULL,
+                                  legend_loc = "topright",
                                   ...) {
   thetahatstar <- as.matrix(
     utils::read.table(
@@ -493,14 +496,14 @@ plot.manmetavar.mplus <- function(x,
       mu <- mean(thetahatstar[, parm[i]])
       graphics::hist(
         x = thetahatstar[, parm[i]],
-        main = "Posterior Distribution",
+        main = paste("Posterior Distribution", parm[i]),
         xlab = parm[i]
       )
       graphics::abline(v = mu, lwd = 2, lty = 3, col = "blue")
       graphics::abline(v = qs[2], lwd = 2, lty = 1, col = "black")
       graphics::abline(v = qs[c(1, 3)], lwd = 2, lty = 2, col = "red")
       graphics::legend(
-        x = "topright",
+        x = legend_loc,
         legend = c(
           sprintf("Mean = %.4f", mu),
           sprintf("Median = %.4f", qs[2]),
