@@ -1,0 +1,77 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+\begin{document}
+
+\usetikzlibrary{arrows.meta,positioning,fit,calc,decorations.pathreplacing}
+
+% --- Place this where you want the figure ---
+\begin{tikzpicture}[
+  >=Latex,
+  node distance=1.6cm and 2.0cm,
+  var/.style={draw, rounded corners=2pt, minimum width=1.7cm, minimum height=0.9cm, align=center},
+  parbox/.style={draw, rounded corners=2pt, minimum width=4.5cm, minimum height=1.2cm, align=left},
+  outcome/.style={draw, very thick, rounded corners=2pt, minimum width=4.5cm, minimum height=1.2cm, align=center},
+  lab/.style={font=\small\itshape},
+  arrowAR/.style={-Latex, thick},
+  arrowCR/.style={-Latex, thick, dashed},
+  extract/.style={-Latex, densely dotted, thick},
+  boxlabel/.style={font=\small},
+  legend/.style={font=\scriptsize}
+]
+
+% ---- Within-person time points ----
+\node[var] (PA_t)   {$\mathrm{PA}_t$};
+\node[var, below=1.2cm of PA_t] (NA_t) {$\mathrm{NA}_t$};
+
+\node[var, right=3.8cm of PA_t] (PA_tp1) {$\mathrm{PA}_{t+1}$};
+\node[var, below=1.2cm of PA_tp1] (NA_tp1) {$\mathrm{NA}_{t+1}$};
+
+% ---- AR (solid curved) ----
+\draw[arrowAR] ([xshift=0.1cm]PA_t.east) to[out=0,in=180] node[midway,above,sloped,lab] {$\mathrm{AR(PA)}$} ([xshift=-0.1cm]PA_tp1.west);
+\draw[arrowAR] ([xshift=0.1cm]NA_t.east) to[out=0,in=180] node[midway,below,sloped,lab] {$\mathrm{AR(NA)}$} ([xshift=-0.1cm]NA_tp1.west);
+
+% ---- CR (dashed diagonals) ----
+\draw[arrowCR] (PA_t) -- node[midway,above,sloped,lab] {$\mathrm{CR}( \mathrm{PA}\!\to\!\mathrm{NA})$} (NA_tp1);
+\draw[arrowCR] (NA_t) -- node[midway,below,sloped,lab] {$\mathrm{CR}( \mathrm{NA}\!\to\!\mathrm{PA})$} (PA_tp1);
+
+% ---- Fit box around within-person panel ----
+\node[draw, rounded corners=4pt, inner sep=6pt, fit={(PA_t) (NA_tp1) (PA_tp1) (NA_t)}] (withinbox) {};
+
+% Label for within-person box
+\node[boxlabel, above=0.1cm of withinbox.north] {Within-person VAR (Level 1): daily affect dynamics};
+
+% ---- Brace + extraction note ----
+\draw[decorate,decoration={brace,amplitude=6pt,raise=4pt}] (withinbox.north east) -- (withinbox.south east)
+  node[midway,right=8pt,align=left] (braceLbl) {Estimate person-specific\\[1pt] dynamic parameters};
+
+% ---- Parameter box (features) ----
+\node[parbox, right=3.8cm of withinbox.east, anchor=west] (feat) {%
+\textbf{Person-specific parameters}\\[-2pt]
+$\bullet$ $\mathrm{AR(PA)}$ \quad $\bullet$ $\mathrm{AR(NA)}$\\[-2pt]
+$\bullet$ $\mathrm{CR}(\mathrm{PA}\!\to\!\mathrm{NA})$ \quad $\bullet$ $\mathrm{CR}(\mathrm{NA}\!\to\!\mathrm{PA})$
+};
+
+% Dotted extraction arrows
+\draw[extract] (withinbox.east) -- (feat.west);
+
+% ---- Distal outcome ----
+\node[outcome, right=3.2cm of feat.east, anchor=west] (outcome) {Future Substance Use\\(distal outcome; follow-up)};
+
+% Predictive arrows from features to outcome
+\draw[-Latex, very thick] (feat.east) -- node[midway,above,lab] {between-person prediction (Level 2)} (outcome.west);
+
+% ---- Context annotation (low-SES adolescents) ----
+\node[boxlabel, below=0.2cm of withinbox.south] {Sample: adolescents at risk for early substance use and behavioral problems from low-SES neighborhoods};
+
+% ---- Legend ----
+\node[legend, below=1.2cm of outcome.south] (leg) {%
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+  \draw[arrowAR] (0,0) -- (0.9,0) node[pos=1.05, right] {AR (emotional inertia)};
+  \draw[arrowCR] (0,-0.45) -- (0.9,-0.45) node[pos=1.05, right] {CR (cross-affective coupling)};
+  \draw[extract] (0,-0.9) -- (0.9,-0.9) node[pos=1.05, right] {Parameter extraction to Level 2};
+\end{tikzpicture}
+};
+
+\end{tikzpicture}
+
+\end{document}

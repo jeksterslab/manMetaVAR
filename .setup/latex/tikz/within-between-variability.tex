@@ -1,0 +1,109 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+% convert -density 300 ml.pdf -quality 100 -background white -alpha remove -alpha off ml.png
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 20mm,
+		latent/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		inv/.style = {
+			rectangle,
+			draw=none,
+			fill=none,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			thick,
+			>=stealth'
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+		v/.style = {
+			<->,
+			thick,
+			>=stealth',
+            dashed,
+            red
+		},
+	]
+	\node[manifest] (y1) {$Y_{1}$};
+    \node[manifest] (y2) [right = of y1] {$Y_{2}$};
+    \node[manifest] (y3) [right = of y2] {$Y_{3}$};
+    \node[manifest] (y4) [right = of y3] {$Y_{4}$};
+    \node[latent] (eta1) [above = of y1] {$\eta_{1}$};
+    \node[latent] (eta2) [above = of y2] {$\eta_{2}$};
+    \node[latent] (eta3) [above = of y3] {$\eta_{3}$};
+    \node[latent] (eta4) [above = of y4] {$\eta_{4}$};
+    \draw[cov] (eta1) to[out = 160, in = 200, looseness = 5] node[left] {$\tau_{1, 1}$} (eta1);
+    \draw[cov] (eta2) to[out = 160, in = 200, looseness = 5] node[left] {$\tau_{2, 2}$} (eta2);
+    \draw[cov] (eta3) to[out = 160, in = 200, looseness = 5] node[left] {$\tau_{3, 3}$} (eta3);
+    \draw[cov] (eta4) to[out = 160, in = 200, looseness = 5] node[left] {$\tau_{4, 4}$} (eta4);
+    \draw[cov] (eta1) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{1, 2}$} (eta2);
+    \draw[cov] (eta1) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{1, 3}$} (eta3);
+    \draw[cov] (eta1) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{1, 4}$} (eta4);
+    \draw[cov] (eta2) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{2, 3}$} (eta3);
+    \draw[cov] (eta2) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{2, 4}$} (eta4);
+    \draw[cov] (eta3) to[out = 90, in = 90, looseness = .5] node[below] {$\tau_{3, 4}$} (eta4);
+    \draw[path] (eta1) to node[left] {$1$} (y1);
+    \draw[path] (eta2) to node[left] {$1$} (y2);
+    \draw[path] (eta3) to node[left] {$1$} (y3);
+    \draw[path] (eta4) to node[left] {$1$} (y4);
+    \draw[v] (y1) to[out = 160, in = 200, looseness = 5] node[left] {\textcolor{red}{$v_{1, 1}$}} (y1);
+    \draw[v] (y2) to[out = 160, in = 200, looseness = 5] node[left] {\textcolor{red}{$v_{2, 2}$}} (y2);
+    \draw[v] (y3) to[out = 160, in = 200, looseness = 5] node[left] {\textcolor{red}{$v_{3, 3}$}} (y3);
+    \draw[v] (y4) to[out = 160, in = 200, looseness = 5] node[left] {\textcolor{red}{$v_{4, 4}$}} (y4);
+    \draw[v] (y1) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{1, 2}$}} (y2);
+    \draw[v] (y1) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{1, 3}$}} (y3);
+    \draw[v] (y1) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{1, 4}$}} (y4);
+    \draw[v] (y2) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{2, 3}$}} (y3);
+    \draw[v] (y2) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{2, 4}$}} (y4);
+    \draw[v] (y3) to[out = -90, in = -90, looseness = .5] node[above] {\textcolor{red}{$v_{2, 4}$}} (y4);
+\end{tikzpicture}
+
+\end{document}
