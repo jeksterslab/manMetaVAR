@@ -52,7 +52,7 @@ SimFitMplus <- function(taskid,
             iter = iter,
             fscores = fscores,
             plot = plot,
-            default_priors = FALSE,
+            default_priors = default_priors,
             wd = output_folder,
             mplus_bin = "mplus",
             ncores = NULL
