@@ -4,9 +4,9 @@ reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
 data <- FALSE
-metavar <- FALSE
-mlvar < FALSE
-mplus <- FALSE
+metavar <- TRUE
+mlvar <- TRUE
+mplus <- TRUE
 chains <- 2L
 iter <- 120000L
 fscores <- NULL

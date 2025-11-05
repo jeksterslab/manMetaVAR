@@ -1,6 +1,7 @@
 # manMetaVAR 0.9.4
 
 * Added `FitMplus()`.
+* Docker Hub tag: 2025-11-04-18545015
 
 # manMetaVAR 0.9.3
 

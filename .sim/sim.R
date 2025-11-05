@@ -38,7 +38,6 @@ repid <- as.integer(args[1])
 taskid <- as.integer(args[2])
 tryCatch(
   {
-    # setTimeLimit(elapsed = 1 * 60 * 60)
     Sim(
       taskid = taskid,
       repid = repid,
@@ -56,7 +55,6 @@ tryCatch(
       plot = plot,
       default_priors = default_priors
     )
-    # setTimeLimit(elapsed = Inf)
   },
   error = function(e) {
     cat(

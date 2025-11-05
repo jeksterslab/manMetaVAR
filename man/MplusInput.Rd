@@ -65,7 +65,7 @@ cat(
     iter = 60000L,
     fscores = 1000L,
     plot = TRUE,
-    default_priors = FALSE,
+    default_priors = TRUE,
     ncores = NULL
   )
 )

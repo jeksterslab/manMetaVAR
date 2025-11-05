@@ -33,12 +33,12 @@ source(
 lapply(
   X = seq_len(tasks),
   FUN = Sum,
-  reps = reps,
+  reps = 100,
   output_folder = output_folder,
   overwrite = TRUE,
   integrity = TRUE,
   ncores = parallel::detectCores(),
-  metavar = metavar,
-  mlvar = mlvar,
-  mplus = mplus
+  metavar = TRUE,
+  mlvar = TRUE,
+  mplus = TRUE
 )

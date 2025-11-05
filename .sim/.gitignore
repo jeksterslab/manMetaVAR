@@ -3,4 +3,5 @@ make.out
 make.err
 reps-*.sh
 notes/*
+sim-0*.sh
 manMetaVAR

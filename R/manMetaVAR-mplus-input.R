@@ -15,7 +15,7 @@
 #'     iter = 60000L,
 #'     fscores = 1000L,
 #'     plot = TRUE,
-#'     default_priors = FALSE,
+#'     default_priors = TRUE,
 #'     ncores = NULL
 #'   )
 #' )
@@ -460,9 +460,9 @@ MplusInput <- function(dynamics,
     out <- paste0(
       out,
       "
-        SAVE = FSCORES(__FSCORES__ 1);
-        FILE = __FACTORSCORES__;
-        FACTORS = ALL;"
+      SAVE = FSCORES(__FSCORES__ 1);
+      FILE = __FACTORSCORES__;
+      FACTORS = ALL;"
     )
   }
   pattern <- c(
