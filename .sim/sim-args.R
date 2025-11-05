@@ -3,7 +3,7 @@ tasks <- 27L
 reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
-data <- FALSE
+data <- TRUE
 metavar <- TRUE
 mlvar <- TRUE
 mplus <- TRUE
