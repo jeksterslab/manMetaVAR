@@ -1,3 +1,12 @@
+#' Methods for Objects of Class `manmetavar.data`
+#'
+#' This page documents the available methods for objects of class
+#' `manmetavar.data`.
+#'
+#' @name manmetavar-data-methods
+#' @keywords methods
+NULL
+
 #' Print Method for an Object of Class `manmetavar.data`
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -6,7 +15,7 @@
 #'
 #' @inheritParams Template
 #'
-#' @rdname print.manmetavar
+#' @rdname manmetavar-data-methods
 #' @method print manmetavar.data
 #' @keywords methods
 #' @export
@@ -25,7 +34,7 @@ print.manmetavar.data <- function(x,
 #'
 #' @inheritParams Template
 #'
-#' @rdname summary.manmetavar
+#' @rdname manmetavar-data-methods
 #' @method summary manmetavar.data
 #' @keywords methods
 #' @export
@@ -44,7 +53,7 @@ summary.manmetavar.data <- function(object,
 #'
 #' @inheritParams Template
 #'
-#' @rdname plot.manmetavar
+#' @rdname manmetavar-data-methods
 #' @method plot manmetavar.data
 #' @keywords methods
 #' @export

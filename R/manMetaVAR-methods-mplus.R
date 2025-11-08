@@ -1,3 +1,12 @@
+#' Methods for Objects of Class `manmetavar.mplus`
+#'
+#' This page documents the available methods for objects of class
+#' `manmetavar.mplus`.
+#'
+#' @name manmetavar-mplus-methods
+#' @keywords methods
+NULL
+
 #' Parameter Estimates (FitMplus)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -10,9 +19,7 @@
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a vector of estimated parameters.
-#'
-#' @rdname coef.manmetavar
+#' @rdname manmetavar-mplus-methods
 #' @method coef manmetavar.mplus
 #' @keywords methods
 #' @import metaVAR
@@ -111,10 +118,7 @@ coef.manmetavar.mplus <- function(object,
 #'
 #' @inheritParams Template
 #'
-#' @return Returns the sampling variance-covariance matrix
-#'   of the estimated parameters.
-#'
-#' @rdname vcov.manmetavar
+#' @rdname manmetavar-mplus-methods
 #' @method vcov manmetavar.mplus
 #' @keywords methods
 #' @export
@@ -273,10 +277,7 @@ vcov.manmetavar.mplus <- function(object,
 #' @inheritParams Template
 #' @inheritParams coef.manmetavar.mplus
 #'
-#' @return Returns a matrix of estimates, standard errors,
-#'   number of posterior samples, and confidence intervals.
-#'
-#' @rdname summary.manmetavar
+#' @rdname manmetavar-mplus-methods
 #' @method summary manmetavar.mplus
 #' @keywords methods
 #' @export
@@ -330,9 +331,8 @@ print.summary.manmetavar.mplus <- function(x,
 #'   If missing, all parameters are considered.
 #' @param level the confidence level required.
 #' @inheritParams Template
-#' @return Returns a matrix of confidence intervals.
 #'
-#' @rdname confint.manmetavar
+#' @rdname manmetavar-mplus-methods
 #' @method confint manmetavar.mplus
 #' @keywords methods
 #' @import metaVAR
@@ -380,10 +380,10 @@ confint.manmetavar.mplus <- function(object,
 #'
 #' @inheritParams Template
 #' @inheritParams confint.manmetavar.mplus
-#' @param legend_loc Charater string.
+#' @param legend_loc Character string.
 #'   Legend location.
 #'
-#' @rdname plot.manmetavar
+#' @rdname manmetavar-mplus-methods
 #' @method plot manmetavar.mplus
 #' @keywords methods
 #' @export

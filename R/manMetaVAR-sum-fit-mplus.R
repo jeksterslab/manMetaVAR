@@ -49,7 +49,7 @@ SumFitMplus <- function(taskid,
         repid = repid
       )
       fn_input <- SimFN(
-        output_type = "fit-meta-var-mx",
+        output_type = "fit-mplus",
         output_folder = output_folder,
         suffix = suffix
       )
@@ -86,7 +86,7 @@ SumFitMplus <- function(taskid,
           "cov(nu[1,1],nu[1,1])",
           "cov(nu[2,1],nu[1,1])",
           "cov(nu[2,1],nu[2,1])"
-        ),
+        ), ,
         drop = FALSE
       ]
       rownames(raw) <- c(
@@ -129,13 +129,11 @@ SumFitMplus <- function(taskid,
       df <- data.frame(
         est = raw[1:27, "est"],
         se = raw[1:27, "se"],
-        z = raw[1:27, "z"],
-        p = raw[1:27, "p"],
+        z = NA,
+        p = NA,
         ll = raw[1:27, "2.5%"],
         ul = raw[1:27, "97.5%"],
-        sig = as.integer(
-          raw[1:27, "p"] < 0.05
-        ),
+        sig = NA,
         zero_hit = as.integer(
           (
             raw[1:27, "2.5%"] <= 0
@@ -158,11 +156,11 @@ SumFitMplus <- function(taskid,
       attr(df, "dynamics") <- dynamics
       attr(df, "parnames") <- rownames(raw)
       attr(df, "parameter") <- parameter
-      attr(df, "ci") <- "normal"
-      attr(df, "method") <- "metavar"
+      attr(df, "ci") <- "posterior"
+      attr(df, "method") <- "mplus"
       df
     }
-    i <- parallel::mclapply(
+    i <- lapply(
       X = seq_len(reps),
       FUN = replication,
       taskid = taskid
@@ -173,7 +171,7 @@ SumFitMplus <- function(taskid,
       f = `+`,
       x = i
     )
-    sq_errors <- parallel::mclapply(
+    sq_errors <- lapply(
       X = i,
       FUN = function(x, means) {
         (means - x)^2

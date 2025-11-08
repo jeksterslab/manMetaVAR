@@ -1,3 +1,12 @@
+#' Methods for Objects of Class `manmetavar.dtvar`
+#'
+#' This page documents the available methods for objects of class
+#' `manmetavar.dtvar`.
+#'
+#' @name manmetavar-dtvar-methods
+#' @keywords methods
+NULL
+
 #' Parameter Estimates (FitDTVAR)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -46,9 +55,7 @@
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a list of vectors of parameter estimates.
-#'
-#' @rdname coef.manmetavar
+#' @rdname manmetavar-dtvar-methods
 #' @method coef manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -85,12 +92,10 @@ coef.manmetavar.dtvar <- function(object,
 #'
 #' @param object Object of class `manmetavar.dtvar`.
 #'
-#' @return Returns a list of sampling variance-covariance matrices.
-#'
 #' @inheritParams coef.manmetavar.dtvar
 #' @inheritParams Template
 #'
-#' @rdname vcov.manmetavar
+#' @rdname manmetavar-dtvar-methods
 #' @method vcov manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -132,7 +137,7 @@ vcov.manmetavar.dtvar <- function(object,
 #' @inheritParams coef.manmetavar.dtvar
 #' @inheritParams Template
 #'
-#' @rdname print.manmetavar
+#' @rdname manmetavar-dtvar-methods
 #' @method print manmetavar.dtvar
 #' @keywords methods
 #' @export
@@ -175,7 +180,7 @@ print.manmetavar.dtvar <- function(x,
 #' @inheritParams print.manmetavar.dtvar
 #' @inheritParams Template
 #'
-#' @rdname summary.manmetavar
+#' @rdname manmetavar-dtvar-methods
 #' @method summary manmetavar.dtvar
 #' @keywords methods
 #' @import fitDTVARMxID

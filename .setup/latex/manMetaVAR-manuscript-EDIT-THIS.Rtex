@@ -1,0 +1,710 @@
+\documentclass[doc]{apa7}
+
+\raggedbottom
+\widowpenalty = 10000
+\clubpenalty = 10000
+% \usepackage{lineno}
+% \linenumbers
+
+\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{blkarray}
+\usepackage{csquotes}
+\usepackage{endnotes}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{changes}
+\usepackage{tabularx}
+
+\setlength {\marginparwidth }{2cm} 
+\usepackage{todonotes}
+
+\usepackage{subcaption}
+
+\usepackage[belowskip = 2pt, aboveskip = 2pt]{caption}
+
+\captionsetup{
+    textfont = {it,normal},
+    labelsep = newline,
+    justification = raggedright,
+    singlelinecheck = false
+}
+
+\captionsetup[subfigure]{
+    size = footnotesize
+}
+
+\usepackage{rotating}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require("rProject")) {
+%   Bib(
+%     path = dirname(
+%       root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleBiblatexCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kbordermatrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "kbordermatrix",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% cat(
+%   paste0(
+%     "\n",
+%     "\\usepackage{",
+%     root$find_file(
+%       ".setup",
+%       "latex",
+%       "sty",
+%       "kbordermatrix"
+%     ),
+%     "}",
+%     "\n"
+%   )
+% )
+% cat("\n\\renewcommand{\\kbldelim}{(}% Left delimiter")
+% cat("\n\\renewcommand{\\kbrdelim}{)}% Right delimiter")
+%% end.rcode
+
+\title{Meta-analytic structural equation modeling as a framework for estimating between- and within-individual effects in multilevel dynamic models}
+\shorttitle{metaVAR}
+
+\authorsnames[1, {1, 2}, 3, 4]{Ivan Jacob Agaloos Pesigan, Michael A. Russell, Sy-Miin Chow, Candice L. Odgers}
+\authorsaffiliations{{Edna Bennett Pierce Prevention Research Center, The Pennsylvania State University}, {Department of Biobehavioral Health, The Pennsylvania State University}, {Department of Human Development and Family Studies, The Pennsylvania State University}, {Department of Psychological Science, University of California Irvine}}
+
+\leftheader{Pesigan, Russell, \& Chow}
+
+\abstract{TODO}
+
+\keywords{
+	vector autoregressive model, multilevel model, random-effects meta-analysis, mixed-effects meta-analysis, distal outcomes
+}
+
+\authornote{\addORCIDlink{Ivan Jacob Agaloos Pesigan}{0000-0003-4818-8420}; \addORCIDlink{Michael A. Russell}{0000-0002-3956-604X}; \addORCIDlink{Sy-Miin Chow}{0000-0003-1938-027X} ; \addORCIDlink{Candice L. Odgers}{0000-0003-4937-6618}.
+	  
+This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 MPIs: J. Maggs \& S. Lanza) from the National Institute on Drug Abuse (NIDA).
+\todo[inline]{Your grants and grants that supported the miLife project.}
+	  
+Computations for this research were performed on the Pennsylvania State University's Institute for Computational and Data Sciences' Roar supercomputer.
+	
+Correspondence concerning this article should be addressed to Ivan Jacob Agaloos Pesigan, Edna Bennett Pierce Prevention Research Center, College of Health and Human Development, The Pennsylvania State University, 320 Biobehavioral Health Building, University Park, PA 16802 or by email (ijapesigan@psu.edu).}
+
+\begin{document}
+
+\maketitle
+
+What others already cover so we don't claim it
+
+\begin{itemize}
+    \item \textbf{Two‑stage idiographic meta‑analysis (2SRE‑MA):} advocates doing person‑level models first and then a random‑effects meta‑analysis to make population inferences for within‑person processes in observational time series. Great conceptual case for two‑stage and idiographic heterogeneity, but typically treats effects one‑by‑one (or in small sets) rather than a system of parameters with their within‑person sampling covariance.
+    \item \textbf{Error‑corrected two‑stage across individuals (DFA):} proposes a computationally efficient two‑stage method that explicitly corrects for first‑stage estimation error when integrating individual DFA parameters; shows advantages for random‑effects estimation, especially for moderate T. Our audience will expect us to acknowledge this line and then explain how our approach generalizes the error‑correction idea to VAR and to system‑level hypotheses.
+\end{itemize}
+
+Novelty claims
+
+\begin{itemize}
+    \item System‑level pooling with full error propagation. Treat each person's vectorized VAR parameter set $g_i$ (all AR and cross‑lag edges, innovation variances/covariances) as a multivariate effect with known first‑stage sampling covariance $S_i$. Stage 2 fits a structural model to the vector of parameters using WLS/GLS (TS‑MASEM). This goes beyond 2SRE‑MA's typical univariate edge‑by‑edge meta‑analysis by using the whole $S_i$, which yields more efficient estimates and valid joint tests across parameters. (Grounding: TS‑MASEM/MASEM machinery.)
+    \item Model‑level (cross‑parameter) hypotheses, not just edge averages. Because Stage 2 is an SEM on $g_i$, we can test equality constraints, block‑zero constraints, or functions like stability, Granger‑style coupling contrasts, or long‑run impulse‑response summaries--with delta‑method standard errors driven by $S_i$. That kind of joint, theory‑level hypothesis testing is not what Lee \& Gate were targeting and is outside the DFA focus in Zhang et al.
+    \item Built‑in moderator/meta‑regression for multivariate outcomes. Stage‑2 regressions can map person‑level covariates (traits, clinical status) onto sets of VAR parameters simultaneously (e.g., how neuroticism shifts both inertia and cross‑lag or how inertia and cross‑lag predict distal outcomes). This is standard in MASEM but new when the outcomes are whole VAR systems estimated idiographically.
+    \item Generalizes ``error‑corrected'' pooling beyond DFA to VAR. Zhang et al. show why ignoring first‑stage error is problematic and how to fix it for DFA. Our contribution is to carry that logic into VAR, using $S_i$ from ML/sandwich/bootstraps and fitting the Stage‑2 SEM with those weights--so we both honor estimation error and jointly test system constraints.
+    \item Mixture/latent‑class meta‑analysis over dynamic regimes. Because Stage‑2 is SEM, we can add latent classes to detect subpopulations with different dynamic structures (e.g., high‑inertia vs high cross‑coupling profiles) and still keep the multivariate weighting by $S_i$. That's not the textitasis in Lee \& Gates, and it's beyond the scope of Zhang et al.'s DFA paper. (Recent MASEM overviews highlight such extensions.)
+    \item Measurement flexibility and alignment. If some people have slightly different indicators, we can (a) estimate latent VARs per person or (b) standardize to comparable functionals (e.g., standardized ARs, partial‑directed coefficients), and then pool functionals with delta‑method $S_i$. This leverages MASEM's roots in pooling correlation/structural summaries, now applied to time‑series parameters.
+    \item Design‑robust weighting across unequal T and missingness. Using $S_i$ automatically down‑weights short/low‑information series and up‑weights long ones--cleaner than ad‑hoc weighting in univariate pooling and consistent with MASEM practice.
+\end{itemize}
+
+
+
+
+Recent years have witnessed a surge of interest in intensive longitudinal data (ILD) and dynamic modeling techniques to examine within-person processes across time. Among these, discrete-time vector autoregressive (VAR) models have gained traction for modeling temporal dynamics in psychological systems. While powerful, such models often grapple with the challenge of balancing individual-level precision with generalizable population-level inference---particularly when dealing with the hierarchical structure of repeated measures nested within individuals.
+
+Traditional approaches often apply either fully pooled multilevel models or separate idiographic models per person. However, each comes with trade-offs. Fully pooled models may obscure person-specific dynamics due to shrinkage toward the group mean, whereas single-subject analyses struggle to generalize due to the non-ergodic nature of psychological processes \parencite{Molenaar-2004, Hamaker-Dolan-Molenaar-2005}. A growing literature has therefore advocated for hybrid methods that incorporate both within-person dynamics and between-person variability \parencite{Bringmann-Vissers-Wichers-etal-2013, CastroSchilo-Ferrer-2013}.
+
+Building on this foundation, we propose a two-step meta-analytic framework to model multilevel dynamic systems using discrete-time VAR models. In the first step, idiographic VAR parameters are estimated at the individual level. In the second step, these estimates are aggregated and analyzed using a meta-analytic structural equation modeling (MASEM) approach or a two-stage random effects meta-analysis \parencite{Cheung-2008, Lee-Gates-2023}. This allows for population-level inference while properly accounting for the uncertainty associated with person-specific estimates.
+
+A particularly promising extension of this framework is the ability to incorporate distal outcomes--long-term or external variables predicted by dynamic features of individuals' intraindividual processes. By treating estimated VAR parameters as predictors in a second-stage model, researchers can examine how individual differences in temporal dynamics (e.g., affective inertia, cross-lagged coupling) relate to later outcomes such as well-being, relapse, or performance. This approach supports hypothesis-driven investigation of dynamic processes as mechanisms or risk markers, while preserving the statistical rigor of properly propagating uncertainty from step one.
+
+This two-step framework offers several advantages. First, it provides a principled way to quantify uncertainty at both the within- and between-person levels. Individual parameter estimates are not treated as fixed values but are accompanied by standard errors, which are incorporated into the meta-analytic step. Second, we show through simulation that failure to account for estimation uncertainty in the first step leads to biased or overconfident group-level inferences--distorting estimated population-level means and variances and obscuring heterogeneity. Third, the framework facilitates exploration of moderators that explain variability in dynamic parameters across individuals. Fourth, the approach naturally supports the inclusion of distal outcomes in the second-stage model, allowing researchers to examine how individual differences in dynamic processes (e.g., affective inertia, cross-lag coupling) predict later outcomes such as well-being, relapse, or achievement. Together, these features make the two-step framework a flexible and powerful tool for drawing generalizable inferences about intraindividual dynamics.
+
+In sum, this paper contributes a general, modular framework for modeling multilevel time series data that bridges idiographic and nomothetic traditions in psychology. By explicitly modeling and integrating uncertainty across levels of analysis, and allowing for the inclusion of distal outcomes, our approach improves statistical inference and fosters more robust generalizations about dynamic psychological processes and their long-term consequences.
+
+
+
+
+
+In meta-analysis, the unit of analysis is typically the study, where correlations or standardized mean differences from each study are pooled. However, in this case, the unit of analysis is the individual, with parameters estimated for each individual being pooled. In the first stage, parameters for a vector autoregressive model (discrete or continuous) are estimated for each individual, denoted as $\mathbf{y}_{i}$, with the corresponding sampling variance-covariance matrix $\mathbf{V}^{2}_{i}$ for individual $i$. In the second stage, a multivariate meta-analysis is performed to pool the estimates obtained in the first stage. Additionally, we can estimate the effects of time-invariant covariates on the within-individual level estimates from stage one, as well as the effects of the within-level estimates from stage one on time-invariant distal outcomes.
+
+\subsection{Multivariate Mixed-Effects Meta-Analysis as a Structural Equation Model}
+
+The multivariate mixed-effects meta-analysis can be expressed as a structural equation model:
+\begin{equation}
+  \mathbf{y}_{i}
+  = \boldsymbol{\alpha}_{i}
+  + \boldsymbol{\beta}\,\mathbf{y}_{i}
+  + \boldsymbol{\Gamma}\,\mathbf{x}_{i}
+  + \boldsymbol{\varepsilon}_{i},
+\end{equation}
+where $\mathbf{y}_{i}$ is the $p \times 1$ vector of observed effect sizes (or study outcomes) from the $i$th study,
+and $\mathbf{x}_{i}$ is a vector of study-level covariates.
+The parameter $\boldsymbol{\beta}$ is a matrix of structural relations among the outcomes,
+and $\boldsymbol{\Gamma}$ contains the regression coefficients for the study-level covariates.
+The study-specific intercepts $\boldsymbol{\alpha}_{i}$ capture the true underlying effects for each study and are modeled hierarchically as
+\begin{equation}
+  \boldsymbol{\alpha}_{i} = \boldsymbol{\alpha} + \boldsymbol{\upsilon}_{i},
+  \qquad
+  \boldsymbol{\upsilon}_{i} \sim \mathcal{N}(\mathbf{0}, \boldsymbol{\tau}^{2}),
+\end{equation}
+where $\boldsymbol{\alpha}$ represents the overall (grand) mean vector of true effects,
+and $\boldsymbol{\upsilon}_{i}$ represents the random deviations of each study’s effects
+from this overall mean.
+The covariance matrix $\boldsymbol{\tau}^{2}$ quantifies the \textit{between-study heterogeneity}.
+The within-study sampling error is represented by
+\begin{equation}
+  \boldsymbol{\varepsilon}_{i} \sim \mathcal{N}(\mathbf{0}, \mathbf{V}_{i}^{2}),
+  \qquad
+  \operatorname{Cov}(\boldsymbol{\upsilon}_{i}, \boldsymbol{\varepsilon}_{i}) = \mathbf{0},
+\end{equation}
+where $\mathbf{V}_{i}^{2}$ is the known within-study sampling covariance matrix.
+Under this hierarchical specification, the model can be decomposed into
+a \textit{within-study level}
+\begin{align}
+  \mathbb{E}(\mathbf{y}_{i} \mid \boldsymbol{\alpha}_{i})
+  &= \boldsymbol{\alpha}_{i}
+     + \boldsymbol{\beta}\,\mathbf{y}_{i}
+     + \boldsymbol{\Gamma}\,\mathbf{x}_{i}, \\
+  \mathbb{V}(\mathbf{y}_{i} \mid \boldsymbol{\alpha}_{i})
+  &= \mathbf{V}_{i}^{2},
+\end{align}
+and a \textit{between-study level}
+\begin{align}
+  \mathbb{E}(\boldsymbol{\alpha}_{i})
+  &= \boldsymbol{\alpha}, \\
+  \mathbb{V}(\boldsymbol{\alpha}_{i})
+  &= \boldsymbol{\tau}^{2}.
+\end{align}
+Marginally, the observed outcomes follow
+\begin{equation}
+  \mathbb{E}(\mathbf{y}_{i})
+  = \boldsymbol{\alpha}
+  + \boldsymbol{\beta}\,\mathbf{y}_{i}
+  + \boldsymbol{\Gamma}\,\mathbf{x}_{i},
+  \qquad
+  \mathbb{V}(\mathbf{y}_{i})
+  = \boldsymbol{\tau}^{2} + \mathbf{V}_{i}^{2}.
+\end{equation}
+If $\boldsymbol{\beta} = \mathbf{0}$ and $\boldsymbol{\Gamma} = \mathbf{0}$,
+the expected value simplifies to
+\begin{equation}
+  \mathbb{E}(\mathbf{y}_{i}) = \boldsymbol{\alpha},
+\end{equation}
+which corresponds to a conventional multivariate random-effects meta-analysis model
+with common mean $\boldsymbol{\alpha}$ and heterogeneity $\boldsymbol{\tau}^{2}$.
+From an SEM perspective, $\boldsymbol{\alpha}_{i}$ functions as a \textit{latent variable}
+representing the unobserved true effects for study $i$,
+while $\boldsymbol{\varepsilon}_{i}$ represents the \textit{sampling error} at the observed level.
+The between-study covariance matrix $\boldsymbol{\tau}^{2}$
+and the within-study covariance matrix $\mathbf{V}_{i}^{2}$
+correspond to the \textit{between-level} and \textit{within-level} variance components, respectively.
+This specification can be estimated within standard SEM frameworks
+(e.g., \texttt{OpenMx} in \textsf{R})
+using full-information maximum likelihood,
+providing a unified structural representation of the multivariate mixed-effects meta-analysis model.
+
+A useful summary of heterogeneity is the proportion of total variance attributable to
+between-study variability, quantified by the $\mathbf{I}^{2}$ statistic.
+In the univariate case, $\mathbf{I}^{2}$ was originally proposed by
+\textcite{Higgins-Thompson-2002} as a descriptive index of inconsistency
+across studies, defined as the proportion of total observed variation
+that reflects real differences in effect sizes rather than sampling error.
+Building on this foundation,
+\textcite{Viechtbauer-2007} and \textcite{Jackson-White-Thompson-2012}
+extended the concept to the multivariate setting to account for correlations
+among multiple outcomes.
+
+\noindent
+In the multivariate case, the $\mathbf{I}^{2}$ statistic is defined as
+\begin{equation}
+  \mathbf{I}^{2}
+  = \operatorname{tr}\!\left[
+    \boldsymbol{\tau}^{2}
+    \left(\boldsymbol{\tau}^{2} + \bar{\mathbf{V}}^{2}\right)^{-1}
+  \right] \bigg/ p,
+\end{equation}
+where $\operatorname{tr}(\cdot)$ denotes the matrix trace and
+$\bar{\mathbf{V}}^{2}$ is the average within-study covariance matrix across studies.
+Following \textcite{Viechtbauer-2007} and \textcite{Jackson-White-Thompson-2012},
+the average is computed as the harmonic (precision-weighted) mean,
+\begin{equation}
+  \bar{\mathbf{V}}^{2}
+  = \left[
+      \frac{1}{k} \sum_{i=1}^{k}
+      \left(\mathbf{V}_{i}^{2}\right)^{-1}
+    \right]^{-1},
+\end{equation}
+which gives greater weight to studies with more precise estimates
+(i.e., smaller sampling variances).
+This formulation expresses $\mathbf{I}^{2}$ as the average proportion of total variability
+in the observed multivariate effects that is due to true between-study heterogeneity.
+Values of $\mathbf{I}^{2}$ near zero indicate that most of the observed variability
+is attributable to sampling error (i.e., homogeneity across studies),
+whereas values approaching one indicate that most of the variability
+reflects genuine between-study differences in the underlying effects.
+From a structural equation modeling perspective, $\mathbf{I}^{2}$ can be interpreted
+as the proportion of total variance in the observed outcomes
+that is explained by the latent between-study factors ($\boldsymbol{\alpha}_{i}$),
+relative to the total variance combining both the between-level
+($\boldsymbol{\tau}^{2}$) and within-level ($\mathbf{V}_{i}^{2}$) components.
+
+\subsection{Multivariate Mixed-Effects Meta-Analysis as a Structural Equation Model with Distal Outcomes}
+
+To extend the multivariate mixed-effects meta-analytic framework,
+we consider a set of distal outcomes, denoted by
+$\mathbf{z}_i \in \mathbb{R}^{r}$,
+which are predicted by both the meta-analytic outcomes
+$\mathbf{y}_i \in \mathbb{R}^{p}$ and the study-level covariates
+$\mathbf{x}_i \in \mathbb{R}^{q}$.
+The distal outcome model is specified as
+\begin{equation}
+  \mathbf{z}_i
+  = \boldsymbol{\kappa}
+  + \boldsymbol{\phi}\,\mathbf{y}_i
+  + \boldsymbol{\Omega}\,\mathbf{x}_i
+  + \boldsymbol{\delta}_i,
+  \qquad
+  \boldsymbol{\delta}_i \sim \mathcal{N}\!\big(\mathbf{0},\,\boldsymbol{\psi}\big),
+\end{equation}
+where $\boldsymbol{\kappa}$ is an $r \times 1$ vector of intercepts,
+$\boldsymbol{\phi}$ and $\boldsymbol{\Omega}$ are
+$r \times p$ and $r \times q$ matrices of regression coefficients for
+$\mathbf{y}_i$ and $\mathbf{x}_i$, respectively,
+and $\boldsymbol{\psi}$ is the $r \times r$ residual covariance matrix.
+The residual term $\boldsymbol{\delta}_i$ represents variability in the distal outcomes
+that is not explained by $\mathbf{y}_i$ and $\mathbf{x}_i$.
+
+\paragraph{Model assumptions.}
+We assume that $\mathbf{x}_i$ is exogenous and uncorrelated with all random effects
+and residuals in the model for $\mathbf{y}_i$.
+Specifically,
+$\operatorname{Cov}(\boldsymbol{\delta}_i,\boldsymbol{\varepsilon}_i)=\mathbf{0}$
+and $\operatorname{Cov}(\boldsymbol{\delta}_i,\boldsymbol{\upsilon}_i)=\mathbf{0}$,
+where $\boldsymbol{\varepsilon}_i$ and $\boldsymbol{\upsilon}_i$ denote
+the within- and between-study residuals from the $\mathbf{y}_i$ model, respectively.
+Let $\boldsymbol{\mu}_x = \mathbb{E}(\mathbf{x}_i)$
+and $\boldsymbol{\Sigma}_{xx} = \mathbb{V}(\mathbf{x}_i)$.
+
+\paragraph{Conditional and marginal moments.}
+Conditioning on $\mathbf{y}_i$ and $\mathbf{x}_i$, the expected value and covariance of $\mathbf{z}_i$ are
+\begin{align}
+  \mathbb{E}\!\left(\mathbf{z}_i \mid \mathbf{y}_i,\mathbf{x}_i\right)
+  &= \boldsymbol{\kappa}
+     + \boldsymbol{\phi}\,\mathbf{y}_i
+     + \boldsymbol{\Omega}\,\mathbf{x}_i, \\
+  \mathbb{V}\!\left(\mathbf{z}_i \mid \mathbf{y}_i,\mathbf{x}_i\right)
+  &= \boldsymbol{\psi}.
+\end{align}
+
+\noindent
+Unconditionally, we draw on the multivariate mixed-effects model for $\mathbf{y}_i$,
+\[
+  \mathbf{y}_{i}
+  = \boldsymbol{\alpha}_{i}
+  + \boldsymbol{\beta}\,\mathbf{y}_{i}
+  + \boldsymbol{\Gamma}\,\mathbf{x}_{i}
+  + \boldsymbol{\varepsilon}_{i},
+  \qquad
+  \boldsymbol{\alpha}_{i} = \boldsymbol{\alpha} + \boldsymbol{\upsilon}_{i},
+\]
+where $\boldsymbol{\upsilon}_{i}\!\sim\!\mathcal{N}(\mathbf{0},\boldsymbol{\tau}^{2})$
+and $\boldsymbol{\varepsilon}_{i}\!\sim\!\mathcal{N}(\mathbf{0},\mathbf{V}_{i}^{2})$.
+Assuming $\mathbf{I}-\boldsymbol{\beta}$ is nonsingular,
+the marginal mean of $\mathbf{y}_i$ is
+\begin{equation}
+  \boldsymbol{\mu}_{y}
+  = (\mathbf{I}-\boldsymbol{\beta})^{-1}
+    \big(\boldsymbol{\alpha} + \boldsymbol{\Gamma}\,\boldsymbol{\mu}_{x}\big).
+\end{equation}
+Consequently, the marginal mean of $\mathbf{z}_i$ is
+\begin{equation}
+  \mathbb{E}(\mathbf{z}_i)
+  = \boldsymbol{\kappa}
+  + \boldsymbol{\phi}\,\boldsymbol{\mu}_{y}
+  + \boldsymbol{\Omega}\,\boldsymbol{\mu}_{x}.
+\end{equation}
+
+\paragraph{Covariances.}
+Let $\boldsymbol{\Sigma}_{yy} = \mathbb{V}(\mathbf{y}_i)$.
+At the study level,
+$\boldsymbol{\Sigma}_{yy} = \boldsymbol{\tau}^{2} + \mathbf{V}_{i}^{2}$;
+for a population-average summary,
+$\mathbf{V}_{i}^{2}$ may be replaced with its harmonic mean
+$\bar{\mathbf{V}}^{2}$.
+Assuming $\operatorname{Cov}(\mathbf{y}_i,\mathbf{x}_i)=\mathbf{0}$ (i.e., exogeneity),
+the total covariance of $\mathbf{z}_i$ and its cross-covariance with $\mathbf{y}_i$ are
+\begin{align}
+  \mathbb{V}(\mathbf{z}_i)
+  &= \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}
+   + \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xx}\,\boldsymbol{\Omega}^{\!\top}
+   + \boldsymbol{\psi}, \\
+  \operatorname{Cov}(\mathbf{y}_i,\mathbf{z}_i)
+  &= \boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}.
+\end{align}
+If $\operatorname{Cov}(\mathbf{y}_i,\mathbf{x}_i)\neq\mathbf{0}$,
+then additional cross-terms appear:
+\[
+  \mathbb{V}(\mathbf{z}_i)
+  = \boldsymbol{\phi}\boldsymbol{\Sigma}_{yy}\boldsymbol{\phi}^{\!\top}
+  + \boldsymbol{\Omega}\boldsymbol{\Sigma}_{xx}\boldsymbol{\Omega}^{\!\top}
+  + \boldsymbol{\phi}\operatorname{Cov}(\mathbf{y}_i,\mathbf{x}_i)\boldsymbol{\Omega}^{\!\top}
+  + \boldsymbol{\Omega}\operatorname{Cov}(\mathbf{x}_i,\mathbf{y}_i)\boldsymbol{\phi}^{\!\top}
+  + \boldsymbol{\psi},
+\]
+and
+\[
+  \operatorname{Cov}(\mathbf{y}_i,\mathbf{z}_i)
+  = \boldsymbol{\Sigma}_{yy}\boldsymbol{\phi}^{\!\top}
+  + \operatorname{Cov}(\mathbf{y}_i,\mathbf{x}_i)\boldsymbol{\Omega}^{\!\top}.
+\]
+
+\paragraph{Special cases.}
+If $\boldsymbol{\beta}=\mathbf{0}$ and $\boldsymbol{\Gamma}=\mathbf{0}$,
+then $\boldsymbol{\mu}_{y}=\boldsymbol{\alpha}$ and
+\(\mathbb{E}(\mathbf{z}_i)
+  = \boldsymbol{\kappa}
+  + \boldsymbol{\phi}\,\boldsymbol{\alpha}
+  + \boldsymbol{\Omega}\,\boldsymbol{\mu}_{x}\).
+If $\mathbf{z}_i$ is univariate ($r=1$),
+$\boldsymbol{\phi}$ and $\boldsymbol{\Omega}$ reduce to row vectors
+and $\boldsymbol{\psi}$ reduces to a scalar residual variance.
+
+\section{Empirical Example}
+
+To illustrate the utility of the MetaVAR framework, we applied it to data on adolescents' affective dynamics and substance use. Substance use during adolescence remains a major public health concern, contributing to morbidity, mortality, and long-term psychosocial difficulties \parencite{Patrick-Miech-Johnston-etal-2023}. Early onset of substance use is associated with elevated risk for dependence, cognitive impairment, and behavioral problems that persist into adulthood \parencite{Squeglia-Jacobus-Tapert-2009, Chassin-Hussong-Beltran-2009}. Youth in socioeconomically disadvantaged contexts are particularly vulnerable because they experience heightened exposure to chronic stress, limited access to adaptive coping resources, and greater social reinforcement of risk-taking behaviors \parencite{Leventhal-BrooksGunn-2000, Wills-Resko-Ainette-etal-2004}. Understanding the affective mechanisms that contribute to these disparities in risk remains a key goal for prevention science.
+
+\subsection{Affective Processes and Substance Use}
+
+Affective processes are central to theories of adolescent substance use. Two complementary motivational models, namely \textbf{negative reinforcement} \parencite[substances used to alleviate negative affect;][]{Baker-Piper-McCarthy-etal-2004} and \textbf{positive reinforcement} \parencite[substances used to enhance or prolong positive affect;][]{Cooper-Frone-Russell-etal-1995}, suggest that substance use functions as an emotion-regulation strategy. However, empirical findings linking affect and substance use are often inconsistent \parencite{Simons-Dvorak-Batien-etal-2010, Hussong-Jones-Stein-etal-2011}, perhaps because most studies focus on average levels of affect rather than dynamic processes that unfold over time. For adolescents, whose affective systems are still developing and particularly reactive to contextual stressors \parencite{Casey-Jones-Hare-2008}, examining the temporal organization of affect may reveal how emotion regulation contributes to early risk for substance use and behavioral problems.
+
+Recent ecological momentary assessment research also highlights how modern contexts shape these emotion-regulation processes. For instance, in the \textit{miLife} study, adolescents who spent more time using digital technology reported greater same-day ADHD and conduct-problem symptoms and showed increased conduct problems 18 months later \parencite{George-Russell-Piontak-etal-2017}. These findings suggest that heightened engagement with digital media may both reflect and exacerbate difficulties in affective and behavioral regulation, paralleling the emotion-regulation mechanisms proposed in models of substance use.
+
+\subsection{Affective Dynamics as Emotion Regulation Processes}
+
+Emerging research highlights that affective dynamics, or how emotions persist and influence one another over time, offer critical insight into emotion regulation and psychopathology \parencite{Kuppens-Allen-Sheeber-2010, Houben-VanDenNoortgate-Kuppens-2015}. Within-person \textbf{autoregressive (AR)} effects capture emotional inertia, the extent to which current emotional states carry over to the next time point. High AR in negative affect (NA) indicates slow recovery from distress, whereas high AR in positive affect (PA) reflects sustained positive mood and resilience \parencite{Hollenstein-2015}. \textbf{Cross-regressive (CR)} effects capture coupling between affective systems, or how one emotion predicts changes in another \parencite{Bringmann-Pe-Vissers-etal-2016, Chow-Zu-Shifren-etal-2011}. For instance, a strong negative NA$\to$PA effect indicates poor recovery from negative states, whereas a strong negative PA$\to$NA effect reflects effective emotional buffering.
+
+Recent ecological momentary assessment (EMA) studies further show that adolescents' daily affective responses to stressors fluctuate systematically and have meaningful behavioral correlates. For example, using the \textit{miLife} dataset, \textcite{Odgers-Russell-2017} found that on days adolescents were exposed to violence, they experienced elevated anger, depression, and conduct-problem symptoms, and that depressive symptoms often persisted into the next day. Importantly, adolescents who exhibited stronger same-day behavioral reactivity to violence were more likely to engage in substance use at follow-up, underscoring that the temporal organization of affect is a key marker of emotion-regulation capacity and future behavioral risk.
+
+The \textbf{stable mean attractor} complements AR and CR by representing the emotional equilibrium, or ``set point,'' to which affective states tend to return \parencite{Kuppens-Oravecz-Tuerlinckx-2010, Hollenstein-2015}. A higher attractor for NA reflects a chronically dysphoric baseline associated with stress vulnerability, whereas a higher attractor for PA reflects positive emotional homeostasis and resilience. Together, AR, CR, and attractor parameters index the persistence, interdependence, and homeostatic regulation of affect, which are dynamic markers of emotion regulation capacity relevant to adolescent health and behavior. Early applications of dynamical systems modeling to psychopathology have demonstrated the value of these approaches for capturing meaningful within-person variability. For example, \textcite{Odgers-Mulvey-Skeem-etal-2009} used a linear oscillator model to quantify the speed and regulation of weekly symptom fluctuations among high-risk psychiatric patients. Individuals showing rapid, amplifying oscillations---reflecting poor emotional damping---were more likely to engage in violent behavior, underscoring that dynamic indices of regulation capture unique aspects of risk beyond static symptom levels. Such findings illustrate how dynamic parameters like oscillation speed and stability parallel AR, CR, and attractor processes in affective systems, reinforcing their utility for studying emotion regulation in adolescence.
+
+\subsection{Affective Dynamics in Developmental Context}
+
+From a developmental and contextual perspective, affective dynamics may be particularly consequential for adolescents growing up in low-SES environments, where chronic exposure to environmental stressors (e.g., violence, financial strain, instability) taxes emotion regulation systems \parencite{Evans-Kim-2012, Brody-Yu-Chen-etal-2013}. Persistent negative affect and weak cross-affective recovery may promote substance use as a means of coping, consistent with the negative reinforcement model, whereas greater positive-affect persistence and effective PA$\to$NA dampening may confer resilience. These parameters represent individualized dynamic signatures of emotion regulation capacity \parencite{Hamaker-Asparouhov-Brose-etal-2018}, distinguishing adolescents at greater versus lower risk for later substance use and behavioral problems. Extending this framework, findings from the \textit{miLife} study indicate that adolescents were more likely to engage in antisocial behavior on days when they witnessed others using substances, both inside and outside the home \parencite{Russell-Wang-Odgers-2015}. Such daily exposure to substance-use contexts may amplify emotional reactivity and dysregulation, providing a proximal pathway through which contextual stressors shape adolescents' affective dynamics and behavioral risk.
+
+In addition to objective socioeconomic adversity, adolescents' perceptions of their own social standing also shape emotional and behavioral functioning. In the \textit{miLife} study, lower subjective social status predicted higher daily symptoms of depression, anxiety, and inattention or impulsivity, as well as greater risk for substance use 18 months later, even after accounting for objective socioeconomic indicators \parencite{Russell-Odgers-2019}. These findings highlight that perceived social position within the social hierarchy may influence how adolescents experience and regulate affect in daily life, suggesting that both structural disadvantage and subjective social evaluations jointly shape affective dynamics and developmental risk.
+
+\subsection{Family Covariates Shaping Affective Dynamics}
+
+Adolescents' affective dynamics are shaped not only by family processes but also by their immediate daily contexts. For instance, exposure to substance-use environments has been linked to same-day increases in antisocial behavior among at-risk youth \parencite{Russell-Wang-Odgers-2015}, suggesting that contextual stressors and parental monitoring jointly influence emotional and behavioral regulation. These findings highlight that adolescents' emotion regulation capacities develop within a network of overlapping influences from both their environments and their families.
+
+Family processes form the proximal context through which adolescents learn emotional self-regulation skills. Parenting practices, particularly \textbf{parental monitoring} and \textbf{parent--child communication}, play a critical role in providing structure, predictability, and opportunities for emotion socialization \parencite{Morris-Silk-Steinberg-etal-2007, Eisenberg-Spinrad-Eggum-2010}. High parental monitoring promotes emotional stability by reducing adolescents' exposure to risky contexts and helping them manage distress \parencite{Dishion-McMahon-1998, Stattin-Kerr-2000}. Conversely, low monitoring and inconsistent supervision may lead to greater emotional reactivity and difficulty recovering from negative affect. Similarly, open and supportive communication fosters positive emotional expression and flexibility, whereas poor communication may result in suppressed PA and prolonged NA.
+
+These effects may be especially pronounced in disadvantaged contexts, where stress undermines parenting consistency \parencite{Brody-Yu-Chen-etal-2013, Evans-Kim-2012, Leventhal-BrooksGunn-2000}. Adolescents experiencing high parental monitoring and warmth are expected to show adaptive affective dynamics, such as faster recovery from NA (lower AR[NA]), stronger PA$\to$NA dampening, and more positive affective attractors, whereas those from low-monitoring, low-communication homes may exhibit maladaptive dynamics such as higher inertia and greater cross-affective spillover. Modeling parental monitoring and communication as covariates predicting person-specific affective parameters allows us to test whether early family environments shape how emotions fluctuate, persist, and recover in daily life.
+
+\subsection{Affective Dynamics as Mediating Mechanisms}
+
+Beyond direct associations, affective dynamics may mediate pathways from family context to adolescent behavioral outcomes. Supportive parenting may cultivate adaptive affective patterns, such as stable positive mood, faster recovery from distress, and more positive attractors, which in turn reduce risk for substance use and externalizing problems. Conversely, inconsistent monitoring and poor communication may foster maladaptive dynamics, including high NA inertia, negative PA$\to$NA coupling, and dysphoric attractors, that increase reliance on substances for affect regulation. Evidence from ecological momentary assessment supports these propositions: daily affective reactivity to environmental stressors predicts both immediate and long-term outcomes. In the \textit{miLife} study, adolescents who reacted more strongly to violence exposure in daily life were at greater risk for later substance use \parencite{Odgers-Russell-2017}. This evidence suggests that moment-to-moment emotion regulation processes may serve as a key mechanism through which family and contextual factors ``get under the skin'' to shape adolescents' emotional and behavioral trajectories.
+
+\subsection{The MetaVAR Framework as an Integrative Approach}
+
+The \textbf{meta-analytic vector autoregressive (MetaVAR)} framework provides a unifying analytic structure for testing these developmental hypotheses. MetaVAR simultaneously estimates person-specific AR, CR, and attractor parameters from intensive longitudinal data (for example, daily EMA) and links them to contextual covariates and distal outcomes. This multilevel modeling framework accommodates both within-person temporal processes and between-person predictors, allowing researchers to (a) quantify individual differences in affective dynamics, (b) test how parenting and contextual factors influence those dynamics, and (c) evaluate how these emotion-regulation patterns predict future substance use and behavioral problems.
+
+In the present study, we apply the MetaVAR framework to data from the \textit{miLife Study} \parencite{Russell-Wang-Odgers-2015, Odgers-Russell-2017}, a longitudinal ecological momentary assessment (EMA) investigation that followed 151 adolescents (ages 11-15) from socioeconomically disadvantaged neighborhoods. Participants completed brief mobile-phone assessments three times per day for 30 consecutive days, yielding more than 12,000 assessments across 4,000 person-days. This intensive design captured adolescents' daily affect, contextual stressors, and behavioral experiences in real time, minimizing recall bias and enabling fine-grained modeling of within-person affective dynamics. The study was designed to examine how contextual risk factors such as exposure to violence, witnessing substance use, and daily stress shape adolescents' emotional and behavioral functioning. Prior analyses from the \textit{miLife} dataset have shown that daily fluctuations in affect and exposure predict same-day and next-day changes in behavior and mental health symptoms \parencite{Russell-Wang-Odgers-2015, Odgers-Russell-2017}, making it ideally suited for testing hypotheses about affective dynamics and their developmental consequences. This approach enables a comprehensive test of an integrative developmental model in which early family environments shape adolescents' day-to-day affective dynamics--how emotions persist, interact, and recover in real time--which, in turn, forecast later substance use and behavioral outcomes. The \textit{miLife} data provide an especially strong foundation for this analysis because they capture both proximal (daily) emotional processes and distal (18-month follow-up) behavioral outcomes within the same cohort \parencite{Russell-Wang-Odgers-2015, Odgers-Russell-2017}. Thus, the MetaVAR framework can bridge within-person emotion-regulation dynamics and between-person developmental trajectories among socioeconomically disadvantaged youth (Figure~\ref{fig:manMetaVAR-empirical-model}). The purpose of this empirical example is to demonstrate how the MetaVAR approach estimates individual differences in affective dynamics and links them to contextual covariates and behavioral outcomes, illustrating the framework's potential for developmental and clinical applications.
+
+\begin{sidewaysfigure*}
+	\caption{Conceptual Model of Affective Dynamics Predicting Adolescent Outcomes}
+	\includegraphics[scale = 0.70]{.setup/latex/figures/pdf/empirical-model.pdf}
+	\label{fig:manMetaVAR-empirical-model}
+\end{sidewaysfigure*}
+
+\subsection{Research Questions and Hypotheses}
+
+Building on prior theory and empirical findings on affective dynamics and adolescent development, we pose the following research questions (RQs) and hypotheses (Hs) to guide the current investigation.
+
+\subsubsection{RQ1: Characterizing and Decomposing Affective Dynamics}
+
+\begin{itemize}
+  \item \textbf{RQ1a.} What are the typical within-person dynamics of positive affect (PA) and negative affect (NA) in adolescents, as captured by autoregressive (AR), cross-regressive (CR), and attractor parameters? 
+  \item \textbf{RQ1b.} To what extent do these within-person affective dynamics vary across individuals (i.e., between-person variability in AR, CR, and attractor parameters)?
+  \item \textbf{RQ1c.} How strongly are the within-person dynamic parameters correlated at the between-person level (e.g., do adolescents with higher NA inertia also show weaker PA$\to$NA recovery)?
+\end{itemize}
+
+\noindent
+\textbf{H1.} On average, adolescents will exhibit moderate positive autoregression (emotional inertia) for both PA and NA, negative cross-regression (PA$\to$NA), and emotional attractors centered near affective balance. However, substantial between-person variability is expected in all dynamic parameters, reflecting individual differences in emotion regulation capacity. Specifically, adolescents who recover more slowly from distress (higher AR[NA]) are expected to exhibit weaker PA$\to$NA coupling and higher NA attractors, indicating more dysphoric equilibrium states.
+
+\subsubsection{RQ2: Family Processes and Affective Dynamics}
+
+\begin{itemize}
+  \item \textbf{RQ2a.} Does parental monitoring predict individual differences in the persistence and coupling of affective states?
+  \item \textbf{RQ2b.} Does parent--child communication predict individual differences in affective attractors and cross-affective recovery?
+\end{itemize}
+
+\noindent
+\textbf{H2.1.} Higher parental monitoring will be associated with lower AR(NA) (faster recovery from distress), stronger negative PA$\to$NA coupling (effective emotional dampening), and higher PA attractors (more positive equilibrium). \\
+\noindent
+\textbf{H2.2.} Poor monitoring and communication will predict higher NA inertia and higher NA attractors, reflecting chronic dysphoria and stress vulnerability. \\
+\noindent
+\textbf{H2.3.} Supportive communication will predict higher AR(PA) (sustained positive emotion) and more adaptive cross-affective coupling (greater emotional flexibility).
+
+\subsubsection{RQ3: Affective Dynamics as Mediators of Family Effects on Substance Use}
+
+\begin{itemize}
+  \item \textbf{RQ3a.} Do adolescents from high-monitoring and high-communication families exhibit affective dynamics that buffer against later substance use?
+  \item \textbf{RQ3b.} Do adolescents from low-monitoring and low-communication families exhibit maladaptive affective dynamics that increase risk for substance use?
+\end{itemize}
+
+\noindent
+\textbf{H3.1.} Adaptive affective dynamics (low NA inertia, strong PA$\to$NA dampening, high PA attractor) will mediate the protective effects of parental monitoring and communication on later substance use. \\
+\noindent
+\textbf{H3.2.} Maladaptive affective dynamics (high NA inertia, weak PA$\to$NA coupling, high NA attractor) will mediate the risk-enhancing effects of poor family processes on later substance use.
+
+% \subsection{Joint Distribution of Observed Variables}
+
+% To summarize the joint structure implied by the multivariate mixed-effects
+% meta-analytic model with distal outcomes, we collect all observed random
+% variables into a single vector,
+% \[
+%   \mathbf{w}_i
+%   =
+%   \begin{bmatrix}
+%     \mathbf{z}_i \\[2pt]
+%     \mathbf{y}_i \\[2pt]
+%     \mathbf{x}_i
+%   \end{bmatrix}
+%   \in \mathbb{R}^{r+p+q},
+% \]
+% where $\mathbf{z}_i$ denotes the distal outcomes, $\mathbf{y}_i$ the
+% meta-analytic outcomes, and $\mathbf{x}_i$ the study-level covariates.
+% The distal outcome model can be expressed as
+% \begin{equation}
+%   \mathbf{z}_i
+%   = \boldsymbol{\kappa}
+%   + \boldsymbol{\phi}\,\mathbf{y}_i
+%   + \boldsymbol{\Omega}\,\mathbf{x}_i
+%   + \boldsymbol{\delta}_i,
+%   \qquad
+%   \boldsymbol{\delta}_i \sim \mathcal{N}\!\big(\mathbf{0},\,\boldsymbol{\psi}\big),
+%   \label{eq:distal-model}
+% \end{equation}
+% where $\boldsymbol{\kappa}$ is a vector of intercepts,
+% $\boldsymbol{\phi}$ and $\boldsymbol{\Omega}$ are matrices of regression
+% coefficients corresponding to the effects of $\mathbf{y}_i$ and
+% $\mathbf{x}_i$ on $\mathbf{z}_i$, and $\boldsymbol{\psi}$ is the
+% residual covariance matrix of $\mathbf{z}_i$.
+% The residual term $\boldsymbol{\delta}_i$ captures unexplained variation in the
+% distal outcomes.
+
+% \vspace{6pt}
+% \noindent
+% Let $\boldsymbol{\mu}_x = \mathbb{E}(\mathbf{x}_i)$ and
+% $\boldsymbol{\Sigma}_{xx} = \mathbb{V}(\mathbf{x}_i)$ denote the mean and
+% covariance of the covariates.
+% The marginal mean and covariance of $\mathbf{y}_i$ follow from the
+% meta-analytic model:
+% \[
+%   \boldsymbol{\mu}_{y}
+%   = (\mathbf{I}-\boldsymbol{\beta})^{-1}
+%     \big(\boldsymbol{\alpha} + \boldsymbol{\Gamma}\,\boldsymbol{\mu}_x\big),
+%   \qquad
+%   \boldsymbol{\Sigma}_{yy}
+%   = \boldsymbol{\tau}^{2} + \bar{\mathbf{V}}^{2},
+% \]
+% where $\bar{\mathbf{V}}^{2}$ denotes the harmonic mean of the
+% within-study covariance matrices.
+% Let $\boldsymbol{\Sigma}_{xy} = \operatorname{Cov}(\mathbf{x}_i,\mathbf{y}_i)$
+% and $\boldsymbol{\Sigma}_{yx} = \boldsymbol{\Sigma}_{xy}^{\!\top}$.
+
+% \paragraph{Expected value.}
+% The unconditional mean vector of $\mathbf{w}_i$ is
+% \begin{equation}
+%   \boldsymbol{\mu}_{w}
+%   =
+%   \mathbb{E}(\mathbf{w}_i)
+%   =
+%   \begin{bmatrix}
+%     \boldsymbol{\kappa}
+%       + \boldsymbol{\phi}\,\boldsymbol{\mu}_{y}
+%       + \boldsymbol{\Omega}\,\boldsymbol{\mu}_{x} \\[3pt]
+%     \boldsymbol{\mu}_{y} \\[3pt]
+%     \boldsymbol{\mu}_{x}
+%   \end{bmatrix}.
+%   \label{eq:mean-vector}
+% \end{equation}
+
+% \paragraph{Covariance structure.}
+% Using Equation~\eqref{eq:distal-model} and standard covariance
+% identities, the unconditional covariance matrix of
+% $\mathbf{w}_i$ can be expressed in block form as
+% \begin{equation}
+%   \boldsymbol{\Sigma}_{ww}
+%   =
+%   \mathbb{V}(\mathbf{w}_i)
+%   =
+%   \begin{bmatrix}
+%     \boldsymbol{\Sigma}_{zz}
+%       & \boldsymbol{\Sigma}_{zy}
+%       & \boldsymbol{\Sigma}_{zx} \\[4pt]
+%     \boldsymbol{\Sigma}_{yz}
+%       & \boldsymbol{\Sigma}_{yy}
+%       & \boldsymbol{\Sigma}_{yx} \\[4pt]
+%     \boldsymbol{\Sigma}_{xz}
+%       & \boldsymbol{\Sigma}_{xy}
+%       & \boldsymbol{\Sigma}_{xx}
+%   \end{bmatrix},
+%   \label{eq:covariance-structure}
+% \end{equation}
+% where the block elements are given by
+% \begin{align*}
+%   \boldsymbol{\Sigma}_{zy}
+%     &= \operatorname{Cov}(\mathbf{z}_i,\mathbf{y}_i)
+%        = \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy}
+%          + \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xy}, \\[4pt]
+%   \boldsymbol{\Sigma}_{zx}
+%     &= \operatorname{Cov}(\mathbf{z}_i,\mathbf{x}_i)
+%        = \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xx}
+%          + \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yx}, \\[4pt]
+%   \boldsymbol{\Sigma}_{zz}
+%     &= \mathbb{V}(\mathbf{z}_i)
+%        = \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}
+%          + \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xx}\,\boldsymbol{\Omega}^{\!\top}
+%          + \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yx}\,\boldsymbol{\Omega}^{\!\top}
+%          + \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xy}\,\boldsymbol{\phi}^{\!\top}
+%          + \boldsymbol{\psi}.
+% \end{align*}
+% The remaining blocks follow by transposition:
+% $\boldsymbol{\Sigma}_{yz} = \boldsymbol{\Sigma}_{zy}^{\!\top}$,
+% $\boldsymbol{\Sigma}_{xz} = \boldsymbol{\Sigma}_{zx}^{\!\top}$.
+
+% \paragraph{Simplified case under exogeneity.}
+% When the covariates are exogenous, so that
+% $\operatorname{Cov}(\mathbf{x}_i,\mathbf{y}_i)
+%   = \boldsymbol{\Sigma}_{xy} = \mathbf{0}$,
+% the cross-covariances simplify to
+% \[
+%   \boldsymbol{\Sigma}_{zy}
+%   = \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy},
+%   \qquad
+%   \boldsymbol{\Sigma}_{zx}
+%   = \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xx},
+% \]
+% and the variance of $\mathbf{z}_i$ reduces to
+% \[
+%   \boldsymbol{\Sigma}_{zz}
+%   = \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}
+%   + \boldsymbol{\Omega}\,\boldsymbol{\Sigma}_{xx}\,\boldsymbol{\Omega}^{\!\top}
+%   + \boldsymbol{\psi}.
+% \]
+
+% \paragraph{Conditional distribution of $(\mathbf{z}_i,\mathbf{y}_i)$ given $\mathbf{x}_i$.}
+% For completeness, the joint distribution of the distal and meta-analytic outcomes
+% conditional on $\mathbf{x}_i$ has expected value
+% \[
+%   \mathbb{E}
+%   \!\begin{bmatrix}
+%     \mathbf{z}_i \\[2pt]
+%     \mathbf{y}_i
+%   \end{bmatrix}
+%   \Bigm| \mathbf{x}_i
+%   =
+%   \begin{bmatrix}
+%     \boldsymbol{\kappa}
+%       + \boldsymbol{\phi}\,\boldsymbol{\mu}_{y|x}(\mathbf{x}_i)
+%       + \boldsymbol{\Omega}\,\mathbf{x}_i \\[3pt]
+%     \boldsymbol{\mu}_{y|x}(\mathbf{x}_i)
+%   \end{bmatrix},
+%   \qquad
+%   \boldsymbol{\mu}_{y|x}(\mathbf{x}_i)
+%   = (\mathbf{I}-\boldsymbol{\beta})^{-1}
+%     (\boldsymbol{\alpha} + \boldsymbol{\Gamma}\mathbf{x}_i),
+% \]
+% and covariance
+% \[
+%   \mathbb{V}
+%   \!\begin{bmatrix}
+%     \mathbf{z}_i \\[2pt]
+%     \mathbf{y}_i
+%   \end{bmatrix}
+%   \Bigm| \mathbf{x}_i
+%   =
+%   \begin{bmatrix}
+%     \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}
+%       + \boldsymbol{\psi}
+%       & \boldsymbol{\phi}\,\boldsymbol{\Sigma}_{yy} \\[4pt]
+%     \boldsymbol{\Sigma}_{yy}\,\boldsymbol{\phi}^{\!\top}
+%       & \boldsymbol{\Sigma}_{yy}
+%   \end{bmatrix}.
+% \]
+% Under the standard independence assumptions,
+% the conditional covariance does not depend on $\mathbf{x}_i$.
+
+\printbibliography
+
+\end{document}
