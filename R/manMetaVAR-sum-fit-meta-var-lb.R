@@ -54,10 +54,10 @@ SumFitMetaVARLB <- function(taskid,
         suffix = suffix
       )
       input <- readRDS(fn_input)
-      raw <- summary.manmetavar.metavar(
+      raw <- summary(
         input
       )
-      ci <- confint.manmetavar.metavar(
+      ci <- confint(
         input,
         lb = TRUE
       )
@@ -99,13 +99,13 @@ SumFitMetaVARLB <- function(taskid,
       attr(df, "n") <- n
       attr(df, "time") <- time
       attr(df, "dynamics") <- dynamics
-      attr(df, "parnames") <- rownames(raw)
+      attr(df, "parnames") <- rownames(raw)[1:27]
       attr(df, "parameter") <- parameter
       attr(df, "ci") <- "lb"
       attr(df, "method") <- "metavar"
       df
     }
-    i <- parallel::mclapply(
+    i <- lapply(
       X = seq_len(reps),
       FUN = replication,
       taskid = taskid
@@ -116,7 +116,7 @@ SumFitMetaVARLB <- function(taskid,
       f = `+`,
       x = i
     )
-    sq_errors <- parallel::mclapply(
+    sq_errors <- lapply(
       X = i,
       FUN = function(x, means) {
         (means - x)^2

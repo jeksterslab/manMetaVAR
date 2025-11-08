@@ -49,7 +49,7 @@ SumFitMLVAR <- function(taskid,
         repid = repid
       )
       fn_input <- SimFN(
-        output_type = "fit-meta-var-mx",
+        output_type = "fit-ml-var",
         output_folder = output_folder,
         suffix = suffix
       )
@@ -66,39 +66,41 @@ SumFitMLVAR <- function(taskid,
         "alpha[3,1]",
         "alpha[4,1]"
       )
-      raw <- .CIWald(
-        est = est,
-        se = se,
-        theta = 0,
-        alpha = 0.05,
-        z = TRUE,
-        test = FALSE
+      raw <- as.data.frame(
+        .CIWald(
+          est = est,
+          se = se,
+          theta = 0,
+          alpha = 0.05,
+          z = TRUE,
+          test = FALSE
+        )
       )
       parameter <- c(
-        input$data$model$ma_fixed
-      )
+        input$data$ma_fixed
+      )[1:4]
       df <- data.frame(
         est = raw$est,
         se = raw$se,
         z = raw$z,
         p = raw$p,
-        ll = raw[["2.5%"]],
-        ul = raw[["97.5%"]],
+        ll = raw[, "2.5%"],
+        ul = raw[, "97.5%"],
         sig = as.integer(
           raw$p < 0.05
         ),
         zero_hit = as.integer(
           (
-            raw[["2.5%"]] <= 0
+            raw[, "2.5%"] <= 0
           ) & (
-            0 <= raw[["97.5%"]]
+            0 <= raw[, "97.5%"]
           )
         ),
         theta_hit = as.integer(
           (
-            raw[["2.5%"]] <= parameter
+            raw[, "2.5%"] <= parameter
           ) & (
-            parameter <= raw[["97.5%"]]
+            parameter <= raw[, "97.5%"]
           )
         ),
         sq_error = (parameter - raw$est)^2
@@ -109,10 +111,11 @@ SumFitMLVAR <- function(taskid,
       attr(df, "dynamics") <- dynamics
       attr(df, "parnames") <- rownames(raw)
       attr(df, "parameter") <- parameter
-      attr(df, "method") <- "metavar"
+      attr(df, "ci") <- "normal"
+      attr(df, "method") <- "mlvar"
       df
     }
-    i <- parallel::mclapply(
+    i <- lapply(
       X = seq_len(reps),
       FUN = replication,
       taskid = taskid
@@ -123,7 +126,7 @@ SumFitMLVAR <- function(taskid,
       f = `+`,
       x = i
     )
-    sq_errors <- parallel::mclapply(
+    sq_errors <- lapply(
       X = i,
       FUN = function(x, means) {
         (means - x)^2
@@ -146,9 +149,10 @@ SumFitMLVAR <- function(taskid,
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
       dynamics = attr(i[[1]], "dynamics"),
+      ci = attr(i[[1]], "ci"),
       est = means$est,
       se = means$se,
-      z = means$z,
+      t = means$z,
       p = means$p,
       ll = means$ll,
       ul = means$ul,
@@ -166,9 +170,10 @@ SumFitMLVAR <- function(taskid,
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
       dynamics = attr(i[[1]], "dynamics"),
+      ci = attr(i[[1]], "ci"),
       est = vars$est,
       se = vars$se,
-      z = vars$z,
+      t = vars$z,
       p = vars$p,
       ll = vars$ll,
       ul = vars$ul,
@@ -184,9 +189,12 @@ SumFitMLVAR <- function(taskid,
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
+      time = attr(i[[1]], "time"),
+      dynamics = attr(i[[1]], "dynamics"),
+      ci = attr(i[[1]], "ci"),
       est = sds$est,
       se = sds$se,
-      z = sds$z,
+      t = sds$z,
       p = sds$p,
       ll = sds$ll,
       ul = sds$ul,

@@ -1,3 +1,12 @@
+#' Methods for Objects of Class `manmetavar.mlvar`
+#'
+#' This page documents the available methods for objects of class
+#' `manmetavar.mlvar`.
+#'
+#' @name manmetavar-mlvar-methods
+#' @keywords methods
+NULL
+
 #' Print Method (FitMLVAR)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -6,7 +15,7 @@
 #'
 #' @inheritParams Template
 #'
-#' @rdname print.manmetavar
+#' @rdname manmetavar-mlvar-methods
 #' @method print manmetavar.mlvar
 #' @keywords methods
 #' @import mlVAR
@@ -37,16 +46,7 @@ print.manmetavar.mlvar <- function(x,
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a matrix of
-#'   estimates,
-#'   standard errors,
-#'   test statistics,
-#'   degrees of freedom,
-#'   p-values,
-#'   and
-#'   confidence intervals.
-#'
-#' @rdname summary.manmetavar
+#' @rdname manmetavar-mlvar-methods
 #' @method summary manmetavar.mlvar
 #' @keywords methods
 #' @import mlVAR

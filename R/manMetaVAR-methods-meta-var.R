@@ -1,3 +1,12 @@
+#' Methods for Objects of Class `manmetavar.metavar`
+#'
+#' This page documents the available methods for objects of class
+#' `manmetavar.metavar`.
+#'
+#' @name manmetavar-metavar-methods
+#' @keywords methods
+NULL
+
 #' Parameter Estimates (FitMetaVAR)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -6,9 +15,7 @@
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a vector of estimated parameters.
-#'
-#' @rdname coef.manmetavar
+#' @rdname manmetavar-metavar-methods
 #' @method coef manmetavar.metavar
 #' @keywords methods
 #' @import metaVAR
@@ -28,10 +35,7 @@ coef.manmetavar.metavar <- function(object,
 #'
 #' @inheritParams Template
 #'
-#' @return Returns the sampling variance-covariance matrix
-#'   of the estimated parameters.
-#'
-#' @rdname vcov.manmetavar
+#' @rdname manmetavar-metavar-methods
 #' @method vcov manmetavar.metavar
 #' @keywords methods
 #' @export
@@ -50,16 +54,7 @@ vcov.manmetavar.metavar <- function(object,
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a matrix of
-#'   estimates,
-#'   standard errors,
-#'   test statistics,
-#'   degrees of freedom,
-#'   p-values,
-#'   and
-#'   confidence intervals.
-#'
-#' @rdname print.manmetavar
+#' @rdname manmetavar-metavar-methods
 #' @method print manmetavar.metavar
 #' @keywords methods
 #' @import metaVAR
@@ -83,16 +78,7 @@ print.manmetavar.metavar <- function(x,
 #'
 #' @inheritParams Template
 #'
-#' @return Returns a matrix of
-#'   estimates,
-#'   standard errors,
-#'   test statistics,
-#'   degrees of freedom,
-#'   p-values,
-#'   and
-#'   confidence intervals.
-#'
-#' @rdname summary.manmetavar
+#' @rdname manmetavar-metavar-methods
 #' @method summary manmetavar.metavar
 #' @keywords methods
 #' @import metaVAR
@@ -122,9 +108,8 @@ summary.manmetavar.metavar <- function(object,
 #' @param lb Logical.
 #'   If `TRUE`, returns profile likelihood-based confidence intervals.
 #'   If `FALSE`, returns Wald confidence intervals.
-#' @return Returns a matrix of confidence intervals.
 #'
-#' @rdname confint.manmetavar
+#' @rdname manmetavar-metavar-methods
 #' @method confint manmetavar.metavar
 #' @keywords methods
 #' @import metaVAR
