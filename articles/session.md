@@ -1,0 +1,149 @@
+# manMetaVAR: Session
+
+``` r
+
+library(manMetaVAR)
+```
+
+## Session
+
+``` r
+
+sessionInfo()
+#> R version 4.5.2 (2025-10-31)
+#> Platform: x86_64-pc-linux-gnu
+#> Running under: Ubuntu 24.04.3 LTS
+#> 
+#> Matrix products: default
+#> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+#> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
+#> 
+#> locale:
+#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+#>  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+#>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+#>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+#>  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+#> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+#> 
+#> time zone: Etc/UTC
+#> tzcode source: system (glibc)
+#> 
+#> attached base packages:
+#> [1] stats     graphics  grDevices utils     datasets  methods   base     
+#> 
+#> other attached packages:
+#> [1] manMetaVAR_0.9.5        metaVAR_0.0.0.9000      fitDTVARMxID_0.0.0.9000
+#> [4] OpenMx_2.22.9          
+#> 
+#> loaded via a namespace (and not attached):
+#>   [1] tidyselect_1.2.1          psych_2.5.6              
+#>   [3] dplyr_1.1.4               farver_2.1.2             
+#>   [5] S7_0.2.0                  fastmap_1.2.0            
+#>   [7] digest_0.6.37             rpart_4.1.24             
+#>   [9] lifecycle_1.0.4           cluster_2.1.8.1          
+#>  [11] survival_3.8-3            magrittr_2.0.4           
+#>  [13] compiler_4.5.2            rlang_1.1.6              
+#>  [15] Hmisc_5.2-4               tools_4.5.2              
+#>  [17] igraph_2.2.1              rProject_0.0.22          
+#>  [19] data.table_1.17.8         knitr_1.50               
+#>  [21] clusterGeneration_1.3.8   texreg_1.39.4            
+#>  [23] htmlwidgets_1.6.4         mnormt_2.1.1             
+#>  [25] plyr_1.8.9                RColorBrewer_1.1-3       
+#>  [27] abind_1.4-8               foreign_0.8-90           
+#>  [29] nnet_7.3-20               grid_4.5.2               
+#>  [31] stats4_4.5.2              lavaan_0.6-20            
+#>  [33] fastDummies_1.7.5         xtable_1.8-4             
+#>  [35] colorspace_2.1-2          ggplot2_4.0.0            
+#>  [37] iterators_1.0.14          scales_1.4.0             
+#>  [39] gtools_3.9.5              MASS_7.3-65              
+#>  [41] cli_3.6.5.9000            mvtnorm_1.3-3            
+#>  [43] graphicalVAR_0.3.4        rmarkdown_2.30           
+#>  [45] reformulas_0.4.2          generics_0.1.4           
+#>  [47] RcppParallel_5.1.11-1     rstudioapi_0.17.1        
+#>  [49] httr_1.4.7                reshape2_1.4.4           
+#>  [51] minqa_1.2.8               pbapply_1.7-4            
+#>  [53] pander_0.6.6              stringr_1.6.0            
+#>  [55] splines_4.5.2             parallel_4.5.2           
+#>  [57] base64enc_0.1-3           vctrs_0.6.5              
+#>  [59] glmnet_4.1-10             boot_1.3-32              
+#>  [61] Matrix_1.7-4              glasso_1.11              
+#>  [63] Formula_1.2-5             htmlTable_2.4.3          
+#>  [65] jpeg_0.1-11               foreach_1.5.2            
+#>  [67] proto_1.0.0               qgraph_1.9.8             
+#>  [69] glue_1.8.0                nloptr_2.2.1             
+#>  [71] codetools_0.2-20          shape_1.4.6.1            
+#>  [73] stringi_1.8.7             gtable_0.3.6             
+#>  [75] mlVAR_0.5.2               quadprog_1.5-8           
+#>  [77] lme4_1.1-37               tibble_3.3.0             
+#>  [79] pillar_1.11.1             htmltools_0.5.8.1        
+#>  [81] R6_2.6.1                  Rdpack_2.6.4             
+#>  [83] evaluate_1.0.5            pbivnorm_0.6.0           
+#>  [85] lattice_0.22-7            gsubfn_0.7               
+#>  [87] rbibutils_2.3             png_0.1-8                
+#>  [89] backports_1.5.0           arm_1.14-4               
+#>  [91] corpcor_1.6.10            Rcpp_1.1.0               
+#>  [93] fdrtool_1.2.18            simStateSpace_1.2.12.9000
+#>  [95] coda_0.19-4.1             gridExtra_2.3            
+#>  [97] nlme_3.1-168              checkmate_2.3.3          
+#>  [99] MplusAutomation_1.2       xfun_0.54                
+#> [101] pkgconfig_2.0.3
+```
+
+## CPU
+
+``` r
+
+cat(system("lscpu", intern = TRUE), sep = "\n")
+#> Architecture:                         x86_64
+#> CPU op-mode(s):                       32-bit, 64-bit
+#> Address sizes:                        39 bits physical, 48 bits virtual
+#> Byte Order:                           Little Endian
+#> CPU(s):                               8
+#> On-line CPU(s) list:                  0-7
+#> Vendor ID:                            GenuineIntel
+#> Model name:                           Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz
+#> CPU family:                           6
+#> Model:                                142
+#> Thread(s) per core:                   2
+#> Core(s) per socket:                   4
+#> Socket(s):                            1
+#> Stepping:                             12
+#> CPU(s) scaling MHz:                   73%
+#> CPU max MHz:                          4100.0000
+#> CPU min MHz:                          400.0000
+#> BogoMIPS:                             3799.90
+#> Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities
+#> Virtualization:                       VT-x
+#> L1d cache:                            128 KiB (4 instances)
+#> L1i cache:                            128 KiB (4 instances)
+#> L2 cache:                             1 MiB (4 instances)
+#> L3 cache:                             6 MiB (1 instance)
+#> NUMA node(s):                         1
+#> NUMA node0 CPU(s):                    0-7
+#> Vulnerability Gather data sampling:   Mitigation; Microcode
+#> Vulnerability Itlb multihit:          KVM: Mitigation: Split huge pages
+#> Vulnerability L1tf:                   Not affected
+#> Vulnerability Mds:                    Not affected
+#> Vulnerability Meltdown:               Not affected
+#> Vulnerability Mmio stale data:        Mitigation; Clear CPU buffers; SMT vulnerable
+#> Vulnerability Reg file data sampling: Not affected
+#> Vulnerability Retbleed:               Mitigation; Enhanced IBRS
+#> Vulnerability Spec rstack overflow:   Not affected
+#> Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+#> Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+#> Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+#> Vulnerability Srbds:                  Mitigation; Microcode
+#> Vulnerability Tsx async abort:        Mitigation; TSX disabled
+```
+
+## Memory
+
+``` r
+
+cat(system("free -g -h -t", intern = TRUE), sep = "\n")
+#>                total        used        free      shared  buff/cache   available
+#> Mem:            15Gi       4.0Gi       7.9Gi       610Mi       4.2Gi        11Gi
+#> Swap:          7.8Gi          0B       7.8Gi
+#> Total:          22Gi       4.0Gi        15Gi
+```

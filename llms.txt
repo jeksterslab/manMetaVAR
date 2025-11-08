@@ -1,0 +1,209 @@
+# manMetaVAR
+
+Ivan Jacob Agaloos Pesigan 2025-11-08
+
+## Description
+
+Research compendium for the manuscript Pesigan, I. J. A., et al. (In
+Preparation). Multivariate Meta-Analysis of Vector Autoregressive Model
+Coefficients <https://doi.org/10.0000/0000000000>
+
+## Installation
+
+You can install `manMetaVAR` from
+[GitHub](https://github.com/jeksterslab/manMetaVAR) with:
+
+``` r
+
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("jeksterslab/manMetaVAR")
+```
+
+## More Information
+
+See [GitHub Pages](https://jeksterslab.github.io/manMetaVAR/index.html)
+for package documentation.
+
+# Package index
+
+## Data Generation Functions
+
+- [`Dynamics()`](https://github.com/jeksterslab/manMetaVAR/reference/Dynamics.md)
+  : Process Dynamics
+- [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
+  : Simulate Data
+
+## Model Fitting Functions
+
+- [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
+  : Fit the Model using the fitDTVARMxID Package
+- [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)
+  : Fit the Model using the mlVAR Package
+- [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)
+  : Multivariate Meta-Analysis using the metaVAR Package
+- [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
+  : Fit the Model using Mplus
+- [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
+  : Create Mplus Input File
+
+## Simulation Functions
+
+- [`Sim()`](https://github.com/jeksterslab/manMetaVAR/reference/Sim.md)
+  : Simulation Replication
+- [`SimFN()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFN.md)
+  : Simulation File Name
+- [`SimFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitDTVAR.md)
+  : Simulation Replication - FitDTVAR
+- [`SimFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMLVAR.md)
+  : Simulation Replication - FitMLVAR
+- [`SimFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMetaVAR.md)
+  : Simulation Replication - FitMetaVAR
+- [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
+  : Simulation Replication - FitMplus
+- [`SimGenData()`](https://github.com/jeksterslab/manMetaVAR/reference/SimGenData.md)
+  : Simulation Replication - GenData
+- [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
+  : Simulation Project Name
+- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
+  : Summary
+- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
+  : Summary (FitMLVAR)
+- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
+  : Summary: Likelihood-Based (FitMetaVAR)
+- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
+  : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
+  : Summary (FitMplus)
+
+## Summary Functions
+
+- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
+  : Summary
+- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
+  : Summary (FitMLVAR)
+- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
+  : Summary: Likelihood-Based (FitMetaVAR)
+- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
+  : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
+  : Summary (FitMplus)
+
+## Compression Functions
+
+- [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
+  : Compress Replication
+
+## Data
+
+- [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
+  : Simulation Parameters
+
+## Methods
+
+- [`print(`*`<manmetavar.data>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-data-methods.md)
+  [`summary(`*`<manmetavar.data>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-data-methods.md)
+  [`plot(`*`<manmetavar.data>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-data-methods.md)
+  :
+
+  Methods for Objects of Class `manmetavar.data`
+
+- [`coef(`*`<manmetavar.dtvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-dtvar-methods.md)
+  [`vcov(`*`<manmetavar.dtvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-dtvar-methods.md)
+  [`print(`*`<manmetavar.dtvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-dtvar-methods.md)
+  [`summary(`*`<manmetavar.dtvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-dtvar-methods.md)
+  :
+
+  Methods for Objects of Class `manmetavar.dtvar`
+
+- [`coef(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`vcov(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`print(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`summary(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`confint(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  :
+
+  Methods for Objects of Class `manmetavar.metavar`
+
+- [`print(`*`<manmetavar.mlvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mlvar-methods.md)
+  [`summary(`*`<manmetavar.mlvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mlvar-methods.md)
+  :
+
+  Methods for Objects of Class `manmetavar.mlvar`
+
+- [`coef(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
+  [`vcov(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
+  [`summary(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
+  [`confint(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
+  [`plot(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
+  :
+
+  Methods for Objects of Class `manmetavar.mplus`
+
+## All Functions
+
+- [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
+  : Compress Replication
+- [`Dynamics()`](https://github.com/jeksterslab/manMetaVAR/reference/Dynamics.md)
+  : Process Dynamics
+- [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
+  : Fit the Model using the fitDTVARMxID Package
+- [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)
+  : Fit the Model using the mlVAR Package
+- [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)
+  : Multivariate Meta-Analysis using the metaVAR Package
+- [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
+  : Fit the Model using Mplus
+- [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
+  : Simulate Data
+- [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
+  : Create Mplus Input File
+- [`Sim()`](https://github.com/jeksterslab/manMetaVAR/reference/Sim.md)
+  : Simulation Replication
+- [`SimFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitDTVAR.md)
+  : Simulation Replication - FitDTVAR
+- [`SimFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMLVAR.md)
+  : Simulation Replication - FitMLVAR
+- [`SimFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMetaVAR.md)
+  : Simulation Replication - FitMetaVAR
+- [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
+  : Simulation Replication - FitMplus
+- [`SimGenData()`](https://github.com/jeksterslab/manMetaVAR/reference/SimGenData.md)
+  : Simulation Replication - GenData
+- [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
+  : Simulation Project Name
+- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
+  : Summary
+- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
+  : Summary (FitMLVAR)
+- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
+  : Summary: Likelihood-Based (FitMetaVAR)
+- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
+  : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
+  : Summary (FitMplus)
+
+# Articles
+
+### manMetaVAR
+
+- [manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model
+  Coefficients](https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.md):
+
+### Single Replication from the Simulation Study
+
+- [Single Replication from the Simulation
+  Study](https://github.com/jeksterslab/manMetaVAR/articles/sim-rep.md):
+
+### Parameters
+
+- [Simulation
+  Parameters](https://github.com/jeksterslab/manMetaVAR/articles/params.md):
+
+### Containers
+
+- [Containers](https://github.com/jeksterslab/manMetaVAR/articles/containers.md):
+
+### Session
+
+- [manMetaVAR:
+  Session](https://github.com/jeksterslab/manMetaVAR/articles/session.md):
