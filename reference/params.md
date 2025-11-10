@@ -5,12 +5,12 @@ Simulation Parameters
 ## Usage
 
 ``` r
-params
+data(params)
 ```
 
 ## Format
 
-A dataframe with 25 rows and 3 columns:
+A dataframe with 27 rows and 4 columns:
 
 - taskid:
 

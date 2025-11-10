@@ -34,7 +34,7 @@ sessionInfo()
 #> 
 #> other attached packages:
 #> [1] manMetaVAR_0.9.5        metaVAR_0.0.0.9000      fitDTVARMxID_0.0.0.9000
-#> [4] OpenMx_2.22.9          
+#> [4] OpenMx_2.22.10         
 #> 
 #> loaded via a namespace (and not attached):
 #>   [1] tidyselect_1.2.1          psych_2.5.6              
@@ -80,7 +80,7 @@ sessionInfo()
 #>  [81] R6_2.6.1                  Rdpack_2.6.4             
 #>  [83] evaluate_1.0.5            pbivnorm_0.6.0           
 #>  [85] lattice_0.22-7            gsubfn_0.7               
-#>  [87] rbibutils_2.3             png_0.1-8                
+#>  [87] rbibutils_2.4             png_0.1-8                
 #>  [89] backports_1.5.0           arm_1.14-4               
 #>  [91] corpcor_1.6.10            Rcpp_1.1.0               
 #>  [93] fdrtool_1.2.18            simStateSpace_1.2.12.9000
@@ -109,7 +109,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Core(s) per socket:                   4
 #> Socket(s):                            1
 #> Stepping:                             12
-#> CPU(s) scaling MHz:                   73%
+#> CPU(s) scaling MHz:                   61%
 #> CPU max MHz:                          4100.0000
 #> CPU min MHz:                          400.0000
 #> BogoMIPS:                             3799.90
@@ -143,7 +143,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            15Gi       4.0Gi       7.9Gi       610Mi       4.2Gi        11Gi
-#> Swap:          7.8Gi          0B       7.8Gi
-#> Total:          22Gi       4.0Gi        15Gi
+#> Mem:            15Gi       7.7Gi       841Mi       1.3Gi       8.2Gi       7.4Gi
+#> Swap:          7.8Gi       5.0Mi       7.8Gi
+#> Total:          22Gi       7.7Gi       8.6Gi
 ```

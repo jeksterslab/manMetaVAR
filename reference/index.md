@@ -72,6 +72,17 @@
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
   : Simulation Parameters
 
+## Figures
+
+- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
+  : Plot Relative Bias
+- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
+  : Plot Coverage Probabilities
+- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
+  : Plot Statistical Power
+- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
+  : Plot RMSE
+
 ## Methods
 
 - [`print(`*`<manmetavar.data>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-data-methods.md)
@@ -119,6 +130,14 @@
   : Compress Replication
 - [`Dynamics()`](https://github.com/jeksterslab/manMetaVAR/reference/Dynamics.md)
   : Process Dynamics
+- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
+  : Plot Relative Bias
+- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
+  : Plot Coverage Probabilities
+- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
+  : Plot Statistical Power
+- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
+  : Plot RMSE
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   : Fit the Model using the fitDTVARMxID Package
 - [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)
