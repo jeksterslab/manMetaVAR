@@ -29,16 +29,15 @@ source(
   )
 )
 # ------------------------------------------------------------------------------
-
-lapply(
+parallel::mclapply(
   X = seq_len(tasks),
   FUN = Sum,
-  reps = 100,
+  reps = reps,
   output_folder = output_folder,
-  overwrite = TRUE,
+  overwrite = FALSE,
   integrity = TRUE,
-  ncores = parallel::detectCores(),
   metavar = TRUE,
   mlvar = TRUE,
-  mplus = TRUE
+  mplus = TRUE,
+  mc.cores = parallel::detectCores()
 )

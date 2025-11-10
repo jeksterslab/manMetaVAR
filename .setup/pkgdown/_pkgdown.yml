@@ -33,6 +33,9 @@ reference:
 - title: Data
   contents:
   - has_keyword("data")
+- title: Figures
+  contents:
+  - has_keyword("figure")
 - title: Methods
   contents:
   - has_keyword("methods")

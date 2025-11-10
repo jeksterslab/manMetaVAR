@@ -103,7 +103,12 @@ SumFitMLVAR <- function(taskid,
             parameter <= raw[, "97.5%"]
           )
         ),
-        sq_error = (parameter - raw$est)^2
+        sq_error = (parameter - raw$est)^2,
+        bias = raw$est - parameter,
+        rel_bias = .SimRelBias(
+          thetahat = raw$est,
+          theta = parameter
+        )
       )
       attr(df, "taskid") <- taskid
       attr(df, "n") <- n
@@ -111,8 +116,8 @@ SumFitMLVAR <- function(taskid,
       attr(df, "dynamics") <- dynamics
       attr(df, "parnames") <- rownames(raw)
       attr(df, "parameter") <- parameter
-      attr(df, "ci") <- "normal"
-      attr(df, "method") <- "mlvar"
+      attr(df, "ci") <- "Normal"
+      attr(df, "method") <- "SeqVAR"
       df
     }
     i <- lapply(
@@ -159,7 +164,9 @@ SumFitMLVAR <- function(taskid,
       sig = means$sig,
       zero_hit = means$zero_hit,
       theta_hit = means$theta_hit,
-      sq_error = means$sq_error
+      sq_error = means$sq_error,
+      bias = means$bias,
+      rel_bias = means$rel_bias
     )
     vars <- data.frame(
       taskid = attr(i[[1]], "taskid"),
@@ -180,7 +187,9 @@ SumFitMLVAR <- function(taskid,
       sig = vars$sig,
       zero_hit = vars$zero_hit,
       theta_hit = vars$theta_hit,
-      sq_error = vars$sq_error
+      sq_error = vars$sq_error,
+      bias = vars$bias,
+      rel_bias = vars$rel_bias
     )
     sds <- data.frame(
       taskid = attr(i[[1]], "taskid"),
@@ -201,9 +210,13 @@ SumFitMLVAR <- function(taskid,
       sig = sds$sig,
       zero_hit = sds$zero_hit,
       theta_hit = sds$theta_hit,
-      sq_error = sds$sq_error
+      sq_error = sds$sq_error,
+      bias = sds$bias,
+      rel_bias = sds$rel_bias
     )
-    means$se_bias <- sds$est - means$se
+    means$se_bias <- means$se - sds$est
+    means$rel_se_bias <- (means$se - sds$est) / sds$est
+    means$rmse <- sqrt(means$sq_error)
     means$coverage <- means$theta_hit
     means$power <- 1 - means$zero_hit
     output <- list(

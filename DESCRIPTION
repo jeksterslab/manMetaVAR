@@ -27,7 +27,8 @@ Imports:
     stats,
     utils,
     simStateSpace,
-    mlVAR
+    mlVAR,
+    ggplot2
 Remotes:
     jeksterslab/fitDTVARMxID,
     jeksterslab/metaVAR

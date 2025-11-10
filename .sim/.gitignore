@@ -4,4 +4,5 @@ make.err
 reps-*.sh
 notes/*
 sim-0*.sh
+sum-*.sh
 manMetaVAR

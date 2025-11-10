@@ -192,3 +192,10 @@ plot(mplus, what = "posterior")
 ```{r}
 plot(mplus, what = "trace")
 ```
+
+### Mplus Output
+
+```{r}
+#| echo = FALSE
+cat(mplus$output$output)
+```

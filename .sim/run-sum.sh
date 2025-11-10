@@ -1,0 +1,29 @@
+#!/bin/bash
+
+sbatch sum-01.sh
+sbatch sum-02.sh
+sbatch sum-03.sh
+sbatch sum-04.sh
+sbatch sum-05.sh
+sbatch sum-06.sh
+sbatch sum-07.sh
+sbatch sum-08.sh
+sbatch sum-09.sh
+sbatch sum-10.sh
+sbatch sum-11.sh
+sbatch sum-12.sh
+sbatch sum-13.sh
+sbatch sum-14.sh
+sbatch sum-15.sh
+sbatch sum-16.sh
+sbatch sum-17.sh
+sbatch sum-18.sh
+sbatch sum-19.sh
+sbatch sum-20.sh
+sbatch sum-21.sh
+sbatch sum-22.sh
+sbatch sum-23.sh
+sbatch sum-24.sh
+sbatch sum-25.sh
+sbatch sum-26.sh
+sbatch sum-27.sh
