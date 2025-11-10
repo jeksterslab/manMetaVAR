@@ -17,7 +17,7 @@
 #' @export
 FigPower <- function(results,
                      dynamics) {
-  Method <- Parameters <- n_label <- t_label <- power <- NULL
+  Method <- Parameters <- power <- NULL
   stopifnot(
     dynamics %in% 1:3
   )

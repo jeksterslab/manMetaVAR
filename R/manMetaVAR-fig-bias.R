@@ -18,7 +18,7 @@
 FigBias <- function(results,
                     bias = TRUE,
                     dynamics) {
-  Method <- Parameters <- n_label <- t_label <- y <- NULL
+  Method <- Parameters <- y <- NULL
   stopifnot(
     dynamics %in% 1:3
   )

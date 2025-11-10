@@ -17,7 +17,7 @@
 #' @export
 FigCoverage <- function(results,
                         dynamics) {
-  Method <- Parameters <- n_label <- t_label <- theta_hit <- NULL
+  Method <- Parameters <- theta_hit <- NULL
   stopifnot(
     dynamics %in% 1:3
   )
