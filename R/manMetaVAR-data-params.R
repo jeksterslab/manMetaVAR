@@ -2,7 +2,10 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @format A dataframe with 25 rows and 3 columns:
+#' @docType data
+#' @name params
+#' @usage data(params)
+#' @format A dataframe with 27 rows and 4 columns:
 #'
 #' \describe{
 #'   \item{taskid}{
