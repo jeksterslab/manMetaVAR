@@ -17,7 +17,7 @@
 #' @export
 FigRMSE <- function(results,
                     dynamics) {
-  Method <- Parameters <- n_label <- t_label <- rmse <- NULL
+  Method <- Parameters <- rmse <- NULL
   stopifnot(
     dynamics %in% 1:3
   )
