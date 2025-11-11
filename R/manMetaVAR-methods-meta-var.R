@@ -94,6 +94,25 @@ summary.manmetavar.metavar <- function(object,
   )
 }
 
+#' @noRd
+#' @keywords internal
+#' @exportS3Method print summary.manmetavar.metavar
+print.summary.manmetavar.metavar <- function(x,
+                                             ...) {
+  print_summary <- attr(
+    x = x,
+    which = "print_summary"
+  )
+  object <- attr(
+    x = x,
+    which = "fit"
+  )
+  cat("Call:\n")
+  base::print(object$call)
+  print(print_summary)
+  invisible(x)
+}
+
 #' Confidence Intervals for the Parameter Estimates (FitMetaVAR)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
