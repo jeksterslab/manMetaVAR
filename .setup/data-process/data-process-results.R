@@ -86,6 +86,7 @@ data_process_results <- function(overwrite = FALSE) {
         no = results$par_idx
       )
     }
+    results$par_idx <- as.integer(results$par_idx)
     # replace relative bias with absolute bias for parameter == 0
     results$rel_bias <- ifelse(
       test = results$rel_bias < -999,
@@ -99,5 +100,5 @@ data_process_results <- function(overwrite = FALSE) {
     )
   }
 }
-# data_process_results()
-# rm(data_process_results)
+data_process_results()
+rm(data_process_results)

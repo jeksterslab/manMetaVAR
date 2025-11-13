@@ -196,6 +196,7 @@ plot(mplus, what = "trace")
 ### Mplus Output
 
 ```{r}
-#| echo = FALSE
+#| echo = FALSE,
+#| results = "asis"
 cat(mplus$output$output)
 ```
