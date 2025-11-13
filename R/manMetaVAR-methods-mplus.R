@@ -293,17 +293,20 @@ summary.manmetavar.mplus <- function(object,
     median = median,
     burnin = burnin
   )
-  structure(
-    .Data = ci,
-    fit = object,
-    alpha = alpha,
-    digits = digits,
-    print_summary = round(
-      x = ci,
-      digits = digits
-    ),
-    class = "summary.manmetavar.mplus"
+  class(ci) <- c(
+    "summary.manmetavar.mplus",
+    class(ci)
   )
+  attributes(ci)$fit <- object
+  attributes(ci)$alpha <- alpha
+  attributes(ci)$median <- median
+  attributes(ci)$digits <- digits
+  attributes(ci)$burnin <- burnin
+  attributes(ci)$print_summary <- round(
+    x = ci,
+    digits = digits
+  )
+  ci
 }
 
 #' @noRd
