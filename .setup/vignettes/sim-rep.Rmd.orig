@@ -197,6 +197,18 @@ plot(mplus, what = "trace")
 
 ```{r}
 #| echo = FALSE,
-#| results = "asis"
-cat(mplus$output$output)
+#| comment = NA,
+#| size = "normalsize"
+writeLines(
+  text = mplus$output$output,
+  con = "mplus.inp"
+)
+cat(
+  paste(
+    readLines(
+      "mplus.inp"
+    ),
+    collapse = "\n"
+  )
+)
 ```
