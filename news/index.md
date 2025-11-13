@@ -3,6 +3,7 @@
 ## manMetaVAR 0.9.5
 
 - Edits to summary functions.
+- Docker Hub tag: 2025-11-10-16300747
 
 ## manMetaVAR 0.9.4
 

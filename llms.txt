@@ -1,6 +1,6 @@
 # manMetaVAR
 
-Ivan Jacob Agaloos Pesigan 2025-11-11
+Ivan Jacob Agaloos Pesigan 2025-11-13
 
 ## Description
 
@@ -97,6 +97,8 @@ for package documentation.
 
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
   : Simulation Parameters
+- [`results`](https://github.com/jeksterslab/manMetaVAR/reference/results.md)
+  : Simulation Results
 
 ## Figures
 

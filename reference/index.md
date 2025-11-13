@@ -71,6 +71,8 @@
 
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
   : Simulation Parameters
+- [`results`](https://github.com/jeksterslab/manMetaVAR/reference/results.md)
+  : Simulation Results
 
 ## Figures
 
