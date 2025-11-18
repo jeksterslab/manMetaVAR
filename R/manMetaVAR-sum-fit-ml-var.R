@@ -53,7 +53,13 @@ SumFitMLVAR <- function(taskid,
         output_folder = output_folder,
         suffix = suffix
       )
+      fn_data <- SimFN(
+        output_type = "data",
+        output_folder = output_folder,
+        suffix = suffix
+      )
       input <- readRDS(fn_input)
+      data <- readRDS(fn_data)
       mlvar <- summary(
         input,
         show = "temporal"
@@ -77,7 +83,7 @@ SumFitMLVAR <- function(taskid,
         )
       )
       parameter <- c(
-        input$data$ma_fixed
+        data$ma_fixed
       )[1:4]
       df <- data.frame(
         est = raw$est,

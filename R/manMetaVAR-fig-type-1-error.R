@@ -1,6 +1,6 @@
-#' Plot Coverage Probabilities
+#' Plot Type 1 Error Rates
 #'
-#' Plot coverage probabilities for the fixed and random effects.
+#' Plot type 1 error rates for zero random effects.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -9,29 +9,26 @@
 #' @examples
 #' \dontrun{
 #' data(results, package = "manMetaVAR")
-#' FigCoverage(results)
+#' FigType1Error(results)
 #' }
 #'
 #' @family Figure Functions
 #' @keywords manMetaVAR figure
 #' @export
-FigCoverage <- function(results,
-                        dynamics = 1,
-                        method = c(
-                          "MetaVAR",
-                          "SeqVAR",
-                          "BMLVAR"
-                        ),
-                        zero = FALSE) {
+FigType1Error <- function(results,
+                          dynamics = 1,
+                          method = c(
+                            "MetaVAR",
+                            "SeqVAR",
+                            "BMLVAR"
+                          )) {
   Method <- Parameters <- theta_hit <- NULL
   stopifnot(
     dynamics %in% 1:3
   )
   results <- results[which(results$dynamics == dynamics), ]
   results <- results[which(results$method %in% method), ]
-  if (zero) {
-    results <- results[which(abs(results$parameter) > 0), ]
-  }
+  results <- results[which(results$parameter == 0), ]
   results$Method <- results$method
   results$Method <- paste0(
     results$Method,
@@ -80,7 +77,7 @@ FigCoverage <- function(results,
     data = results,
     ggplot2::aes(
       x = Parameters,
-      y = theta_hit,
+      y = 1 - theta_hit,
       shape = Method,
       color = Method,
       group = Method,
@@ -88,15 +85,15 @@ FigCoverage <- function(results,
     )
   ) +
     ggplot2::geom_hline(
-      yintercept = 0.95,
+      yintercept = 1 - 0.95,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.925,
+      yintercept = 1 - 0.925,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.975,
+      yintercept = 1 - 0.975,
       alpha = 0.5
     ) +
     ggplot2::annotate(
@@ -105,8 +102,8 @@ FigCoverage <- function(results,
       alpha = 0.50,
       xmin = -Inf,
       xmax = Inf,
-      ymin = 0.925,
-      ymax = 0.975
+      ymin = 1 - 0.975,
+      ymax = 1 - 0.925
     ) +
     ggplot2::geom_point(
       na.rm = TRUE
@@ -121,7 +118,7 @@ FigCoverage <- function(results,
       "Parameter No."
     ) +
     ggplot2::ylab(
-      "Coverage Probability"
+      "Type 1 Error Rate"
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))

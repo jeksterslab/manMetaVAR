@@ -79,5 +79,9 @@
 #'   If `bias = FALSE`, plot relative bias.
 #'   Note that when parameter value is equal to zero,
 #'   absolute bias is used instead of relative bias.
+#' @param method Character vector.
+#'   Methods to include in the plot.
+#' @param zero Logical.
+#'   Remove cases where the population parameter is equal to zero.
 #' @name Template
 NULL

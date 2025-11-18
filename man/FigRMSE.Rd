@@ -4,7 +4,12 @@
 \alias{FigRMSE}
 \title{Plot RMSE}
 \usage{
-FigRMSE(results, dynamics)
+FigRMSE(
+  results,
+  dynamics = 1,
+  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  zero = FALSE
+)
 }
 \arguments{
 \item{results}{\code{results} data frame.}
@@ -13,6 +18,12 @@ FigRMSE(results, dynamics)
 \code{1} for stable reciprocal regulation,
 \code{2} for escalating co-activation, and
 \code{3} for adaptive recovery.}
+
+\item{method}{Character vector.
+Methods to include in the plot.}
+
+\item{zero}{Logical.
+Remove cases where the population parameter is equal to zero.}
 }
 \description{
 Plot RMSE for the fixed and random effects.
@@ -20,7 +31,7 @@ Plot RMSE for the fixed and random effects.
 \examples{
 \dontrun{
 data(results, package = "manMetaVAR")
-FigRMSE(results, dynamics = 1)
+FigRMSE(results)
 }
 
 }
@@ -28,7 +39,8 @@ FigRMSE(results, dynamics = 1)
 Other Figure Functions: 
 \code{\link{FigBias}()},
 \code{\link{FigCoverage}()},
-\code{\link{FigPower}()}
+\code{\link{FigPower}()},
+\code{\link{FigType1Error}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -4,7 +4,12 @@
 \alias{FigCoverage}
 \title{Plot Coverage Probabilities}
 \usage{
-FigCoverage(results, dynamics)
+FigCoverage(
+  results,
+  dynamics = 1,
+  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  zero = FALSE
+)
 }
 \arguments{
 \item{results}{\code{results} data frame.}
@@ -13,6 +18,12 @@ FigCoverage(results, dynamics)
 \code{1} for stable reciprocal regulation,
 \code{2} for escalating co-activation, and
 \code{3} for adaptive recovery.}
+
+\item{method}{Character vector.
+Methods to include in the plot.}
+
+\item{zero}{Logical.
+Remove cases where the population parameter is equal to zero.}
 }
 \description{
 Plot coverage probabilities for the fixed and random effects.
@@ -20,7 +31,7 @@ Plot coverage probabilities for the fixed and random effects.
 \examples{
 \dontrun{
 data(results, package = "manMetaVAR")
-FigCoverage(results, dynamics = 1)
+FigCoverage(results)
 }
 
 }
@@ -28,7 +39,8 @@ FigCoverage(results, dynamics = 1)
 Other Figure Functions: 
 \code{\link{FigBias}()},
 \code{\link{FigPower}()},
-\code{\link{FigRMSE}()}
+\code{\link{FigRMSE}()},
+\code{\link{FigType1Error}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -4,9 +4,12 @@
 \alias{FitMetaVAR}
 \title{Multivariate Meta-Analysis using the metaVAR Package}
 \usage{
-FitMetaVAR(fit, ncores = NULL)
+FitMetaVAR(data, fit, ncores = NULL)
 }
 \arguments{
+\item{data}{R object.
+Output of the \code{\link[=GenData]{GenData()}} function.}
+
 \item{fit}{R object.
 Output of the \code{\link[=FitDTVAR]{FitDTVAR()}} function.}
 
@@ -25,6 +28,7 @@ fit <- FitDTVAR(
   ncores = parallel::detectCores()
 )
 pooled <- FitMetaVAR(
+  data = data,
   fit = fit,
   ncores = parallel::detectCores()
 )

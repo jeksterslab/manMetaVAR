@@ -4,11 +4,14 @@
 \alias{FitDTVAR}
 \title{Fit the Model using the fitDTVARMxID Package}
 \usage{
-FitDTVAR(data, ncores = NULL, seed = NULL)
+FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
 }
 \arguments{
 \item{data}{R object.
 Output of the \code{\link[=GenData]{GenData()}} function.}
+
+\item{wd}{Character string.
+Working directory.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}

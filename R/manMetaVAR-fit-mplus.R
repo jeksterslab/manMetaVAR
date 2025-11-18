@@ -159,7 +159,6 @@ FitMplus <- function(data,
   structure(
     list(
       args = args,
-      data = data,
       output = output,
       elapsed = elapsed
     ),

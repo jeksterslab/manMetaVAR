@@ -9,19 +9,31 @@
 #' @examples
 #' \dontrun{
 #' data(results, package = "manMetaVAR")
-#' FigRMSE(results, dynamics = 1)
+#' FigRMSE(results)
 #' }
 #'
 #' @family Figure Functions
 #' @keywords manMetaVAR figure
 #' @export
 FigRMSE <- function(results,
-                    dynamics) {
+                    dynamics = 1,
+                    method = c(
+                      "MetaVAR",
+                      "SeqVAR",
+                      "BMLVAR"
+                    ),
+                    zero = FALSE) {
   Method <- Parameters <- rmse <- NULL
   stopifnot(
     dynamics %in% 1:3
   )
   results <- results[which(results$dynamics == dynamics), ]
+  results <- results[which(results$method %in% method), ]
+  if (zero) {
+    results <- results[which(abs(results$parameter) > 0), ]
+  }
+  # remove lb
+  results <- results[which(results$ci != "LB"), ]
   results$Method <- results$method
   results$Parameters <- results$par_idx
   results$n_label <- paste0(
@@ -99,6 +111,9 @@ FigRMSE <- function(results,
     ) +
     ggplot2::coord_cartesian(
       ylim = c(0.00, 0.25)
+    ) +
+    ggplot2::scale_x_continuous(
+      breaks = sort(unique(results$par_idx))
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

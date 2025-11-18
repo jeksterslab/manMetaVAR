@@ -82,7 +82,7 @@ fn_metavar <- root$find_file(
   "sim-rep-metavar.Rds"
 )
 if (!file.exists(fn_metavar)) {
-  metavar <- FitMetaVAR(dtvar)
+  metavar <- FitMetaVAR(data, dtvar)
   saveRDS(metavar, file = fn_metavar)
 }
 metavar <- readRDS(fn_metavar)
@@ -144,7 +144,7 @@ summary(dtvar, means = TRUE)
 
 ```{r}
 #| eval = FALSE
-metavar <- FitMetaVAR(dtvar)
+metavar <- FitMetaVAR(data, dtvar)
 ```
 
 ```{r}

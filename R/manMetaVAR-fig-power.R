@@ -9,30 +9,46 @@
 #' @examples
 #' \dontrun{
 #' data(results, package = "manMetaVAR")
-#' FigPower(results, dynamics = 1)
+#' FigPower(results)
 #' }
 #'
 #' @family Figure Functions
 #' @keywords manMetaVAR figure
 #' @export
 FigPower <- function(results,
-                     dynamics) {
+                     dynamics = 1,
+                     method = c(
+                       "MetaVAR",
+                       "SeqVAR",
+                       "BMLVAR"
+                     ),
+                     zero = FALSE) {
   Method <- Parameters <- power <- NULL
   stopifnot(
     dynamics %in% 1:3
   )
   results <- results[which(results$dynamics == dynamics), ]
+  results <- results[which(results$method %in% method), ]
+  if (zero) {
+    results <- results[which(abs(results$parameter) > 0), ]
+  }
   results$Method <- results$method
-  results$Method <- ifelse(
-    test = results$Method == "MetaVAR",
-    yes = paste0(
-      results$Method,
-      "(",
-      results$ci,
-      ")"
-    ),
-    no = results$Method
+  results$Method <- paste0(
+    results$Method,
+    " (",
+    results$ci,
+    ")"
   )
+  # results$Method <- ifelse(
+  #   test = results$Method == "MetaVAR",
+  #   yes = paste0(
+  #     results$Method,
+  #     " (",
+  #     results$ci,
+  #     ")"
+  #   ),
+  #   no = results$Method
+  # )
   results$Parameters <- results$par_idx
   results$n_label <- paste0(
     "N = ",
@@ -89,6 +105,9 @@ FigPower <- function(results,
     ) +
     ggplot2::ylab(
       "Statitical Power"
+    ) +
+    ggplot2::scale_x_continuous(
+      breaks = sort(unique(results$par_idx))
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

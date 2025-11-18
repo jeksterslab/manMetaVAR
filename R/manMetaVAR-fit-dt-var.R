@@ -24,12 +24,13 @@
 #' @import fitDTVARMxID
 #' @export
 FitDTVAR <- function(data,
+                     wd = ".",
                      ncores = NULL,
                      seed = NULL) {
   start_time <- Sys.time()
   path <- .CreateFolder(
     x = normalizePath(
-      path = getwd(),
+      path = wd,
       mustWork = FALSE
     ),
     prefix = "FitDTVAR"
@@ -227,7 +228,6 @@ FitDTVAR <- function(data,
   elapsed <- end_time - start_time
   structure(
     list(
-      data = data,
       initial = initial,
       initial_converged = fitDTVARMxID::converged(
         object = initial,
