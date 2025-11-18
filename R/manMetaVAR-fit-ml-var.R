@@ -36,7 +36,6 @@ FitMLVAR <- function(data,
   elapsed <- end_time - start_time
   structure(
     list(
-      data = data,
       output = output,
       elapsed = elapsed
     ),

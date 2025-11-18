@@ -53,7 +53,13 @@ SumFitMetaVARLB <- function(taskid,
         output_folder = output_folder,
         suffix = suffix
       )
+      fn_data <- SimFN(
+        output_type = "data",
+        output_folder = output_folder,
+        suffix = suffix
+      )
       input <- readRDS(fn_input)
+      data <- readRDS(fn_data)
       raw <- summary(
         input
       )
@@ -63,10 +69,10 @@ SumFitMetaVARLB <- function(taskid,
       )
       parameter <- c(
         c(
-          input$data$ma_fixed
+          data$ma_fixed
         ),
         .Vech(
-          input$data$ma_random
+          data$ma_random
         )
       )
       df <- data.frame(

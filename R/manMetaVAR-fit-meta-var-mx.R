@@ -13,6 +13,7 @@
 #'   ncores = parallel::detectCores()
 #' )
 #' pooled <- FitMetaVAR(
+#'   data = data,
 #'   fit = fit,
 #'   ncores = parallel::detectCores()
 #' )
@@ -26,14 +27,15 @@
 #' @keywords manMetaVAR meta
 #' @import metaVAR
 #' @export
-FitMetaVAR <- function(fit,
+FitMetaVAR <- function(data,
+                       fit,
                        ncores = NULL) {
   start_time <- Sys.time()
   output <- metaVAR::MetaVARMx(
     object = fit$output,
     x = NULL,
     random = TRUE,
-    alpha_values = fit$data$ma_fixed,
+    alpha_values = data$ma_fixed,
     diag = FALSE,
     effects = TRUE,
     int_meas = TRUE,
@@ -47,7 +49,6 @@ FitMetaVAR <- function(fit,
   elapsed <- end_time - start_time
   structure(
     list(
-      data = fit$data,
       output = output,
       elapsed = elapsed
     ),

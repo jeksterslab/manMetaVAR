@@ -4,7 +4,13 @@
 \alias{FigBias}
 \title{Plot Relative Bias}
 \usage{
-FigBias(results, bias = TRUE, dynamics)
+FigBias(
+  results,
+  bias = TRUE,
+  dynamics = 1,
+  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  zero = FALSE
+)
 }
 \arguments{
 \item{results}{\code{results} data frame.}
@@ -19,6 +25,12 @@ absolute bias is used instead of relative bias.}
 \code{1} for stable reciprocal regulation,
 \code{2} for escalating co-activation, and
 \code{3} for adaptive recovery.}
+
+\item{method}{Character vector.
+Methods to include in the plot.}
+
+\item{zero}{Logical.
+Remove cases where the population parameter is equal to zero.}
 }
 \description{
 Plot relative bias for the fixed and random effects.
@@ -26,7 +38,7 @@ Plot relative bias for the fixed and random effects.
 \examples{
 \dontrun{
 data(results, package = "manMetaVAR")
-FigBias(results, dynamics = 1)
+FigBias(results)
 }
 
 }
@@ -34,7 +46,8 @@ FigBias(results, dynamics = 1)
 Other Figure Functions: 
 \code{\link{FigCoverage}()},
 \code{\link{FigPower}()},
-\code{\link{FigRMSE}()}
+\code{\link{FigRMSE}()},
+\code{\link{FigType1Error}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
