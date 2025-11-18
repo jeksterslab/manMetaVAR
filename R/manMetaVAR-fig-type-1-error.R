@@ -36,16 +36,6 @@ FigType1Error <- function(results,
     results$ci,
     ")"
   )
-  # results$Method <- ifelse(
-  #   test = results$Method == "MetaVAR",
-  #   yes = paste0(
-  #     results$Method,
-  #     " (",
-  #     results$ci,
-  #     ")"
-  #   ),
-  #   no = results$Method
-  # )
   results$Parameters <- results$par_idx
   results$n_label <- paste0(
     "N = ",
