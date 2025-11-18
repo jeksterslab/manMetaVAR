@@ -1,6 +1,6 @@
 # manMetaVAR
 
-Ivan Jacob Agaloos Pesigan 2025-11-13
+Ivan Jacob Agaloos Pesigan 2025-11-18
 
 ## Description
 
@@ -110,6 +110,8 @@ for package documentation.
   : Plot Statistical Power
 - [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
   : Plot RMSE
+- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
+  : Plot Type 1 Error Rates
 
 ## Methods
 
@@ -166,6 +168,8 @@ for package documentation.
   : Plot Statistical Power
 - [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
   : Plot RMSE
+- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
+  : Plot Type 1 Error Rates
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   : Fit the Model using the fitDTVARMxID Package
 - [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)

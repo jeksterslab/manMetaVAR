@@ -81,14 +81,14 @@ summary(dtvar, means = TRUE)
 
 ``` r
 
-metavar <- FitMetaVAR(dtvar)
+metavar <- FitMetaVAR(data, dtvar)
 ```
 
 ``` r
 
 summary(metavar)
 #> Call:
-#> metaVAR::MetaVARMx(object = fit$output, x = NULL, alpha_values = fit$data$ma_fixed, 
+#> metaVAR::MetaVARMx(object = fit$output, x = NULL, alpha_values = data$ma_fixed, 
 #>     random = TRUE, diag = FALSE, effects = TRUE, int_meas = TRUE, 
 #>     int_dyn = FALSE, cov_meas = FALSE, cov_dyn = FALSE, try = 1000, 
 #>     ncores = ncores)
@@ -698,7 +698,7 @@ plot(mplus, what = "trace")
 
     Mplus VERSION 9 (Linux)
     MUTHEN & MUTHEN
-    11/13/2025   3:06 AM
+    11/18/2025   3:45 AM
 
     INPUT INSTRUCTIONS
 
@@ -2492,9 +2492,9 @@ plot(mplus, what = "trace")
         Parameter 31, %BETWEEN%: BETA22 WITH BETA12 (equality/label)
         Parameter 32, %BETWEEN%: BETA22 (equality/label)
 
-         Beginning Time:  03:06:47
-            Ending Time:  08:38:53
-           Elapsed Time:  05:32:06
+         Beginning Time:  03:45:54
+            Ending Time:  09:08:11
+           Elapsed Time:  05:22:17
 
 
 

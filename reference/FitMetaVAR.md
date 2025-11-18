@@ -7,10 +7,16 @@ package.
 ## Usage
 
 ``` r
-FitMetaVAR(fit, ncores = NULL)
+FitMetaVAR(data, fit, ncores = NULL)
 ```
 
 ## Arguments
+
+- data:
+
+  R object. Output of the
+  [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
+  function.
 
 - fit:
 
@@ -41,6 +47,7 @@ fit <- FitDTVAR(
   ncores = parallel::detectCores()
 )
 pooled <- FitMetaVAR(
+  data = data,
   fit = fit,
   ncores = parallel::detectCores()
 )

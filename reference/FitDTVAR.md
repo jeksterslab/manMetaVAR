@@ -7,7 +7,7 @@ package.
 ## Usage
 
 ``` r
-FitDTVAR(data, ncores = NULL, seed = NULL)
+FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
 ```
 
 ## Arguments
@@ -17,6 +17,10 @@ FitDTVAR(data, ncores = NULL, seed = NULL)
   R object. Output of the
   [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
   function.
+
+- wd:
+
+  Character string. Working directory.
 
 - ncores:
 

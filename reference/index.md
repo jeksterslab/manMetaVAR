@@ -84,6 +84,8 @@
   : Plot Statistical Power
 - [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
   : Plot RMSE
+- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
+  : Plot Type 1 Error Rates
 
 ## Methods
 
@@ -140,6 +142,8 @@
   : Plot Statistical Power
 - [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
   : Plot RMSE
+- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
+  : Plot Type 1 Error Rates
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   : Fit the Model using the fitDTVARMxID Package
 - [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)

@@ -33,7 +33,7 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.5        metaVAR_0.0.0.9001      fitDTVARMxID_0.0.0.9001
+#> [1] manMetaVAR_0.9.6        metaVAR_0.0.0.9001      fitDTVARMxID_0.0.0.9001
 #> [4] OpenMx_2.22.10         
 #> 
 #> loaded via a namespace (and not attached):
@@ -109,7 +109,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Core(s) per socket:                   4
 #> Socket(s):                            1
 #> Stepping:                             12
-#> CPU(s) scaling MHz:                   97%
+#> CPU(s) scaling MHz:                   85%
 #> CPU max MHz:                          4100.0000
 #> CPU min MHz:                          400.0000
 #> BogoMIPS:                             3799.90
@@ -143,7 +143,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            15Gi       9.3Gi       1.5Gi       1.2Gi       6.0Gi       5.9Gi
-#> Swap:          7.8Gi       694Mi       7.1Gi
-#> Total:          22Gi       9.9Gi       8.5Gi
+#> Mem:            15Gi       8.2Gi       1.1Gi       1.0Gi       7.1Gi       6.9Gi
+#> Swap:          7.8Gi          0B       7.8Gi
+#> Total:          22Gi       8.2Gi       8.9Gi
 ```

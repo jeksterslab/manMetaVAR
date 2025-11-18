@@ -1,16 +1,11 @@
-# Plot RMSE
+# Plot Type 1 Error Rates
 
-Plot RMSE for the fixed and random effects.
+Plot type 1 error rates for zero random effects.
 
 ## Usage
 
 ``` r
-FigRMSE(
-  results,
-  dynamics = 1,
-  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  zero = FALSE
-)
+FigType1Error(results, dynamics = 1, method = c("MetaVAR", "SeqVAR", "BMLVAR"))
 ```
 
 ## Arguments
@@ -28,17 +23,13 @@ FigRMSE(
 
   Character vector. Methods to include in the plot.
 
-- zero:
-
-  Logical. Remove cases where the population parameter is equal to zero.
-
 ## See also
 
 Other Figure Functions:
 [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md),
 [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md),
 [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md),
-[`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
+[`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
 
 ## Author
 
@@ -49,6 +40,6 @@ Ivan Jacob Agaloos Pesigan
 ``` r
 if (FALSE) { # \dontrun{
 data(results, package = "manMetaVAR")
-FigRMSE(results)
+FigType1Error(results)
 } # }
 ```
