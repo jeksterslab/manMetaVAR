@@ -5,7 +5,12 @@ Plot type 1 error rates for zero random effects.
 ## Usage
 
 ``` r
-FigType1Error(results, dynamics = 1, method = c("MetaVAR", "SeqVAR", "BMLVAR"))
+FigType1Error(
+  results,
+  dynamics = 1,
+  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  ylim = c(0, 0.25)
+)
 ```
 
 ## Arguments
@@ -22,6 +27,10 @@ FigType1Error(results, dynamics = 1, method = c("MetaVAR", "SeqVAR", "BMLVAR"))
 - method:
 
   Character vector. Methods to include in the plot.
+
+- ylim:
+
+  Numeric vector of length 2. Lower and upper limits for the y-axis.
 
 ## See also
 

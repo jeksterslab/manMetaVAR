@@ -10,7 +10,8 @@ FigBias(
   bias = TRUE,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  zero = FALSE
+  zero = FALSE,
+  ylim = c(-0.15, 0.15)
 )
 ```
 
@@ -38,6 +39,10 @@ FigBias(
 - zero:
 
   Logical. Remove cases where the population parameter is equal to zero.
+
+- ylim:
+
+  Numeric vector of length 2. Lower and upper limits for the y-axis.
 
 ## See also
 

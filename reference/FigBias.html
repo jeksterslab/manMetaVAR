@@ -46,7 +46,8 @@
 <span>  bias <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  dynamics <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MetaVAR"</span>, <span class="st">"SeqVAR"</span>, <span class="st">"BMLVAR"</span><span class="op">)</span>,</span>
-<span>  zero <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  zero <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.15</span>, <span class="fl">0.15</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -81,6 +82,11 @@ Methods to include in the plot.</p></dd>
 <dt id="arg-zero">zero<a class="anchor" aria-label="anchor" href="#arg-zero"></a></dt>
 <dd><p>Logical.
 Remove cases where the population parameter is equal to zero.</p></dd>
+
+
+<dt id="arg-ylim">ylim<a class="anchor" aria-label="anchor" href="#arg-ylim"></a></dt>
+<dd><p>Numeric vector of length 2.
+Lower and upper limits for the y-axis.</p></dd>
 
 </dl></div>
     <div class="section level2">

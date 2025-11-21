@@ -3,7 +3,7 @@
 ## manMetaVAR 0.9.6
 
 - Removed `data` object in `fit` objects.
-- Docker Hub tag:
+- Docker Hub tag: 2025-11-18-17081326
 
 ## manMetaVAR 0.9.5
 
