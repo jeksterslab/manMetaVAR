@@ -21,7 +21,8 @@ FigType1Error <- function(results,
                             "MetaVAR",
                             "SeqVAR",
                             "BMLVAR"
-                          )) {
+                          ),
+                          ylim = c(0.00, 0.25)) {
   Method <- Parameters <- theta_hit <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -109,6 +110,9 @@ FigType1Error <- function(results,
     ) +
     ggplot2::ylab(
       "Type 1 Error Rate"
+    ) +
+    ggplot2::coord_cartesian(
+      ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))

@@ -23,7 +23,8 @@ FigBias <- function(results,
                       "SeqVAR",
                       "BMLVAR"
                     ),
-                    zero = FALSE) {
+                    zero = FALSE,
+                    ylim = c(-0.15, 0.15)) {
   Method <- Parameters <- y <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -118,7 +119,7 @@ FigBias <- function(results,
       ylab
     ) +
     ggplot2::coord_cartesian(
-      ylim = c(-0.15, 0.15)
+      ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))

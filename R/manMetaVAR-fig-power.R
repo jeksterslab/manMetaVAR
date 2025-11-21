@@ -22,7 +22,8 @@ FigPower <- function(results,
                        "SeqVAR",
                        "BMLVAR"
                      ),
-                     zero = FALSE) {
+                     zero = FALSE,
+                     ylim = c(0, 1)) {
   Method <- Parameters <- power <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -95,6 +96,9 @@ FigPower <- function(results,
     ) +
     ggplot2::ylab(
       "Statitical Power"
+    ) +
+    ggplot2::coord_cartesian(
+      ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))

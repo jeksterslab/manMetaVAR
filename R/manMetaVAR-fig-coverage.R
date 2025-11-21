@@ -22,7 +22,8 @@ FigCoverage <- function(results,
                           "SeqVAR",
                           "BMLVAR"
                         ),
-                        zero = FALSE) {
+                        zero = FALSE,
+                        ylim = c(0, 1)) {
   Method <- Parameters <- theta_hit <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -112,6 +113,9 @@ FigCoverage <- function(results,
     ) +
     ggplot2::ylab(
       "Coverage Probability"
+    ) +
+    ggplot2::coord_cartesian(
+      ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))
