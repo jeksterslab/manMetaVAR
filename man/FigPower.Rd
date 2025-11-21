@@ -8,7 +8,8 @@ FigPower(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  zero = FALSE
+  zero = FALSE,
+  ylim = c(0, 1)
 )
 }
 \arguments{
@@ -24,6 +25,9 @@ Methods to include in the plot.}
 
 \item{zero}{Logical.
 Remove cases where the population parameter is equal to zero.}
+
+\item{ylim}{Numeric vector of length 2.
+Lower and upper limits for the y-axis.}
 }
 \description{
 Plot statistical power probabilities for the fixed and random effects.

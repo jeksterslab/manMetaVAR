@@ -22,7 +22,8 @@ FigRMSE <- function(results,
                       "SeqVAR",
                       "BMLVAR"
                     ),
-                    zero = FALSE) {
+                    zero = FALSE,
+                    ylim = c(0.00, 0.25)) {
   Method <- Parameters <- rmse <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -110,7 +111,7 @@ FigRMSE <- function(results,
       "RMSE"
     ) +
     ggplot2::coord_cartesian(
-      ylim = c(0.00, 0.25)
+      ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
       breaks = sort(unique(results$par_idx))

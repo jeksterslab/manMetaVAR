@@ -4,7 +4,12 @@
 \alias{FigType1Error}
 \title{Plot Type 1 Error Rates}
 \usage{
-FigType1Error(results, dynamics = 1, method = c("MetaVAR", "SeqVAR", "BMLVAR"))
+FigType1Error(
+  results,
+  dynamics = 1,
+  method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  ylim = c(0, 0.25)
+)
 }
 \arguments{
 \item{results}{\code{results} data frame.}
@@ -16,6 +21,9 @@ FigType1Error(results, dynamics = 1, method = c("MetaVAR", "SeqVAR", "BMLVAR"))
 
 \item{method}{Character vector.
 Methods to include in the plot.}
+
+\item{ylim}{Numeric vector of length 2.
+Lower and upper limits for the y-axis.}
 }
 \description{
 Plot type 1 error rates for zero random effects.

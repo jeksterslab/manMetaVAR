@@ -1,6 +1,6 @@
 Mplus VERSION 9 (Linux)
 MUTHEN & MUTHEN
-11/18/2025   3:45 AM
+11/19/2025   6:19 PM
 
 INPUT INSTRUCTIONS
 
@@ -1835,9 +1835,9 @@ SAVEDATA INFORMATION
     Parameter 31, %BETWEEN%: BETA22 WITH BETA12 (equality/label)
     Parameter 32, %BETWEEN%: BETA22 (equality/label)
 
-     Beginning Time:  03:45:54
-        Ending Time:  09:08:11
-       Elapsed Time:  05:22:17
+     Beginning Time:  18:19:46
+        Ending Time:  21:10:48
+       Elapsed Time:  02:51:02
 
 
 
