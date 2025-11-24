@@ -5,7 +5,17 @@ Summary
 ## Usage
 
 ``` r
-Sum(taskid, reps, output_folder, overwrite, integrity, metavar, mlvar, mplus)
+Sum(
+  taskid,
+  reps,
+  output_folder,
+  overwrite,
+  integrity,
+  metavar,
+  mlvar,
+  mplus,
+  ncores
+)
 ```
 
 ## Arguments
@@ -43,6 +53,10 @@ Sum(taskid, reps, output_folder, overwrite, integrity, metavar, mlvar, mplus)
 - mplus:
 
   Logical. If `mplus = TRUE`, fit the model using DSEM in `Mplus`.
+
+- ncores:
+
+  Positive integer. Number of cores to use.
 
 ## Value
 

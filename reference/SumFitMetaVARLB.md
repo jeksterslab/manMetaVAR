@@ -5,7 +5,7 @@ Summary: Likelihood-Based (FitMetaVAR)
 ## Usage
 
 ``` r
-SumFitMetaVARLB(taskid, reps, output_folder, overwrite, integrity)
+SumFitMetaVARLB(taskid, reps, output_folder, overwrite, integrity, ncores)
 ```
 
 ## Arguments
@@ -30,6 +30,10 @@ SumFitMetaVARLB(taskid, reps, output_folder, overwrite, integrity)
 
   Logical. If `integrity = TRUE`, check for the output file integrity
   when `overwrite = FALSE`.
+
+- ncores:
+
+  Positive integer. Number of cores to use.
 
 ## Value
 

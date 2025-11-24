@@ -5,7 +5,7 @@ Summary (FitMLVAR)
 ## Usage
 
 ``` r
-SumFitMLVAR(taskid, reps, output_folder, overwrite, integrity)
+SumFitMLVAR(taskid, reps, output_folder, overwrite, integrity, ncores)
 ```
 
 ## Arguments
@@ -30,6 +30,10 @@ SumFitMLVAR(taskid, reps, output_folder, overwrite, integrity)
 
   Logical. If `integrity = TRUE`, check for the output file integrity
   when `overwrite = FALSE`.
+
+- ncores:
+
+  Positive integer. Number of cores to use.
 
 ## Value
 

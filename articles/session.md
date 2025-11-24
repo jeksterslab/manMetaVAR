@@ -37,40 +37,57 @@ sessionInfo()
 #> [4] OpenMx_2.22.10         
 #> 
 #> loaded via a namespace (and not attached):
-#>   [1] tidyselect_1.2.1        psych_2.5.6             dplyr_1.1.4            
-#>   [4] farver_2.1.2            S7_0.2.1                fastmap_1.2.0          
-#>   [7] digest_0.6.38           rpart_4.1.24            lifecycle_1.0.4        
-#>  [10] cluster_2.1.8.1         survival_3.8-3          magrittr_2.0.4         
-#>  [13] compiler_4.5.2          rlang_1.1.6             Hmisc_5.2-4            
-#>  [16] tools_4.5.2             igraph_2.2.1            rProject_0.0.22        
-#>  [19] data.table_1.17.8       knitr_1.50              clusterGeneration_1.3.8
-#>  [22] texreg_1.39.4           htmlwidgets_1.6.4       mnormt_2.1.1           
-#>  [25] plyr_1.8.9              RColorBrewer_1.1-3      abind_1.4-8            
-#>  [28] foreign_0.8-90          nnet_7.3-20             grid_4.5.2             
-#>  [31] stats4_4.5.2            lavaan_0.6-20           fastDummies_1.7.5      
-#>  [34] xtable_1.8-4            colorspace_2.1-2        ggplot2_4.0.1          
-#>  [37] iterators_1.0.14        scales_1.4.0            gtools_3.9.5           
-#>  [40] MASS_7.3-65             cli_3.6.5.9000          mvtnorm_1.3-3          
-#>  [43] graphicalVAR_0.3.4      rmarkdown_2.30          reformulas_0.4.2       
-#>  [46] generics_0.1.4          RcppParallel_5.1.11-1   rstudioapi_0.17.1      
-#>  [49] httr_1.4.7              reshape2_1.4.5          minqa_1.2.8            
-#>  [52] pbapply_1.7-4           pander_0.6.6            stringr_1.6.0          
-#>  [55] splines_4.5.2           parallel_4.5.2          base64enc_0.1-3        
-#>  [58] vctrs_0.6.5             glmnet_4.1-10           boot_1.3-32            
-#>  [61] Matrix_1.7-4            glasso_1.11             Formula_1.2-5          
-#>  [64] htmlTable_2.4.3         jpeg_0.1-11             foreach_1.5.2          
-#>  [67] proto_1.0.0             qgraph_1.9.8            glue_1.8.0             
-#>  [70] nloptr_2.2.1            codetools_0.2-20        shape_1.4.6.1          
-#>  [73] stringi_1.8.7           gtable_0.3.6            mlVAR_0.5.2            
-#>  [76] quadprog_1.5-8          lme4_1.1-37             tibble_3.3.0           
-#>  [79] pillar_1.11.1           htmltools_0.5.8.1       R6_2.6.1               
-#>  [82] Rdpack_2.6.4            evaluate_1.0.5          pbivnorm_0.6.0         
-#>  [85] lattice_0.22-7          gsubfn_0.7              rbibutils_2.4          
-#>  [88] png_0.1-8               backports_1.5.0         arm_1.14-4             
-#>  [91] corpcor_1.6.10          Rcpp_1.1.0              fdrtool_1.2.18         
-#>  [94] simStateSpace_1.2.12    coda_0.19-4.1           gridExtra_2.3          
-#>  [97] nlme_3.1-168            checkmate_2.3.3         MplusAutomation_1.2    
-#> [100] xfun_0.54               pkgconfig_2.0.3
+#>   [1] tidyselect_1.2.1          psych_2.5.6              
+#>   [3] dplyr_1.1.4               farver_2.1.2             
+#>   [5] S7_0.2.1                  fastmap_1.2.0            
+#>   [7] digest_0.6.39             rpart_4.1.24             
+#>   [9] lifecycle_1.0.4           cluster_2.1.8.1          
+#>  [11] survival_3.8-3            magrittr_2.0.4           
+#>  [13] compiler_4.5.2            rlang_1.1.6              
+#>  [15] Hmisc_5.2-4               tools_4.5.2              
+#>  [17] igraph_2.2.1              rProject_0.0.22          
+#>  [19] data.table_1.17.8         knitr_1.50               
+#>  [21] clusterGeneration_1.3.8   texreg_1.39.4            
+#>  [23] htmlwidgets_1.6.4         mnormt_2.1.1             
+#>  [25] plyr_1.8.9                RColorBrewer_1.1-3       
+#>  [27] abind_1.4-8               foreign_0.8-90           
+#>  [29] nnet_7.3-20               grid_4.5.2               
+#>  [31] stats4_4.5.2              lavaan_0.6-20            
+#>  [33] fastDummies_1.7.5         xtable_1.8-4             
+#>  [35] colorspace_2.1-2          ggplot2_4.0.1            
+#>  [37] iterators_1.0.14          scales_1.4.0             
+#>  [39] gtools_3.9.5              MASS_7.3-65              
+#>  [41] cli_3.6.5.9000            mvtnorm_1.3-3            
+#>  [43] graphicalVAR_0.3.4        rmarkdown_2.30           
+#>  [45] reformulas_0.4.2          generics_0.1.4           
+#>  [47] RcppParallel_5.1.11-1     rstudioapi_0.17.1        
+#>  [49] httr_1.4.7                reshape2_1.4.5           
+#>  [51] minqa_1.2.8               pbapply_1.7-4            
+#>  [53] pander_0.6.6              stringr_1.6.0            
+#>  [55] splines_4.5.2             parallel_4.5.2           
+#>  [57] base64enc_0.1-3           vctrs_0.6.5              
+#>  [59] glmnet_4.1-10             boot_1.3-32              
+#>  [61] Matrix_1.7-4              glasso_1.11              
+#>  [63] Formula_1.2-5             htmlTable_2.4.3          
+#>  [65] jpeg_0.1-11               foreach_1.5.2            
+#>  [67] proto_1.0.0               qgraph_1.9.8             
+#>  [69] glue_1.8.0                nloptr_2.2.1             
+#>  [71] codetools_0.2-20          shape_1.4.6.1            
+#>  [73] stringi_1.8.7             gtable_0.3.6             
+#>  [75] mlVAR_0.5.2               quadprog_1.5-8           
+#>  [77] lme4_1.1-37               tibble_3.3.0             
+#>  [79] pillar_1.11.1             htmltools_0.5.8.1        
+#>  [81] R6_2.6.1                  Rdpack_2.6.4             
+#>  [83] evaluate_1.0.5            pbivnorm_0.6.0           
+#>  [85] lattice_0.22-7            gsubfn_0.7               
+#>  [87] rbibutils_2.4             png_0.1-8                
+#>  [89] backports_1.5.0           arm_1.14-4               
+#>  [91] corpcor_1.6.10            Rcpp_1.1.0               
+#>  [93] fdrtool_1.2.18            simStateSpace_1.2.12.9000
+#>  [95] coda_0.19-4.1             gridExtra_2.3            
+#>  [97] nlme_3.1-168              checkmate_2.3.3          
+#>  [99] MplusAutomation_1.2       xfun_0.54                
+#> [101] pkgconfig_2.0.3
 ```
 
 ## CPU
@@ -93,10 +110,10 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                            1
 #> Stepping:                             0
 #> Frequency boost:                      enabled
-#> CPU(s) scaling MHz:                   57%
+#> CPU(s) scaling MHz:                   42%
 #> CPU max MHz:                          4367.0000
 #> CPU min MHz:                          599.0000
-#> BogoMIPS:                             3992.84
+#> BogoMIPS:                             3992.36
 #> Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
 #> Virtualization:                       AMD-V
 #> L1d cache:                            576 KiB (12 instances)
@@ -127,7 +144,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       4.9Gi        30Gi        29Mi       9.5Gi        39Gi
-#> Swap:           22Gi       190Mi        22Gi
-#> Total:          66Gi       5.1Gi        52Gi
+#> Mem:            44Gi       4.6Gi        33Gi        63Mi       7.4Gi        39Gi
+#> Swap:           22Gi          0B        22Gi
+#> Total:          66Gi       4.6Gi        55Gi
 ```

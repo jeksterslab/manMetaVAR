@@ -9,7 +9,7 @@ FigPower(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  zero = FALSE,
+  rm_zero = FALSE,
   ylim = c(0, 1)
 )
 ```
@@ -29,7 +29,7 @@ FigPower(
 
   Character vector. Methods to include in the plot.
 
-- zero:
+- rm_zero:
 
   Logical. Remove cases where the population parameter is equal to zero.
 

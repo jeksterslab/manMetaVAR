@@ -5,7 +5,7 @@ Summary: Normal Theory (FitMetaVAR)
 ## Usage
 
 ``` r
-SumFitMetaVARNormal(taskid, reps, output_folder, overwrite, integrity)
+SumFitMetaVARNormal(taskid, reps, output_folder, overwrite, integrity, ncores)
 ```
 
 ## Arguments
@@ -30,6 +30,10 @@ SumFitMetaVARNormal(taskid, reps, output_folder, overwrite, integrity)
 
   Logical. If `integrity = TRUE`, check for the output file integrity
   when `overwrite = FALSE`.
+
+- ncores:
+
+  Positive integer. Number of cores to use.
 
 ## Value
 
