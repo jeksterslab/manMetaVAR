@@ -37,5 +37,6 @@ Sum(
   integrity = TRUE,
   metavar = TRUE,
   mlvar = TRUE,
-  mplus = TRUE
+  mplus = TRUE,
+  ncores = parallel::detectCores()
 )

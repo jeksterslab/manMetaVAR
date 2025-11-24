@@ -13,7 +13,8 @@ SumFitMLVAR <- function(taskid,
                         reps,
                         output_folder,
                         overwrite,
-                        integrity) {
+                        integrity,
+                        ncores) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sum` function.
   fn_output <- SimFN(
@@ -126,24 +127,58 @@ SumFitMLVAR <- function(taskid,
       attr(df, "method") <- "SeqVAR"
       df
     }
-    i <- lapply(
-      X = seq_len(reps),
-      FUN = replication,
-      taskid = taskid
-    )
+    if (is.null(ncores)) {
+      par <- FALSE
+    } else {
+      ncores <- min(
+        as.integer(ncores),
+        parallel::detectCores(),
+        reps
+      )
+      if (ncores > 1) {
+        par <- TRUE
+      } else {
+        par <- FALSE
+      }
+    }
+    if (par) {
+      i <- parallel::mclapply(
+        X = seq_len(reps),
+        FUN = replication,
+        taskid = taskid,
+        mc.cores = ncores
+      )
+    } else {
+      i <- lapply(
+        X = seq_len(reps),
+        FUN = replication,
+        taskid = taskid
+      )
+    }
     means <- (
       1 / reps
     ) * Reduce(
       f = `+`,
       x = i
     )
-    sq_errors <- lapply(
-      X = i,
-      FUN = function(x, means) {
-        (means - x)^2
-      },
-      means = means
-    )
+    if (par) {
+      sq_errors <- parallel::mclapply(
+        X = i,
+        FUN = function(x, means) {
+          (means - x)^2
+        },
+        means = means,
+        mc.cores = ncores
+      )
+    } else {
+      sq_errors <- lapply(
+        X = i,
+        FUN = function(x, means) {
+          (means - x)^2
+        },
+        means = means
+      )
+    }
     vars <- (
       1 / (reps - 1)
     ) * Reduce(

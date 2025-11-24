@@ -721,7 +721,7 @@ plot(mplus, what = "trace")
 ```
 Mplus VERSION 9 (Linux)
 MUTHEN & MUTHEN
-11/19/2025   6:19 PM
+11/24/2025   7:27 PM
 
 INPUT INSTRUCTIONS
 
@@ -2515,9 +2515,9 @@ SAVEDATA INFORMATION
     Parameter 31, %BETWEEN%: BETA22 WITH BETA12 (equality/label)
     Parameter 32, %BETWEEN%: BETA22 (equality/label)
 
-     Beginning Time:  18:19:46
-        Ending Time:  21:10:48
-       Elapsed Time:  02:51:02
+     Beginning Time:  19:27:20
+        Ending Time:  22:25:31
+       Elapsed Time:  02:58:11
 
 
 

@@ -14,7 +14,8 @@ Sum <- function(taskid,
                 integrity,
                 metavar,
                 mlvar,
-                mplus) {
+                mplus,
+                ncores) {
   # Do not include default arguments here.
   # All arguments should be set in `.sim/sim-args.R.R`.
   # Add taskid to output_folder
@@ -43,7 +44,8 @@ Sum <- function(taskid,
       reps = reps,
       output_folder = output_folder,
       overwrite = overwrite,
-      integrity = integrity
+      integrity = integrity,
+      ncores = ncores
     )
   }
   if (metavar) {
@@ -52,14 +54,16 @@ Sum <- function(taskid,
       reps = reps,
       output_folder = output_folder,
       overwrite = overwrite,
-      integrity = integrity
+      integrity = integrity,
+      ncores = ncores
     )
     SumFitMetaVARLB(
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,
       overwrite = overwrite,
-      integrity = integrity
+      integrity = integrity,
+      ncores = ncores
     )
   }
   if (mlvar) {
@@ -68,7 +72,8 @@ Sum <- function(taskid,
       reps = reps,
       output_folder = output_folder,
       overwrite = overwrite,
-      integrity = integrity
+      integrity = integrity,
+      ncores = ncores
     )
   }
 }

@@ -55,7 +55,15 @@ if (!file.exists(fn_data)) {
   seed <- 42
   set.seed(seed)
   data <- GenData(taskid = taskid)
-  saveRDS(data, file = fn_data)
+  con <- xzfile(
+    description = fn_data,
+    compression = 9L
+  )
+  saveRDS(
+    object = data,
+    file = con
+  )
+  close(con)
 }
 data <- readRDS(fn_data)
 ```
@@ -69,7 +77,15 @@ fn_dtvar <- root$find_file(
 )
 if (!file.exists(fn_dtvar)) {
   dtvar <- FitDTVAR(data)
-  saveRDS(dtvar, file = fn_dtvar)
+  con <- xzfile(
+    description = fn_dtvar,
+    compression = 9L
+  )
+  saveRDS(
+    object = dtvar,
+    file = con
+  )
+  close(con)
 }
 dtvar <- readRDS(fn_dtvar)
 ```
@@ -83,7 +99,15 @@ fn_metavar <- root$find_file(
 )
 if (!file.exists(fn_metavar)) {
   metavar <- FitMetaVAR(data, dtvar)
-  saveRDS(metavar, file = fn_metavar)
+  con <- xzfile(
+    description = fn_metavar,
+    compression = 9L
+  )
+  saveRDS(
+    object = metavar,
+    file = con
+  )
+  close(con)
 }
 metavar <- readRDS(fn_metavar)
 ```
@@ -97,7 +121,15 @@ fn_mlvar <- root$find_file(
 )
 if (!file.exists(fn_mlvar)) {
   mlvar <- FitMLVAR(data)
-  saveRDS(mlvar, file = fn_mlvar)
+  con <- xzfile(
+    description = fn_mlvar,
+    compression = 9L
+  )
+  saveRDS(
+    object = mlvar,
+    file = con
+  )
+  close(con)
 }
 mlvar <- readRDS(fn_mlvar)
 ```
@@ -111,7 +143,15 @@ fn_mplus <- root$find_file(
 )
 if (!file.exists(fn_mplus)) {
   mplus <- FitMplus(data)
-  saveRDS(mplus, file = fn_mplus)
+  con <- xzfile(
+    description = fn_mplus,
+    compression = 9L
+  )
+  saveRDS(
+    object = mplus,
+    file = con
+  )
+  close(con)
 }
 mplus <- readRDS(fn_mplus)
 ```

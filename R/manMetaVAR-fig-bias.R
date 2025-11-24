@@ -23,7 +23,7 @@ FigBias <- function(results,
                       "SeqVAR",
                       "BMLVAR"
                     ),
-                    zero = FALSE,
+                    rm_zero = FALSE,
                     ylim = c(-0.15, 0.15)) {
   Method <- Parameters <- y <- NULL
   stopifnot(
@@ -31,7 +31,7 @@ FigBias <- function(results,
   )
   results <- results[which(results$dynamics == dynamics), ]
   results <- results[which(results$method %in% method), ]
-  if (zero) {
+  if (rm_zero) {
     results <- results[which(abs(results$parameter) > 0), ]
   }
   # remove lb

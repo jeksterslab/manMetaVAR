@@ -1,102 +1,103 @@
 #!/bin/bash
 
-#sbatch reps-sim-10.sh
-#sbatch reps-sim-20.sh
-#sbatch reps-sim-30.sh
-#sbatch reps-sim-40.sh
-#sbatch reps-sim-50.sh
-#sbatch reps-sim-60.sh
-#sbatch reps-sim-70.sh
-#sbatch reps-sim-80.sh
-#sbatch reps-sim-90.sh
-#sbatch reps-sim-100.sh
-#sbatch reps-sim-110.sh
-#sbatch reps-sim-120.sh
-#sbatch reps-sim-130.sh
-#sbatch reps-sim-140.sh
-#sbatch reps-sim-150.sh
-#sbatch reps-sim-160.sh
-#sbatch reps-sim-170.sh
-#sbatch reps-sim-180.sh
-#sbatch reps-sim-190.sh
-#sbatch reps-sim-200.sh
-#sbatch reps-sim-210.sh
-#sbatch reps-sim-220.sh
-#sbatch reps-sim-230.sh
-#sbatch reps-sim-240.sh
-#sbatch reps-sim-250.sh
-#sbatch reps-sim-260.sh
-#sbatch reps-sim-270.sh
-#sbatch reps-sim-280.sh
-#sbatch reps-sim-290.sh
-#sbatch reps-sim-300.sh
-#sbatch reps-sim-310.sh
-#sbatch reps-sim-320.sh
-#sbatch reps-sim-330.sh
-#sbatch reps-sim-340.sh
-#sbatch reps-sim-350.sh
-#sbatch reps-sim-360.sh
-#sbatch reps-sim-370.sh
-#sbatch reps-sim-380.sh
-#sbatch reps-sim-390.sh
-#sbatch reps-sim-400.sh
-#sbatch reps-sim-410.sh
-#sbatch reps-sim-420.sh
-#sbatch reps-sim-430.sh
-#sbatch reps-sim-440.sh
-#sbatch reps-sim-450.sh
-#sbatch reps-sim-460.sh
-#sbatch reps-sim-470.sh
-#sbatch reps-sim-480.sh
-#sbatch reps-sim-490.sh
-#sbatch reps-sim-500.sh
-#sbatch reps-sim-510.sh
-#sbatch reps-sim-520.sh
-#sbatch reps-sim-530.sh
-#sbatch reps-sim-540.sh
-#sbatch reps-sim-550.sh
-#sbatch reps-sim-560.sh
-#sbatch reps-sim-570.sh
-#sbatch reps-sim-580.sh
-#sbatch reps-sim-590.sh
-#sbatch reps-sim-600.sh
-#sbatch reps-sim-610.sh
-#sbatch reps-sim-620.sh
-#sbatch reps-sim-630.sh
-#sbatch reps-sim-640.sh
-#sbatch reps-sim-650.sh
-#sbatch reps-sim-660.sh
-#sbatch reps-sim-670.sh
-#sbatch reps-sim-680.sh
-#sbatch reps-sim-690.sh
-#sbatch reps-sim-700.sh
-#sbatch reps-sim-710.sh
-#sbatch reps-sim-720.sh
-#sbatch reps-sim-730.sh
-#sbatch reps-sim-740.sh
-#sbatch reps-sim-750.sh
-#sbatch reps-sim-760.sh
-#sbatch reps-sim-770.sh
-#sbatch reps-sim-780.sh
-#sbatch reps-sim-790.sh
-#sbatch reps-sim-800.sh
-#sbatch reps-sim-810.sh
-#sbatch reps-sim-820.sh
-#sbatch reps-sim-830.sh
-#sbatch reps-sim-840.sh
-#sbatch reps-sim-850.sh
-#sbatch reps-sim-860.sh
-#sbatch reps-sim-870.sh
-#sbatch reps-sim-880.sh
-#sbatch reps-sim-890.sh
-#sbatch reps-sim-900.sh
-#sbatch reps-sim-910.sh
-#sbatch reps-sim-920.sh
-#sbatch reps-sim-930.sh
-#sbatch reps-sim-940.sh
-#sbatch reps-sim-950.sh
-#sbatch reps-sim-960.sh
-#sbatch reps-sim-970.sh
-#sbatch reps-sim-980.sh
-#sbatch reps-sim-990.sh
-#sbatch reps-sim-1000.sh
+sbatch reps-sim-10.sh
+sbatch reps-sim-20.sh
+sbatch reps-sim-30.sh
+sbatch reps-sim-40.sh
+
+# sbatch --dependency=afterany:XXXXX reps-sim-50.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-60.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-70.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-80.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-90.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-100.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-110.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-120.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-130.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-140.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-150.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-160.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-170.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-180.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-190.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-200.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-210.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-220.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-230.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-240.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-250.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-260.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-270.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-280.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-290.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-300.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-310.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-320.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-330.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-340.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-350.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-360.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-370.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-380.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-390.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-400.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-410.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-420.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-430.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-440.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-450.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-460.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-470.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-480.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-490.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-500.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-510.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-520.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-530.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-540.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-550.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-560.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-570.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-580.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-590.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-600.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-610.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-620.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-630.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-640.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-650.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-660.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-670.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-680.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-690.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-700.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-710.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-720.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-730.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-740.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-750.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-760.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-770.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-780.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-790.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-800.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-810.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-820.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-830.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-840.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-850.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-860.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-870.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-880.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-890.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-900.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-910.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-920.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-930.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-940.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-950.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-960.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-970.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-980.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-990.sh
+# sbatch --dependency=afterany:XXXXX reps-sim-1000.sh

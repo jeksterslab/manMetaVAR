@@ -22,7 +22,7 @@ FigRMSE <- function(results,
                       "SeqVAR",
                       "BMLVAR"
                     ),
-                    zero = FALSE,
+                    rm_zero = FALSE,
                     ylim = c(0.00, 0.25)) {
   Method <- Parameters <- rmse <- NULL
   stopifnot(
@@ -30,7 +30,7 @@ FigRMSE <- function(results,
   )
   results <- results[which(results$dynamics == dynamics), ]
   results <- results[which(results$method %in% method), ]
-  if (zero) {
+  if (rm_zero) {
     results <- results[which(abs(results$parameter) > 0), ]
   }
   # remove lb

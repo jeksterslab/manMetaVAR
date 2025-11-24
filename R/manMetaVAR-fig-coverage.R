@@ -22,7 +22,7 @@ FigCoverage <- function(results,
                           "SeqVAR",
                           "BMLVAR"
                         ),
-                        zero = FALSE,
+                        rm_zero = FALSE,
                         ylim = c(0, 1)) {
   Method <- Parameters <- theta_hit <- NULL
   stopifnot(
@@ -30,7 +30,7 @@ FigCoverage <- function(results,
   )
   results <- results[which(results$dynamics == dynamics), ]
   results <- results[which(results$method %in% method), ]
-  if (zero) {
+  if (rm_zero) {
     results <- results[which(abs(results$parameter) > 0), ]
   }
   results$Method <- results$method
