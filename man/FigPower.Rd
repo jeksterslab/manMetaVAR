@@ -8,7 +8,7 @@ FigPower(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  zero = FALSE,
+  rm_zero = FALSE,
   ylim = c(0, 1)
 )
 }
@@ -23,7 +23,7 @@ FigPower(
 \item{method}{Character vector.
 Methods to include in the plot.}
 
-\item{zero}{Logical.
+\item{rm_zero}{Logical.
 Remove cases where the population parameter is equal to zero.}
 
 \item{ylim}{Numeric vector of length 2.

@@ -81,7 +81,7 @@
 #'   absolute bias is used instead of relative bias.
 #' @param method Character vector.
 #'   Methods to include in the plot.
-#' @param zero Logical.
+#' @param rm_zero Logical.
 #'   Remove cases where the population parameter is equal to zero.
 #' @param ylim Numeric vector of length 2.
 #'   Lower and upper limits for the y-axis.

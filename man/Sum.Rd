@@ -4,7 +4,17 @@
 \alias{Sum}
 \title{Summary}
 \usage{
-Sum(taskid, reps, output_folder, overwrite, integrity, metavar, mlvar, mplus)
+Sum(
+  taskid,
+  reps,
+  output_folder,
+  overwrite,
+  integrity,
+  metavar,
+  mlvar,
+  mplus,
+  ncores
+)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -31,6 +41,9 @@ If \code{mlvar = TRUE}, fit the model using the \code{mlVAR} package.}
 
 \item{mplus}{Logical.
 If \code{mplus = TRUE}, fit the model using DSEM in \code{Mplus}.}
+
+\item{ncores}{Positive integer.
+Number of cores to use.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
