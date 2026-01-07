@@ -53,6 +53,14 @@ articles:
 - title: Parameters
   contents:
   - params
+- title: Results
+  contents:
+  - results
+- title: Plots
+  contents:
+  - fig-scatter-plots-stable-reciprocal-regulation
+  - fig-scatter-plots-escalating-co-activation
+  - fig-scatter-plots-adaptive-recovery
 - title: Containers
   contents:
   - containers

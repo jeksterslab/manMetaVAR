@@ -10,7 +10,9 @@ Sum(
   output_folder,
   overwrite,
   integrity,
-  metavar,
+  metavar_normal,
+  metavar_robust,
+  metavar_lb,
   mlvar,
   mplus,
   ncores
@@ -33,14 +35,23 @@ Overwrite existing output in \code{output_folder}.}
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
 
-\item{metavar}{Logical.
-If \code{metavar = TRUE}, fit the model using the \code{metaVAR} package.}
+\item{metavar_normal}{Logical.
+If \code{metavar_normal = TRUE}, summarize metaVAR model using
+normal confidence intervals.}
+
+\item{metavar_robust}{Logical.
+If \code{metavar_robust = TRUE}, summarize metaVAR model using
+robust (sandwich) confidence intervals.}
+
+\item{metavar_lb}{Logical.
+If \code{metavar_lb = TRUE}, summarize metaVAR model using
+profile-likelihood based confidence intervals.}
 
 \item{mlvar}{Logical.
-If \code{mlvar = TRUE}, fit the model using the \code{mlVAR} package.}
+If \code{mlvar = TRUE}, summarize the mlVAR model.}
 
 \item{mplus}{Logical.
-If \code{mplus = TRUE}, fit the model using DSEM in \code{Mplus}.}
+If \code{mplus = TRUE}, summarize the DSEM model.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}

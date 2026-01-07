@@ -7,93 +7,92 @@
 \begin{document}
 
 \begin{tikzpicture}[
-  >=Latex,
-  node distance=1.6cm and 2.0cm,
-  var/.style={draw, rounded corners=2pt, minimum width=1.7cm, minimum height=0.9cm, align=center},
-  parbox/.style={draw, rounded corners=2pt, minimum width=5.2cm, minimum height=1.35cm, align=left},
-  outcome/.style={draw, very thick, rounded corners=2pt, minimum width=5.2cm, minimum height=1.35cm, align=left},
-  lab/.style={font=\small\itshape},
-  arrowAR/.style={-Latex, thick},
-  arrowCR/.style={-Latex, thick, dashed},
-  extract/.style={-Latex, densely dotted, very thick},
-  predict/.style={-Latex, very thick},
-  attractorArrow/.style={-Latex, thick, dash dot},
-  attrnode/.style={draw, circle, minimum size=0.9cm, inner sep=0pt, align=center},
-  boxlabel/.style={font=\small},
-  legend/.style={font=\scriptsize}
-]
-
-% ---- Within-person time points ----
-\node[var] (PA_t)   {$\mathrm{PA}_t$};
-\node[var, below=1.2cm of PA_t] (NA_t) {$\mathrm{NA}_t$};
-
-\node[var, right=3.8cm of PA_t] (PA_tp1) {$\mathrm{PA}_{t+1}$};
-\node[var, below=1.2cm of PA_tp1] (NA_tp1) {$\mathrm{NA}_{t+1}$};
-
-% ---- AR (solid curved) ----
-\draw[arrowAR] ([xshift=0.1cm]PA_t.east) to[out=0,in=180] node[midway,above,sloped,lab] {$\mathrm{AR(PA)}$} ([xshift=-0.1cm]PA_tp1.west);
-\draw[arrowAR] ([xshift=0.1cm]NA_t.east) to[out=0,in=180] node[midway,below,sloped,lab] {$\mathrm{AR(NA)}$} ([xshift=-0.1cm]NA_tp1.west);
-
-% ---- CR (dashed diagonals) ----
-\draw[arrowCR] (PA_t) -- node[pos=0.25,above,sloped,lab] {$\mathrm{CR}(\mathrm{PA}\!\to\!\mathrm{NA})$} (NA_tp1);
-\draw[arrowCR] (NA_t) -- node[pos=0.25,below,sloped,lab] {$\mathrm{CR}(\mathrm{NA}\!\to\!\mathrm{PA})$} (PA_tp1);
-
-% ---- Stable mean attractors (mu nodes) ----
-\node[attrnode, right=1cm of PA_tp1] (muPA) {$\mu_{\mathrm{PA}}$};
-\node[attrnode, right=1cm of NA_tp1] (muNA) {$\mu_{\mathrm{NA}}$};
-
-% ---- Fit box around within-person panel ----
-\node[draw, rounded corners=4pt, inner sep=6pt, fit={(PA_t) (NA_tp1) (PA_tp1) (NA_t) (muPA) (muNA)}] (withinbox) {};
-\node[boxlabel, above=0.1cm of withinbox.north] {Within-Person VAR (Level 1): Daily Affect Dynamics};
-
-% ---- Person-specific parameter box ----
-\node[parbox, right=6.2cm of withinbox.east, anchor=west] (feat) {%
-\textbf{Person-Specific Parameters}\\
-$\bullet$ $\mathrm{AR(PA)}$\\
-$\bullet$ $\mathrm{AR(NA)}$\\
-$\bullet$ $\mathrm{CR}(\mathrm{PA}\!\to\!\mathrm{NA})$\\ $\bullet$ $\mathrm{CR}(\mathrm{NA}\!\to\!\mathrm{PA})$\\
-$\bullet$ \text{Stable mean attractors: } $\mu_{\mathrm{PA}},\,\mu_{\mathrm{NA}}$
-};
-
-% ---- Covariate box ----
-\node[parbox, above=1.2cm of feat.north, anchor=south] (covars) {%
-\textbf{Baseline Covariates}\\
-$\bullet$ Parental Monitoring\\
-$\bullet$ Parent-Child Communication
-};
-
-% ---- Outcome box ----
-\node[outcome, right=6.2cm of feat.east, anchor=west] (outcome) {%
-\textbf{Distal Outcomes}\\
-$\bullet$ Child Substance use\\
-$\bullet$ Child Behavioral problems
-};
-
-% ---- Extraction arrow (Level 1 -> Level 2) ----
-\draw[extract] (withinbox.east) -- node[midway,above=2pt,align=center,lab]
-  {Estimate Person-Specific\\[1pt] Dynamic Parameters} (feat.west);
-
-% ---- Covariate path ----
-\draw[predict] (covars.south) -- node[midway,right=2pt,lab] {Covariates Predict Dynamics} (feat.north);
-
-% ---- Predictive arrow (parameters -> outcomes) ----
-\draw[predict] (feat.east) -- node[midway,above=2pt,align=center,lab]
-  {Between-Person Prediction (Level 2)} (outcome.west);
-
-% ---- Covariate to distal path----
-\draw[predict] (covars.east) -- node[midway,right=2pt,lab] {Covariates Predict Distal Outcomes} (outcome.north);
-
-% ---- Legend ----
-\node[legend, below=1.2cm of outcome.south] (leg) {%
-\begin{tikzpicture}[baseline=(current bounding box.center)]
-  \draw[arrowAR] (0,0) -- (1.2,0) node[pos=1.05, right] {AR (emotional inertia)};
-  \draw[arrowCR] (0,-0.45) -- (1.2,-0.45) node[pos=1.05, right] {CR (cross-affective coupling)};
-  \draw[attractorArrow] (0,-0.9) -- (1.2,-0.9) node[pos=1.05, right] {Stable mean attractor ($\mu$)};
-  \draw[extract] (0,-1.35) -- (1.2,-1.35) node[pos=1.05, right] {Parameter extraction to Level 2};
-  \draw[predict] (0,-1.80) -- (1.2,-1.80) node[pos=1.05, right] {Prediction (covariates or parameters)};
-\end{tikzpicture}
-};
-
+		>=Latex,
+		node distance=1.6cm and 2.0cm,
+		var/.style={draw, circle, minimum width=1.7cm, minimum height=0.9cm, align=center},
+		parbox/.style={draw, rounded corners=2pt, minimum width=5.6cm, minimum height=1.35cm, align=left},
+		outcome/.style={draw, very thick, rounded corners=2pt, minimum width=5.6cm, minimum height=1.35cm, align=left},
+		lab/.style={font=\small\itshape},
+		% arrowAR/.style={-Latex, thick},
+		% arrowCR/.style={-Latex, thick, dashed},
+		arrowAR/.style={-{Stealth[length=3.2mm,width=2.2mm]}, thick},
+		arrowCR/.style={-{Stealth[length=3.2mm,width=2.2mm]}, thick, dashed},
+		extract/.style={-Latex, densely dotted, very thick},
+		predict/.style={-Latex, very thick},
+		attractorArrow/.style={-Latex, thick, dash dot},
+		attrnode/.style={draw=none, circle, minimum size=0.9cm, inner sep=0pt, align=center},
+		boxlabel/.style={font=\small},
+		legend/.style={font=\scriptsize}
+	]
+		
+	% ---- Within-person time points ----
+	\node[var] (NA_t)   {$\mathrm{NA}_t$};
+	\node[var, below=1.2cm of NA_t] (PA_t) {$\mathrm{PA}_t$};
+		
+	\node[var, right=3.8cm of NA_t] (NA_tp1) {$\mathrm{NA}_{t+1}$};
+	\node[var, below=1.2cm of NA_tp1] (PA_tp1) {$\mathrm{PA}_{t+1}$};
+		
+	% ---- AR (solid curved) ----
+	\draw[arrowAR] ([xshift=0.1cm]NA_t.east) to[out=0,in=180] node[midway,above,sloped,lab] {$\mathrm{AR(NA)}$} ([xshift=-0.1cm]NA_tp1.west);
+	\draw[arrowAR] ([xshift=0.1cm]PA_t.east) to[out=0,in=180] node[midway,below,sloped,lab] {$\mathrm{AR(PA)}$} ([xshift=-0.1cm]PA_tp1.west);
+	
+	% ---- CR (dashed diagonals) ----
+	\draw[arrowCR] (PA_t) -- node[pos=0.25,below,sloped,lab] {$\mathrm{CR}(\mathrm{PA}\!\to\!\mathrm{NA})$} (NA_tp1);
+	\draw[arrowCR] (NA_t) -- node[pos=0.25,above,sloped,lab] {$\mathrm{CR}(\mathrm{NA}\!\to\!\mathrm{PA})$} (PA_tp1);
+	
+	% ---- Stable mean attractors (mu nodes) ----
+	\node[attrnode, right=.35cm of PA_tp1] (nuPA) {$\mathrm{PA(Intercept)}$};
+	\node[attrnode, right=.35cm of NA_tp1] (nuNA) {$\mathrm{NA(Intercept)}$};
+		
+	% ---- Fit box around within-person panel ----
+	\node[draw, rounded corners=4pt, inner sep=6pt, fit={(NA_t) (nuPA) (nuNA) (PA_t)}] (withinbox) {};
+	\node[boxlabel, above=0.1cm of withinbox.north] {Within-Person VAR (Level 1): EMA Affect Dynamics};
+		
+	% ---- Person-specific parameter box ----
+	\node[parbox, right=4.5cm of withinbox.east, anchor=west] (feat) {%
+		\textbf{Person-Specific Parameters}\\
+		$\bullet$ $\mathrm{AR(NA)}, \mathrm{AR(PA)}$\\
+		$\bullet$ $\mathrm{CR}(\mathrm{NA}\!\to\!\mathrm{PA}), \mathrm{CR}(\mathrm{PA}\!\to\!\mathrm{NA})$\\
+		$\bullet$ $\mathrm{NA(Intercept)}$ and $\mathrm{PA(Intercept)}$
+	};
+		
+	% ---- Covariate box ----
+	\node[parbox, above=1.2cm of feat.north, anchor=south] (covars) {%
+		\textbf{Baseline Covariate}\\
+		$\bullet$ Primary diagnosis:\\MDD (1) vs. GAD (0)\\
+	};
+		
+	% ---- Outcome box ----
+	\node[outcome, right=4.5cm of feat.east, anchor=west] (outcome) {%
+		\textbf{Distal Outcomes}\\
+		$\bullet$ Depression symptoms\\
+		$\bullet$ Anxiety symptoms
+	};
+		
+	% ---- Extraction arrow (Level 1 -> Level 2) ----
+	\draw[extract] (withinbox.east) -- node[midway,above=2pt,align=center,lab]
+	{Estimate Person-Specific\\[1pt] Dynamic Parameters} (feat.west);
+		
+	% ---- Covariate path ----
+	\draw[predict] (covars.south) -- node[midway,right=2pt,lab] {Covariate Predicts Dynamics} (feat.north);
+		
+	% ---- Predictive arrow (parameters -> outcomes) ----
+	\draw[predict] (feat.east) -- node[midway,above=2pt,align=center,lab]
+	{Between-Person Prediction\\(Level 2)} (outcome.west);
+		
+	% ---- Covariate to distal path----
+	\draw[predict] (covars.east) -- node[midway,right=12pt,lab] {Covariate Predicts Distal Outcomes} (outcome.north);
+		
+	% ---- Legend ----
+	\node[legend, below=1.2cm of outcome.south] (leg) {%
+		\begin{tikzpicture}[baseline=(current bounding box.center)]
+			\draw[arrowAR] (0,0) -- (1.4,0) node[pos=1.05, right] {AR (emotional/behavioral inertia)};
+			\draw[arrowCR] (0,-0.45) -- (1.4,-0.45) node[pos=1.05, right] {CR (cross-lagged coupling)};
+			\draw[extract] (0,-0.90) -- (1.4,-0.90) node[pos=1.05, right] {Parameter extraction to Level 2};
+			\draw[predict] (0,-1.35) -- (1.4,-1.35) node[pos=1.05, right] {Prediction (covariate or parameters)};
+		\end{tikzpicture}
+	};
+		
 \end{tikzpicture}
 
 \end{document}

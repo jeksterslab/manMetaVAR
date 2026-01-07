@@ -8,7 +8,9 @@ FigType1Error(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  ylim = c(0, 0.25)
+  parameters = "both",
+  ylim = c(0, 0.25),
+  x_lab_size = 7.5
 )
 }
 \arguments{
@@ -22,8 +24,15 @@ FigType1Error(
 \item{method}{Character vector.
 Methods to include in the plot.}
 
+\item{parameters}{Character string.
+Parameters to plot.
+Valid values include \code{"fixed"}, \code{"random"}, and \code{"both"}.}
+
 \item{ylim}{Numeric vector of length 2.
 Lower and upper limits for the y-axis.}
+
+\item{x_lab_size}{Numeric.
+x-axis label size.}
 }
 \description{
 Plot type 1 error rates for zero random effects.

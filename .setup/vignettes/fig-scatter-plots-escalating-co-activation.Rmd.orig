@@ -1,0 +1,73 @@
+---
+title: "Scatter Plots - Escalating Co-Activation"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scatter Plots - Escalating Co-Activation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-scatter-plots-escalating-co-activation-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| message = FALSE
+library(manMetaVAR)
+```
+
+```{r}
+data(results, package = "manMetaVAR")
+```
+
+### Bias
+
+```{r, bias}
+#| echo = FALSE,
+#| cache = FALSE
+FigBias(results, dynamics = 2)
+```
+
+### RMSE
+
+```{r, rmse}
+#| echo = FALSE,
+#| cache = FALSE
+FigRMSE(results, dynamics = 2)
+```
+
+### Coverage Probabilities
+
+```{r, coverage}
+#| echo = FALSE,
+#| cache = FALSE
+FigCoverage(results, dynamics = 2)
+```
+
+### Statistical Power
+
+```{r, power}
+#| echo = FALSE,
+#| cache = FALSE
+FigPower(results, dynamics = 2)
+```
+
+### Type 1 Error
+
+```{r, type-1-error}
+#| echo = FALSE,
+#| cache = FALSE
+FigType1Error(results, dynamics = 2)
+```

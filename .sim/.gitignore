@@ -2,7 +2,6 @@ make.sh
 make.out
 make.err
 reps-*.sh
+run-*.sh
 notes/*
-sim-0*.sh
-sum-*.sh
 manMetaVAR

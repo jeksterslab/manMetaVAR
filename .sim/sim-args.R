@@ -5,6 +5,9 @@ overwrite <- FALSE
 seed <- NULL
 data <- TRUE
 metavar <- TRUE
+metavar_normal <- TRUE
+metavar_robust <- TRUE
+metavar_lb <- TRUE
 mlvar <- TRUE
 mplus <- TRUE
 chains <- 2L

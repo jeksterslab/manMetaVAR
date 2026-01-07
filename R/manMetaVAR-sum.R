@@ -2,6 +2,20 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
+#' @param mplus Logical.
+#'   If `mplus = TRUE`, summarize the DSEM model.
+#' @param metavar_normal Logical.
+#'   If `metavar_normal = TRUE`, summarize metaVAR model using
+#'   normal confidence intervals.
+#' @param metavar_robust Logical.
+#'   If `metavar_robust = TRUE`, summarize metaVAR model using
+#'   robust (sandwich) confidence intervals.
+#' @param metavar_lb Logical.
+#'   If `metavar_lb = TRUE`, summarize metaVAR model using
+#'   profile-likelihood based confidence intervals.
+#' @param mlvar Logical.
+#'   If `mlvar = TRUE`, summarize the mlVAR model.
+#'
 #' @return The output is saved as an external file in `output_folder`.
 #'
 #' @inheritParams Template
@@ -12,7 +26,9 @@ Sum <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                metavar,
+                metavar_normal,
+                metavar_robust,
+                metavar_lb,
                 mlvar,
                 mplus,
                 ncores) {
@@ -48,7 +64,7 @@ Sum <- function(taskid,
       ncores = ncores
     )
   }
-  if (metavar) {
+  if (metavar_normal) {
     SumFitMetaVARNormal(
       taskid = taskid,
       reps = reps,
@@ -57,6 +73,18 @@ Sum <- function(taskid,
       integrity = integrity,
       ncores = ncores
     )
+  }
+  if (metavar_robust) {
+    SumFitMetaVARRobust(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      overwrite = overwrite,
+      integrity = integrity,
+      ncores = ncores
+    )
+  }
+  if (metavar_lb) {
     SumFitMetaVARLB(
       taskid = taskid,
       reps = reps,

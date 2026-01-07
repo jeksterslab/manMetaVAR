@@ -23,7 +23,7 @@ jobs:
     steps:
       -
         name: Checkout 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       -
         name: Clean
         run: |
@@ -38,4 +38,4 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: "Automated build."
+          commit_message: "Automated build [skip ci]."

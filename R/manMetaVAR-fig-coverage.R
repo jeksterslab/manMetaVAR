@@ -22,8 +22,10 @@ FigCoverage <- function(results,
                           "SeqVAR",
                           "BMLVAR"
                         ),
+                        parameters = "both",
                         rm_zero = FALSE,
-                        ylim = c(0, 1)) {
+                        ylim = c(0, 1),
+                        x_lab_size = 6) {
   Method <- Parameters <- theta_hit <- NULL
   stopifnot(
     dynamics %in% 1:3
@@ -40,7 +42,6 @@ FigCoverage <- function(results,
     results$ci,
     ")"
   )
-  results$Parameters <- results$par_idx
   results$n_label <- paste0(
     "N = ",
     results$n
@@ -67,6 +68,131 @@ FigCoverage <- function(results,
       )
     )
   )
+  # nolint start
+  labels <- c(
+    expression(alpha * phantom(".") * {}["" * 1 * "," * "" * 1]),
+    expression(alpha * phantom(".") * {}["" * 2 * "," * "" * 1]),
+    expression(alpha * phantom(".") * {}["" * 3 * "," * "" * 1]),
+    expression(alpha * phantom(".") * {}["" * 4 * "," * "" * 1]),
+    expression(alpha * phantom(".") * {}["" * 5 * "," * "" * 1]),
+    expression(alpha * phantom(".") * {}["" * 6 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 1 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 2 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 3 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 4 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 5 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 1]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 2 * "," * "" * 2]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 3 * "," * "" * 2]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 4 * "," * "" * 2]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 5 * "," * "" * 2]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 2]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 3 * "," * "" * 3]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 4 * "," * "" * 3]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 5 * "," * "" * 3]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 3]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 4 * "," * "" * 4]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 5 * "," * "" * 4]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 4]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 5 * "," * "" * 5]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 5]),
+    expression(tau^
+      {
+        phantom(".") *
+          {} * "" * 2
+      } * {}["" * 6 * "," * "" * 6])
+  )
+  # nolint end
+  if (parameters == "fixed") {
+    results <- results[which(results$par_idx %in% 1:6), ]
+  }
+  if (parameters == "random") {
+    results <- results[which(results$par_idx %in% 7:27), ]
+  }
+  idx <- sort(unique(results$par_idx))
+  results$Parameters <- match(results$par_idx, idx)
+  breaks <- seq_along(idx)
+  labels <- labels[idx]
   ggplot2::ggplot(
     data = results,
     ggplot2::aes(
@@ -109,7 +235,7 @@ FigCoverage <- function(results,
       n_label ~ t_label
     ) +
     ggplot2::xlab(
-      "Parameter No."
+      "Parameter"
     ) +
     ggplot2::ylab(
       "Coverage Probability"
@@ -118,9 +244,18 @@ FigCoverage <- function(results,
       ylim = ylim
     ) +
     ggplot2::scale_x_continuous(
-      breaks = sort(unique(results$par_idx))
+      breaks = breaks,
+      labels = labels
     ) +
     ggplot2::theme_bw() +
+    ggplot2::theme(
+      axis.text.x = ggplot2::element_text(
+        angle = 270,
+        vjust = 0.5,
+        hjust = 0,
+        size = x_lab_size
+      )
+    ) +
     ggplot2::scale_color_brewer(palette = "Set1") +
     ggplot2::scale_shape()
 }

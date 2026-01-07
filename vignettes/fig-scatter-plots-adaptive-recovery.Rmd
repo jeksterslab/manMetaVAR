@@ -1,0 +1,41 @@
+---
+title: "Scatter Plots - Adaptive Recovery"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scatter Plots - Adaptive Recovery}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+``` r
+library(manMetaVAR)
+```
+
+
+``` r
+data(results, package = "manMetaVAR")
+```
+
+### Bias
+
+<img src="fig-vignettes-scatter-plots-adaptive-recovery-bias-1.png" alt="" width="3300" />
+
+### RMSE
+
+<img src="fig-vignettes-scatter-plots-adaptive-recovery-rmse-1.png" alt="" width="3300" />
+
+### Coverage Probabilities
+
+<img src="fig-vignettes-scatter-plots-adaptive-recovery-coverage-1.png" alt="" width="3300" />
+
+### Statistical Power
+
+<img src="fig-vignettes-scatter-plots-adaptive-recovery-power-1.png" alt="" width="3300" />
+
+### Type 1 Error
+
+<img src="fig-vignettes-scatter-plots-adaptive-recovery-type-1-error-1.png" alt="" width="3300" />
