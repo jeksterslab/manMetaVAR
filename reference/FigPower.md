@@ -9,8 +9,9 @@ FigPower(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  rm_zero = FALSE,
-  ylim = c(0, 1)
+  parameters = "both",
+  ylim = c(0, 1),
+  x_lab_size = 7.5
 )
 ```
 
@@ -29,13 +30,18 @@ FigPower(
 
   Character vector. Methods to include in the plot.
 
-- rm_zero:
+- parameters:
 
-  Logical. Remove cases where the population parameter is equal to zero.
+  Character string. Parameters to plot. Valid values include `"fixed"`,
+  `"random"`, and `"both"`.
 
 - ylim:
 
   Numeric vector of length 2. Lower and upper limits for the y-axis.
+
+- x_lab_size:
+
+  Numeric. x-axis label size.
 
 ## See also
 

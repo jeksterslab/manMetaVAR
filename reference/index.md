@@ -46,6 +46,8 @@
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 
@@ -59,6 +61,8 @@
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 
@@ -178,5 +182,7 @@
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)

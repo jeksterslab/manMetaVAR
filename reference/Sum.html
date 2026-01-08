@@ -47,7 +47,9 @@
 <span>  <span class="va">output_folder</span>,</span>
 <span>  <span class="va">overwrite</span>,</span>
 <span>  <span class="va">integrity</span>,</span>
-<span>  <span class="va">metavar</span>,</span>
+<span>  <span class="va">metavar_normal</span>,</span>
+<span>  <span class="va">metavar_robust</span>,</span>
+<span>  <span class="va">metavar_lb</span>,</span>
 <span>  <span class="va">mlvar</span>,</span>
 <span>  <span class="va">mplus</span>,</span>
 <span>  <span class="va">ncores</span></span>
@@ -84,19 +86,32 @@ If <code>integrity = TRUE</code>,
 check for the output file integrity when <code>overwrite = FALSE</code>.</p></dd>
 
 
-<dt id="arg-metavar">metavar<a class="anchor" aria-label="anchor" href="#arg-metavar"></a></dt>
+<dt id="arg-metavar-normal">metavar_normal<a class="anchor" aria-label="anchor" href="#arg-metavar-normal"></a></dt>
 <dd><p>Logical.
-If <code>metavar = TRUE</code>, fit the model using the <code>metaVAR</code> package.</p></dd>
+If <code>metavar_normal = TRUE</code>, summarize metaVAR model using
+normal confidence intervals.</p></dd>
+
+
+<dt id="arg-metavar-robust">metavar_robust<a class="anchor" aria-label="anchor" href="#arg-metavar-robust"></a></dt>
+<dd><p>Logical.
+If <code>metavar_robust = TRUE</code>, summarize metaVAR model using
+robust (sandwich) confidence intervals.</p></dd>
+
+
+<dt id="arg-metavar-lb">metavar_lb<a class="anchor" aria-label="anchor" href="#arg-metavar-lb"></a></dt>
+<dd><p>Logical.
+If <code>metavar_lb = TRUE</code>, summarize metaVAR model using
+profile-likelihood based confidence intervals.</p></dd>
 
 
 <dt id="arg-mlvar">mlvar<a class="anchor" aria-label="anchor" href="#arg-mlvar"></a></dt>
 <dd><p>Logical.
-If <code>mlvar = TRUE</code>, fit the model using the <code>mlVAR</code> package.</p></dd>
+If <code>mlvar = TRUE</code>, summarize the mlVAR model.</p></dd>
 
 
 <dt id="arg-mplus">mplus<a class="anchor" aria-label="anchor" href="#arg-mplus"></a></dt>
 <dd><p>Logical.
-If <code>mplus = TRUE</code>, fit the model using DSEM in <code>Mplus</code>.</p></dd>
+If <code>mplus = TRUE</code>, summarize the DSEM model.</p></dd>
 
 
 <dt id="arg-ncores">ncores<a class="anchor" aria-label="anchor" href="#arg-ncores"></a></dt>

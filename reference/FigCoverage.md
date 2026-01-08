@@ -9,8 +9,10 @@ FigCoverage(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
+  parameters = "both",
   rm_zero = FALSE,
-  ylim = c(0, 1)
+  ylim = c(0, 1),
+  x_lab_size = 6
 )
 ```
 
@@ -29,6 +31,11 @@ FigCoverage(
 
   Character vector. Methods to include in the plot.
 
+- parameters:
+
+  Character string. Parameters to plot. Valid values include `"fixed"`,
+  `"random"`, and `"both"`.
+
 - rm_zero:
 
   Logical. Remove cases where the population parameter is equal to zero.
@@ -36,6 +43,10 @@ FigCoverage(
 - ylim:
 
   Numeric vector of length 2. Lower and upper limits for the y-axis.
+
+- x_lab_size:
+
+  Numeric. x-axis label size.
 
 ## See also
 

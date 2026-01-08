@@ -9,7 +9,9 @@ FigType1Error(
   results,
   dynamics = 1,
   method = c("MetaVAR", "SeqVAR", "BMLVAR"),
-  ylim = c(0, 0.25)
+  parameters = "both",
+  ylim = c(0, 0.25),
+  x_lab_size = 7.5
 )
 ```
 
@@ -28,9 +30,18 @@ FigType1Error(
 
   Character vector. Methods to include in the plot.
 
+- parameters:
+
+  Character string. Parameters to plot. Valid values include `"fixed"`,
+  `"random"`, and `"both"`.
+
 - ylim:
 
   Numeric vector of length 2. Lower and upper limits for the y-axis.
+
+- x_lab_size:
+
+  Numeric. x-axis label size.
 
 ## See also
 

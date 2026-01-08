@@ -11,7 +11,9 @@ Sum(
   output_folder,
   overwrite,
   integrity,
-  metavar,
+  metavar_normal,
+  metavar_robust,
+  metavar_lb,
   mlvar,
   mplus,
   ncores
@@ -41,18 +43,28 @@ Sum(
   Logical. If `integrity = TRUE`, check for the output file integrity
   when `overwrite = FALSE`.
 
-- metavar:
+- metavar_normal:
 
-  Logical. If `metavar = TRUE`, fit the model using the `metaVAR`
-  package.
+  Logical. If `metavar_normal = TRUE`, summarize metaVAR model using
+  normal confidence intervals.
+
+- metavar_robust:
+
+  Logical. If `metavar_robust = TRUE`, summarize metaVAR model using
+  robust (sandwich) confidence intervals.
+
+- metavar_lb:
+
+  Logical. If `metavar_lb = TRUE`, summarize metaVAR model using
+  profile-likelihood based confidence intervals.
 
 - mlvar:
 
-  Logical. If `mlvar = TRUE`, fit the model using the `mlVAR` package.
+  Logical. If `mlvar = TRUE`, summarize the mlVAR model.
 
 - mplus:
 
-  Logical. If `mplus = TRUE`, fit the model using DSEM in `Mplus`.
+  Logical. If `mplus = TRUE`, summarize the DSEM model.
 
 - ncores:
 

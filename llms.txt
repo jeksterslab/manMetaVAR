@@ -1,6 +1,6 @@
 # manMetaVAR
 
-Ivan Jacob Agaloos Pesigan 2025-11-24
+Ivan Jacob Agaloos Pesigan 2026-01-07
 
 ## Description
 
@@ -72,6 +72,8 @@ for package documentation.
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 
@@ -85,6 +87,8 @@ for package documentation.
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 
@@ -204,6 +208,8 @@ for package documentation.
   : Summary: Likelihood-Based (FitMetaVAR)
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 
@@ -223,6 +229,20 @@ for package documentation.
 
 - [Simulation
   Parameters](https://github.com/jeksterslab/manMetaVAR/articles/params.md):
+
+### Results
+
+- [Simulation
+  Results](https://github.com/jeksterslab/manMetaVAR/articles/results.md):
+
+### Plots
+
+- [Scatter Plots - Stable Reciprocal
+  Regulation](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-stable-reciprocal-regulation.md):
+- [Scatter Plots - Escalating
+  Co-Activation](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-escalating-co-activation.md):
+- [Scatter Plots - Adaptive
+  Recovery](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-adaptive-recovery.md):
 
 ### Containers
 

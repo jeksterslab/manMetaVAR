@@ -33,61 +33,64 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.6        metaVAR_0.0.0.9001      fitDTVARMxID_0.0.0.9001
+#> [1] manMetaVAR_0.9.6        metaVAR_0.0.0.9004      fitDTVARMxID_0.0.0.9003
 #> [4] OpenMx_2.22.10         
 #> 
 #> loaded via a namespace (and not attached):
-#>   [1] tidyselect_1.2.1          psych_2.5.6              
-#>   [3] dplyr_1.1.4               farver_2.1.2             
-#>   [5] S7_0.2.1                  fastmap_1.2.0            
-#>   [7] digest_0.6.39             rpart_4.1.24             
-#>   [9] lifecycle_1.0.4           cluster_2.1.8.1          
-#>  [11] survival_3.8-3            magrittr_2.0.4           
-#>  [13] compiler_4.5.2            rlang_1.1.6              
-#>  [15] Hmisc_5.2-4               tools_4.5.2              
-#>  [17] igraph_2.2.1              rProject_0.0.22          
-#>  [19] data.table_1.17.8         knitr_1.50               
-#>  [21] clusterGeneration_1.3.8   texreg_1.39.4            
-#>  [23] htmlwidgets_1.6.4         mnormt_2.1.1             
-#>  [25] plyr_1.8.9                RColorBrewer_1.1-3       
-#>  [27] abind_1.4-8               foreign_0.8-90           
-#>  [29] nnet_7.3-20               grid_4.5.2               
-#>  [31] stats4_4.5.2              lavaan_0.6-20            
-#>  [33] fastDummies_1.7.5         xtable_1.8-4             
-#>  [35] colorspace_2.1-2          ggplot2_4.0.1            
-#>  [37] iterators_1.0.14          scales_1.4.0             
-#>  [39] gtools_3.9.5              MASS_7.3-65              
-#>  [41] cli_3.6.5.9000            mvtnorm_1.3-3            
-#>  [43] graphicalVAR_0.3.4        rmarkdown_2.30           
-#>  [45] reformulas_0.4.2          generics_0.1.4           
-#>  [47] RcppParallel_5.1.11-1     rstudioapi_0.17.1        
-#>  [49] httr_1.4.7                reshape2_1.4.5           
-#>  [51] minqa_1.2.8               pbapply_1.7-4            
-#>  [53] pander_0.6.6              stringr_1.6.0            
-#>  [55] splines_4.5.2             parallel_4.5.2           
-#>  [57] base64enc_0.1-3           vctrs_0.6.5              
-#>  [59] glmnet_4.1-10             boot_1.3-32              
-#>  [61] Matrix_1.7-4              glasso_1.11              
-#>  [63] Formula_1.2-5             htmlTable_2.4.3          
-#>  [65] jpeg_0.1-11               foreach_1.5.2            
-#>  [67] proto_1.0.0               qgraph_1.9.8             
-#>  [69] glue_1.8.0                nloptr_2.2.1             
-#>  [71] codetools_0.2-20          shape_1.4.6.1            
-#>  [73] stringi_1.8.7             gtable_0.3.6             
-#>  [75] mlVAR_0.5.2               quadprog_1.5-8           
-#>  [77] lme4_1.1-37               tibble_3.3.0             
-#>  [79] pillar_1.11.1             htmltools_0.5.8.1        
-#>  [81] R6_2.6.1                  Rdpack_2.6.4             
-#>  [83] evaluate_1.0.5            pbivnorm_0.6.0           
-#>  [85] lattice_0.22-7            gsubfn_0.7               
-#>  [87] rbibutils_2.4             png_0.1-8                
-#>  [89] backports_1.5.0           arm_1.14-4               
-#>  [91] corpcor_1.6.10            Rcpp_1.1.0               
-#>  [93] fdrtool_1.2.18            simStateSpace_1.2.12.9000
-#>  [95] coda_0.19-4.1             gridExtra_2.3            
-#>  [97] nlme_3.1-168              checkmate_2.3.3          
-#>  [99] MplusAutomation_1.2       xfun_0.54                
-#> [101] pkgconfig_2.0.3
+#>   [1] Rdpack_2.6.4              mnormt_2.1.1             
+#>   [3] pbapply_1.7-4             gridExtra_2.3            
+#>   [5] fdrtool_1.2.18            rlang_1.1.6              
+#>   [7] magrittr_2.0.4            otel_0.2.0               
+#>   [9] compiler_4.5.2            png_0.1-8                
+#>  [11] systemfonts_1.3.1         vctrs_0.6.5              
+#>  [13] reshape2_1.4.5            quadprog_1.5-8           
+#>  [15] stringr_1.6.0             pkgconfig_2.0.3          
+#>  [17] shape_1.4.6.1             fastmap_1.2.0            
+#>  [19] arm_1.14-4                backports_1.5.0          
+#>  [21] labeling_0.4.3            pbivnorm_0.6.0           
+#>  [23] pander_0.6.6              rmarkdown_2.30           
+#>  [25] nloptr_2.2.1              ragg_1.5.0               
+#>  [27] xfun_0.55                 glmnet_4.1-10            
+#>  [29] clusterGeneration_1.3.8   jpeg_0.1-11              
+#>  [31] psych_2.5.6               parallel_4.5.2           
+#>  [33] lavaan_0.6-21             cluster_2.1.8.1          
+#>  [35] R6_2.6.1                  stringi_1.8.7            
+#>  [37] RColorBrewer_1.1-3        simStateSpace_1.2.12.9001
+#>  [39] boot_1.3-32               rpart_4.1.24             
+#>  [41] Rcpp_1.1.0                iterators_1.0.14         
+#>  [43] knitr_1.51                base64enc_0.1-3          
+#>  [45] rProject_0.0.23           Matrix_1.7-4             
+#>  [47] splines_4.5.2             nnet_7.3-20              
+#>  [49] igraph_2.2.1              tidyselect_1.2.1         
+#>  [51] rstudioapi_0.17.1         abind_1.4-8              
+#>  [53] codetools_0.2-20          qgraph_1.9.8             
+#>  [55] lattice_0.22-7            tibble_3.3.0             
+#>  [57] plyr_1.8.9                withr_3.0.2              
+#>  [59] S7_0.2.1                  coda_0.19-4.1            
+#>  [61] evaluate_1.0.5            foreign_0.8-90           
+#>  [63] survival_3.8-3            fastDummies_1.7.5        
+#>  [65] RcppParallel_5.1.11-1     texreg_1.39.5            
+#>  [67] pillar_1.11.1             checkmate_2.3.3          
+#>  [69] foreach_1.5.2             stats4_4.5.2             
+#>  [71] reformulas_0.4.3          generics_0.1.4           
+#>  [73] ggplot2_4.0.1             scales_1.4.0             
+#>  [75] minqa_1.2.8               gtools_3.9.5             
+#>  [77] xtable_1.8-4              glue_1.8.0               
+#>  [79] Hmisc_5.2-4               tools_4.5.2              
+#>  [81] data.table_1.18.0         lme4_1.1-38              
+#>  [83] gsubfn_0.7                mvtnorm_1.3-3            
+#>  [85] grid_4.5.2                MplusAutomation_1.2      
+#>  [87] rbibutils_2.4             colorspace_2.1-2         
+#>  [89] nlme_3.1-168              graphicalVAR_0.3.4       
+#>  [91] htmlTable_2.4.3           proto_1.0.0              
+#>  [93] Formula_1.2-5             cli_3.6.5.9000           
+#>  [95] textshaping_1.0.4         dplyr_1.1.4              
+#>  [97] corpcor_1.6.10            glasso_1.11              
+#>  [99] gtable_0.3.6              mlVAR_0.5.2              
+#> [101] digest_0.6.39             htmlwidgets_1.6.4        
+#> [103] farver_2.1.2              htmltools_0.5.9          
+#> [105] lifecycle_1.0.4           httr_1.4.7               
+#> [107] MASS_7.3-65
 ```
 
 ## CPU
@@ -95,47 +98,50 @@ sessionInfo()
 ``` r
 
 cat(system("lscpu", intern = TRUE), sep = "\n")
-#> Architecture:                         x86_64
-#> CPU op-mode(s):                       32-bit, 64-bit
-#> Address sizes:                        48 bits physical, 48 bits virtual
-#> Byte Order:                           Little Endian
-#> CPU(s):                               24
-#> On-line CPU(s) list:                  0-23
-#> Vendor ID:                            AuthenticAMD
-#> Model name:                           AMD Ryzen AI 9 HX PRO 370 w/ Radeon 890M
-#> CPU family:                           26
-#> Model:                                36
-#> Thread(s) per core:                   2
-#> Core(s) per socket:                   12
-#> Socket(s):                            1
-#> Stepping:                             0
-#> Frequency boost:                      enabled
-#> CPU(s) scaling MHz:                   42%
-#> CPU max MHz:                          4367.0000
-#> CPU min MHz:                          599.0000
-#> BogoMIPS:                             3992.36
-#> Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
-#> Virtualization:                       AMD-V
-#> L1d cache:                            576 KiB (12 instances)
-#> L1i cache:                            384 KiB (12 instances)
-#> L2 cache:                             12 MiB (12 instances)
-#> L3 cache:                             24 MiB (2 instances)
-#> NUMA node(s):                         1
-#> NUMA node0 CPU(s):                    0-23
-#> Vulnerability Gather data sampling:   Not affected
-#> Vulnerability Itlb multihit:          Not affected
-#> Vulnerability L1tf:                   Not affected
-#> Vulnerability Mds:                    Not affected
-#> Vulnerability Meltdown:               Not affected
-#> Vulnerability Mmio stale data:        Not affected
-#> Vulnerability Reg file data sampling: Not affected
-#> Vulnerability Retbleed:               Not affected
-#> Vulnerability Spec rstack overflow:   Not affected
-#> Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
-#> Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-#> Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
-#> Vulnerability Srbds:                  Not affected
-#> Vulnerability Tsx async abort:        Not affected
+#> Architecture:                            x86_64
+#> CPU op-mode(s):                          32-bit, 64-bit
+#> Address sizes:                           48 bits physical, 48 bits virtual
+#> Byte Order:                              Little Endian
+#> CPU(s):                                  32
+#> On-line CPU(s) list:                     0-31
+#> Vendor ID:                               AuthenticAMD
+#> Model name:                              AMD Ryzen 9 9955HX 16-Core Processor
+#> CPU family:                              26
+#> Model:                                   68
+#> Thread(s) per core:                      2
+#> Core(s) per socket:                      16
+#> Socket(s):                               1
+#> Stepping:                                0
+#> Frequency boost:                         enabled
+#> CPU(s) scaling MHz:                      60%
+#> CPU max MHz:                             5060.9761
+#> CPU min MHz:                             1219.5129
+#> BogoMIPS:                                4990.55
+#> Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
+#> Virtualization:                          AMD-V
+#> L1d cache:                               768 KiB (16 instances)
+#> L1i cache:                               512 KiB (16 instances)
+#> L2 cache:                                16 MiB (16 instances)
+#> L3 cache:                                64 MiB (2 instances)
+#> NUMA node(s):                            1
+#> NUMA node0 CPU(s):                       0-31
+#> Vulnerability Gather data sampling:      Not affected
+#> Vulnerability Indirect target selection: Not affected
+#> Vulnerability Itlb multihit:             Not affected
+#> Vulnerability L1tf:                      Not affected
+#> Vulnerability Mds:                       Not affected
+#> Vulnerability Meltdown:                  Not affected
+#> Vulnerability Mmio stale data:           Not affected
+#> Vulnerability Reg file data sampling:    Not affected
+#> Vulnerability Retbleed:                  Not affected
+#> Vulnerability Spec rstack overflow:      Mitigation; IBPB on VMEXIT only
+#> Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+#> Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+#> Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected
+#> Vulnerability Srbds:                     Not affected
+#> Vulnerability Tsa:                       Not affected
+#> Vulnerability Tsx async abort:           Not affected
+#> Vulnerability Vmscape:                   Mitigation; IBPB on VMEXIT
 ```
 
 ## Memory
@@ -144,7 +150,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       4.6Gi        33Gi        63Mi       7.4Gi        39Gi
-#> Swap:           22Gi          0B        22Gi
-#> Total:          66Gi       4.6Gi        55Gi
+#> Mem:            44Gi        15Gi        25Gi        95Mi       3.8Gi        28Gi
+#> Swap:           31Gi          0B        31Gi
+#> Total:          76Gi        15Gi        57Gi
 ```

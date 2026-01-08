@@ -1,13 +1,17 @@
-pandoc: 3.8.2.1
+pandoc: 3.8.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   containers: containers.html
+  fig-scatter-plots-adaptive-recovery: fig-scatter-plots-adaptive-recovery.html
+  fig-scatter-plots-escalating-co-activation: fig-scatter-plots-escalating-co-activation.html
+  fig-scatter-plots-stable-reciprocal-regulation: fig-scatter-plots-stable-reciprocal-regulation.html
   manMetaVAR: manMetaVAR.html
   params: params.html
+  results: results.html
   session: session.html
   sim-rep: sim-rep.html
-last_built: 2025-11-24T23:07Z
+last_built: 2026-01-08T01:08Z
 urls:
   reference: https://github.com/jeksterslab/manMetaVAR/reference
   article: https://github.com/jeksterslab/manMetaVAR/articles

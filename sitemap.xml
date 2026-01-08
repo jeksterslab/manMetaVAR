@@ -3,9 +3,13 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/LICENSE-text.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/LICENSE.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/containers.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-adaptive-recovery.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-escalating-co-activation.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-stable-reciprocal-regulation.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/index.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/params.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/results.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/session.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/sim-rep.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/authors.html</loc></url>
@@ -36,6 +40,7 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/index.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/manMetaVAR-package.html</loc></url>
