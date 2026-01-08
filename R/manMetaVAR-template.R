@@ -85,5 +85,10 @@
 #'   Remove cases where the population parameter is equal to zero.
 #' @param ylim Numeric vector of length 2.
 #'   Lower and upper limits for the y-axis.
+#' @param parameters Character string.
+#'   Parameters to plot.
+#'   Valid values include `"fixed"`, `"random"`, and `"both"`.
+#' @param x_lab_size Numeric.
+#'   x-axis label size.
 #' @name Template
 NULL

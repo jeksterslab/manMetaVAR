@@ -42,6 +42,8 @@ FitMetaVAR <- function(data,
     int_dyn = FALSE,
     cov_meas = FALSE,
     cov_dyn = FALSE,
+    robust_v = FALSE,
+    robust = TRUE,
     try = 1000,
     ncores = ncores
   )
