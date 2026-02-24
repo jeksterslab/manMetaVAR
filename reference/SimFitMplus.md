@@ -16,8 +16,7 @@ SimFitMplus(
   chains,
   iter,
   fscores,
-  plot,
-  default_priors
+  plot
 )
 ```
 
@@ -68,10 +67,6 @@ SimFitMplus(
 
   Logical. If `plot = TRUE`, add `PLOT: TYPE = PLOT3;` to `Mplus` input
   file.
-
-- default_priors:
-
-  Logical. If `default_priors = TRUE`, use default priors.
 
 ## Value
 

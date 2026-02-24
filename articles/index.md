@@ -15,20 +15,6 @@
 - [Simulation
   Parameters](https://github.com/jeksterslab/manMetaVAR/articles/params.md):
 
-### Results
-
-- [Simulation
-  Results](https://github.com/jeksterslab/manMetaVAR/articles/results.md):
-
-### Plots
-
-- [Scatter Plots - Stable Reciprocal
-  Regulation](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-stable-reciprocal-regulation.md):
-- [Scatter Plots - Escalating
-  Co-Activation](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-escalating-co-activation.md):
-- [Scatter Plots - Adaptive
-  Recovery](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots-adaptive-recovery.md):
-
 ### Containers
 
 - [Containers](https://github.com/jeksterslab/manMetaVAR/articles/containers.md):

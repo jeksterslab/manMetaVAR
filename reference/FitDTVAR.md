@@ -1,13 +1,13 @@
-# Fit the Model using the fitDTVARMxID Package
+# Fit the Model using the fitVARMxID Package
 
 The function fits the model using the
-[fitDTVARMxID::fitDTVARMxID](https://github.com/jeksterslab/fitDTVARMxID/reference/fitDTVARMxID-package.html)
+[fitVARMxID::fitVARMxID](https://github.com/jeksterslab/fitVARMxID/reference/fitVARMxID-package.html)
 package.
 
 ## Usage
 
 ``` r
-FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
+FitDTVAR(data, ncores = NULL, seed = NULL)
 ```
 
 ## Arguments
@@ -17,10 +17,6 @@ FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
   R object. Output of the
   [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
   function.
-
-- wd:
-
-  Character string. Working directory.
 
 - ncores:
 
@@ -33,7 +29,6 @@ FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
 ## See also
 
 Other Model Fitting Functions:
-[`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md),
 [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md),
 [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md),
 [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
@@ -42,12 +37,9 @@ Other Model Fitting Functions:
 
 ``` r
 if (FALSE) { # \dontrun{
-set.seed(42)
-data <- GenData(taskid = 1)
-fit <- FitDTVAR(
-  data = data,
-  ncores = parallel::detectCores()
-)
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
+fit <- FitDTVAR(data = data, seed = seed)
 print(fit)
 summary(fit)
 coef(fit)

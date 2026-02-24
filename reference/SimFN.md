@@ -13,7 +13,7 @@ SimFN(output_type, output_folder, suffix)
 - output_type:
 
   Character string. Output type. Valid values include `"data"`,
-  `"fit-dt-var-mx"`, `"fit-meta-var-mx"`, and `"fit-ml-var"`.
+  `"fit-dt-var-mx"`, `"fit-meta-var-mx"`, and `"fit-mplus"`.
 
 - output_folder:
 

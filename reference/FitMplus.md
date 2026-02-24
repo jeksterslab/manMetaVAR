@@ -8,13 +8,13 @@ The function fits the model using Mplus.
 FitMplus(
   data,
   chains = 2L,
-  iter = 120000L,
+  iter = 20000L,
   fscores = NULL,
   plot = FALSE,
-  default_priors = TRUE,
   wd = ".",
   mplus_bin = NULL,
-  ncores = NULL
+  ncores = NULL,
+  seed = NULL
 )
 ```
 
@@ -43,10 +43,6 @@ FitMplus(
   Logical. If `plot = TRUE`, add `PLOT: TYPE = PLOT3;` to `Mplus` input
   file.
 
-- default_priors:
-
-  Logical. If `default_priors = TRUE`, use default priors.
-
 - wd:
 
   Character string. Working directory.
@@ -60,11 +56,14 @@ FitMplus(
 
   Positive integer. Number of cores to use.
 
+- seed:
+
+  Integer. Random seed.
+
 ## See also
 
 Other Model Fitting Functions:
 [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md),
-[`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md),
 [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md),
 [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
 
@@ -72,8 +71,8 @@ Other Model Fitting Functions:
 
 ``` r
 if (FALSE) { # \dontrun{
-set.seed(42)
-data <- GenData(taskid = 1)
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
 fit <- FitMplus(data = data)
 print(fit)
 summary(fit)

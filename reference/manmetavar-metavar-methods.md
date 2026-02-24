@@ -10,16 +10,16 @@ This page documents the available methods for objects of class
 coef(object, ...)
 
 # S3 method for class 'manmetavar.metavar'
-vcov(object, ...)
+vcov(object, robust = NULL, ...)
 
 # S3 method for class 'manmetavar.metavar'
-print(x, alpha = 0.05, digits = 4, ...)
+print(x, alpha = NULL, robust = NULL, digits = 4, ...)
 
 # S3 method for class 'manmetavar.metavar'
-summary(object, alpha = 0.05, digits = 4, ...)
+summary(object, alpha = NULL, robust = NULL, digits = 4, ...)
 
 # S3 method for class 'manmetavar.metavar'
-confint(object, parm = NULL, level = 0.95, lb = TRUE, ...)
+confint(object, parm = NULL, level = 0.95, robust = NULL, ...)
 ```
 
 ## Arguments
@@ -31,6 +31,13 @@ confint(object, parm = NULL, level = 0.95, lb = TRUE, ...)
 - ...:
 
   additional arguments.
+
+- robust:
+
+  Logical. If `TRUE`, use robust (sandwich) sampling variance-covariance
+  matrix. If `FALSE`, use normal theory sampling variance-covariance
+  matrix. If `NULL`, the function will check `object` if robust standard
+  errors are available.
 
 - x:
 
@@ -53,11 +60,6 @@ confint(object, parm = NULL, level = 0.95, lb = TRUE, ...)
 - level:
 
   the confidence level required.
-
-- lb:
-
-  Logical. If `TRUE`, returns profile likelihood-based confidence
-  intervals. If `FALSE`, returns Wald confidence intervals.
 
 ## Author
 

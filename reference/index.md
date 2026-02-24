@@ -2,19 +2,15 @@
 
 ## Data Generation Functions
 
-- [`Dynamics()`](https://github.com/jeksterslab/manMetaVAR/reference/Dynamics.md)
-  : Process Dynamics
 - [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
   : Simulate Data
 
 ## Model Fitting Functions
 
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
-  : Fit the Model using the fitDTVARMxID Package
-- [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)
-  : Fit the Model using the mlVAR Package
+  : Fit the Model using the fitVARMxID Package
 - [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)
-  : Multivariate Meta-Analysis using the metaVAR Package
+  : Multivariate Meta-Analysis using the metaDyn Package
 - [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
   : Fit the Model using Mplus
 - [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
@@ -28,8 +24,6 @@
   : Simulation File Name
 - [`SimFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitDTVAR.md)
   : Simulation Replication - FitDTVAR
-- [`SimFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMLVAR.md)
-  : Simulation Replication - FitMLVAR
 - [`SimFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMetaVAR.md)
   : Simulation Replication - FitMetaVAR
 - [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
@@ -38,33 +32,6 @@
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
   : Simulation Project Name
-- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
-  : Summary
-- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
-  : Summary (FitMLVAR)
-- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
-  : Summary: Likelihood-Based (FitMetaVAR)
-- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
-  : Summary: Normal Theory (FitMetaVAR)
-- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
-  : Summary: Robust (FitMetaVAR)
-- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
-  : Summary (FitMplus)
-
-## Summary Functions
-
-- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
-  : Summary
-- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
-  : Summary (FitMLVAR)
-- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
-  : Summary: Likelihood-Based (FitMetaVAR)
-- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
-  : Summary: Normal Theory (FitMetaVAR)
-- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
-  : Summary: Robust (FitMetaVAR)
-- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
-  : Summary (FitMplus)
 
 ## Compression Functions
 
@@ -73,23 +40,10 @@
 
 ## Data
 
+- [`model`](https://github.com/jeksterslab/manMetaVAR/reference/model.md)
+  : Model Parameters
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
   : Simulation Parameters
-- [`results`](https://github.com/jeksterslab/manMetaVAR/reference/results.md)
-  : Simulation Results
-
-## Figures
-
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
-- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
-  : Plot Type 1 Error Rates
 
 ## Methods
 
@@ -117,12 +71,6 @@
 
   Methods for Objects of Class `manmetavar.metavar`
 
-- [`print(`*`<manmetavar.mlvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mlvar-methods.md)
-  [`summary(`*`<manmetavar.mlvar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mlvar-methods.md)
-  :
-
-  Methods for Objects of Class `manmetavar.mlvar`
-
 - [`coef(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
   [`vcov(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
   [`summary(`*`<manmetavar.mplus>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-mplus-methods.md)
@@ -136,24 +84,10 @@
 
 - [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
   : Compress Replication
-- [`Dynamics()`](https://github.com/jeksterslab/manMetaVAR/reference/Dynamics.md)
-  : Process Dynamics
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
-- [`FigType1Error()`](https://github.com/jeksterslab/manMetaVAR/reference/FigType1Error.md)
-  : Plot Type 1 Error Rates
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
-  : Fit the Model using the fitDTVARMxID Package
-- [`FitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMLVAR.md)
-  : Fit the Model using the mlVAR Package
+  : Fit the Model using the fitVARMxID Package
 - [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)
-  : Multivariate Meta-Analysis using the metaVAR Package
+  : Multivariate Meta-Analysis using the metaDyn Package
 - [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
   : Fit the Model using Mplus
 - [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
@@ -164,8 +98,6 @@
   : Simulation Replication
 - [`SimFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitDTVAR.md)
   : Simulation Replication - FitDTVAR
-- [`SimFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMLVAR.md)
-  : Simulation Replication - FitMLVAR
 - [`SimFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMetaVAR.md)
   : Simulation Replication - FitMetaVAR
 - [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
@@ -174,15 +106,3 @@
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
   : Simulation Project Name
-- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
-  : Summary
-- [`SumFitMLVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMLVAR.md)
-  : Summary (FitMLVAR)
-- [`SumFitMetaVARLB()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLB.md)
-  : Summary: Likelihood-Based (FitMetaVAR)
-- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
-  : Summary: Normal Theory (FitMetaVAR)
-- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
-  : Summary: Robust (FitMetaVAR)
-- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
-  : Summary (FitMplus)

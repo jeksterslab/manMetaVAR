@@ -14,13 +14,11 @@ Sim(
   seed,
   data,
   metavar,
-  mlvar,
   mplus,
   chains,
   iter,
   fscores,
-  plot,
-  default_priors
+  plot
 )
 ```
 
@@ -57,12 +55,8 @@ Sim(
 
 - metavar:
 
-  Logical. If `metavar = TRUE`, fit the model using the `metaVAR`
+  Logical. If `metavar = TRUE`, fit the model using the `metaDyn`
   package.
-
-- mlvar:
-
-  Logical. If `mlvar = TRUE`, fit the model using the `mlVAR` package.
 
 - mplus:
 
@@ -84,10 +78,6 @@ Sim(
 
   Logical. If `plot = TRUE`, add `PLOT: TYPE = PLOT3;` to `Mplus` input
   file.
-
-- default_priors:
-
-  Logical. If `default_priors = TRUE`, use default priors.
 
 ## Value
 

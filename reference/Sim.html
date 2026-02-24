@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manMetaVAR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.7</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,13 +50,11 @@
 <span>  <span class="va">seed</span>,</span>
 <span>  <span class="va">data</span>,</span>
 <span>  <span class="va">metavar</span>,</span>
-<span>  <span class="va">mlvar</span>,</span>
 <span>  <span class="va">mplus</span>,</span>
 <span>  <span class="va">chains</span>,</span>
 <span>  <span class="va">iter</span>,</span>
 <span>  <span class="va">fscores</span>,</span>
-<span>  <span class="va">plot</span>,</span>
-<span>  <span class="va">default_priors</span></span>
+<span>  <span class="va">plot</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -102,12 +100,7 @@ Simulate data.</p></dd>
 
 <dt id="arg-metavar">metavar<a class="anchor" aria-label="anchor" href="#arg-metavar"></a></dt>
 <dd><p>Logical.
-If <code>metavar = TRUE</code>, fit the model using the <code>metaVAR</code> package.</p></dd>
-
-
-<dt id="arg-mlvar">mlvar<a class="anchor" aria-label="anchor" href="#arg-mlvar"></a></dt>
-<dd><p>Logical.
-If <code>mlvar = TRUE</code>, fit the model using the <code>mlVAR</code> package.</p></dd>
+If <code>metavar = TRUE</code>, fit the model using the <code>metaDyn</code> package.</p></dd>
 
 
 <dt id="arg-mplus">mplus<a class="anchor" aria-label="anchor" href="#arg-mplus"></a></dt>
@@ -134,11 +127,6 @@ Number of iterations for factor scores.</p></dd>
 <dd><p>Logical.
 If <code>plot = TRUE</code>, add <code>PLOT: TYPE = PLOT3;</code>
 to <code>Mplus</code> input file.</p></dd>
-
-
-<dt id="arg-default-priors">default_priors<a class="anchor" aria-label="anchor" href="#arg-default-priors"></a></dt>
-<dd><p>Logical.
-If <code>default_priors = TRUE</code>, use default priors.</p></dd>
 
 </dl></div>
     <div class="section level2">

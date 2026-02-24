@@ -10,7 +10,7 @@ data(params)
 
 ## Format
 
-A dataframe with 27 rows and 4 columns:
+A dataframe with 9 rows and 3 columns:
 
 - taskid:
 
@@ -23,11 +23,6 @@ A dataframe with 27 rows and 4 columns:
 - time:
 
   Number of measurement occassions.
-
-- dynamics:
-
-  Process dynamics. `1` for stable reciprocal regulation, `2` for
-  escalating co-activation, and `3` for adaptive recovery.
 
 ## Author
 

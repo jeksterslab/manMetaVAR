@@ -9,32 +9,27 @@ This page documents the available methods for objects of class
 # S3 method for class 'manmetavar.dtvar'
 coef(
   object,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
+  ncores = NULL,
   ...
 )
 
 # S3 method for class 'manmetavar.dtvar'
 vcov(
   object,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
+  robust = FALSE,
+  ncores = NULL,
   ...
 )
 
@@ -42,17 +37,14 @@ vcov(
 print(
   x,
   means = FALSE,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
   digits = 4,
+  ncores = NULL,
   ...
 )
 
@@ -60,17 +52,14 @@ print(
 summary(
   object,
   means = FALSE,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
   digits = 4,
+  ncores = NULL,
   ...
 )
 ```
@@ -80,6 +69,11 @@ summary(
 - object:
 
   Object of class `manmetavar.dtvar`.
+
+- mu:
+
+  Logical. If `mu = TRUE`, include estimates of the `mu` vector, if
+  available. If `mu = FALSE`, exclude estimates of the `mu` vector.
 
 - alpha:
 
@@ -108,33 +102,19 @@ summary(
   if available. If `theta = FALSE`, exclude estimates of the `theta`
   matrix.
 
-- converged:
+- ncores:
 
-  Logical. Only include converged cases.
-
-- grad_tol:
-
-  Numeric scalar. Tolerance for the maximum absolute gradient if
-  `converged = TRUE`.
-
-- hess_tol:
-
-  Numeric scalar. Tolerance for Hessian eigenvalues; eigenvalues must be
-  strictly greater than this value if `converged = TRUE`.
-
-- vanishing_theta:
-
-  Logical. Test for measurement error variance going to zero if
-  `converged = TRUE`.
-
-- theta_tol:
-
-  Numeric. Tolerance for vanishing theta test if `converged` and
-  `theta_tol` are `TRUE`.
+  Positive integer. Number of cores to use.
 
 - ...:
 
   additional arguments.
+
+- robust:
+
+  Logical. If `TRUE`, use robust (sandwich) sampling variance-covariance
+  matrix. If `FALSE`, use normal theory sampling variance-covariance
+  matrix.
 
 - x:
 
