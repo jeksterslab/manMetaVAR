@@ -5,7 +5,6 @@
 \title{Create Mplus Input File}
 \usage{
 MplusInput(
-  dynamics,
   fn_data,
   fn_posterior,
   fn_factorscores,
@@ -13,16 +12,11 @@ MplusInput(
   iter,
   fscores,
   plot,
-  default_priors,
-  ncores = NULL
+  ncores = NULL,
+  seed = NULL
 )
 }
 \arguments{
-\item{dynamics}{\code{1}, \code{2}, or \code{3}.
-\code{1} for stable reciprocal regulation,
-\code{2} for escalating co-activation, and
-\code{3} for adaptive recovery.}
-
 \item{fn_data}{Character string.
 Filename for data file.}
 
@@ -45,11 +39,11 @@ Number of iterations for factor scores.}
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
 
-\item{default_priors}{Logical.
-If \code{default_priors = TRUE}, use default priors.}
-
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
 The function creates an Mplus input file.
@@ -57,16 +51,15 @@ The function creates an Mplus input file.
 \examples{
 cat(
   MplusInput(
-    dynamics = 1,
     fn_data = "data.dat",
     fn_posterior = "posterior.dat",
     fn_factorscores = "factorscores.dat",
     chains = 2L,
-    iter = 60000L,
+    iter = 20000L,
     fscores = 1000L,
     plot = TRUE,
-    default_priors = TRUE,
-    ncores = NULL
+    ncores = NULL,
+    seed = 42
   )
 )
 
@@ -74,7 +67,6 @@ cat(
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
-\code{\link{FitMLVAR}()},
 \code{\link{FitMetaVAR}()},
 \code{\link{FitMplus}()}
 }

@@ -10,70 +10,65 @@
 \usage{
 \method{coef}{manmetavar.dtvar}(
   object,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
+  ncores = NULL,
   ...
 )
 
 \method{vcov}{manmetavar.dtvar}(
   object,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
+  robust = FALSE,
+  ncores = NULL,
   ...
 )
 
 \method{print}{manmetavar.dtvar}(
   x,
   means = FALSE,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
   digits = 4,
+  ncores = NULL,
   ...
 )
 
 \method{summary}{manmetavar.dtvar}(
   object,
   means = FALSE,
+  mu = TRUE,
   alpha = TRUE,
   beta = TRUE,
   nu = TRUE,
   psi = TRUE,
   theta = TRUE,
-  converged = TRUE,
-  grad_tol = 0.01,
-  hess_tol = 1e-08,
-  vanishing_theta = TRUE,
-  theta_tol = 0.001,
   digits = 4,
+  ncores = NULL,
   ...
 )
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.dtvar}.}
+
+\item{mu}{Logical.
+If \code{mu = TRUE},
+include estimates of the \code{mu} vector, if available.
+If \code{mu = FALSE},
+exclude estimates of the \code{mu} vector.}
 
 \item{alpha}{Logical.
 If \code{alpha = TRUE},
@@ -105,27 +100,14 @@ include estimates of the \code{theta} matrix, if available.
 If \code{theta = FALSE},
 exclude estimates of the \code{theta} matrix.}
 
-\item{converged}{Logical.
-Only include converged cases.}
-
-\item{grad_tol}{Numeric scalar.
-Tolerance for the maximum absolute gradient
-if \code{converged = TRUE}.}
-
-\item{hess_tol}{Numeric scalar.
-Tolerance for Hessian eigenvalues;
-eigenvalues must be strictly greater than this value
-if \code{converged = TRUE}.}
-
-\item{vanishing_theta}{Logical.
-Test for measurement error variance going to zero
-if \code{converged = TRUE}.}
-
-\item{theta_tol}{Numeric.
-Tolerance for vanishing theta test
-if \code{converged} and \code{theta_tol} are \code{TRUE}.}
+\item{ncores}{Positive integer.
+Number of cores to use.}
 
 \item{...}{additional arguments.}
+
+\item{robust}{Logical.
+If \code{TRUE}, use robust (sandwich) sampling variance-covariance matrix.
+If \code{FALSE}, use normal theory sampling variance-covariance matrix.}
 
 \item{x}{Object of class \code{manmetavar.dtvar}.}
 

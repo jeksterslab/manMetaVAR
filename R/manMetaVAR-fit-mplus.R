@@ -6,8 +6,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' set.seed(42)
-#' data <- GenData(taskid = 1)
+#' seed <- 42
+#' data <- GenData(taskid = 1, seed = seed)
 #' fit <- FitMplus(data = data)
 #' print(fit)
 #' summary(fit)
@@ -18,24 +18,14 @@
 #' @export
 FitMplus <- function(data,
                      chains = 2L,
-                     iter = 120000L,
+                     iter = 20000L,
                      fscores = NULL,
                      plot = FALSE,
-                     default_priors = TRUE,
                      wd = ".",
                      mplus_bin = NULL,
-                     ncores = NULL) {
+                     ncores = NULL,
+                     seed = NULL) {
   start_time <- Sys.time()
-  args <- list(
-    chains = chains,
-    iter = iter,
-    fscores = fscores,
-    default_priors = default_priors,
-    wd = wd,
-    mplus_bin = mplus_bin,
-    ncores = ncores
-  )
-  dynamics <- data$dynamics
   model <- "mplus"
   old_wd <- getwd()
   on.exit(
@@ -92,7 +82,6 @@ FitMplus <- function(data,
   )
   writeLines(
     text = MplusInput(
-      dynamics = dynamics,
       fn_data = fn_data,
       fn_posterior = fn_posterior,
       fn_factorscores = fn_factorscores,
@@ -100,8 +89,8 @@ FitMplus <- function(data,
       iter = iter,
       fscores = fscores,
       plot = plot,
-      default_priors = default_priors,
-      ncores = ncores
+      ncores = ncores,
+      seed = seed
     ),
     con = fn_inp
   )
@@ -156,12 +145,13 @@ FitMplus <- function(data,
   )
   end_time <- Sys.time()
   elapsed <- end_time - start_time
-  structure(
-    list(
-      args = args,
-      output = output,
-      elapsed = elapsed
-    ),
-    class = "manmetavar.mplus"
+  out <- list(
+    output = output,
+    elapsed = elapsed
   )
+  class(out) <- c(
+    "manmetavar.mplus",
+    class(out)
+  )
+  out
 }

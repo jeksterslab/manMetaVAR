@@ -7,13 +7,13 @@
 FitMplus(
   data,
   chains = 2L,
-  iter = 120000L,
+  iter = 20000L,
   fscores = NULL,
   plot = FALSE,
-  default_priors = TRUE,
   wd = ".",
   mplus_bin = NULL,
-  ncores = NULL
+  ncores = NULL,
+  seed = NULL
 )
 }
 \arguments{
@@ -33,9 +33,6 @@ Number of iterations for factor scores.}
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
 
-\item{default_priors}{Logical.
-If \code{default_priors = TRUE}, use default priors.}
-
 \item{wd}{Character string.
 Working directory.}
 
@@ -47,14 +44,17 @@ the appropriate binary.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
 The function fits the model using Mplus.
 }
 \examples{
 \dontrun{
-set.seed(42)
-data <- GenData(taskid = 1)
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
 fit <- FitMplus(data = data)
 print(fit)
 summary(fit)
@@ -64,7 +64,6 @@ summary(fit)
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
-\code{\link{FitMLVAR}()},
 \code{\link{FitMetaVAR}()},
 \code{\link{MplusInput}()}
 }

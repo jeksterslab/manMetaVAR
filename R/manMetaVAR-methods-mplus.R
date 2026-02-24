@@ -12,17 +12,16 @@ NULL
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
+#' @param burnin Integer indicating initial samples to discard.
+#'   If `burnin = NULL`, do not discard anything.
 #' @param median Logical.
 #'   If `median = TRUE`, return median of the posterior.
 #'   If `median = FALSE`, return mean of the posterior.
 #' @inheritParams Template
 #'
-#' @inheritParams Template
-#'
 #' @rdname manmetavar-mplus-methods
 #' @method coef manmetavar.mplus
 #' @keywords methods
-#' @import metaVAR
 #' @export
 coef.manmetavar.mplus <- function(object,
                                   median = TRUE,
@@ -73,38 +72,28 @@ coef.manmetavar.mplus <- function(object,
     out <- colMeans(thetahatstar)
   }
   names(out) <- c(
-    "theta[1,1]",
-    "theta[2,2]",
     "psi[1,1]",
     "psi[2,1]",
     "psi[2,2]",
-    "mean(nu[1,1])",
-    "mean(nu[2,1])",
     "mean(beta[1,1])",
     "mean(beta[2,1])",
     "mean(beta[1,2])",
     "mean(beta[2,2])",
-    "cov(nu[1,1],nu[1,1])",
-    "cov(nu[2,1],nu[1,1])",
-    "cov(nu[2,1],nu[2,1])",
-    "cov(nu[1,1],beta[1,1])",
-    "cov(nu[2,1],beta[1,1])",
+    "mean(mu[1,1])",
+    "mean(mu[2,1])",
     "cov(beta[1,1],beta[1,1])",
-    "cov(nu[1,1],beta[2,1])",
-    "cov(nu[2,1],beta[2,1])",
     "cov(beta[2,1], beta[1,1])",
     "cov(beta[2,1],beta[2,1])",
-    "cov(nu[1,1],beta[1,2])",
-    "cov(nu[2,1],beta[1,2])",
     "cov(beta[1,2],beta[1,1])",
     "cov(beta[1,2],beta[2,1])",
     "cov(beta[1,2],beta[1,2])",
-    "cov(nu[1,1],beta[2,2])",
-    "cov(nu[2,1],beta[2,2])",
     "cov(beta[2,2],beta[1,1])",
     "cov(beta[2,2],beta[2,1])",
     "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])"
+    "cov(beta[2,2],beta[2,2])",
+    "cov(mu[1,1],mu[1,1])",
+    "cov(mu[2,1],mu[1,1])",
+    "cov(mu[2,1],mu[2,1])"
   )
   out
 }
@@ -114,8 +103,7 @@ coef.manmetavar.mplus <- function(object,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
-#' @inheritParams Template
-#'
+#' @inheritParams coef.manmetavar.mplus
 #' @inheritParams Template
 #'
 #' @rdname manmetavar-mplus-methods
@@ -162,38 +150,28 @@ vcov.manmetavar.mplus <- function(object,
   thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
   out <- stats::cov(thetahatstar)
   rownames(out) <- colnames(out) <- c(
-    "theta[1,1]",
-    "theta[2,2]",
     "psi[1,1]",
     "psi[2,1]",
     "psi[2,2]",
-    "mean(nu[1,1])",
-    "mean(nu[2,1])",
     "mean(beta[1,1])",
     "mean(beta[2,1])",
     "mean(beta[1,2])",
     "mean(beta[2,2])",
-    "cov(nu[1,1],nu[1,1])",
-    "cov(nu[2,1],nu[1,1])",
-    "cov(nu[2,1],nu[2,1])",
-    "cov(nu[1,1],beta[1,1])",
-    "cov(nu[2,1],beta[1,1])",
+    "mean(mu[1,1])",
+    "mean(mu[2,1])",
     "cov(beta[1,1],beta[1,1])",
-    "cov(nu[1,1],beta[2,1])",
-    "cov(nu[2,1],beta[2,1])",
     "cov(beta[2,1], beta[1,1])",
     "cov(beta[2,1],beta[2,1])",
-    "cov(nu[1,1],beta[1,2])",
-    "cov(nu[2,1],beta[1,2])",
     "cov(beta[1,2],beta[1,1])",
     "cov(beta[1,2],beta[2,1])",
     "cov(beta[1,2],beta[1,2])",
-    "cov(nu[1,1],beta[2,2])",
-    "cov(nu[2,1],beta[2,2])",
     "cov(beta[2,2],beta[1,1])",
     "cov(beta[2,2],beta[2,1])",
     "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])"
+    "cov(beta[2,2],beta[2,2])",
+    "cov(mu[1,1],mu[1,1])",
+    "cov(mu[2,1],mu[1,1])",
+    "cov(mu[2,1],mu[2,1])"
   )
   out
 }
@@ -276,6 +254,7 @@ vcov.manmetavar.mplus <- function(object,
 #'
 #' @inheritParams Template
 #' @inheritParams coef.manmetavar.mplus
+#' @inheritParams summary.manmetavar.dtvar
 #'
 #' @rdname manmetavar-mplus-methods
 #' @method summary manmetavar.mplus
@@ -293,6 +272,10 @@ summary.manmetavar.mplus <- function(object,
     median = median,
     burnin = burnin
   )
+  print_summary <- round(
+    x = ci,
+    digits = digits
+  )
   class(ci) <- c(
     "summary.manmetavar.mplus",
     class(ci)
@@ -302,10 +285,7 @@ summary.manmetavar.mplus <- function(object,
   attributes(ci)$median <- median
   attributes(ci)$digits <- digits
   attributes(ci)$burnin <- burnin
-  attributes(ci)$print_summary <- round(
-    x = ci,
-    digits = digits
-  )
+  attributes(ci)$print_summary <- print_summary
   ci
 }
 
@@ -338,7 +318,6 @@ print.summary.manmetavar.mplus <- function(x,
 #' @rdname manmetavar-mplus-methods
 #' @method confint manmetavar.mplus
 #' @keywords methods
-#' @import metaVAR
 #' @export
 confint.manmetavar.mplus <- function(object,
                                      parm = NULL,
@@ -433,38 +412,28 @@ plot.manmetavar.mplus <- function(x,
   }
   rownames(thetahatstar) <- NULL
   varnames <- c(
-    "theta[1,1]",
-    "theta[2,2]",
     "psi[1,1]",
     "psi[2,1]",
     "psi[2,2]",
-    "mean(nu[1,1])",
-    "mean(nu[2,1])",
     "mean(beta[1,1])",
     "mean(beta[2,1])",
     "mean(beta[1,2])",
     "mean(beta[2,2])",
-    "cov(nu[1,1],nu[1,1])",
-    "cov(nu[2,1],nu[1,1])",
-    "cov(nu[2,1],nu[2,1])",
-    "cov(nu[1,1],beta[1,1])",
-    "cov(nu[2,1],beta[1,1])",
+    "mean(mu[1,1])",
+    "mean(mu[2,1])",
     "cov(beta[1,1],beta[1,1])",
-    "cov(nu[1,1],beta[2,1])",
-    "cov(nu[2,1],beta[2,1])",
     "cov(beta[2,1], beta[1,1])",
     "cov(beta[2,1],beta[2,1])",
-    "cov(nu[1,1],beta[1,2])",
-    "cov(nu[2,1],beta[1,2])",
     "cov(beta[1,2],beta[1,1])",
     "cov(beta[1,2],beta[2,1])",
     "cov(beta[1,2],beta[1,2])",
-    "cov(nu[1,1],beta[2,2])",
-    "cov(nu[2,1],beta[2,2])",
     "cov(beta[2,2],beta[1,1])",
     "cov(beta[2,2],beta[2,1])",
     "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])"
+    "cov(beta[2,2],beta[2,2])",
+    "cov(mu[1,1],mu[1,1])",
+    "cov(mu[2,1],mu[1,1])",
+    "cov(mu[2,1],mu[2,1])"
   )
   colnames(thetahatstar) <- c(
     "chain",

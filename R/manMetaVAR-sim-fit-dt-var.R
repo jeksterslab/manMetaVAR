@@ -43,7 +43,6 @@ SimFitDTVAR <- function(taskid,
         saveRDS(
           object = FitDTVAR(
             data = readRDS(fn_input),
-            wd = output_folder,
             ncores = NULL,
             seed = seed
           ),

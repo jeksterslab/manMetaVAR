@@ -18,7 +18,7 @@ NULL
 #' @rdname manmetavar-metavar-methods
 #' @method coef manmetavar.metavar
 #' @keywords methods
-#' @import metaVAR
+#' @import metaDyn
 #' @export
 coef.manmetavar.metavar <- function(object,
                                     ...) {
@@ -32,17 +32,18 @@ coef.manmetavar.metavar <- function(object,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
-#'
-#' @inheritParams Template
+#' @inheritParams metaDyn::vcov.metadynmeta
 #'
 #' @rdname manmetavar-metavar-methods
 #' @method vcov manmetavar.metavar
 #' @keywords methods
 #' @export
 vcov.manmetavar.metavar <- function(object,
+                                    robust = NULL,
                                     ...) {
   vcov(
-    object = object$output
+    object = object$output,
+    robust = robust
   )
 }
 
@@ -51,21 +52,22 @@ vcov.manmetavar.metavar <- function(object,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.metavar`.
-#'
-#' @inheritParams Template
+#' @inheritParams metaDyn::summary.metadynmeta
 #'
 #' @rdname manmetavar-metavar-methods
 #' @method print manmetavar.metavar
 #' @keywords methods
-#' @import metaVAR
+#' @import metaDyn
 #' @export
 print.manmetavar.metavar <- function(x,
-                                     alpha = 0.05,
+                                     alpha = NULL,
+                                     robust = NULL,
                                      digits = 4,
                                      ...) {
   print(
     x = x$output,
     alpha = alpha,
+    robust = robust,
     digits = digits
   )
 }
@@ -75,21 +77,22 @@ print.manmetavar.metavar <- function(x,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
-#'
-#' @inheritParams Template
+#' @inheritParams metaDyn::summary.metadynmeta
 #'
 #' @rdname manmetavar-metavar-methods
 #' @method summary manmetavar.metavar
 #' @keywords methods
-#' @import metaVAR
+#' @import metaDyn
 #' @export
 summary.manmetavar.metavar <- function(object,
-                                       alpha = 0.05,
+                                       alpha = NULL,
+                                       robust = NULL,
                                        digits = 4,
                                        ...) {
   summary(
     object = object$output,
     alpha = alpha,
+    robust = robust,
     digits = digits
   )
 }
@@ -118,31 +121,23 @@ print.summary.manmetavar.metavar <- function(x,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
-#' @param ... additional arguments.
-#' @param parm a specification of which parameters
-#'   are to be given confidence intervals,
-#'   either a vector of numbers or a vector of names.
-#'   If missing, all parameters are considered.
-#' @param level the confidence level required.
-#' @param lb Logical.
-#'   If `TRUE`, returns profile likelihood-based confidence intervals.
-#'   If `FALSE`, returns Wald confidence intervals.
+#' @inheritParams metaDyn::confint.metadynmeta
 #'
 #' @rdname manmetavar-metavar-methods
 #' @method confint manmetavar.metavar
 #' @keywords methods
-#' @import metaVAR
+#' @import metaDyn
 #' @importFrom stats confint
 #' @export
 confint.manmetavar.metavar <- function(object,
                                        parm = NULL,
                                        level = 0.95,
-                                       lb = TRUE,
+                                       robust = NULL,
                                        ...) {
   confint(
     object = object$output,
     parm = parm,
     level = level,
-    lb = lb,
+    robust = robust
   )
 }

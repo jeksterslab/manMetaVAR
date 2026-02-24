@@ -12,77 +12,30 @@ NULL
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.dtvar`.
-#' @param alpha Logical.
-#'   If `alpha = TRUE`,
-#'   include estimates of the `alpha` vector, if available.
-#'   If `alpha = FALSE`,
-#'   exclude estimates of the `alpha` vector.
-#' @param beta Logical.
-#'   If `beta = TRUE`,
-#'   include estimates of the `beta` matrix, if available.
-#'   If `beta = FALSE`,
-#'   exclude estimates of the `beta` matrix.
-#' @param nu Logical.
-#'   If `nu = TRUE`,
-#'   include estimates of the `nu` vector, if available.
-#'   If `nu = FALSE`,
-#'   exclude estimates of the `nu` vector.
-#' @param psi Logical.
-#'   If `psi = TRUE`,
-#'   include estimates of the `psi` matrix, if available.
-#'   If `psi = FALSE`,
-#'   exclude estimates of the `psi` matrix.
-#' @param theta Logical.
-#'   If `theta = TRUE`,
-#'   include estimates of the `theta` matrix, if available.
-#'   If `theta = FALSE`,
-#'   exclude estimates of the `theta` matrix.
-#' @param converged Logical.
-#'   Only include converged cases.
-#' @param grad_tol Numeric scalar.
-#'   Tolerance for the maximum absolute gradient
-#'   if `converged = TRUE`.
-#' @param hess_tol Numeric scalar.
-#'   Tolerance for Hessian eigenvalues;
-#'   eigenvalues must be strictly greater than this value
-#'   if `converged = TRUE`.
-#' @param vanishing_theta Logical.
-#'   Test for measurement error variance going to zero
-#'   if `converged = TRUE`.
-#' @param theta_tol Numeric.
-#'   Tolerance for vanishing theta test
-#'   if `converged` and `theta_tol` are `TRUE`.
-#'
-#' @inheritParams Template
+#' @inheritParams fitVARMxID::coef.varmxid
 #'
 #' @rdname manmetavar-dtvar-methods
 #' @method coef manmetavar.dtvar
 #' @keywords methods
 #' @export
 coef.manmetavar.dtvar <- function(object,
+                                  mu = TRUE,
                                   alpha = TRUE,
                                   beta = TRUE,
                                   nu = TRUE,
                                   psi = TRUE,
                                   theta = TRUE,
-                                  converged = TRUE,
-                                  grad_tol = 1e-2,
-                                  hess_tol = 1e-8,
-                                  vanishing_theta = TRUE,
-                                  theta_tol = 0.001,
+                                  ncores = NULL,
                                   ...) {
   coef(
     object = object$output,
+    mu = mu,
     alpha = alpha,
     beta = beta,
     nu = nu,
     psi = psi,
     theta = theta,
-    converged = converged,
-    grad_tol = grad_tol,
-    hess_tol = hess_tol,
-    vanishing_theta = vanishing_theta,
-    theta_tol = theta_tol
+    ncores = ncores
   )
 }
 
@@ -91,38 +44,32 @@ coef.manmetavar.dtvar <- function(object,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.dtvar`.
-#'
-#' @inheritParams coef.manmetavar.dtvar
-#' @inheritParams Template
+#' @inheritParams fitVARMxID::vcov.varmxid
 #'
 #' @rdname manmetavar-dtvar-methods
 #' @method vcov manmetavar.dtvar
 #' @keywords methods
 #' @export
 vcov.manmetavar.dtvar <- function(object,
+                                  mu = TRUE,
                                   alpha = TRUE,
                                   beta = TRUE,
                                   nu = TRUE,
                                   psi = TRUE,
                                   theta = TRUE,
-                                  converged = TRUE,
-                                  grad_tol = 1e-2,
-                                  hess_tol = 1e-8,
-                                  vanishing_theta = TRUE,
-                                  theta_tol = 0.001,
+                                  robust = FALSE,
+                                  ncores = NULL,
                                   ...) {
   vcov(
     object = object$output,
+    mu = mu,
     alpha = alpha,
     beta = beta,
     nu = nu,
     psi = psi,
     theta = theta,
-    converged = converged,
-    grad_tol = grad_tol,
-    hess_tol = hess_tol,
-    vanishing_theta = vanishing_theta,
-    theta_tol = theta_tol
+    robust = robust,
+    ncores = ncores
   )
 }
 
@@ -143,32 +90,26 @@ vcov.manmetavar.dtvar <- function(object,
 #' @export
 print.manmetavar.dtvar <- function(x,
                                    means = FALSE,
+                                   mu = TRUE,
                                    alpha = TRUE,
                                    beta = TRUE,
                                    nu = TRUE,
                                    psi = TRUE,
                                    theta = TRUE,
-                                   converged = TRUE,
-                                   grad_tol = 1e-2,
-                                   hess_tol = 1e-8,
-                                   vanishing_theta = TRUE,
-                                   theta_tol = 0.001,
                                    digits = 4,
+                                   ncores = NULL,
                                    ...) {
   print(
     x = x$output,
     means = means,
+    mu = mu,
     alpha = alpha,
     beta = beta,
     nu = nu,
     psi = psi,
     theta = theta,
-    converged = converged,
-    grad_tol = grad_tol,
-    hess_tol = hess_tol,
-    vanishing_theta = vanishing_theta,
-    theta_tol = theta_tol,
-    digits = digits
+    digits = digits,
+    ncores = ncores
   )
 }
 
@@ -177,41 +118,34 @@ print.manmetavar.dtvar <- function(x,
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.dtvar`.
-#' @inheritParams print.manmetavar.dtvar
-#' @inheritParams Template
+#' @inheritParams fitVARMxID::summary.varmxid
 #'
 #' @rdname manmetavar-dtvar-methods
 #' @method summary manmetavar.dtvar
 #' @keywords methods
-#' @import fitDTVARMxID
+#' @import fitVARMxID
 #' @export
 summary.manmetavar.dtvar <- function(object,
                                      means = FALSE,
+                                     mu = TRUE,
                                      alpha = TRUE,
                                      beta = TRUE,
                                      nu = TRUE,
                                      psi = TRUE,
                                      theta = TRUE,
-                                     converged = TRUE,
-                                     grad_tol = 1e-2,
-                                     hess_tol = 1e-8,
-                                     vanishing_theta = TRUE,
-                                     theta_tol = 0.001,
                                      digits = 4,
+                                     ncores = NULL,
                                      ...) {
   summary(
     object = object$output,
     means = means,
+    mu = mu,
     alpha = alpha,
     beta = beta,
     nu = nu,
     psi = psi,
     theta = theta,
-    converged = converged,
-    grad_tol = grad_tol,
-    hess_tol = hess_tol,
-    vanishing_theta = vanishing_theta,
-    theta_tol = theta_tol,
-    digits = digits
+    digits = digits,
+    ncores = ncores
   )
 }

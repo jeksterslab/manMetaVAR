@@ -2,47 +2,39 @@
 % Please edit documentation in R/manMetaVAR-fit-meta-var.R
 \name{FitMetaVAR}
 \alias{FitMetaVAR}
-\title{Multivariate Meta-Analysis using the metaVAR Package}
+\title{Multivariate Meta-Analysis using the metaDyn Package}
 \usage{
-FitMetaVAR(data, fit, ncores = NULL)
+FitMetaVAR(fit, ncores = NULL, seed = NULL)
 }
 \arguments{
-\item{data}{R object.
-Output of the \code{\link[=GenData]{GenData()}} function.}
-
 \item{fit}{R object.
 Output of the \code{\link[=FitDTVAR]{FitDTVAR()}} function.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
-The function performs multivariate meta-snalysis using the \link[metaVAR:metaVAR-package]{metaVAR::metaVAR} package.
+The function performs multivariate meta-snalysis using the \link[metaDyn:metaDyn-package]{metaDyn::metaDyn} package.
 }
 \examples{
 \dontrun{
-set.seed(42)
-data <- GenData(taskid = 1)
-fit <- FitDTVAR(
-  data = data,
-  ncores = parallel::detectCores()
-)
-pooled <- FitMetaVAR(
-  data = data,
-  fit = fit,
-  ncores = parallel::detectCores()
-)
-summary(pooled)
-print(pooled)
-coef(pooled)
-vcov(pooled)
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
+fit <- FitDTVAR(data = data, seed = seed)
+meta <- FitMetaVAR(fit = fit, seed = seed)
+summary(meta)
+print(meta)
+coef(meta)
+vcov(meta)
 }
 
 }
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
-\code{\link{FitMLVAR}()},
 \code{\link{FitMplus}()},
 \code{\link{MplusInput}()}
 }

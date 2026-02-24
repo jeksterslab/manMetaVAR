@@ -15,8 +15,7 @@ SimFitMplus(
   chains,
   iter,
   fscores,
-  plot,
-  default_priors
+  plot
 )
 }
 \arguments{
@@ -54,9 +53,6 @@ Number of iterations for factor scores.}
 \item{plot}{Logical.
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
-
-\item{default_priors}{Logical.
-If \code{default_priors = TRUE}, use default priors.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
