@@ -55,7 +55,7 @@ cat(
     fn_posterior = "posterior.dat",
     fn_factorscores = "factorscores.dat",
     chains = 2L,
-    iter = 20000L,
+    iter = 40000L,
     fscores = 1000L,
     plot = TRUE,
     ncores = NULL,

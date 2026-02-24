@@ -18,7 +18,7 @@
 #' @export
 FitMplus <- function(data,
                      chains = 2L,
-                     iter = 20000L,
+                     iter = 40000L,
                      fscores = NULL,
                      plot = FALSE,
                      wd = ".",
