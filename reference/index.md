@@ -32,6 +32,16 @@
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
   : Simulation Project Name
+- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
+  : Summary
+- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
+  : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
+- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
+  : Summary (FitMplus)
+- [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
+  : Summary: Naive (FitMetaVAR)
 
 ## Compression Functions
 
@@ -106,3 +116,13 @@
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
   : Simulation Project Name
+- [`Sum()`](https://github.com/jeksterslab/manMetaVAR/reference/Sum.md)
+  : Summary
+- [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
+  : Summary: Normal Theory (FitMetaVAR)
+- [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
+  : Summary: Robust (FitMetaVAR)
+- [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
+  : Summary (FitMplus)
+- [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
+  : Summary: Naive (FitMetaVAR)

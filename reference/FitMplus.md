@@ -8,7 +8,7 @@ The function fits the model using Mplus.
 FitMplus(
   data,
   chains = 2L,
-  iter = 20000L,
+  iter = 40000L,
   fscores = NULL,
   plot = FALSE,
   wd = ".",

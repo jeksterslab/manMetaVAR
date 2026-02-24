@@ -73,7 +73,7 @@ cat(
     fn_posterior = "posterior.dat",
     fn_factorscores = "factorscores.dat",
     chains = 2L,
-    iter = 20000L,
+    iter = 40000L,
     fscores = 1000L,
     plot = TRUE,
     ncores = NULL,
@@ -94,7 +94,7 @@ cat(
 #>       TYPE = TWOLEVEL RANDOM;
 #>       ESTIMATOR = BAYES;
 #>       CHAINS = 2;
-#>       FBITER = (20000);
+#>       FBITER = (40000);
 #>       PROCESSORS = 1;
 #>       BSEED = 42;
 #>     MODEL:
