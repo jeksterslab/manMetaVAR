@@ -1,1 +1,6 @@
-utils::globalVariables("params")
+utils::globalVariables(
+  c(
+    "params",
+    "model"
+  )
+)

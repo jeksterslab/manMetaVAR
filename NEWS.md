@@ -1,3 +1,7 @@
+# manMetaVAR 0.9.7
+
+* Rewrite.
+
 # manMetaVAR 0.9.6
 
 * Removed `data` object in `fit` objects. 

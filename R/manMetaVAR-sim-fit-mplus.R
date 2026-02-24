@@ -21,8 +21,7 @@ SimFitMplus <- function(taskid,
                         chains,
                         iter,
                         fscores,
-                        plot,
-                        default_priors) {
+                        plot) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Sim` function.
   fn_input <- SimFN(
@@ -52,10 +51,10 @@ SimFitMplus <- function(taskid,
             iter = iter,
             fscores = fscores,
             plot = plot,
-            default_priors = default_priors,
             wd = output_folder,
             mplus_bin = "mplus",
-            ncores = NULL
+            ncores = NULL,
+            seed = seed
           ),
           file = con
         )

@@ -4,27 +4,28 @@
 \alias{GenData}
 \title{Simulate Data}
 \usage{
-GenData(taskid)
+GenData(taskid, seed = NULL)
 }
 \arguments{
 \item{taskid}{Positive integer.
 Task ID.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
 The function simulates data using
 the \code{\link[simStateSpace:SimSSMIVary]{simStateSpace::SimSSMIVary()}} function.
 }
 \examples{
-set.seed(42)
-data <- GenData(taskid = 1)
+\dontrun{
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
 print(data)
 summary(data)
 plot(data)
-
 }
-\seealso{
-Other Data Generation Functions: 
-\code{\link{Dynamics}()}
+
 }
 \concept{Data Generation Functions}
 \keyword{gendata}

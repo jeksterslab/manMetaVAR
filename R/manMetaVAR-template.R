@@ -1,7 +1,3 @@
-#' @param dynamics `1`, `2`, or `3`.
-#'   `1` for stable reciprocal regulation,
-#'   `2` for escalating co-activation, and
-#'   `3` for adaptive recovery.
 #' @param data R object.
 #'   Output of the [GenData()] function.
 #' @param fit R object.
@@ -12,7 +8,7 @@
 #'   `"data"`,
 #'   `"fit-dt-var-mx"`,
 #'   `"fit-meta-var-mx"`, and
-#'   `"fit-ml-var"`.
+#'   `"fit-mplus"`.
 #' @param suffix Character string.
 #'   Output of `manCTMed:::.SimSuffix()`.
 #' @param output_folder Character string.
@@ -34,10 +30,6 @@
 #'   Number of cores to use.
 #' @param alpha Numeric vector.
 #'   Significance level \eqn{\alpha}.
-#' @param digits Integer indicating the number of decimal places to display.
-#' @param burnin Integer indicating initial samples to discard.
-#'   If `burnin = NULL`, do not discard anything.
-#' @param show	Tables to show.
 #' @param wd Character string.
 #'   Working directory.
 #' @param mplus_bin Character string.
@@ -61,34 +53,13 @@
 #'   Number of iterations.
 #' @param fscores Integer.
 #'   Number of iterations for factor scores.
-#' @param default_priors Logical.
-#'   If `default_priors = TRUE`, use default priors.
 #' @param mplus Logical.
 #'   If `mplus = TRUE`, fit the model using DSEM in `Mplus`.
 #' @param metavar Logical.
-#'   If `metavar = TRUE`, fit the model using the `metaVAR` package.
-#' @param mlvar Logical.
-#'   If `mlvar = TRUE`, fit the model using the `mlVAR` package.
+#'   If `metavar = TRUE`, fit the model using the `metaDyn` package.
 #' @param plot Logical.
 #'   If `plot = TRUE`, add `PLOT: TYPE = PLOT3;`
 #'   to `Mplus` input file.
 #' @param ... additional arguments.
-#' @param results `results` data frame.
-#' @param bias Logical.
-#'   If `bias = TRUE`, plot absolute bias.
-#'   If `bias = FALSE`, plot relative bias.
-#'   Note that when parameter value is equal to zero,
-#'   absolute bias is used instead of relative bias.
-#' @param method Character vector.
-#'   Methods to include in the plot.
-#' @param rm_zero Logical.
-#'   Remove cases where the population parameter is equal to zero.
-#' @param ylim Numeric vector of length 2.
-#'   Lower and upper limits for the y-axis.
-#' @param parameters Character string.
-#'   Parameters to plot.
-#'   Valid values include `"fixed"`, `"random"`, and `"both"`.
-#' @param x_lab_size Numeric.
-#'   x-axis label size.
 #' @name Template
 NULL

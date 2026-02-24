@@ -38,21 +38,3 @@ DT::datatable(
   )
 )
 ```
-
-## Stable Reciprocal Regulation
-
-```{r}
-Dynamics(1)
-```
-
-## Escalating Co-activation
-
-```{r}
-Dynamics(2)
-```
-
-## Adaptive Recovery
-
-```{r}
-Dynamics(3)
-```

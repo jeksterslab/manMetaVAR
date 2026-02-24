@@ -13,7 +13,7 @@ Valid values include
 \code{"data"},
 \code{"fit-dt-var-mx"},
 \code{"fit-meta-var-mx"}, and
-\code{"fit-ml-var"}.}
+\code{"fit-mplus"}.}
 
 \item{output_folder}{Character string.
 Output folder.}

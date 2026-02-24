@@ -18,13 +18,11 @@ Sim <- function(taskid,
                 seed,
                 data,
                 metavar,
-                mlvar,
                 mplus,
                 chains,
                 iter,
                 fscores,
-                plot,
-                default_priors) {
+                plot) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -81,8 +79,7 @@ Sim <- function(taskid,
         chains = chains,
         iter = iter,
         fscores = fscores,
-        plot = plot,
-        default_priors = default_priors
+        plot = plot
       )
     )
   }
@@ -100,19 +97,6 @@ Sim <- function(taskid,
     )
     try(
       SimFitMetaVAR(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-    )
-  }
-  if (mlvar) {
-    try(
-      SimFitMLVAR(
         taskid = taskid,
         repid = repid,
         output_folder = output_folder,

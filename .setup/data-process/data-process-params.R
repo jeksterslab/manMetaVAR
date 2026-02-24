@@ -36,18 +36,12 @@ data_process_params <- function(overwrite = FALSE) {
       200,
       500
     )
-    dynamics <- c(
-      1,
-      2,
-      3
-    )
     taskid <- seq_len(
-      length(n) * length(time) * length(dynamics)
+      length(n) * length(time)
     )
     params <- expand.grid(
       n = n,
-      time = time,
-      dynamics = dynamics
+      time = time
     )
     params <- data.frame(
       taskid = taskid,

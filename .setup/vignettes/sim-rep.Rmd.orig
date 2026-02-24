@@ -26,8 +26,8 @@ knitr::opts_chunk$set(
 ```{r}
 #| message = FALSE
 library(OpenMx)
-library(fitDTVARMxID)
-library(metaVAR)
+library(fitVARMxID)
+library(metaDyn)
 library(manMetaVAR)
 ```
 
@@ -51,10 +51,13 @@ fn_data <- root$find_file(
   "sim-rep-data.Rds"
 )
 if (!file.exists(fn_data)) {
-  taskid <- 9
+  taskid <- 1
   seed <- 42
   set.seed(seed)
-  data <- GenData(taskid = taskid)
+  data <- GenData(
+    taskid = taskid,
+    seed = seed
+  )
   con <- xzfile(
     description = fn_data,
     compression = 9L
@@ -76,7 +79,10 @@ fn_dtvar <- root$find_file(
   "sim-rep-dtvar.Rds"
 )
 if (!file.exists(fn_dtvar)) {
-  dtvar <- FitDTVAR(data)
+  dtvar <- FitDTVAR(
+    data = data,
+    seed = seed
+  )
   con <- xzfile(
     description = fn_dtvar,
     compression = 9L
@@ -98,7 +104,10 @@ fn_metavar <- root$find_file(
   "sim-rep-metavar.Rds"
 )
 if (!file.exists(fn_metavar)) {
-  metavar <- FitMetaVAR(data, dtvar)
+  metavar <- FitMetaVAR(
+    fit = dtvar,
+    seed = seed
+  )
   con <- xzfile(
     description = fn_metavar,
     compression = 9L
@@ -114,35 +123,16 @@ metavar <- readRDS(fn_metavar)
 
 ```{r}
 #| include = FALSE
-fn_mlvar <- root$find_file(
-  ".setup",
-  "data-raw",
-  "sim-rep-mlvar.Rds"
-)
-if (!file.exists(fn_mlvar)) {
-  mlvar <- FitMLVAR(data)
-  con <- xzfile(
-    description = fn_mlvar,
-    compression = 9L
-  )
-  saveRDS(
-    object = mlvar,
-    file = con
-  )
-  close(con)
-}
-mlvar <- readRDS(fn_mlvar)
-```
-
-```{r}
-#| include = FALSE
 fn_mplus <- root$find_file(
   ".setup",
   "data-raw",
   "sim-rep-mplus.Rds"
 )
 if (!file.exists(fn_mplus)) {
-  mplus <- FitMplus(data)
+  mplus <- FitMplus(
+    data = data,
+    seed = seed
+  )
   con <- xzfile(
     description = fn_mplus,
     compression = 9L
@@ -160,10 +150,13 @@ mplus <- readRDS(fn_mplus)
 
 ```{r}
 #| eval = FALSE
-taskid <- 9
+taskid <- 1
 seed <- 42
 set.seed(seed)
-data <- GenData(taskid = taskid)
+data <- GenData(
+  taskid = taskid,
+  seed = seed
+)
 ```
 
 ```{r}
@@ -175,7 +168,10 @@ summary(data)
 
 ```{r}
 #| eval = FALSE
-dtvar <- FitDTVAR(data)
+dtvar <- FitDTVAR(
+  data = data,
+  seed = seed
+)
 ```
 
 ```{r}
@@ -184,29 +180,24 @@ summary(dtvar, means = TRUE)
 
 ```{r}
 #| eval = FALSE
-metavar <- FitMetaVAR(data, dtvar)
+metavar <- FitMetaVAR(
+  fit = dtvar,
+  seed = seed
+)
 ```
 
 ```{r}
 summary(metavar)
 ```
 
-## MLVAR
-
-```{r}
-#| eval = FALSE
-mlvar <- FitMLVAR(data)
-```
-
-```{r}
-summary(mlvar)
-```
-
 ## Mplus
 
 ```{r}
 #| eval = FALSE
-mplus <- FitMplus(data)
+mplus <- FitMplus(
+  data = data,
+  seed = seed
+)
 ```
 
 ```{r}

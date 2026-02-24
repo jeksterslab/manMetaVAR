@@ -2,16 +2,13 @@
 % Please edit documentation in R/manMetaVAR-fit-dt-var.R
 \name{FitDTVAR}
 \alias{FitDTVAR}
-\title{Fit the Model using the fitDTVARMxID Package}
+\title{Fit the Model using the fitVARMxID Package}
 \usage{
-FitDTVAR(data, wd = ".", ncores = NULL, seed = NULL)
+FitDTVAR(data, ncores = NULL, seed = NULL)
 }
 \arguments{
 \item{data}{R object.
 Output of the \code{\link[=GenData]{GenData()}} function.}
-
-\item{wd}{Character string.
-Working directory.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
@@ -20,16 +17,13 @@ Number of cores to use.}
 Random seed.}
 }
 \description{
-The function fits the model using the \link[fitDTVARMxID:fitDTVARMxID-package]{fitDTVARMxID::fitDTVARMxID} package.
+The function fits the model using the \link[fitVARMxID:fitVARMxID-package]{fitVARMxID::fitVARMxID} package.
 }
 \examples{
 \dontrun{
-set.seed(42)
-data <- GenData(taskid = 1)
-fit <- FitDTVAR(
-  data = data,
-  ncores = parallel::detectCores()
-)
+seed <- 42
+data <- GenData(taskid = 1, seed = seed)
+fit <- FitDTVAR(data = data, seed = seed)
 print(fit)
 summary(fit)
 coef(fit)
@@ -39,7 +33,6 @@ vcov(fit)
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitMLVAR}()},
 \code{\link{FitMetaVAR}()},
 \code{\link{FitMplus}()},
 \code{\link{MplusInput}()}

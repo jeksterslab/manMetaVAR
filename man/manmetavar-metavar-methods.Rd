@@ -11,18 +11,24 @@
 \usage{
 \method{coef}{manmetavar.metavar}(object, ...)
 
-\method{vcov}{manmetavar.metavar}(object, ...)
+\method{vcov}{manmetavar.metavar}(object, robust = NULL, ...)
 
-\method{print}{manmetavar.metavar}(x, alpha = 0.05, digits = 4, ...)
+\method{print}{manmetavar.metavar}(x, alpha = NULL, robust = NULL, digits = 4, ...)
 
-\method{summary}{manmetavar.metavar}(object, alpha = 0.05, digits = 4, ...)
+\method{summary}{manmetavar.metavar}(object, alpha = NULL, robust = NULL, digits = 4, ...)
 
-\method{confint}{manmetavar.metavar}(object, parm = NULL, level = 0.95, lb = TRUE, ...)
+\method{confint}{manmetavar.metavar}(object, parm = NULL, level = 0.95, robust = NULL, ...)
 }
 \arguments{
 \item{object}{Object of class \code{manmetavar.metavar}.}
 
 \item{...}{additional arguments.}
+
+\item{robust}{Logical.
+If \code{TRUE}, use robust (sandwich) sampling variance-covariance matrix.
+If \code{FALSE}, use normal theory sampling variance-covariance matrix.
+If \code{NULL}, the function will check \code{object}
+if robust standard errors are available.}
 
 \item{x}{Object of class \code{manmetavar.metavar}.}
 
@@ -37,10 +43,6 @@ either a vector of numbers or a vector of names.
 If missing, all parameters are considered.}
 
 \item{level}{the confidence level required.}
-
-\item{lb}{Logical.
-If \code{TRUE}, returns profile likelihood-based confidence intervals.
-If \code{FALSE}, returns Wald confidence intervals.}
 }
 \description{
 This page documents the available methods for objects of class

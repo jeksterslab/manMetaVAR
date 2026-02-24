@@ -24,11 +24,6 @@ SimFitMetaVAR <- function(taskid,
     output_folder = output_folder,
     suffix = suffix
   )
-  fn_data <- SimFN(
-    output_type = "data",
-    output_folder = output_folder,
-    suffix = suffix
-  )
   fn_output <- SimFN(
     output_type = "fit-meta-var-mx",
     output_folder = output_folder,
@@ -46,9 +41,9 @@ SimFitMetaVAR <- function(taskid,
         con <- file(fn_output)
         saveRDS(
           object = FitMetaVAR(
-            data = readRDS(fn_data),
             fit = readRDS(fn_input),
-            ncores = NULL
+            ncores = NULL,
+            seed = seed
           ),
           file = con
         )

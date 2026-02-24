@@ -20,15 +20,13 @@ project <- "manMetaVAR"
 rproject_ver <- NULL
 
 pkg_cran <- c(
-  "MASS",
-  "mlVAR",
   "simStateSpace"
 )
 
 pkg_github <- c(
-  "jeksterslab/fitDTVARMxID",
+  "jeksterslab/fitVARMxID",
   "jeksterslab/simStateSpace",
-  "jeksterslab/metaVAR"
+  "jeksterslab/metaDyn"
 )
 
 pkg_github_ref <- c()

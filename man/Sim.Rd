@@ -13,13 +13,11 @@ Sim(
   seed,
   data,
   metavar,
-  mlvar,
   mplus,
   chains,
   iter,
   fscores,
-  plot,
-  default_priors
+  plot
 )
 }
 \arguments{
@@ -46,10 +44,7 @@ Random seed.}
 Simulate data.}
 
 \item{metavar}{Logical.
-If \code{metavar = TRUE}, fit the model using the \code{metaVAR} package.}
-
-\item{mlvar}{Logical.
-If \code{mlvar = TRUE}, fit the model using the \code{mlVAR} package.}
+If \code{metavar = TRUE}, fit the model using the \code{metaDyn} package.}
 
 \item{mplus}{Logical.
 If \code{mplus = TRUE}, fit the model using DSEM in \code{Mplus}.}
@@ -66,9 +61,6 @@ Number of iterations for factor scores.}
 \item{plot}{Logical.
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
-
-\item{default_priors}{Logical.
-If \code{default_priors = TRUE}, use default priors.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
