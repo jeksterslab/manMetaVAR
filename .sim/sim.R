@@ -8,12 +8,12 @@ suppressMessages(
 )
 suppressMessages(
   suppressWarnings(
-    library(fitDTVARMxID)
+    library(fitVARMxID)
   )
 )
 suppressMessages(
   suppressWarnings(
-    library(metaVAR)
+    library(metaDyn)
   )
 )
 suppressMessages(
@@ -47,13 +47,11 @@ tryCatch(
       seed = seed,
       data = data,
       metavar = metavar,
-      mlvar = mlvar,
       mplus = mplus,
       chains = chains,
       iter = iter,
       fscores = fscores,
-      plot = plot,
-      default_priors = default_priors
+      plot = plot
     )
   },
   error = function(e) {

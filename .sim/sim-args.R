@@ -1,20 +1,18 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 27L
+tasks <- 9L
 reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
 data <- TRUE
 metavar <- TRUE
+mplus <- TRUE
 metavar_normal <- TRUE
 metavar_robust <- TRUE
-metavar_lb <- TRUE
-mlvar <- TRUE
-mplus <- TRUE
+naive <- TRUE
 chains <- 2L
-iter <- 120000L
+iter <- 40000L
 fscores <- NULL
 plot <- FALSE
-default_priors <- TRUE
 # ------------------------------------------------------------------------------
 output_root <- file.path(
   "/scratch",

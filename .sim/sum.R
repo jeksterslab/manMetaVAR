@@ -37,8 +37,8 @@ lapply(
   overwrite = FALSE,
   integrity = TRUE,
   metavar_normal = TRUE,
-  metavar_lb = TRUE,
-  mlvar = TRUE,
+  metavar_robust = TRUE,
   mplus = TRUE,
+  naive = TRUE,
   ncores = parallel::detectCores()
 )
