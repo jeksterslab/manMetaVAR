@@ -53,13 +53,7 @@ SumFitMetaVARNormal <- function(taskid,
         output_folder = output_folder,
         suffix = suffix
       )
-      fn_data <- SimFN(
-        output_type = "data",
-        output_folder = output_folder,
-        suffix = suffix
-      )
       input <- readRDS(fn_input)
-      data <- readRDS(fn_data)
       raw <- summary(
         input
       )
