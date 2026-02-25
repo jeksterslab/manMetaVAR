@@ -94,7 +94,7 @@ summary(dtvar, means = TRUE)
 #>     sigma0_d_values = NULL, sigma0_d_lbound = NULL, sigma0_d_ubound = NULL, 
 #>     sigma0_d_equal = FALSE, sigma0_l_free = NULL, sigma0_l_values = NULL, 
 #>     sigma0_l_lbound = NULL, sigma0_l_ubound = NULL, robust = FALSE, 
-#>     seed = seed, tries_explore = 100, tries_local = 100, max_attempts = 10, 
+#>     seed = seed, tries_explore = 1000, tries_local = 1000, max_attempts = 100, 
 #>     silent = TRUE, ncores = ncores)
 #> 
 #> Convergence:
@@ -129,7 +129,7 @@ summary(metavar)
 #>         byrow = TRUE, nrow = 6, ncol = 6), tau_sqr_l_values = model$ma_random_l_ldl, 
 #>     effects = TRUE, set_point = TRUE, int_meas = FALSE, int_dyn = FALSE, 
 #>     cov_meas = FALSE, cov_dyn = FALSE, robust_v = FALSE, robust = FALSE, 
-#>     seed = seed, tries_explore = 100, tries_local = 100, max_attempts = 10, 
+#>     seed = seed, tries_explore = 1000, tries_local = 1000, max_attempts = 100, 
 #>     silent = TRUE, ncores = ncores)
 #> 
 #> Status code:
@@ -140,15 +140,15 @@ summary(metavar)
 #> 
 #>                  est     se        z      p    2.5%   97.5%
 #> alpha[1,1]    2.8959 0.1639  17.6645 0.0000  2.5746  3.2172
-#> alpha[2,1]    2.3662 0.1420  16.6602 0.0000  2.0878  2.6445
+#> alpha[2,1]    2.3662 0.1420  16.6601 0.0000  2.0878  2.6445
 #> alpha[3,1]    0.2274 0.0275   8.2646 0.0000  0.1735  0.2813
 #> alpha[4,1]   -0.0653 0.0282  -2.3126 0.0207 -0.1207 -0.0100
 #> alpha[5,1]   -0.0419 0.0189  -2.2189 0.0265 -0.0789 -0.0049
 #> alpha[6,1]    0.1564 0.0315   4.9695 0.0000  0.0947  0.2181
-#> tau_sqr[1,1]  1.2994 0.2688   4.8331 0.0000  0.7724  1.8263
-#> tau_sqr[2,1]  0.5393 0.1826   2.9525 0.0032  0.1813  0.8972
+#> tau_sqr[1,1]  1.2994 0.2688   4.8332 0.0000  0.7725  1.8263
+#> tau_sqr[2,1]  0.5393 0.1826   2.9525 0.0032  0.1813  0.8973
 #> tau_sqr[2,2]  0.9627 0.2021   4.7635 0.0000  0.5666  1.3588
-#> tau_sqr[3,3]  0.0170 0.0074   2.3015 0.0214  0.0025  0.0315
+#> tau_sqr[3,3]  0.0170 0.0074   2.3016 0.0214  0.0025  0.0315
 #> tau_sqr[4,3]  0.0122 0.0061   2.0036 0.0451  0.0003  0.0242
 #> tau_sqr[5,3] -0.0005 0.0036  -0.1335 0.8938 -0.0075  0.0065
 #> tau_sqr[6,3] -0.0041 0.0062  -0.6656 0.5057 -0.0163  0.0080
@@ -158,9 +158,9 @@ summary(metavar)
 #> tau_sqr[5,5]  0.0006 0.0012   0.5141 0.6072 -0.0017  0.0029
 #> tau_sqr[6,5]  0.0041 0.0042   0.9720 0.3310 -0.0042  0.0124
 #> tau_sqr[6,6]  0.0284 0.0097   2.9271 0.0034  0.0094  0.0475
-#> i_sqr[1,1]    0.9760 0.0048 201.4657 0.0000  0.9665  0.9855
-#> i_sqr[2,1]    0.9622 0.0077 125.2463 0.0000  0.9472  0.9773
-#> i_sqr[3,1]    0.4603 0.1079   4.2650 0.0000  0.2488  0.6718
+#> i_sqr[1,1]    0.9760 0.0048 201.4700 0.0000  0.9665  0.9855
+#> i_sqr[2,1]    0.9622 0.0077 125.2468 0.0000  0.9472  0.9773
+#> i_sqr[3,1]    0.4603 0.1079   4.2651 0.0000  0.2488  0.6718
 #> i_sqr[4,1]    0.2824 0.1469   1.9222 0.0546 -0.0056  0.5703
 #> i_sqr[5,1]    0.1132 0.1162   0.9741 0.3300 -0.1146  0.3410
 #> i_sqr[6,1]    0.6012 0.0789   7.6221 0.0000  0.4466  0.7558
@@ -484,7 +484,7 @@ plot(mplus, what = "trace")
 ```
 Mplus VERSION 9 (Linux)
 MUTHEN & MUTHEN
-02/24/2026  11:06 PM
+02/25/2026   1:10 AM
 
 INPUT INSTRUCTIONS
 
@@ -1420,9 +1420,9 @@ SAVEDATA INFORMATION
     Parameter 21, %BETWEEN%: Y2 WITH Y1
     Parameter 22, %BETWEEN%: Y2
 
-     Beginning Time:  23:06:20
-        Ending Time:  23:07:37
-       Elapsed Time:  00:01:17
+     Beginning Time:  01:10:24
+        Ending Time:  01:13:56
+       Elapsed Time:  00:03:32
 
 
 
