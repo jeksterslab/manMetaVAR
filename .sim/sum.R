@@ -6,12 +6,12 @@ suppressMessages(
 )
 suppressMessages(
   suppressWarnings(
-    library(fitDTVARMxID)
+    library(fitVARMxID)
   )
 )
 suppressMessages(
   suppressWarnings(
-    library(metaVAR)
+    library(metaDyn)
   )
 )
 suppressMessages(
