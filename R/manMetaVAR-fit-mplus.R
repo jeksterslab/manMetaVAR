@@ -125,6 +125,13 @@ FitMplus <- function(data,
   } else {
     gh5 <- NA
   }
+  if (is.null(fscores)) {
+    factorscores <- NA
+  } else {
+    factorscores <- .ReadLines(
+      con = fn_factorscores
+    )
+  }
   output <- list(
     data = .ReadLines(
       con = fn_data
@@ -138,9 +145,7 @@ FitMplus <- function(data,
     posterior = .ReadLines(
       con = fn_posterior
     ),
-    factorscores = .ReadLines(
-      con = fn_factorscores
-    ),
+    factorscores = factorscores,
     gh5 = gh5
   )
   end_time <- Sys.time()

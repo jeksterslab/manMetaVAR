@@ -93,9 +93,9 @@ FitDTVAR <- function(data,
     sigma0_l_ubound = NULL,
     robust = FALSE,
     seed = seed,
-    tries_explore = 100,
-    tries_local = 100,
-    max_attempts = 10,
+    tries_explore = 1000,
+    tries_local = 1000,
+    max_attempts = 100,
     silent = TRUE,
     ncores = ncores
   )

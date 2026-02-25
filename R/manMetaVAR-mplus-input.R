@@ -127,15 +127,6 @@ MplusInput <- function(fn_data,
     SAVEDATA:
       BPARAMETERS = __POSTERIOR__;"
   )
-  if (!is.null(fscores)) {
-    out <- paste0(
-      out,
-      "
-      SAVE = FSCORES(__FSCORES__ 1);
-      FILE = __FACTORSCORES__;
-      FACTORS = ALL;"
-    )
-  }
   pattern <- c(
     "__DATA__",
     "__CHAINS__",
@@ -144,7 +135,6 @@ MplusInput <- function(fn_data,
     "__POSTERIOR__",
     "__BSEED__"
   )
-
   replacement <- c(
     as.character(fn_data),
     as.character(as.integer(chains)),
@@ -153,8 +143,14 @@ MplusInput <- function(fn_data,
     as.character(fn_posterior),
     as.character(as.integer(seed))
   )
-
   if (!is.null(fscores)) {
+    out <- paste0(
+      out,
+      "
+      SAVE = FSCORES(__FSCORES__ 1);
+      FILE = __FACTORSCORES__;
+      FACTORS = ALL;"
+    )
     pattern <- c(
       pattern,
       "__FSCORES__",
@@ -166,7 +162,6 @@ MplusInput <- function(fn_data,
       as.character(fn_factorscores)
     )
   }
-
   for (i in seq_along(pattern)) {
     out <- sub(
       pattern = pattern[i],
