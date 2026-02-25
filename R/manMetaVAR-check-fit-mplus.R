@@ -26,9 +26,10 @@ CheckFitMplus <- function(taskid,
     {
       out <- grep(
         pattern = "THE MODEL ESTIMATION TERMINATED NORMALLY",
-        x = readRDS(fn_input)$output$output
+        x = readRDS(fn_input)$output$output,
+        value = TRUE
       )
-      if (out == "") {
+      if (length(out) == 0L) {
         cat(
           paste(
             "check",
