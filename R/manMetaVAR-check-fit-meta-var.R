@@ -24,7 +24,7 @@ CheckFitMetaVAR <- function(taskid,
   tryCatch(
     {
       out <- metaDyn:::.CheckStatusCode(
-        model = readRDS(fn_input)$output
+        model = readRDS(fn_input)$output$output
       )
       if (out > 0) {
         cat(
