@@ -18,6 +18,14 @@
 
 ## Simulation Functions
 
+- [`Check()`](https://github.com/jeksterslab/manMetaVAR/reference/Check.md)
+  : Check Replication
+- [`CheckFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitDTVAR.md)
+  : Check Replication - FitDTVAR
+- [`CheckFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMetaVAR.md)
+  : Check Replication - FitMetaVAR
+- [`CheckFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.md)
+  : Check Replication - FitMplus
 - [`Sim()`](https://github.com/jeksterslab/manMetaVAR/reference/Sim.md)
   : Simulation Replication
 - [`SimFN()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFN.md)
@@ -92,6 +100,14 @@
 
 ## All Functions
 
+- [`Check()`](https://github.com/jeksterslab/manMetaVAR/reference/Check.md)
+  : Check Replication
+- [`CheckFitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitDTVAR.md)
+  : Check Replication - FitDTVAR
+- [`CheckFitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMetaVAR.md)
+  : Check Replication - FitMetaVAR
+- [`CheckFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.md)
+  : Check Replication - FitMplus
 - [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
   : Compress Replication
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
