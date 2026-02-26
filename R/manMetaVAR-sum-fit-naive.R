@@ -1,4 +1,4 @@
-#' Summary: Naive (FitMetaVAR)
+#' Summary: Naive
 #'
 #' @details This function is executed via the `Sum` function.
 #'
@@ -54,18 +54,8 @@ SumFitNaive <- function(taskid,
         suffix = suffix
       )
       input <- readRDS(fn_input)
-      coefs <- summary(
-        input,
-        means = FALSE
-      )[, 1:6]
-      est <- colMeans(coefs)
-      se <- sqrt(diag(stats::cov(coefs)) / nrow(coefs))
-      raw <- .CIWald(
-        est = est,
-        se = se,
-        theta = 0,
-        alpha = 0.05,
-        z = TRUE
+      raw <- summary(
+        input
       )
       random_effect <- .Vech(
         model$ma_random
@@ -78,43 +68,43 @@ SumFitNaive <- function(taskid,
         random_effect
       )
       df <- data.frame(
-        est = raw[1:6, "est"],
-        se = raw[1:6, "se"],
-        z = raw[1:6, "z"],
-        p = raw[1:6, "p"],
-        ll = raw[1:6, "2.5%"],
-        ul = raw[1:6, "97.5%"],
+        est = raw[, "est"],
+        se = raw[, "se"],
+        z = raw[, "z"],
+        p = raw[, "p"],
+        ll = raw[, "2.5%"],
+        ul = raw[, "97.5%"],
         sig = as.integer(
-          raw[1:6, "p"] < 0.05
+          raw[, "p"] < 0.05
         ),
         zero_hit = as.integer(
           (
-            raw[1:6, "2.5%"] <= 0
+            raw[, "2.5%"] <= 0
           ) & (
-            0 <= raw[1:6, "97.5%"]
+            0 <= raw[, "97.5%"]
           )
         ),
         theta_hit = as.integer(
           (
-            raw[1:6, "2.5%"] <= parameter
+            raw[, "2.5%"] <= parameter
           ) & (
-            parameter <= raw[1:6, "97.5%"]
+            parameter <= raw[, "97.5%"]
           )
         ),
-        sq_error = (parameter - raw[1:6, "est"])^2,
-        bias = raw[1:6, "est"] - parameter,
+        sq_error = (parameter - raw[, "est"])^2,
+        bias = raw[, "est"] - parameter,
         rel_bias = .SimRelBias(
-          thetahat = raw[1:6, "est"],
+          thetahat = raw[, "est"],
           theta = parameter
         )
       )
       attr(df, "taskid") <- taskid
       attr(df, "n") <- n
       attr(df, "time") <- time
-      attr(df, "parnames") <- rownames(raw)[1:6]
+      attr(df, "parnames") <- rownames(raw)
       attr(df, "parameter") <- parameter
-      attr(df, "ci") <- "Naive"
-      attr(df, "method") <- "MetaVAR"
+      attr(df, "ci") <- "Normal"
+      attr(df, "method") <- "Naive"
       df
     }
     if (is.null(ncores)) {

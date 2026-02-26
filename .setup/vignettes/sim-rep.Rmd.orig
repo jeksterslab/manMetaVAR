@@ -123,6 +123,30 @@ metavar <- readRDS(fn_metavar)
 
 ```{r}
 #| include = FALSE
+fn_naive <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-naive.Rds"
+)
+if (!file.exists(fn_naive)) {
+  naive <- FitNaive(
+    fit = dtvar
+  )
+  con <- xzfile(
+    description = fn_naive,
+    compression = 9L
+  )
+  saveRDS(
+    object = naive,
+    file = con
+  )
+  close(con)
+}
+naive <- readRDS(fn_naive)
+```
+
+```{r}
+#| include = FALSE
 fn_mplus <- root$find_file(
   ".setup",
   "data-raw",
@@ -242,4 +266,17 @@ cat(
     collapse = "\n"
   )
 )
+```
+
+## Naive
+
+```{r}
+#| eval = FALSE
+naive <- FitNaive(
+  fit = dtvar
+)
+```
+
+```{r}
+summary(naive)
 ```

@@ -68,7 +68,8 @@ cat(
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
 \code{\link{FitMetaVAR}()},
-\code{\link{FitMplus}()}
+\code{\link{FitMplus}()},
+\code{\link{FitNaive}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

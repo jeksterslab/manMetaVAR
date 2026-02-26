@@ -20,7 +20,9 @@ project <- "manMetaVAR"
 rproject_ver <- NULL
 
 pkg_cran <- c(
-  "simStateSpace"
+  "simStateSpace",
+  "OpenMx",
+  "lavaan"
 )
 
 pkg_github <- c(

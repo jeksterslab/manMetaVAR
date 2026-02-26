@@ -4,11 +4,11 @@ reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
 data <- TRUE
+naive <- TRUE
 metavar <- TRUE
 mplus <- TRUE
 metavar_normal <- TRUE
 metavar_robust <- TRUE
-naive <- TRUE
 chains <- 2L
 iter <- 40000L
 fscores <- NULL

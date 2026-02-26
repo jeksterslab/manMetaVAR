@@ -29,6 +29,7 @@ CheckFitDTVAR <- function(taskid,
         prop = TRUE
       )
       if (out < 1) {
+        message(paste("error:", "CheckFitDTVAR"))
         cat(
           paste(
             "check",

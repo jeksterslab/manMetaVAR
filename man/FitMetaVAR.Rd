@@ -36,6 +36,7 @@ vcov(meta)
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
 \code{\link{FitMplus}()},
+\code{\link{FitNaive}()},
 \code{\link{MplusInput}()}
 }
 \concept{Model Fitting Functions}

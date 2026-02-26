@@ -42,6 +42,7 @@ tryCatch(
       taskid = taskid,
       repid = repid,
       output_folder = output_folder,
+      naive = naive,
       metavar = metavar,
       mplus = mplus
     )

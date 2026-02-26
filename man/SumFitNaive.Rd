@@ -2,7 +2,7 @@
 % Please edit documentation in R/manMetaVAR-sum-fit-naive.R
 \name{SumFitNaive}
 \alias{SumFitNaive}
-\title{Summary: Naive (FitMetaVAR)}
+\title{Summary: Naive}
 \usage{
 SumFitNaive(taskid, reps, output_folder, overwrite, integrity, ncores)
 }
@@ -30,7 +30,7 @@ Number of cores to use.}
 The output is saved as an external file in \code{output_folder}.
 }
 \description{
-Summary: Naive (FitMetaVAR)
+Summary: Naive
 }
 \details{
 This function is executed via the \code{Sum} function.

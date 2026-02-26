@@ -30,6 +30,7 @@ CheckFitMplus <- function(taskid,
         value = TRUE
       )
       if (length(out) == 0L) {
+        message(paste("error:", "CheckFitMplus"))
         cat(
           paste(
             "check",

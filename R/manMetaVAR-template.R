@@ -53,6 +53,8 @@
 #'   Number of iterations.
 #' @param fscores Integer.
 #'   Number of iterations for factor scores.
+#' @param naive Logical.
+#'   If `naive = TRUE`, fit the naive approach.
 #' @param mplus Logical.
 #'   If `mplus = TRUE`, fit the model using DSEM in `Mplus`.
 #' @param metavar Logical.

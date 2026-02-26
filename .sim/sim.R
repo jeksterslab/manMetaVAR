@@ -46,6 +46,7 @@ tryCatch(
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
       seed = seed,
       data = data,
+      naive = naive,
       metavar = metavar,
       mplus = mplus,
       chains = chains,

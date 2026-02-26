@@ -11,6 +11,7 @@
 Check <- function(taskid,
                   repid,
                   output_folder,
+                  naive,
                   metavar,
                   mplus) {
   # Do not include default arguments here.
@@ -55,6 +56,14 @@ Check <- function(taskid,
       suffix = suffix
     )
     CheckFitMetaVAR(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      suffix = suffix
+    )
+  }
+  if (naive) {
+    CheckFitNaive(
       taskid = taskid,
       repid = repid,
       output_folder = output_folder,

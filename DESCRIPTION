@@ -20,13 +20,14 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.5.0),
-    OpenMx (>= 2.22.10),
-    fitVARMxID (>= 1.0.2),
-    metaDyn
+    OpenMx (== 2.22.10),
+    fitVARMxID (== 1.0.2),
+    metaDyn (== 1.0.0)
 Imports:
     stats,
     utils,
-    simStateSpace
+    simStateSpace (== 1.2.15),
+    lavaan (== 0.6-21)
 Remotes:
     jeksterslab/fitVARMxID,
     jeksterslab/metaDyn

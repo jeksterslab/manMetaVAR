@@ -12,6 +12,7 @@ Sim(
   integrity,
   seed,
   data,
+  naive,
   metavar,
   mplus,
   chains,
@@ -42,6 +43,9 @@ Random seed.}
 
 \item{data}{Logical.
 Simulate data.}
+
+\item{naive}{Logical.
+If \code{naive = TRUE}, fit the naive approach.}
 
 \item{metavar}{Logical.
 If \code{metavar = TRUE}, fit the model using the \code{metaDyn} package.}
