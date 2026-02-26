@@ -13,6 +13,8 @@
   : Multivariate Meta-Analysis using the metaDyn Package
 - [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
   : Fit the Model using Mplus
+- [`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md)
+  : Naive
 - [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
   : Create Mplus Input File
 
@@ -26,6 +28,8 @@
   : Check Replication - FitMetaVAR
 - [`CheckFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.md)
   : Check Replication - FitMplus
+- [`CheckFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitNaive.md)
+  : Check Replication - FitNaive
 - [`Sim()`](https://github.com/jeksterslab/manMetaVAR/reference/Sim.md)
   : Simulation Replication
 - [`SimFN()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFN.md)
@@ -36,6 +40,8 @@
   : Simulation Replication - FitMetaVAR
 - [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
   : Simulation Replication - FitMplus
+- [`SimFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitNaive.md)
+  : Simulation Replication - FitNaive
 - [`SimGenData()`](https://github.com/jeksterslab/manMetaVAR/reference/SimGenData.md)
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
@@ -49,7 +55,7 @@
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 - [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
-  : Summary: Naive (FitMetaVAR)
+  : Summary: Naive
 
 ## Compression Functions
 
@@ -85,6 +91,10 @@
   [`print(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
   [`summary(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
   [`confint(`*`<manmetavar.metavar>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`coef(`*`<manmetavar.naive>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`vcov(`*`<manmetavar.naive>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`print(`*`<manmetavar.naive>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
+  [`summary(`*`<manmetavar.naive>`*`)`](https://github.com/jeksterslab/manMetaVAR/reference/manmetavar-metavar-methods.md)
   :
 
   Methods for Objects of Class `manmetavar.metavar`
@@ -108,6 +118,8 @@
   : Check Replication - FitMetaVAR
 - [`CheckFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.md)
   : Check Replication - FitMplus
+- [`CheckFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/CheckFitNaive.md)
+  : Check Replication - FitNaive
 - [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
   : Compress Replication
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
@@ -116,6 +128,8 @@
   : Multivariate Meta-Analysis using the metaDyn Package
 - [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md)
   : Fit the Model using Mplus
+- [`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md)
+  : Naive
 - [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
   : Simulate Data
 - [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
@@ -128,6 +142,8 @@
   : Simulation Replication - FitMetaVAR
 - [`SimFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.md)
   : Simulation Replication - FitMplus
+- [`SimFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SimFitNaive.md)
+  : Simulation Replication - FitNaive
 - [`SimGenData()`](https://github.com/jeksterslab/manMetaVAR/reference/SimGenData.md)
   : Simulation Replication - GenData
 - [`SimProj()`](https://github.com/jeksterslab/manMetaVAR/reference/SimProj.md)
@@ -141,4 +157,4 @@
 - [`SumFitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMplus.md)
   : Summary (FitMplus)
 - [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
-  : Summary: Naive (FitMetaVAR)
+  : Summary: Naive

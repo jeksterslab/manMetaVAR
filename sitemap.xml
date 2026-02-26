@@ -15,10 +15,12 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitDTVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitNaive.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/Compress.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/GenData.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/Sim.html</loc></url>
@@ -26,6 +28,7 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimFitDTVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimFitMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimFitMplus.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimFitNaive.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimGenData.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/SimProj.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/Sum.html</loc></url>

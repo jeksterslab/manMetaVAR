@@ -26,7 +26,7 @@ data <- GenData(
 plot(data)
 ```
 
-![](fig-vignettes-sim-rep-unnamed-chunk-9-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-9-2.png)
+![](fig-vignettes-sim-rep-unnamed-chunk-10-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-10-2.png)
 
 ``` r
 
@@ -121,28 +121,28 @@ summary(metavar)
 #> 
 #>                  est     se        z      p    2.5%   97.5%
 #> alpha[1,1]    2.8959 0.1639  17.6645 0.0000  2.5746  3.2172
-#> alpha[2,1]    2.3662 0.1420  16.6601 0.0000  2.0878  2.6445
+#> alpha[2,1]    2.3662 0.1420  16.6602 0.0000  2.0878  2.6445
 #> alpha[3,1]    0.2274 0.0275   8.2646 0.0000  0.1735  0.2813
 #> alpha[4,1]   -0.0653 0.0282  -2.3126 0.0207 -0.1207 -0.0100
 #> alpha[5,1]   -0.0419 0.0189  -2.2189 0.0265 -0.0789 -0.0049
 #> alpha[6,1]    0.1564 0.0315   4.9695 0.0000  0.0947  0.2181
-#> tau_sqr[1,1]  1.2994 0.2688   4.8332 0.0000  0.7725  1.8263
+#> tau_sqr[1,1]  1.2994 0.2688   4.8331 0.0000  0.7724  1.8263
 #> tau_sqr[2,1]  0.5393 0.1826   2.9525 0.0032  0.1813  0.8973
-#> tau_sqr[2,2]  0.9627 0.2021   4.7635 0.0000  0.5666  1.3588
-#> tau_sqr[3,3]  0.0170 0.0074   2.3016 0.0214  0.0025  0.0315
+#> tau_sqr[2,2]  0.9627 0.2021   4.7634 0.0000  0.5666  1.3588
+#> tau_sqr[3,3]  0.0170 0.0074   2.3015 0.0214  0.0025  0.0315
 #> tau_sqr[4,3]  0.0122 0.0061   2.0036 0.0451  0.0003  0.0242
 #> tau_sqr[5,3] -0.0005 0.0036  -0.1335 0.8938 -0.0075  0.0065
-#> tau_sqr[6,3] -0.0041 0.0062  -0.6656 0.5057 -0.0163  0.0080
+#> tau_sqr[6,3] -0.0041 0.0062  -0.6655 0.5057 -0.0163  0.0080
 #> tau_sqr[4,4]  0.0148 0.0076   1.9572 0.0503  0.0000  0.0297
-#> tau_sqr[5,4] -0.0010 0.0037  -0.2724 0.7853 -0.0083  0.0063
+#> tau_sqr[5,4] -0.0010 0.0037  -0.2725 0.7853 -0.0083  0.0063
 #> tau_sqr[6,4] -0.0061 0.0065  -0.9290 0.3529 -0.0189  0.0067
 #> tau_sqr[5,5]  0.0006 0.0012   0.5141 0.6072 -0.0017  0.0029
-#> tau_sqr[6,5]  0.0041 0.0042   0.9720 0.3310 -0.0042  0.0124
+#> tau_sqr[6,5]  0.0041 0.0042   0.9721 0.3310 -0.0042  0.0124
 #> tau_sqr[6,6]  0.0284 0.0097   2.9271 0.0034  0.0094  0.0475
-#> i_sqr[1,1]    0.9760 0.0048 201.4700 0.0000  0.9665  0.9855
-#> i_sqr[2,1]    0.9622 0.0077 125.2468 0.0000  0.9472  0.9773
-#> i_sqr[3,1]    0.4603 0.1079   4.2651 0.0000  0.2488  0.6718
-#> i_sqr[4,1]    0.2824 0.1469   1.9222 0.0546 -0.0056  0.5703
+#> i_sqr[1,1]    0.9760 0.0048 201.4658 0.0000  0.9665  0.9855
+#> i_sqr[2,1]    0.9622 0.0077 125.2455 0.0000  0.9472  0.9773
+#> i_sqr[3,1]    0.4603 0.1079   4.2650 0.0000  0.2488  0.6718
+#> i_sqr[4,1]    0.2824 0.1469   1.9222 0.0546 -0.0055  0.5703
 #> i_sqr[5,1]    0.1132 0.1162   0.9741 0.3300 -0.1146  0.3410
 #> i_sqr[6,1]    0.6012 0.0789   7.6221 0.0000  0.4466  0.7558
 ```
@@ -448,7 +448,7 @@ vcov(mplus)
 plot(mplus, what = "posterior")
 ```
 
-![](fig-vignettes-sim-rep-unnamed-chunk-18-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-2.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-3.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-4.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-5.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-6.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-7.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-8.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-9.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-10.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-11.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-12.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-13.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-14.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-15.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-16.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-17.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-18.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-19.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-20.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-21.png)![](fig-vignettes-sim-rep-unnamed-chunk-18-22.png)
+![](fig-vignettes-sim-rep-unnamed-chunk-19-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-2.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-3.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-4.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-5.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-6.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-7.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-8.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-9.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-10.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-11.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-12.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-13.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-14.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-15.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-16.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-17.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-18.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-19.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-20.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-21.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-22.png)
 
 ### Trace Plots
 
@@ -457,13 +457,13 @@ plot(mplus, what = "posterior")
 plot(mplus, what = "trace")
 ```
 
-![](fig-vignettes-sim-rep-unnamed-chunk-19-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-2.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-3.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-4.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-5.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-6.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-7.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-8.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-9.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-10.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-11.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-12.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-13.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-14.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-15.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-16.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-17.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-18.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-19.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-20.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-21.png)![](fig-vignettes-sim-rep-unnamed-chunk-19-22.png)
+![](fig-vignettes-sim-rep-unnamed-chunk-20-1.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-2.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-3.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-4.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-5.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-6.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-7.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-8.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-9.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-10.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-11.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-12.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-13.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-14.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-15.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-16.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-17.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-18.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-19.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-20.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-21.png)![](fig-vignettes-sim-rep-unnamed-chunk-20-22.png)
 
 ### Mplus Output
 
     Mplus VERSION 9 (Linux)
     MUTHEN & MUTHEN
-    02/25/2026   7:06 PM
+    02/26/2026   6:04 AM
 
     INPUT INSTRUCTIONS
 
@@ -1399,9 +1399,9 @@ plot(mplus, what = "trace")
         Parameter 21, %BETWEEN%: Y2 WITH Y1
         Parameter 22, %BETWEEN%: Y2
 
-         Beginning Time:  19:06:37
-            Ending Time:  19:10:10
-           Elapsed Time:  00:03:33
+         Beginning Time:  06:04:39
+            Ending Time:  06:07:49
+           Elapsed Time:  00:03:10
 
 
 
@@ -1415,3 +1415,37 @@ plot(mplus, what = "trace")
     Support: Support@StatModel.com
 
     Copyright (c) 1998-2025 Muthen & Muthen
+
+## Naive
+
+``` r
+
+naive <- FitNaive(
+  fit = dtvar
+)
+```
+
+``` r
+
+summary(naive)
+#>                  est     se       z      p    2.5%   97.5%
+#> alpha[1,1]    2.8994 0.1643 17.6433 0.0000  2.5773  3.2215
+#> alpha[2,1]    2.3648 0.1422 16.6309 0.0000  2.0861  2.6435
+#> alpha[3,1]    0.2183 0.0276  7.9072 0.0000  0.1642  0.2725
+#> alpha[4,1]   -0.0686 0.0279 -2.4570 0.0140 -0.1233 -0.0139
+#> alpha[5,1]   -0.0367 0.0210 -1.7421 0.0815 -0.0779  0.0046
+#> alpha[6,1]    0.1435 0.0310  4.6245 0.0000  0.0827  0.2043
+#> tau_sqr[1,1]  1.3503 0.2701  5.0000 0.0000  0.8210  1.8796
+#> tau_sqr[2,1]  0.5473 0.1825  2.9996 0.0027  0.1897  0.9049
+#> tau_sqr[2,2]  1.0110 0.2022  5.0000 0.0000  0.6147  1.4073
+#> tau_sqr[3,3]  0.0381 0.0076  5.0000 0.0000  0.0232  0.0531
+#> tau_sqr[4,3]  0.0196 0.0061  3.2074 0.0013  0.0076  0.0316
+#> tau_sqr[5,3] -0.0095 0.0043 -2.2022 0.0277 -0.0180 -0.0010
+#> tau_sqr[6,3] -0.0083 0.0062 -1.3424 0.1795 -0.0204  0.0038
+#> tau_sqr[4,4]  0.0389 0.0078  5.0000 0.0000  0.0237  0.0542
+#> tau_sqr[5,4] -0.0056 0.0042 -1.3219 0.1862 -0.0139  0.0027
+#> tau_sqr[6,4] -0.0170 0.0066 -2.5860 0.0097 -0.0299 -0.0041
+#> tau_sqr[5,5]  0.0221 0.0044  5.0000 0.0000  0.0135  0.0308
+#> tau_sqr[6,5]  0.0122 0.0049  2.4770 0.0133  0.0025  0.0219
+#> tau_sqr[6,6]  0.0481 0.0096  5.0000 0.0000  0.0293  0.0670
+```

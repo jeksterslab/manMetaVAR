@@ -3,6 +3,9 @@
 This page documents the available methods for objects of class
 `manmetavar.metavar`.
 
+This page documents the available methods for objects of class
+`manmetavar.naive`.
+
 ## Usage
 
 ``` r
@@ -20,13 +23,25 @@ summary(object, alpha = NULL, robust = NULL, digits = 4, ...)
 
 # S3 method for class 'manmetavar.metavar'
 confint(object, parm = NULL, level = 0.95, robust = NULL, ...)
+
+# S3 method for class 'manmetavar.naive'
+coef(object, ...)
+
+# S3 method for class 'manmetavar.naive'
+vcov(object, ...)
+
+# S3 method for class 'manmetavar.naive'
+print(x, ...)
+
+# S3 method for class 'manmetavar.naive'
+summary(object, alpha = 0.05, digits = 4, ...)
 ```
 
 ## Arguments
 
 - object:
 
-  Object of class `manmetavar.metavar`.
+  Object of class `manmetavar.naive`.
 
 - ...:
 
@@ -41,7 +56,7 @@ confint(object, parm = NULL, level = 0.95, robust = NULL, ...)
 
 - x:
 
-  Object of class `manmetavar.metavar`.
+  Object of class `manmetavar.naive`.
 
 - alpha:
 

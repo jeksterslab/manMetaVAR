@@ -1,6 +1,6 @@
-# Summary: Naive (FitMetaVAR)
+# Summary: Naive
 
-Summary: Naive (FitMetaVAR)
+Summary: Naive
 
 ## Usage
 

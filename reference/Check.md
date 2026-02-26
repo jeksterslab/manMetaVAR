@@ -5,7 +5,7 @@ Check Replication
 ## Usage
 
 ``` r
-Check(taskid, repid, output_folder, metavar, mplus)
+Check(taskid, repid, output_folder, naive, metavar, mplus)
 ```
 
 ## Arguments
@@ -21,6 +21,10 @@ Check(taskid, repid, output_folder, metavar, mplus)
 - output_folder:
 
   Character string. Output folder.
+
+- naive:
+
+  Logical. If `naive = TRUE`, fit the naive approach.
 
 - metavar:
 

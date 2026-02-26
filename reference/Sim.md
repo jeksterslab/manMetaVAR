@@ -13,6 +13,7 @@ Sim(
   integrity,
   seed,
   data,
+  naive,
   metavar,
   mplus,
   chains,
@@ -52,6 +53,10 @@ Sim(
 - data:
 
   Logical. Simulate data.
+
+- naive:
+
+  Logical. If `naive = TRUE`, fit the naive approach.
 
 - metavar:
 

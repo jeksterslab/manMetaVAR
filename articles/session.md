@@ -33,7 +33,7 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.7   metaDyn_0.0.0.9006 fitVARMxID_1.0.2   OpenMx_2.22.10    
+#> [1] manMetaVAR_0.9.7 metaDyn_1.0.0    fitVARMxID_1.0.2 OpenMx_2.22.10  
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] digest_0.6.39         simStateSpace_1.2.15  xfun_0.56            
@@ -52,46 +52,46 @@ sessionInfo()
 cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Architecture:                            x86_64
 #> CPU op-mode(s):                          32-bit, 64-bit
-#> Address sizes:                           46 bits physical, 48 bits virtual
+#> Address sizes:                           39 bits physical, 48 bits virtual
 #> Byte Order:                              Little Endian
 #> CPU(s):                                  8
 #> On-line CPU(s) list:                     0-7
 #> Vendor ID:                               GenuineIntel
-#> Model name:                              Intel(R) Xeon(R) CPU E5-1620 v2 @ 3.70GHz
+#> Model name:                              Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz
 #> CPU family:                              6
-#> Model:                                   62
+#> Model:                                   142
 #> Thread(s) per core:                      2
 #> Core(s) per socket:                      4
 #> Socket(s):                               1
-#> Stepping:                                4
-#> CPU(s) scaling MHz:                      94%
-#> CPU max MHz:                             3900.0000
-#> CPU min MHz:                             1200.0000
-#> BogoMIPS:                                7382.68
-#> Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts vnmi md_clear flush_l1d
+#> Stepping:                                10
+#> CPU(s) scaling MHz:                      100%
+#> CPU max MHz:                             3600.0000
+#> CPU min MHz:                             400.0000
+#> BogoMIPS:                                3799.90
+#> Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities
 #> Virtualization:                          VT-x
 #> L1d cache:                               128 KiB (4 instances)
 #> L1i cache:                               128 KiB (4 instances)
 #> L2 cache:                                1 MiB (4 instances)
-#> L3 cache:                                10 MiB (1 instance)
+#> L3 cache:                                6 MiB (1 instance)
 #> NUMA node(s):                            1
 #> NUMA node0 CPU(s):                       0-7
-#> Vulnerability Gather data sampling:      Not affected
+#> Vulnerability Gather data sampling:      Mitigation; Microcode
 #> Vulnerability Indirect target selection: Not affected
 #> Vulnerability Itlb multihit:             KVM: Mitigation: Split huge pages
 #> Vulnerability L1tf:                      Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
 #> Vulnerability Mds:                       Mitigation; Clear CPU buffers; SMT vulnerable
 #> Vulnerability Meltdown:                  Mitigation; PTI
-#> Vulnerability Mmio stale data:           Unknown: No mitigations
+#> Vulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable
 #> Vulnerability Reg file data sampling:    Not affected
-#> Vulnerability Retbleed:                  Not affected
+#> Vulnerability Retbleed:                  Mitigation; IBRS
 #> Vulnerability Spec rstack overflow:      Not affected
 #> Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
 #> Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-#> Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
-#> Vulnerability Srbds:                     Not affected
+#> Vulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+#> Vulnerability Srbds:                     Mitigation; Microcode
 #> Vulnerability Tsa:                       Not affected
-#> Vulnerability Tsx async abort:           Not affected
+#> Vulnerability Tsx async abort:           Mitigation; TSX disabled
 #> Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
 ```
 
@@ -101,7 +101,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            23Gi       6.6Gi       6.4Gi       324Mi        10Gi        16Gi
-#> Swap:           11Gi        10Mi        11Gi
-#> Total:          34Gi       6.6Gi        18Gi
+#> Mem:           7.4Gi       3.4Gi       728Mi       503Mi       4.0Gi       3.9Gi
+#> Swap:          7.8Gi       1.4Gi       6.4Gi
+#> Total:          15Gi       4.8Gi       7.1Gi
 ```

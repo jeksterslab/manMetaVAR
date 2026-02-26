@@ -31,6 +31,7 @@ FitMetaVAR(fit, ncores = NULL, seed = NULL)
 Other Model Fitting Functions:
 [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md),
 [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md),
+[`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md),
 [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
 
 ## Examples
