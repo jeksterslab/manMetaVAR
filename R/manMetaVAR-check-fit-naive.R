@@ -18,7 +18,7 @@ CheckFitNaive <- function(taskid,
   # Do not include default arguments here.
   # Do not run on its own. Use the `Check` function.
   fn_input <- SimFN(
-    output_type = "fit-dt-var-mx",
+    output_type = "fit-naive",
     output_folder = output_folder,
     suffix = suffix
   )
