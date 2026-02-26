@@ -36,9 +36,9 @@ lapply(
   output_folder = output_folder,
   overwrite = FALSE,
   integrity = TRUE,
+  naive = TRUE,
   metavar_normal = TRUE,
   metavar_robust = TRUE,
   mplus = TRUE,
-  naive = TRUE,
   ncores = parallel::detectCores()
 )

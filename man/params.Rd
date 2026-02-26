@@ -5,7 +5,7 @@
 \alias{params}
 \title{Simulation Parameters}
 \format{
-A dataframe with 9 rows and 3 columns:
+A dataframe with 12 rows and 3 columns:
 
 \describe{
 \item{taskid}{
@@ -16,6 +16,7 @@ Sample size.
 }
 \item{time}{
 Number of measurement occassions.
+If \code{NA}, measurement occasions vary across IDs.
 }
 }
 }

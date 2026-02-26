@@ -10,9 +10,9 @@ Sum(
   output_folder,
   overwrite,
   integrity,
+  naive,
   metavar_normal,
   metavar_robust,
-  naive,
   mplus,
   ncores
 )
@@ -34,6 +34,9 @@ Overwrite existing output in \code{output_folder}.}
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
 
+\item{naive}{Logical.
+If \code{naive = TRUE}, summarize naive estimates.}
+
 \item{metavar_normal}{Logical.
 If \code{metavar_normal = TRUE}, summarize metaVAR model using
 normal confidence intervals.}
@@ -41,9 +44,6 @@ normal confidence intervals.}
 \item{metavar_robust}{Logical.
 If \code{metavar_robust = TRUE}, summarize metaVAR model using
 robust (sandwich) confidence intervals.}
-
-\item{naive}{Logical.
-If \code{naive = TRUE}, summarize naive estimates.}
 
 \item{mplus}{Logical.
 If \code{mplus = TRUE}, summarize the DSEM model.}

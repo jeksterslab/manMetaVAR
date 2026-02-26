@@ -174,7 +174,7 @@ mplus <- readRDS(fn_mplus)
 
 ```{r}
 #| eval = FALSE
-taskid <- 1
+taskid <- 10
 seed <- 42
 set.seed(seed)
 data <- GenData(

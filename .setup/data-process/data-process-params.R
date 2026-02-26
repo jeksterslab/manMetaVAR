@@ -34,7 +34,8 @@ data_process_params <- function(overwrite = FALSE) {
     time <- c(
       50,
       100,
-      200
+      200,
+      NA
     )
     taskid <- seq_len(
       length(n) * length(time)

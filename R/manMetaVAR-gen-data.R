@@ -27,6 +27,9 @@ GenData <- function(taskid,
   param <- params[taskid, ]
   n <- param$n
   time <- param$time
+  if (is.na(time)) {
+    time <- max(params$time, na.rm = TRUE)
+  }
   mu <- simStateSpace::SimNuN(
     n = n,
     nu = model$mu_mu,
@@ -89,6 +92,31 @@ GenData <- function(taskid,
     gamma = NULL
   )
   data <- as.data.frame(sim)
+  if (is.na(param$time)) {
+    df <- data
+    ids <- unique(df$id)
+    times <- unique(params$time[stats::complete.cases(params$time)])
+    times <- rep(x = times, length = length(ids))
+    data <- do.call(
+      what = "rbind",
+      args = mapply(
+        id = ids,
+        time = times,
+        FUN = function(id, time) {
+          df <- df[
+            which(df$id == id), ,
+            drop = FALSE
+          ]
+          df <- df[
+            which(df$time < time), ,
+            drop = FALSE
+          ]
+          df
+        },
+        SIMPLIFY = FALSE
+      )
+    )
+  }
   end_time <- Sys.time()
   elapsed <- end_time - start_time
   out <- list(
