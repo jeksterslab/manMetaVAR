@@ -1,4 +1,4 @@
-#' Check Replication - FitMplus
+#' Check Replication - FitNaive
 #'
 #' @details This function is executed via the `Check` function.
 #'
@@ -11,26 +11,25 @@
 #' @importFrom stats coef vcov
 #' @export
 #' @keywords manMetaVAR check simulation
-CheckFitMplus <- function(taskid,
+CheckFitNaive <- function(taskid,
                           repid,
                           output_folder,
                           suffix) {
   # Do not include default arguments here.
   # Do not run on its own. Use the `Check` function.
   fn_input <- SimFN(
-    output_type = "fit-mplus",
+    output_type = "fit-dt-var-mx",
     output_folder = output_folder,
     suffix = suffix
   )
   tryCatch(
     {
-      out <- grep(
-        pattern = "THE MODEL ESTIMATION TERMINATED NORMALLY",
-        x = readRDS(fn_input)$output$output,
-        value = TRUE
+      out <- lavaan::lavInspect(
+        object = readRDS(fn_input)$output,
+        what = "converged"
       )
-      if (length(out) == 0L) {
-        message(paste("error:", "CheckFitMplus"))
+      if (isFALSE(out)) {
+        message(paste("error:", "CheckFitNaive"))
         cat(
           paste(
             "check",
@@ -42,12 +41,16 @@ CheckFitMplus <- function(taskid,
           )
         )
         cat(
-          "\nEstimation error\n"
+          paste(
+            "\nConvergence",
+            out,
+            "\n"
+          )
         )
       }
     },
     error = function(cond) {
-      message(paste("error:", "CheckFitMplus"))
+      message(paste("error:", "CheckFitNaive"))
       message("Here's the original error message:")
       message(conditionMessage(cond))
       cat(
@@ -62,7 +65,7 @@ CheckFitMplus <- function(taskid,
       )
     },
     warning = function(cond) {
-      message(paste("error:", "CheckFitMplus"))
+      message(paste("error:", "CheckFitNaive"))
       message("Here's the original warning message:")
       message(conditionMessage(cond))
       cat(

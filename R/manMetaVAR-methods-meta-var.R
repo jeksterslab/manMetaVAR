@@ -113,7 +113,7 @@ print.summary.manmetavar.metavar <- function(x,
   cat("Call:\n")
   base::print(object$call)
   print(print_summary)
-  invisible(x)
+  invisible(object)
 }
 
 #' Confidence Intervals for the Parameter Estimates (FitMetaVAR)

@@ -27,6 +27,7 @@ CheckFitMetaVAR <- function(taskid,
         model = readRDS(fn_input)$output$output
       )
       if (out > 0) {
+        message(paste("error:", "CheckFitMetaVAR"))
         cat(
           paste(
             "check",

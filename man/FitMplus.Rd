@@ -65,6 +65,7 @@ summary(fit)
 Other Model Fitting Functions: 
 \code{\link{FitDTVAR}()},
 \code{\link{FitMetaVAR}()},
+\code{\link{FitNaive}()},
 \code{\link{MplusInput}()}
 }
 \concept{Model Fitting Functions}

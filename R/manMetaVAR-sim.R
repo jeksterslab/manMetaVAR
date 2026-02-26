@@ -17,6 +17,7 @@ Sim <- function(taskid,
                 integrity,
                 seed,
                 data,
+                naive,
                 metavar,
                 mplus,
                 chains,
@@ -64,6 +65,19 @@ Sim <- function(taskid,
       suffix = suffix,
       overwrite = overwrite,
       integrity = integrity
+    )
+  }
+  if (naive) {
+    try(
+      SimFitNaive(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
     )
   }
   if (mplus) {

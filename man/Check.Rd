@@ -4,7 +4,7 @@
 \alias{Check}
 \title{Check Replication}
 \usage{
-Check(taskid, repid, output_folder, metavar, mplus)
+Check(taskid, repid, output_folder, naive, metavar, mplus)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -15,6 +15,9 @@ Replication ID.}
 
 \item{output_folder}{Character string.
 Output folder.}
+
+\item{naive}{Logical.
+If \code{naive = TRUE}, fit the naive approach.}
 
 \item{metavar}{Logical.
 If \code{metavar = TRUE}, fit the model using the \code{metaDyn} package.}
