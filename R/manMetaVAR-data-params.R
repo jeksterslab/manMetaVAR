@@ -5,7 +5,7 @@
 #' @docType data
 #' @name params
 #' @usage data(params)
-#' @format A dataframe with 9 rows and 3 columns:
+#' @format A dataframe with 12 rows and 3 columns:
 #'
 #' \describe{
 #'   \item{taskid}{
@@ -16,6 +16,7 @@
 #'   }
 #'   \item{time}{
 #'     Number of measurement occassions.
+#'     If `NA`, measurement occasions vary across IDs.
 #'   }
 #' }
 #'

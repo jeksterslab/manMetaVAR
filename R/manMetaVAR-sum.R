@@ -23,9 +23,9 @@ Sum <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
+                naive,
                 metavar_normal,
                 metavar_robust,
-                naive,
                 mplus,
                 ncores) {
   # Do not include default arguments here.
