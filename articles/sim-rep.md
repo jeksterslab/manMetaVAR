@@ -12,7 +12,7 @@ library(manMetaVAR)
 
 ``` r
 
-taskid <- 1
+taskid <- 10
 seed <- 42
 set.seed(seed)
 data <- GenData(
@@ -463,7 +463,7 @@ plot(mplus, what = "trace")
 
     Mplus VERSION 9 (Linux)
     MUTHEN & MUTHEN
-    02/26/2026   6:04 AM
+    02/26/2026   6:29 PM
 
     INPUT INSTRUCTIONS
 
@@ -1399,9 +1399,9 @@ plot(mplus, what = "trace")
         Parameter 21, %BETWEEN%: Y2 WITH Y1
         Parameter 22, %BETWEEN%: Y2
 
-         Beginning Time:  06:04:39
-            Ending Time:  06:07:49
-           Elapsed Time:  00:03:10
+         Beginning Time:  18:29:44
+            Ending Time:  18:32:45
+           Elapsed Time:  00:03:01
 
 
 

@@ -11,9 +11,9 @@ Sum(
   output_folder,
   overwrite,
   integrity,
+  naive,
   metavar_normal,
   metavar_robust,
-  naive,
   mplus,
   ncores
 )
@@ -42,6 +42,10 @@ Sum(
   Logical. If `integrity = TRUE`, check for the output file integrity
   when `overwrite = FALSE`.
 
+- naive:
+
+  Logical. If `naive = TRUE`, summarize naive estimates.
+
 - metavar_normal:
 
   Logical. If `metavar_normal = TRUE`, summarize metaVAR model using
@@ -51,10 +55,6 @@ Sum(
 
   Logical. If `metavar_robust = TRUE`, summarize metaVAR model using
   robust (sandwich) confidence intervals.
-
-- naive:
-
-  Logical. If `naive = TRUE`, summarize naive estimates.
 
 - mplus:
 

@@ -47,9 +47,9 @@
 <span>  <span class="va">output_folder</span>,</span>
 <span>  <span class="va">overwrite</span>,</span>
 <span>  <span class="va">integrity</span>,</span>
+<span>  <span class="va">naive</span>,</span>
 <span>  <span class="va">metavar_normal</span>,</span>
 <span>  <span class="va">metavar_robust</span>,</span>
-<span>  <span class="va">naive</span>,</span>
 <span>  <span class="va">mplus</span>,</span>
 <span>  <span class="va">ncores</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -85,6 +85,11 @@ If <code>integrity = TRUE</code>,
 check for the output file integrity when <code>overwrite = FALSE</code>.</p></dd>
 
 
+<dt id="arg-naive">naive<a class="anchor" aria-label="anchor" href="#arg-naive"></a></dt>
+<dd><p>Logical.
+If <code>naive = TRUE</code>, summarize naive estimates.</p></dd>
+
+
 <dt id="arg-metavar-normal">metavar_normal<a class="anchor" aria-label="anchor" href="#arg-metavar-normal"></a></dt>
 <dd><p>Logical.
 If <code>metavar_normal = TRUE</code>, summarize metaVAR model using
@@ -95,11 +100,6 @@ normal confidence intervals.</p></dd>
 <dd><p>Logical.
 If <code>metavar_robust = TRUE</code>, summarize metaVAR model using
 robust (sandwich) confidence intervals.</p></dd>
-
-
-<dt id="arg-naive">naive<a class="anchor" aria-label="anchor" href="#arg-naive"></a></dt>
-<dd><p>Logical.
-If <code>naive = TRUE</code>, summarize naive estimates.</p></dd>
 
 
 <dt id="arg-mplus">mplus<a class="anchor" aria-label="anchor" href="#arg-mplus"></a></dt>
