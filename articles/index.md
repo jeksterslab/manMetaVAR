@@ -15,6 +15,16 @@
 - [Simulation
   Parameters](https://github.com/jeksterslab/manMetaVAR/articles/params.md):
 
+### Results
+
+- [Simulation
+  Results](https://github.com/jeksterslab/manMetaVAR/articles/results.md):
+
+### Plots
+
+- [Scatter
+  Plots](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots.md):
+
 ### Containers
 
 - [Containers](https://github.com/jeksterslab/manMetaVAR/articles/containers.md):
