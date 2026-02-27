@@ -24,12 +24,21 @@ reference:
 - title: Simulation Functions
   contents:
   - has_keyword("simulation")
+- title: Summary Functions
+  contents:
+  - has_keyword("summary")
+- title: Check Functions
+  contents:
+  - has_keyword("check")
 - title: Compression Functions
   contents:
   - has_keyword("compress")
 - title: Data
   contents:
   - has_keyword("data")
+- title: Figures
+  contents:
+  - has_keyword("figure")
 - title: Methods
   contents:
   - has_keyword("methods")
@@ -47,6 +56,12 @@ articles:
 - title: Parameters
   contents:
   - params
+- title: Results
+  contents:
+  - results
+- title: Plots
+  contents:
+  - fig-scatter-plots
 - title: Containers
   contents:
   - containers

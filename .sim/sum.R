@@ -41,11 +41,11 @@ lapply(
   FUN = Sum,
   reps = reps,
   output_folder = output_folder,
-  overwrite = FALSE,
-  integrity = TRUE,
-  naive = TRUE,
-  metavar_normal = TRUE,
-  metavar_robust = TRUE,
-  mplus = TRUE,
+  overwrite = overwrite,
+  integrity = integrity,
+  naive = naive,
+  metavar_normal = metavar_normal,
+  metavar_robust = metavar_robust,
+  mplus = mplus,
   ncores = parallel::detectCores()
 )

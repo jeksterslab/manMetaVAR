@@ -27,7 +27,8 @@ Imports:
     stats,
     utils,
     simStateSpace (== 1.2.15),
-    lavaan (== 0.6-21)
+    lavaan (== 0.6-21),
+    ggplot2
 Remotes:
     jeksterslab/fitVARMxID,
     jeksterslab/metaDyn

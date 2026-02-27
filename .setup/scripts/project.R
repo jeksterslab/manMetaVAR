@@ -22,7 +22,8 @@ rproject_ver <- NULL
 pkg_cran <- c(
   "simStateSpace",
   "OpenMx",
-  "lavaan"
+  "lavaan",
+  "ggplot2"
 )
 
 pkg_github <- c(

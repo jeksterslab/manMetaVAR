@@ -1,0 +1,91 @@
+#' Simulation Results
+#'
+#' @author Ivan Jacob Agaloos Pesigan
+#'
+#' @docType data
+#' @name results
+#' @usage data(results)
+#' @format A dataframe with I rows and J columns:
+#'
+#' \describe{
+#'   \item{taskid}{
+#'     Simulation Task ID.
+#'   }
+#'   \item{replications}{
+#'     Number of replications.
+#'   }
+#'   \item{parnames}{
+#'     Parameter names.
+#'   }
+#'   \item{parameter}{
+#'     Population parameter value.
+#'   }
+#'   \item{method}{
+#'     Method used to fit the data.
+#'   }
+#'   \item{n}{
+#'     Sample size.
+#'   }
+#'   \item{time}{
+#'     Number of measurement occassions.
+#'   }
+#'   \item{ci}{
+#'     Confidence/credible intervals method.
+#'   }
+#'   \item{est}{
+#'     Mean parameter estimate.
+#'   }
+#'   \item{se}{
+#'     Mean standard error.
+#'   }
+#'   \item{t}{
+#'     Mean test statistic.
+#'   }
+#'   \item{p}{
+#'     Mean \eqn{p}-value.
+#'   }
+#'   \item{ll}{
+#'     Mean lower limit of the 95% confidence/credible interval.
+#'   }
+#'   \item{ul}{
+#'     Mean upper limit of the 95% confidence/credible interval.
+#'   }
+#'   \item{sig}{
+#'     Proportion of statistically significant results.
+#'   }
+#'   \item{theta_hit}{
+#'     Proportion of replications
+#'     where the confidence intervals
+#'     contained the population parameter.
+#'   }
+#'   \item{sq_error}{
+#'     Mean squared error.
+#'   }
+#'   \item{bias}{
+#'     Bias.
+#'   }
+#'   \item{rel_bias}{
+#'     Relative bias.
+#'   }
+#'   \item{se_bias}{
+#'     Bias in standard error estimate.
+#'   }
+#'   \item{rel_se_bias}{
+#'     Relative bias in standard error estimate.
+#'   }
+#'   \item{rmse}{
+#'     Root mean square error.
+#'   }
+#'   \item{coverage}{
+#'     Coverage probability.
+#'   }
+#'   \item{power}{
+#'     Statistical power.
+#'   }
+#'   \item{par_idx}{
+#'     Parameter index.
+#'   }
+#' }
+#'
+#' @keywords data results
+"results"
