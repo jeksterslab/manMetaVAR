@@ -63,5 +63,20 @@
 #'   If `plot = TRUE`, add `PLOT: TYPE = PLOT3;`
 #'   to `Mplus` input file.
 #' @param ... additional arguments.
+#' @param results `results` data frame.
+#' @param bias Logical.
+#'   If `bias = TRUE`, plot absolute bias.
+#'   If `bias = FALSE`, plot relative bias.
+#'   Note that when parameter value is equal to zero,
+#'   absolute bias is used instead of relative bias.
+#' @param method Character vector.
+#'   Methods to include in the plot.
+#' @param ylim Numeric vector of length 2.
+#'   Lower and upper limits for the y-axis.
+#' @param parameters Character string.
+#'   Parameters to plot.
+#'   Valid values include `"fixed"`, `"random"`, and `"both"`.
+#' @param x_lab_size Numeric.
+#'   x-axis label size.
 #' @name Template
 NULL

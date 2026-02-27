@@ -22,12 +22,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.5.0), OpenMx (== 2.22.10), fitVARMxID (== 1.0.2),
         metaDyn (== 1.0.0)
-Imports: stats, utils, simStateSpace (== 1.2.15), lavaan (== 0.6-21)
+Imports: stats, utils, simStateSpace (== 1.2.15), lavaan (== 0.6-21),
+        ggplot2
 Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
 RoxygenNote: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2026-02-27 01:03:02 UTC; root
+Packaged: 2026-02-27 05:01:41 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
