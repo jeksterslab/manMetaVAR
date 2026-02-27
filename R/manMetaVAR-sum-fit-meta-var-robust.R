@@ -61,7 +61,9 @@ SumFitMetaVARRobust <- function(taskid,
       random_effect <- .Vech(
         model$ma_random
       )
-      random_effect[random_effect != 0]
+      random_effect <- random_effect[
+        random_effect != 0
+      ]
       parameter <- c(
         c(
           model$ma_fixed
