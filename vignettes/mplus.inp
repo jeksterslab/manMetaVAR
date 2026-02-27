@@ -1,0 +1,84 @@
+Mplus VERSION 9 DEMO (Linux)
+MUTHEN & MUTHEN
+02/27/2026  12:56 AM
+
+INPUT INSTRUCTIONS
+
+
+      TITLE:
+        Multilevel Vector Autoregressive Model
+      DATA:
+        FILE = mplus_cOyAJKESetHBNc5GPxDQ_data.dat;
+      VARIABLE:
+        NAMES = ID TIME Y1 Y2;
+        USEVARIABLES = Y1 Y2;
+        CLUSTER = ID;
+        LAGGED = Y1(1) Y2(1);
+      ANALYSIS:
+        TYPE = TWOLEVEL RANDOM;
+        ESTIMATOR = BAYES;
+        CHAINS = 2;
+        FBITER = (40000);
+        PROCESSORS = 1;
+        BSEED = 42;
+      MODEL:
+        %WITHIN%
+          ! transition matrix (beta)
+          BETA11 | Y1 ON Y1&1;
+          BETA21 | Y2 ON Y1&1;
+          BETA12 | Y1 ON Y2&1;
+          BETA22 | Y2 ON Y2&1;
+          ! process noise covariance matrix (psi)
+          Y1;
+          Y2 WITH Y1;
+          Y2;
+        %BETWEEN%
+          ! person-specific means (mu)
+          [Y1];
+          [Y2];
+          Y1;
+          Y2 WITH Y1;
+          Y2;
+          ! person-specific lagged effects (beta)
+          [BETA11];
+          [BETA21];
+          [BETA12];
+          [BETA22];
+          BETA11;
+          BETA21 WITH BETA11;
+          BETA12 WITH BETA11;
+          BETA22 WITH BETA11;
+          BETA21;
+          BETA12 WITH BETA21;
+          BETA22 WITH BETA21;
+          BETA12;
+          BETA22 WITH BETA12;
+          BETA22;
+      OUTPUT:
+        TECH1 TECH8;
+      SAVEDATA:
+        BPARAMETERS = mplus_cOyAJKESetHBNc5GPxDQ_posterior.dat;
+
+
+DEMO VERSION MAXIMUM EXCEEDED
+  Maximum number of continuous latent variables has been exceeded.
+  Number of continuous latent variables in the model: 4
+
+
+Mplus VERSION 9 DEMO (Linux) has the following limitations:
+  Maximum number of dependent variables: 6
+  Maximum number of independent variables: 2
+  Maximum number of between variables: 2
+  Maximum number of continuous latent variables in time series analysis: 2
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2025 Muthen & Muthen
