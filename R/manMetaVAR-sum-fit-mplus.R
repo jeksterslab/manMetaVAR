@@ -105,7 +105,9 @@ SumFitMplus <- function(taskid,
       random_effect <- .Vech(
         model$ma_random
       )
-      random_effect[random_effect != 0]
+      random_effect <- random_effect[
+        random_effect != 0
+      ]
       parameter <- c(
         c(
           model$ma_fixed
@@ -113,31 +115,31 @@ SumFitMplus <- function(taskid,
         random_effect
       )
       df <- data.frame(
-        est = raw[1:27, "est"],
-        se = raw[1:27, "se"],
+        est = raw[1:19, "est"],
+        se = raw[1:19, "se"],
         z = NA,
         p = NA,
-        ll = raw[1:27, "2.5%"],
-        ul = raw[1:27, "97.5%"],
+        ll = raw[1:19, "2.5%"],
+        ul = raw[1:19, "97.5%"],
         sig = NA,
         zero_hit = as.integer(
           (
-            raw[1:27, "2.5%"] <= 0
+            raw[1:19, "2.5%"] <= 0
           ) & (
-            0 <= raw[1:27, "97.5%"]
+            0 <= raw[1:19, "97.5%"]
           )
         ),
         theta_hit = as.integer(
           (
-            raw[1:27, "2.5%"] <= parameter
+            raw[1:19, "2.5%"] <= parameter
           ) & (
-            parameter <= raw[1:27, "97.5%"]
+            parameter <= raw[1:19, "97.5%"]
           )
         ),
-        sq_error = (parameter - raw[1:27, "est"])^2,
-        bias = raw[1:27, "est"] - parameter,
+        sq_error = (parameter - raw[1:19, "est"])^2,
+        bias = raw[1:19, "est"] - parameter,
         rel_bias = .SimRelBias(
-          thetahat = raw[1:27, "est"],
+          thetahat = raw[1:19, "est"],
           theta = parameter
         )
       )

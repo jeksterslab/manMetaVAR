@@ -26,11 +26,11 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 # ------------------------------------------------------------------------------
 
 # indices ----------------------------------------------------------------------
-repid_start=1
-repid_end=5
+repid_start=101
+repid_end=200
 
 taskid_start=1
-taskid_end=9
+taskid_end=12
 
 # script -----------------------------------------------------------------------
 cd /scratch/$USER/${PROJECT} || exit

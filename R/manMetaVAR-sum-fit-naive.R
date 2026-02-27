@@ -49,7 +49,7 @@ SumFitNaive <- function(taskid,
         repid = repid
       )
       fn_input <- SimFN(
-        output_type = "fit-dt-var-mx",
+        output_type = "fit-naive",
         output_folder = output_folder,
         suffix = suffix
       )
@@ -60,7 +60,9 @@ SumFitNaive <- function(taskid,
       random_effect <- .Vech(
         model$ma_random
       )
-      random_effect[random_effect != 0]
+      random_effect <- random_effect[
+        random_effect != 0
+      ]
       parameter <- c(
         c(
           model$ma_fixed

@@ -1,5 +1,5 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 9L
+tasks <- 12L
 reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
