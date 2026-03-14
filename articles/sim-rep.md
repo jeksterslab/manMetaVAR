@@ -75,8 +75,7 @@ summary(dtvar, means = TRUE)
 #>     sigma0_d_values = NULL, sigma0_d_lbound = NULL, sigma0_d_ubound = NULL, 
 #>     sigma0_d_equal = FALSE, sigma0_l_free = NULL, sigma0_l_values = NULL, 
 #>     sigma0_l_lbound = NULL, sigma0_l_ubound = NULL, robust = FALSE, 
-#>     seed = seed, tries_explore = 1000, tries_local = 1000, max_attempts = 100, 
-#>     silent = TRUE, ncores = ncores)
+#>     seed = seed, silent = TRUE, ncores = ncores)
 #> 
 #> Convergence:
 #> 100.0%
@@ -110,8 +109,7 @@ summary(metavar)
 #>         byrow = TRUE, nrow = 6, ncol = 6), tau_sqr_l_values = model$ma_random_l_ldl, 
 #>     effects = TRUE, set_point = TRUE, int_meas = FALSE, int_dyn = FALSE, 
 #>     cov_meas = FALSE, cov_dyn = FALSE, robust_v = FALSE, robust = FALSE, 
-#>     seed = seed, tries_explore = 1000, tries_local = 1000, max_attempts = 100, 
-#>     silent = TRUE, ncores = ncores)
+#>     seed = seed, silent = TRUE, ncores = ncores)
 #> 
 #> Status code:
 #> 0
@@ -200,7 +198,7 @@ plot(mplus, what = "trace")
 
     Mplus VERSION 9 DEMO (Linux)
     MUTHEN & MUTHEN
-    03/14/2026  12:58 AM
+    03/14/2026   3:52 AM
 
     INPUT INSTRUCTIONS
 
