@@ -55,9 +55,6 @@ FitMetaVAR <- function(fit,
     robust_v = FALSE,
     robust = FALSE,
     seed = seed,
-    tries_explore = 1000,
-    tries_local = 1000,
-    max_attempts = 100,
     silent = TRUE,
     ncores = ncores
   )
