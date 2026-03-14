@@ -63,18 +63,9 @@ tryCatch(
     )
   },
   error = function(e) {
-    cat(
-      paste(
-        "check",
-        "taskid:",
-        taskid,
-        "repid:",
-        repid,
-        "\n"
-      )
-    )
-  },
-  warning = function(w) {
+    message(paste("error:", "Sim"))
+    message("Here's the original error message:")
+    message(conditionMessage(e))
     cat(
       paste(
         "check",

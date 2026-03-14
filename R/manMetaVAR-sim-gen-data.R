@@ -30,34 +30,15 @@ SimGenData <- function(taskid,
     integrity = integrity
   )
   if (run) {
-    tryCatch(
-      {
-        set.seed(seed)
-        con <- file(fn_output)
-        saveRDS(
-          object = GenData(
-            taskid = taskid
-          ),
-          file = con
-        )
-        close(con)
-        .SimChMod(fn_output)
-      },
-      error = function(cond) {
-        message(paste("error:", "SimGenData"))
-        message("Here's the original error message:")
-        message(conditionMessage(cond))
-        cat(
-          paste(
-            "check",
-            "taskid:",
-            taskid,
-            "repid:",
-            repid,
-            "\n"
-          )
-        )
-      }
+    set.seed(seed)
+    con <- file(fn_output)
+    saveRDS(
+      object = GenData(
+        taskid = taskid
+      ),
+      file = con
     )
+    close(con)
+    .SimChMod(fn_output)
   }
 }

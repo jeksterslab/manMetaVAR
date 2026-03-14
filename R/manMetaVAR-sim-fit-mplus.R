@@ -40,42 +40,23 @@ SimFitMplus <- function(taskid,
     integrity = integrity
   )
   if (run) {
-    tryCatch(
-      {
-        set.seed(seed)
-        con <- file(fn_output)
-        saveRDS(
-          object = FitMplus(
-            data = readRDS(fn_input),
-            chains = chains,
-            iter = iter,
-            fscores = fscores,
-            plot = plot,
-            wd = output_folder,
-            mplus_bin = "mplus",
-            ncores = NULL,
-            seed = seed
-          ),
-          file = con
-        )
-        close(con)
-        .SimChMod(fn_output)
-      },
-      error = function(cond) {
-        message(paste("error:", "SimFitMplus"))
-        message("Here's the original error message:")
-        message(conditionMessage(cond))
-        cat(
-          paste(
-            "check",
-            "taskid:",
-            taskid,
-            "repid:",
-            repid,
-            "\n"
-          )
-        )
-      }
+    set.seed(seed)
+    con <- file(fn_output)
+    saveRDS(
+      object = FitMplus(
+        data = readRDS(fn_input),
+        chains = chains,
+        iter = iter,
+        fscores = fscores,
+        plot = plot,
+        wd = output_folder,
+        mplus_bin = "mplus",
+        ncores = NULL,
+        seed = seed
+      ),
+      file = con
     )
+    close(con)
+    .SimChMod(fn_output)
   }
 }
