@@ -1,6 +1,10 @@
+# manMetaVAR 0.9.8
+
+* Rerun
+
 # manMetaVAR 0.9.7
 
-* Rewrite.
+* Rewrite
 
 # manMetaVAR 0.9.6
 

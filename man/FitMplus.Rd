@@ -62,11 +62,11 @@ summary(fit)
 
 }
 \seealso{
-Other Model Fitting Functions: 
-\code{\link{FitDTVAR}()},
-\code{\link{FitMetaVAR}()},
-\code{\link{FitNaive}()},
-\code{\link{MplusInput}()}
+Other Model Fitting Functions:
+\code{\link[=FitDTVAR]{FitDTVAR()}},
+\code{\link[=FitMetaVAR]{FitMetaVAR()}},
+\code{\link[=FitNaive]{FitNaive()}},
+\code{\link[=MplusInput]{MplusInput()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

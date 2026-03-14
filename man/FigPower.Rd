@@ -39,10 +39,10 @@ FigPower(results)
 
 }
 \seealso{
-Other Figure Functions: 
-\code{\link{FigBias}()},
-\code{\link{FigCoverage}()},
-\code{\link{FigRMSE}()}
+Other Figure Functions:
+\code{\link[=FigBias]{FigBias()}},
+\code{\link[=FigCoverage]{FigCoverage()}},
+\code{\link[=FigRMSE]{FigRMSE()}}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
