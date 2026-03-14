@@ -67,19 +67,6 @@ Sim <- function(taskid,
       integrity = integrity
     )
   }
-  if (naive) {
-    try(
-      SimFitNaive(
-        taskid = taskid,
-        repid = repid,
-        output_folder = output_folder,
-        seed = seed,
-        suffix = suffix,
-        overwrite = overwrite,
-        integrity = integrity
-      )
-    )
-  }
   if (mplus) {
     try(
       SimFitMplus(
@@ -111,6 +98,30 @@ Sim <- function(taskid,
     )
     try(
       SimFitMetaVAR(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
+    )
+  }
+  if (naive) {
+    try(
+      SimFitDTVAR(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity
+      )
+    )
+    try(
+      SimFitNaive(
         taskid = taskid,
         repid = repid,
         output_folder = output_folder,
