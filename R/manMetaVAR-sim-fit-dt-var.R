@@ -65,21 +65,6 @@ SimFitDTVAR <- function(taskid,
             "\n"
           )
         )
-      },
-      warning = function(cond) {
-        message(paste("error:", "SimFitDTVAR"))
-        message("Here's the original warning message:")
-        message(conditionMessage(cond))
-        cat(
-          paste(
-            "check",
-            "taskid:",
-            taskid,
-            "repid:",
-            repid,
-            "\n"
-          )
-        )
       }
     )
   }

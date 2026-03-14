@@ -39,7 +39,7 @@ FigPower(results)
 
 }
 \seealso{
-Other Figure Functions: 
+Other Figure Functions:
 \code{\link{FigBias}()},
 \code{\link{FigCoverage}()},
 \code{\link{FigRMSE}()}

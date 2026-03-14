@@ -62,7 +62,7 @@ summary(fit)
 
 }
 \seealso{
-Other Model Fitting Functions: 
+Other Model Fitting Functions:
 \code{\link{FitDTVAR}()},
 \code{\link{FitMetaVAR}()},
 \code{\link{FitNaive}()},

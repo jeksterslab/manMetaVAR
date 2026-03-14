@@ -46,7 +46,7 @@ FigBias(results)
 
 }
 \seealso{
-Other Figure Functions: 
+Other Figure Functions:
 \code{\link{FigCoverage}()},
 \code{\link{FigPower}()},
 \code{\link{FigRMSE}()}

@@ -17,7 +17,7 @@ Number of cores to use.}
 Random seed.}
 }
 \description{
-The function fits the model using the \link[fitVARMxID:fitVARMxID-package]{fitVARMxID::fitVARMxID} package.
+The function fits the model using the \link[fitVARMxID:fitVARMxID-package]{fitVARMxID} package.
 }
 \examples{
 \dontrun{
@@ -32,7 +32,7 @@ vcov(fit)
 
 }
 \seealso{
-Other Model Fitting Functions: 
+Other Model Fitting Functions:
 \code{\link{FitMetaVAR}()},
 \code{\link{FitMplus}()},
 \code{\link{FitNaive}()},

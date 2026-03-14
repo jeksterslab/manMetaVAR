@@ -1,6 +1,6 @@
 Package: manMetaVAR
 Title: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
-Version: 0.9.7
+Version: 0.9.8
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -20,14 +20,14 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.5.0),
-    OpenMx (== 2.22.10),
-    fitVARMxID (== 1.0.2),
-    metaDyn (== 1.0.0)
+    OpenMx (>= 2.22.11),
+    fitVARMxID (>= 1.0.2),
+    metaDyn (>= 1.0.0)
 Imports:
     stats,
     utils,
-    simStateSpace (== 1.2.15),
-    lavaan (== 0.6-21),
+    simStateSpace (>= 1.2.15),
+    lavaan (>= 0.6-21),
     ggplot2
 Remotes:
     jeksterslab/fitVARMxID,

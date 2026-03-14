@@ -39,7 +39,7 @@ FigCoverage(results)
 
 }
 \seealso{
-Other Figure Functions: 
+Other Figure Functions:
 \code{\link{FigBias}()},
 \code{\link{FigPower}()},
 \code{\link{FigRMSE}()}

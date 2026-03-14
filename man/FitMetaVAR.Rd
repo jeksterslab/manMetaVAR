@@ -17,7 +17,7 @@ Number of cores to use.}
 Random seed.}
 }
 \description{
-The function performs multivariate meta-snalysis using the \link[metaDyn:metaDyn-package]{metaDyn::metaDyn} package.
+The function performs multivariate meta-snalysis using the \link[metaDyn:metaDyn-package]{metaDyn} package.
 }
 \examples{
 \dontrun{
@@ -33,7 +33,7 @@ vcov(meta)
 
 }
 \seealso{
-Other Model Fitting Functions: 
+Other Model Fitting Functions:
 \code{\link{FitDTVAR}()},
 \code{\link{FitMplus}()},
 \code{\link{FitNaive}()},
