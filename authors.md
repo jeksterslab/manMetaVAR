@@ -20,5 +20,5 @@ https://doi.org/10.0000/0000000000
       year = {2026},
       doi = {10.0000/0000000000},
       journal = {JOURNAL_TITLE_HERE},
-      note = {R package version 0.9.7},
+      note = {R package version 0.9.8},
     }

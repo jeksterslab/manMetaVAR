@@ -1,7 +1,7 @@
 # Fit the Model using the fitVARMxID Package
 
 The function fits the model using the
-[fitVARMxID::fitVARMxID](https://github.com/jeksterslab/fitVARMxID/reference/fitVARMxID-package.html)
+[fitVARMxID](https://github.com/jeksterslab/fitVARMxID/reference/fitVARMxID-package.html)
 package.
 
 ## Usage

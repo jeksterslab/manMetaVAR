@@ -1,7 +1,7 @@
 # Multivariate Meta-Analysis using the metaDyn Package
 
 The function performs multivariate meta-snalysis using the
-[metaDyn::metaDyn](https://github.com/jeksterslab/metaDyn/reference/metaDyn-package.html)
+[metaDyn](https://github.com/jeksterslab/metaDyn/reference/metaDyn-package.html)
 package.
 
 ## Usage
