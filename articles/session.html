@@ -76,7 +76,7 @@ Agaloos Pesigan</h4>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; R version 4.5.2 (2025-10-31)</span></span>
 <span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu</span></span>
-<span><span class="co">#&gt; Running under: Ubuntu 24.04.4 LTS</span></span>
+<span><span class="co">#&gt; Running under: Ubuntu 24.04.3 LTS</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Matrix products: default</span></span>
 <span><span class="co">#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 </span></span>
@@ -104,7 +104,7 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt;  [1] vctrs_0.7.1           rProject_0.0.25       cli_3.6.5.9000       </span></span>
 <span><span class="co">#&gt;  [4] knitr_1.51            rlang_1.1.7           xfun_0.56            </span></span>
 <span><span class="co">#&gt;  [7] otel_0.2.0            generics_0.1.4        S7_0.2.1             </span></span>
-<span><span class="co">#&gt; [10] textshaping_1.0.5     labeling_0.4.3        RcppParallel_5.1.11-2</span></span>
+<span><span class="co">#&gt; [10] textshaping_1.0.5     labeling_0.4.3        RcppParallel_5.1.11-1</span></span>
 <span><span class="co">#&gt; [13] glue_1.8.0            ragg_1.5.1            scales_1.4.0         </span></span>
 <span><span class="co">#&gt; [16] grid_4.5.2            simStateSpace_1.2.16  tibble_3.3.1         </span></span>
 <span><span class="co">#&gt; [19] evaluate_1.0.5        MASS_7.3-65           lifecycle_1.0.5      </span></span>
@@ -123,47 +123,48 @@ Agaloos Pesigan</h4>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.html" class="external-link">system</a></span><span class="op">(</span><span class="st">"lscpu"</span>, intern <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Architecture:                            x86_64</span></span>
 <span><span class="co">#&gt; CPU op-mode(s):                          32-bit, 64-bit</span></span>
-<span><span class="co">#&gt; Address sizes:                           39 bits physical, 48 bits virtual</span></span>
+<span><span class="co">#&gt; Address sizes:                           48 bits physical, 48 bits virtual</span></span>
 <span><span class="co">#&gt; Byte Order:                              Little Endian</span></span>
-<span><span class="co">#&gt; CPU(s):                                  8</span></span>
-<span><span class="co">#&gt; On-line CPU(s) list:                     0-7</span></span>
-<span><span class="co">#&gt; Vendor ID:                               GenuineIntel</span></span>
-<span><span class="co">#&gt; Model name:                              Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz</span></span>
-<span><span class="co">#&gt; CPU family:                              6</span></span>
-<span><span class="co">#&gt; Model:                                   142</span></span>
+<span><span class="co">#&gt; CPU(s):                                  32</span></span>
+<span><span class="co">#&gt; On-line CPU(s) list:                     0-31</span></span>
+<span><span class="co">#&gt; Vendor ID:                               AuthenticAMD</span></span>
+<span><span class="co">#&gt; Model name:                              AMD Ryzen 9 9955HX 16-Core Processor</span></span>
+<span><span class="co">#&gt; CPU family:                              26</span></span>
+<span><span class="co">#&gt; Model:                                   68</span></span>
 <span><span class="co">#&gt; Thread(s) per core:                      2</span></span>
-<span><span class="co">#&gt; Core(s) per socket:                      4</span></span>
+<span><span class="co">#&gt; Core(s) per socket:                      16</span></span>
 <span><span class="co">#&gt; Socket(s):                               1</span></span>
-<span><span class="co">#&gt; Stepping:                                12</span></span>
-<span><span class="co">#&gt; CPU(s) scaling MHz:                      100%</span></span>
-<span><span class="co">#&gt; CPU max MHz:                             1600.0000</span></span>
-<span><span class="co">#&gt; CPU min MHz:                             400.0000</span></span>
-<span><span class="co">#&gt; BogoMIPS:                                3799.90</span></span>
-<span><span class="co">#&gt; Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities</span></span>
-<span><span class="co">#&gt; Virtualization:                          VT-x</span></span>
-<span><span class="co">#&gt; L1d cache:                               128 KiB (4 instances)</span></span>
-<span><span class="co">#&gt; L1i cache:                               128 KiB (4 instances)</span></span>
-<span><span class="co">#&gt; L2 cache:                                1 MiB (4 instances)</span></span>
-<span><span class="co">#&gt; L3 cache:                                6 MiB (1 instance)</span></span>
+<span><span class="co">#&gt; Stepping:                                0</span></span>
+<span><span class="co">#&gt; Frequency boost:                         enabled</span></span>
+<span><span class="co">#&gt; CPU(s) scaling MHz:                      51%</span></span>
+<span><span class="co">#&gt; CPU max MHz:                             5060.9761</span></span>
+<span><span class="co">#&gt; CPU min MHz:                             1219.5129</span></span>
+<span><span class="co">#&gt; BogoMIPS:                                4990.56</span></span>
+<span><span class="co">#&gt; Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze</span></span>
+<span><span class="co">#&gt; Virtualization:                          AMD-V</span></span>
+<span><span class="co">#&gt; L1d cache:                               768 KiB (16 instances)</span></span>
+<span><span class="co">#&gt; L1i cache:                               512 KiB (16 instances)</span></span>
+<span><span class="co">#&gt; L2 cache:                                16 MiB (16 instances)</span></span>
+<span><span class="co">#&gt; L3 cache:                                64 MiB (2 instances)</span></span>
 <span><span class="co">#&gt; NUMA node(s):                            1</span></span>
-<span><span class="co">#&gt; NUMA node0 CPU(s):                       0-7</span></span>
-<span><span class="co">#&gt; Vulnerability Gather data sampling:      Mitigation; Microcode</span></span>
-<span><span class="co">#&gt; Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks</span></span>
-<span><span class="co">#&gt; Vulnerability Itlb multihit:             KVM: Mitigation: Split huge pages</span></span>
+<span><span class="co">#&gt; NUMA node0 CPU(s):                       0-31</span></span>
+<span><span class="co">#&gt; Vulnerability Gather data sampling:      Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Indirect target selection: Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Itlb multihit:             Not affected</span></span>
 <span><span class="co">#&gt; Vulnerability L1tf:                      Not affected</span></span>
 <span><span class="co">#&gt; Vulnerability Mds:                       Not affected</span></span>
 <span><span class="co">#&gt; Vulnerability Meltdown:                  Not affected</span></span>
-<span><span class="co">#&gt; Vulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable</span></span>
+<span><span class="co">#&gt; Vulnerability Mmio stale data:           Not affected</span></span>
 <span><span class="co">#&gt; Vulnerability Reg file data sampling:    Not affected</span></span>
-<span><span class="co">#&gt; Vulnerability Retbleed:                  Mitigation; Enhanced IBRS</span></span>
-<span><span class="co">#&gt; Vulnerability Spec rstack overflow:      Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Retbleed:                  Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Spec rstack overflow:      Mitigation; IBPB on VMEXIT only</span></span>
 <span><span class="co">#&gt; Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl</span></span>
 <span><span class="co">#&gt; Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization</span></span>
-<span><span class="co">#&gt; Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop</span></span>
-<span><span class="co">#&gt; Vulnerability Srbds:                     Mitigation; Microcode</span></span>
+<span><span class="co">#&gt; Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Srbds:                     Not affected</span></span>
 <span><span class="co">#&gt; Vulnerability Tsa:                       Not affected</span></span>
-<span><span class="co">#&gt; Vulnerability Tsx async abort:           Mitigation; TSX disabled</span></span>
-<span><span class="co">#&gt; Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace</span></span></code></pre></div>
+<span><span class="co">#&gt; Vulnerability Tsx async abort:           Not affected</span></span>
+<span><span class="co">#&gt; Vulnerability Vmscape:                   Mitigation; IBPB on VMEXIT</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="memory">Memory<a class="anchor" aria-label="anchor" href="#memory"></a>
@@ -171,9 +172,9 @@ Agaloos Pesigan</h4>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.html" class="external-link">system</a></span><span class="op">(</span><span class="st">"free -g -h -t"</span>, intern <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                total        used        free      shared  buff/cache   available</span></span>
-<span><span class="co">#&gt; Mem:            15Gi       7.7Gi       1.5Gi       644Mi       7.0Gi       7.5Gi</span></span>
-<span><span class="co">#&gt; Swap:          7.8Gi       1.0Gi       6.7Gi</span></span>
-<span><span class="co">#&gt; Total:          22Gi       8.7Gi       8.2Gi</span></span></code></pre></div>
+<span><span class="co">#&gt; Mem:            44Gi       5.4Gi       3.4Gi        74Mi        36Gi        39Gi</span></span>
+<span><span class="co">#&gt; Swap:           22Gi        18Mi        22Gi</span></span>
+<span><span class="co">#&gt; Total:          66Gi       5.5Gi        25Gi</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
