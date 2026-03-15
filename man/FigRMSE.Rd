@@ -41,6 +41,7 @@ FigRMSE(results)
 \seealso{
 Other Figure Functions:
 \code{\link[=FigBias]{FigBias()}},
+\code{\link[=FigBiasSE]{FigBiasSE()}},
 \code{\link[=FigCoverage]{FigCoverage()}},
 \code{\link[=FigPower]{FigPower()}}
 }
