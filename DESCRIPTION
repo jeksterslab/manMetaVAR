@@ -28,7 +28,7 @@ Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
 RoxygenNote: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2026-03-14 20:50:50 UTC; root
+Packaged: 2026-03-15 17:58:13 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
