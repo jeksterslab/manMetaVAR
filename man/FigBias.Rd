@@ -47,10 +47,10 @@ FigBias(results)
 }
 \seealso{
 Other Figure Functions:
-\code{\link{FigBiasSE}()},
-\code{\link{FigCoverage}()},
-\code{\link{FigPower}()},
-\code{\link{FigRMSE}()}
+\code{\link[=FigBiasSE]{FigBiasSE()}},
+\code{\link[=FigCoverage]{FigCoverage()}},
+\code{\link[=FigPower]{FigPower()}},
+\code{\link[=FigRMSE]{FigRMSE()}}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

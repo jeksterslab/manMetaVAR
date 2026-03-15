@@ -66,10 +66,10 @@ cat(
 }
 \seealso{
 Other Model Fitting Functions:
-\code{\link{FitDTVAR}()},
-\code{\link{FitMetaVAR}()},
-\code{\link{FitMplus}()},
-\code{\link{FitNaive}()}
+\code{\link[=FitDTVAR]{FitDTVAR()}},
+\code{\link[=FitMetaVAR]{FitMetaVAR()}},
+\code{\link[=FitMplus]{FitMplus()}},
+\code{\link[=FitNaive]{FitNaive()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}
