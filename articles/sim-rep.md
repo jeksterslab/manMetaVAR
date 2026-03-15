@@ -198,7 +198,7 @@ plot(mplus, what = "trace")
 
     Mplus VERSION 9 DEMO (Linux)
     MUTHEN & MUTHEN
-    03/15/2026   5:35 PM
+    03/15/2026   6:25 PM
 
     INPUT INSTRUCTIONS
 

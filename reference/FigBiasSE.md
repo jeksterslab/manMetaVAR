@@ -1,11 +1,11 @@
-# Plot Relative Bias
+# Plot Relative Bias (Standard Errors)
 
-Plot relative bias for the fixed and random effects.
+Plot relative bias for the fixed and random effects standard errors.
 
 ## Usage
 
 ``` r
-FigBias(
+FigBiasSE(
   results,
   bias = FALSE,
   method = c("BMLVAR", "MetaVAR", "Naive"),
@@ -47,7 +47,7 @@ FigBias(
 ## See also
 
 Other Figure Functions:
-[`FigBiasSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBiasSE.md),
+[`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md),
 [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md),
 [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md),
 [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
@@ -61,6 +61,6 @@ Ivan Jacob Agaloos Pesigan
 ``` r
 if (FALSE) { # \dontrun{
 data(results, package = "manMetaVAR")
-FigBias(results)
+FigBiasSE(results)
 } # }
 ```
