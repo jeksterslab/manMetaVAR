@@ -36,18 +36,38 @@ data(results, package = "manMetaVAR")
 
 #### Fixed Effects
 
+##### Point Estimates
+
 ```{r, bias-fixed}
 #| echo = FALSE,
 #| cache = FALSE
 FigBias(results, parameters = "fixed", x_lab_size = 9)
 ```
 
+##### Standard Errors
+
+```{r, bias-se-fixed}
+#| echo = FALSE,
+#| cache = FALSE
+FigBiasSE(results, parameters = "fixed", x_lab_size = 9)
+```
+
 #### Random Effects
+
+##### Point Estimates
 
 ```{r, bias-random}
 #| echo = FALSE,
 #| cache = FALSE
 FigBias(results, parameters = "random", x_lab_size = 9)
+```
+
+##### Standard Errors
+
+```{r, bias-se-random}
+#| echo = FALSE,
+#| cache = FALSE
+FigBiasSE(results, parameters = "random", x_lab_size = 9)
 ```
 
 ### RMSE

@@ -24,11 +24,23 @@ data(results, package = "manMetaVAR")
 
 #### Fixed Effects
 
+##### Point Estimates
+
 <img src="fig-vignettes-scatter-plots-bias-fixed-1.png" alt="" width="3300" />
+
+##### Standard Errors
+
+<img src="fig-vignettes-scatter-plots-bias-se-fixed-1.png" alt="" width="3300" />
 
 #### Random Effects
 
+##### Point Estimates
+
 <img src="fig-vignettes-scatter-plots-bias-random-1.png" alt="" width="3300" />
+
+##### Standard Errors
+
+<img src="fig-vignettes-scatter-plots-bias-se-random-1.png" alt="" width="3300" />
 
 ### RMSE
 

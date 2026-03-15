@@ -40,9 +40,10 @@ FigRMSE(results)
 }
 \seealso{
 Other Figure Functions:
-\code{\link[=FigBias]{FigBias()}},
-\code{\link[=FigCoverage]{FigCoverage()}},
-\code{\link[=FigPower]{FigPower()}}
+\code{\link{FigBias}()},
+\code{\link{FigBiasSE}()},
+\code{\link{FigCoverage}()},
+\code{\link{FigPower}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

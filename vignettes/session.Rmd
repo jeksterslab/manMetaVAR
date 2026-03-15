@@ -47,7 +47,7 @@ sessionInfo()
 #> [4] OpenMx_2.22.11       
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] vctrs_0.7.1           rProject_0.0.25       cli_3.6.5            
+#>  [1] vctrs_0.7.1           rProject_0.0.25       cli_3.6.5.9000       
 #>  [4] knitr_1.51            rlang_1.1.7           xfun_0.56            
 #>  [7] otel_0.2.0            generics_0.1.4        S7_0.2.1             
 #> [10] textshaping_1.0.5     labeling_0.4.3        RcppParallel_5.1.11-2
@@ -119,7 +119,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 ``` r
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            15Gi       3.3Gi       5.6Gi       476Mi       7.0Gi        11Gi
+#> Mem:            15Gi       3.7Gi       4.5Gi       410Mi       7.7Gi        11Gi
 #> Swap:          7.8Gi          0B       7.8Gi
-#> Total:          22Gi       3.3Gi        13Gi
+#> Total:          22Gi       3.7Gi        12Gi
 ```
