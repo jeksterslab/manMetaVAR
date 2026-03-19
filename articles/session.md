@@ -10,7 +10,7 @@ library(manMetaVAR)
 ``` r
 
 sessionInfo()
-#> R version 4.5.2 (2025-10-31)
+#> R version 4.5.3 (2026-03-11)
 #> Platform: x86_64-pc-linux-gnu
 #> Running under: Ubuntu 24.04.4 LTS
 #> 
@@ -42,14 +42,14 @@ sessionInfo()
 #>  [7] otel_0.2.0            generics_0.1.4        S7_0.2.1             
 #> [10] textshaping_1.0.5     labeling_0.4.3        RcppParallel_5.1.11-2
 #> [13] glue_1.8.0            ragg_1.5.1            scales_1.4.0         
-#> [16] grid_4.5.2            simStateSpace_1.2.16  tibble_3.3.1         
+#> [16] grid_4.5.3            simStateSpace_1.2.16  tibble_3.3.1         
 #> [19] evaluate_1.0.5        MASS_7.3-65           lifecycle_1.0.5      
-#> [22] compiler_4.5.2        dplyr_1.2.0           RColorBrewer_1.1-3   
+#> [22] compiler_4.5.3        dplyr_1.2.0           RColorBrewer_1.1-3   
 #> [25] pkgconfig_2.0.3       Rcpp_1.1.1            farver_2.1.2         
-#> [28] systemfonts_1.3.2     lattice_0.22-7        digest_0.6.39        
+#> [28] systemfonts_1.3.2     lattice_0.22-9        digest_0.6.39        
 #> [31] R6_2.6.1              tidyselect_1.2.1      pillar_1.11.1        
-#> [34] parallel_4.5.2        magrittr_2.0.4        Matrix_1.7-4         
-#> [37] withr_3.0.2           tools_4.5.2           gtable_0.3.6         
+#> [34] parallel_4.5.3        magrittr_2.0.4        Matrix_1.7-4         
+#> [37] withr_3.0.2           tools_4.5.3           gtable_0.3.6         
 #> [40] ggplot2_4.0.2
 ```
 
@@ -72,7 +72,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Core(s) per socket:                      4
 #> Socket(s):                               1
 #> Stepping:                                12
-#> CPU(s) scaling MHz:                      91%
+#> CPU(s) scaling MHz:                      81%
 #> CPU max MHz:                             1600.0000
 #> CPU min MHz:                             400.0000
 #> BogoMIPS:                                3799.90
@@ -109,7 +109,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            15Gi       3.7Gi       4.5Gi       410Mi       7.7Gi        11Gi
-#> Swap:          7.8Gi          0B       7.8Gi
-#> Total:          22Gi       3.7Gi        12Gi
+#> Mem:            15Gi        12Gi       729Mi       6.5Gi       9.2Gi       3.1Gi
+#> Swap:          7.8Gi       3.8Gi       4.0Gi
+#> Total:          22Gi        15Gi       4.7Gi
 ```

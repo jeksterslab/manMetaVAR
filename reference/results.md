@@ -10,7 +10,7 @@ data(results)
 
 ## Format
 
-A dataframe with I rows and J columns:
+A dataframe with 912 rows and 24 columns:
 
 - taskid:
 
@@ -72,6 +72,11 @@ A dataframe with I rows and J columns:
 
   Proportion of statistically significant results.
 
+- zero_hit:
+
+  Proportion of replications where the confidence intervals contained
+  zero.
+
 - theta_hit:
 
   Proportion of replications where the confidence intervals contained
@@ -88,14 +93,6 @@ A dataframe with I rows and J columns:
 - rel_bias:
 
   Relative bias.
-
-- se_bias:
-
-  Bias in standard error estimate.
-
-- rel_se_bias:
-
-  Relative bias in standard error estimate.
 
 - rmse:
 

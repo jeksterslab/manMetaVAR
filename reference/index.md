@@ -101,8 +101,6 @@
 
 - [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
   : Plot Relative Bias
-- [`FigBiasSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBiasSE.md)
-  : Plot Relative Bias (Standard Errors)
 - [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
   : Plot Coverage Probabilities
 - [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
@@ -165,8 +163,6 @@
   : Compress Replication
 - [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
   : Plot Relative Bias
-- [`FigBiasSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBiasSE.md)
-  : Plot Relative Bias (Standard Errors)
 - [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
   : Plot Coverage Probabilities
 - [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)

@@ -47,7 +47,6 @@ FigBias(
 ## See also
 
 Other Figure Functions:
-[`FigBiasSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBiasSE.md),
 [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md),
 [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md),
 [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
