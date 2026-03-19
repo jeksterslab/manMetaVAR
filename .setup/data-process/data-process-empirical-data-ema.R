@@ -7,6 +7,11 @@ data_process_adid2010_data_ema <- function(overwrite = FALSE) {
     "data-raw",
     "adid2010-data-ema.Rds"
   )
+  raw_data <- root$find_file(
+    ".setup",
+    "data-raw",
+    "adid2010-ema.txt"
+  )
   if (!file.exists(output)) {
     write <- TRUE
   } else {
@@ -15,6 +20,9 @@ data_process_adid2010_data_ema <- function(overwrite = FALSE) {
     } else {
       write <- FALSE
     }
+  }
+  if (!file.exists(raw_data)) {
+    write <- FALSE
   }
   if (write) {
     cat("\ndata_process_adid2010_data_ema\n")

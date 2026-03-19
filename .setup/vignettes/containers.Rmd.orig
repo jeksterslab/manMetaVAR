@@ -26,7 +26,7 @@ To build the Apptainer/Singularity image file (`manmetavar.sif`),
 run the following.
 
 ```bash
-apptainer pull manmetavar.sif docker://ijapesigan/manmetavar:2025-04-07-05390291
+apptainer pull manmetavar.sif docker://ijapesigan/manmetavar
 ```
 
 ## RStudio IDE Docker Container
@@ -38,7 +38,7 @@ To facilitate exploration of the package, we created a Docker container based on
 To launch `Rstudio Server`, run the following.
 
 ```bash
-docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manmetavar:2025-04-07-05390291
+docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manmetavar
 ```
 
 Open `http://localhost:8787` on your web browser to launch `Rstudio Server`.
@@ -46,4 +46,4 @@ Open `http://localhost:8787` on your web browser to launch `Rstudio Server`.
 - username: rstudio
 - password: yourpassword
 
-> **NOTE**: `Mplus` is closed-source and proprietary software, so it cannot be included in publicly available containers. Consequently, some functions that require `Mplus` will not work in these containers.
+> **NOTE**: `Mplus` is closed-source and proprietary software, so it cannot be included in publicly available containers. Consequently, some functions that require `Mplus` will not work in the publicly available versions of these containers.

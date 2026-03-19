@@ -14,6 +14,11 @@ data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
       "data-process-empirical-data-ema.R"
     )
   )
+  raw_data <- root$find_file(
+    ".setup",
+    "data-raw",
+    "adid2010-ema.txt"
+  )
   if (!file.exists(output)) {
     write <- TRUE
   } else {
@@ -22,6 +27,9 @@ data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
     } else {
       write <- FALSE
     }
+  }
+  if (!file.exists(raw_data)) {
+    write <- FALSE
   }
   if (write) {
     cat("\ndata_process_adid2010_stage_1\n")
