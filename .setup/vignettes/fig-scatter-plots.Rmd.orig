@@ -36,38 +36,28 @@ data(results, package = "manMetaVAR")
 
 #### Fixed Effects
 
-##### Point Estimates
-
 ```{r, bias-fixed}
 #| echo = FALSE,
 #| cache = FALSE
-FigBias(results, parameters = "fixed", x_lab_size = 9)
-```
-
-##### Standard Errors
-
-```{r, bias-se-fixed}
-#| echo = FALSE,
-#| cache = FALSE
-FigBiasSE(results, parameters = "fixed", x_lab_size = 9)
+FigBias(
+  results,
+  parameters = "fixed",
+  ylim = c(-0.15, 0.10),
+  x_lab_size = 10
+)
 ```
 
 #### Random Effects
 
-##### Point Estimates
-
 ```{r, bias-random}
 #| echo = FALSE,
 #| cache = FALSE
-FigBias(results, parameters = "random", x_lab_size = 9)
-```
-
-##### Standard Errors
-
-```{r, bias-se-random}
-#| echo = FALSE,
-#| cache = FALSE
-FigBiasSE(results, parameters = "random", x_lab_size = 9)
+FigBias(
+  results,
+  parameters = "random",
+  ylim = c(-0.4, 0.4),
+  x_lab_size = 9
+)
 ```
 
 ### RMSE
@@ -77,7 +67,12 @@ FigBiasSE(results, parameters = "random", x_lab_size = 9)
 ```{r, rmse-fixed}
 #| echo = FALSE,
 #| cache = FALSE
-FigRMSE(results, parameters = "fixed", x_lab_size = 9)
+FigRMSE(
+  results,
+  parameters = "fixed",
+  ylim = c(0.0, 0.15),
+  x_lab_size = 10
+)
 ```
 
 #### Random Effects
@@ -85,7 +80,12 @@ FigRMSE(results, parameters = "fixed", x_lab_size = 9)
 ```{r, rmse-random}
 #| echo = FALSE,
 #| cache = FALSE
-FigRMSE(results, parameters = "random", x_lab_size = 9)
+FigRMSE(
+  results,
+  parameters = "random",
+  ylim = c(0.0, 0.31),
+  x_lab_size = 9
+)
 ```
 
 ### Coverage Probabilities
@@ -95,7 +95,12 @@ FigRMSE(results, parameters = "random", x_lab_size = 9)
 ```{r, coverage-fixed}
 #| echo = FALSE,
 #| cache = FALSE
-FigCoverage(results, parameters = "fixed", x_lab_size = 9)
+FigCoverage(
+  results,
+  parameters = "fixed",
+  ylim = c(0.50, 0.97),
+  x_lab_size = 10
+)
 ```
 
 #### Random Effects
@@ -103,7 +108,12 @@ FigCoverage(results, parameters = "fixed", x_lab_size = 9)
 ```{r, coverage-random}
 #| echo = FALSE,
 #| cache = FALSE
-FigCoverage(results, parameters = "random", x_lab_size = 9)
+FigCoverage(
+  results,
+  parameters = "random",
+  ylim = c(0.8, 0.97),
+  x_lab_size = 9
+)
 ```
 
 ### Statistical Power
@@ -113,7 +123,12 @@ FigCoverage(results, parameters = "random", x_lab_size = 9)
 ```{r, power-fixed}
 #| echo = FALSE,
 #| cache = FALSE
-FigPower(results, parameters = "fixed", x_lab_size = 9)
+FigPower(
+  results,
+  parameters = "fixed",
+  ylim = c(0.20, 1.00),
+  x_lab_size = 10
+)
 ```
 
 #### Random Effects
@@ -121,5 +136,9 @@ FigPower(results, parameters = "fixed", x_lab_size = 9)
 ```{r, power-random}
 #| echo = FALSE,
 #| cache = FALSE
-FigPower(results, parameters = "random", x_lab_size = 9)
+FigPower(
+  results,
+  parameters = "random",
+  x_lab_size = 9
+)
 ```

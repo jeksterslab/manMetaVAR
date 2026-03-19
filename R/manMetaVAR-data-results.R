@@ -5,7 +5,7 @@
 #' @docType data
 #' @name results
 #' @usage data(results)
-#' @format A dataframe with I rows and J columns:
+#' @format A dataframe with 912 rows and 24 columns:
 #'
 #' \describe{
 #'   \item{taskid}{
@@ -53,6 +53,11 @@
 #'   \item{sig}{
 #'     Proportion of statistically significant results.
 #'   }
+#'   \item{zero_hit}{
+#'     Proportion of replications
+#'     where the confidence intervals
+#'     contained zero.
+#'   }
 #'   \item{theta_hit}{
 #'     Proportion of replications
 #'     where the confidence intervals
@@ -66,12 +71,6 @@
 #'   }
 #'   \item{rel_bias}{
 #'     Relative bias.
-#'   }
-#'   \item{se_bias}{
-#'     Bias in standard error estimate.
-#'   }
-#'   \item{rel_se_bias}{
-#'     Relative bias in standard error estimate.
 #'   }
 #'   \item{rmse}{
 #'     Root mean square error.

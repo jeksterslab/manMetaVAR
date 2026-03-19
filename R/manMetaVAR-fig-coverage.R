@@ -170,11 +170,11 @@ FigCoverage <- function(results,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.925,
+      yintercept = 0.92,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.975,
+      yintercept = 0.97,
       alpha = 0.5
     ) +
     ggplot2::annotate(
@@ -183,8 +183,8 @@ FigCoverage <- function(results,
       alpha = 0.50,
       xmin = -Inf,
       xmax = Inf,
-      ymin = 0.925,
-      ymax = 0.975
+      ymin = 0.92,
+      ymax = 0.97
     ) +
     ggplot2::geom_point(
       na.rm = TRUE

@@ -85,6 +85,8 @@ data_process_results <- function(overwrite = FALSE) {
       yes = results$bias,
       no = results$rel_bias
     )
+    results$se_bias <- NULL
+    results$rel_se_bias <- NULL
     save(
       results,
       file = results_file,
