@@ -7,7 +7,8 @@ cff-version: 1.2.0
 message: 'To cite package "manMetaVAR" in publications use:'
 type: software
 license: MIT
-title: 'manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients'
+title: 'manMetaVAR: From Person-Specific Dynamics to Population Inference: A Meta-Analytic
+  Structural Equation Modeling Framework for Multilevel Dynamic Models'
 version: 0.9.8
 doi: 10.0000/0000000000
 identifiers:
@@ -15,8 +16,9 @@ identifiers:
   value: https://osf.io/uenr7/
 - type: url
   value: https://doi.org/10.0000/0000000000
-abstract: Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation).
-  Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients. <https://doi.org/10.0000/0000000000>.
+abstract: 'Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation).
+  From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural
+  Equation Modeling Framework for Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>.'
 authors:
 - family-names: Pesigan
   given-names: Ivan Jacob Agaloos
@@ -24,7 +26,8 @@ authors:
   orcid: https://orcid.org/0000-0003-4818-8420
 preferred-citation:
   type: article
-  title: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
+  title: 'From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural
+    Equation Modeling Framework for Multilevel Dynamic Models'
   authors:
   - family-names: Pesigan
     given-names: Ivan Jacob Agaloos

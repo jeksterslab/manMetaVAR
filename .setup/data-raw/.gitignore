@@ -1,2 +1,4 @@
-*.Rds
-*.txt
+adid2010-*
+manMetaVAR-summary-*
+sim-rep-*
+benchmark*

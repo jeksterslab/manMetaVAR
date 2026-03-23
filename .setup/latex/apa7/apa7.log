@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  15 JAN 2026 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.16)  23 MAR 2026 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **apa7.dtx
 (./apa7.dtx
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-29>
+L3 programming layer <2026-01-19>
 (/opt/TinyTeX/texmf-dist/tex/latex/base/docstrip.tex
 \blockLevel=\count275
 \emptyLines=\count276
@@ -547,7 +547,7 @@ File: pgfmoduleparser.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@lib@svg@count=\count357
 \pgf@lib@svg@max@num=\count358
 )) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
  (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -569,7 +569,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 )) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
  (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -585,7 +585,7 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 \Hy@linkcounter=\count360
 \Hy@pagecounter=\count361
  (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -593,23 +593,23 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count362
  (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
+Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count363
  (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4801.
+LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen276
  (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -619,20 +619,20 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 \Fld@menulength=\count364
 \Field@Width=\dimen277
 \Fld@charsize=\dimen278
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring OFF on input line 6098.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
 \Hy@abspage=\count365
 \c@Item=\count366
 \c@Hfootnote=\count367
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
 \Fld@listcount=\count368
 \c@bookmark@seq@number=\count369
  (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
@@ -1140,7 +1140,7 @@ Overfull \hbox (20.80455pt too wide) in paragraph at lines 1042--1043
 (./apa7.gls [16] [17 <./samples/shortsample.pdf>] [18]) (./apa7.ind)) [19] (./apa7.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-29>
+L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `apa7.out' has not changed.
 (rerunfilecheck)             Checksum: 65CB11A62F9ABF26BAE7A8FBF35B1974;5310.
@@ -1148,15 +1148,15 @@ Package rerunfilecheck Info: File `apa7.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21972 strings out of 467538
- 407303 string characters out of 5420594
- 798966 words of memory out of 5000000
- 50382 multiletter control sequences out of 15000+600000
+ 21972 strings out of 467525
+ 407303 string characters out of 5420042
+ 799037 words of memory out of 5000000
+ 50388 multiletter control sequences out of 15000+600000
  714562 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,104p,410b,814s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on apa7.pdf (19 pages, 556394 bytes).
+Output written on apa7.pdf (19 pages, 556396 bytes).
 PDF statistics:
  481 PDF objects out of 1000 (max. 8388607)
  398 compressed objects within 4 object streams

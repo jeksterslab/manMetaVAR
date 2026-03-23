@@ -62,6 +62,9 @@ articles:
 - title: Plots
   contents:
   - fig-scatter-plots
+- title: Benchmark
+  contents:
+  - benchmark
 - title: Containers
   contents:
   - containers

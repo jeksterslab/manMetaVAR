@@ -1,4 +1,4 @@
-data_process_adid2010_data_ema <- function(overwrite = FALSE) {
+data_analysis_adid2010_data_ema <- function(overwrite = FALSE) {
   set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
@@ -25,7 +25,7 @@ data_process_adid2010_data_ema <- function(overwrite = FALSE) {
     write <- FALSE
   }
   if (write) {
-    cat("\ndata_process_adid2010_data_ema\n")
+    cat("\ndata_analysis_adid2010_data_ema\n")
     Sys.setenv(
       OMP_NUM_THREADS = "1",
       MKL_NUM_THREADS = "1",
@@ -214,5 +214,5 @@ data_process_adid2010_data_ema <- function(overwrite = FALSE) {
     )
   }
 }
-data_process_adid2010_data_ema()
-rm(data_process_adid2010_data_ema)
+data_analysis_adid2010_data_ema()
+rm(data_analysis_adid2010_data_ema)

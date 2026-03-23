@@ -1,4 +1,4 @@
-data_process_adid2010_stage_2_fixed <- function(overwrite = FALSE) {
+data_analysis_adid2010_stage_2_random <- function(overwrite = FALSE) {
   set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
@@ -10,13 +10,13 @@ data_process_adid2010_stage_2_fixed <- function(overwrite = FALSE) {
   output <- root$find_file(
     ".setup",
     "data-raw",
-    "adid2010-stage-2-fixed.Rds"
+    "adid2010-stage-2-random.Rds"
   )
   source(
     root$find_file(
       ".setup",
-      "data-process",
-      "data-process-empirical-stage-1.R"
+      "data-analysis",
+      "data-analysis-empirical-stage-1.R"
     )
   )
   raw_data <- root$find_file(
@@ -37,7 +37,7 @@ data_process_adid2010_stage_2_fixed <- function(overwrite = FALSE) {
     write <- FALSE
   }
   if (write) {
-    cat("\ndata_process_adid2010_stage_2_fixed\n")
+    cat("\ndata_analysis_adid2010_stage_2_random\n")
     Sys.setenv(
       OMP_NUM_THREADS = paste0(parallel::detectCores()),
       MKL_NUM_THREADS = paste0(parallel::detectCores()),
@@ -51,7 +51,7 @@ data_process_adid2010_stage_2_fixed <- function(overwrite = FALSE) {
     library(metaDyn)
     stage2 <- MetaVARMx(
       object = stage1,
-      random = FALSE,
+      random = TRUE,
       ncores = parallel::detectCores()
     )
     saveRDS(
@@ -60,5 +60,5 @@ data_process_adid2010_stage_2_fixed <- function(overwrite = FALSE) {
     )
   }
 }
-data_process_adid2010_stage_2_fixed()
-rm(data_process_adid2010_stage_2_fixed)
+data_analysis_adid2010_stage_2_random()
+rm(data_analysis_adid2010_stage_2_random)

@@ -1,4 +1,4 @@
-data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
+data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
   set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
@@ -10,8 +10,8 @@ data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
   source(
     root$find_file(
       ".setup",
-      "data-process",
-      "data-process-empirical-data-ema.R"
+      "data-analysis",
+      "data-analysis-empirical-data-ema.R"
     )
   )
   raw_data <- root$find_file(
@@ -32,7 +32,7 @@ data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
     write <- FALSE
   }
   if (write) {
-    cat("\ndata_process_adid2010_stage_1\n")
+    cat("\ndata_analysis_adid2010_stage_1\n")
     Sys.setenv(
       OMP_NUM_THREADS = "1",
       MKL_NUM_THREADS = "1",
@@ -60,5 +60,5 @@ data_process_adid2010_stage_1 <- function(overwrite = FALSE) {
     )
   }
 }
-data_process_adid2010_stage_1()
-rm(data_process_adid2010_stage_1)
+data_analysis_adid2010_stage_1()
+rm(data_analysis_adid2010_stage_1)

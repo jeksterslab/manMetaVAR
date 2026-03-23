@@ -59,3 +59,5 @@ data(results, package = "manMetaVAR")
 #### Random Effects
 
 <img src="fig-vignettes-scatter-plots-power-random-1.png" alt="" width="3300" />
+
+

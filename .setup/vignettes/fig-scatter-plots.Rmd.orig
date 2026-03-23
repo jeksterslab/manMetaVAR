@@ -142,3 +142,8 @@ FigPower(
   x_lab_size = 9
 )
 ```
+
+```{r, rm}
+#| include = FALSE
+rm(list = ls())
+```

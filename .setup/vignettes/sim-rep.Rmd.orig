@@ -280,3 +280,8 @@ naive <- FitNaive(
 ```{r}
 summary(naive)
 ```
+
+```{r, rm}
+#| include = FALSE
+rm(list = ls())
+```

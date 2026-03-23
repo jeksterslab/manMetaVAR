@@ -21,7 +21,7 @@ The simulation scripts are in the following folder.
 
 > **NOTE**: Build or request for `manmetavar.sif` and place it in `"/scratch/$USER/$PROJECT/.sif"`.
 
-[comment]: <> (The manmetavar.sif used is in https://osf.io/u7gha/)
+[comment]: <> (The manmetavar.sif used is in https://osf.io/e4cvz/)
 
 Run the following for `manmetavar.sif` to be executable and accessible to anyone.
 

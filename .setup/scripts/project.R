@@ -23,12 +23,13 @@ pkg_cran <- c(
   "simStateSpace",
   "OpenMx",
   "lavaan",
-  "ggplot2"
+  "ggplot2",
+  "microbenchmark"
 )
 
 pkg_github <- c(
-  "jeksterslab/fitVARMxID",
   "jeksterslab/simStateSpace",
+  "jeksterslab/fitVARMxID",
   "jeksterslab/metaDyn"
 )
 
@@ -38,9 +39,7 @@ pkg_ver <- c()
 
 ver <- c()
 
-pkg_bioconductor <- c(
-  "rhdf5"
-)
+pkg_bioconductor <- c()
 
 ignore <- "^vignettes$"
 
