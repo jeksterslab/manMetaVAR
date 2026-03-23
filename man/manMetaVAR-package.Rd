@@ -4,9 +4,9 @@
 \name{manMetaVAR-package}
 \alias{manMetaVAR}
 \alias{manMetaVAR-package}
-\title{manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients}
+\title{manMetaVAR: From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models}
 \description{
-Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients. \doi{10.0000/0000000000}.
+Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models. \doi{10.0000/0000000000}.
 }
 \seealso{
 Useful links:
