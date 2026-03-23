@@ -1,8 +1,9 @@
-# manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model Coefficients
+# manMetaVAR: From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models
 
 Research compendium for the manuscript Pesigan, I. J. A., et al. (In
-Preparation). Multivariate Meta-Analysis of Vector Autoregressive Model
-Coefficients.
+Preparation). From Person-Specific Dynamics to Population Inference: A
+Meta-Analytic Structural Equation Modeling Framework for Multilevel
+Dynamic Models.
 [doi:10.0000/0000000000](https://doi.org/10.0000/0000000000) .
 
 ## See also

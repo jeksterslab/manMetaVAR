@@ -2,8 +2,10 @@
 
 ### manMetaVAR
 
-- [manMetaVAR: Multivariate Meta-Analysis of Vector Autoregressive Model
-  Coefficients](https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.md):
+- [manMetaVAR: From Person-Specific Dynamics to Population Inference: A
+  Meta-Analytic Structural Equation Modeling Framework for Multilevel
+  Dynamic
+  Models](https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.md):
 
 ### Single Replication from the Simulation Study
 
@@ -24,6 +26,12 @@
 
 - [Scatter
   Plots](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots.md):
+
+### Benchmark
+
+- [Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian
+  Multilevel
+  VAR](https://github.com/jeksterslab/manMetaVAR/articles/benchmark.md):
 
 ### Containers
 
