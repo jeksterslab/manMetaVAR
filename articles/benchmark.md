@@ -42,20 +42,20 @@ for the package website.
 
 The benchmark results are summarized below in seconds.
 
-- **Naive** was the fastest method, with a mean runtime of 10.24 seconds
+- **Naive** was the fastest method, with a mean runtime of 10.23 seconds
   and a median runtime of 10.07 seconds.
-- **MetaVAR** had a mean runtime of 78.60 seconds and a median runtime
-  of 78.69 seconds.
-- **BMLVAR** was the slowest method, with a mean runtime of 363.27
-  seconds and a median runtime of 362.92 seconds.
+- **MetaVAR** had a mean runtime of 77.85 seconds and a median runtime
+  of 77.77 seconds.
+- **BMLVAR** was the slowest method, with a mean runtime of 363.67
+  seconds and a median runtime of 363.56 seconds.
 
 The ordering was stable across all 10 benchmark repetitions: **Naive**
 was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest.
 These results place MetaVAR in a computational middle ground. It is
 clearly slower than the Naive approach, as expected, but it remains much
 faster than the joint Bayesian multilevel VAR model. In absolute terms,
-MetaVAR required about 68.36 more seconds than Naive on this task,
-whereas BMLVAR required about 284.67 more seconds than MetaVAR.
+MetaVAR required about 67.62 more seconds than Naive on this task,
+whereas BMLVAR required about 285.82 more seconds than MetaVAR.
 
 Runtime variability within each method was also modest. This suggests
 that the observed differences reflect stable differences in
@@ -65,9 +65,9 @@ computational burden rather than incidental benchmark noise.
 
 summary(benchmark, unit = "seconds")
 #>      expr        min         lq      mean    median        uq       max neval
-#> 1 MetaVAR  77.140985  77.527426  78.59947  78.69476  79.13805  80.84608    10
-#> 2   Naive   9.100471   9.574524  10.24196  10.06908  10.62597  12.95022    10
-#> 3  BMLVAR 362.763327 362.866730 363.26719 362.92424 363.42046 365.02184    10
+#> 1 MetaVAR  76.041772  77.382480  77.85248  77.76870  78.23474  80.09026    10
+#> 2   Naive   9.346343   9.444014  10.23400  10.06671  10.46578  12.82366    10
+#> 3  BMLVAR 362.409628 363.375386 363.67246 363.56192 363.96562 364.96881    10
 ```
 
 ## Summary of Benchmark Results Relative to the Fastest Method
@@ -77,12 +77,12 @@ method is set to 1.
 
 - **Naive** is the reference method, so its relative runtime is 1.00 by
   definition.
-- **MetaVAR** had a mean relative runtime of 7.67, meaning that it took
+- **MetaVAR** had a mean relative runtime of 7.61, meaning that it took
   about 8 times as long as Naive.
-- **BMLVAR** had a mean relative runtime of 35.47, meaning that it took
-  about 35 times as long as Naive.
+- **BMLVAR** had a mean relative runtime of 35.54, meaning that it took
+  about 36 times as long as Naive.
 
-Put differently, BMLVAR took roughly 4.6 times as long as MetaVAR on
+Put differently, BMLVAR took roughly 4.7 times as long as MetaVAR on
 average. Thus, although MetaVAR is not as fast as the Naive approach, it
 substantially reduces computation time relative to the joint Bayesian
 alternative.
@@ -96,9 +96,9 @@ substantial computational advantage over joint estimation.
 
 summary(benchmark, unit = "relative")
 #>      expr       min        lq      mean    median        uq       max neval
-#> 1 MetaVAR  8.476593  8.097262  7.674261  7.815484  7.447609  6.242834    10
+#> 1 MetaVAR  8.135992  8.193812  7.607239  7.725337  7.475288  6.245506    10
 #> 2   Naive  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000    10
-#> 3  BMLVAR 39.862040 37.899194 35.468522 36.043424 34.201165 28.186533    10
+#> 3  BMLVAR 38.775555 38.476793 35.535711 36.115280 34.776722 28.460576    10
 ```
 
 ## Plot
