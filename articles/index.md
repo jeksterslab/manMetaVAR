@@ -12,6 +12,11 @@
 - [Single Replication from the Simulation
   Study](https://github.com/jeksterslab/manMetaVAR/articles/sim-rep.md):
 
+### Empirical Illustration
+
+- [Empirical Illustration: Meta-Analysis of Daily Affect
+  Dynamics](https://github.com/jeksterslab/manMetaVAR/articles/empirical.md):
+
 ### Parameters
 
 - [Simulation

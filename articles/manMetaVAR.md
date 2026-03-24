@@ -50,7 +50,8 @@ examples can be found on the accompanying website
 (<https://jeksterslab.github.io/fitVARMxID/>). Meta-analytic synthesis
 of dynamic model estimates, including fixed-, random-, and mixed-effects
 multivariate meta-analysis models, is available in the `metaDyn` package
-on GitHub (<https://github.com/jeksterslab/metaDyn>). Documentation and
+on the Comprehensive R Archive Network (CRAN)
+(<https://CRAN.R-project.org/package=metaDyn>). Documentation and
 examples can be found on the accompanying website
 (<https://jeksterslab.github.io/metaDyn/>).
 
