@@ -83,7 +83,7 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
     )
     saveRDS(
       object = benchmark,
-      file = con
+      file = output
     )
   }
 }

@@ -1,0 +1,93 @@
+---
+title: "Empirical Illustration: Meta-Analysis of Daily Affect Dynamics"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Empirical Illustration: Meta-Analysis of Daily Affect Dynamics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-empirical-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+data <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "adid2010-data-ema.Rds"
+  )
+)
+stage1 <- root$find_file(
+  ".setup",
+  "data-raw",
+  "adid2010-stage-1.Rds"
+)
+stage2 <- root$find_file(
+  ".setup",
+  "data-raw",
+  "adid2010-stage-2-random.Rds"
+)
+```
+
+```{r}
+#| include = FALSE
+library(OpenMx)
+library(fitVARMxID)
+library(metaDyn)
+```
+
+## Stage 1: Person-Specific VAR
+
+```{r}
+#| eval = FALSE
+library(OpenMx)
+library(fitVARMxID)
+stage1 <- FitVARMxID(
+  data = data,
+  observed = c("na", "pa"),
+  id = "id",
+  center = TRUE,
+  ncores = parallel::detectCores()
+)
+```
+
+```{r}
+summary(stage1, means = TRUE)
+```
+
+## Stage 2: Multivariate Random-Effects Meta-Analysis of the Dynamic Parameter System
+
+```{r}
+#| eval = FALSE
+library(metaDyn)
+stage2 <- MetaVARMx(
+  object = stage1,
+  random = TRUE,
+  ncores = parallel::detectCores()
+)
+```
+
+```{r}
+summary(stage2)
+```
+
+```{r, rm}
+#| include = FALSE
+rm(list = ls())
+```

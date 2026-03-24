@@ -207,6 +207,14 @@ data_analysis_adid2010_data_ema <- function(overwrite = FALSE) {
         args = data
       )
     )
+    data <- data[
+      !(
+        data$id %in% c(
+          1009, 1051, 1074, 1126, 1127, 1137, 1143, 1173, 1184, 1196,
+          1203, 1229, 1257, 1273, 1278, 1285, 1288, 1302, 1308, 1328
+        )
+      ),
+    ]
     # save
     saveRDS(
       object = data,
