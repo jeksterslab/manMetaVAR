@@ -33,15 +33,19 @@ data <- readRDS(
     "adid2010-data-ema.Rds"
   )
 )
-stage1 <- root$find_file(
-  ".setup",
-  "data-raw",
-  "adid2010-stage-1.Rds"
+stage1 <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "adid2010-stage-1.Rds"
+  )
 )
-stage2 <- root$find_file(
-  ".setup",
-  "data-raw",
-  "adid2010-stage-2-random.Rds"
+stage2 <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "adid2010-stage-2-random.Rds"
+  )
 )
 ```
 
