@@ -1,9 +1,9 @@
 ---
-title: "Empirical Illustration: Meta-Analysis of Daily Affect Dynamics"
+title: "Empirical Illustration: Meta-Analysis of Affect Dynamics"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Empirical Illustration: Meta-Analysis of Daily Affect Dynamics}
+  %\VignetteIndexEntry{Empirical Illustration: Meta-Analysis of Affect Dynamics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

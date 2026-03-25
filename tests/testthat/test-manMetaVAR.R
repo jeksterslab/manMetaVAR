@@ -1,4 +1,4 @@
-## ---- test-manMetaVAR-gen-data
+## ---- test-manMetaVAR
 lapply(
   X = 1,
   FUN = function(i,
@@ -13,5 +13,5 @@ lapply(
       }
     )
   },
-  text = "test-manMetaVAR-gen-data"
+  text = "test-manMetaVAR"
 )
