@@ -73,7 +73,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                               1
 #> Stepping:                                0
 #> Frequency boost:                         enabled
-#> CPU(s) scaling MHz:                      45%
+#> CPU(s) scaling MHz:                      49%
 #> CPU max MHz:                             5060.9761
 #> CPU min MHz:                             1219.5129
 #> BogoMIPS:                                4990.83
@@ -110,7 +110,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       6.1Gi        33Gi        14Mi       5.1Gi        38Gi
+#> Mem:            44Gi       6.6Gi        33Gi        14Mi       4.6Gi        37Gi
 #> Swap:           22Gi          0B        22Gi
-#> Total:          66Gi       6.1Gi        56Gi
+#> Total:          66Gi       6.6Gi        56Gi
 ```

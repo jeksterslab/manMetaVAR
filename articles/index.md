@@ -14,7 +14,7 @@
 
 ### Empirical Illustration
 
-- [Empirical Illustration: Meta-Analysis of Daily Affect
+- [Empirical Illustration: Meta-Analysis of Affect
   Dynamics](https://github.com/jeksterslab/manMetaVAR/articles/empirical.md):
 
 ### Parameters
