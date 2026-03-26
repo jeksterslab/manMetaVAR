@@ -104,7 +104,7 @@ benchmark <- microbenchmark::microbenchmark(
     data = data,
     seed = seed
   ),
-  times = 10
+  times = 100
 )
 ```
 
