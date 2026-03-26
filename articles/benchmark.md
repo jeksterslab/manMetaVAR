@@ -49,7 +49,7 @@ The benchmark results are summarized below in seconds.
 - **BMLVAR** was the slowest method, with a mean runtime of 363.91
   seconds and a median runtime of 363.71 seconds.
 
-The ordering was stable across all 10 benchmark repetitions: **Naive**
+The ordering was stable across all 100 benchmark repetitions: **Naive**
 was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest.
 These results place MetaVAR in a computational middle ground. It is
 clearly slower than the Naive approach, as expected, but it remains much
