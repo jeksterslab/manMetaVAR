@@ -168,7 +168,7 @@ The benchmark results are summarized below in seconds.
 - **MetaVAR** had a mean runtime of `r Fmt(metavar_mean_sec)` seconds and a median runtime of `r Fmt(metavar_median_sec)` seconds.
 - **BMLVAR** was the slowest method, with a mean runtime of `r Fmt(bmlvar_mean_sec)` seconds and a median runtime of `r Fmt(bmlvar_median_sec)` seconds.
 
-The ordering was stable across all 10 benchmark repetitions: **Naive** was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest. These results place MetaVAR in a computational middle ground. It is clearly slower than the Naive approach, as expected, but it remains much faster than the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR required about `r Fmt(metavar_minus_naive_sec)` more seconds than Naive on this task, whereas BMLVAR required about `r Fmt(bmlvar_minus_metavar_sec)` more seconds than MetaVAR.
+The ordering was stable across all 100 benchmark repetitions: **Naive** was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest. These results place MetaVAR in a computational middle ground. It is clearly slower than the Naive approach, as expected, but it remains much faster than the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR required about `r Fmt(metavar_minus_naive_sec)` more seconds than Naive on this task, whereas BMLVAR required about `r Fmt(bmlvar_minus_metavar_sec)` more seconds than MetaVAR.
 
 Runtime variability within each method was also modest. This suggests that the observed differences reflect stable differences in computational burden rather than incidental benchmark noise.
 
