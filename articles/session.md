@@ -33,8 +33,8 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.8      metaDyn_1.0.1         fitVARMxID_1.0.2.9000
-#> [4] OpenMx_2.22.11        microbenchmark_1.5.0 
+#> [1] manMetaVAR_0.9.8     metaDyn_1.0.1        fitVARMxID_1.0.3    
+#> [4] OpenMx_2.22.11       microbenchmark_1.5.0
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] Matrix_1.7-4          gtable_0.3.6          dplyr_1.2.0          
@@ -49,7 +49,7 @@ sessionInfo()
 #> [28] withr_3.0.2           magrittr_2.0.4        digest_0.6.39        
 #> [31] grid_4.5.3            rProject_0.0.25       lifecycle_1.0.5      
 #> [34] vctrs_0.7.2           simStateSpace_1.2.16  evaluate_1.0.5       
-#> [37] glue_1.8.0            farver_2.1.2          ragg_1.5.1           
+#> [37] glue_1.8.0            farver_2.1.2          ragg_1.5.2           
 #> [40] tools_4.5.3           pkgconfig_2.0.3
 ```
 
@@ -73,7 +73,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                               1
 #> Stepping:                                0
 #> Frequency boost:                         enabled
-#> CPU(s) scaling MHz:                      49%
+#> CPU(s) scaling MHz:                      51%
 #> CPU max MHz:                             5060.9761
 #> CPU min MHz:                             1219.5129
 #> BogoMIPS:                                4990.83
@@ -110,7 +110,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       6.6Gi        33Gi        14Mi       4.6Gi        37Gi
+#> Mem:            44Gi       6.6Gi        33Gi        14Mi       4.8Gi        37Gi
 #> Swap:           22Gi          0B        22Gi
 #> Total:          66Gi       6.6Gi        56Gi
 ```
