@@ -24,14 +24,37 @@ FitMetaVAR <- function(fit,
                        ncores = NULL,
                        seed = NULL) {
   start_time <- Sys.time()
+  data <- as.data.frame(
+    summary(
+      fit,
+      means = FALSE
+    )[, 1:6]
+  )
+  covariances <- stats::var(data)
+  means <- colMeans(data)
+  covariances_free <- matrix(
+    data = c(
+      TRUE, TRUE, FALSE, FALSE, FALSE, FALSE,
+      TRUE, TRUE, FALSE, FALSE, FALSE, FALSE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE
+    ),
+    byrow = TRUE,
+    nrow = 6,
+    ncol = 6
+  )
+  covariances[!covariances_free] <- 0
+  ldl <- metaDyn:::.MxHelperLDL(covariances)
   output <- MetaVARMx(
     object = fit$output,
     x = NULL,
     random = TRUE,
-    alpha_values = model$ma_fixed,
+    alpha_values = means,
     tau_sqr_diag = FALSE,
     tau_sqr_d_free = TRUE,
-    tau_sqr_d_values = model$ma_random_d_ldl,
+    tau_sqr_d_values = ldl$uc_d,
     tau_sqr_l_free = matrix(
       data = c(
         FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
@@ -45,7 +68,7 @@ FitMetaVAR <- function(fit,
       nrow = 6,
       ncol = 6
     ),
-    tau_sqr_l_values = model$ma_random_l_ldl,
+    tau_sqr_l_values = ldl$s_l,
     effects = TRUE,
     set_point = TRUE,
     int_meas = FALSE,

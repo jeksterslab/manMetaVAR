@@ -39,7 +39,8 @@ SimFitNaive <- function(taskid,
     con <- file(fn_output)
     saveRDS(
       object = FitNaive(
-        fit = readRDS(fn_input)
+        fit = readRDS(fn_input),
+        seed = seed
       ),
       file = con
     )

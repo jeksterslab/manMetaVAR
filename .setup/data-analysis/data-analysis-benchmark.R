@@ -38,28 +38,59 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
     )
     MetaVAR <- function(data,
                         seed) {
-      FitMetaVAR(
-        fit = FitDTVAR(
-          data = data,
-          seed = seed,
-          ncores = parallel::detectCores()
-        ),
+      set.seed(seed)
+      Sys.setenv(
+        OMP_NUM_THREADS = "1",
+        MKL_NUM_THREADS = "1",
+        OPENBLAS_NUM_THREADS = "1"
+      )
+      fit <- FitDTVAR(
+        data = data,
         seed = seed,
         ncores = parallel::detectCores()
+      )
+      Sys.setenv(
+        OMP_NUM_THREADS = paste0(parallel::detectCores()),
+        MKL_NUM_THREADS = paste0(parallel::detectCores()),
+        OPENBLAS_NUM_THREADS = paste0(parallel::detectCores())
+      )
+      FitMetaVAR(
+        fit = fit,
+        seed = seed,
+        ncores = parallel::detectCores()
+      )
+      Sys.setenv(
+        OMP_NUM_THREADS = "1",
+        MKL_NUM_THREADS = "1",
+        OPENBLAS_NUM_THREADS = "1"
       )
     }
     Naive <- function(data,
                       seed) {
+      set.seed(seed)
+      Sys.setenv(
+        OMP_NUM_THREADS = "1",
+        MKL_NUM_THREADS = "1",
+        OPENBLAS_NUM_THREADS = "1"
+      )
+      fit <- FitDTVAR(
+        data = data,
+        seed = seed,
+        ncores = parallel::detectCores()
+      )
       FitNaive(
-        fit = FitDTVAR(
-          data = data,
-          seed = seed,
-          ncores = parallel::detectCores()
-        )
+        fit = fit,
+        seed = seed
       )
     }
     BMLVAR <- function(data,
                        seed) {
+      set.seed(seed)
+      Sys.setenv(
+        OMP_NUM_THREADS = "1",
+        MKL_NUM_THREADS = "1",
+        OPENBLAS_NUM_THREADS = "1"
+      )
       FitMplus(
         data = data,
         seed = seed,
@@ -79,7 +110,7 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
         data = data,
         seed = seed
       ),
-      times = 100
+      times = 10
     )
     saveRDS(
       object = benchmark,

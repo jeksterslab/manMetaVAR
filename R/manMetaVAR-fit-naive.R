@@ -18,10 +18,14 @@
 #'
 #' @family Model Fitting Functions
 #' @keywords manMetaVAR meta
-#' @import metaDyn
+#' @import OpenMx
 #' @export
-FitNaive <- function(fit) {
+FitNaive <- function(fit,
+                     seed = NULL) {
   start_time <- Sys.time()
+  if (!is.null(seed)) {
+    set.seed(seed)
+  }
   data <- as.data.frame(
     summary(
       fit,
@@ -36,39 +40,167 @@ FitNaive <- function(fit) {
     "beta12",
     "beta22"
   )
-  model <- "
-    mu11 ~ 1
-    mu21 ~ 1
-    beta11 ~ 1
-    beta21 ~ 1
-    beta12 ~ 1
-    beta22 ~ 1
-    mu11 ~~ mu11
-    mu21 ~~ mu11
-    beta11 ~~ 0 * mu11
-    beta21 ~~ 0 * mu11
-    beta12 ~~ 0 * mu11
-    beta22 ~~ 0 * mu11
-    mu21 ~~ mu21
-    beta11 ~~ 0 * mu21
-    beta21 ~~ 0 * mu21
-    beta12 ~~ 0 * mu21
-    beta22 ~~ 0 * mu21
-    beta11 ~~ beta11
-    beta21 ~~ beta11
-    beta12 ~~ beta11
-    beta22 ~~ beta11
-    beta21 ~~ beta21
-    beta12 ~~ beta21
-    beta22 ~~ beta21
-    beta12 ~~ beta12
-    beta22 ~~ beta12
-    beta22 ~~ beta22
-  "
-  output <- lavaan::lavaan(
-    model = model,
-    data = data
+  covariances <- stats::var(data)
+  means <- colMeans(data)
+  covariances_free <- matrix(
+    data = c(
+      TRUE, TRUE, FALSE, FALSE, FALSE, FALSE,
+      TRUE, TRUE, FALSE, FALSE, FALSE, FALSE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE,
+      FALSE, FALSE, TRUE, TRUE, TRUE, TRUE
+    ),
+    byrow = TRUE,
+    nrow = 6,
+    ncol = 6
   )
+  covariances[!covariances_free] <- 0
+  covariances_labels <- matrix(
+    data = NA,
+    nrow = 6,
+    ncol = 6
+  )
+  for (j in 1:6) {
+    for (i in 1:6) {
+      covariances_labels[j, i] <- covariances_labels[i, j] <- paste0(
+        "sigma_",
+        i,
+        "_",
+        j
+      )
+    }
+  }
+  covariances_labels[!covariances_free] <- NA
+  mu <- OpenMx::mxMatrix(
+    type = "Full",
+    nrow = 1,
+    ncol = 6,
+    free = matrix(
+      data = TRUE,
+      nrow = 1,
+      ncol = 6
+    ),
+    values = matrix(
+      data = means,
+      nrow = 1,
+      ncol = 6
+    ),
+    labels = matrix(
+      data = paste0(
+        "mu_",
+        1:6
+      ),
+      nrow = 1,
+      ncol = 6
+    ),
+    lbound = matrix(
+      data = NA,
+      nrow = 1,
+      ncol = 6
+    ),
+    ubound = matrix(
+      data = NA,
+      nrow = 1,
+      ncol = 6
+    ),
+    byrow = FALSE,
+    dimnames = list(
+      "mu",
+      colnames(data)
+    ),
+    name = "mu"
+  )
+  covariances_lbound <- matrix(
+    data = NA,
+    nrow = 6,
+    ncol = 6
+  )
+  diag(covariances_lbound) <- 0
+  sigma <- OpenMx::mxMatrix(
+    type = "Symm",
+    nrow = 6,
+    ncol = 6,
+    free = covariances_free,
+    values = covariances,
+    labels = covariances_labels,
+    lbound = covariances_lbound,
+    ubound = matrix(
+      data = NA,
+      nrow = 6,
+      ncol = 6
+    ),
+    byrow = FALSE,
+    dimnames = list(
+      colnames(data),
+      colnames(data)
+    ),
+    name = "sigma"
+  )
+  output <- OpenMx::mxModel(
+    model = "Model",
+    mu,
+    sigma,
+    OpenMx::mxData(
+      type = "raw",
+      observed = data
+    ),
+    OpenMx::mxExpectationNormal(
+      covariance = "sigma",
+      means = "mu",
+      dimnames = colnames(data)
+    ),
+    OpenMx::mxFitFunctionML()
+  )
+  output <- metaDyn:::.MxHelperRun(
+    model = output,
+    grad_tol = 1e-2,
+    ok_codes = 0L,
+    require_finite_fit = TRUE,
+    hess_tol_abs = 1e-8,
+    hess_tol_rel = 1e-10,
+    check_condition = FALSE,
+    cond_max = 1e12,
+    silent = TRUE
+  )
+  if (
+    metaDyn:::.MxHelperNeedsRescue(
+      model = output,
+      grad_tol = 1e-2,
+      ok_codes = 0L,
+      require_finite_fit = TRUE,
+      hess_tol_abs = 1e-8,
+      hess_tol_rel = 1e-10,
+      check_condition = FALSE,
+      cond_max = 1e12,
+      abs_bnd_tol = 1e-6,
+      rel_bnd_tol = 1e-4
+    )
+  ) {
+    output <- metaDyn:::.MxHelperEnsureGoodHessian(
+      model = output,
+      tries_explore = 100,
+      tries_local = 100,
+      max_attempts = 10,
+      grad_tol = 1e-2,
+      hess_tol_abs = 1e-8,
+      hess_tol_rel = 1e-10,
+      check_condition = FALSE,
+      cond_max = 1e12,
+      abs_bnd_tol = 1e-6,
+      rel_bnd_tol = 1e-4,
+      factor = 10,
+      relax_on_last = TRUE,
+      relax_exclude = NULL,
+      protect_lb_zero = TRUE,
+      ok_codes = 0L,
+      require_finite_fit = TRUE,
+      rerun_code6 = TRUE,
+      relax_streak = 3,
+      relax_min_attempt = 3,
+      silent = TRUE
+    )
+  }
   end_time <- Sys.time()
   elapsed <- end_time - start_time
   out <- list(
