@@ -21,7 +21,7 @@ NULL
 #' @export
 coef.manmetavar.naive <- function(object,
                                   ...) {
-  lavaan::coef(
+  coef(
     object$output,
     ...
   )
@@ -41,7 +41,7 @@ coef.manmetavar.naive <- function(object,
 #' @export
 vcov.manmetavar.naive <- function(object,
                                   ...) {
-  lavaan::vcov(
+  vcov(
     object$output,
     ...
   )
@@ -84,7 +84,7 @@ summary.manmetavar.naive <- function(object,
                                      alpha = 0.05,
                                      digits = 4,
                                      ...) {
-  est <- lavaan::coef(object$output)
+  est <- coef(object$output)
   names(est) <- c(
     "alpha[1,1]",
     "alpha[2,1]",
@@ -106,7 +106,7 @@ summary.manmetavar.naive <- function(object,
     "tau_sqr[6,5]",
     "tau_sqr[6,6]"
   )
-  se <- sqrt(diag(lavaan::vcov(object$output)))
+  se <- sqrt(diag(vcov(object$output)))
   names(se) <- names(est)
   out <- .CIWald(
     est = est,

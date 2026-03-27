@@ -4,11 +4,14 @@
 \alias{FitNaive}
 \title{Naive}
 \usage{
-FitNaive(fit)
+FitNaive(fit, seed = NULL)
 }
 \arguments{
 \item{fit}{R object.
 Output of the \code{\link[=FitDTVAR]{FitDTVAR()}} function.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \description{
 The function performs the naive ``fit-many-then-summarize''.
