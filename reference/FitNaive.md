@@ -5,7 +5,7 @@ The function performs the naive “fit-many-then-summarize”.
 ## Usage
 
 ``` r
-FitNaive(fit)
+FitNaive(fit, seed = NULL)
 ```
 
 ## Arguments
@@ -15,6 +15,10 @@ FitNaive(fit)
   R object. Output of the
   [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   function.
+
+- seed:
+
+  Integer. Random seed.
 
 ## See also
 
