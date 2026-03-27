@@ -484,7 +484,7 @@ plot(mplus, what = "trace")
 ```
 Mplus VERSION 9 (Linux)
 MUTHEN & MUTHEN
-03/26/2026   2:02 PM
+03/27/2026   4:54 AM
 
 INPUT INSTRUCTIONS
 
@@ -1420,8 +1420,8 @@ SAVEDATA INFORMATION
     Parameter 21, %BETWEEN%: Y2 WITH Y1
     Parameter 22, %BETWEEN%: Y2
 
-     Beginning Time:  14:02:19
-        Ending Time:  14:04:22
+     Beginning Time:  04:54:58
+        Ending Time:  04:57:01
        Elapsed Time:  00:02:03
 
 
