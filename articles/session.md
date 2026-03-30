@@ -33,8 +33,8 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.8      metaDyn_1.0.1         fitVARMxID_1.0.2.9000
-#> [4] OpenMx_2.22.11        microbenchmark_1.5.0 
+#> [1] manMetaVAR_0.9.8     metaDyn_1.0.1        fitVARMxID_1.0.3    
+#> [4] OpenMx_2.22.11       microbenchmark_1.5.0
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] Matrix_1.7-4          gtable_0.3.6          dplyr_1.2.0          
@@ -45,7 +45,7 @@ sessionInfo()
 #> [16] knitr_1.51            MASS_7.3-65           tibble_3.3.1         
 #> [19] rprojroot_2.1.1       pillar_1.11.1         RColorBrewer_1.1-3   
 #> [22] rlang_1.1.7           xfun_0.57             S7_0.2.1             
-#> [25] RcppParallel_5.1.11-2 otel_0.2.0            cli_3.6.5.9000       
+#> [25] RcppParallel_5.1.11-2 otel_0.2.0            cli_3.6.5            
 #> [28] withr_3.0.2           magrittr_2.0.4        digest_0.6.39        
 #> [31] grid_4.5.3            rProject_0.0.25       lifecycle_1.0.5      
 #> [34] vctrs_0.7.2           simStateSpace_1.2.16  evaluate_1.0.5       
@@ -73,10 +73,10 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                               1
 #> Stepping:                                0
 #> Frequency boost:                         enabled
-#> CPU(s) scaling MHz:                      47%
+#> CPU(s) scaling MHz:                      53%
 #> CPU max MHz:                             5060.9761
 #> CPU min MHz:                             1219.5129
-#> BogoMIPS:                                4990.99
+#> BogoMIPS:                                4990.56
 #> Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
 #> Virtualization:                          AMD-V
 #> L1d cache:                               768 KiB (16 instances)
@@ -110,7 +110,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       6.3Gi        35Gi        14Mi       3.6Gi        38Gi
+#> Mem:            44Gi       6.4Gi        32Gi        14Mi       6.3Gi        38Gi
 #> Swap:           22Gi          0B        22Gi
-#> Total:          66Gi       6.3Gi        57Gi
+#> Total:          66Gi       6.4Gi        54Gi
 ```
