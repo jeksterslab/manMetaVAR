@@ -2250,6 +2250,33 @@ The generality of the block bootstrap is contrasted with sieve bootstraps. We di
   publisher = {American Psychological Association (APA)},
 }
 
+@Article{Gelman-2006,
+  author = {Andrew Gelman},
+  date = {2006-09},
+  journaltitle = {Bayesian Analysis},
+  title = {Prior distributions for variance parameters in hierarchical models (comment on article by {Browne} and {Draper})},
+  doi = {10.1214/06-ba117a},
+  issn = {1936-0975},
+  number = {3},
+  volume = {1},
+  abstract = {Various noninformative prior distributions have been suggested for scale parameters in hierarchical models. We construct a new folded-noncentral-$t$ family of conditionally conjugate priors for hierarchical standard deviation parameters, and then consider noninformative and weakly informative priors in this family. We use an example to illustrate serious problems with the inverse-gamma family of ``noninformative'' prior distributions. We suggest instead to use a uniform prior on the hierarchical standard deviation, using the half-$t$ family when the number of groups is small and in other settings where a weakly informative prior is desired. We also illustrate the use of the half-$t$ family for hierarchical modeling of multiple variance parameters such as arise in the analysis of variance.},
+  publisher = {Institute of Mathematical Statistics},
+}
+
+@Article{Gelman-vanDyk-Huang-etal-2008,
+  author = {Andrew Gelman and David A {van Dyk} and Zaiying Huang and John W Boscardin},
+  date = {2008-03},
+  journaltitle = {Journal of Computational and Graphical Statistics},
+  title = {Using redundant parameterizations to fit hierarchical models},
+  doi = {10.1198/106186008x287337},
+  issn = {1537-2715},
+  number = {1},
+  pages = {95--122},
+  volume = {17},
+  abstract = {Hierarchical linear and generalized linear models can be fit using Gibbs samplers and Metropolis algorithms; these models, however, often have many parameters, and convergence of the seemingly most natural Gibbs and Metropolis algorithms can sometimes be slow. We examine solutions that involve reparameterization and over-parameterization. We begin with parameter expansion using working parameters, a strategy developed for the EM algorithm. This strategy can lead to algorithms that are much less susceptible to becoming stuck near zero values of the variance parameters than are more standard algorithms. Second, we consider a simple rotation of the regression coefficients based on an estimate of their posterior covariance matrix. This leads to a Gibbs algorithm based on updating the transformed parameters one at a time or a Metropolis algorithm with vector jumps; either of these algorithms can perform much better (in terms of total CPU time) than the two standard algorithms: one-at-a-time updating of untransformed parameters or vector updating using a linear regression at each step. We present an innovative evaluation of the algorithms in terms of how quickly they can get away from remote areas of parameter space, along with some more standard evaluation of computation and convergence speeds. We illustrate our methods with examples from our applied work. Our ultimate goal is to develop a fast and reliable method for fitting a hierarchical linear model as easily as one can now fit a nonhierarchical model, and to increase understanding of Gibbs samplers for hierarchical models in general.},
+  publisher = {Informa UK Limited},
+}
+
 @Article{Graham-Olchowski-Gilreath-2007,
   author = {John W. Graham and Allison E. Olchowski and Tamika D. Gilreath},
   date = {2007-06},
@@ -2706,6 +2733,19 @@ The generality of the block bootstrap is contrasted with sieve bootstraps. We di
   volume = {65},
   abstract = {Maximum likelihood parameter estimation of the continuous time linear stochastic state space model is considered on the basis of largeN discrete time data using a structural equation modeling (SEM) program. Random subject effects are allowed to be part of the model. The exact discrete model (EDM) is employed which links the discrete time model parameters to the underlying continuous time model parameters by means of nonlinear restrictions. The EDM is generalized to cover not only time-invariant parameters but also the cases of stepwise time-varying (piecewise time-invariant) parameters and parameters varying continuously over time according to a general polynomial scheme. The identification of the continuous time parameters is discussed and an educational example is presented.},
   publisher = {Springer Science and Business Media {LLC}},
+}
+
+@Article{Papaspiliopoulos-Roberts-Skold-2007,
+  author = {Omiros Papaspiliopoulos and Gareth O. Roberts and Martin Sk{\"o}ld},
+  date = {2007-02},
+  journaltitle = {Statistical Science},
+  title = {A general framework for the parametrization of hierarchical models},
+  doi = {10.1214/088342307000000014},
+  issn = {0883-4237},
+  number = {1},
+  volume = {22},
+  abstract = {In this paper, we describe centering and noncentering methodology as complementary techniques for use in parametrization of broad classes of hierarchical models, with a view to the construction of effective MCMC algorithms for exploring posterior distributions from these models. We give a clear qualitative understanding as to when centering and noncentering work well, and introduce theory concerning the convergence time complexity of Gibbs samplers using centered and noncentered parametrizations. We give general recipes for the construction of noncentered parametrizations, including an auxiliary variable technique called the state-space expansion technique. We also describe partially noncentered methods, and demonstrate their use in constructing robust Gibbs sampler algorithms whose convergence properties are not overly sensitive to the data.},
+  publisher = {Institute of Mathematical Statistics},
 }
 
 @Article{Patrick-Maggs-2007,
@@ -3879,6 +3919,18 @@ The final chapter succinctly summarizes all the main findings while also suggest
   annotation = {mediation, mediation-longitudinal},
 }
 
+@Article{deHaanRietdijk-Voelkle-Keijsers-Hamaker-2017,
+  author = {Silvia {de Haan-Rietdijk} and Manuel C. Voelkle and Loes Keijsers and Ellen L. Hamaker},
+  date = {2017-10},
+  journaltitle = {Frontiers in Psychology},
+  title = {Discrete- vs. continuous-time modeling of unequally spaced experience sampling method data},
+  doi = {10.3389/fpsyg.2017.01849},
+  issn = {1664-1078},
+  volume = {8},
+  abstract = {The Experience Sampling Method is a common approach in psychological research for collecting intensive longitudinal data with high ecological validity. One characteristic of ESM data is that it is often unequally spaced, because the measurement intervals within a day are deliberately varied, and measurement continues over several days. This poses a problem for discrete-time (DT) modeling approaches, which are based on the assumption that all measurements are equally spaced. Nevertheless, DT approaches such as (vector) autoregressive modeling are often used to analyze ESM data, for instance in the context of affective dynamics research. There are equivalent continuous-time (CT) models, but they are more difficult to implement. In this paper we take a pragmatic approach and evaluate the practical relevance of the violated model assumption in DT AR(1) and VAR(1) models, for the $N = 1$ case. We use simulated data under an ESM measurement design to investigate the bias in the parameters of interest under four different model implementations, ranging from the true CT model that accounts for all the exact measurement times, to the crudest possible DT model implementation, where even the nighttime is treated as a regular interval. An analysis of empirical affect data illustrates how the differences between DT and CT modeling can play out in practice. We find that the size and the direction of the bias in DT (V)AR models for unequally spaced ESM data depend quite strongly on the true parameter in addition to data characteristics. Our recommendation is to use CT modeling whenever possible, especially now that new software implementations have become available.},
+  publisher = {Frontiers Media SA},
+}
+
 @Article{Demeshko-Washio-Kawahara-etal-2015,
   author = {Marina Demeshko and Takashi Washio and Yoshinobu Kawahara and Yuriy Pepyolyshev},
   date = {2015-11},
@@ -4249,18 +4301,6 @@ system, canonicality, nuclear reactor noise analysis},
   volume = {68},
   abstract = {There has been great interest in developing nonlinear structural equation models and associated statistical inference procedures, including estimation and model selection methods. In this paper a general semiparametric structural equation model (SSEM) is developed in which the structural equation is composed of nonparametric functions of exogenous latent variables and fixed covariates on a set of latent endogenous variables. A basis representation is used to approximate these nonparametric functions in the structural equation and the Bayesian Lasso method coupled with a Markov Chain Monte Carlo (MCMC) algorithm is used for simultaneous estimation and model selection. The proposed method is illustrated using a simulation study and data from the Affective Dynamics and Individual Differences (ADID) study. Results demonstrate that our method can accurately estimate the unknown parameters and correctly identify the true underlying model.},
   publisher = {Oxford University Press (OUP)},
-}
-
-@Article{HaanRietdijk-Voelkle-Keijsers-Hamaker-2017,
-  author = {Silvia {de Haan-Rietdijk} and Manuel C. Voelkle and Loes Keijsers and Ellen L. Hamaker},
-  date = {2017-10},
-  journaltitle = {Frontiers in Psychology},
-  title = {Discrete- vs. continuous-time modeling of unequally spaced experience sampling method data},
-  doi = {10.3389/fpsyg.2017.01849},
-  issn = {1664-1078},
-  volume = {8},
-  abstract = {The Experience Sampling Method is a common approach in psychological research for collecting intensive longitudinal data with high ecological validity. One characteristic of ESM data is that it is often unequally spaced, because the measurement intervals within a day are deliberately varied, and measurement continues over several days. This poses a problem for discrete-time (DT) modeling approaches, which are based on the assumption that all measurements are equally spaced. Nevertheless, DT approaches such as (vector) autoregressive modeling are often used to analyze ESM data, for instance in the context of affective dynamics research. There are equivalent continuous-time (CT) models, but they are more difficult to implement. In this paper we take a pragmatic approach and evaluate the practical relevance of the violated model assumption in DT AR(1) and VAR(1) models, for the $N = 1$ case. We use simulated data under an ESM measurement design to investigate the bias in the parameters of interest under four different model implementations, ranging from the true CT model that accounts for all the exact measurement times, to the crudest possible DT model implementation, where even the nighttime is treated as a regular interval. An analysis of empirical affect data illustrates how the differences between DT and CT modeling can play out in practice. We find that the size and the direction of the bias in DT (V)AR models for unequally spaced ESM data depend quite strongly on the true parameter in addition to data characteristics. Our recommendation is to use CT modeling whenever possible, especially now that new software implementations have become available.},
-  publisher = {Frontiers Media SA},
 }
 
 @Article{Hamaker-Asparouhov-Brose-etal-2018,
@@ -5419,6 +5459,20 @@ system, canonicality, nuclear reactor noise analysis},
   abstract = {The R package mice imputes incomplete multivariate data by chained equations. The software mice 1.0 appeared in the year 2000 as an S-PLUS library, and in 2001 as an R package. mice 1.0 introduced predictor selection, passive imputation and automatic pooling. This article documents mice, which extends the functionality of mice 1.0 in several ways. In mice, the analysis of imputed data is made completely general, whereas the range of models under which pooling works is substantially extended. mice adds new functionality for imputing multilevel data, automatic predictor selection, data handling, post-processing imputed values, specialized pooling routines, model selection tools, and diagnostic graphs. Imputation of categorical data is improved in order to bypass problems caused by perfect prediction. Special attention is paid to transformations, sum scores, indices and interactions using passive imputation, and to the proper setup of the predictor matrix. mice can be downloaded from the Comprehensive R Archive Network. This article provides a hands-on, stepwise approach to solve applied incomplete data problems.},
   publisher = {Foundation for Open Access Statistic},
   keywords = {MICE, multiple imputation, chained equations, fully conditional specification, Gibbs sampler, predictor selection, passive imputation, R},
+}
+
+@Article{vanErp-Mulder-Oberski-2018,
+  author = {Sara {van Erp} and Joris Mulder and Daniel L. Oberski},
+  date = {2018-06},
+  journaltitle = {Psychological Methods},
+  title = {Prior sensitivity analysis in default Bayesian structural equation modeling.},
+  doi = {10.1037/met0000162},
+  issn = {1082-989X},
+  number = {2},
+  pages = {363--388},
+  volume = {23},
+  abstract = {Bayesian structural equation modeling (BSEM) has recently gained popularity because it enables researchers to fit complex models and solve some of the issues often encountered in classical maximum likelihood estimation, such as nonconvergence and inadmissible solutions. An important component of any Bayesian analysis is the prior distribution of the unknown model parameters. Often, researchers rely on default priors, which are constructed in an automatic fashion without requiring substantive prior information. However, the prior can have a serious influence on the estimation of the model parameters, which affects the mean squared error, bias, coverage rates, and quantiles of the estimates. In this article, we investigate the performance of three different default priors: noninformative improper priors, vague proper priors, and empirical Bayes priors-with the latter being novel in the BSEM literature. Based on a simulation study, we find that these three default BSEM methods may perform very differently, especially with small samples. A careful prior sensitivity analysis is therefore needed when performing a default BSEM analysis. For this purpose, we provide a practical step-by-step guide for practitioners to conducting a prior sensitivity analysis in default BSEM. Our recommendations are illustrated using a well-known case study from the structural equation modeling literature, and all code for conducting the prior sensitivity analysis is available in the online supplemental materials.},
+  publisher = {American Psychological Association (APA)},
 }
 
 @Article{VerHoef-2012,
@@ -7250,6 +7304,15 @@ Across various disciplines of human study, researchers are increasingly seeking 
   title = {Multiple imputation with {Mplus}},
   type = {techreport},
   url = {http://www.statmodel.com/download/Imputations7.pdf},
+  institution = {http:\\www.statmodel.com},
+}
+
+@Report{Asparouhov-Muthen-2024,
+  author = {Tihomir Asparouhov and Bengt O. Muth{\a'e}n},
+  date = {2024-12-02},
+  title = {Practical aspects of dynamic structural equation models},
+  type = {Technical report},
+  url = {https://www.statmodel.com/download/PDSEM.pdf},
   institution = {http:\\www.statmodel.com},
 }
 
