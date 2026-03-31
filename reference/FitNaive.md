@@ -35,10 +35,10 @@ if (FALSE) { # \dontrun{
 seed <- 42
 data <- GenData(taskid = 1, seed = seed)
 fit <- FitDTVAR(data = data, seed = seed)
-meta <- FitNaive(fit = fit, seed = seed)
-summary(meta)
-print(meta)
-coef(meta)
-vcov(meta)
+naive <- FitNaive(fit = fit, seed = seed)
+summary(naive)
+print(naive)
+coef(naive)
+vcov(naive)
 } # }
 ```

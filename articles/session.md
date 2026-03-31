@@ -45,7 +45,7 @@ sessionInfo()
 #> [16] knitr_1.51            MASS_7.3-65           tibble_3.3.1         
 #> [19] rprojroot_2.1.1       pillar_1.11.1         RColorBrewer_1.1-3   
 #> [22] rlang_1.1.7           xfun_0.57             S7_0.2.1             
-#> [25] RcppParallel_5.1.11-2 otel_0.2.0            cli_3.6.5            
+#> [25] RcppParallel_5.1.11-2 otel_0.2.0            cli_3.6.5.9000       
 #> [28] withr_3.0.2           magrittr_2.0.4        digest_0.6.39        
 #> [31] grid_4.5.3            rProject_0.0.25       lifecycle_1.0.5      
 #> [34] vctrs_0.7.2           simStateSpace_1.2.16  evaluate_1.0.5       
@@ -73,7 +73,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                               1
 #> Stepping:                                0
 #> Frequency boost:                         enabled
-#> CPU(s) scaling MHz:                      53%
+#> CPU(s) scaling MHz:                      47%
 #> CPU max MHz:                             5060.9761
 #> CPU min MHz:                             1219.5129
 #> BogoMIPS:                                4990.56
@@ -110,7 +110,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       6.4Gi        32Gi        14Mi       6.3Gi        38Gi
+#> Mem:            44Gi       6.7Gi        31Gi        14Mi       7.2Gi        37Gi
 #> Swap:           22Gi          0B        22Gi
-#> Total:          66Gi       6.4Gi        54Gi
+#> Total:          66Gi       6.7Gi        53Gi
 ```

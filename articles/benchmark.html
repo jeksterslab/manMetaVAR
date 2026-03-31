@@ -114,13 +114,13 @@ article</a> for the package website.</p>
 <ul>
 <li>
 <strong>Naive</strong> was the fastest method, with a mean runtime
-of 13.23 seconds and a median runtime of 12.92 seconds.</li>
+of 13.12 seconds and a median runtime of 12.79 seconds.</li>
 <li>
-<strong>MetaVAR</strong> had a mean runtime of 44.63 seconds and a
+<strong>MetaVAR</strong> had a mean runtime of 44.54 seconds and a
 median runtime of 44.56 seconds.</li>
 <li>
 <strong>BMLVAR</strong> was the slowest method, with a mean runtime
-of 363.65 seconds and a median runtime of 363.58 seconds.</li>
+of 364.46 seconds and a median runtime of 364.42 seconds.</li>
 </ul>
 <p>The ordering was stable across all 100 benchmark repetitions:
 <strong>Naive</strong> was fastest, <strong>MetaVAR</strong> was
@@ -128,17 +128,17 @@ intermediate, and <strong>BMLVAR</strong> was slowest. These results
 place MetaVAR in a computational middle ground. It is clearly slower
 than the Naive approach, as expected, but it remains much faster than
 the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR
-required about 31.41 more seconds than Naive on this task, whereas
-BMLVAR required about 319.02 more seconds than MetaVAR.</p>
+required about 31.42 more seconds than Naive on this task, whereas
+BMLVAR required about 319.91 more seconds than MetaVAR.</p>
 <p>Runtime variability within each method was also modest. This suggests
 that the observed differences reflect stable differences in
 computational burden rather than incidental benchmark noise.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">benchmark</span>, unit <span class="op">=</span> <span class="st">"seconds"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      expr       min        lq      mean    median        uq       max neval</span></span>
-<span><span class="co">#&gt; 1 MetaVAR  41.54401  43.65970  44.63174  44.55791  45.53200  50.31317   100</span></span>
-<span><span class="co">#&gt; 2   Naive  11.62406  12.49123  13.22651  12.91571  13.87135  15.85227   100</span></span>
-<span><span class="co">#&gt; 3  BMLVAR 362.03800 363.00196 363.65220 363.58313 363.99996 371.88305   100</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 MetaVAR  41.52398  43.51392  44.54255  44.56097  45.55474  50.63601   100</span></span>
+<span><span class="co">#&gt; 2   Naive  11.41834  12.31202  13.12381  12.78733  14.07211  15.67893   100</span></span>
+<span><span class="co">#&gt; 3  BMLVAR 362.91443 363.89316 364.45673 364.42419 365.00338 367.30736   100</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary-of-benchmark-results-relative-to-the-fastest-method">Summary of Benchmark Results Relative to the Fastest Method<a class="anchor" aria-label="anchor" href="#summary-of-benchmark-results-relative-to-the-fastest-method"></a>
@@ -150,13 +150,13 @@ method is set to 1.</p>
 <strong>Naive</strong> is the reference method, so its relative
 runtime is 1.00 by definition.</li>
 <li>
-<strong>MetaVAR</strong> had a mean relative runtime of 3.37,
+<strong>MetaVAR</strong> had a mean relative runtime of 3.39,
 meaning that it took about 3 times as long as Naive.</li>
 <li>
-<strong>BMLVAR</strong> had a mean relative runtime of 27.49,
-meaning that it took about 27 times as long as Naive.</li>
+<strong>BMLVAR</strong> had a mean relative runtime of 27.77,
+meaning that it took about 28 times as long as Naive.</li>
 </ul>
-<p>Put differently, BMLVAR took roughly 8.1 times as long as MetaVAR on
+<p>Put differently, BMLVAR took roughly 8.2 times as long as MetaVAR on
 average. Thus, although MetaVAR is not as fast as the Naive approach, it
 substantially reduces computation time relative to the joint Bayesian
 alternative.</p>
@@ -167,9 +167,9 @@ substantial computational advantage over joint estimation.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">benchmark</span>, unit <span class="op">=</span> <span class="st">"relative"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      expr       min        lq      mean    median        uq       max neval</span></span>
-<span><span class="co">#&gt; 1 MetaVAR  3.573968  3.495229  3.374415  3.449899  3.282449  3.173879   100</span></span>
+<span><span class="co">#&gt; 1 MetaVAR  3.636603  3.534262  3.394026  3.484775  3.237236  3.229557   100</span></span>
 <span><span class="co">#&gt; 2   Naive  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000   100</span></span>
-<span><span class="co">#&gt; 3  BMLVAR 31.145571 29.060551 27.494194 28.150446 26.241131 23.459299   100</span></span></code></pre></div>
+<span><span class="co">#&gt; 3  BMLVAR 31.783454 29.555922 27.770648 28.498844 25.938070 23.426811   100</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plot">Plot<a class="anchor" aria-label="anchor" href="#plot"></a>
