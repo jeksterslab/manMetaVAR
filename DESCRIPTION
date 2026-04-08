@@ -1,17 +1,28 @@
 Package: manMetaVAR
-Title: From Person-Specific Dynamics to Population Inference: A
-        Meta-Analytic Structural Equation Modeling Framework for
-        Multilevel Dynamic Models
+Title: Meta-Analytic SEM for Multilevel Dynamics
 Version: 0.9.8
-Authors@R: 
+Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
            role = c("aut", "cre", "cph"),
            email = "r.jeksterslab@gmail.com",
-           comment = c(ORCID = "0000-0003-4818-8420"))
+           comment = c(ORCID = "0000-0003-4818-8420")),
+    person(given = "Michael A.",
+           family = "Russell",
+           role = "ctb",
+           email = "mar60@psu.edu",
+           comment = c(ORCID = "0000-0002-3956-604X")),
+    person(given = "Sy-Miin",
+           family = "Chow",
+           role = "ctb",
+           email = "quc16@psu.edu",
+           comment = c(ORCID = "0000-0003-1938-027X"))
+    )
 Description: Research compendium for the manuscript
-    Pesigan, I. J. A., et al. (In Preparation).
-    From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models.
+    Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (Under Review).
+    From Person-Specific Dynamics to Population Inference:
+    A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework
+    for Integrating Complex Multilevel Dynamic Models.
     <doi:10.0000/0000000000>.
 URL: https://github.com/jeksterslab/manMetaVAR,
         https://jeksterslab.github.io/manMetaVAR/,
@@ -29,7 +40,10 @@ Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
 Config/roxygen2/version: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2026-03-31 15:25:14 UTC; root
+Packaged: 2026-04-08 17:31:39 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
-    <https://orcid.org/0000-0003-4818-8420>)
+    <https://orcid.org/0000-0003-4818-8420>),
+  Michael A. Russell [ctb] (ORCID:
+    <https://orcid.org/0000-0002-3956-604X>),
+  Sy-Miin Chow [ctb] (ORCID: <https://orcid.org/0000-0003-1938-027X>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

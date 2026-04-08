@@ -1,7 +1,7 @@
 year <- 2026
-author_text <- "Pesigan, I. J. A."
+author_text <- "Pesigan, I. J. A., Russell, M. A., & Chow, S.-M."
 pkg <- meta$Package
-title <- meta$Title
+title <- "From Person-Specific Dynamics to Population Inference: A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating Complex Multilevel Dynamic Models"
 version <- meta$Version
 author <- c(
   person(
@@ -10,13 +10,27 @@ author <- c(
     role = c("aut", "cre", "cph"),
     email = "r.jeksterslab@gmail.com",
     comment = c(ORCID = "0000-0003-4818-8420")
+  ),
+  person(
+    given = "Michael A.",
+    family = "Russell",
+    role = "ctb",
+    email = "mar60@psu.edu",
+    comment = c(ORCID = "0000-0002-3956-604X")
+  ),
+  person(
+    given = "Sy-Miin",
+    family = "Chow",
+    role = "ctb",
+    email = "quc16@psu.edu",
+    comment = c(ORCID = "0000-0003-1938-027X")
   )
 )
 note <- sprintf(
   "R package version %s",
   meta$Version
 )
-url <- "https://github.com/jeksterslab/manMetaVAR"
+url <- "https://github.com/jeksterslab/manCTMed"
 
 bibentry(
   bibtype = "Article",
@@ -25,6 +39,7 @@ bibentry(
   year = year,
   doi = "10.0000/0000000000",
   journal = "JOURNAL_TITLE_HERE",
+  publisher = "PUBLISHER_HERE",
   note = note,
   textVersion = paste0(
     author_text, " ",
