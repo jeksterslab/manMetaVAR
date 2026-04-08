@@ -85,8 +85,15 @@ data_process_results <- function(overwrite = FALSE) {
       yes = results$bias,
       no = results$rel_bias
     )
+    # omissions
+    results <- results[results$ci != "Robust", ]
     results$se_bias <- NULL
     results$rel_se_bias <- NULL
+    results$method <- ifelse(
+      test = results$method == "Naive",
+      yes = "Uncorr",
+      no = results$method
+    )
     save(
       results,
       file = results_file,

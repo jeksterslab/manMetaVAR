@@ -102,7 +102,7 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
         data = data,
         seed = seed
       ),
-      Naive = Naive(
+      Uncorr = Naive(
         data = data,
         seed = seed
       ),

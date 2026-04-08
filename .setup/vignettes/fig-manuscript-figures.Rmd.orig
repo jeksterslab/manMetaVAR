@@ -1,0 +1,94 @@
+---
+title: "Manuscript Figures"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Manuscript Figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-manuscript-figures-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r, library}
+#| echo = FALSE,
+#| message = FALSE
+library(manMetaVAR)
+```
+
+```{r, data}
+#| echo = FALSE,
+data(results, package = "manMetaVAR")
+```
+
+### Overview
+
+```{r, overview}
+#| echo = FALSE,
+#| cache = FALSE
+FigOverview(results)
+```
+
+### Heatmaps
+
+#### Absoluate Value of the Relative Bias
+
+```{r, abs-rel-bias}
+#| echo = FALSE,
+#| cache = FALSE
+FigMetricHeatmap(
+  results,
+  metric_name = "abs_rel_bias"
+)
+```
+
+#### RMSE
+
+```{r, rmse}
+#| echo = FALSE,
+#| cache = FALSE
+FigMetricHeatmap(
+  results,
+  metric_name = "rmse"
+)
+```
+
+#### Coverage Probability
+
+```{r, coverage}
+#| echo = FALSE,
+#| cache = FALSE
+FigMetricHeatmap(
+  results,
+  metric_name = "coverage"
+)
+```
+
+#### Statistical Power
+
+```{r, power}
+#| echo = FALSE,
+#| cache = FALSE
+FigMetricHeatmap(
+  results,
+  metric_name = "power"
+)
+```
+
+```{r, rm}
+#| include = FALSE
+rm(list = ls())
+```

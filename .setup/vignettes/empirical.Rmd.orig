@@ -49,6 +49,16 @@ stage2 <- readRDS(
 )
 ```
 
+## Data Pre-Processing
+
+This illustration uses ecological momentary assessment (EMA) data from the Affective Dynamics and Individual Differences (ADID) study. To align the data with the discrete-time VAR framework used in this vignette, we first rounded each response timestamp to the nearest hour and then constructed an hourly, regularly spaced time series for each participant. Hours with no observed response were retained as missing so that the lagged effects could be interpreted on an approximately hourly timescale.
+
+We then created per-occasion negative affect (NA) and positive affect (PA) composites by averaging the available negative-affect and positive-affect item responses, respectively. Because the raw EMA series also contain slower month-long drift, we applied within-person linear detrending before model fitting. Under this preprocessing scheme, the resulting VAR model targets a short-term, detrended, approximately hourly affective process rather than the full raw trajectory.
+
+The full preprocessing script used to generate the analysis dataset is available here:
+
+<https://raw.githubusercontent.com/jeksterslab/manMetaVAR/refs/heads/main/.setup/data-analysis/data-analysis-empirical-data-ema.R>
+
 ```{r}
 #| include = FALSE
 library(OpenMx)

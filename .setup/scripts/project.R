@@ -24,6 +24,8 @@ pkg_cran <- c(
   "OpenMx",
   "lavaan",
   "ggplot2",
+  "dplyr",
+  "tidyr",
   "microbenchmark"
 )
 

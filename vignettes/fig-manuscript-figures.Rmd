@@ -1,0 +1,39 @@
+---
+title: "Manuscript Figures"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Manuscript Figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+
+
+### Overview
+
+<img src="fig-vignettes-manuscript-figures-overview-1.png" alt="" width="3300" />
+
+### Heatmaps
+
+#### Absoluate Value of the Relative Bias
+
+<img src="fig-vignettes-manuscript-figures-abs-rel-bias-1.png" alt="" width="3300" />
+
+#### RMSE
+
+<img src="fig-vignettes-manuscript-figures-rmse-1.png" alt="" width="3300" />
+
+#### Coverage Probability
+
+<img src="fig-vignettes-manuscript-figures-coverage-1.png" alt="" width="3300" />
+
+#### Statistical Power
+
+<img src="fig-vignettes-manuscript-figures-power-1.png" alt="" width="3300" />
+
+

@@ -1,7 +1,7 @@
 manMetaVAR
 ================
 Ivan Jacob Agaloos Pesigan
-2026-03-31
+2026-04-08
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -12,17 +12,19 @@ Ivan Jacob Agaloos Pesigan
 
 ## Description
 
-Research compendium for the manuscript Pesigan, I. J. A., et al. (In
-Preparation). From Person-Specific Dynamics to Population Inference: A
-Meta-Analytic Structural Equation Modeling Framework for Multilevel
-Dynamic Models. <https://doi.org/10.0000/0000000000>
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
+A., & Chow, S.-M. (Under Review). From Person-Specific Dynamics to
+Population Inference: A Computationally Efficient Meta-Analytic
+Structural Equation Modeling Framework for Integrating Complex
+Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>
 
 ## Acknowledgments
 
 This research was made possible by the Prevention and Methodology
-Training Program (PAMT) funded by a T32 training grant (T32 DA017629
-Multiple Principal Investigators: J. Maggs & S. Lanza) from the National
-Institute on Drug Abuse (NIDA).
+Training Program (PAMT) funded by a T32 training grant (T32 DA017629,
+MPIs: J. Maggs & S. Lanza) from the National Institute on Drug Abuse
+(NIDA); and grant UL1TR002014-06 from the National Center for Advancing
+Translational Sciences (NCATS).
 
 Computations for this research were performed on the Pennsylvania State
 University’s Institute for Computational and Data Sciences’ Roar
