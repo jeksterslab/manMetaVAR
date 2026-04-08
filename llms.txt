@@ -1,20 +1,22 @@
 # manMetaVAR
 
-Ivan Jacob Agaloos Pesigan 2026-03-31
+Ivan Jacob Agaloos Pesigan 2026-04-08
 
 ## Description
 
-Research compendium for the manuscript Pesigan, I. J. A., et al. (In
-Preparation). From Person-Specific Dynamics to Population Inference: A
-Meta-Analytic Structural Equation Modeling Framework for Multilevel
-Dynamic Models. <https://doi.org/10.0000/0000000000>
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
+A., & Chow, S.-M. (Under Review). From Person-Specific Dynamics to
+Population Inference: A Computationally Efficient Meta-Analytic
+Structural Equation Modeling Framework for Integrating Complex
+Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>
 
 ## Acknowledgments
 
 This research was made possible by the Prevention and Methodology
-Training Program (PAMT) funded by a T32 training grant (T32 DA017629
-Multiple Principal Investigators: J. Maggs & S. Lanza) from the National
-Institute on Drug Abuse (NIDA).
+Training Program (PAMT) funded by a T32 training grant (T32 DA017629,
+MPIs: J. Maggs & S. Lanza) from the National Institute on Drug Abuse
+(NIDA); and grant UL1TR002014-06 from the National Center for Advancing
+Translational Sciences (NCATS).
 
 Computations for this research were performed on the Pennsylvania State
 University’s Institute for Computational and Data Sciences’ Roar
@@ -161,14 +163,10 @@ for package documentation.
 
 ## Figures
 
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
+- [`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md)
+  : Results Heatmap
+- [`FigOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.md)
+  : Results Overview
 
 ## Methods
 
@@ -223,14 +221,10 @@ for package documentation.
   : Check Replication - FitNaive
 - [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
   : Compress Replication
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
+- [`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md)
+  : Results Heatmap
+- [`FigOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.md)
+  : Results Overview
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   : Fit the Model using the fitVARMxID Package
 - [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)
@@ -273,8 +267,8 @@ for package documentation.
 ### manMetaVAR
 
 - [manMetaVAR: From Person-Specific Dynamics to Population Inference: A
-  Meta-Analytic Structural Equation Modeling Framework for Multilevel
-  Dynamic
+  Computationally Efficient Meta-Analytic Structural Equation Modeling
+  Framework for Integrating Complex Multilevel Dynamic
   Models](https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.md):
 
 ### Single Replication from the Simulation Study
@@ -299,13 +293,13 @@ for package documentation.
 
 ### Plots
 
-- [Scatter
-  Plots](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots.md):
+- [Manuscript
+  Figures](https://github.com/jeksterslab/manMetaVAR/articles/fig-manuscript-figures.md):
 
 ### Benchmark
 
-- [Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian
-  Multilevel
+- [Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and
+  Bayesian Multilevel
   VAR](https://github.com/jeksterslab/manMetaVAR/articles/benchmark.md):
 
 ### Containers

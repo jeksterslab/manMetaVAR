@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models • manMetaVAR</title>
+<title>Meta-Analytic SEM for Multilevel Dynamics • manMetaVAR</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.10/font.css" rel="stylesheet">
@@ -13,9 +13,9 @@
 <link href="deps/Roboto_Slab-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models">
-<meta name="description" content="Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models. &lt;doi:10.0000/0000000000&gt;.">
-<meta property="og:description" content="Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models. &lt;doi:10.0000/0000000000&gt;.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Meta-Analytic SEM for Multilevel Dynamics">
+<meta name="description" content="Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., &amp; Chow, S.-M. (Under Review). From Person-Specific Dynamics to Population Inference: A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating Complex Multilevel Dynamic Models. &lt;doi:10.0000/0000000000&gt;.">
+<meta property="og:description" content="Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., &amp; Chow, S.-M. (Under Review). From Person-Specific Dynamics to Population Inference: A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating Complex Multilevel Dynamic Models. &lt;doi:10.0000/0000000000&gt;.">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -55,19 +55,19 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="manmetavar">manMetaVAR<a class="anchor" aria-label="anchor" href="#manmetavar"></a>
 </h1></div>
-<p>Ivan Jacob Agaloos Pesigan 2026-03-31</p>
+<p>Ivan Jacob Agaloos Pesigan 2026-04-08</p>
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
 <div class="section level2">
 <h2 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
 </h2>
-<p>Research compendium for the manuscript Pesigan, I. J. A., et al. (In Preparation). From Person-Specific Dynamics to Population Inference: A Meta-Analytic Structural Equation Modeling Framework for Multilevel Dynamic Models. <a href="https://doi.org/10.0000/0000000000" class="external-link uri">https://doi.org/10.0000/0000000000</a></p>
+<p>Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., &amp; Chow, S.-M. (Under Review). From Person-Specific Dynamics to Population Inference: A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating Complex Multilevel Dynamic Models. <a href="https://doi.org/10.0000/0000000000" class="external-link uri">https://doi.org/10.0000/0000000000</a></p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
 </h2>
-<p>This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 Multiple Principal Investigators: J. Maggs &amp; S. Lanza) from the National Institute on Drug Abuse (NIDA).</p>
+<p>This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629, MPIs: J. Maggs &amp; S. Lanza) from the National Institute on Drug Abuse (NIDA); and grant UL1TR002014-06 from the National Center for Advancing Translational Sciences (NCATS).</p>
 <p>Computations for this research were performed on the Pennsylvania State University’s Institute for Computational and Data Sciences’ Roar supercomputer using SLURM for job scheduling (Yoo et al., 2003), GNU Parallel to run the simulations in parallel (Tange, 2021), and Apptainer to ensure a reproducible software stack (Kurtzer et al., 2017, 2021). See <code>.sim/README.md</code> and the scripts in the <code>.sim</code> folder in the <a href="https://github.com/jeksterslab/manMetaVAR">GitHub</a> repository for more details on how the simulations were performed.</p>
 </div>
 <div class="section level2">
@@ -118,6 +118,7 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Ivan Jacob Agaloos Pesigan <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-4818-8420" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 

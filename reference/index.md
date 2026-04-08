@@ -99,14 +99,10 @@
 
 ## Figures
 
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
+- [`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md)
+  : Results Heatmap
+- [`FigOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.md)
+  : Results Overview
 
 ## Methods
 
@@ -161,14 +157,10 @@
   : Check Replication - FitNaive
 - [`Compress()`](https://github.com/jeksterslab/manMetaVAR/reference/Compress.md)
   : Compress Replication
-- [`FigBias()`](https://github.com/jeksterslab/manMetaVAR/reference/FigBias.md)
-  : Plot Relative Bias
-- [`FigCoverage()`](https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.md)
-  : Plot Coverage Probabilities
-- [`FigPower()`](https://github.com/jeksterslab/manMetaVAR/reference/FigPower.md)
-  : Plot Statistical Power
-- [`FigRMSE()`](https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.md)
-  : Plot RMSE
+- [`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md)
+  : Results Heatmap
+- [`FigOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.md)
+  : Results Overview
 - [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md)
   : Fit the Model using the fitVARMxID Package
 - [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md)

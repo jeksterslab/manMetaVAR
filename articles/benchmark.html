@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian Multilevel VAR • manMetaVAR</title>
+<title>Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR • manMetaVAR</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.10/font.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link href="../deps/Roboto_Slab-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian Multilevel VAR">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -56,7 +56,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian Multilevel VAR</h1>
+      <h1>Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR</h1>
                         <h4 data-toc-skip class="author">Ivan Jacob
 Agaloos Pesigan</h4>
             
@@ -89,7 +89,8 @@ Version 9 on Linux.</p>
 <p>This vignette benchmarks three approaches on the same dataset:</p>
 <ul>
 <li>
-<strong>Naive</strong>, a simple two-stage summary approach;</li>
+<strong>Uncorr</strong>, an uncorrected two-stage benchmark that
+does not propagate Stage 1 sampling covariance;</li>
 <li>
 <strong>MetaVAR</strong>, a two-stage approach that carries forward
 first-stage uncertainty and estimates a multivariate random-effects
@@ -98,7 +99,7 @@ model at Stage 2; and</li>
 <strong>BMLVAR</strong>, a joint Bayesian multilevel VAR
 approach.</li>
 </ul>
-<p>We expected the Naive approach to be the fastest because it performs
+<p>We expected the Uncorr approach to be the fastest because it performs
 the least Stage 2 computation. We expected BMLVAR to be the slowest
 because it estimates the hierarchical model jointly. We expected MetaVAR
 to fall between these two methods, offering a compromise between
@@ -113,32 +114,32 @@ article</a> for the package website.</p>
 <p>The benchmark results are summarized below in seconds.</p>
 <ul>
 <li>
-<strong>Naive</strong> was the fastest method, with a mean runtime
-of 13.12 seconds and a median runtime of 12.79 seconds.</li>
+<strong>Uncorr</strong> was the fastest method, with a mean runtime
+of 14.67 seconds and a median runtime of 14.36 seconds.</li>
 <li>
-<strong>MetaVAR</strong> had a mean runtime of 44.54 seconds and a
-median runtime of 44.56 seconds.</li>
+<strong>MetaVAR</strong> had a mean runtime of 47.55 seconds and a
+median runtime of 47.31 seconds.</li>
 <li>
 <strong>BMLVAR</strong> was the slowest method, with a mean runtime
-of 364.46 seconds and a median runtime of 364.42 seconds.</li>
+of 364.61 seconds and a median runtime of 364.48 seconds.</li>
 </ul>
 <p>The ordering was stable across all 100 benchmark repetitions:
-<strong>Naive</strong> was fastest, <strong>MetaVAR</strong> was
+<strong>Uncorr</strong> was fastest, <strong>MetaVAR</strong> was
 intermediate, and <strong>BMLVAR</strong> was slowest. These results
 place MetaVAR in a computational middle ground. It is clearly slower
-than the Naive approach, as expected, but it remains much faster than
+than the Uncorr approach, as expected, but it remains much faster than
 the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR
-required about 31.42 more seconds than Naive on this task, whereas
-BMLVAR required about 319.91 more seconds than MetaVAR.</p>
+required about 32.88 more seconds than Uncorr on this task, whereas
+BMLVAR required about 317.06 more seconds than MetaVAR.</p>
 <p>Runtime variability within each method was also modest. This suggests
 that the observed differences reflect stable differences in
 computational burden rather than incidental benchmark noise.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">benchmark</span>, unit <span class="op">=</span> <span class="st">"seconds"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      expr       min        lq      mean    median        uq       max neval</span></span>
-<span><span class="co">#&gt; 1 MetaVAR  41.52398  43.51392  44.54255  44.56097  45.55474  50.63601   100</span></span>
-<span><span class="co">#&gt; 2   Naive  11.41834  12.31202  13.12381  12.78733  14.07211  15.67893   100</span></span>
-<span><span class="co">#&gt; 3  BMLVAR 362.91443 363.89316 364.45673 364.42419 365.00338 367.30736   100</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 MetaVAR  43.17602  46.49405  47.54943  47.31046  48.31051  53.70043   100</span></span>
+<span><span class="co">#&gt; 2  Uncorr  12.75974  13.90272  14.66962  14.35964  15.14774  19.35440   100</span></span>
+<span><span class="co">#&gt; 3  BMLVAR 362.99736 364.08500 364.60915 364.48380 365.05887 367.14739   100</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary-of-benchmark-results-relative-to-the-fastest-method">Summary of Benchmark Results Relative to the Fastest Method<a class="anchor" aria-label="anchor" href="#summary-of-benchmark-results-relative-to-the-fastest-method"></a>
@@ -147,18 +148,18 @@ computational burden rather than incidental benchmark noise.</p>
 method is set to 1.</p>
 <ul>
 <li>
-<strong>Naive</strong> is the reference method, so its relative
+<strong>Uncorr</strong> is the reference method, so its relative
 runtime is 1.00 by definition.</li>
 <li>
-<strong>MetaVAR</strong> had a mean relative runtime of 3.39,
-meaning that it took about 3 times as long as Naive.</li>
+<strong>MetaVAR</strong> had a mean relative runtime of 3.24,
+meaning that it took about 3 times as long as Uncorr.</li>
 <li>
-<strong>BMLVAR</strong> had a mean relative runtime of 27.77,
-meaning that it took about 28 times as long as Naive.</li>
+<strong>BMLVAR</strong> had a mean relative runtime of 24.85,
+meaning that it took about 25 times as long as Uncorr.</li>
 </ul>
-<p>Put differently, BMLVAR took roughly 8.2 times as long as MetaVAR on
-average. Thus, although MetaVAR is not as fast as the Naive approach, it
-substantially reduces computation time relative to the joint Bayesian
+<p>Put differently, BMLVAR took roughly 7.7 times as long as MetaVAR on
+average. Thus, although MetaVAR is not as fast as the Uncorr approach,
+it substantially reduces computation time relative to the joint Bayesian
 alternative.</p>
 <p>This pattern is consistent with the intended role of MetaVAR. It is
 not designed to match the speed of a simple summary method. Rather, it
@@ -166,20 +167,20 @@ aims to provide a more principled two-stage synthesis while retaining a
 substantial computational advantage over joint estimation.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">benchmark</span>, unit <span class="op">=</span> <span class="st">"relative"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      expr       min        lq      mean    median        uq       max neval</span></span>
-<span><span class="co">#&gt; 1 MetaVAR  3.636603  3.534262  3.394026  3.484775  3.237236  3.229557   100</span></span>
-<span><span class="co">#&gt; 2   Naive  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000   100</span></span>
-<span><span class="co">#&gt; 3  BMLVAR 31.783454 29.555922 27.770648 28.498844 25.938070 23.426811   100</span></span></code></pre></div>
+<span><span class="co">#&gt;      expr      min        lq      mean    median        uq       max neval</span></span>
+<span><span class="co">#&gt; 1 MetaVAR  3.38377  3.344241  3.241353  3.294684  3.189288  2.774586   100</span></span>
+<span><span class="co">#&gt; 2  Uncorr  1.00000  1.000000  1.000000  1.000000  1.000000  1.000000   100</span></span>
+<span><span class="co">#&gt; 3  BMLVAR 28.44865 26.188040 24.854707 25.382525 24.099892 18.969715   100</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plot">Plot<a class="anchor" aria-label="anchor" href="#plot"></a>
 </h2>
 <p>The plots reinforce the same pattern seen in the numerical summaries.
-Naive is concentrated at the lowest runtimes, MetaVAR is clearly slower
-than Naive but far faster than BMLVAR, and BMLVAR is separated well from
-the other two methods by its much larger computational burden. Across
-repetitions, the spread within each method is relatively small compared
-with the differences between methods.</p>
+Uncorr is concentrated at the lowest runtimes, MetaVAR is clearly slower
+than Uncorr but far faster than BMLVAR, and BMLVAR is separated well
+from the other two methods by its much larger computational burden.
+Across repetitions, the spread within each method is relatively small
+compared with the differences between methods.</p>
 <p><img src="fig-vignettes-benchmark-unnamed-chunk-7-1.png" alt="" width="3300"><img src="fig-vignettes-benchmark-unnamed-chunk-7-2.png" alt="" width="3300"></p>
 </div>
 <div class="section level2">
@@ -187,7 +188,7 @@ with the differences between methods.</p>
 </h2>
 <p>Overall, the benchmark supports the practical value of the MetaVAR
 workflow. The method does introduce noticeable overhead relative to a
-simple Naive summary approach, which is expected given its more
+simple Uncorr summary approach, which is expected given its more
 principled Stage 2 modeling. However, it remains far more
 computationally tractable than a joint Bayesian multilevel VAR model.
 For applied settings in which scalability matters, especially when Stage

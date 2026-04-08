@@ -3,8 +3,8 @@
 ### manMetaVAR
 
 - [manMetaVAR: From Person-Specific Dynamics to Population Inference: A
-  Meta-Analytic Structural Equation Modeling Framework for Multilevel
-  Dynamic
+  Computationally Efficient Meta-Analytic Structural Equation Modeling
+  Framework for Integrating Complex Multilevel Dynamic
   Models](https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.md):
 
 ### Single Replication from the Simulation Study
@@ -29,13 +29,13 @@
 
 ### Plots
 
-- [Scatter
-  Plots](https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots.md):
+- [Manuscript
+  Figures](https://github.com/jeksterslab/manMetaVAR/articles/fig-manuscript-figures.md):
 
 ### Benchmark
 
-- [Benchmarking MetaVAR Against Naive Two-Stage Estimation and Bayesian
-  Multilevel
+- [Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and
+  Bayesian Multilevel
   VAR](https://github.com/jeksterslab/manMetaVAR/articles/benchmark.md):
 
 ### Containers

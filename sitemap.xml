@@ -5,7 +5,7 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/benchmark.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/containers.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/empirical.html</loc></url>
-<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/fig-scatter-plots.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/articles/fig-manuscript-figures.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/index.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/manMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/articles/params.html</loc></url>
@@ -21,10 +21,8 @@
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitMplus.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/CheckFitNaive.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/Compress.html</loc></url>
-<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigBias.html</loc></url>
-<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigCoverage.html</loc></url>
-<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigPower.html</loc></url>
-<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigRMSE.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.html</loc></url>
+<url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.html</loc></url>
 <url><loc>https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.html</loc></url>
