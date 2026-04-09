@@ -1,6 +1,6 @@
 Package: manMetaVAR
 Title: Meta-Analytic SEM for Multilevel Dynamics
-Version: 0.9.8
+Version: 0.5.8
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -40,7 +40,7 @@ Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
 Config/roxygen2/version: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2026-04-08 17:31:39 UTC; root
+Packaged: 2026-04-09 00:14:50 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>),
   Michael A. Russell [ctb] (ORCID:
