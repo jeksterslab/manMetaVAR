@@ -1,9 +1,9 @@
 ---
-title: "Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR"
+title: "Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage Approach and Bayesian Multilevel VAR"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR}
+  %\VignetteIndexEntry{Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage Approach and Bayesian Multilevel VAR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,7 +20,7 @@ By contrast, joint Bayesian multilevel VAR estimation is generally more computat
 
 This vignette benchmarks three approaches on the same dataset:
 
-- **Uncorr**, an uncorrected two-stage benchmark that does not propagate Stage 1 sampling covariance;
+- **Uncorr**, an uncertainty-uncorrected two-stage benchmark that does not propagate Stage 1 sampling covariance;
 - **MetaVAR**, a two-stage approach that carries forward first-stage uncertainty and estimates a multivariate random-effects model at Stage 2; and
 - **BMLVAR**, a joint Bayesian multilevel VAR approach.
 

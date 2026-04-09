@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.16)  23 MAR 2026 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.2)  8 APR 2026 06:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **apa7.dtx
 (./apa7.dtx
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+L3 programming layer <2026-03-20>
 (/opt/TinyTeX/texmf-dist/tex/latex/base/docstrip.tex
 \blockLevel=\count275
 \emptyLines=\count276
@@ -171,37 +171,37 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \c@table=\count311
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen148
+\bibindent=\dimen150
 ) (/opt/TinyTeX/texmf-dist/tex/latex/base/doc.sty
 Package: doc 2024/12/25 v3.0q Standard LaTeX documentation package V3 (FMi)
 \c@StandardModuleDepth=\count312
 \guard@level=\count313
 \MacrocodeTopsep=\skip51
-\MacroIndent=\dimen149
+\MacroIndent=\dimen151
 \macro@cnt=\count314
 \MacroTopsep=\skip52
-\IndexMin=\dimen150
+\IndexMin=\dimen152
 \c@IndexColumns=\count315
  (/opt/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count316
 \mult@box=\box53
-\multicol@leftmargin=\dimen151
+\multicol@leftmargin=\dimen153
 \c@unbalance=\count317
 \c@collectmore=\count318
 \doublecol@number=\count319
 \multicoltolerance=\count320
 \multicolpretolerance=\count321
-\full@width=\dimen152
-\page@free=\dimen153
-\premulticols=\dimen154
-\postmulticols=\dimen155
+\full@width=\dimen154
+\page@free=\dimen155
+\premulticols=\dimen156
+\postmulticols=\dimen157
 \multicolsep=\skip53
 \multicolbaselineskip=\skip54
 \partial@page=\box54
 \last@line=\box55
 \mc@boxedresult=\box56
-\maxbalancingoverflow=\dimen156
+\maxbalancingoverflow=\dimen158
 \mult@rightbox=\box57
 \mult@grightbox=\box58
 \mult@firstbox=\box59
@@ -245,15 +245,15 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@minrows=\count322
 \c@columnbadness=\count323
 \c@finalcolumnbadness=\count324
-\last@try=\dimen157
-\multicolovershoot=\dimen158
-\multicolundershoot=\dimen159
+\last@try=\dimen159
+\multicolovershoot=\dimen160
+\multicolundershoot=\dimen161
 \mult@nat@firstbox=\box97
 \colbreak@box=\box98
 \mc@col@check@num=\count325
 \g__mc_curr_col_int=\count326
 )
-\GlossaryMin=\dimen160
+\GlossaryMin=\dimen162
 \c@GlossaryColumns=\count327
 \check@sum=\count328
 \bslash@cnt=\count329
@@ -302,8 +302,8 @@ Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchin
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count331
 \calc@Bcount=\count332
-\calc@Adimen=\dimen161
-\calc@Bdimen=\dimen162
+\calc@Adimen=\dimen163
+\calc@Bdimen=\dimen164
 \calc@Askip=\skip55
 \calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 86.
@@ -326,8 +326,8 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
  (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen163
-\Gin@req@width=\dimen164
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
 ) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count334
@@ -341,8 +341,8 @@ Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \LMpt=\skip64
 ) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks20
-\pgfutil@tempdima=\dimen165
-\pgfutil@tempdimb=\dimen166
+\pgfutil@tempdima=\dimen167
+\pgfutil@tempdimb=\dimen168
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box99
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -357,16 +357,16 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
  (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks23
 ))
-\pgf@x=\dimen167
-\pgf@y=\dimen168
-\pgf@xa=\dimen169
-\pgf@ya=\dimen170
-\pgf@xb=\dimen171
-\pgf@yb=\dimen172
-\pgf@xc=\dimen173
-\pgf@yc=\dimen174
-\pgf@xd=\dimen175
-\pgf@yd=\dimen176
+\pgf@x=\dimen169
+\pgf@y=\dimen170
+\pgf@xa=\dimen171
+\pgf@ya=\dimen172
+\pgf@xb=\dimen173
+\pgf@yb=\dimen174
+\pgf@xc=\dimen175
+\pgf@yc=\dimen176
+\pgf@xd=\dimen177
+\pgf@yd=\dimen178
 \w@pgf@writea=\write3
 \r@pgf@reada=\read4
 \c@pgf@counta=\count335
@@ -410,7 +410,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
  (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen177
+\pgfmath@dimen=\dimen179
 \pgfmath@count=\count342
 \pgfmath@box=\box100
 \pgfmath@toks=\toks27
@@ -420,28 +420,28 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 \c@pgfmathroundto@lastzeros=\count343
 )) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen178
-\pgf@picmaxx=\dimen179
-\pgf@picminy=\dimen180
-\pgf@picmaxy=\dimen181
-\pgf@pathminx=\dimen182
-\pgf@pathmaxx=\dimen183
-\pgf@pathminy=\dimen184
-\pgf@pathmaxy=\dimen185
-\pgf@xx=\dimen186
-\pgf@xy=\dimen187
-\pgf@yx=\dimen188
-\pgf@yy=\dimen189
-\pgf@zx=\dimen190
-\pgf@zy=\dimen191
+\pgf@picminx=\dimen180
+\pgf@picmaxx=\dimen181
+\pgf@picminy=\dimen182
+\pgf@picmaxy=\dimen183
+\pgf@pathminx=\dimen184
+\pgf@pathmaxx=\dimen185
+\pgf@pathminy=\dimen186
+\pgf@pathmaxy=\dimen187
+\pgf@xx=\dimen188
+\pgf@xy=\dimen189
+\pgf@yx=\dimen190
+\pgf@yy=\dimen191
+\pgf@zx=\dimen192
+\pgf@zy=\dimen193
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen192
-\pgf@path@lasty=\dimen193
+\pgf@path@lastx=\dimen194
+\pgf@path@lasty=\dimen195
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen194
-\pgf@shorten@start@additional=\dimen195
+\pgf@shorten@end@additional=\dimen196
+\pgf@shorten@start@additional=\dimen197
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box101
@@ -450,12 +450,12 @@ File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picture@serial@count=\count344
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen196
+\pgflinewidth=\dimen198
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen197
-\pgf@pt@y=\dimen198
-\pgf@pt@temp=\dimen199
+\pgf@pt@x=\dimen199
+\pgf@pt@y=\dimen256
+\pgf@pt@temp=\dimen257
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -464,10 +464,10 @@ File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen256
+\pgfarrowsep=\dimen258
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen257
+\pgf@max=\dimen259
 \pgf@sys@shading@range@num=\count345
 \pgf@shadingcount=\count346
 ) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
@@ -490,14 +490,14 @@ File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen258
-\pgf@nodesepend=\dimen259
+\pgf@nodesepstart=\dimen260
+\pgf@nodesepend=\dimen261
 ) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 )) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen260
-\pgffor@skip=\dimen261
+\pgffor@iter=\dimen262
+\pgffor@skip=\dimen263
 \pgffor@stack=\toks30
 \pgffor@toks=\toks31
 )) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
@@ -505,16 +505,16 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
  (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count347
-\pgfplotmarksize=\dimen262
+\pgfplotmarksize=\dimen264
 )
-\tikz@lastx=\dimen263
-\tikz@lasty=\dimen264
-\tikz@lastxsaved=\dimen265
-\tikz@lastysaved=\dimen266
-\tikz@lastmovetox=\dimen267
-\tikz@lastmovetoy=\dimen268
-\tikzleveldistance=\dimen269
-\tikzsiblingdistance=\dimen270
+\tikz@lastx=\dimen265
+\tikz@lasty=\dimen266
+\tikz@lastxsaved=\dimen267
+\tikz@lastysaved=\dimen268
+\tikz@lastmovetox=\dimen269
+\tikz@lastmovetoy=\dimen270
+\tikzleveldistance=\dimen271
+\tikzsiblingdistance=\dimen272
 \tikz@figbox=\box106
 \tikz@figbox@bg=\box107
 \tikz@tempbox=\box108
@@ -540,10 +540,10 @@ File: pgflibrarysvg.path.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfmoduleparser.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfparserdef@arg@count=\count356
 )
-\pgf@lib@svg@last@x=\dimen271
-\pgf@lib@svg@last@y=\dimen272
-\pgf@lib@svg@last@c@x=\dimen273
-\pgf@lib@svg@last@c@y=\dimen274
+\pgf@lib@svg@last@x=\dimen273
+\pgf@lib@svg@last@y=\dimen274
+\pgf@lib@svg@last@c@x=\dimen275
+\pgf@lib@svg@last@c@y=\dimen276
 \pgf@lib@svg@count=\count357
 \pgf@lib@svg@max@num=\count358
 )) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -581,7 +581,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen275
+\@linkdim=\dimen277
 \Hy@linkcounter=\count360
 \Hy@pagecounter=\count361
  (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -610,15 +610,15 @@ Package hyperref Info: Bookmarks ON on input line 4468.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen276
+\XeTeXLinkMargin=\dimen278
  (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count364
-\Field@Width=\dimen277
-\Fld@charsize=\dimen278
+\Field@Width=\dimen279
+\Fld@charsize=\dimen280
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -647,23 +647,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 Package hyperref Info: Option `colorlinks' set `true' on input line 210.
  (/opt/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen279
-\lightrulewidth=\dimen280
-\cmidrulewidth=\dimen281
-\belowrulesep=\dimen282
-\belowbottomsep=\dimen283
-\aboverulesep=\dimen284
-\abovetopsep=\dimen285
-\cmidrulesep=\dimen286
-\cmidrulekern=\dimen287
-\defaultaddspace=\dimen288
+\heavyrulewidth=\dimen281
+\lightrulewidth=\dimen282
+\cmidrulewidth=\dimen283
+\belowrulesep=\dimen284
+\belowbottomsep=\dimen285
+\aboverulesep=\dimen286
+\abovetopsep=\dimen287
+\cmidrulesep=\dimen288
+\cmidrulekern=\dimen289
+\defaultaddspace=\dimen290
 \@cmidla=\count370
 \@cmidlb=\count371
-\@aboverulesep=\dimen289
-\@belowrulesep=\dimen290
+\@aboverulesep=\dimen291
+\@belowrulesep=\dimen292
 \@thisruleclass=\count372
 \@lastruleclass=\count373
-\@thisrulewidth=\dimen291
+\@thisrulewidth=\dimen293
 ) (/opt/TinyTeX/texmf-dist/tex/latex/verbatimbox/verbatimbox.sty
 Package: verbatimbox 2023/08/08 v3.2\ Routines for placing verbatim text into boxes, useful in places where the verbatim environment is inaccessible. Secondarily, for adding vertical buffer around an object.
  (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
@@ -699,9 +699,9 @@ readarray: bounds checking OFF
 )
 \savedverbbox=\box110
 \c@VerbboxLineNo=\count384
-\boxtopsep=\dimen292
-\boxbottomsep=\dimen293
-\ps@tempdima=\dimen294
+\boxtopsep=\dimen294
+\boxbottomsep=\dimen295
+\ps@tempdima=\dimen296
 \ps@tempboxa=\box111
 \boxtop@sep=\skip66
 \boxbottom@sep=\skip67
@@ -738,7 +738,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 218
  (/opt/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count387
 ) (./apa7.aux)
 \openout1 = `apa7.aux'.
@@ -765,13 +765,13 @@ Package doc Info: Made | a short reference for \verb on input line 218.
  (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count388
-\scratchdimen=\dimen295
+\scratchdimen=\dimen297
 \scratchbox=\box112
 \nofMPsegments=\count389
 \nofMParguments=\count390
 \everyMPshowfont=\toks36
 \MPscratchCnt=\count391
-\MPscratchDim=\dimen296
+\MPscratchDim=\dimen298
 \MPnumerator=\count392
 \makeMPintoPDFobject=\count393
 \everyMPtoPDFconversion=\toks37
@@ -1140,7 +1140,7 @@ Overfull \hbox (20.80455pt too wide) in paragraph at lines 1042--1043
 (./apa7.gls [16] [17 <./samples/shortsample.pdf>] [18]) (./apa7.ind)) [19] (./apa7.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `apa7.out' has not changed.
 (rerunfilecheck)             Checksum: 65CB11A62F9ABF26BAE7A8FBF35B1974;5310.
@@ -1148,10 +1148,10 @@ Package rerunfilecheck Info: File `apa7.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21972 strings out of 467525
- 407303 string characters out of 5420042
- 799037 words of memory out of 5000000
- 50388 multiletter control sequences out of 15000+600000
+ 21971 strings out of 467349
+ 407279 string characters out of 5416696
+ 801411 words of memory out of 5000000
+ 50563 multiletter control sequences out of 15000+600000
  714562 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,104p,410b,814s stack positions out of 10000i,1000n,20000p,200000b,200000s

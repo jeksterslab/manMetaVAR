@@ -1,6 +1,6 @@
 Package: manMetaVAR
 Title: Meta-Analytic SEM for Multilevel Dynamics
-Version: 0.9.8
+Version: 0.5.8
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
