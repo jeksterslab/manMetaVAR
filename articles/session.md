@@ -33,7 +33,7 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] manMetaVAR_0.9.8      metaDyn_1.0.1         fitVARMxID_1.0.2.9000
+#> [1] manMetaVAR_0.5.8      metaDyn_1.0.1         fitVARMxID_1.0.2.9000
 #> [4] OpenMx_2.22.11        microbenchmark_1.5.0 
 #> 
 #> loaded via a namespace (and not attached):
@@ -73,10 +73,10 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 #> Socket(s):                               1
 #> Stepping:                                0
 #> Frequency boost:                         enabled
-#> CPU(s) scaling MHz:                      48%
+#> CPU(s) scaling MHz:                      50%
 #> CPU max MHz:                             5060.9761
 #> CPU min MHz:                             1219.5129
-#> BogoMIPS:                                4990.74
+#> BogoMIPS:                                4990.79
 #> Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
 #> Virtualization:                          AMD-V
 #> L1d cache:                               768 KiB (16 instances)
@@ -110,7 +110,7 @@ cat(system("lscpu", intern = TRUE), sep = "\n")
 
 cat(system("free -g -h -t", intern = TRUE), sep = "\n")
 #>                total        used        free      shared  buff/cache   available
-#> Mem:            44Gi       7.8Gi        32Gi        14Mi       4.8Gi        36Gi
+#> Mem:            44Gi       3.7Gi        37Gi        44Mi       3.5Gi        40Gi
 #> Swap:           22Gi          0B        22Gi
-#> Total:          66Gi       7.8Gi        54Gi
+#> Total:          66Gi       3.7Gi        60Gi
 ```

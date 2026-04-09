@@ -1,4 +1,4 @@
-# Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and Bayesian Multilevel VAR
+# Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage Approach and Bayesian Multilevel VAR
 
 ## Motivation
 
@@ -22,8 +22,8 @@ Version 9 on Linux.
 
 This vignette benchmarks three approaches on the same dataset:
 
-- **Uncorr**, an uncorrected two-stage benchmark that does not propagate
-  Stage 1 sampling covariance;
+- **Uncorr**, an uncertainty-uncorrected two-stage benchmark that does
+  not propagate Stage 1 sampling covariance;
 - **MetaVAR**, a two-stage approach that carries forward first-stage
   uncertainty and estimates a multivariate random-effects model at Stage
   2; and

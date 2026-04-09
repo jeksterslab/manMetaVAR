@@ -34,8 +34,8 @@
 
 ### Benchmark
 
-- [Benchmarking MetaVAR Against Uncorrected Two-Stage Estimation and
-  Bayesian Multilevel
+- [Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage
+  Approach and Bayesian Multilevel
   VAR](https://github.com/jeksterslab/manMetaVAR/articles/benchmark.md):
 
 ### Containers
