@@ -21,7 +21,7 @@ Other Figure Functions:
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous
 
 ## Examples
 

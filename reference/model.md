@@ -88,4 +88,4 @@ A list with 15 elements:
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

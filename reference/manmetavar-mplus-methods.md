@@ -83,4 +83,4 @@ plot(
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

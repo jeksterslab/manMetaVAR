@@ -36,4 +36,4 @@ This function is executed via the `Check` function.
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

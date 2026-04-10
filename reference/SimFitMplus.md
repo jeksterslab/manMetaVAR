@@ -78,4 +78,4 @@ This function is executed via the `Sim` function.
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

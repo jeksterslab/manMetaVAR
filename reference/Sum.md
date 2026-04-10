@@ -70,4 +70,4 @@ The output is saved as an external file in `output_folder`.
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

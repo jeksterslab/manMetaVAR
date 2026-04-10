@@ -131,4 +131,4 @@ summary(
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous

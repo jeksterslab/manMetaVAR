@@ -4,8 +4,7 @@
 
 ## Description
 
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
-A., & Chow, S.-M. (Under Review). From Person-Specific Dynamics to
+Research compendium for the manuscript From Person-Specific Dynamics to
 Population Inference: A Computationally Efficient Meta-Analytic
 Structural Equation Modeling Framework for Integrating Complex
 Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>

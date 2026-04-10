@@ -78,4 +78,4 @@ summary(object, alpha = 0.05, digits = 4, ...)
 
 ## Author
 
-Ivan Jacob Agaloos Pesigan
+Anonymous
