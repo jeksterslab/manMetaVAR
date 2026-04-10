@@ -9,7 +9,7 @@ NULL
 
 #' Parameter Estimates (FitMplus)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @param burnin Integer indicating initial samples to discard.
@@ -100,7 +100,7 @@ coef.manmetavar.mplus <- function(object,
 
 #' Sampling Covariance Matrix of the Parameter Estimates (FitMplus)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @inheritParams coef.manmetavar.mplus
@@ -248,7 +248,7 @@ vcov.manmetavar.mplus <- function(object,
 
 #' Summary Method (FitMplus)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #'
@@ -304,7 +304,7 @@ print.summary.manmetavar.mplus <- function(x,
 
 #' Confidence Intervals for the Parameter Estimates (FitMplus)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @param ... additional arguments.
@@ -353,7 +353,7 @@ confint.manmetavar.mplus <- function(object,
 
 #' Plot Method for an Object of Class `manmetavar.mplus`
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param x Object of class `manmetavar.mplus`.
 #' @param what Character string.

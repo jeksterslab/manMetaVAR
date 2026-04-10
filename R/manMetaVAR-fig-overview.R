@@ -2,7 +2,7 @@
 #'
 #' Plot results overview.
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @inheritParams Template
 #'

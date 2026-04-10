@@ -36,7 +36,7 @@ Summary: Robust (FitMetaVAR)
 This function is executed via the \code{Sum} function.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{manMetaVAR}
 \keyword{simulation}

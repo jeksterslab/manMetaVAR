@@ -65,6 +65,6 @@ This page documents the available methods for objects of class
 \code{manmetavar.naive}.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{methods}

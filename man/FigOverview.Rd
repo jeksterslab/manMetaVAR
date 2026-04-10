@@ -24,7 +24,7 @@ Other Figure Functions:
 \code{\link[=FigMetricHeatmap]{FigMetricHeatmap()}}
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \concept{Figure Functions}
 \keyword{figure}

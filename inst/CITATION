@@ -1,30 +1,13 @@
 year <- 2026
-author_text <- "Pesigan, I. J. A., Russell, M. A., & Chow, S.-M."
+author_text <- "Anonymous"
 pkg <- meta$Package
 title <- "From Person-Specific Dynamics to Population Inference: A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating Complex Multilevel Dynamic Models"
 version <- meta$Version
-author <- c(
-  person(
-    given = "Ivan Jacob Agaloos",
-    family = "Pesigan",
-    role = c("aut", "cre", "cph"),
-    email = "r.jeksterslab@gmail.com",
-    comment = c(ORCID = "0000-0003-4818-8420")
-  ),
-  person(
-    given = "Michael A.",
-    family = "Russell",
-    role = "ctb",
-    email = "mar60@psu.edu",
-    comment = c(ORCID = "0000-0002-3956-604X")
-  ),
-  person(
-    given = "Sy-Miin",
-    family = "Chow",
-    role = "ctb",
-    email = "quc16@psu.edu",
-    comment = c(ORCID = "0000-0003-1938-027X")
-  )
+author <- person(
+  given = "Anonymous",
+  family = "Author",
+  email = "email@email.com",
+  role = c("aut", "cre")
 )
 note <- sprintf(
   "R package version %s",
@@ -54,3 +37,4 @@ bibentry(
     "in publications, please use:"
   )
 )
+

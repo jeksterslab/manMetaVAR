@@ -25,6 +25,6 @@ This page documents the available methods for objects of class
 \code{manmetavar.data}.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{methods}

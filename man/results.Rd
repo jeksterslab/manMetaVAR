@@ -93,7 +93,7 @@ data(results)
 Simulation Results
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{data}
 \keyword{results}

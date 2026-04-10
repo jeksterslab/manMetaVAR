@@ -88,7 +88,7 @@ data(model)
 Model Parameters
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{data}
 \keyword{parameters}

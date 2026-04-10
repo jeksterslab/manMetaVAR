@@ -27,7 +27,7 @@ data(params)
 Simulation Parameters
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{data}
 \keyword{parameters}

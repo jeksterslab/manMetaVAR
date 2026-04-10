@@ -29,7 +29,7 @@ Check Replication - FitDTVAR
 This function is executed via the \code{Check} function.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{check}
 \keyword{manMetaVAR}

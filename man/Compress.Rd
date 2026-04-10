@@ -23,7 +23,7 @@ The output is saved as an external file in \code{output_folder}.
 Compress Replication
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \concept{Compression Functions}
 \keyword{compress}
