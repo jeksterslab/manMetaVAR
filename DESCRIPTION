@@ -28,6 +28,6 @@ Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
 Config/roxygen2/version: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2026-04-10 15:44:09 UTC; root
+Packaged: 2026-04-10 16:06:50 UTC; root
 Author: Anonymous Author [aut, cre]
 Maintainer: Anonymous Author <email@email.com>
