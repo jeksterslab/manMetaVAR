@@ -1,6 +1,6 @@
 #' Summary
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param mplus Logical.
 #'   If `mplus = TRUE`, summarize the DSEM model.

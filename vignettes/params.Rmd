@@ -1,6 +1,6 @@
 ---
 title: "Simulation Parameters"
-author: "Ivan Jacob Agaloos Pesigan"
+author: "Anonymous"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Simulation Parameters}

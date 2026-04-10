@@ -64,7 +64,7 @@ Simulation Replication - FitMplus
 This function is executed via the \code{Sim} function.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{fit}
 \keyword{manMetaVAR}

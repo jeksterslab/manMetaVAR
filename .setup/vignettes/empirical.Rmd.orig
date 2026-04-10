@@ -1,6 +1,6 @@
 ---
 title: "Empirical Illustration: Meta-Analysis of Affect Dynamics"
-author: "Ivan Jacob Agaloos Pesigan"
+author: "Anonymous"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Empirical Illustration: Meta-Analysis of Affect Dynamics}

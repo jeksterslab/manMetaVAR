@@ -39,7 +39,7 @@ Simulation Replication - GenData
 This function is executed via the \code{Sim} function.
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{gendata}
 \keyword{manMetaVAR}

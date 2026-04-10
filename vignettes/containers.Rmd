@@ -1,6 +1,6 @@
 ---
 title: "Containers"
-author: Ivan Jacob Agaloos Pesigan
+author: "Anonymous"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Containers}

@@ -1,6 +1,6 @@
 #' Simulation Parameters
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @docType data
 #' @name params

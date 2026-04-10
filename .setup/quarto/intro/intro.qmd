@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-author: "Ivan Jacob Agaloos Pesigan"
+author: "Anonymous"
 ---
 
 <!-- Use rProject version when de-anonymized -->

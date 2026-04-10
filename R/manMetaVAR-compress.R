@@ -1,6 +1,6 @@
 #' Compress Replication
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'

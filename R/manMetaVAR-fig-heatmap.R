@@ -2,7 +2,7 @@
 #'
 #' Plot results heatmap.
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param metric_name Character string.
 #'   `"coverage"` for coverage probability,

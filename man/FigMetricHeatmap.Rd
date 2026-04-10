@@ -41,7 +41,7 @@ Other Figure Functions:
 \code{\link[=FigOverview]{FigOverview()}}
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \concept{Figure Functions}
 \keyword{figure}

@@ -13,7 +13,7 @@ Returns the project name as a character string.
 Simulation Project Name
 }
 \author{
-Ivan Jacob Agaloos Pesigan
+Anonymous
 }
 \keyword{manMetaVAR}
 \keyword{simulation}

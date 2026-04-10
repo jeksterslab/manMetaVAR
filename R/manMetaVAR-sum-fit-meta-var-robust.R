@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sum` function.
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'

@@ -1,6 +1,6 @@
 ---
 title: "manMetaVAR"
-author: "Ivan Jacob Agaloos Pesigan"
+author: "Anonymous"
 date: "`r Sys.Date()`"
 output: github_document
 bibliography: "vignettes.bib"

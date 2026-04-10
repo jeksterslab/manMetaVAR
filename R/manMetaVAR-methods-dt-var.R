@@ -9,7 +9,7 @@ NULL
 
 #' Parameter Estimates (FitDTVAR)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.dtvar`.
 #' @inheritParams fitVARMxID::coef.varmxid
@@ -41,7 +41,7 @@ coef.manmetavar.dtvar <- function(object,
 
 #' Sampling Covariance Matrix of the Parameter Estimates (FitDTVAR)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.dtvar`.
 #' @inheritParams fitVARMxID::vcov.varmxid
@@ -75,7 +75,7 @@ vcov.manmetavar.dtvar <- function(object,
 
 #' Print Method (FitDTVAR)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param x Object of class `manmetavar.dtvar`.
 #' @param means Logical.
@@ -115,7 +115,7 @@ print.manmetavar.dtvar <- function(x,
 
 #' Summary Method (FitDTVAR)
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @param object Object of class `manmetavar.dtvar`.
 #' @inheritParams fitVARMxID::summary.varmxid

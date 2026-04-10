@@ -1,6 +1,6 @@
 #' Simulation Project Name
 #'
-#' @author Ivan Jacob Agaloos Pesigan
+#' @author Anonymous
 #'
 #' @return Returns the project name as a character string.
 #'
