@@ -219,7 +219,8 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
     data_folder,
     "simulation_diagnostics.rda"
   )
-  if (length(k2_files) > 0L && (!file.exists(k2_output) || overwrite)) {
+  if (!file.exists(k2_output) || overwrite) {
+  # if (length(k2_files) > 0L && (!file.exists(k2_output) || overwrite)) {
     simulation_diagnostics <- combine_diagnostics(k2_files)
     save(
       simulation_diagnostics,
@@ -252,7 +253,8 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
     data_folder,
     "simulation_diagnostics_k4.rda"
   )
-  if (length(k4_files) > 0L && (!file.exists(k4_output) || overwrite)) {
+  if (!file.exists(k4_output) || overwrite) {
+  # if (length(k4_files) > 0L && (!file.exists(k4_output) || overwrite)) {
     simulation_diagnostics_k4 <- combine_diagnostics(k4_files)
     save(
       simulation_diagnostics_k4,
