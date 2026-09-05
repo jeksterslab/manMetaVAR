@@ -19,40 +19,29 @@ source(
 
 # RUN --------------------------------------------------------------------------
 args <- commandArgs(trailingOnly = TRUE)
-repid <- as.integer(args[1])
-taskid <- as.integer(args[2])
-tryCatch(
-  {
-    Compress(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder
-    )
-  },
-  error = function(e) {
-    cat(
-      paste(
-        "check",
-        "taskid:",
-        taskid,
-        "repid:",
-        repid,
-        "\n"
-      )
-    )
-  },
-  warning = function(w) {
-    cat(
-      paste(
-        "check",
-        "taskid:",
-        taskid,
-        "repid:",
-        repid,
-        "\n"
-      )
-    )
-  }
+if (length(args) != 2L) {
+  stop(
+    "Expected exactly two arguments: repid and taskid.",
+    call. = FALSE
+  )
+}
+repid <- suppressWarnings(as.integer(args[1]))
+taskid <- suppressWarnings(as.integer(args[2]))
+if (
+  is.na(repid) ||
+    is.na(taskid) ||
+    repid < 1L ||
+    taskid < 1L
+) {
+  stop(
+    "repid and taskid must be positive integers.",
+    call. = FALSE
+  )
+}
+Compress(
+  taskid = taskid,
+  repid = repid,
+  output_folder = output_folder
 )
 warnings()
 # ------------------------------------------------------------------------------

@@ -1,46 +1,58 @@
-# --------------------------------------------
-# CITATION file created with {cffr} R package
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# --------------------------------------------
+# ------------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "manMetaVAR" in publications use:'
 type: software
 license: MIT
 title: 'manMetaVAR: Meta-Analytic SEM for Multilevel Dynamics'
-version: 0.5.8
+version: 0.9.9
 doi: 10.0000/0000000000
 identifiers:
 - type: url
   value: https://osf.io/uenr7/
 - type: url
   value: https://doi.org/10.0000/0000000000
-abstract: 'Research compendium for the manuscript From Person-Specific Dynamics to
-  Population Inference: A Computationally Efficient Meta-Analytic Structural Equation
-  Modeling Framework for Integrating Complex Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>.'
+abstract: 'Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A.,
+  & Chow, S.-M. (Under Review). From Person-Specific Dynamics to Population Inference:
+  A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework
+  for Integrating Complex Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>.'
 authors:
-- family-names: Author
-  given-names: Anonymous
-  email: email@email.com
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
 preferred-citation:
   type: article
   title: 'From Person-Specific Dynamics to Population Inference: A Computationally
     Efficient Meta-Analytic Structural Equation Modeling Framework for Integrating
     Complex Multilevel Dynamic Models'
   authors:
-  - family-names: Author
-    given-names: Anonymous
-    email: email@email.com
+  - family-names: Pesigan
+    given-names: Ivan Jacob Agaloos
+    email: r.jeksterslab@gmail.com
+    orcid: https://orcid.org/0000-0003-4818-8420
+  - family-names: Russell
+    given-names: Michael A.
+    email: mar60@psu.edu
+    orcid: https://orcid.org/0000-0002-3956-604X
+  - family-names: Chow
+    given-names: Sy-Miin
+    email: quc16@psu.edu
+    orcid: https://orcid.org/0000-0003-1938-027X
   year: '2026'
   doi: 10.0000/0000000000
   journal: JOURNAL_TITLE_HERE
   publisher:
     name: PUBLISHER_HERE
-  notes: R package version 0.5.8
+  notes: R package version 0.9.9
 repository-code: https://github.com/jeksterslab/manMetaVAR
 url: https://jeksterslab.github.io/manMetaVAR/
 contact:
-- family-names: Author
-  given-names: Anonymous
-  email: email@email.com
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
 

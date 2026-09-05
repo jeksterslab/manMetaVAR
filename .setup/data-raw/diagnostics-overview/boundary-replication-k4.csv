@@ -1,0 +1,4 @@
+"taskid","output_type","method","replications_used","near_singular_rate","mcse_near_singular_rate","non_psd_rate","any_near_zero_variance_rate","any_boundary_variance_rate","median_min_eigenvalue"
+9,"fit-meta-var-mx-k4","MetaVAR",10,0,0,0,0,0,0.0189618202438498
+9,"fit-mplus-k4","Mplus DSEM Default",9,,,,0,,
+9,"fit-mplus-k4-priors","Mplus DSEM Alternative Priors",9,,,,0,,

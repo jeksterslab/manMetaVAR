@@ -8,9 +8,14 @@
 #' \dontrun{
 #' seed <- 42
 #' data <- GenData(taskid = 1, seed = seed)
-#' fit <- FitMplus(data = data)
-#' print(fit)
-#' summary(fit)
+#' dsem <- FitMplus(data = data)
+#' print(dsem)
+#' summary(dsem)
+#' coef(dsem)
+#' vcov(dsem)
+#' confint(dsem)
+#' plot(dsem)
+#' plot(dsem, what = "trace")
 #' }
 #'
 #' @family Model Fitting Functions
@@ -21,11 +26,23 @@ FitMplus <- function(data,
                      iter = 40000L,
                      fscores = NULL,
                      plot = FALSE,
+                     default_priors = TRUE,
                      wd = ".",
                      mplus_bin = NULL,
                      ncores = NULL,
                      seed = NULL) {
   start_time <- Sys.time()
+  args <- list(
+    chains = chains,
+    iter = iter,
+    fscores = fscores,
+    plot = plot,
+    default_priors = default_priors,
+    wd = wd,
+    mplus_bin = mplus_bin,
+    ncores = ncores,
+    seed = seed
+  )
   model <- "mplus"
   old_wd <- getwd()
   on.exit(
@@ -78,7 +95,8 @@ FitMplus <- function(data,
     x = data$data,
     file = fn_data,
     row.names = FALSE,
-    col.names = FALSE
+    col.names = FALSE,
+    na = "-999"
   )
   writeLines(
     text = MplusInput(
@@ -89,6 +107,7 @@ FitMplus <- function(data,
       iter = iter,
       fscores = fscores,
       plot = plot,
+      default_priors = default_priors,
       ncores = ncores,
       seed = seed
     ),
@@ -151,8 +170,10 @@ FitMplus <- function(data,
   end_time <- Sys.time()
   elapsed <- end_time - start_time
   out <- list(
+    args = args,
     output = output,
-    elapsed = elapsed
+    elapsed = elapsed,
+    burnin = iter / 2
   )
   class(out) <- c(
     "manmetavar.mplus",

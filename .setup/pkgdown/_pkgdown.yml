@@ -65,6 +65,7 @@ articles:
 - title: Plots
   contents:
   - fig-manuscript-figures
+  - mplus-diagnostics
 - title: Benchmark
   contents:
   - benchmark

@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sum` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -39,11 +39,31 @@ SumFitMetaVARRobust <- function(taskid,
     integrity = integrity
   )
   if (run) {
+    repids <- .SumValidRepids(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      output_type = "fit-meta-var-mx",
+      k4 = FALSE
+    )
+    reps_used <- length(repids)
+    if (reps_used < 2L) {
+      stop(
+        paste0(
+          "At least two admissible replications are required for ",
+          "fit-meta-var-mx; found ",
+          reps_used,
+          "."
+        ),
+        call. = FALSE
+      )
+    }
     replication <- function(repid,
                             taskid) {
       param <- params[taskid, ]
       n <- param$n
       time <- param$time
+      heterogeneity <- param$heterogeneity
       suffix <- .SimSuffix(
         taskid = taskid,
         repid = repid
@@ -58,52 +78,57 @@ SumFitMetaVARRobust <- function(taskid,
         input,
         robust = TRUE
       )
-      random_effect <- .Vech(
-        model$ma_random
+      aligned <- .SumAlignPopulation(
+        raw = raw,
+        heterogeneity = heterogeneity
       )
-      random_effect <- random_effect[
-        random_effect != 0
-      ]
-      parameter <- c(
-        c(
-          model$ma_fixed
-        ),
-        random_effect
-      )
+      raw <- aligned$raw
+      parameter <- aligned$parameter
+      if (length(parameter) != nrow(raw)) {
+        stop(
+          paste(
+            "The number of population values",
+            "does not match the fitted parameters."
+          ),
+          call. = FALSE
+        )
+      }
+      names(parameter) <- rownames(raw)
       df <- data.frame(
-        est = raw[1:19, "est"],
-        se = raw[1:19, "se"],
-        z = raw[1:19, "z"],
-        p = raw[1:19, "p"],
-        ll = raw[1:19, "2.5%"],
-        ul = raw[1:19, "97.5%"],
+        est = raw[, "est"],
+        se = raw[, "se"],
+        z = raw[, "z"],
+        p = raw[, "p"],
+        ll = raw[, "2.5%"],
+        ul = raw[, "97.5%"],
         sig = as.integer(
-          raw[1:19, "p"] < 0.05
+          raw[, "p"] < 0.05
         ),
         zero_hit = as.integer(
           (
-            raw[1:19, "2.5%"] <= 0
+            raw[, "2.5%"] <= 0
           ) & (
-            0 <= raw[1:19, "97.5%"]
+            0 <= raw[, "97.5%"]
           )
         ),
         theta_hit = as.integer(
           (
-            raw[1:19, "2.5%"] <= parameter
+            raw[, "2.5%"] <= parameter
           ) & (
-            parameter <= raw[1:19, "97.5%"]
+            parameter <= raw[, "97.5%"]
           )
         ),
-        sq_error = (parameter - raw[1:19, "est"])^2,
-        bias = raw[1:19, "est"] - parameter,
+        sq_error = (parameter - raw[, "est"])^2,
+        bias = raw[, "est"] - parameter,
         rel_bias = .SimRelBias(
-          thetahat = raw[1:19, "est"],
+          thetahat = raw[, "est"],
           theta = parameter
         )
       )
       attr(df, "taskid") <- taskid
       attr(df, "n") <- n
       attr(df, "time") <- time
+      attr(df, "heterogeneity") <- heterogeneity
       attr(df, "parnames") <- rownames(raw)[1:19]
       attr(df, "parameter") <- parameter
       attr(df, "ci") <- "Robust"
@@ -116,7 +141,7 @@ SumFitMetaVARRobust <- function(taskid,
       ncores <- min(
         as.integer(ncores),
         parallel::detectCores(),
-        reps
+        reps_used
       )
       if (ncores > 1) {
         par <- TRUE
@@ -126,20 +151,20 @@ SumFitMetaVARRobust <- function(taskid,
     }
     if (par) {
       i <- parallel::mclapply(
-        X = seq_len(reps),
+        X = repids,
         FUN = replication,
         taskid = taskid,
         mc.cores = ncores
       )
     } else {
       i <- lapply(
-        X = seq_len(reps),
+        X = repids,
         FUN = replication,
         taskid = taskid
       )
     }
     means <- (
-      1 / reps
+      1 / reps_used
     ) * Reduce(
       f = `+`,
       x = i
@@ -163,7 +188,7 @@ SumFitMetaVARRobust <- function(taskid,
       )
     }
     vars <- (
-      1 / (reps - 1)
+      1 / (reps_used - 1)
     ) * Reduce(
       f = `+`,
       x = sq_errors
@@ -172,15 +197,17 @@ SumFitMetaVARRobust <- function(taskid,
     means <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = means$est,
       se = means$se,
-      t = means$t,
+      z = means$z,
       p = means$p,
       ll = means$ll,
       ul = means$ul,
@@ -194,15 +221,17 @@ SumFitMetaVARRobust <- function(taskid,
     vars <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = vars$est,
       se = vars$se,
-      t = vars$t,
+      z = vars$z,
       p = vars$p,
       ll = vars$ll,
       ul = vars$ul,
@@ -216,15 +245,17 @@ SumFitMetaVARRobust <- function(taskid,
     sds <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = sds$est,
       se = sds$se,
-      t = sds$t,
+      z = sds$z,
       p = sds$p,
       ll = sds$ll,
       ul = sds$ul,
@@ -239,8 +270,25 @@ SumFitMetaVARRobust <- function(taskid,
     means$rel_se_bias <- (means$se - sds$est) / sds$est
     means$rmse <- sqrt(means$sq_error)
     means$coverage <- means$theta_hit
-    means$power <- 1 - means$zero_hit
+    means$rejection_rate <- 1 - means$zero_hit
+    zero_truth <- means$parameter == 0
+    means$power <- ifelse(
+      test = zero_truth,
+      yes = NA_real_,
+      no = means$rejection_rate
+    )
+    means$type1_error <- ifelse(
+      test = zero_truth,
+      yes = means$rejection_rate,
+      no = NA_real_
+    )
+    means$success_rate <- reps_used / reps
+    means <- .SumMCSE(
+      replications = i,
+      means = means
+    )
     output <- list(
+      repids = repids,
       replications = i,
       means = means,
       vars = vars,

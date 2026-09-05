@@ -27,6 +27,10 @@ plot(data)
 }
 
 }
+\seealso{
+Other Data Generation Functions:
+\code{\link[=GenDataK4]{GenDataK4()}}
+}
 \concept{Data Generation Functions}
 \keyword{gendata}
 \keyword{manMetaVAR}

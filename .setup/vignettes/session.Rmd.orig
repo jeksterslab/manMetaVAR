@@ -1,6 +1,6 @@
 ---
 title: "manMetaVAR: Session"
-author: "Anonymous"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{manMetaVAR: Session}

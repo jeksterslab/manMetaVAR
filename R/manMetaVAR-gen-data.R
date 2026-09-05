@@ -24,9 +24,12 @@ GenData <- function(taskid,
   if (isFALSE(is.null(seed))) {
     set.seed(seed)
   }
-  param <- params[taskid, ]
+  param <- .TaskParameters(
+    taskid = taskid
+  )
   n <- param$n
   time <- param$time
+  heterogeneity <- param$heterogeneity
   if (is.na(time)) {
     time <- max(params$time, na.rm = TRUE)
   }
@@ -35,11 +38,22 @@ GenData <- function(taskid,
     nu = model$mu_mu,
     vcov_nu_l = model$mu_sigma_l
   )
-  beta <- simStateSpace::SimBetaN(
-    n = n,
-    beta = model$beta_mu,
-    vcov_beta_vec_l = model$beta_sigma_l
-  )
+  if (heterogeneity > 0) {
+    margin <- population$calibration$margin
+    beta <- simStateSpace::SimBetaN(
+      n = n,
+      beta = model$beta_mu,
+      vcov_beta_vec_l = sqrt(heterogeneity) * model$beta_sigma_l,
+      margin = margin
+    )
+  } else {
+    beta <- lapply(
+      X = seq_len(n),
+      FUN = function(i) {
+        model$beta_mu
+      }
+    )
+  }
   alpha <- mapply(
     FUN = simStateSpace::SSMInterceptEta,
     beta = beta,
@@ -96,7 +110,10 @@ GenData <- function(taskid,
     df <- data
     ids <- unique(df$id)
     times <- unique(params$time[stats::complete.cases(params$time)])
-    times <- rep(x = times, length = length(ids))
+    times <- rep(
+      x = times,
+      length.out = length(ids)
+    )
     data <- do.call(
       what = "rbind",
       args = mapply(

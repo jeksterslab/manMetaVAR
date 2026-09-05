@@ -1,0 +1,270 @@
+---
+title: "Bayesian (Mplus) Diagnostics"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Bayesian (Mplus) Diagnostics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-mplus-diagnostics-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 6.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r, library}
+#| echo = FALSE,
+#| message = FALSE
+library(manMetaVAR)
+```
+
+```{r, data}
+#| echo = FALSE
+data(diagnostics, package = "manMetaVAR")
+```
+
+## Overview
+
+The Bayesian simulation conditions were estimated in Mplus using the default
+prior specification and the user-specified prior specification. The figures
+below summarize convergence and Monte Carlo performance across all simulation
+task IDs.
+
+For the primary summaries, a replication is classified as having a diagnostic
+failure within a parameter block when at least one parameter in that block
+fails the requested criterion. The three parameter blocks are the innovation
+covariance parameters, fixed effects, and random effects. This block-level
+summary is more compact than displaying every parameter in the main figure.
+
+The default diagnostic thresholds are R-hat greater than 1.01, bulk or tail
+effective sample size less than 400, and relative Monte Carlo standard error
+greater than 0.05. Nonfinite diagnostics are classified as failures.
+
+## Overall diagnostic failure rates
+
+### Default and user-specified priors
+
+```{r, failure-rate-levels}
+#| echo = FALSE,
+#| cache = FALSE
+FigMplusDiagnosticsOverview(
+  diagnostics = diagnostics,
+  comparison = "levels",
+  diagnostic = "Any diagnostic"
+)
+```
+
+### Prior sensitivity
+
+The following figure reports the paired difference in failure rates:
+
+\[
+\text{user-specified priors} - \text{default priors}.
+\]
+
+Negative values indicate fewer failures under the user-specified priors,
+whereas positive values indicate more failures.
+
+```{r, failure-rate-difference}
+#| echo = FALSE,
+#| cache = FALSE
+FigMplusDiagnosticsOverview(
+  diagnostics = diagnostics,
+  comparison = "difference",
+  diagnostic = "Any diagnostic",
+  values = TRUE,
+  label_threshold = 0.10
+)
+```
+
+### Simulation-case sensitivity table
+
+The block-level figure emphasizes broad patterns. The following table retains
+each simulation case separately and reports the paired user-prior minus
+default-prior difference in the percentage of replications with at least one
+failed parameter in each block. Positive values indicate more failures under
+the user-specified priors, whereas negative values indicate fewer failures.
+
+```{r, failure-rate-sensitivity-table}
+#| echo = FALSE,
+#| results = "asis"
+diagnostic_sensitivity <- TabMplusDiagSensitivity(
+  diagnostics = diagnostics,
+  comparison = "difference",
+  diagnostic = "Any diagnostic",
+  output = "data.frame",
+  scale = "percent",
+  digits = 0L
+)
+
+diagnostic_sensitivity <- diagnostic_sensitivity[
+  c(
+    "taskid",
+    "heterogeneity",
+    "n",
+    "time",
+    "Innovation covariance",
+    "Fixed effects",
+    "Random effects"
+  )
+]
+
+diagnostic_sensitivity$time <- ifelse(
+  is.na(diagnostic_sensitivity$time),
+  "Unbalanced",
+  as.character(diagnostic_sensitivity$time)
+)
+
+format_percentage_point <- function(x) {
+  ifelse(
+    is.na(x),
+    "",
+    ifelse(
+      x == 0,
+      "0 pp",
+      sprintf("%+d pp", as.integer(x))
+    )
+  )
+}
+
+diagnostic_columns <- c(
+  "Innovation covariance",
+  "Fixed effects",
+  "Random effects"
+)
+
+diagnostic_sensitivity[diagnostic_columns] <- lapply(
+  diagnostic_sensitivity[diagnostic_columns],
+  format_percentage_point
+)
+
+names(diagnostic_sensitivity) <- c(
+  "Task ID",
+  "Heterogeneity",
+  "N",
+  "T",
+  "Innovation covariance",
+  "Fixed effects",
+  "Random effects"
+)
+
+knitr::kable(
+  diagnostic_sensitivity,
+  align = c("r", "r", "r", "l", "r", "r", "r"),
+  caption = paste(
+    "Paired user-prior minus default-prior diagnostic failure-rate",
+    "differences for each simulation case."
+  )
+)
+```
+
+## Sources of diagnostic failure
+
+The next figure separates failures attributable to R-hat, bulk effective
+sample size, tail effective sample size, and relative Monte Carlo standard
+error. Cell labels are omitted to emphasize the overall pattern.
+
+```{r, diagnostic-specific-failures}
+#| echo = FALSE,
+#| cache = FALSE
+FigMplusDiagnosticsOverview(
+  diagnostics = diagnostics,
+  comparison = "difference",
+  diagnostic = c(
+    "R-hat",
+    "Bulk ESS",
+    "Tail ESS",
+    "Relative MCSE"
+  )
+)
+```
+
+## Alternative diagnostic thresholds
+
+A compact threshold-sensitivity analysis can be produced by changing the
+criteria while retaining the same block-level summary. The example below uses
+R-hat greater than 1.05, effective sample size less than 200, and relative
+Monte Carlo standard error greater than 0.10.
+
+```{r, alternative-thresholds}
+#| echo = FALSE,
+#| cache = FALSE
+FigMplusDiagnosticsOverview(
+  diagnostics = diagnostics,
+  comparison = "difference",
+  diagnostic = "Any diagnostic",
+  rhat_threshold = 1.05,
+  ess_threshold = 200,
+  mcse_threshold = 0.10,
+  values = TRUE,
+  label_threshold = 0.10
+)
+```
+
+## Parameter-level follow-up figures
+
+The block-level overview is intended for the manuscript or response to
+reviewers. Parameter-level heatmaps can be used as supplementary drill-down
+figures when a block shows meaningful diagnostic sensitivity. To keep these
+figures legible, display one parameter family at a time and omit cell labels.
+
+```{r, parameter-level-example}
+#| eval = FALSE,
+#| echo = TRUE
+fixed_effect_parameters <- c(
+  "mean(beta[1,1])",
+  "mean(beta[2,1])",
+  "mean(beta[1,2])",
+  "mean(beta[2,2])",
+  "mean(mu[1,1])",
+  "mean(mu[2,1])"
+)
+
+FigMplusDiagnosticsHeatmap(
+  diagnostics = diagnostics,
+  metric_name = "failure_rate",
+  comparison = "difference",
+  diagnostic = "Any diagnostic",
+  parm = fixed_effect_parameters,
+  values = FALSE
+)
+```
+
+Raw R-hat, effective sample size, and Monte Carlo standard-error differences
+are generally less interpretable as primary figures because they use very
+different numerical scales. Threshold-based failure rates provide a common and
+directly interpretable sensitivity metric. The continuous diagnostics can
+still be inspected for selected parameters when needed.
+
+## Extracting plotted summaries
+
+Each figure retains the values used to construct the heatmap. These summaries
+can be used for manuscript tables or reviewer-response text.
+
+```{r, plotted-data}
+#| echo = FALSE,
+#| results = "markup"
+diagnostic_plot <- FigMplusDiagnosticsOverview(
+  diagnostics = diagnostics,
+  comparison = "difference",
+  diagnostic = "Any diagnostic"
+)
+
+head(diagnostic_plot$data)
+```
+
+```{r, rm}
+#| include = FALSE
+rm(list = ls())
+```

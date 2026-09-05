@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+
 
 #SBATCH --job-name=check
 #SBATCH --mail-user=r.jeksterslab@gmail.com
@@ -10,12 +11,17 @@
 #SBATCH --output=check.out
 #SBATCH --error=check.err
 
+set -euo pipefail
+
 # Define project variables
 PROJECT=manMetaVAR
 SIF=manmetavar.sif
 
 # load parallel module ---------------------------------------------------------
-module load parallel
+if ! command -v parallel >/dev/null 2>&1; then
+    module load parallel
+fi
+# ------------------------------------------------------------------------------
 
 # pre TMP ----------------------------------------------------------------------
 mkdir -p /scratch/$USER/${PROJECT}/.sim/tmp
@@ -27,14 +33,14 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 
 # script -----------------------------------------------------------------------
 repid_start=1
-repid_end=1000
+repid_end=10
 taskid_start=1
-taskid_end=12
+taskid_end=36
 
 cmd="apptainer exec \
      --bind /scratch/\$USER/${PROJECT}:/scratch/\$USER/${PROJECT} \
      /scratch/\$USER/${PROJECT}/.sif/${SIF} \
-     Rscript /scratch/\$USER/${PROJECT}/.sim/check.R {1} {2}; \
+     Rscript /scratch/\$USER/${PROJECT}/.sim/check.R {1} {2} && \
      echo sim taskid \$(printf \"%05d\" {2}) repid \$(printf \"%05d\" {1}) date \$(date '+%Y-%m-%d %H:%M:%S')"
 
 cd /scratch/$USER/${PROJECT} || exit

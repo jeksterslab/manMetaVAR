@@ -26,13 +26,16 @@ pkg_cran <- c(
   "ggplot2",
   "dplyr",
   "tidyr",
-  "microbenchmark"
+  "microbenchmark",
+  "fitVARMxID",
+  "metaDyn"
 )
 
 pkg_github <- c(
   "jeksterslab/simStateSpace",
   "jeksterslab/fitVARMxID",
-  "jeksterslab/metaDyn"
+  "jeksterslab/metaDyn",
+  "jeksterslab/dynTools"
 )
 
 pkg_github_ref <- c()

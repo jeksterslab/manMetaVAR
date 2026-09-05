@@ -41,43 +41,32 @@ source(
 
 # RUN --------------------------------------------------------------------------
 args <- commandArgs(trailingOnly = TRUE)
-repid <- as.integer(args[1])
-taskid <- as.integer(args[2])
-tryCatch(
-  {
-    Check(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      naive = naive,
-      metavar = metavar,
-      mplus = mplus
-    )
-  },
-  error = function(e) {
-    cat(
-      paste(
-        "check",
-        "taskid:",
-        taskid,
-        "repid:",
-        repid,
-        "\n"
-      )
-    )
-  },
-  warning = function(w) {
-    cat(
-      paste(
-        "check",
-        "taskid:",
-        taskid,
-        "repid:",
-        repid,
-        "\n"
-      )
-    )
-  }
+if (length(args) != 2L) {
+  stop(
+    "Expected exactly two arguments: repid and taskid.",
+    call. = FALSE
+  )
+}
+repid <- suppressWarnings(as.integer(args[1]))
+taskid <- suppressWarnings(as.integer(args[2]))
+if (
+  is.na(repid) ||
+    is.na(taskid) ||
+    repid < 1L ||
+    taskid < 1L
+) {
+  stop(
+    "repid and taskid must be positive integers.",
+    call. = FALSE
+  )
+}
+Check(
+  taskid = taskid,
+  repid = repid,
+  output_folder = output_folder,
+  naive = naive,
+  metavar = metavar,
+  mplus = mplus
 )
 warnings()
 # ------------------------------------------------------------------------------

@@ -1,0 +1,66 @@
+data_process_params <- function(overwrite = FALSE) {
+  cat("\ndata_process_params\n")
+  set.seed(42)
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  data_folder <- root$find_file(
+    "data"
+  )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
+  params_file <- file.path(
+    data_folder,
+    "params.rda"
+  )
+  if (!file.exists(params_file)) {
+    write <- TRUE
+  } else {
+    if (overwrite) {
+      write <- TRUE
+    } else {
+      write <- FALSE
+    }
+  }
+  if (write) {
+    n <- c(
+      50,
+      100,
+      200
+    )
+    time <- c(
+      50,
+      100,
+      200,
+      NA
+    )
+    heterogeneity <- c(
+      1,
+      2,
+      0
+    )
+    taskid <- seq_len(
+      length(n) * length(time) * length(heterogeneity)
+    )
+    params <- expand.grid(
+      n = n,
+      time = time,
+      heterogeneity = heterogeneity
+    )
+    params <- data.frame(
+      taskid = taskid,
+      params
+    )
+    rownames(params) <- params$taskid
+    save(
+      params,
+      file = params_file,
+      compress = "xz"
+    )
+  }
+}
+data_process_params()
+rm(data_process_params)

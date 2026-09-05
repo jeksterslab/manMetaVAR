@@ -1,0 +1,6 @@
+"taskid","k","n","time","heterogeneity","output_type","method","stage","replications_requested","files_present","readable","converged","admissible","successful","missing_file","unreadable_file","check_error","nonconvergence","inadmissible","convergence_rate","admissible_rate","success_rate"
+9,4,200,200,1,"fit-dt-var-mx-k4","Stage 1","Stage 1",10,10,10,10,10,10,0,0,0,0,0,1,1,1
+9,4,200,200,1,"fit-meta-var-mx-k4","MetaVAR","Stage 2",10,10,10,10,10,10,0,0,0,0,0,1,1,1
+9,4,200,200,1,"fit-mplus-k4","Mplus DSEM Default","Joint",10,10,10,9,9,9,0,0,0,1,0,0.9,0.9,0.9
+9,4,200,200,1,"fit-mplus-k4-priors","Mplus DSEM Alternative Priors","Joint",10,10,10,9,9,9,0,0,0,1,0,0.9,0.9,0.9
+9,4,200,200,1,"pipeline-meta-var-k4","MetaVAR","Full pipeline",10,10,10,10,10,10,0,0,0,0,0,1,1,1

@@ -1,6 +1,6 @@
 ---
 title: "Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage Approach and Bayesian Multilevel VAR"
-author: "Anonymous"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Benchmarking MetaVAR Against an Uncertainty-Uncorrected Two-Stage Approach and Bayesian Multilevel VAR}
@@ -34,21 +34,25 @@ We expected the Uncorr approach to be the fastest because it performs the least 
 
 The benchmark results are summarized below in seconds.
 
-- **Uncorr** was the fastest method, with a mean runtime of 14.67 seconds and a median runtime of 14.36 seconds.
-- **MetaVAR** had a mean runtime of 47.55 seconds and a median runtime of 47.31 seconds.
-- **BMLVAR** was the slowest method, with a mean runtime of 364.61 seconds and a median runtime of 364.48 seconds.
+- **Uncorr** was the fastest method, with a mean runtime of 8.48 seconds and a median runtime of 8.43 seconds.
+- **MetaVAR** had a mean runtime of 78.30 seconds and a median runtime of 78.99 seconds.
+- **BMLVAR** was the slowest method, with a mean runtime of 744.89 seconds and a median runtime of 745.13 seconds.
 
-The ordering was stable across all 100 benchmark repetitions: **Uncorr** was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest. These results place MetaVAR in a computational middle ground. It is clearly slower than the Uncorr approach, as expected, but it remains much faster than the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR required about 32.88 more seconds than Uncorr on this task, whereas BMLVAR required about 317.06 more seconds than MetaVAR.
+The ordering was stable across all 100 benchmark repetitions: **Uncorr** was fastest, **MetaVAR** was intermediate, and **BMLVAR** was slowest. These results place MetaVAR in a computational middle ground. It is clearly slower than the Uncorr approach, as expected, but it remains much faster than the joint Bayesian multilevel VAR model. In absolute terms, MetaVAR required about 69.82 more seconds than Uncorr on this task, whereas BMLVAR required about 666.59 more seconds than MetaVAR.
 
 Runtime variability within each method was also modest. This suggests that the observed differences reflect stable differences in computational burden rather than incidental benchmark noise.
 
 
 ``` r
 summary(benchmark, unit = "seconds")
-#>      expr       min        lq      mean    median        uq       max neval
-#> 1 MetaVAR  43.17602  46.49405  47.54943  47.31046  48.31051  53.70043   100
-#> 2  Uncorr  12.75974  13.90272  14.66962  14.35964  15.14774  19.35440   100
-#> 3  BMLVAR 362.99736 364.08500 364.60915 364.48380 365.05887 367.14739   100
+#>      expr       min         lq       mean     median         uq        max
+#> 1 MetaVAR  76.60811  77.200063  78.299766  78.992844  79.220246  79.477564
+#> 2  Uncorr   8.20343   8.414598   8.475516   8.431468   8.513204   8.814879
+#> 3  BMLVAR 743.59828 744.158898 744.890124 745.125675 745.680840 745.886922
+#>   neval
+#> 1     5
+#> 2     5
+#> 3     5
 ```
 
 ## Summary of Benchmark Results Relative to the Fastest Method
@@ -56,20 +60,20 @@ summary(benchmark, unit = "seconds")
 The relative benchmark results rescale runtimes so that the fastest method is set to 1.
 
 - **Uncorr** is the reference method, so its relative runtime is 1.00 by definition.
-- **MetaVAR** had a mean relative runtime of 3.24, meaning that it took about 3 times as long as Uncorr.
-- **BMLVAR** had a mean relative runtime of 24.85, meaning that it took about 25 times as long as Uncorr.
+- **MetaVAR** had a mean relative runtime of 9.24, meaning that it took about 9 times as long as Uncorr.
+- **BMLVAR** had a mean relative runtime of 87.89, meaning that it took about 88 times as long as Uncorr.
 
-Put differently, BMLVAR took roughly 7.7 times as long as MetaVAR on average. Thus, although MetaVAR is not as fast as the Uncorr approach, it substantially reduces computation time relative to the joint Bayesian alternative.
+Put differently, BMLVAR took roughly 9.5 times as long as MetaVAR on average. Thus, although MetaVAR is not as fast as the Uncorr approach, it substantially reduces computation time relative to the joint Bayesian alternative.
 
 This pattern is consistent with the intended role of MetaVAR. It is not designed to match the speed of a simple summary method. Rather, it aims to provide a more principled two-stage synthesis while retaining a substantial computational advantage over joint estimation.
 
 
 ``` r
 summary(benchmark, unit = "relative")
-#>      expr      min        lq      mean    median        uq       max neval
-#> 1 MetaVAR  3.38377  3.344241  3.241353  3.294684  3.189288  2.774586   100
-#> 2  Uncorr  1.00000  1.000000  1.000000  1.000000  1.000000  1.000000   100
-#> 3  BMLVAR 28.44865 26.188040 24.854707 25.382525 24.099892 18.969715   100
+#>      expr       min        lq      mean    median        uq       max neval
+#> 1 MetaVAR  9.338546  9.174539  9.238348  9.368813  9.305574  9.016296     5
+#> 2  Uncorr  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000     5
+#> 3  BMLVAR 90.644796 88.436652 87.887290 88.374375 87.591093 84.616806     5
 ```
 
 ## Plot

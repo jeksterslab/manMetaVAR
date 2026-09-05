@@ -1,7 +1,7 @@
 #' Relative Bias
 #'
 #' Calculates relative bias if parameter is not equal to zero.
-#' Returns `-999.999` otherwise.
+#' Returns `NA_real_` otherwise because relative bias is undefined at zero.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -19,7 +19,7 @@
                         theta) {
   ifelse(
     test = theta == 0,
-    yes = -999.999,
+    yes = NA_real_,
     no = (thetahat - theta) / theta
   )
 }

@@ -1,6 +1,6 @@
 #' Simulation Parameters
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @docType data
 #' @name params
@@ -17,6 +17,10 @@
 #'   \item{time}{
 #'     Number of measurement occassions.
 #'     If `NA`, measurement occasions vary across IDs.
+#'   }
+#'   \item{heterogeneity}{
+#'     Transition-parameter heterogeneity multiplier: 0, 1,
+#'     or 2.
 #'   }
 #' }
 #'

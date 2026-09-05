@@ -1,0 +1,1033 @@
+Mplus VERSION 9.1 (Linux)
+MUTHEN & MUTHEN
+09/05/2026   7:03 PM
+
+INPUT INSTRUCTIONS
+
+
+      TITLE:
+        Multilevel Vector Autoregressive Model
+      DATA:
+        FILE = mplus_zXffbZc1ub2L5jNeGWMJ_data.dat;
+      VARIABLE:
+        NAMES = ID TIME Y1 Y2;
+        USEVARIABLES = Y1 Y2;
+        MISSING = ALL (-999);
+        CLUSTER = ID;
+        LAGGED = Y1(1) Y2(1);
+      ANALYSIS:
+        TYPE = TWOLEVEL RANDOM;
+        ESTIMATOR = BAYES;
+        CHAINS = 2;
+        FBITER = (40000);
+        PROCESSORS = 1;
+        BSEED = 42;
+      MODEL:
+        %WITHIN%
+          ! transition matrix
+          BETA11 | Y1 ON Y1&1;
+          BETA21 | Y2 ON Y1&1;
+          BETA12 | Y1 ON Y2&1;
+          BETA22 | Y2 ON Y2&1;
+
+          ! within-person innovation covariance
+          Y1 (W1);
+          Y2 WITH Y1 (W2);
+          Y2 (W3);
+
+        %BETWEEN%
+          ! population means of person-specific set points
+          [Y1] (FM1);
+          [Y2] (FM2);
+
+          ! between-person covariance of set points
+          Y1 (M1);
+          Y2 WITH Y1 (M2);
+          Y2 (M3);
+
+          ! population-average transition coefficients
+          [BETA11] (FB1);
+          [BETA21] (FB2);
+          [BETA12] (FB3);
+          [BETA22] (FB4);
+
+          ! between-person covariance of transition coefficients
+          BETA11 (B1);
+          BETA21 WITH BETA11 (B2);
+          BETA12 WITH BETA11 (B3);
+          BETA22 WITH BETA11 (B4);
+
+          BETA21 (B5);
+          BETA12 WITH BETA21 (B6);
+          BETA22 WITH BETA21 (B7);
+
+          BETA12 (B8);
+          BETA22 WITH BETA12 (B9);
+
+          BETA22 (B10);
+
+      MODEL PRIORS:
+        ! relatively weakly informative, scale-aware fixed-effect priors
+        FM1-FM2 ~ N(0, 25);
+        FB1-FB4 ~ N(0, 0.25);
+
+        ! proper inverse-Wishart prior for innovation covariance
+        W1 ~ IW(1, 3);
+        W2 ~ IW(0, 3);
+        W3 ~ IW(1, 3);
+
+        ! proper inverse-Wishart prior for set-point heterogeneity
+        M1 ~ IW(1, 3);
+        M2 ~ IW(0, 3);
+        M3 ~ IW(1, 3);
+
+        ! scale-calibrated inverse-Wishart prior for
+        ! transition heterogeneity
+        B1    ~ IW(0.004, 5);
+        B2-B4 ~ IW(0, 5);
+        B5    ~ IW(0.004, 5);
+        B6-B7 ~ IW(0, 5);
+        B8    ~ IW(0.004, 5);
+        B9    ~ IW(0, 5);
+        B10   ~ IW(0.004, 5);
+      OUTPUT:
+        TECH1 TECH8;
+      SAVEDATA:
+        BPARAMETERS = mplus_zXffbZc1ub2L5jNeGWMJ_posterior.dat;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+
+Multilevel Vector Autoregressive Model
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        5750
+
+Number of dependent variables                                    2
+Number of independent variables                                  2
+Number of continuous latent variables                            4
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2
+
+Observed independent variables
+   Y1&1        Y2&1
+
+Continuous latent variables
+   BETA11      BETA21      BETA12      BETA22
+
+Variables with special functions
+
+  Cluster variable      ID
+
+  Within variables
+   Y1&1        Y2&1
+
+
+Estimator                                                    BAYES
+Specifications for Bayesian Estimation
+  Point estimate                                            MEDIAN
+  Number of Markov chain Monte Carlo (MCMC) chains               2
+  Random seed for the first chain                               42
+  Starting value information                           UNPERTURBED
+  Algorithm used for Markov chain Monte Carlo           GIBBS(PX1)
+  Fixed number of iterations                                 40000
+  K-th iteration used for thinning                               1
+
+Input data file(s)
+  mplus_zXffbZc1ub2L5jNeGWMJ_data.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of clusters                         50
+
+       Size (s)    Cluster ID with Size s
+
+         50        1 4 7 10 13 16 19 22 25 28 31 34 37 40 43 46 49
+        100        26 14 29 8 32 17 35 5 38 20 41 11 44 23 47 2 50
+        200        24 36 12 18 39 27 9 42 3 30 45 21 15 48 33 6
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+     Number of missing data patterns             2
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Y1            Y2
+              ________      ________
+ Y1             1.000
+ Y2             1.000         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    2.890      -0.090      -3.247    0.02%       1.475      2.544      2.941
+            5750.000       2.692      -0.005       9.199    0.02%       3.328      4.254
+     Y2                    2.175       0.012      -4.140    0.02%       0.790      1.741      2.191
+            5750.000       2.671      -0.011       8.406    0.02%       2.597      3.541
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     USE THE FBITERATIONS OPTION TO INCREASE THE NUMBER OF ITERATIONS BY A FACTOR
+     OF AT LEAST TWO TO CHECK CONVERGENCE AND THAT THE PSR VALUE DOES NOT INCREASE.
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                              22
+
+Information Criteria
+
+          Deviance (DIC)                        35870.738
+          Estimated Number of Parameters (pD)     195.017
+
+
+
+MODEL RESULTS
+
+                                Posterior  One-Tailed         95% C.I.
+                    Estimate       S.D.      P-Value   Lower 2.5%  Upper 2.5%  Significance
+
+Within Level
+
+ Y2       WITH
+    Y1                 0.559       0.020      0.000       0.520       0.600      *
+
+ Residual Variances
+    Y1                 1.302       0.025      0.000       1.255       1.351      *
+    Y2                 1.543       0.029      0.000       1.487       1.601      *
+
+Between Level
+
+ BETA21   WITH
+    BETA11             0.004       0.003      0.041      -0.001       0.011
+    BETA12             0.001       0.001      0.250      -0.002       0.004
+    BETA22             0.005       0.004      0.089      -0.002       0.013
+
+ BETA12   WITH
+    BETA11             0.000       0.002      0.471      -0.004       0.003
+    BETA22             0.000       0.003      0.488      -0.005       0.006
+
+ BETA22   WITH
+    BETA11             0.013       0.005      0.001       0.005       0.024      *
+
+ Y2       WITH
+    Y1                 0.558       0.201      0.000       0.244       1.031      *
+
+ Means
+    Y1                 2.892       0.168      0.000       2.555       3.219      *
+    Y2                 2.327       0.148      0.000       2.035       2.617      *
+    BETA11             0.263       0.022      0.000       0.221       0.306      *
+    BETA21            -0.072       0.019      0.000      -0.107      -0.034      *
+    BETA12            -0.052       0.015      0.000      -0.081      -0.024      *
+    BETA22             0.239       0.029      0.000       0.182       0.296      *
+
+ Variances
+    Y1                 1.353       0.293      0.000       0.933       2.062      *
+    Y2                 1.025       0.226      0.000       0.697       1.578      *
+    BETA11             0.012       0.005      0.000       0.006       0.024      *
+    BETA21             0.005       0.003      0.000       0.001       0.013      *
+    BETA12             0.002       0.001      0.000       0.001       0.005      *
+    BETA22             0.029       0.008      0.000       0.017       0.049      *
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR WITHIN
+
+
+           NU
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+                    0             0             0             0
+
+
+           LAMBDA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1                 0             0             0             0
+ Y2                 0             0             0             0
+ Y1&1               0             0             0             0
+ Y2&1               0             0             0             0
+
+
+           THETA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1                 0
+ Y2                 0             0
+ Y1&1               0             0             0
+ Y2&1               0             0             0             0
+
+
+           ALPHA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+                    0             0             0             0
+
+
+           BETA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1                 0             0             0             0
+ Y2                 0             0             0             0
+ Y1&1               0             0             0             0
+ Y2&1               0             0             0             0
+
+
+           PSI
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1                 1
+ Y2                 2             3
+ Y1&1               0             0             0
+ Y2&1               0             0             0             0
+
+
+     PARAMETER SPECIFICATION FOR BETWEEN
+
+
+           NU
+              Y1            Y2
+              ________      ________
+                    0             0
+
+
+           LAMBDA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ Y1                 0             0             0             0             0
+ Y2                 0             0             0             0             0
+
+
+           LAMBDA
+              Y2
+              ________
+ Y1                 0
+ Y2                 0
+
+
+           THETA
+              Y1            Y2
+              ________      ________
+ Y1                 0
+ Y2                 0             0
+
+
+           ALPHA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+                    4             5             6             7             8
+
+
+           ALPHA
+              Y2
+              ________
+                    9
+
+
+           BETA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ BETA11             0             0             0             0             0
+ BETA21             0             0             0             0             0
+ BETA12             0             0             0             0             0
+ BETA22             0             0             0             0             0
+ Y1                 0             0             0             0             0
+ Y2                 0             0             0             0             0
+
+
+           BETA
+              Y2
+              ________
+ BETA11             0
+ BETA21             0
+ BETA12             0
+ BETA22             0
+ Y1                 0
+ Y2                 0
+
+
+           PSI
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ BETA11            10
+ BETA21            11            12
+ BETA12            13            14            15
+ BETA22            16            17            18            19
+ Y1                 0             0             0             0            20
+ Y2                 0             0             0             0            21
+
+
+           PSI
+              Y2
+              ________
+ Y2                22
+
+
+     STARTING VALUES FOR WITHIN
+
+
+           NU
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1             1.000         0.000         0.000         0.000
+ Y2             0.000         1.000         0.000         0.000
+ Y1&1           0.000         0.000         1.000         0.000
+ Y2&1           0.000         0.000         0.000         1.000
+
+
+           THETA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1             0.000
+ Y2             0.000         0.000
+ Y1&1           0.000         0.000         0.000
+ Y2&1           0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           BETA
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1             0.000         0.000         0.000         0.000
+ Y2             0.000         0.000         0.000         0.000
+ Y1&1           0.000         0.000         0.000         0.000
+ Y2&1           0.000         0.000         0.000         0.000
+
+
+           PSI
+              Y1            Y2            Y1&1          Y2&1
+              ________      ________      ________      ________
+ Y1             1.346
+ Y2             0.000         1.335
+ Y1&1           0.000         0.000         1.350
+ Y2&1           0.000         0.000         0.000         1.332
+
+
+     STARTING VALUES FOR BETWEEN
+
+
+           NU
+              Y1            Y2
+              ________      ________
+                0.000         0.000
+
+
+           LAMBDA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ Y1             0.000         0.000         0.000         0.000         1.000
+ Y2             0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              Y2
+              ________
+ Y1             0.000
+ Y2             1.000
+
+
+           THETA
+              Y1            Y2
+              ________      ________
+ Y1             0.000
+ Y2             0.000         0.000
+
+
+           ALPHA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         2.890
+
+
+           ALPHA
+              Y2
+              ________
+                2.175
+
+
+           BETA
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ BETA11         0.000         0.000         0.000         0.000         0.000
+ BETA21         0.000         0.000         0.000         0.000         0.000
+ BETA12         0.000         0.000         0.000         0.000         0.000
+ BETA22         0.000         0.000         0.000         0.000         0.000
+ Y1             0.000         0.000         0.000         0.000         0.000
+ Y2             0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              Y2
+              ________
+ BETA11         0.000
+ BETA21         0.000
+ BETA12         0.000
+ BETA22         0.000
+ Y1             0.000
+ Y2             0.000
+
+
+           PSI
+              BETA11        BETA21        BETA12        BETA22        Y1
+              ________      ________      ________      ________      ________
+ BETA11         1.000
+ BETA21         0.000         1.000
+ BETA12         0.000         0.000         1.000
+ BETA22         0.000         0.000         0.000         1.000
+ Y1             0.000         0.000         0.000         0.000         1.346
+ Y2             0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              Y2
+              ________
+ Y2             1.335
+
+
+
+     PRIORS FOR ALL PARAMETERS            PRIOR MEAN      PRIOR VARIANCE     PRIOR STD. DEV.
+
+     Parameter 1~IW(1.000,3)               infinity            infinity            infinity
+     Parameter 2~IW(0.000,3)               infinity            infinity            infinity
+     Parameter 3~IW(1.000,3)               infinity            infinity            infinity
+     Parameter 4~N(0.000,0.250)              0.0000              0.2500              0.5000
+     Parameter 5~N(0.000,0.250)              0.0000              0.2500              0.5000
+     Parameter 6~N(0.000,0.250)              0.0000              0.2500              0.5000
+     Parameter 7~N(0.000,0.250)              0.0000              0.2500              0.5000
+     Parameter 8~N(0.000,25.000)             0.0000             25.0000              5.0000
+     Parameter 9~N(0.000,25.000)             0.0000             25.0000              5.0000
+     Parameter 10~IW(0.004,5)              infinity            infinity            infinity
+     Parameter 11~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 12~IW(0.004,5)              infinity            infinity            infinity
+     Parameter 13~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 14~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 15~IW(0.004,5)              infinity            infinity            infinity
+     Parameter 16~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 17~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 18~IW(0.000,5)              infinity            infinity            infinity
+     Parameter 19~IW(0.004,5)              infinity            infinity            infinity
+     Parameter 20~IW(1.000,3)              infinity            infinity            infinity
+     Parameter 21~IW(0.000,3)              infinity            infinity            infinity
+     Parameter 22~IW(1.000,3)              infinity            infinity            infinity
+
+
+TECHNICAL 8 OUTPUT
+
+
+   TECHNICAL 8 OUTPUT FOR BAYES ESTIMATION
+
+     CHAIN    BSEED
+     1        42
+     2        564124
+
+                     POTENTIAL       PARAMETER WITH
+     ITERATION    SCALE REDUCTION      HIGHEST PSR
+     100              1.298               5
+     200              1.135               6
+     300              1.041               12
+     400              1.080               6
+     500              1.117               6
+     600              1.152               6
+     700              1.062               5
+     800              1.072               5
+     900              1.046               5
+     1000             1.022               5
+     1100             1.019               5
+     1200             1.020               5
+     1300             1.036               6
+     1400             1.057               6
+     1500             1.032               6
+     1600             1.025               4
+     1700             1.025               4
+     1800             1.021               4
+     1900             1.011               4
+     2000             1.009               4
+     2100             1.008               4
+     2200             1.011               4
+     2300             1.010               4
+     2400             1.012               4
+     2500             1.009               4
+     2600             1.006               4
+     2700             1.006               4
+     2800             1.006               4
+     2900             1.009               4
+     3000             1.008               4
+     3100             1.008               4
+     3200             1.007               4
+     3300             1.010               4
+     3400             1.005               4
+     3500             1.005               4
+     3600             1.004               4
+     3700             1.003               19
+     3800             1.003               19
+     3900             1.002               4
+     4000             1.002               4
+     4100             1.001               4
+     4200             1.002               4
+     4300             1.002               4
+     4400             1.001               4
+     4500             1.001               1
+     4600             1.001               4
+     4700             1.001               4
+     4800             1.001               20
+     4900             1.001               4
+     5000             1.001               20
+     5100             1.001               6
+     5200             1.003               6
+     5300             1.003               6
+     5400             1.005               5
+     5500             1.003               6
+     5600             1.004               6
+     5700             1.005               6
+     5800             1.008               6
+     5900             1.008               6
+     6000             1.006               6
+     6100             1.004               6
+     6200             1.003               6
+     6300             1.002               6
+     6400             1.002               6
+     6500             1.005               6
+     6600             1.007               6
+     6700             1.011               6
+     6800             1.009               6
+     6900             1.010               6
+     7000             1.014               6
+     7100             1.019               6
+     7200             1.021               6
+     7300             1.019               6
+     7400             1.013               6
+     7500             1.013               6
+     7600             1.016               6
+     7700             1.019               6
+     7800             1.018               6
+     7900             1.019               6
+     8000             1.022               6
+     8100             1.020               6
+     8200             1.022               6
+     8300             1.021               6
+     8400             1.021               6
+     8500             1.024               6
+     8600             1.023               6
+     8700             1.022               6
+     8800             1.021               6
+     8900             1.018               6
+     9000             1.018               6
+     9100             1.017               6
+     9200             1.020               6
+     9300             1.019               6
+     9400             1.017               6
+     9500             1.016               6
+     9600             1.015               6
+     9700             1.018               6
+     9800             1.016               6
+     9900             1.015               6
+     10000            1.015               6
+     10100            1.014               6
+     10200            1.011               6
+     10300            1.010               6
+     10400            1.009               6
+     10500            1.009               6
+     10600            1.011               6
+     10700            1.011               6
+     10800            1.011               6
+     10900            1.011               6
+     11000            1.010               6
+     11100            1.009               6
+     11200            1.012               6
+     11300            1.012               6
+     11400            1.013               6
+     11500            1.014               6
+     11600            1.013               6
+     11700            1.013               6
+     11800            1.012               6
+     11900            1.011               6
+     12000            1.012               6
+     12100            1.013               6
+     12200            1.016               6
+     12300            1.015               6
+     12400            1.014               6
+     12500            1.014               6
+     12600            1.012               6
+     12700            1.012               6
+     12800            1.010               6
+     12900            1.009               6
+     13000            1.006               6
+     13100            1.005               6
+     13200            1.004               6
+     13300            1.004               6
+     13400            1.003               6
+     13500            1.003               6
+     13600            1.003               6
+     13700            1.003               6
+     13800            1.002               6
+     13900            1.002               6
+     14000            1.002               6
+     14100            1.003               6
+     14200            1.002               6
+     14300            1.002               6
+     14400            1.001               6
+     14500            1.002               6
+     14600            1.002               6
+     14700            1.003               6
+     14800            1.003               6
+     14900            1.003               6
+     15000            1.003               6
+     15100            1.003               6
+     15200            1.003               6
+     15300            1.002               6
+     15400            1.002               6
+     15500            1.001               6
+     15600            1.001               6
+     15700            1.001               6
+     15800            1.001               6
+     15900            1.001               6
+     16000            1.001               6
+     16100            1.001               6
+     16200            1.001               6
+     16300            1.001               6
+     16400            1.001               6
+     16500            1.001               6
+     16600            1.001               6
+     16700            1.001               6
+     16800            1.001               6
+     16900            1.000               6
+     17000            1.000               20
+     17100            1.000               20
+     17200            1.000               20
+     17300            1.000               20
+     17400            1.000               20
+     17500            1.000               20
+     17600            1.000               20
+     17700            1.000               16
+     17800            1.000               10
+     17900            1.000               10
+     18000            1.000               10
+     18100            1.000               10
+     18200            1.000               10
+     18300            1.000               10
+     18400            1.000               10
+     18500            1.000               10
+     18600            1.000               10
+     18700            1.000               6
+     18800            1.000               6
+     18900            1.001               6
+     19000            1.001               6
+     19100            1.001               19
+     19200            1.001               6
+     19300            1.001               6
+     19400            1.001               6
+     19500            1.001               6
+     19600            1.001               6
+     19700            1.001               6
+     19800            1.001               6
+     19900            1.001               6
+     20000            1.001               6
+     20100            1.001               6
+     20200            1.001               6
+     20300            1.001               6
+     20400            1.001               6
+     20500            1.001               6
+     20600            1.001               6
+     20700            1.001               6
+     20800            1.001               6
+     20900            1.001               6
+     21000            1.001               6
+     21100            1.000               6
+     21200            1.000               6
+     21300            1.000               6
+     21400            1.000               6
+     21500            1.000               6
+     21600            1.000               6
+     21700            1.000               6
+     21800            1.000               7
+     21900            1.000               7
+     22000            1.000               7
+     22100            1.000               7
+     22200            1.000               7
+     22300            1.000               7
+     22400            1.000               7
+     22500            1.000               7
+     22600            1.000               7
+     22700            1.000               7
+     22800            1.000               7
+     22900            1.000               7
+     23000            1.000               7
+     23100            1.000               7
+     23200            1.001               7
+     23300            1.001               7
+     23400            1.001               7
+     23500            1.001               5
+     23600            1.001               5
+     23700            1.001               5
+     23800            1.001               5
+     23900            1.001               5
+     24000            1.001               5
+     24100            1.001               5
+     24200            1.001               7
+     24300            1.001               7
+     24400            1.001               7
+     24500            1.001               7
+     24600            1.001               7
+     24700            1.001               7
+     24800            1.001               7
+     24900            1.001               7
+     25000            1.001               7
+     25100            1.001               7
+     25200            1.001               7
+     25300            1.001               7
+     25400            1.000               7
+     25500            1.000               7
+     25600            1.000               7
+     25700            1.000               7
+     25800            1.000               7
+     25900            1.000               7
+     26000            1.000               7
+     26100            1.000               12
+     26200            1.000               12
+     26300            1.000               7
+     26400            1.000               7
+     26500            1.000               7
+     26600            1.000               7
+     26700            1.000               7
+     26800            1.000               7
+     26900            1.000               7
+     27000            1.000               12
+     27100            1.000               7
+     27200            1.000               7
+     27300            1.000               7
+     27400            1.000               7
+     27500            1.000               7
+     27600            1.000               12
+     27700            1.000               7
+     27800            1.000               7
+     27900            1.000               7
+     28000            1.000               12
+     28100            1.000               12
+     28200            1.000               12
+     28300            1.000               12
+     28400            1.000               12
+     28500            1.000               12
+     28600            1.000               12
+     28700            1.000               7
+     28800            1.000               12
+     28900            1.000               12
+     29000            1.000               12
+     29100            1.000               12
+     29200            1.000               12
+     29300            1.000               12
+     29400            1.000               6
+     29500            1.000               17
+     29600            1.000               12
+     29700            1.000               12
+     29800            1.000               12
+     29900            1.000               12
+     30000            1.000               19
+     30100            1.000               19
+     30200            1.000               19
+     30300            1.000               12
+     30400            1.000               19
+     30500            1.000               19
+     30600            1.000               19
+     30700            1.000               19
+     30800            1.000               17
+     30900            1.000               17
+     31000            1.000               17
+     31100            1.000               17
+     31200            1.000               17
+     31300            1.000               19
+     31400            1.000               19
+     31500            1.000               19
+     31600            1.000               19
+     31700            1.000               19
+     31800            1.000               19
+     31900            1.000               19
+     32000            1.000               19
+     32100            1.000               17
+     32200            1.000               17
+     32300            1.000               17
+     32400            1.000               17
+     32500            1.000               19
+     32600            1.001               19
+     32700            1.000               19
+     32800            1.000               19
+     32900            1.000               19
+     33000            1.000               19
+     33100            1.001               19
+     33200            1.000               19
+     33300            1.000               19
+     33400            1.000               19
+     33500            1.000               6
+     33600            1.001               6
+     33700            1.001               6
+     33800            1.000               6
+     33900            1.000               19
+     34000            1.000               19
+     34100            1.000               6
+     34200            1.000               6
+     34300            1.001               6
+     34400            1.001               6
+     34500            1.001               6
+     34600            1.001               6
+     34700            1.000               19
+     34800            1.000               19
+     34900            1.000               19
+     35000            1.000               19
+     35100            1.000               19
+     35200            1.000               19
+     35300            1.000               19
+     35400            1.000               17
+     35500            1.001               19
+     35600            1.001               19
+     35700            1.001               19
+     35800            1.001               19
+     35900            1.001               6
+     36000            1.001               6
+     36100            1.001               6
+     36200            1.001               6
+     36300            1.001               6
+     36400            1.001               6
+     36500            1.001               6
+     36600            1.001               6
+     36700            1.001               6
+     36800            1.001               19
+     36900            1.001               19
+     37000            1.001               19
+     37100            1.001               6
+     37200            1.001               19
+     37300            1.001               6
+     37400            1.001               6
+     37500            1.001               6
+     37600            1.001               6
+     37700            1.001               19
+     37800            1.001               19
+     37900            1.001               19
+     38000            1.001               19
+     38100            1.001               19
+     38200            1.001               19
+     38300            1.001               19
+     38400            1.001               19
+     38500            1.001               19
+     38600            1.001               19
+     38700            1.001               19
+     38800            1.001               19
+     38900            1.001               19
+     39000            1.001               6
+     39100            1.001               19
+     39200            1.001               6
+     39300            1.001               6
+     39400            1.001               19
+     39500            1.001               19
+     39600            1.001               19
+     39700            1.001               19
+     39800            1.001               19
+     39900            1.001               19
+     40000            1.001               19
+
+
+     MCMC EFFECTIVE SAMPLE SIZE (ESS) IN ASCENDING ORDER
+        LOWEST 10 PARAMETERS
+        PARAMETER    ESS
+            12      1602
+             6      1758
+            18      1882
+            13      1894
+            11      1897
+            14      1964
+            17      2506
+            10      3017
+            15      3268
+             5      3291
+
+
+SAVEDATA INFORMATION
+
+
+  Bayesian Parameters
+
+  Save file
+    mplus_zXffbZc1ub2L5jNeGWMJ_posterior.dat
+  Save format      Free
+
+  Order of parameters saved
+
+    Chain number
+    Iteration number
+    Parameter 1, %WITHIN%: Y1 (equality/label)
+    Parameter 2, %WITHIN%: Y2 WITH Y1 (equality/label)
+    Parameter 3, %WITHIN%: Y2 (equality/label)
+    Parameter 4, %BETWEEN%: [ BETA11 ] (equality/label)
+    Parameter 5, %BETWEEN%: [ BETA21 ] (equality/label)
+    Parameter 6, %BETWEEN%: [ BETA12 ] (equality/label)
+    Parameter 7, %BETWEEN%: [ BETA22 ] (equality/label)
+    Parameter 8, %BETWEEN%: [ Y1 ] (equality/label)
+    Parameter 9, %BETWEEN%: [ Y2 ] (equality/label)
+    Parameter 10, %BETWEEN%: BETA11 (equality/label)
+    Parameter 11, %BETWEEN%: BETA21 WITH BETA11 (equality/label)
+    Parameter 12, %BETWEEN%: BETA21 (equality/label)
+    Parameter 13, %BETWEEN%: BETA12 WITH BETA11 (equality/label)
+    Parameter 14, %BETWEEN%: BETA12 WITH BETA21 (equality/label)
+    Parameter 15, %BETWEEN%: BETA12 (equality/label)
+    Parameter 16, %BETWEEN%: BETA22 WITH BETA11 (equality/label)
+    Parameter 17, %BETWEEN%: BETA22 WITH BETA21 (equality/label)
+    Parameter 18, %BETWEEN%: BETA22 WITH BETA12 (equality/label)
+    Parameter 19, %BETWEEN%: BETA22 (equality/label)
+    Parameter 20, %BETWEEN%: Y1 (equality/label)
+    Parameter 21, %BETWEEN%: Y2 WITH Y1 (equality/label)
+    Parameter 22, %BETWEEN%: Y2 (equality/label)
+
+     Beginning Time:  19:03:47
+        Ending Time:  19:06:50
+       Elapsed Time:  00:03:03
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2026 Muthen & Muthen

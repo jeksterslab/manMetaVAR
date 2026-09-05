@@ -2,13 +2,14 @@
 #'
 #' Plot results heatmap.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param metric_name Character string.
 #'   `"coverage"` for coverage probability,
 #'   `"abs_rel_bias"` for absolute value of the relative bias,
-#'   `"rmse"` for RMSE, and
-#'   `"power"` for statistical power.
+#'   `"rmse"` for RMSE,
+#'   `"power"` for statistical power, and
+#'   `"type1_error"` for the Type I error rate.
 #' @param grey_scale Logical.
 #'   If `TRUE`,
 #'   use a grey-scale fill suitable for black-and-white printing.
@@ -34,14 +35,17 @@ FigMetricHeatmap <- function(results,
                              grey_scale = FALSE,
                              values = FALSE) {
   method <- target <- NULL
-  condition_label <- parameter_label <- NULL
+  condition_label <- parameter_label <- heterogeneity_label <- NULL
   value <- value_label <- text_colour <- NULL
   metric_data <- .BuildMetricHeatmapData(
     results = results,
     metric_name = metric_name
   )
   plot_data <- metric_data$data
-  use_diverging_scale <- metric_name == "coverage"
+  use_diverging_scale <- metric_name %in% c(
+    "coverage",
+    "type1_error"
+  )
   if (grey_scale) {
     if (use_diverging_scale) {
       fill_scale <- ggplot2::scale_fill_gradient2(
@@ -76,13 +80,26 @@ FigMetricHeatmap <- function(results,
     }
   }
   title_lookup <- c(
-    "coverage" = "Coverage heatmap by parameter, design cell, and method",
-    "abs_rel_bias" = paste0(
-      "Absolute value of the relative bias heatmap by parameter, ",
+    "coverage" = paste0(
+      "Coverage heatmap by parameter, ",
       "design cell, and method"
     ),
-    "rmse" = "RMSE heatmap by parameter, design cell, and method",
-    "power" = "Power heatmap by parameter, design cell, and method"
+    "abs_rel_bias" = paste0(
+      "Bias-magnitude heatmap by parameter, ",
+      "design cell, and method"
+    ),
+    "rmse" = paste0(
+      "RMSE heatmap by parameter, ",
+      "design cell, and method"
+    ),
+    "power" = paste0(
+      "Power heatmap by parameter, ",
+      "design cell, and method"
+    ),
+    "type1_error" = paste0(
+      "Type I error heatmap by parameter, ",
+      "design cell, and method"
+    )
   )
   heatmap_plot <- ggplot2::ggplot(
     data = plot_data,
@@ -109,9 +126,12 @@ FigMetricHeatmap <- function(results,
       ) +
       ggplot2::scale_color_identity()
   }
-  heatmap_plot <- heatmap_plot +
+  heatmap_plot +
     ggplot2::facet_grid(
-      rows = ggplot2::vars(target),
+      rows = ggplot2::vars(
+        heterogeneity_label,
+        target
+      ),
       cols = ggplot2::vars(method),
       scales = "free_y",
       space = "free_y"
@@ -125,26 +145,53 @@ FigMetricHeatmap <- function(results,
       y = NULL
     ) +
     .FigTheme(base_size = 10)
-  heatmap_plot
 }
 
 .BuildMetricHeatmapData <- function(results,
                                     metric_name) {
-  results <- .FigPreprocess(
-    results = results
+  allowed <- c(
+    "coverage",
+    "abs_rel_bias",
+    "rmse",
+    "power",
+    "type1_error"
   )
+  if (
+    length(metric_name) != 1L ||
+      is.na(metric_name) ||
+      !metric_name %in% allowed
+  ) {
+    stop(
+      paste0(
+        "`metric_name` should be one of: ",
+        paste(allowed, collapse = ", "),
+        "."
+      ),
+      call. = FALSE
+    )
+  }
+  results <- .FigPreprocess(results)
+  if (!metric_name %in% names(results)) {
+    stop(
+      paste0(
+        "`results` does not contain `",
+        metric_name,
+        "`."
+      ),
+      call. = FALSE
+    )
+  }
   plot_data <- results[
     c(
       "method",
       "target",
+      "heterogeneity_label",
       "condition_label",
       "parameter_label",
       metric_name
     )
   ]
-  names(plot_data)[
-    names(plot_data) == metric_name
-  ] <- "value"
+  names(plot_data)[names(plot_data) == metric_name] <- "value"
   legend_title <- metric_name
   subtitle <- NULL
   caption <- NULL
@@ -156,61 +203,62 @@ FigMetricHeatmap <- function(results,
       "zero indicates nominal coverage."
     )
   }
+  if (metric_name == "type1_error") {
+    plot_data$value <- plot_data$value - 0.05
+    legend_title <- "Type I error - 0.05"
+    subtitle <- paste0(
+      "Negative values indicate conservative tests; ",
+      "zero indicates the nominal .05 rate."
+    )
+    caption <- paste0(
+      "Type I error is defined only for parameters whose calibrated ",
+      "population value is exactly zero."
+    )
+  }
   if (metric_name == "abs_rel_bias") {
     cap_value <- unname(
       stats::quantile(
-        x = plot_data$value,
+        plot_data$value,
         probs = 0.95,
         na.rm = TRUE
       )
     )
-    plot_data$value <- pmin(
-      plot_data$value,
-      cap_value
-    )
+    plot_data$value <- pmin(plot_data$value, cap_value)
     legend_title <- paste0(
-      "|Relative bias|\n(clipped at ",
-      round(
-        x = cap_value,
-        digits = 2
-      ),
+      "|Relative/absolute bias|\n(clipped at ",
+      round(cap_value, digits = 2),
       ")"
     )
     subtitle <- paste0(
       "To keep the heatmap readable, ",
-      "absolute value of the relative bias is clipped at the 95th percentile."
+      "the bias magnitude is clipped at the 95th percentile."
     )
     caption <- paste0(
-      "Smaller values are better. ",
+      "For nonzero parameters, cells show absolute relative bias; ",
+      "for zero parameters, cells show absolute bias. ",
       "The heatmap shows magnitude only, not direction."
     )
   }
   if (metric_name == "rmse") {
     cap_value <- unname(
       stats::quantile(
-        x = plot_data$value,
+        plot_data$value,
         probs = 0.95,
         na.rm = TRUE
       )
     )
-    plot_data$value <- pmin(
-      plot_data$value,
-      cap_value
-    )
+    plot_data$value <- pmin(plot_data$value, cap_value)
     legend_title <- paste0(
       "RMSE\n(clipped at ",
-      round(
-        x = cap_value,
-        digits = 3
-      ),
+      round(cap_value, digits = 3),
       ")"
     )
     subtitle <- paste0(
-      "To keep the heatmap readable, RMSE is clipped at the 95th percentile."
+      "To keep the heatmap readable, ",
+      "RMSE is clipped at the 95th percentile."
     )
     caption <- paste0(
-      "Smaller values are better. ",
-      "RMSE is on the original parameter scale, ",
+      "Smaller values are better. RMSE is on the original parameter scale, ",
       "so comparisons are most meaningful within parameter."
     )
   }

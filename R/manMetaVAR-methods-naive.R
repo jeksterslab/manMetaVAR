@@ -9,7 +9,7 @@ NULL
 
 #' Parameter Estimates (FitNaive)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.naive`.
 #'
@@ -29,7 +29,7 @@ coef.manmetavar.naive <- function(object,
 
 #' Sampling Covariance Matrix of the Parameter Estimates (FitNaive)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.naive`.
 #'
@@ -49,7 +49,7 @@ vcov.manmetavar.naive <- function(object,
 
 #' Print Method (FitNaive)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.naive`.
 #'
@@ -69,7 +69,7 @@ print.manmetavar.naive <- function(x,
 
 #' Summary Method (FitNaive)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.naive`.
 #'
@@ -132,9 +132,8 @@ summary.manmetavar.naive <- function(object,
 
 #' @noRd
 #' @keywords internal
-#' @exportS3Method print summary.manmetavar.naive
-print.summary.manmetavar.naive <- function(x,
-                                           ...) {
+.PrintNaiveSummary <- function(x,
+                               ...) {
   print_summary <- attr(
     x = x,
     which = "print_summary"

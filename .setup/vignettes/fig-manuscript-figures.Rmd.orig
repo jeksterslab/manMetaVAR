@@ -1,6 +1,6 @@
 ---
 title: "Manuscript Figures"
-author: "Anonymous"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Manuscript Figures}
@@ -44,15 +44,12 @@ FigOverview(results)
 
 ### Heatmaps
 
-#### Absoluate Value of the Relative Bias
+#### Absolute Relative or Absolute Bias
 
 ```{r, abs-rel-bias}
 #| echo = FALSE,
 #| cache = FALSE
-FigMetricHeatmap(
-  results,
-  metric_name = "abs_rel_bias"
-)
+FigMetricHeatmap(results, metric_name = "abs_rel_bias")
 ```
 
 #### RMSE
@@ -60,10 +57,7 @@ FigMetricHeatmap(
 ```{r, rmse}
 #| echo = FALSE,
 #| cache = FALSE
-FigMetricHeatmap(
-  results,
-  metric_name = "rmse"
-)
+FigMetricHeatmap(results, metric_name = "rmse")
 ```
 
 #### Coverage Probability
@@ -71,10 +65,7 @@ FigMetricHeatmap(
 ```{r, coverage}
 #| echo = FALSE,
 #| cache = FALSE
-FigMetricHeatmap(
-  results,
-  metric_name = "coverage"
-)
+FigMetricHeatmap(results, metric_name = "coverage")
 ```
 
 #### Statistical Power
@@ -82,10 +73,17 @@ FigMetricHeatmap(
 ```{r, power}
 #| echo = FALSE,
 #| cache = FALSE
-FigMetricHeatmap(
-  results,
-  metric_name = "power"
-)
+FigMetricHeatmap(results, metric_name = "power")
+```
+
+#### Type I Error Rate
+
+```{r, type1-error}
+#| echo = FALSE,
+#| cache = FALSE
+if ("type1_error" %in% names(results)) {
+  FigMetricHeatmap(results, metric_name = "type1_error")
+}
 ```
 
 ```{r, rm}

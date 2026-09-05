@@ -1,6 +1,6 @@
 #' Summary
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param mplus Logical.
 #'   If `mplus = TRUE`, summarize the DSEM model.
@@ -28,18 +28,14 @@ Sum <- function(taskid,
                 metavar_robust,
                 mplus,
                 ncores) {
-  # Do not include default arguments here.
-  # All arguments should be set in `.sim/sim-args.R.R`.
-  # Add taskid to output_folder
+  .TaskParameters(taskid = taskid)
+  reps <- .SumValidateReps(reps)
   output_folder <- file.path(
     output_folder,
     paste0(
       SimProj(),
       "-",
-      sprintf(
-        "%05d",
-        taskid
-      )
+      sprintf("%05d", taskid)
     )
   )
   if (!file.exists(output_folder)) {
@@ -50,44 +46,167 @@ Sum <- function(taskid,
     )
     .SimChMod(output_folder)
   }
+
+  # A method can legitimately have too few admissible replications during a
+  # pilot run. Record that condition as a warning so that the remaining
+  # methods and tasks are still attempted. Other errors are collected and
+  # raised after all requested summaries for this task have been attempted.
+  failures <- character(0L)
+  insufficient_prefix <-
+    "At least two admissible replications are required for "
+
+  attempt <- function(label, expr) {
+    tryCatch(
+      {
+        force(expr)
+        invisible(TRUE)
+      },
+      error = function(e) {
+        msg <- conditionMessage(e)
+        if (startsWith(msg, insufficient_prefix)) {
+          warning(
+            paste0(
+              label,
+              " could not be summarized for taskid = ",
+              taskid,
+              ": ",
+              msg
+            ),
+            call. = FALSE
+          )
+          return(invisible(FALSE))
+        }
+        failures <<- c(
+          failures,
+          paste0(label, ": ", msg)
+        )
+        warning(
+          paste0(
+            label,
+            " failed for taskid = ",
+            taskid,
+            ": ",
+            msg
+          ),
+          call. = FALSE
+        )
+        invisible(FALSE)
+      }
+    )
+  }
+
   if (mplus) {
-    SumFitMplus(
-      taskid = taskid,
-      reps = reps,
-      output_folder = output_folder,
-      overwrite = overwrite,
-      integrity = integrity,
-      ncores = ncores
+    attempt(
+      "Mplus default",
+      SumFitMplus(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+    attempt(
+      "Mplus default diagnostics",
+      SumFitMplusDiagnostics(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+    attempt(
+      "Mplus priors",
+      SumFitMplusPriors(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+    attempt(
+      "Mplus priors diagnostics",
+      SumFitMplusPriorsDiagnostics(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
     )
   }
   if (metavar_normal) {
-    SumFitMetaVARNormal(
-      taskid = taskid,
-      reps = reps,
-      output_folder = output_folder,
-      overwrite = overwrite,
-      integrity = integrity,
-      ncores = ncores
+    attempt(
+      "MetaVAR normal",
+      SumFitMetaVARNormal(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
     )
   }
   if (metavar_robust) {
-    SumFitMetaVARRobust(
-      taskid = taskid,
-      reps = reps,
-      output_folder = output_folder,
-      overwrite = overwrite,
-      integrity = integrity,
-      ncores = ncores
+    attempt(
+      "MetaVAR robust",
+      SumFitMetaVARRobust(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
     )
   }
   if (naive) {
-    SumFitNaive(
+    attempt(
+      "Naive",
+      SumFitNaive(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+  }
+  attempt(
+    "Simulation diagnostics",
+    .SumDiagnosticsCore(
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,
       overwrite = overwrite,
       integrity = integrity,
-      ncores = ncores
+      naive = naive,
+      metavar = metavar_normal || metavar_robust,
+      mplus = mplus,
+      variance_tol = 1e-6,
+      eigen_tol = 1e-8,
+      k4 = FALSE
+    )
+  )
+
+  if (length(failures) > 0L) {
+    stop(
+      paste0(
+        "One or more summaries failed for taskid = ",
+        taskid,
+        ":\n- ",
+        paste(failures, collapse = "\n- ")
+      ),
+      call. = FALSE
     )
   }
+  invisible(NULL)
 }

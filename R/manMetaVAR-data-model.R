@@ -1,6 +1,6 @@
 #' Model Parameters
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @docType data
 #' @name model
@@ -72,11 +72,11 @@
 #'     }
 #'   }
 #'   \item{ma_random_d_ldl}{
-#'     `uc_d` of the LDL' decomposition of the random effects.
+#'     `uc_d` of the LDL' decomposition of the random-effects covariance.
 #'     See [fitVARMxID::LDL()].
 #'   }
 #'   \item{ma_random_l_ldl}{
-#'     `s_l` of the LDL' decomposition of the random effects.
+#'     `s_l` of the LDL' decomposition of the random-effects covariance.
 #'     See [fitVARMxID::LDL()].
 #'   }
 #' }

@@ -58,7 +58,7 @@ The output is saved as an external file in \code{output_folder}.
 Summary
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{manMetaVAR}
 \keyword{simulation}

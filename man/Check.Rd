@@ -32,7 +32,7 @@ The output is saved as an external file in \code{output_folder}.
 Check Replication
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{check}
 \keyword{manMetaVAR}

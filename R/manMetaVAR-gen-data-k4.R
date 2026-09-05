@@ -1,0 +1,167 @@
+#' Simulate Four-Variable Data
+#'
+#' The function simulates data for the four-variable feasibility analysis using
+#' [simStateSpace::SimSSMVARIVary()]. The simulation condition is obtained from
+#' `taskid`, whereas the population model parameters are obtained from
+#' `modelk4`.
+#'
+#' @inheritParams Template
+#'
+#' @examples
+#' \dontrun{
+#' seed <- 42
+#' data <- GenDataK4(taskid = 1, seed = seed)
+#' print(data)
+#' summary(data)
+#' plot(data)
+#' }
+#'
+#' @family Data Generation Functions
+#' @keywords manMetaVAR gendata
+#' @import simStateSpace
+#' @export
+GenDataK4 <- function(taskid,
+                      seed = NULL) {
+  start_time <- Sys.time()
+  if (isFALSE(is.null(seed))) {
+    set.seed(seed)
+  }
+  param <- .TaskParameters(
+    taskid = taskid
+  )
+  n <- param$n
+  time <- param$time
+  heterogeneity <- param$heterogeneity
+  if (is.na(time)) {
+    time <- max(
+      params$time,
+      na.rm = TRUE
+    )
+  }
+  mu <- simStateSpace::SimNuN(
+    n = n,
+    nu = modelk4$mu_mu,
+    vcov_nu_l = modelk4$mu_sigma_l
+  )
+  if (heterogeneity > 0) {
+    margin <- populationk4$calibration$margin
+    beta <- simStateSpace::SimBetaN(
+      n = n,
+      beta = modelk4$beta_mu,
+      vcov_beta_vec_l =
+        sqrt(heterogeneity) * modelk4$beta_sigma_l,
+      margin = margin
+    )
+  } else {
+    beta <- lapply(
+      X = seq_len(n),
+      FUN = function(i) {
+        modelk4$beta_mu
+      }
+    )
+  }
+  alpha <- mapply(
+    FUN = simStateSpace::SSMInterceptEta,
+    beta = beta,
+    mean_eta = mu,
+    SIMPLIFY = FALSE
+  )
+  mu0 <- mapply(
+    FUN = simStateSpace::SSMMeanEta,
+    beta = beta,
+    alpha = alpha,
+    SIMPLIFY = FALSE
+  )
+  sigma0 <- lapply(
+    X = beta,
+    FUN = simStateSpace::SSMCovEta,
+    psi = modelk4$psi
+  )
+  sigma0_l <- lapply(
+    X = sigma0,
+    FUN = function(x) {
+      t(chol(x))
+    }
+  )
+  sigma0_ldl <- lapply(
+    X = sigma0,
+    FUN = fitVARMxID::LDL
+  )
+  sigma0_d_ldl <- lapply(
+    X = sigma0_ldl,
+    FUN = function(i) {
+      i$uc_d
+    }
+  )
+  sigma0_l_ldl <- lapply(
+    X = sigma0_ldl,
+    FUN = function(i) {
+      i$s_l
+    }
+  )
+  sim <- simStateSpace::SimSSMVARIVary(
+    n = n,
+    time = time,
+    mu0 = mu0,
+    sigma0_l = sigma0_l,
+    alpha = alpha,
+    beta = beta,
+    psi_l = list(modelk4$psi_l),
+    type = 0,
+    x = NULL,
+    gamma = NULL
+  )
+  data <- as.data.frame(sim)
+  if (is.na(param$time)) {
+    df <- data
+    ids <- unique(df$id)
+    times <- unique(
+      params$time[
+        stats::complete.cases(params$time)
+      ]
+    )
+    times <- rep(
+      x = times,
+      length.out = length(ids)
+    )
+    data <- do.call(
+      what = "rbind",
+      args = mapply(
+        id = ids,
+        time = times,
+        FUN = function(id, time) {
+          df <- df[
+            which(df$id == id), ,
+            drop = FALSE
+          ]
+          df <- df[
+            which(df$time < time), ,
+            drop = FALSE
+          ]
+          df
+        },
+        SIMPLIFY = FALSE
+      )
+    )
+  }
+  end_time <- Sys.time()
+  elapsed <- end_time - start_time
+  out <- list(
+    param = param,
+    mu = mu,
+    beta = beta,
+    mu0 = mu0,
+    sigma0 = sigma0,
+    sigma0_l = sigma0_l,
+    sigma0_d_ldl = sigma0_d_ldl,
+    sigma0_l_ldl = sigma0_l_ldl,
+    sim = sim,
+    data = data,
+    elapsed = elapsed
+  )
+  class(out) <- c(
+    "manmetavar.data",
+    class(out)
+  )
+  out
+}

@@ -1,6 +1,6 @@
 ---
 title: "Single Replication from the Simulation Study"
-author: "Anonymous"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Single Replication from the Simulation Study}
@@ -147,27 +147,54 @@ naive <- readRDS(fn_naive)
 
 ```{r}
 #| include = FALSE
-fn_mplus <- root$find_file(
+fn_mplus_default <- root$find_file(
   ".setup",
   "data-raw",
-  "sim-rep-mplus.Rds"
+  "sim-rep-mplus-default.Rds"
 )
-if (!file.exists(fn_mplus)) {
-  mplus <- FitMplus(
+if (!file.exists(fn_mplus_default)) {
+  mplus_default <- FitMplus(
     data = data,
+    default_priors = TRUE,
     seed = seed
   )
   con <- xzfile(
-    description = fn_mplus,
+    description = fn_mplus_default,
     compression = 9L
   )
   saveRDS(
-    object = mplus,
+    object = mplus_default,
     file = con
   )
   close(con)
 }
-mplus <- readRDS(fn_mplus)
+mplus_default <- readRDS(fn_mplus_default)
+```
+
+```{r}
+#| include = FALSE
+fn_mplus_prior <- root$find_file(
+  ".setup",
+  "data-raw",
+  "sim-rep-mplus-prior.Rds"
+)
+if (!file.exists(fn_mplus_prior)) {
+  mplus_prior <- FitMplus(
+    data = data,
+    default_priors = FALSE,
+    seed = seed
+  )
+  con <- xzfile(
+    description = fn_mplus_prior,
+    compression = 9L
+  )
+  saveRDS(
+    object = mplus_prior,
+    file = con
+  )
+  close(con)
+}
+mplus_prior <- readRDS(fn_mplus_prior)
 ```
 
 ## Data Generation
@@ -214,38 +241,45 @@ metavar <- FitMetaVAR(
 summary(metavar)
 ```
 
-## Mplus
+## Mplus (Default Priors)
 
 ```{r}
 #| eval = FALSE
-mplus <- FitMplus(
-  data = data,
-  seed = seed
-)
+  mplus_default <- FitMplus(
+    data = data,
+    default_priors = TRUE,
+    seed = seed
+  )
 ```
 
 ```{r}
-summary(mplus)
+summary(mplus_default)
 ```
 
 ```{r}
-coef(mplus)
+coef(mplus_default)
 ```
 
 ```{r}
-vcov(mplus)
+vcov(mplus_default)
 ```
 
 ### Posterior Distributions
 
 ```{r}
-plot(mplus, what = "posterior")
+plot(mplus_default, what = "posterior")
 ```
 
 ### Trace Plots
 
 ```{r}
-plot(mplus, what = "trace")
+plot(mplus_default, what = "trace")
+```
+
+### Diagnostics
+
+```{r}
+FitMplusDiagnostics(mplus_default)
 ```
 
 ### Mplus Output
@@ -255,13 +289,74 @@ plot(mplus, what = "trace")
 #| comment = NA,
 #| size = "normalsize"
 writeLines(
-  text = mplus$output$output,
-  con = "mplus.inp"
+  text = mplus_default$output$output,
+  con = "mplus_default.inp"
 )
 cat(
   paste(
     readLines(
-      "mplus.inp"
+      "mplus_default.inp"
+    ),
+    collapse = "\n"
+  )
+)
+```
+
+## Mplus (User Defined Priors)
+
+```{r}
+#| eval = FALSE
+  mplus_prior <- FitMplus(
+    data = data,
+    default_priors = TRUE,
+    seed = seed
+  )
+```
+
+```{r}
+summary(mplus_prior)
+```
+
+```{r}
+coef(mplus_prior)
+```
+
+```{r}
+vcov(mplus_prior)
+```
+
+### Posterior Distributions
+
+```{r}
+plot(mplus_prior, what = "posterior")
+```
+
+### Trace Plots
+
+```{r}
+plot(mplus_prior, what = "trace")
+```
+
+### Diagnostics
+
+```{r}
+FitMplusDiagnostics(mplus_prior)
+```
+
+### Mplus Output
+
+```{r}
+#| echo = FALSE,
+#| comment = NA,
+#| size = "normalsize"
+writeLines(
+  text = mplus_prior$output$output,
+  con = "mplus_prior.inp"
+)
+cat(
+  paste(
+    readLines(
+      "mplus_prior.inp"
     ),
     collapse = "\n"
   )

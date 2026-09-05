@@ -12,6 +12,7 @@ MplusInput(
   iter,
   fscores,
   plot,
+  default_priors = TRUE,
   ncores = NULL,
   seed = NULL
 )
@@ -39,6 +40,9 @@ Number of iterations for factor scores.}
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
 
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use \code{Mplus} default priors.}
+
 \item{ncores}{Positive integer.
 Number of cores to use.}
 
@@ -58,6 +62,7 @@ cat(
     iter = 40000L,
     fscores = 1000L,
     plot = TRUE,
+    default_priors = TRUE,
     ncores = NULL,
     seed = 42
   )
@@ -67,9 +72,16 @@ cat(
 \seealso{
 Other Model Fitting Functions:
 \code{\link[=FitDTVAR]{FitDTVAR()}},
+\code{\link[=FitDTVARK4]{FitDTVARK4()}},
 \code{\link[=FitMetaVAR]{FitMetaVAR()}},
+\code{\link[=FitMetaVARK4]{FitMetaVARK4()}},
 \code{\link[=FitMplus]{FitMplus()}},
-\code{\link[=FitNaive]{FitNaive()}}
+\code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}},
+\code{\link[=FitMplusK4]{FitMplusK4()}},
+\code{\link[=FitMplusK4Diagnostics]{FitMplusK4Diagnostics()}},
+\code{\link[=FitNaive]{FitNaive()}},
+\code{\link[=FitNaiveK4]{FitNaiveK4()}},
+\code{\link[=MplusInputK4]{MplusInputK4()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

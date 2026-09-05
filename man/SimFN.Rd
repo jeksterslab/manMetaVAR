@@ -12,14 +12,15 @@ Output type.
 Valid values include
 \code{"data"},
 \code{"fit-dt-var-mx"},
-\code{"fit-meta-var-mx"}, and
-\code{"fit-mplus"}.}
+\code{"fit-meta-var-mx"},
+\code{"fit-mplus"}, and
+\code{"fit-naive"}.}
 
 \item{output_folder}{Character string.
 Output folder.}
 
 \item{suffix}{Character string.
-Output of \code{manCTMed:::.SimSuffix()}.}
+Simulation file suffix returned by \code{.SimSuffix()}.}
 }
 \value{
 Returns a character string file name with the \code{output_folder}
@@ -28,5 +29,5 @@ in the OS-specific format.
 \description{
 Simulation File Name
 }
-\keyword{manCTMed}
+\keyword{manMetaVAR}
 \keyword{simulation}

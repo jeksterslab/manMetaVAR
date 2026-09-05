@@ -18,6 +18,10 @@ Sample size.
 Number of measurement occassions.
 If \code{NA}, measurement occasions vary across IDs.
 }
+\item{heterogeneity}{
+Transition-parameter heterogeneity multiplier: 0, 1,
+or 2.
+}
 }
 }
 \usage{
@@ -27,7 +31,7 @@ data(params)
 Simulation Parameters
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{data}
 \keyword{parameters}

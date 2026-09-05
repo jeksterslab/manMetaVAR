@@ -1,7 +1,7 @@
 manMetaVAR
 ================
-Anonymous
-2026-04-10
+Ivan Jacob Agaloos Pesigan
+2026-09-05
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -12,7 +12,8 @@ Anonymous
 
 ## Description
 
-Research compendium for the manuscript From Person-Specific Dynamics to
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
+A., & Chow, S.-M. (Under Review). From Person-Specific Dynamics to
 Population Inference: A Computationally Efficient Meta-Analytic
 Structural Equation Modeling Framework for Integrating Complex
 Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>

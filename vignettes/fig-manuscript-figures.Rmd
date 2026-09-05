@@ -1,6 +1,6 @@
 ---
 title: "Manuscript Figures"
-author: "Anonymous"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Manuscript Figures}
@@ -20,7 +20,7 @@ vignette: >
 
 ### Heatmaps
 
-#### Absoluate Value of the Relative Bias
+#### Absolute Relative or Absolute Bias
 
 <img src="fig-vignettes-manuscript-figures-abs-rel-bias-1.png" alt="" width="3300" />
 
@@ -35,5 +35,9 @@ vignette: >
 #### Statistical Power
 
 <img src="fig-vignettes-manuscript-figures-power-1.png" alt="" width="3300" />
+
+#### Type I Error Rate
+
+<img src="fig-vignettes-manuscript-figures-type1-error-1.png" alt="" width="3300" />
 
 
