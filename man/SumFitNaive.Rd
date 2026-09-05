@@ -36,7 +36,7 @@ Summary: Naive
 This function is executed via the \code{Sum} function.
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{manMetaVAR}
 \keyword{simulation}

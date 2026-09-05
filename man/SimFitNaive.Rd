@@ -20,7 +20,7 @@ Output folder.}
 Random seed.}
 
 \item{suffix}{Character string.
-Output of \code{manCTMed:::.SimSuffix()}.}
+Simulation file suffix returned by \code{.SimSuffix()}.}
 
 \item{overwrite}{Logical.
 Overwrite existing output in \code{output_folder}.}
@@ -39,7 +39,7 @@ Simulation Replication - FitNaive
 This function is executed via the \code{Sim} function.
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{fit}
 \keyword{manMetaVAR}

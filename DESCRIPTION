@@ -1,13 +1,25 @@
 Package: manMetaVAR
 Title: Meta-Analytic SEM for Multilevel Dynamics
-Version: 0.5.8
-Authors@R: person(
-    given = "Anonymous",
-    family = "Author",
-    email = "email@email.com",
-    role = c("aut", "cre")
-  )
+Version: 0.9.9
+Authors@R: c(
+    person(given = "Ivan Jacob Agaloos",
+           family = "Pesigan",
+           role = c("aut", "cre", "cph"),
+           email = "r.jeksterslab@gmail.com",
+           comment = c(ORCID = "0000-0003-4818-8420")),
+    person(given = "Michael A.",
+           family = "Russell",
+           role = "ctb",
+           email = "mar60@psu.edu",
+           comment = c(ORCID = "0000-0002-3956-604X")),
+    person(given = "Sy-Miin",
+           family = "Chow",
+           role = "ctb",
+           email = "quc16@psu.edu",
+           comment = c(ORCID = "0000-0003-1938-027X"))
+    )
 Description: Research compendium for the manuscript
+    Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (Under Review).
     From Person-Specific Dynamics to Population Inference:
     A Computationally Efficient Meta-Analytic Structural Equation Modeling Framework
     for Integrating Complex Multilevel Dynamic Models.
@@ -20,14 +32,17 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-Depends: R (>= 4.5.0), OpenMx (>= 2.22.11), fitVARMxID (>= 1.0.2),
-        metaDyn (>= 1.0.1)
-Imports: stats, utils, simStateSpace (>= 1.2.16), lavaan (>= 0.6-21),
-        ggplot2
+Depends: R (>= 4.5.0), OpenMx (>= 2.22.11), fitVARMxID (>= 1.0.5),
+        metaDyn (>= 1.0.3)
+Imports: posterior, stats, utils, simStateSpace (>= 1.2.16), ggplot2
 Remotes: jeksterslab/fitVARMxID, jeksterslab/metaDyn
 Suggests: knitr, rmarkdown, testthat
-Config/roxygen2/version: 7.3.3.9000
+Config/roxygen2/version: 8.1.0
 NeedsCompilation: no
-Packaged: 2026-04-10 16:06:50 UTC; root
-Author: Anonymous Author [aut, cre]
-Maintainer: Anonymous Author <email@email.com>
+Packaged: 2026-09-05 20:58:49 UTC; root
+Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0003-4818-8420>),
+  Michael A. Russell [ctb] (ORCID:
+    <https://orcid.org/0000-0002-3956-604X>),
+  Sy-Miin Chow [ctb] (ORCID: <https://orcid.org/0000-0003-1938-027X>)
+Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

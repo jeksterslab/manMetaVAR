@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sim` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'

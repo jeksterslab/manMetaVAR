@@ -9,7 +9,7 @@ NULL
 
 #' Parameter Estimates (FitMetaVAR)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
 #'
@@ -29,7 +29,7 @@ coef.manmetavar.metavar <- function(object,
 
 #' Sampling Covariance Matrix of the Parameter Estimates (FitMetaVAR)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
 #' @inheritParams metaDyn::vcov.metadynmeta
@@ -49,7 +49,7 @@ vcov.manmetavar.metavar <- function(object,
 
 #' Print Method (FitMetaVAR)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.metavar`.
 #' @inheritParams metaDyn::summary.metadynmeta
@@ -74,7 +74,7 @@ print.manmetavar.metavar <- function(x,
 
 #' Summary Method (FitMetaVAR)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
 #' @inheritParams metaDyn::summary.metadynmeta
@@ -99,9 +99,8 @@ summary.manmetavar.metavar <- function(object,
 
 #' @noRd
 #' @keywords internal
-#' @exportS3Method print summary.manmetavar.metavar
-print.summary.manmetavar.metavar <- function(x,
-                                             ...) {
+.PrintMetaVARSummary <- function(x,
+                                 ...) {
   print_summary <- attr(
     x = x,
     which = "print_summary"
@@ -118,7 +117,7 @@ print.summary.manmetavar.metavar <- function(x,
 
 #' Confidence Intervals for the Parameter Estimates (FitMetaVAR)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.metavar`.
 #' @inheritParams metaDyn::confint.metadynmeta

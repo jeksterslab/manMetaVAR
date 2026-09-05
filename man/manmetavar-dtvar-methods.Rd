@@ -122,6 +122,6 @@ This page documents the available methods for objects of class
 \code{manmetavar.dtvar}.
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{methods}

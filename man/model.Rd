@@ -72,11 +72,11 @@ Matrix of random effects
     }
 }
 \item{ma_random_d_ldl}{
-\code{uc_d} of the LDL' decomposition of the random effects.
+\code{uc_d} of the LDL' decomposition of the random-effects covariance.
 See \code{\link[fitVARMxID:LDL]{fitVARMxID::LDL()}}.
 }
 \item{ma_random_l_ldl}{
-\code{s_l} of the LDL' decomposition of the random effects.
+\code{s_l} of the LDL' decomposition of the random-effects covariance.
 See \code{\link[fitVARMxID:LDL]{fitVARMxID::LDL()}}.
 }
 }
@@ -88,7 +88,7 @@ data(model)
 Model Parameters
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{data}
 \keyword{parameters}

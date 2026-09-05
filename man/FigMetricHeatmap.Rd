@@ -12,8 +12,9 @@ FigMetricHeatmap(results, metric_name, grey_scale = FALSE, values = FALSE)
 \item{metric_name}{Character string.
 \code{"coverage"} for coverage probability,
 \code{"abs_rel_bias"} for absolute value of the relative bias,
-\code{"rmse"} for RMSE, and
-\code{"power"} for statistical power.}
+\code{"rmse"} for RMSE,
+\code{"power"} for statistical power, and
+\code{"type1_error"} for the Type I error rate.}
 
 \item{grey_scale}{Logical.
 If \code{TRUE},
@@ -38,10 +39,12 @@ FigMetricHeatmap(
 }
 \seealso{
 Other Figure Functions:
+\code{\link[=FigMplusDiagnosticsHeatmap]{FigMplusDiagnosticsHeatmap()}},
+\code{\link[=FigMplusDiagnosticsOverview]{FigMplusDiagnosticsOverview()}},
 \code{\link[=FigOverview]{FigOverview()}}
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \concept{Figure Functions}
 \keyword{figure}

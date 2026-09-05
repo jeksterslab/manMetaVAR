@@ -7,13 +7,145 @@
 #' @keywords methods
 NULL
 
+#' Extract Posterior Draws from a FitMplus Object
+#'
+#' @param object Object of class `manmetavar.mplus` returned by `FitMplus()`.
+#' @param burnin Integer indicating the number of initial draws to discard
+#'   from each chain. If `burnin = NULL`, use `object$burnin`.
+#'
+#' @return A numeric matrix containing the chain identifier, iteration
+#'   identifier, and named model-parameter draws.
+#'
+#' @noRd
+.PosteriorDrawsManMetaVAR <- function(object,
+                                      burnin = NULL) {
+  if (!inherits(object, "manmetavar.mplus")) {
+    stop(
+      "`object` should be the output of `FitMplus()`.",
+      call. = FALSE
+    )
+  }
+  if (is.null(object$output$posterior)) {
+    stop(
+      "Posterior draws are not available in `object$output$posterior`.",
+      call. = FALSE
+    )
+  }
+  varnames <- c(
+    "psi[1,1]",
+    "psi[2,1]",
+    "psi[2,2]",
+    "mean(beta[1,1])",
+    "mean(beta[2,1])",
+    "mean(beta[1,2])",
+    "mean(beta[2,2])",
+    "mean(mu[1,1])",
+    "mean(mu[2,1])",
+    "cov(beta[1,1],beta[1,1])",
+    "cov(beta[2,1],beta[1,1])",
+    "cov(beta[2,1],beta[2,1])",
+    "cov(beta[1,2],beta[1,1])",
+    "cov(beta[1,2],beta[2,1])",
+    "cov(beta[1,2],beta[1,2])",
+    "cov(beta[2,2],beta[1,1])",
+    "cov(beta[2,2],beta[2,1])",
+    "cov(beta[2,2],beta[1,2])",
+    "cov(beta[2,2],beta[2,2])",
+    "cov(mu[1,1],mu[1,1])",
+    "cov(mu[2,1],mu[1,1])",
+    "cov(mu[2,1],mu[2,1])"
+  )
+  expected_columns <- length(varnames) + 2L
+  thetahatstar <- .ParseMplusPosteriorDraws(
+    posterior = object$output$posterior,
+    expected_columns = expected_columns
+  )
+  thetahatstar <- .TrimMplusFactorScoreRows(
+    draws = thetahatstar,
+    fscores = object$args$fscores,
+    iter = object$args$iter
+  )
+  if (ncol(thetahatstar) != expected_columns) {
+    stop(
+      paste0(
+        "Expected ",
+        expected_columns,
+        " columns in the saved posterior draws but found ",
+        ncol(thetahatstar),
+        "."
+      ),
+      call. = FALSE
+    )
+  }
+  colnames(thetahatstar) <- c(
+    "chain",
+    "iteration",
+    varnames
+  )
+  if (is.null(burnin)) {
+    burnin <- object$burnin
+  }
+  if (is.null(burnin)) {
+    burnin <- 0L
+  }
+  if (
+    length(burnin) != 1L ||
+      !is.numeric(burnin) ||
+      !is.finite(burnin) ||
+      burnin < 0 ||
+      burnin != floor(burnin)
+  ) {
+    stop(
+      "`burnin` should be a single nonnegative integer.",
+      call. = FALSE
+    )
+  }
+  burnin <- as.integer(burnin)
+  chain <- unique(thetahatstar[, "chain"])
+  thetahatstar_list <- lapply(
+    X = chain,
+    FUN = function(i) {
+      chain_i <- thetahatstar[
+        thetahatstar[, "chain"] == i, ,
+        drop = FALSE
+      ]
+      if (burnin >= nrow(chain_i)) {
+        stop(
+          paste(
+            "`burnin` should be less than",
+            "the number of iterations in every chain."
+          ),
+          call. = FALSE
+        )
+      }
+      if (burnin > 0L) {
+        chain_i <- chain_i[-seq_len(burnin), , drop = FALSE]
+      }
+      chain_i
+    }
+  )
+  thetahatstar <- do.call(
+    what = "rbind",
+    args = thetahatstar_list
+  )
+  rownames(thetahatstar) <- NULL
+  attr(thetahatstar, "burnin") <- burnin
+  attr(thetahatstar, "chains") <- chain
+  attr(thetahatstar, "iterations_per_chain") <- vapply(
+    X = thetahatstar_list,
+    FUN = nrow,
+    FUN.VALUE = integer(1)
+  )
+  thetahatstar
+}
+
 #' Parameter Estimates (FitMplus)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @param burnin Integer indicating initial samples to discard.
-#'   If `burnin = NULL`, do not discard anything.
+#'   If `burnin = NULL`, use the burn-in stored in `object$burnin`.
 #' @param median Logical.
 #'   If `median = TRUE`, return median of the posterior.
 #'   If `median = FALSE`, return mean of the posterior.
@@ -27,41 +159,15 @@ coef.manmetavar.mplus <- function(object,
                                   median = TRUE,
                                   burnin = NULL,
                                   ...) {
-  thetahatstar <- as.matrix(
-    utils::read.table(
-      text = object$output$posterior
-    )
+  thetahatstar <- .PosteriorDrawsManMetaVAR(
+    object = object,
+    burnin = burnin
   )
-  if (!is.null(object$args$fscores)) {
-    thetahatstar <- thetahatstar[
-      1:(dim(thetahatstar)[1] - object$args$fscores), ,
-      drop = FALSE
-    ]
-  }
-  if (!is.null(burnin)) {
-    chain <- unique(thetahatstar[, 1])
-    thetahatstar_list <- lapply(
-      X = chain,
-      FUN = function(i) {
-        chain_i <- thetahatstar[
-          which(thetahatstar[, 1] == i), ,
-          drop = FALSE
-        ]
-        dims <- dim(chain_i)
-        if (burnin >= dims[1]) {
-          stop(
-            "`burnin` should be less than the number of iterations."
-          )
-        }
-        chain_i[-(1:burnin), , drop = FALSE]
-      }
-    )
-    thetahatstar <- do.call(
-      what = "rbind",
-      args = thetahatstar_list
-    )
-  }
-  thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
+  thetahatstar <- thetahatstar[
+    ,
+    -match(c("chain", "iteration"), colnames(thetahatstar)),
+    drop = FALSE
+  ]
   if (median) {
     out <- apply(
       X = thetahatstar,
@@ -71,36 +177,12 @@ coef.manmetavar.mplus <- function(object,
   } else {
     out <- colMeans(thetahatstar)
   }
-  names(out) <- c(
-    "psi[1,1]",
-    "psi[2,1]",
-    "psi[2,2]",
-    "mean(beta[1,1])",
-    "mean(beta[2,1])",
-    "mean(beta[1,2])",
-    "mean(beta[2,2])",
-    "mean(mu[1,1])",
-    "mean(mu[2,1])",
-    "cov(beta[1,1],beta[1,1])",
-    "cov(beta[2,1], beta[1,1])",
-    "cov(beta[2,1],beta[2,1])",
-    "cov(beta[1,2],beta[1,1])",
-    "cov(beta[1,2],beta[2,1])",
-    "cov(beta[1,2],beta[1,2])",
-    "cov(beta[2,2],beta[1,1])",
-    "cov(beta[2,2],beta[2,1])",
-    "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])",
-    "cov(mu[1,1],mu[1,1])",
-    "cov(mu[2,1],mu[1,1])",
-    "cov(mu[2,1],mu[2,1])"
-  )
   out
 }
 
 #' Sampling Covariance Matrix of the Parameter Estimates (FitMplus)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @inheritParams coef.manmetavar.mplus
@@ -113,113 +195,41 @@ coef.manmetavar.mplus <- function(object,
 vcov.manmetavar.mplus <- function(object,
                                   burnin = NULL,
                                   ...) {
-  thetahatstar <- as.matrix(
-    utils::read.table(
-      text = object$output$posterior
-    )
-  )
-  if (!is.null(object$args$fscores)) {
-    thetahatstar <- thetahatstar[
-      1:(dim(thetahatstar)[1] - object$args$fscores), ,
-      drop = FALSE
-    ]
-  }
-  if (!is.null(burnin)) {
-    chain <- unique(thetahatstar[, 1])
-    thetahatstar_list <- lapply(
-      X = chain,
-      FUN = function(i) {
-        chain_i <- thetahatstar[
-          which(thetahatstar[, 1] == i), ,
-          drop = FALSE
-        ]
-        dims <- dim(chain_i)
-        if (burnin >= dims[1]) {
-          stop(
-            "`burnin` should be less than the number of iterations."
-          )
-        }
-        chain_i[-(1:burnin), , drop = FALSE]
-      }
-    )
-    thetahatstar <- do.call(
-      what = "rbind",
-      args = thetahatstar_list
-    )
-  }
-  thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
-  out <- stats::cov(thetahatstar)
-  rownames(out) <- colnames(out) <- c(
-    "psi[1,1]",
-    "psi[2,1]",
-    "psi[2,2]",
-    "mean(beta[1,1])",
-    "mean(beta[2,1])",
-    "mean(beta[1,2])",
-    "mean(beta[2,2])",
-    "mean(mu[1,1])",
-    "mean(mu[2,1])",
-    "cov(beta[1,1],beta[1,1])",
-    "cov(beta[2,1], beta[1,1])",
-    "cov(beta[2,1],beta[2,1])",
-    "cov(beta[1,2],beta[1,1])",
-    "cov(beta[1,2],beta[2,1])",
-    "cov(beta[1,2],beta[1,2])",
-    "cov(beta[2,2],beta[1,1])",
-    "cov(beta[2,2],beta[2,1])",
-    "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])",
-    "cov(mu[1,1],mu[1,1])",
-    "cov(mu[2,1],mu[1,1])",
-    "cov(mu[2,1],mu[2,1])"
-  )
-  out
-}
-
-.PosteriorCI <- function(object,
-                         alpha = 0.05,
-                         median = TRUE,
-                         burnin = NULL) {
-  thetahatstar <- as.matrix(
-    utils::read.table(
-      text = object$output$posterior
-    )
-  )
-  if (!is.null(object$args$fscores)) {
-    thetahatstar <- thetahatstar[
-      1:(dim(thetahatstar)[1] - object$args$fscores), ,
-      drop = FALSE
-    ]
-  }
-  if (!is.null(burnin)) {
-    chain <- unique(thetahatstar[, 1])
-    thetahatstar_list <- lapply(
-      X = chain,
-      FUN = function(i) {
-        chain_i <- thetahatstar[
-          which(thetahatstar[, 1] == i), ,
-          drop = FALSE
-        ]
-        dims <- dim(chain_i)
-        if (burnin >= dims[1]) {
-          stop(
-            "`burnin` should be less than the number of iterations."
-          )
-        }
-        chain_i[-(1:burnin), , drop = FALSE]
-      }
-    )
-    thetahatstar <- do.call(
-      what = "rbind",
-      args = thetahatstar_list
-    )
-  }
-  thetahatstar <- thetahatstar[, -c(1, 2), drop = FALSE]
-  thetahat <- coef.manmetavar.mplus(
+  thetahatstar <- .PosteriorDrawsManMetaVAR(
     object = object,
-    median = median,
     burnin = burnin
   )
+  thetahatstar <- thetahatstar[
+    ,
+    -match(c("chain", "iteration"), colnames(thetahatstar)),
+    drop = FALSE
+  ]
+  stats::cov(thetahatstar)
+}
+
+.PosteriorCIManMetaVAR <- function(object,
+                                   alpha = 0.05,
+                                   median = TRUE,
+                                   burnin = NULL) {
+  draws <- .PosteriorDrawsManMetaVAR(
+    object = object,
+    burnin = burnin
+  )
+  effective_burnin <- attr(draws, "burnin")
+  thetahatstar <- draws[
+    ,
+    -match(c("chain", "iteration"), colnames(draws)),
+    drop = FALSE
+  ]
+  if (median) {
+    thetahat <- apply(
+      X = thetahatstar,
+      MARGIN = 2,
+      FUN = stats::median
+    )
+  } else {
+    thetahat <- colMeans(thetahatstar)
+  }
   stopifnot(
     all(alpha > 0 & alpha < 1)
   )
@@ -243,12 +253,13 @@ vcov.manmetavar.mplus <- function(object,
   if (!is.null(varnames)) {
     rownames(ci) <- varnames
   }
+  attr(ci, "burnin") <- effective_burnin
   ci
 }
 
 #' Summary Method (FitMplus)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #'
@@ -266,12 +277,13 @@ summary.manmetavar.mplus <- function(object,
                                      digits = 4,
                                      burnin = NULL,
                                      ...) {
-  ci <- .PosteriorCI(
+  ci <- .PosteriorCIManMetaVAR(
     object = object,
     alpha = alpha,
     median = median,
     burnin = burnin
   )
+  effective_burnin <- attr(ci, "burnin")
   print_summary <- round(
     x = ci,
     digits = digits
@@ -284,16 +296,15 @@ summary.manmetavar.mplus <- function(object,
   attributes(ci)$alpha <- alpha
   attributes(ci)$median <- median
   attributes(ci)$digits <- digits
-  attributes(ci)$burnin <- burnin
+  attributes(ci)$burnin <- effective_burnin
   attributes(ci)$print_summary <- print_summary
   ci
 }
 
 #' @noRd
 #' @keywords internal
-#' @exportS3Method print summary.manmetavar.mplus
-print.summary.manmetavar.mplus <- function(x,
-                                           ...) {
+.PrintMplusSummary <- function(x,
+                               ...) {
   print_summary <- attr(
     x = x,
     which = "print_summary"
@@ -304,7 +315,7 @@ print.summary.manmetavar.mplus <- function(x,
 
 #' Confidence Intervals for the Parameter Estimates (FitMplus)
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.mplus`.
 #' @param ... additional arguments.
@@ -324,7 +335,7 @@ confint.manmetavar.mplus <- function(object,
                                      level = 0.95,
                                      burnin = NULL,
                                      ...) {
-  ci <- .PosteriorCI(
+  ci <- .PosteriorCIManMetaVAR(
     object = object,
     alpha = 1 - level[1],
     median = TRUE,
@@ -353,12 +364,14 @@ confint.manmetavar.mplus <- function(object,
 
 #' Plot Method for an Object of Class `manmetavar.mplus`
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.mplus`.
 #' @param what Character string.
 #'   If `what = "posterior"`, return posterior distribution plots.
 #'   If `what = "trace"`, return trace plots.
+#'   If `what = "rhat"`, `"ess"`, or `"mcse"`, return the corresponding
+#'   Bayesian diagnostic plot from [FitMplusDiagnostics()].
 #'
 #' @inheritParams Template
 #' @inheritParams confint.manmetavar.mplus
@@ -376,69 +389,39 @@ plot.manmetavar.mplus <- function(x,
                                   burnin = NULL,
                                   legend_loc = "topright",
                                   ...) {
-  thetahatstar <- as.matrix(
-    utils::read.table(
-      text = x$output$posterior
+  what <- match.arg(
+    arg = what,
+    choices = c(
+      "posterior",
+      "trace",
+      "rhat",
+      "ess",
+      "mcse"
     )
   )
-  if (!is.null(x$args$fscores)) {
-    thetahatstar <- thetahatstar[
-      1:(dim(thetahatstar)[1] - x$args$fscores), ,
-      drop = FALSE
-    ]
-  }
-  chain <- unique(thetahatstar[, 1])
-  if (!is.null(burnin)) {
-    thetahatstar_list <- lapply(
-      X = chain,
-      FUN = function(i) {
-        chain_i <- thetahatstar[
-          which(thetahatstar[, 1] == i), ,
-          drop = FALSE
-        ]
-        dims <- dim(chain_i)
-        if (burnin >= dims[1]) {
-          stop(
-            "`burnin` should be less than the number of iterations."
-          )
-        }
-        chain_i[-(1:burnin), , drop = FALSE]
-      }
+  if (what %in% c("rhat", "ess", "mcse")) {
+    diagnostics <- FitMplusDiagnostics(
+      object = x,
+      burnin = burnin,
+      level = level[1]
     )
-    thetahatstar <- do.call(
-      what = "rbind",
-      args = thetahatstar_list
+    return(
+      graphics::plot(
+        x = diagnostics,
+        what = what,
+        parm = parm,
+        ...
+      )
     )
   }
-  rownames(thetahatstar) <- NULL
-  varnames <- c(
-    "psi[1,1]",
-    "psi[2,1]",
-    "psi[2,2]",
-    "mean(beta[1,1])",
-    "mean(beta[2,1])",
-    "mean(beta[1,2])",
-    "mean(beta[2,2])",
-    "mean(mu[1,1])",
-    "mean(mu[2,1])",
-    "cov(beta[1,1],beta[1,1])",
-    "cov(beta[2,1], beta[1,1])",
-    "cov(beta[2,1],beta[2,1])",
-    "cov(beta[1,2],beta[1,1])",
-    "cov(beta[1,2],beta[2,1])",
-    "cov(beta[1,2],beta[1,2])",
-    "cov(beta[2,2],beta[1,1])",
-    "cov(beta[2,2],beta[2,1])",
-    "cov(beta[2,2],beta[1,2])",
-    "cov(beta[2,2],beta[2,2])",
-    "cov(mu[1,1],mu[1,1])",
-    "cov(mu[2,1],mu[1,1])",
-    "cov(mu[2,1],mu[2,1])"
+  thetahatstar <- .PosteriorDrawsManMetaVAR(
+    object = x,
+    burnin = burnin
   )
-  colnames(thetahatstar) <- c(
-    "chain",
-    "iteration",
-    varnames
+  chain <- unique(thetahatstar[, "chain"])
+  varnames <- setdiff(
+    x = colnames(thetahatstar),
+    y = c("chain", "iteration")
   )
   if (is.null(parm)) {
     parm <- varnames
@@ -490,9 +473,9 @@ plot.manmetavar.mplus <- function(x,
   }
   if (what == "trace") {
     for (i in seq_along(parm)) {
-      plot(
+      graphics::plot(
         x = NULL,
-        xlim = range(thetahatstar[, 2]),
+        xlim = range(thetahatstar[, "iteration"]),
         ylim = range(thetahatstar[, parm[i]]),
         xlab = "Iteration",
         ylab = parm[i],
@@ -510,11 +493,11 @@ plot.manmetavar.mplus <- function(x,
       for (j in seq_along(chain)) {
         graphics::lines(
           x = thetahatstar[
-            which(thetahatstar[, 1] == chain[j]),
-            2
+            which(thetahatstar[, "chain"] == chain[j]),
+            "iteration"
           ],
           y = thetahatstar[
-            which(thetahatstar[, 1] == chain[j]),
+            which(thetahatstar[, "chain"] == chain[j]),
             parm[i]
           ],
           col = cols[j]
@@ -522,4 +505,5 @@ plot.manmetavar.mplus <- function(x,
       }
     }
   }
+  invisible(x)
 }

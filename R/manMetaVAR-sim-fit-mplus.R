@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sim` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -34,29 +34,30 @@ SimFitMplus <- function(taskid,
     output_folder = output_folder,
     suffix = suffix
   )
-  run <- .SimCheck(
+  run <- .SimFitCheck(
     fn = fn_output,
     overwrite = overwrite,
     integrity = integrity
   )
   if (run) {
     set.seed(seed)
-    con <- file(fn_output)
-    saveRDS(
-      object = FitMplus(
-        data = readRDS(fn_input),
-        chains = chains,
-        iter = iter,
-        fscores = fscores,
-        plot = plot,
-        wd = output_folder,
-        mplus_bin = "mplus",
-        ncores = NULL,
-        seed = seed
-      ),
-      file = con
+    .SimRunFit(
+      fn = fn_output,
+      object = {
+        .SimRequireExecutable("mplus")
+        FitMplus(
+          data = .SimReadUpstream(fn_input),
+          chains = chains,
+          iter = iter,
+          fscores = fscores,
+          plot = plot,
+          default_priors = TRUE,
+          wd = output_folder,
+          mplus_bin = "mplus",
+          ncores = NULL,
+          seed = seed
+        )
+      }
     )
-    close(con)
-    .SimChMod(fn_output)
   }
 }

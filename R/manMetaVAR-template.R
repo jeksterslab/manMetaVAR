@@ -7,10 +7,11 @@
 #'   Valid values include
 #'   `"data"`,
 #'   `"fit-dt-var-mx"`,
-#'   `"fit-meta-var-mx"`, and
-#'   `"fit-mplus"`.
+#'   `"fit-meta-var-mx"`,
+#'   `"fit-mplus"`, and
+#'   `"fit-naive"`.
 #' @param suffix Character string.
-#'   Output of `manCTMed:::.SimSuffix()`.
+#'   Simulation file suffix returned by `.SimSuffix()`.
 #' @param output_folder Character string.
 #'   Output folder.
 #' @param overwrite Logical.
@@ -51,6 +52,8 @@
 #'   Number of chains.
 #' @param iter Integer.
 #'   Number of iterations.
+#' @param default_priors Logical.
+#'   If `default_priors = TRUE`, use `Mplus` default priors.
 #' @param fscores Integer.
 #'   Number of iterations for factor scores.
 #' @param naive Logical.

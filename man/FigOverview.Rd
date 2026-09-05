@@ -21,10 +21,12 @@ FigOverview(results)
 }
 \seealso{
 Other Figure Functions:
-\code{\link[=FigMetricHeatmap]{FigMetricHeatmap()}}
+\code{\link[=FigMetricHeatmap]{FigMetricHeatmap()}},
+\code{\link[=FigMplusDiagnosticsHeatmap]{FigMplusDiagnosticsHeatmap()}},
+\code{\link[=FigMplusDiagnosticsOverview]{FigMplusDiagnosticsOverview()}}
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \concept{Figure Functions}
 \keyword{figure}

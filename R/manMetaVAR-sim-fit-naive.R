@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sim` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -29,22 +29,19 @@ SimFitNaive <- function(taskid,
     output_folder = output_folder,
     suffix = suffix
   )
-  run <- .SimCheck(
+  run <- .SimFitCheck(
     fn = fn_output,
     overwrite = overwrite,
     integrity = integrity
   )
   if (run) {
     set.seed(seed)
-    con <- file(fn_output)
-    saveRDS(
+    .SimRunFit(
+      fn = fn_output,
       object = FitNaive(
-        fit = readRDS(fn_input),
+        fit = .SimReadUpstream(fn_input),
         seed = seed
-      ),
-      file = con
+      )
     )
-    close(con)
-    .SimChMod(fn_output)
   }
 }

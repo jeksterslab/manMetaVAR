@@ -9,7 +9,7 @@ NULL
 
 #' Print Method for an Object of Class `manmetavar.data`
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.data`.
 #'
@@ -28,7 +28,7 @@ print.manmetavar.data <- function(x,
 
 #' Summary Method for an Object of Class `manmetavar.data`
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param object Object of class `manmetavar.data`.
 #'
@@ -47,7 +47,7 @@ summary.manmetavar.data <- function(object,
 
 #' Plot Method for an Object of Class `manmetavar.data`
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param x Object of class `manmetavar.data`.
 #'

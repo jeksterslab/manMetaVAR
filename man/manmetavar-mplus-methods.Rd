@@ -35,7 +35,7 @@ If \code{median = TRUE}, return median of the posterior.
 If \code{median = FALSE}, return mean of the posterior.}
 
 \item{burnin}{Integer indicating initial samples to discard.
-If \code{burnin = NULL}, do not discard anything.}
+If \code{burnin = NULL}, use the burn-in stored in \code{object$burnin}.}
 
 \item{...}{additional arguments.}
 
@@ -55,7 +55,9 @@ If missing, all parameters are considered.}
 
 \item{what}{Character string.
 If \code{what = "posterior"}, return posterior distribution plots.
-If \code{what = "trace"}, return trace plots.}
+If \code{what = "trace"}, return trace plots.
+If \code{what = "rhat"}, \code{"ess"}, or \code{"mcse"}, return the corresponding
+Bayesian diagnostic plot from \code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}}.}
 
 \item{legend_loc}{Character string.
 Legend location.}
@@ -65,6 +67,6 @@ This page documents the available methods for objects of class
 \code{manmetavar.mplus}.
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{methods}

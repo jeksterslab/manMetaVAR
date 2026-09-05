@@ -41,8 +41,7 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 \item{seed}{Integer.
 Random seed.}
 
-\item{data}{Logical.
-Simulate data.}
+\item{data}{Logical. Simulate data.}
 
 \item{naive}{Logical.
 If \code{naive = TRUE}, fit the naive approach.}
@@ -73,7 +72,7 @@ The output is saved as an external file in \code{output_folder}.
 Simulation Replication
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{manMetaVAR}
 \keyword{simulation}

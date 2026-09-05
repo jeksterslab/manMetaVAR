@@ -1,12 +1,33 @@
-.FigPreprocess <- function(results) {
+.FigPreprocessWithHet <- function(results) {
+  required <- c(
+    "taskid",
+    "parnames",
+    "parameter",
+    "method",
+    "n",
+    "time",
+    "heterogeneity",
+    "ci",
+    "bias",
+    "rel_bias"
+  )
+  missing <- setdiff(
+    required,
+    names(results)
+  )
+  if (length(missing) > 0L) {
+    stop(
+      paste0(
+        "`results` is missing: ",
+        paste(missing, collapse = ", "),
+        "."
+      ),
+      call. = FALSE
+    )
+  }
   parameter_dictionary <- data.frame(
     parnames = c(
-      "alpha[1,1]",
-      "alpha[2,1]",
-      "alpha[3,1]",
-      "alpha[4,1]",
-      "alpha[5,1]",
-      "alpha[6,1]",
+      paste0("alpha[", seq_len(6L), ",1]"),
       "tau_sqr[1,1]",
       "tau_sqr[2,1]",
       "tau_sqr[2,2]",
@@ -43,8 +64,8 @@
       "Var(AR 2->2)"
     ),
     target = c(
-      rep("Fixed effects", 6L),
-      rep("Random effects", 13L)
+      rep("FE", 6L),
+      rep("RE", 13L)
     ),
     stringsAsFactors = FALSE
   )
@@ -53,41 +74,63 @@
       c(
         "taskid",
         "n",
-        "time"
+        "time",
+        "heterogeneity"
       )
     ]
   )
   condition_dictionary <- condition_dictionary[
     order(
+      condition_dictionary$heterogeneity,
       condition_dictionary$taskid
     ),
   ]
+  if (anyDuplicated(condition_dictionary$taskid)) {
+    stop(
+      "Each task ID should identify one simulation design condition.",
+      call. = FALSE
+    )
+  }
   condition_dictionary$condition_label <- ifelse(
     is.na(condition_dictionary$time),
     paste0(
       "N = ",
       condition_dictionary$n,
-      "\nT = Unbalanced"
+      ", T = Unbalanced"
     ),
     paste0(
       "N = ",
       condition_dictionary$n,
-      "\nT = ",
+      ", T = ",
       as.integer(condition_dictionary$time)
+    )
+  )
+  condition_dictionary$heterogeneity_label <- paste0(
+    "Het = ",
+    format(
+      condition_dictionary$heterogeneity,
+      trim = TRUE,
+      scientific = FALSE
     )
   )
   condition_dictionary <- condition_dictionary[
     c(
       "taskid",
-      "condition_label"
+      "condition_label",
+      "heterogeneity_label"
     )
   ]
-  condition_levels <- condition_dictionary$condition_label
+  condition_levels <- unique(
+    condition_dictionary$condition_label
+  )
+  heterogeneity_levels <- unique(
+    condition_dictionary$heterogeneity_label
+  )
   fixed_levels <- parameter_dictionary$parameter_label[
-    parameter_dictionary$target == "Fixed effects"
+    parameter_dictionary$target == "FE"
   ]
   random_levels <- parameter_dictionary$parameter_label[
-    parameter_dictionary$target == "Random effects"
+    parameter_dictionary$target == "RE"
   ]
   parameter_levels <- rev(
     c(
@@ -96,16 +139,32 @@
     )
   )
   results <- results[
-    results$method != "MetaVAR" | results$ci == "Normal",
+    results$method != "MetaVAR" | results$ci == "Normal", ,
+    drop = FALSE
   ]
-  i <- match(
+  results$method[results$method == "Naive"] <- "Uncorr"
+  results$method[results$method == "BMLVAR"] <- "BMLVAR-Default"
+  parameter_location <- match(
     results$parnames,
     parameter_dictionary$parnames
   )
+  if (anyNA(parameter_location)) {
+    stop(
+      paste0(
+        "Unknown parameters were found: ",
+        paste(
+          unique(results$parnames[is.na(parameter_location)]),
+          collapse = ", "
+        ),
+        "."
+      ),
+      call. = FALSE
+    )
+  }
   results <- cbind(
     results,
     parameter_dictionary[
-      i,
+      parameter_location,
       setdiff(
         names(parameter_dictionary),
         "parnames"
@@ -113,14 +172,27 @@
       drop = FALSE
     ]
   )
-  i <- match(
+  condition_location <- match(
     results$taskid,
     condition_dictionary$taskid
   )
+  if (anyNA(condition_location)) {
+    stop(
+      paste0(
+        "Unknown task IDs were found: ",
+        paste(
+          unique(results$taskid[is.na(condition_location)]),
+          collapse = ", "
+        ),
+        "."
+      ),
+      call. = FALSE
+    )
+  }
   results <- cbind(
     results,
     condition_dictionary[
-      i,
+      condition_location,
       setdiff(
         names(condition_dictionary),
         "taskid"
@@ -132,27 +204,57 @@
     results$method,
     levels = c(
       "MetaVAR",
-      "BMLVAR",
+      "BMLVAR-Default",
+      "BMLVAR-Priors",
       "Uncorr"
     )
   )
+  if (anyNA(results$method)) {
+    stop(
+      "Unknown methods were found in `results`.",
+      call. = FALSE
+    )
+  }
   results$target <- factor(
     results$target,
     levels = c(
-      "Fixed effects",
-      "Random effects"
+      "FE",
+      "RE"
     )
   )
   results$condition_label <- factor(
     results$condition_label,
     levels = condition_levels
   )
+  results$heterogeneity_label <- factor(
+    results$heterogeneity_label,
+    levels = heterogeneity_levels
+  )
   results$parameter_label <- factor(
     results$parameter_label,
     levels = parameter_levels
   )
-  results$abs_rel_bias <- abs(
-    results$rel_bias
+  results$abs_rel_bias <- ifelse(
+    test = results$parameter == 0,
+    yes = abs(results$bias),
+    no = abs(results$rel_bias)
   )
   results
+}
+
+.FigPreprocess <- function(results) {
+  if (!"heterogeneity" %in% names(results)) {
+    location <- match(
+      results$taskid,
+      params$taskid
+    )
+    if (anyNA(location)) {
+      stop(
+        "Heterogeneity could not be inferred for one or more task IDs.",
+        call. = FALSE
+      )
+    }
+    results$heterogeneity <- params$heterogeneity[location]
+  }
+  .FigPreprocessWithHet(results)
 }

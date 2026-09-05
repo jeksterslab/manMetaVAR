@@ -17,7 +17,7 @@ Replication ID.}
 Output folder.}
 
 \item{suffix}{Character string.
-Output of \code{manCTMed:::.SimSuffix()}.}
+Simulation file suffix returned by \code{.SimSuffix()}.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
@@ -29,7 +29,7 @@ Check Replication - FitDTVAR
 This function is executed via the \code{Check} function.
 }
 \author{
-Anonymous
+Ivan Jacob Agaloos Pesigan
 }
 \keyword{check}
 \keyword{manMetaVAR}

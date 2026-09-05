@@ -1,6 +1,6 @@
 #' Check Replication
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -47,14 +47,22 @@ Check <- function(taskid,
       output_folder = output_folder,
       suffix = suffix
     )
+    CheckFitMplusPriors(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      suffix = suffix
+    )
   }
-  if (metavar) {
+  if (metavar || naive) {
     CheckFitDTVAR(
       taskid = taskid,
       repid = repid,
       output_folder = output_folder,
       suffix = suffix
     )
+  }
+  if (metavar) {
     CheckFitMetaVAR(
       taskid = taskid,
       repid = repid,
@@ -70,4 +78,16 @@ Check <- function(taskid,
       suffix = suffix
     )
   }
+  status <- .CheckStatusManifest(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    suffix = suffix,
+    naive = naive,
+    metavar = metavar,
+    mplus = mplus,
+    k4 = FALSE
+  )
+  .CheckStatusGate(status)
+  invisible(status)
 }

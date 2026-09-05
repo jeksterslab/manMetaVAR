@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Check` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -24,9 +24,9 @@ CheckFitNaive <- function(taskid,
   )
   tryCatch(
     {
-      out <- lavaan::lavInspect(
-        object = readRDS(fn_input)$output,
-        what = "converged"
+      fit <- readRDS(fn_input)$output
+      out <- isTRUE(
+        fit$output$status$code == 0L
       )
       if (isFALSE(out)) {
         message(paste("error:", "CheckFitNaive"))

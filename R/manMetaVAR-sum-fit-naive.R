@@ -2,7 +2,7 @@
 #'
 #' @details This function is executed via the `Sum` function.
 #'
-#' @author Anonymous
+#' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -39,11 +39,31 @@ SumFitNaive <- function(taskid,
     integrity = integrity
   )
   if (run) {
+    repids <- .SumValidRepids(
+      taskid = taskid,
+      reps = reps,
+      output_folder = output_folder,
+      output_type = "fit-naive",
+      k4 = FALSE
+    )
+    reps_used <- length(repids)
+    if (reps_used < 2L) {
+      stop(
+        paste0(
+          "At least two admissible replications are required for ",
+          "fit-naive; found ",
+          reps_used,
+          "."
+        ),
+        call. = FALSE
+      )
+    }
     replication <- function(repid,
                             taskid) {
       param <- params[taskid, ]
       n <- param$n
       time <- param$time
+      heterogeneity <- param$heterogeneity
       suffix <- .SimSuffix(
         taskid = taskid,
         repid = repid
@@ -57,18 +77,22 @@ SumFitNaive <- function(taskid,
       raw <- summary(
         input
       )
-      random_effect <- .Vech(
-        model$ma_random
+      aligned <- .SumAlignPopulation(
+        raw = raw,
+        heterogeneity = heterogeneity
       )
-      random_effect <- random_effect[
-        random_effect != 0
-      ]
-      parameter <- c(
-        c(
-          model$ma_fixed
-        ),
-        random_effect
-      )
+      raw <- aligned$raw
+      parameter <- aligned$parameter
+      if (length(parameter) != nrow(raw)) {
+        stop(
+          paste(
+            "The number of population values",
+            "does not match the fitted parameters."
+          ),
+          call. = FALSE
+        )
+      }
+      names(parameter) <- rownames(raw)
       df <- data.frame(
         est = raw[, "est"],
         se = raw[, "se"],
@@ -103,6 +127,7 @@ SumFitNaive <- function(taskid,
       attr(df, "taskid") <- taskid
       attr(df, "n") <- n
       attr(df, "time") <- time
+      attr(df, "heterogeneity") <- heterogeneity
       attr(df, "parnames") <- rownames(raw)
       attr(df, "parameter") <- parameter
       attr(df, "ci") <- "Normal"
@@ -115,7 +140,7 @@ SumFitNaive <- function(taskid,
       ncores <- min(
         as.integer(ncores),
         parallel::detectCores(),
-        reps
+        reps_used
       )
       if (ncores > 1) {
         par <- TRUE
@@ -125,20 +150,20 @@ SumFitNaive <- function(taskid,
     }
     if (par) {
       i <- parallel::mclapply(
-        X = seq_len(reps),
+        X = repids,
         FUN = replication,
         taskid = taskid,
         mc.cores = ncores
       )
     } else {
       i <- lapply(
-        X = seq_len(reps),
+        X = repids,
         FUN = replication,
         taskid = taskid
       )
     }
     means <- (
-      1 / reps
+      1 / reps_used
     ) * Reduce(
       f = `+`,
       x = i
@@ -162,7 +187,7 @@ SumFitNaive <- function(taskid,
       )
     }
     vars <- (
-      1 / (reps - 1)
+      1 / (reps_used - 1)
     ) * Reduce(
       f = `+`,
       x = sq_errors
@@ -171,15 +196,17 @@ SumFitNaive <- function(taskid,
     means <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = means$est,
       se = means$se,
-      t = means$t,
+      z = means$z,
       p = means$p,
       ll = means$ll,
       ul = means$ul,
@@ -193,15 +220,17 @@ SumFitNaive <- function(taskid,
     vars <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = vars$est,
       se = vars$se,
-      t = vars$t,
+      z = vars$z,
       p = vars$p,
       ll = vars$ll,
       ul = vars$ul,
@@ -215,15 +244,17 @@ SumFitNaive <- function(taskid,
     sds <- data.frame(
       taskid = attr(i[[1]], "taskid"),
       replications = reps,
+      replications_used = reps_used,
       parnames = attr(i[[1]], "parnames"),
       parameter = attr(i[[1]], "parameter"),
       method = attr(i[[1]], "method"),
       n = attr(i[[1]], "n"),
       time = attr(i[[1]], "time"),
+      heterogeneity = attr(i[[1]], "heterogeneity"),
       ci = attr(i[[1]], "ci"),
       est = sds$est,
       se = sds$se,
-      t = sds$t,
+      z = sds$z,
       p = sds$p,
       ll = sds$ll,
       ul = sds$ul,
@@ -238,8 +269,25 @@ SumFitNaive <- function(taskid,
     means$rel_se_bias <- (means$se - sds$est) / sds$est
     means$rmse <- sqrt(means$sq_error)
     means$coverage <- means$theta_hit
-    means$power <- 1 - means$zero_hit
+    means$rejection_rate <- 1 - means$zero_hit
+    zero_truth <- means$parameter == 0
+    means$power <- ifelse(
+      test = zero_truth,
+      yes = NA_real_,
+      no = means$rejection_rate
+    )
+    means$type1_error <- ifelse(
+      test = zero_truth,
+      yes = means$rejection_rate,
+      no = NA_real_
+    )
+    means$success_rate <- reps_used / reps
+    means <- .SumMCSE(
+      replications = i,
+      means = means
+    )
     output <- list(
+      repids = repids,
       replications = i,
       means = means,
       vars = vars,

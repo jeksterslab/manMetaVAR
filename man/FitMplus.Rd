@@ -10,6 +10,7 @@ FitMplus(
   iter = 40000L,
   fscores = NULL,
   plot = FALSE,
+  default_priors = TRUE,
   wd = ".",
   mplus_bin = NULL,
   ncores = NULL,
@@ -33,6 +34,9 @@ Number of iterations for factor scores.}
 If \code{plot = TRUE}, add \code{PLOT: TYPE = PLOT3;}
 to \code{Mplus} input file.}
 
+\item{default_priors}{Logical.
+If \code{default_priors = TRUE}, use \code{Mplus} default priors.}
+
 \item{wd}{Character string.
 Working directory.}
 
@@ -55,18 +59,30 @@ The function fits the model using Mplus.
 \dontrun{
 seed <- 42
 data <- GenData(taskid = 1, seed = seed)
-fit <- FitMplus(data = data)
-print(fit)
-summary(fit)
+dsem <- FitMplus(data = data)
+print(dsem)
+summary(dsem)
+coef(dsem)
+vcov(dsem)
+confint(dsem)
+plot(dsem)
+plot(dsem, what = "trace")
 }
 
 }
 \seealso{
 Other Model Fitting Functions:
 \code{\link[=FitDTVAR]{FitDTVAR()}},
+\code{\link[=FitDTVARK4]{FitDTVARK4()}},
 \code{\link[=FitMetaVAR]{FitMetaVAR()}},
+\code{\link[=FitMetaVARK4]{FitMetaVARK4()}},
+\code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}},
+\code{\link[=FitMplusK4]{FitMplusK4()}},
+\code{\link[=FitMplusK4Diagnostics]{FitMplusK4Diagnostics()}},
 \code{\link[=FitNaive]{FitNaive()}},
-\code{\link[=MplusInput]{MplusInput()}}
+\code{\link[=FitNaiveK4]{FitNaiveK4()}},
+\code{\link[=MplusInput]{MplusInput()}},
+\code{\link[=MplusInputK4]{MplusInputK4()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

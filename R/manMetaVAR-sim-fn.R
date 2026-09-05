@@ -6,7 +6,7 @@
 #' @inheritParams Template
 #'
 #' @export
-#' @keywords manCTMed simulation
+#' @keywords manMetaVAR simulation
 SimFN <- function(output_type,
                   output_folder,
                   suffix) {
