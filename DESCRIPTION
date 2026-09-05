@@ -34,8 +34,8 @@ Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.5.0),
     OpenMx (>= 2.22.11),
-    fitVARMxID (>= 1.0.5),
-    metaDyn (>= 1.0.3)
+    fitVARMxID (>= 1.0.6),
+    metaDyn (>= 1.0.4)
 Imports:
     posterior,
     stats,

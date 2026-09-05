@@ -1,6 +1,6 @@
 Mplus VERSION 9.1 (Linux)
 MUTHEN & MUTHEN
-09/05/2026   7:03 PM
+09/05/2026  11:32 PM
 
 INPUT INSTRUCTIONS
 
@@ -1015,8 +1015,8 @@ SAVEDATA INFORMATION
     Parameter 21, %BETWEEN%: Y2 WITH Y1 (equality/label)
     Parameter 22, %BETWEEN%: Y2 (equality/label)
 
-     Beginning Time:  19:03:47
-        Ending Time:  19:06:50
+     Beginning Time:  23:32:36
+        Ending Time:  23:35:39
        Elapsed Time:  00:03:03
 
 
