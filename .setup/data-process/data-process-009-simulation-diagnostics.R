@@ -196,31 +196,30 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
     invisible(NULL)
   }
 
-  k2_prefix <- "manMetaVAR-summary-diagnostics-"
-  k2_pattern <- paste0(
-    "^",
-    k2_prefix,
-    "[0-9]{5}-",
-    sprintf("%05d", replications),
-    "\\.Rds$"
-  )
-  k2_files <- list.files(
-    path = data_raw_folder,
-    pattern = k2_pattern,
-    full.names = TRUE
-  )
-  validate_complete(
-    files = k2_files,
-    expected_taskids = seq_len(36L),
-    prefix = k2_prefix,
-    label = "k = 2"
-  )
   k2_output <- file.path(
     data_folder,
     "simulation_diagnostics.rda"
   )
   if (!file.exists(k2_output) || overwrite) {
-  # if (length(k2_files) > 0L && (!file.exists(k2_output) || overwrite)) {
+    k2_prefix <- "manMetaVAR-summary-diagnostics-"
+    k2_pattern <- paste0(
+      "^",
+      k2_prefix,
+      "[0-9]{5}-",
+      sprintf("%05d", replications),
+      "\\.Rds$"
+    )
+    k2_files <- list.files(
+      path = data_raw_folder,
+      pattern = k2_pattern,
+      full.names = TRUE
+    )
+    validate_complete(
+      files = k2_files,
+      expected_taskids = seq_len(36L),
+      prefix = k2_prefix,
+      label = "k = 2"
+    )
     simulation_diagnostics <- combine_diagnostics(k2_files)
     save(
       simulation_diagnostics,
@@ -229,32 +228,31 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
     )
   }
 
-  k4_prefix <- "manMetaVAR-summary-diagnostics-k4-"
-  k4_pattern <- paste0(
-    "^",
-    k4_prefix,
-    sprintf("%05d", k4_taskid),
-    "-",
-    sprintf("%05d", replications),
-    "\\.Rds$"
-  )
-  k4_files <- list.files(
-    path = data_raw_folder,
-    pattern = k4_pattern,
-    full.names = TRUE
-  )
-  validate_complete(
-    files = k4_files,
-    expected_taskids = k4_taskid,
-    prefix = k4_prefix,
-    label = "k = 4"
-  )
   k4_output <- file.path(
     data_folder,
     "simulation_diagnostics_k4.rda"
   )
   if (!file.exists(k4_output) || overwrite) {
-  # if (length(k4_files) > 0L && (!file.exists(k4_output) || overwrite)) {
+    k4_prefix <- "manMetaVAR-summary-diagnostics-k4-"
+    k4_pattern <- paste0(
+      "^",
+      k4_prefix,
+      sprintf("%05d", k4_taskid),
+      "-",
+      sprintf("%05d", replications),
+      "\\.Rds$"
+    )
+    k4_files <- list.files(
+      path = data_raw_folder,
+      pattern = k4_pattern,
+      full.names = TRUE
+    )
+    validate_complete(
+      files = k4_files,
+      expected_taskids = k4_taskid,
+      prefix = k4_prefix,
+      label = "k = 4"
+    )
     simulation_diagnostics_k4 <- combine_diagnostics(k4_files)
     save(
       simulation_diagnostics_k4,
