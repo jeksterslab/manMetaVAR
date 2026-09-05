@@ -51,13 +51,14 @@ data_analysis_adid2010_data_ema <- function(overwrite = FALSE) {
   }
 
   if (!file.exists(raw_data)) {
-    stop(
+    message(
       paste0(
         "Raw data file does not exist: ",
         raw_data
       ),
       call. = FALSE
     )
+    write <- FALSE
   }
 
   cat("\ndata_analysis_adid2010_data_ema\n")
