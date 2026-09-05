@@ -90,4 +90,4 @@ The output is saved as an external file in `output_folder`.
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

@@ -14,4 +14,4 @@ Returns the project name as a character string.
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

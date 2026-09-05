@@ -28,7 +28,7 @@ SimFitDTVAR(taskid, repid, output_folder, seed, suffix, overwrite, integrity)
 
 - suffix:
 
-  Character string. Output of `manCTMed:::.SimSuffix()`.
+  Character string. Simulation file suffix returned by `.SimSuffix()`.
 
 - overwrite:
 
@@ -49,4 +49,4 @@ This function is executed via the `Sim` function.
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

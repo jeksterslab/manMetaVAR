@@ -31,6 +31,8 @@
 
 - [Manuscript
   Figures](https://github.com/jeksterslab/manMetaVAR/articles/fig-manuscript-figures.md):
+- [Bayesian (Mplus)
+  Diagnostics](https://github.com/jeksterslab/manMetaVAR/articles/mplus-diagnostics.md):
 
 ### Benchmark
 

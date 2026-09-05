@@ -6,7 +6,7 @@
 
 ### Heatmaps
 
-#### Absoluate Value of the Relative Bias
+#### Absolute Relative or Absolute Bias
 
 ![](fig-vignettes-manuscript-figures-abs-rel-bias-1.png)
 
@@ -21,3 +21,7 @@
 #### Statistical Power
 
 ![](fig-vignettes-manuscript-figures-power-1.png)
+
+#### Type I Error Rate
+
+![](fig-vignettes-manuscript-figures-type1-error-1.png)

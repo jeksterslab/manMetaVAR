@@ -29,10 +29,17 @@ FitDTVAR(data, ncores = NULL, seed = NULL)
 ## See also
 
 Other Model Fitting Functions:
+[`FitDTVARK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVARK4.md),
 [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md),
+[`FitMetaVARK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVARK4.md),
 [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md),
+[`FitMplusDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusDiagnostics.md),
+[`FitMplusK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusK4.md),
+[`FitMplusK4Diagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusK4Diagnostics.md),
 [`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md),
-[`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
+[`FitNaiveK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaiveK4.md),
+[`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md),
+[`MplusInputK4()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInputK4.md)
 
 ## Examples
 

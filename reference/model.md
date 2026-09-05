@@ -78,14 +78,14 @@ A list with 15 elements:
 
 - ma_random_d_ldl:
 
-  `uc_d` of the LDL' decomposition of the random effects. See
+  `uc_d` of the LDL' decomposition of the random-effects covariance. See
   [`fitVARMxID::LDL()`](https://github.com/jeksterslab/fitVARMxID/reference/LDL.html).
 
 - ma_random_l_ldl:
 
-  `s_l` of the LDL' decomposition of the random effects. See
+  `s_l` of the LDL' decomposition of the random-effects covariance. See
   [`fitVARMxID::LDL()`](https://github.com/jeksterslab/fitVARMxID/reference/LDL.html).
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

@@ -13,7 +13,8 @@ SimFN(output_type, output_folder, suffix)
 - output_type:
 
   Character string. Output type. Valid values include `"data"`,
-  `"fit-dt-var-mx"`, `"fit-meta-var-mx"`, and `"fit-mplus"`.
+  `"fit-dt-var-mx"`, `"fit-meta-var-mx"`, `"fit-mplus"`, and
+  `"fit-naive"`.
 
 - output_folder:
 
@@ -21,7 +22,7 @@ SimFN(output_type, output_folder, suffix)
 
 - suffix:
 
-  Character string. Output of `manCTMed:::.SimSuffix()`.
+  Character string. Simulation file suffix returned by `.SimSuffix()`.
 
 ## Value
 

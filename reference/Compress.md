@@ -26,6 +26,11 @@ Compress(taskid, repid, output_folder)
 
 The output is saved as an external file in `output_folder`.
 
+## See also
+
+Other Compression Functions:
+[`CompressK4()`](https://github.com/jeksterslab/manMetaVAR/reference/CompressK4.md)
+
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

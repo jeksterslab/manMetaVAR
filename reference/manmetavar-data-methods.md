@@ -32,4 +32,4 @@ plot(x, ...)
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

@@ -18,7 +18,8 @@ FigMetricHeatmap(results, metric_name, grey_scale = FALSE, values = FALSE)
 
   Character string. `"coverage"` for coverage probability,
   `"abs_rel_bias"` for absolute value of the relative bias, `"rmse"` for
-  RMSE, and `"power"` for statistical power.
+  RMSE, `"power"` for statistical power, and `"type1_error"` for the
+  Type I error rate.
 
 - grey_scale:
 
@@ -32,11 +33,13 @@ FigMetricHeatmap(results, metric_name, grey_scale = FALSE, values = FALSE)
 ## See also
 
 Other Figure Functions:
+[`FigMplusDiagnosticsHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMplusDiagnosticsHeatmap.md),
+[`FigMplusDiagnosticsOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMplusDiagnosticsOverview.md),
 [`FigOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigOverview.md)
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan
 
 ## Examples
 

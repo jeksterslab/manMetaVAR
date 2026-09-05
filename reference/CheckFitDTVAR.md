@@ -24,7 +24,7 @@ CheckFitDTVAR(taskid, repid, output_folder, suffix)
 
 - suffix:
 
-  Character string. Output of `manCTMed:::.SimSuffix()`.
+  Character string. Simulation file suffix returned by `.SimSuffix()`.
 
 ## Value
 
@@ -36,4 +36,4 @@ This function is executed via the `Check` function.
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

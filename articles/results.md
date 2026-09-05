@@ -1,14 +1,10 @@
 # Simulation Results
 
-``` r
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`manMetaVAR`](https://github.com/jeksterslab/manMetaVAR)`)`
 
-library(manMetaVAR)
-```
-
-``` r
-
-data(results, package = "manMetaVAR")
-```
+\
+[`data`](https://rdrr.io/r/utils/data.html)`(``results``, package ``=`` ``"manMetaVAR"``)`
 
 See
 [`results()`](https://github.com/jeksterslab/manMetaVAR/reference/results.md)

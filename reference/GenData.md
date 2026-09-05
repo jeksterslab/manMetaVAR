@@ -20,6 +20,11 @@ GenData(taskid, seed = NULL)
 
   Integer. Random seed.
 
+## See also
+
+Other Data Generation Functions:
+[`GenDataK4()`](https://github.com/jeksterslab/manMetaVAR/reference/GenDataK4.md)
+
 ## Examples
 
 ``` r

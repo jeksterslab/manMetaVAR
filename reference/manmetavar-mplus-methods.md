@@ -43,8 +43,8 @@ plot(
 
 - burnin:
 
-  Integer indicating initial samples to discard. If `burnin = NULL`, do
-  not discard anything.
+  Integer indicating initial samples to discard. If `burnin = NULL`, use
+  the burn-in stored in `object$burnin`.
 
 - ...:
 
@@ -75,7 +75,10 @@ plot(
 - what:
 
   Character string. If `what = "posterior"`, return posterior
-  distribution plots. If `what = "trace"`, return trace plots.
+  distribution plots. If `what = "trace"`, return trace plots. If
+  `what = "rhat"`, `"ess"`, or `"mcse"`, return the corresponding
+  Bayesian diagnostic plot from
+  [`FitMplusDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusDiagnostics.md).
 
 - legend_loc:
 
@@ -83,4 +86,4 @@ plot(
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

@@ -11,6 +11,7 @@ FitMplus(
   iter = 40000L,
   fscores = NULL,
   plot = FALSE,
+  default_priors = TRUE,
   wd = ".",
   mplus_bin = NULL,
   ncores = NULL,
@@ -43,6 +44,10 @@ FitMplus(
   Logical. If `plot = TRUE`, add `PLOT: TYPE = PLOT3;` to `Mplus` input
   file.
 
+- default_priors:
+
+  Logical. If `default_priors = TRUE`, use `Mplus` default priors.
+
 - wd:
 
   Character string. Working directory.
@@ -64,9 +69,16 @@ FitMplus(
 
 Other Model Fitting Functions:
 [`FitDTVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVAR.md),
+[`FitDTVARK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitDTVARK4.md),
 [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md),
+[`FitMetaVARK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVARK4.md),
+[`FitMplusDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusDiagnostics.md),
+[`FitMplusK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusK4.md),
+[`FitMplusK4Diagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusK4Diagnostics.md),
 [`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md),
-[`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
+[`FitNaiveK4()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaiveK4.md),
+[`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md),
+[`MplusInputK4()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInputK4.md)
 
 ## Examples
 
@@ -74,8 +86,13 @@ Other Model Fitting Functions:
 if (FALSE) { # \dontrun{
 seed <- 42
 data <- GenData(taskid = 1, seed = seed)
-fit <- FitMplus(data = data)
-print(fit)
-summary(fit)
+dsem <- FitMplus(data = data)
+print(dsem)
+summary(dsem)
+coef(dsem)
+vcov(dsem)
+confint(dsem)
+plot(dsem)
+plot(dsem, what = "trace")
 } # }
 ```

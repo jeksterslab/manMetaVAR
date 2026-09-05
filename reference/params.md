@@ -25,6 +25,10 @@ A dataframe with 12 rows and 3 columns:
   Number of measurement occassions. If `NA`, measurement occasions vary
   across IDs.
 
+- heterogeneity:
+
+  Transition-parameter heterogeneity multiplier: 0, 1, or 2.
+
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

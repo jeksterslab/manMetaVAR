@@ -45,4 +45,4 @@ This function is executed via the `Sum` function.
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan

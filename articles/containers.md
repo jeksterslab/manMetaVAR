@@ -15,7 +15,7 @@ To build the Apptainer/Singularity image file (`manmetavar.sif`), run
 the following.
 
 ``` bash
-apptainer pull manmetavar.sif docker://ijapesigan/manmetavar
+apptainer pull manmetavar.sif docker://ijapesigan/manmetavar:latest
 ```
 
 ## RStudio IDE Docker Container
@@ -30,7 +30,7 @@ be accessed in the browser using the `Rstudio` IDE.
 To launch `Rstudio Server`, run the following.
 
 ``` bash
-docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manmetavar
+docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manmetavar:latest
 ```
 
 Open `http://localhost:8787` on your web browser to launch

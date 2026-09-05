@@ -17,11 +17,13 @@ FigOverview(results)
 ## See also
 
 Other Figure Functions:
-[`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md)
+[`FigMetricHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMetricHeatmap.md),
+[`FigMplusDiagnosticsHeatmap()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMplusDiagnosticsHeatmap.md),
+[`FigMplusDiagnosticsOverview()`](https://github.com/jeksterslab/manMetaVAR/reference/FigMplusDiagnosticsOverview.md)
 
 ## Author
 
-Anonymous
+Ivan Jacob Agaloos Pesigan
 
 ## Examples
 

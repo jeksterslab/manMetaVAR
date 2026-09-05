@@ -4,7 +4,8 @@
 
 ## Description
 
-Research compendium for the manuscript From Person-Specific Dynamics to
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
+A., & Chow, S.-M. (Under Review). From Person-Specific Dynamics to
 Population Inference: A Computationally Efficient Meta-Analytic
 Structural Equation Modeling Framework for Integrating Complex
 Multilevel Dynamic Models. <https://doi.org/10.0000/0000000000>
@@ -31,11 +32,9 @@ details on how the simulations were performed.
 You can install `manMetaVAR` from
 [GitHub](https://github.com/jeksterslab/manMetaVAR) with:
 
-``` r
-
-if (!require("pak")) install.packages("pak")
-pak::pkg_install("jeksterslab/manMetaVAR")
-```
+\
+`if`` ``(``!`[`require`](https://rdrr.io/r/base/library.html)`(`[`"pak"`](https://pak.r-lib.org/)`)``)`` `[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"pak"``)`\
+`pak``::`[`pkg_install`](https://pak.r-lib.org/reference/pkg_install.html)`(``"jeksterslab/manMetaVAR"``)`
 
 See
 [Containers](https://jeksterslab.github.io/manMetaVAR/articles/containers.html)
