@@ -5,7 +5,7 @@
 ### Simulation for Revision
 
 - Docker Hub:
-  <ijapesigan/manmetavar@sha256>:4fa0f0f4ebe6dd501f99baf1316b8b0a45bb74c9c681bee53e9a0bb04a67df72
+  <ijapesigan/manmetavar@sha256>:a801bfbdaa416535ac1456deee254f35726e0cd9618ae6dbea756e3e9ac48fec
 
 ## manMetaVAR 0.9.8
 
