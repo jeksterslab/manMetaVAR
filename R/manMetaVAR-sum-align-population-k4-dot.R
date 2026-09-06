@@ -10,9 +10,10 @@
 #' @keywords manMetaVAR summary simulation internal
 #' @noRd
 .SumAlignPopulationK4 <- function(
-    raw,
-    heterogeneity,
-    population_object = populationk4) {
+  raw,
+  heterogeneity,
+  population_object = populationk4
+) {
   condition <- .SumPopulationCondition(
     heterogeneity = heterogeneity,
     population_object = population_object
@@ -49,8 +50,7 @@
     )
   }
   raw <- raw[
-    names(parameter),
-    ,
+    names(parameter), ,
     drop = FALSE
   ]
   list(

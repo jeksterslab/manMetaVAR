@@ -110,8 +110,7 @@
     )
   }
   raw <- raw[
-    location,
-    ,
+    location, ,
     drop = FALSE
   ]
   rownames(raw) <- names(parameter)
