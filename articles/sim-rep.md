@@ -444,7 +444,7 @@
 `#>  default_priors chains requested_iterations retained_iterations_per_chain`\
 `#>            TRUE      2                40000                         20000`\
 `#>  burnin retained_draws level elapsed_seconds max_rhat min_ess_bulk min_ess_tail`\
-`#>   20000          40000  0.95        182.8174 1.001126     1551.518      3548.57`\
+`#>   20000          40000  0.95        182.2189 1.001126     1551.518      3548.57`\
 `#>  n_rhat_na n_rhat_gt_1_01 n_ess_bulk_na n_ess_bulk_lt_100 n_ess_bulk_lt_200`\
 `#>          0              0             0                 0                 0`\
 `#>  n_ess_bulk_lt_400 n_ess_tail_na n_ess_tail_lt_100 n_ess_tail_lt_200`\
@@ -505,7 +505,7 @@
 
     Mplus VERSION 9.1 (Linux)
     MUTHEN & MUTHEN
-    09/05/2026   7:00 PM
+    09/05/2026  11:29 PM
 
     INPUT INSTRUCTIONS
 
@@ -1452,9 +1452,9 @@
         Parameter 21, %BETWEEN%: Y2 WITH Y1 (equality/label)
         Parameter 22, %BETWEEN%: Y2 (equality/label)
 
-         Beginning Time:  19:00:37
-            Ending Time:  19:03:40
-           Elapsed Time:  00:03:03
+         Beginning Time:  23:29:26
+            Ending Time:  23:32:28
+           Elapsed Time:  00:03:02
 
 
 
@@ -1781,7 +1781,7 @@
 `#>  default_priors chains requested_iterations retained_iterations_per_chain`\
 `#>           FALSE      2                40000                         20000`\
 `#>  burnin retained_draws level elapsed_seconds max_rhat min_ess_bulk min_ess_tail`\
-`#>   20000          40000  0.95        182.9027 1.002771     1361.621     3053.684`\
+`#>   20000          40000  0.95        182.4432 1.002771     1361.621     3053.684`\
 `#>  n_rhat_na n_rhat_gt_1_01 n_ess_bulk_na n_ess_bulk_lt_100 n_ess_bulk_lt_200`\
 `#>          0              0             0                 0                 0`\
 `#>  n_ess_bulk_lt_400 n_ess_tail_na n_ess_tail_lt_100 n_ess_tail_lt_200`\
@@ -1842,7 +1842,7 @@
 
     Mplus VERSION 9.1 (Linux)
     MUTHEN & MUTHEN
-    09/05/2026   7:03 PM
+    09/05/2026  11:32 PM
 
     INPUT INSTRUCTIONS
 
@@ -2814,8 +2814,8 @@
         Parameter 21, %BETWEEN%: Y2 WITH Y1 (equality/label)
         Parameter 22, %BETWEEN%: Y2 (equality/label)
 
-         Beginning Time:  19:03:47
-            Ending Time:  19:06:50
+         Beginning Time:  23:32:36
+            Ending Time:  23:35:39
            Elapsed Time:  00:03:03
 
 

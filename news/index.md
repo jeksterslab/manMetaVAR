@@ -4,9 +4,8 @@
 
 ### Simulation for Revision
 
-## manMetaVAR 0.5.8
-
-### Initial Submission
+- Docker Hub:
+  <ijapesigan/manmetavar@sha256>:4fa0f0f4ebe6dd501f99baf1316b8b0a45bb74c9c681bee53e9a0bb04a67df72
 
 ## manMetaVAR 0.9.8
 
