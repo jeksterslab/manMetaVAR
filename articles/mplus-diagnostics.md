@@ -1,5 +1,8 @@
 # Bayesian (Mplus) Diagnostics
 
+    #> Warning in data(diagnostics, package = "manMetaVAR"): data set 'diagnostics'
+    #> not found
+
 ## Overview
 
 The Bayesian simulation conditions were estimated in Mplus using the
@@ -23,7 +26,8 @@ as failures.
 
 ### Default and user-specified priors
 
-![](fig-vignettes-mplus-diagnostics-failure-rate-levels-1.png)
+    #> Error:
+    #> ! object 'diagnostics' not found
 
 ### Prior sensitivity
 
@@ -36,7 +40,8 @@ The following figure reports the paired difference in failure rates:
 Negative values indicate fewer failures under the user-specified priors,
 whereas positive values indicate more failures.
 
-![](fig-vignettes-mplus-diagnostics-failure-rate-difference-1.png)
+    #> Error:
+    #> ! object 'diagnostics' not found
 
 ### Simulation-case sensitivity table
 
@@ -47,47 +52,18 @@ replications with at least one failed parameter in each block. Positive
 values indicate more failures under the user-specified priors, whereas
 negative values indicate fewer failures.
 
-| Task ID | Heterogeneity | N | T | Innovation covariance | Fixed effects | Random effects |
-|---:|---:|---:|:---|---:|---:|---:|
-| 1 | 1 | 50 | 50 | 0 pp | +80 pp | +70 pp |
-| 2 | 1 | 100 | 50 | 0 pp | +80 pp | +10 pp |
-| 3 | 1 | 200 | 50 | 0 pp | +80 pp | 0 pp |
-| 4 | 1 | 50 | 100 | 0 pp | +10 pp | +50 pp |
-| 5 | 1 | 100 | 100 | 0 pp | 0 pp | +20 pp |
-| 6 | 1 | 200 | 100 | 0 pp | 0 pp | 0 pp |
-| 7 | 1 | 50 | 200 | 0 pp | 0 pp | 0 pp |
-| 8 | 1 | 100 | 200 | 0 pp | 0 pp | +30 pp |
-| 9 | 1 | 200 | 200 | 0 pp | 0 pp | +20 pp |
-| 10 | 1 | 50 | Unbalanced | 0 pp | 0 pp | +50 pp |
-| 11 | 1 | 100 | Unbalanced | 0 pp | 0 pp | +30 pp |
-| 12 | 1 | 200 | Unbalanced | 0 pp | 0 pp | +10 pp |
-| 13 | 2 | 50 | 50 | 0 pp | +50 pp | +40 pp |
-| 14 | 2 | 100 | 50 | 0 pp | +90 pp | +30 pp |
-| 15 | 2 | 200 | 50 | 0 pp | +70 pp | 0 pp |
-| 16 | 2 | 50 | 100 | 0 pp | 0 pp | +60 pp |
-| 17 | 2 | 100 | 100 | 0 pp | 0 pp | +60 pp |
-| 18 | 2 | 200 | 100 | 0 pp | 0 pp | +10 pp |
-| 19 | 2 | 50 | 200 | 0 pp | 0 pp | +20 pp |
-| 20 | 2 | 100 | 200 | 0 pp | 0 pp | +20 pp |
-| 21 | 2 | 200 | 200 | 0 pp | 0 pp | +60 pp |
-| 22 | 2 | 50 | Unbalanced | 0 pp | +10 pp | +70 pp |
-| 23 | 2 | 100 | Unbalanced | 0 pp | -10 pp | +20 pp |
-| 24 | 2 | 200 | Unbalanced | 0 pp | 0 pp | +20 pp |
-| 25 | 0 | 50 | 50 | 0 pp | +90 pp | 0 pp |
-| 26 | 0 | 100 | 50 | 0 pp | +100 pp | 0 pp |
-| 27 | 0 | 200 | 50 | 0 pp | +50 pp | 0 pp |
-| 28 | 0 | 50 | 100 | 0 pp | +10 pp | +40 pp |
-| 29 | 0 | 100 | 100 | 0 pp | +10 pp | 0 pp |
-| 30 | 0 | 200 | 100 | 0 pp | +20 pp | 0 pp |
-| 31 | 0 | 50 | 200 | 0 pp | 0 pp | +40 pp |
-| 32 | 0 | 100 | 200 | 0 pp | 0 pp | 0 pp |
-| 33 | 0 | 200 | 200 | 0 pp | 0 pp | 0 pp |
-| 34 | 0 | 50 | Unbalanced | 0 pp | 0 pp | +10 pp |
-| 35 | 0 | 100 | Unbalanced | 0 pp | 0 pp | 0 pp |
-| 36 | 0 | 200 | Unbalanced | 0 pp | 0 pp | 0 pp |
-
-Paired user-prior minus default-prior diagnostic failure-rate
-differences for each simulation case. {.table style="width:100%;"}
+    #> Error:
+    #> ! object 'diagnostics' not found
+    #> Error:
+    #> ! object 'diagnostic_sensitivity' not found
+    #> Error:
+    #> ! object 'diagnostic_sensitivity' not found
+    #> Error:
+    #> ! object 'diagnostic_sensitivity' not found
+    #> Error in `rProject::VignettesPrecompile()`:
+    #> ! object 'diagnostic_sensitivity' not found
+    #> Error:
+    #> ! object 'diagnostic_sensitivity' not found
 
 ## Sources of diagnostic failure
 
@@ -96,7 +72,8 @@ sample size, tail effective sample size, and relative Monte Carlo
 standard error. Cell labels are omitted to emphasize the overall
 pattern.
 
-![](fig-vignettes-mplus-diagnostics-diagnostic-specific-failures-1.png)
+    #> Error:
+    #> ! object 'diagnostics' not found
 
 ## Alternative diagnostic thresholds
 
@@ -105,7 +82,8 @@ criteria while retaining the same block-level summary. The example below
 uses R-hat greater than 1.05, effective sample size less than 200, and
 relative Monte Carlo standard error greater than 0.10.
 
-![](fig-vignettes-mplus-diagnostics-alternative-thresholds-1.png)
+    #> Error:
+    #> ! object 'diagnostics' not found
 
 ## Parameter-level follow-up figures
 
@@ -146,24 +124,7 @@ when needed.
 Each figure retains the values used to construct the heatmap. These
 summaries can be used for manuscript tables or reviewer-response text.
 
-    #>   taskid           method   n time heterogeneity     target     diagnostic
-    #> 1      1 Priors - Default  50   50             1         FE Any diagnostic
-    #> 2      1 Priors - Default  50   50             1 Innovation Any diagnostic
-    #> 3      1 Priors - Default  50   50             1         RE Any diagnostic
-    #> 4      2 Priors - Default 100   50             1         FE Any diagnostic
-    #> 5      2 Priors - Default 100   50             1 Innovation Any diagnostic
-    #> 6      2 Priors - Default 100   50             1         RE Any diagnostic
-    #>   value n_valid comparison        unit condition_label heterogeneity_label
-    #> 1   0.8      10 difference replication  N = 50, T = 50   Heterogeneity = 1
-    #> 2   0.0      10 difference replication  N = 50, T = 50   Heterogeneity = 1
-    #> 3   0.7      10 difference replication  N = 50, T = 50   Heterogeneity = 1
-    #> 4   0.8      10 difference replication N = 100, T = 50   Heterogeneity = 1
-    #> 5   0.0      10 difference replication N = 100, T = 50   Heterogeneity = 1
-    #> 6   0.1      10 difference replication N = 100, T = 50   Heterogeneity = 1
-    #>            target_label diagnostic_panel fill_value value_label text_colour
-    #> 1         Fixed effects   Any diagnostic        0.8      +80 pp       white
-    #> 2 Innovation covariance   Any diagnostic        0.0        <NA>       black
-    #> 3        Random effects   Any diagnostic        0.7      +70 pp       white
-    #> 4         Fixed effects   Any diagnostic        0.8      +80 pp       white
-    #> 5 Innovation covariance   Any diagnostic        0.0        <NA>       black
-    #> 6        Random effects   Any diagnostic        0.1      +10 pp       black
+    #> Error:
+    #> ! object 'diagnostics' not found
+    #> Error:
+    #> ! object 'diagnostic_plot' not found

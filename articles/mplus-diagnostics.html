@@ -24,7 +24,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manMetaVAR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +67,8 @@ Agaloos Pesigan</h4>
 
     
     
+<pre><code><span><span class="co">#&gt; Warning in data(diagnostics, package = "manMetaVAR"): data set 'diagnostics'</span></span>
+<span><span class="co">#&gt; not found</span></span></code></pre>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
@@ -91,7 +93,8 @@ as failures.</p>
 <div class="section level3">
 <h3 id="default-and-user-specified-priors">Default and user-specified priors<a class="anchor" aria-label="anchor" href="#default-and-user-specified-priors"></a>
 </h3>
-<p><img src="fig-vignettes-mplus-diagnostics-failure-rate-levels-1.png" alt="" width="3300"></p>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="prior-sensitivity">Prior sensitivity<a class="anchor" aria-label="anchor" href="#prior-sensitivity"></a>
@@ -103,7 +106,8 @@ rates:</p>
 </annotation></semantics></math></p>
 <p>Negative values indicate fewer failures under the user-specified
 priors, whereas positive values indicate more failures.</p>
-<p><img src="fig-vignettes-mplus-diagnostics-failure-rate-difference-1.png" alt="" width="3300"></p>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="simulation-case-sensitivity-table">Simulation-case sensitivity table<a class="anchor" aria-label="anchor" href="#simulation-case-sensitivity-table"></a>
@@ -114,354 +118,18 @@ user-prior minus default-prior difference in the percentage of
 replications with at least one failed parameter in each block. Positive
 values indicate more failures under the user-specified priors, whereas
 negative values indicate fewer failures.</p>
-<table style="width:100%;" class="table">
-<caption>Paired user-prior minus default-prior diagnostic failure-rate
-differences for each simulation case.</caption>
-<colgroup>
-<col width="9%">
-<col width="15%">
-<col width="4%">
-<col width="12%">
-<col width="25%">
-<col width="15%">
-<col width="17%">
-</colgroup>
-<thead><tr class="header">
-<th align="right">Task ID</th>
-<th align="right">Heterogeneity</th>
-<th align="right">N</th>
-<th align="left">T</th>
-<th align="right">Innovation covariance</th>
-<th align="right">Fixed effects</th>
-<th align="right">Random effects</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">50</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+80 pp</td>
-<td align="right">+70 pp</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">100</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+80 pp</td>
-<td align="right">+10 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">200</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+80 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">50</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-<td align="right">+50 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">100</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="right">1</td>
-<td align="right">200</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="right">1</td>
-<td align="right">50</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="right">1</td>
-<td align="right">100</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+30 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="right">1</td>
-<td align="right">200</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="right">1</td>
-<td align="right">50</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+50 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="right">1</td>
-<td align="right">100</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+30 pp</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="right">1</td>
-<td align="right">200</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">13</td>
-<td align="right">2</td>
-<td align="right">50</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+50 pp</td>
-<td align="right">+40 pp</td>
-</tr>
-<tr class="even">
-<td align="right">14</td>
-<td align="right">2</td>
-<td align="right">100</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+90 pp</td>
-<td align="right">+30 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">15</td>
-<td align="right">2</td>
-<td align="right">200</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+70 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">16</td>
-<td align="right">2</td>
-<td align="right">50</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+60 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">17</td>
-<td align="right">2</td>
-<td align="right">100</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+60 pp</td>
-</tr>
-<tr class="even">
-<td align="right">18</td>
-<td align="right">2</td>
-<td align="right">200</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">19</td>
-<td align="right">2</td>
-<td align="right">50</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="even">
-<td align="right">20</td>
-<td align="right">2</td>
-<td align="right">100</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">21</td>
-<td align="right">2</td>
-<td align="right">200</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+60 pp</td>
-</tr>
-<tr class="even">
-<td align="right">22</td>
-<td align="right">2</td>
-<td align="right">50</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-<td align="right">+70 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">23</td>
-<td align="right">2</td>
-<td align="right">100</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">-10 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="even">
-<td align="right">24</td>
-<td align="right">2</td>
-<td align="right">200</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">25</td>
-<td align="right">0</td>
-<td align="right">50</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+90 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">26</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+100 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">27</td>
-<td align="right">0</td>
-<td align="right">200</td>
-<td align="left">50</td>
-<td align="right">0 pp</td>
-<td align="right">+50 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">28</td>
-<td align="right">0</td>
-<td align="right">50</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-<td align="right">+40 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">29</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">30</td>
-<td align="right">0</td>
-<td align="right">200</td>
-<td align="left">100</td>
-<td align="right">0 pp</td>
-<td align="right">+20 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">31</td>
-<td align="right">0</td>
-<td align="right">50</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+40 pp</td>
-</tr>
-<tr class="even">
-<td align="right">32</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">33</td>
-<td align="right">0</td>
-<td align="right">200</td>
-<td align="left">200</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">34</td>
-<td align="right">0</td>
-<td align="right">50</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">+10 pp</td>
-</tr>
-<tr class="odd">
-<td align="right">35</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-<tr class="even">
-<td align="right">36</td>
-<td align="right">0</td>
-<td align="right">200</td>
-<td align="left">Unbalanced</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-<td align="right">0 pp</td>
-</tr>
-</tbody>
-</table>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_sensitivity' not found</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_sensitivity' not found</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_sensitivity' not found</span></span>
+<span><span class="co">#&gt; Error in `rProject::VignettesPrecompile()`:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_sensitivity' not found</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_sensitivity' not found</span></span></code></pre>
 </div>
 </div>
 <div class="section level2">
@@ -471,7 +139,8 @@ differences for each simulation case.</caption>
 effective sample size, tail effective sample size, and relative Monte
 Carlo standard error. Cell labels are omitted to emphasize the overall
 pattern.</p>
-<p><img src="fig-vignettes-mplus-diagnostics-diagnostic-specific-failures-1.png" alt="" width="3300"></p>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="alternative-diagnostic-thresholds">Alternative diagnostic thresholds<a class="anchor" aria-label="anchor" href="#alternative-diagnostic-thresholds"></a>
@@ -480,7 +149,8 @@ pattern.</p>
 the criteria while retaining the same block-level summary. The example
 below uses R-hat greater than 1.05, effective sample size less than 200,
 and relative Monte Carlo standard error greater than 0.10.</p>
-<p><img src="fig-vignettes-mplus-diagnostics-alternative-thresholds-1.png" alt="" width="3300"></p>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="parameter-level-follow-up-figures">Parameter-level follow-up figures<a class="anchor" aria-label="anchor" href="#parameter-level-follow-up-figures"></a>
@@ -490,7 +160,7 @@ to reviewers. Parameter-level heatmaps can be used as supplementary
 drill-down figures when a block shows meaningful diagnostic sensitivity.
 To keep these figures legible, display one parameter family at a time
 and omit cell labels.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fixed_effect_parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"mean(beta[1,1])"</span>,</span>
 <span>  <span class="st">"mean(beta[2,1])"</span>,</span>
@@ -521,27 +191,10 @@ when needed.</p>
 <p>Each figure retains the values used to construct the heatmap. These
 summaries can be used for manuscript tables or reviewer-response
 text.</p>
-<pre><code><span><span class="co">#&gt;   taskid           method   n time heterogeneity     target     diagnostic</span></span>
-<span><span class="co">#&gt; 1      1 Priors - Default  50   50             1         FE Any diagnostic</span></span>
-<span><span class="co">#&gt; 2      1 Priors - Default  50   50             1 Innovation Any diagnostic</span></span>
-<span><span class="co">#&gt; 3      1 Priors - Default  50   50             1         RE Any diagnostic</span></span>
-<span><span class="co">#&gt; 4      2 Priors - Default 100   50             1         FE Any diagnostic</span></span>
-<span><span class="co">#&gt; 5      2 Priors - Default 100   50             1 Innovation Any diagnostic</span></span>
-<span><span class="co">#&gt; 6      2 Priors - Default 100   50             1         RE Any diagnostic</span></span>
-<span><span class="co">#&gt;   value n_valid comparison        unit condition_label heterogeneity_label</span></span>
-<span><span class="co">#&gt; 1   0.8      10 difference replication  N = 50, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt; 2   0.0      10 difference replication  N = 50, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt; 3   0.7      10 difference replication  N = 50, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt; 4   0.8      10 difference replication N = 100, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt; 5   0.0      10 difference replication N = 100, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt; 6   0.1      10 difference replication N = 100, T = 50   Heterogeneity = 1</span></span>
-<span><span class="co">#&gt;            target_label diagnostic_panel fill_value value_label text_colour</span></span>
-<span><span class="co">#&gt; 1         Fixed effects   Any diagnostic        0.8      +80 pp       white</span></span>
-<span><span class="co">#&gt; 2 Innovation covariance   Any diagnostic        0.0        &lt;NA&gt;       black</span></span>
-<span><span class="co">#&gt; 3        Random effects   Any diagnostic        0.7      +70 pp       white</span></span>
-<span><span class="co">#&gt; 4         Fixed effects   Any diagnostic        0.8      +80 pp       white</span></span>
-<span><span class="co">#&gt; 5 Innovation covariance   Any diagnostic        0.0        &lt;NA&gt;       black</span></span>
-<span><span class="co">#&gt; 6        Random effects   Any diagnostic        0.1      +10 pp       black</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostics' not found</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'diagnostic_plot' not found</span></span></code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

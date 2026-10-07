@@ -16,10 +16,11 @@ FigMetricHeatmap(results, metric_name, grey_scale = FALSE, values = FALSE)
 
 - metric_name:
 
-  Character string. `"coverage"` for coverage probability,
-  `"abs_rel_bias"` for absolute value of the relative bias, `"rmse"` for
-  RMSE, `"power"` for statistical power, and `"type1_error"` for the
-  Type I error rate.
+  Character string. `"coverage"` for coverage probability, `"abs_bias"`
+  for absolute bias on the parameter scale, `"abs_rel_bias"` for the
+  legacy mixed relative/absolute bias display, `"rmse"` for RMSE,
+  `"power"` for statistical power, and `"type1_error"` for the Type I
+  error rate.
 
 - grey_scale:
 

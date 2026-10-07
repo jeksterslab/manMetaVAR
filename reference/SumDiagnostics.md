@@ -1,4 +1,4 @@
-# Summarize Four-Variable Simulation Diagnostics
+# Summarize Simulation Diagnostics
 
 Summarizes the machine-readable status manifests, boundary or near-zero
 heterogeneity diagnostics, and runtime for a simulation task.
@@ -6,19 +6,6 @@ heterogeneity diagnostics, and runtime for a simulation task.
 ## Usage
 
 ``` r
-SumDiagnosticsK4(
-  taskid,
-  reps,
-  output_folder,
-  overwrite,
-  integrity,
-  naive,
-  metavar,
-  mplus,
-  variance_tol = 1e-06,
-  eigen_tol = 1e-08
-)
-
 SumDiagnostics(
   taskid,
   reps,
