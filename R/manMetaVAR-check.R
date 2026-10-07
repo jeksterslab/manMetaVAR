@@ -85,8 +85,7 @@ Check <- function(taskid,
     suffix = suffix,
     naive = naive,
     metavar = metavar,
-    mplus = mplus,
-    k4 = FALSE
+    mplus = mplus
   )
   .CheckStatusGate(status)
   invisible(status)

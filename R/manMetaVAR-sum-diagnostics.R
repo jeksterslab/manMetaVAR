@@ -45,7 +45,6 @@ SumDiagnostics <- function(taskid,
     metavar = metavar,
     mplus = mplus,
     variance_tol = variance_tol,
-    eigen_tol = eigen_tol,
-    k4 = FALSE
+    eigen_tol = eigen_tol
   )
 }

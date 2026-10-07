@@ -43,8 +43,7 @@ SumFitNaive <- function(taskid,
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,
-      output_type = "fit-naive",
-      k4 = FALSE
+      output_type = "fit-naive"
     )
     reps_used <- length(repids)
     if (reps_used < 2L) {

@@ -72,16 +72,10 @@ cat(
 \seealso{
 Other Model Fitting Functions:
 \code{\link[=FitDTVAR]{FitDTVAR()}},
-\code{\link[=FitDTVARK4]{FitDTVARK4()}},
 \code{\link[=FitMetaVAR]{FitMetaVAR()}},
-\code{\link[=FitMetaVARK4]{FitMetaVARK4()}},
 \code{\link[=FitMplus]{FitMplus()}},
 \code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}},
-\code{\link[=FitMplusK4]{FitMplusK4()}},
-\code{\link[=FitMplusK4Diagnostics]{FitMplusK4Diagnostics()}},
-\code{\link[=FitNaive]{FitNaive()}},
-\code{\link[=FitNaiveK4]{FitNaiveK4()}},
-\code{\link[=MplusInputK4]{MplusInputK4()}}
+\code{\link[=FitNaive]{FitNaive()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

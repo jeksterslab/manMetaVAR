@@ -7,8 +7,7 @@
                                 metavar,
                                 mplus,
                                 variance_tol,
-                                eigen_tol,
-                                k4 = FALSE) {
+                                eigen_tol) {
   if (!dir.exists(output_folder)) {
     stop(
       paste0(
@@ -20,11 +19,7 @@
     )
   }
   fn_output <- SimFN(
-    output_type = if (k4) {
-      "summary-diagnostics-k4"
-    } else {
-      "summary-diagnostics"
-    },
+    output_type = "summary-diagnostics",
     output_folder = output_folder,
     suffix = paste0(
       sprintf("%05d", taskid),
@@ -44,15 +39,14 @@
   status <- .SumStatusManifest(
     taskid = taskid,
     reps = reps,
-    output_folder = output_folder,
-    k4 = k4
+    output_folder = output_folder
   )
   if (is.null(status)) {
     stop(
       paste0(
         "No simulation status manifests were found for taskid = ",
         taskid,
-        ". Run Check/CheckK4 before SumDiagnostics."
+        ". Run Check before SumDiagnostics."
       ),
       call. = FALSE
     )
@@ -66,12 +60,10 @@
     metavar = metavar,
     mplus = mplus,
     variance_tol = variance_tol,
-    eigen_tol = eigen_tol,
-    k4 = k4
+    eigen_tol = eigen_tol
   )
   runtime <- .SumRuntimeDiagnostics(
-    status = status,
-    k4 = k4
+    status = status
   )
   output <- list(
     thresholds = list(
