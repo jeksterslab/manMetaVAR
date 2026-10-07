@@ -1,6 +1,6 @@
 Package: manMetaVAR
 Title: Meta-Analytic SEM for Multilevel Dynamics
-Version: 0.9.9
+Version: 0.5.8
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -30,6 +30,7 @@ BugReports: https://github.com/jeksterslab/manMetaVAR/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.5.0),

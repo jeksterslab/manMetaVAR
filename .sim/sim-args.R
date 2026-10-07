@@ -1,6 +1,6 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
 tasks <- 36L
-reps <- 10L
+reps <- 1000L
 overwrite <- FALSE
 seed <- NULL
 data <- TRUE

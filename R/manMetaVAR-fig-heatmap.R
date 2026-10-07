@@ -6,7 +6,8 @@
 #'
 #' @param metric_name Character string.
 #'   `"coverage"` for coverage probability,
-#'   `"abs_rel_bias"` for absolute value of the relative bias,
+#'   `"abs_bias"` for absolute bias on the parameter scale,
+#'   `"abs_rel_bias"` for the legacy mixed relative/absolute bias display,
 #'   `"rmse"` for RMSE,
 #'   `"power"` for statistical power, and
 #'   `"type1_error"` for the Type I error rate.
@@ -35,17 +36,22 @@ FigMetricHeatmap <- function(results,
                              grey_scale = FALSE,
                              values = FALSE) {
   method <- target <- NULL
-  condition_label <- parameter_label <- heterogeneity_label <- NULL
+  condition_label <- parameter_label <- NULL
+  heterogeneity_label <- NULL
   value <- value_label <- text_colour <- NULL
+
   metric_data <- .BuildMetricHeatmapData(
     results = results,
     metric_name = metric_name
   )
+
   plot_data <- metric_data$data
+
   use_diverging_scale <- metric_name %in% c(
     "coverage",
     "type1_error"
   )
+
   if (grey_scale) {
     if (use_diverging_scale) {
       fill_scale <- ggplot2::scale_fill_gradient2(
@@ -79,11 +85,13 @@ FigMetricHeatmap <- function(results,
       )
     }
   }
+
   title_lookup <- c(
     "coverage" = paste0(
       "Coverage heatmap by parameter, ",
       "design cell, and method"
     ),
+    "abs_bias" = "Absolute bias on the parameter scale",
     "abs_rel_bias" = paste0(
       "Bias-magnitude heatmap by parameter, ",
       "design cell, and method"
@@ -97,10 +105,11 @@ FigMetricHeatmap <- function(results,
       "design cell, and method"
     ),
     "type1_error" = paste0(
-      "Type I error heatmap by parameter, ",
+      "Zero-target interval exclusion by parameter, ",
       "design cell, and method"
     )
   )
+
   heatmap_plot <- ggplot2::ggplot(
     data = plot_data,
     mapping = ggplot2::aes(
@@ -113,6 +122,7 @@ FigMetricHeatmap <- function(results,
       color = "white",
       linewidth = 0.25
     )
+
   if (values) {
     heatmap_plot <- heatmap_plot +
       ggplot2::geom_text(
@@ -126,7 +136,9 @@ FigMetricHeatmap <- function(results,
       ) +
       ggplot2::scale_color_identity()
   }
+
   heatmap_plot +
+    fill_scale +
     ggplot2::facet_grid(
       rows = ggplot2::vars(
         heterogeneity_label,
@@ -134,11 +146,20 @@ FigMetricHeatmap <- function(results,
       ),
       cols = ggplot2::vars(method),
       scales = "free_y",
-      space = "free_y"
+      space = "free_y",
+      labeller = ggplot2::labeller(
+        method = c(
+          "MetaVAR" = "MetaVAR",
+          "BMLVAR-Default" = "DSEM default",
+          "BMLVAR-Priors" = "DSEM alternative",
+          "Uncorr" = "Uncorr"
+        )
+      )
     ) +
-    fill_scale +
     ggplot2::labs(
-      title = unname(title_lookup[[metric_name]]),
+      title = unname(
+        title_lookup[[metric_name]]
+      ),
       subtitle = metric_data$subtitle,
       caption = metric_data$caption,
       x = NULL,
@@ -147,15 +168,19 @@ FigMetricHeatmap <- function(results,
     .FigTheme(base_size = 10)
 }
 
-.BuildMetricHeatmapData <- function(results,
-                                    metric_name) {
+.BuildMetricHeatmapData <- function(
+  results,
+  metric_name
+) {
   allowed <- c(
     "coverage",
     "abs_rel_bias",
+    "abs_bias",
     "rmse",
     "power",
     "type1_error"
   )
+
   if (
     length(metric_name) != 1L ||
       is.na(metric_name) ||
@@ -164,13 +189,18 @@ FigMetricHeatmap <- function(results,
     stop(
       paste0(
         "`metric_name` should be one of: ",
-        paste(allowed, collapse = ", "),
+        paste(
+          allowed,
+          collapse = ", "
+        ),
         "."
       ),
       call. = FALSE
     )
   }
+
   results <- .FigPreprocess(results)
+
   if (!metric_name %in% names(results)) {
     stop(
       paste0(
@@ -181,6 +211,7 @@ FigMetricHeatmap <- function(results,
       call. = FALSE
     )
   }
+
   plot_data <- results[
     c(
       "method",
@@ -191,30 +222,70 @@ FigMetricHeatmap <- function(results,
       metric_name
     )
   ]
-  names(plot_data)[names(plot_data) == metric_name] <- "value"
+
+  names(plot_data)[
+    names(plot_data) == metric_name
+  ] <- "value"
+
+  if (metric_name == "power") {
+    plot_data$value[
+      results$parameter == 0
+    ] <- NA_real_
+  }
+
+  if (metric_name == "type1_error") {
+    plot_data$value[
+      results$parameter != 0
+    ] <- NA_real_
+  }
+
+  plot_data$raw_value <- plot_data$value
   legend_title <- metric_name
   subtitle <- NULL
   caption <- NULL
+
   if (metric_name == "coverage") {
     plot_data$value <- plot_data$value - 0.95
     legend_title <- "Coverage - 0.95"
-    subtitle <- paste0(
-      "Negative values indicate undercoverage; ",
+
+    subtitle <- paste(
+      "Negative values indicate undercoverage;",
       "zero indicates nominal coverage."
     )
   }
+
   if (metric_name == "type1_error") {
     plot_data$value <- plot_data$value - 0.05
-    legend_title <- "Type I error - 0.05"
+    legend_title <- "Zero exclusion - 0.05"
+
     subtitle <- paste0(
-      "Negative values indicate conservative tests; ",
-      "zero indicates the nominal .05 rate."
+      "Interval exclusion minus .05;",
+      "positive values indicate more zero exclusion."
     )
-    caption <- paste0(
-      "Type I error is defined only for parameters whose calibrated ",
-      "population value is exactly zero."
+
+    caption <- paste(
+      "Defined only for exact-zero calibrated targets.",
+      "Positive-support Bayesian variance intervals",
+      "exclude zero by construction;",
+      "this is not a calibrated variance test."
     )
   }
+
+  if (metric_name == "abs_bias") {
+    legend_title <- "Absolute bias"
+
+    subtitle <- paste(
+      "Absolute bias on the original parameter scale;",
+      "no relative-bias substitution."
+    )
+
+    caption <- paste(
+      "Compare within parameter rows:",
+      "set points, transition coefficients,",
+      "variances and covariances have different units."
+    )
+  }
+
   if (metric_name == "abs_rel_bias") {
     cap_value <- unname(
       stats::quantile(
@@ -223,22 +294,38 @@ FigMetricHeatmap <- function(results,
         na.rm = TRUE
       )
     )
-    plot_data$value <- pmin(plot_data$value, cap_value)
+
+    plot_data$value <- pmin(
+      plot_data$value,
+      cap_value
+    )
+
     legend_title <- paste0(
-      "|Relative/absolute bias|\n(clipped at ",
-      round(cap_value, digits = 2),
+      "|Relative/absolute bias|\n",
+      "(clipped at ",
+      round(
+        cap_value,
+        digits = 2
+      ),
       ")"
     )
+
     subtitle <- paste0(
       "To keep the heatmap readable, ",
-      "the bias magnitude is clipped at the 95th percentile."
+      "the bias magnitude is clipped at the ",
+      "95th percentile."
     )
+
     caption <- paste0(
-      "For nonzero parameters, cells show absolute relative bias; ",
-      "for zero parameters, cells show absolute bias. ",
-      "The heatmap shows magnitude only, not direction."
+      "For nonzero parameters, cells show ",
+      "absolute relative bias; ",
+      "for zero parameters, cells show ",
+      "absolute bias. ",
+      "The heatmap shows magnitude only, ",
+      "not direction."
     )
   }
+
   if (metric_name == "rmse") {
     cap_value <- unname(
       stats::quantile(
@@ -247,21 +334,85 @@ FigMetricHeatmap <- function(results,
         na.rm = TRUE
       )
     )
-    plot_data$value <- pmin(plot_data$value, cap_value)
+
+    plot_data$value <- pmin(
+      plot_data$value,
+      cap_value
+    )
+
     legend_title <- paste0(
-      "RMSE\n(clipped at ",
-      round(cap_value, digits = 3),
+      "RMSE\n",
+      "(clipped at ",
+      round(
+        cap_value,
+        digits = 3
+      ),
       ")"
     )
+
     subtitle <- paste0(
       "To keep the heatmap readable, ",
       "RMSE is clipped at the 95th percentile."
     )
+
     caption <- paste0(
-      "Smaller values are better. RMSE is on the original parameter scale, ",
-      "so comparisons are most meaningful within parameter."
+      "Smaller values are better. ",
+      "RMSE is on the original parameter scale, ",
+      "so comparisons are most meaningful ",
+      "within parameter."
     )
   }
+
+  # Labels show original metric values even when the fill is
+  # centered/clipped.
+  plot_data$value_label <- ifelse(
+    is.finite(plot_data$raw_value),
+    formatC(
+      plot_data$raw_value,
+      format = "f",
+      digits = 3
+    ),
+    ""
+  )
+
+  finite_values <- plot_data$value[
+    is.finite(plot_data$value)
+  ]
+
+  scale_max <- if (length(finite_values)) {
+    max(abs(finite_values))
+  } else {
+    0
+  }
+
+  plot_data$text_colour <- ifelse(
+    test = is.finite(plot_data$value) &
+      abs(plot_data$value) > 0.6 * scale_max,
+    yes = "white",
+    no = "black"
+  )
+
+  caption <- paste(
+    caption,
+    paste(
+      "Grey tiles denote undefined/unavailable values,",
+      "not zero."
+    ),
+    paste(
+      "Normal MetaVAR and saved Bayesian posterior",
+      "intervals;"
+    ),
+    "primary retained-run summaries."
+  )
+
+  caption <- paste(
+    strwrap(
+      caption,
+      width = 155
+    ),
+    collapse = "\n"
+  )
+
   list(
     data = plot_data,
     legend_title = legend_title,

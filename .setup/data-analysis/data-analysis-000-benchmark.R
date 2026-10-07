@@ -110,7 +110,7 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
         data = data,
         seed = seed
       ),
-      times = 5 # 100
+      times = 100
     )
     saveRDS(
       object = benchmark,

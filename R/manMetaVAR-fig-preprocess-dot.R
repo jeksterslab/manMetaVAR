@@ -234,6 +234,7 @@
     results$parameter_label,
     levels = parameter_levels
   )
+  results$abs_bias <- abs(results$bias)
   results$abs_rel_bias <- ifelse(
     test = results$parameter == 0,
     yes = abs(results$bias),

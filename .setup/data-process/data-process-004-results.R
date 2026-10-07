@@ -1,5 +1,5 @@
 data_process_results <- function(overwrite = FALSE,
-                                 replications = 10L,
+                                 replications = 1000L,
                                  include_robust = FALSE,
                                  require_complete = TRUE) {
   cat("\ndata_process_results\n")

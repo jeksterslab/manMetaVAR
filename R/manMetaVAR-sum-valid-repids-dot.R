@@ -19,8 +19,6 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams Template
-#' @param k4 Logical. If `TRUE`, use the four-variable status manifests;
-#'   otherwise use the two-variable manifests.
 #'
 #' @return An integer vector of replication IDs eligible for the requested
 #'   performance summary. If no status manifests exist, all requested
@@ -32,13 +30,11 @@
 .SumValidRepids <- function(taskid,
                             reps,
                             output_folder,
-                            output_type,
-                            k4 = FALSE) {
+                            output_type) {
   status <- .SumStatusManifest(
     taskid = taskid,
     reps = reps,
-    output_folder = output_folder,
-    k4 = k4
+    output_folder = output_folder
   )
   if (is.null(status)) {
     message(
@@ -61,10 +57,6 @@
     "fit-naive" = c(
       "fit-dt-var-mx",
       "fit-naive"
-    ),
-    "fit-meta-var-mx-k4" = c(
-      "fit-dt-var-mx-k4",
-      "fit-meta-var-mx-k4"
     ),
     output_type
   )

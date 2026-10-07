@@ -68,17 +68,11 @@
     } else {
       fit_input_type
     }
-    k4 <- grepl(
-      pattern = "-k4",
-      x = status_output_type,
-      fixed = TRUE
-    )
     repids <- .SumValidRepids(
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,
-      output_type = status_output_type,
-      k4 = k4
+      output_type = status_output_type
     )
     reps_used <- length(repids)
     if (reps_used < 1L) {

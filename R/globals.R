@@ -2,8 +2,6 @@ utils::globalVariables(
   c(
     "params",
     "model",
-    "population",
-    "modelk4",
-    "populationk4"
+    "population"
   )
 )

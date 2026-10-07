@@ -15,28 +15,13 @@
   )
   registerS3method(
     "print",
-    "manmetavar.mplus.k4.diagnostics",
-    .PrintMplusK4Diag
-  )
-  registerS3method(
-    "print",
     "summary.manmetavar.mplus",
     .PrintMplusSummary
   )
   registerS3method(
     "print",
-    "summary.manmetavar.mplus.k4",
-    .PrintMplusK4Summary
-  )
-  registerS3method(
-    "print",
     "summary.manmetavar.naive",
     .PrintNaiveSummary
-  )
-  registerS3method(
-    "print",
-    "summary.manmetavar.naive.k4",
-    .PrintNaiveK4Summary
   )
   registerS3method(
     "print",

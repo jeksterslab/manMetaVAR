@@ -18,7 +18,7 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param status A combined simulation status manifest, typically returned by
-#'   [`.SumStatusManifest()`].
+#'   `.SumStatusManifest()`.
 #'
 #' @return A data frame containing status counts and rates by method/stage and,
 #'   when available, derived full-pipeline rows. Returns an empty data frame for
@@ -103,13 +103,6 @@
       stage2 = "fit-naive",
       output_type = "pipeline-naive",
       method = "Uncertainty-Uncorrected",
-      stage = "Full pipeline"
-    ),
-    list(
-      stage1 = "fit-dt-var-mx-k4",
-      stage2 = "fit-meta-var-mx-k4",
-      output_type = "pipeline-meta-var-k4",
-      method = "MetaVAR",
       stage = "Full pipeline"
     )
   )

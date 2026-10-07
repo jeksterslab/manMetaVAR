@@ -20,22 +20,22 @@ project <- "manMetaVAR"
 rproject_ver <- NULL
 
 pkg_cran <- c(
-  "simStateSpace",
-  "OpenMx",
-  "lavaan",
-  "ggplot2",
-  "dplyr",
-  "tidyr",
-  "microbenchmark",
-  "fitVARMxID",
-  "metaDyn"
+  # "simStateSpace",
+  # "OpenMx",
+  # "lavaan",
+  # "ggplot2",
+  # "dplyr",
+  # "tidyr",
+  # "microbenchmark",
+  # "fitVARMxID",
+  # "metaDyn"
 )
 
 pkg_github <- c(
-  "jeksterslab/simStateSpace",
-  "jeksterslab/fitVARMxID",
-  "jeksterslab/metaDyn",
-  "jeksterslab/dynTools"
+  # "jeksterslab/simStateSpace",
+  # "jeksterslab/fitVARMxID",
+  # "jeksterslab/metaDyn",
+  # "jeksterslab/dynTools"
 )
 
 pkg_github_ref <- c()

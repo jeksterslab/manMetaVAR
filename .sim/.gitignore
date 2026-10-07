@@ -1,7 +1,5 @@
 make.sh
 make.out
 make.err
-reps-*.sh
-run-*.sh
 notes/*
 manMetaVAR

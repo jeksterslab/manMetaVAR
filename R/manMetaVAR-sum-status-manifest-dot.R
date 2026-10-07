@@ -1,13 +1,8 @@
 .SumStatusManifest <- function(taskid,
                                reps,
-                               output_folder,
-                               k4 = FALSE) {
+                               output_folder) {
   reps <- .SumValidateReps(reps)
-  output_type <- if (k4) {
-    "status-k4"
-  } else {
-    "status"
-  }
+  output_type <- "status"
   files <- vapply(
     X = seq_len(reps),
     FUN = function(repid) {
@@ -34,7 +29,7 @@
         taskid,
         ". Missing replications: ",
         paste(missing_repids, collapse = ", "),
-        ". Run Check/CheckK4 for all requested replications before summarizing."
+        ". Run Check for all requested replications before summarizing."
       ),
       call. = FALSE
     )

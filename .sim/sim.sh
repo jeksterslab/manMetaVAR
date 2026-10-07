@@ -33,7 +33,7 @@ echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 
 # indices ----------------------------------------------------------------------
 repid_start=1
-repid_end=10
+repid_end=1000
 
 taskid_start=1
 taskid_end=36
@@ -57,7 +57,7 @@ cmd="apptainer exec \
      Rscript /scratch/\$USER/${PROJECT}/.sim/sim.R {1} {2} && \
      echo sim taskid \$(printf \"%05d\" {2}) repid \$(printf \"%05d\" {1}) date \$(date '+%Y-%m-%d %H:%M:%S')"
 
-parallel --halt soon,fail=1 \
+parallel \
     --tmpdir "$PARALLEL_TMP_FOLDER" \
     --colsep ' ' "$cmd" :::: "$JOBLIST"
 # ------------------------------------------------------------------------------

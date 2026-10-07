@@ -1,5 +1,5 @@
 data_process_diagnostics <- function(overwrite = FALSE,
-                                     replications = 10L,
+                                     replications = 1000L,
                                      require_complete = TRUE) {
   cat("\ndata_process_diagnostics\n")
   if (
@@ -43,11 +43,11 @@ data_process_diagnostics <- function(overwrite = FALSE,
       recursive = TRUE
     )
   }
-  diagnostics_file <- file.path(
+  diagnostics_files <- file.path(
     data_folder,
-    "diagnostics.rda"
+    c("diagnostics_default.rda", "diagnostics_priors.rda")
   )
-  write <- !file.exists(diagnostics_file) || overwrite
+  write <- !all(file.exists(diagnostics_files)) || overwrite
   if (write) {
     params_file <- file.path(
       data_folder,
@@ -264,11 +264,7 @@ data_process_diagnostics <- function(overwrite = FALSE,
           }
           required_parameter <- c(
             "parameter",
-            "mean",
-            "median",
             "sd",
-            "ll",
-            "ul",
             "rhat",
             "ess_bulk",
             "ess_tail",
@@ -312,7 +308,7 @@ data_process_diagnostics <- function(overwrite = FALSE,
               call. = FALSE
             )
           }
-          parameter_data <- fit$parameters
+          parameter_data <- fit$parameters[, required_parameter, drop = FALSE]
           if (!identical(parameter_data$parameter, parameter_names)) {
             stop(
               paste0(
@@ -505,11 +501,28 @@ data_process_diagnostics <- function(overwrite = FALSE,
         "list"
       )
     )
-    save(
-      diagnostics,
-      file = diagnostics_file,
-      compress = "xz"
-    )
+    for (default_priors in c(TRUE, FALSE)) {
+      bundle_name <- if (default_priors) "diagnostics_default" else "diagnostics_priors"
+      bundle <- diagnostics
+      bundle$parameters <- bundle$parameters[
+        bundle$parameters$default_priors == default_priors, ,
+        drop = FALSE
+      ]
+      bundle$runs <- bundle$runs[
+        bundle$runs$default_priors == default_priors, ,
+        drop = FALSE
+      ]
+      rownames(bundle$parameters) <- NULL
+      rownames(bundle$runs) <- NULL
+      bundle_environment <- new.env(parent = emptyenv())
+      assign(bundle_name, bundle, envir = bundle_environment)
+      save(
+        list = bundle_name,
+        envir = bundle_environment,
+        file = file.path(data_folder, paste0(bundle_name, ".rda")),
+        compress = "xz"
+      )
+    }
   }
 }
 data_process_diagnostics()

@@ -192,8 +192,7 @@ Sum <- function(taskid,
       metavar = metavar_normal || metavar_robust,
       mplus = mplus,
       variance_tol = 1e-6,
-      eigen_tol = 1e-8,
-      k4 = FALSE
+      eigen_tol = 1e-8
     )
   )
 

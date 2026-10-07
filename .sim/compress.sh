@@ -45,7 +45,7 @@ cmd="apptainer exec \
 
 cd /scratch/$USER/${PROJECT} || exit
 
-parallel --halt soon,fail=1 \
+parallel \
     --tmpdir "$PARALLEL_TMP_FOLDER" \
     --colsep ' ' "$cmd" :::: <(
     for repid in $(seq $repid_start $repid_end); do

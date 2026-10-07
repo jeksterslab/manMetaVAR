@@ -6,9 +6,9 @@ Clone the repository directly into the scratch filesystem:
 
 ```bash
 PROJECT=manMetaVAR
-git clone "git@github.com:jeksterslab/${PROJECT}.git" \
+sudo git clone "https://github.com/jeksterslab/${PROJECT}.git" \
   "/scratch/$USER/$PROJECT"
-chmod -R 755 "/scratch/$USER/$PROJECT"
+sudo chmod -R 777 "/scratch/$USER/$PROJECT"
 ```
 
 The simulation scripts are located in:
@@ -39,13 +39,10 @@ chmod 755 "/scratch/$USER/$PROJECT/.sif/manmetavar.sif"
 
 ## Production Design
 
-The current production configuration is:
+The current production configuration uses `k = 2`, task IDs 1 through 36,
+with 1,000 replications per task.
 
-- `k = 2`: task IDs 1 through 36, with 1,000 replications per task;
-- `k = 4`: task ID 9 only, with 1,000 replications. This is the prespecified
-  higher-dimensional feasibility condition.
-
-The replication count is defined in `sim-args.R` and `sim-k4-args.R`.
+The replication count is defined in `sim-args.R`.
 
 ## Main Simulation Workflow
 
@@ -53,8 +50,8 @@ Run the simulation, checking, compression, and summarization stages in order.
 The commands below use SLURM dependencies so that each stage begins only after
 the preceding stage completes successfully.
 
-The ordinary `sum.R` and `sum-k4.R` jobs generate both the performance
-summaries and the new diagnostics. Performance summary files include the
+The ordinary `sum.R` job generates both the performance summaries and the
+diagnostics. Performance summary files include the
 simulation-level Monte Carlo standard errors. Diagnostic summary files include
 status/full-pipeline information, boundary or near-zero diagnostics, and
 runtime summaries.
@@ -113,21 +110,10 @@ COMPRESS_JOB=$(sbatch --parsable --dependency="afterok:${CHECK_JOB}" compress.sh
 SUM_JOB=$(sbatch --parsable --dependency="afterok:${COMPRESS_JOB}" sum.sh)
 ```
 
-### Four-Variable Simulation
-
-```bash
-cd "/scratch/$USER/$PROJECT/.sim"
-
-SIM_K4_JOB=$(sbatch --parsable sim-k4.sh)
-CHECK_K4_JOB=$(sbatch --parsable --dependency="afterok:${SIM_K4_JOB}" check-k4.sh)
-COMPRESS_K4_JOB=$(sbatch --parsable --dependency="afterok:${CHECK_K4_JOB}" compress-k4.sh)
-SUM_K4_JOB=$(sbatch --parsable --dependency="afterok:${COMPRESS_K4_JOB}" sum-k4.sh)
-```
-
 ## Diagnostics-Only Summaries
 
-`Sum()` and `SumK4()` already generate diagnostic summaries. The separate
-scripts below are provided so that diagnostics can be regenerated without
+`Sum()` already generates diagnostic summaries. The separate
+script below is provided so that diagnostics can be regenerated without
 rerunning all performance summaries. This is useful after changing a boundary
 tolerance, runtime reporting rule, status definition, or diagnostics code.
 
@@ -138,19 +124,11 @@ cd "/scratch/$USER/$PROJECT/.sim"
 sbatch sum-diagnostics.sh
 ```
 
-### Recreate k = 4 diagnostics
-
-```bash
-cd "/scratch/$USER/$PROJECT/.sim"
-sbatch sum-diagnostics-k4.sh
-```
-
 By default, an existing valid diagnostic summary is retained. To force the
 diagnostic RDS files to be recreated, submit with:
 
 ```bash
 sbatch --export=ALL,OVERWRITE_DIAGNOSTICS=1 sum-diagnostics.sh
-sbatch --export=ALL,OVERWRITE_DIAGNOSTICS=1 sum-diagnostics-k4.sh
 ```
 
 The default diagnostic thresholds are:
@@ -173,24 +151,24 @@ for the manuscript should be prespecified and reported.
 
 ## Cross-Task Diagnostics Overview
 
-After both the `k = 2` and `k = 4` summaries exist, create a compact overview:
+After the `k = 2` summaries exist, create a compact overview:
 
 ```bash
 cd "/scratch/$USER/$PROJECT/.sim"
 sbatch diagnostics-overview.sh
 ```
 
-If the two main summary jobs are submitted together, the overview can be made
-dependent on both jobs:
+When submitting the main summary job, the overview can be made dependent
+on its completion:
 
 ```bash
 OVERVIEW_JOB=$(sbatch --parsable \
-  --dependency="afterok:${SUM_JOB}:${SUM_K4_JOB}" \
+  --dependency="afterok:${SUM_JOB}" \
   diagnostics-overview.sh)
 ```
 
-The overview job requires all 36 `k = 2` diagnostic summaries and the `k = 4`
-task-9 diagnostic summary. It writes an RDS file and CSV tables under:
+The overview job requires all 36 `k = 2` diagnostic summaries. It writes an
+RDS file and CSV tables under:
 
 ```text
 .sim/manMetaVAR/diagnostics-overview/
@@ -198,11 +176,11 @@ task-9 diagnostic summary. It writes an RDS file and CSV tables under:
 
 The exported tables include:
 
-- `status-summary-k2.csv` and `status-summary-k4.csv`;
-- `boundary-parameter-k2.csv` and `boundary-parameter-k4.csv`;
-- `boundary-replication-k2.csv` and `boundary-replication-k4.csv`;
-- `runtime-k2.csv` and `runtime-k4.csv`;
-- `performance-mcse-k2.csv` and `performance-mcse-k4.csv`;
+- `status-summary-k2.csv`;
+- `boundary-parameter-k2.csv`;
+- `boundary-replication-k2.csv`;
+- `runtime-k2.csv`;
+- `performance-mcse-k2.csv`;
 - Mplus parameter-level diagnostic summaries; and
 - Mplus run-level diagnostic summaries.
 

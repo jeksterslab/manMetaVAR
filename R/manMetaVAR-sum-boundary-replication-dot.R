@@ -5,8 +5,7 @@
                                     method,
                                     heterogeneity,
                                     variance_tol,
-                                    eigen_tol,
-                                    k4 = FALSE) {
+                                    eigen_tol) {
   suffix <- .SimSuffix(
     taskid = taskid,
     repid = repid
@@ -20,8 +19,7 @@
   aligned <- .SumBoundaryAligned(
     object = object,
     output_type = output_type,
-    heterogeneity = heterogeneity,
-    k4 = k4
+    heterogeneity = heterogeneity
   )
   raw <- aligned$raw
   parameter <- aligned$parameter
@@ -66,9 +64,7 @@
   diagonal <- index$row == index$col
   is_bayesian <- output_type %in% c(
     "fit-mplus",
-    "fit-mplus-priors",
-    "fit-mplus-k4",
-    "fit-mplus-k4-priors"
+    "fit-mplus-priors"
   )
   parameter_output <- data.frame(
     taskid = taskid,

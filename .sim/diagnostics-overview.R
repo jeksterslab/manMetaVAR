@@ -23,7 +23,6 @@ source(
 )
 
 k2_taskids <- seq_len(tasks)
-k4_taskids <- 9L
 
 # HELPERS ---------------------------------------------------------------------
 .bind_rows <- function(x) {
@@ -44,26 +43,23 @@ k4_taskids <- 9L
   out
 }
 
-.task_folder <- function(taskid,
-                         k4 = FALSE) {
+.task_folder <- function(taskid) {
   file.path(
     output_folder,
     paste0(
       SimProj(),
-      if (k4) "-k4-" else "-",
+      "-",
       sprintf("%05d", taskid)
     )
   )
 }
 
 .summary_file <- function(taskid,
-                          output_type,
-                          k4 = FALSE) {
+                          output_type) {
   SimFN(
     output_type = output_type,
     output_folder = .task_folder(
-      taskid = taskid,
-      k4 = k4
+      taskid = taskid
     ),
     suffix = paste0(
       sprintf("%05d", taskid),
@@ -95,21 +91,15 @@ k4_taskids <- 9L
   readRDS(fn)
 }
 
-.collect_diagnostics <- function(taskids,
-                                 k4 = FALSE) {
-  output_type <- if (k4) {
-    "summary-diagnostics-k4"
-  } else {
-    "summary-diagnostics"
-  }
+.collect_diagnostics <- function(taskids) {
+  output_type <- "summary-diagnostics"
   objects <- lapply(
     X = taskids,
     FUN = function(taskid) {
       .read_required(
         .summary_file(
           taskid = taskid,
-          output_type = output_type,
-          k4 = k4
+          output_type = output_type
         )
       )
     }
@@ -141,16 +131,14 @@ k4_taskids <- 9L
 }
 
 .collect_performance <- function(taskids,
-                                 specifications,
-                                 k4 = FALSE) {
+                                 specifications) {
   rows <- list()
   for (taskid in taskids) {
     for (output_type in specifications) {
       object <- .read_optional(
         .summary_file(
           taskid = taskid,
-          output_type = output_type,
-          k4 = k4
+          output_type = output_type
         )
       )
       if (
@@ -168,8 +156,7 @@ k4_taskids <- 9L
 }
 
 .collect_mplus_diagnostics <- function(taskids,
-                                       specifications,
-                                       k4 = FALSE) {
+                                       specifications) {
   parameter_rows <- list()
   run_rows <- list()
   for (taskid in taskids) {
@@ -177,8 +164,7 @@ k4_taskids <- 9L
       object <- .read_optional(
         .summary_file(
           taskid = taskid,
-          output_type = output_type,
-          k4 = k4
+          output_type = output_type
         )
       )
       if (is.null(object)) {
@@ -224,14 +210,8 @@ k4_taskids <- 9L
 
 # COLLECT ---------------------------------------------------------------------
 k2 <- .collect_diagnostics(
-  taskids = k2_taskids,
-  k4 = FALSE
+  taskids = k2_taskids
 )
-k4 <- .collect_diagnostics(
-  taskids = k4_taskids,
-  k4 = TRUE
-)
-
 k2$performance <- .collect_performance(
   taskids = k2_taskids,
   specifications = c(
@@ -240,19 +220,7 @@ k2$performance <- .collect_performance(
     "summary-fit-meta-var-mx-naive",
     "summary-fit-mplus",
     "summary-fit-mplus-priors"
-  ),
-  k4 = FALSE
-)
-
-k4$performance <- .collect_performance(
-  taskids = k4_taskids,
-  specifications = c(
-    "summary-fit-meta-var-mx-k4-normal",
-    "summary-fit-meta-var-mx-k4-robust",
-    "summary-fit-mplus-k4",
-    "summary-fit-mplus-k4-priors"
-  ),
-  k4 = TRUE
+  )
 )
 
 k2$mplus_diagnostics <- .collect_mplus_diagnostics(
@@ -260,25 +228,13 @@ k2$mplus_diagnostics <- .collect_mplus_diagnostics(
   specifications = c(
     "summary-fit-mplus-diagnostics",
     "summary-fit-mplus-priors-diagnostics"
-  ),
-  k4 = FALSE
-)
-
-k4$mplus_diagnostics <- .collect_mplus_diagnostics(
-  taskids = k4_taskids,
-  specifications = c(
-    "summary-fit-mplus-k4-diagnostics",
-    "summary-fit-mplus-k4-priors-diagnostics"
-  ),
-  k4 = TRUE
+  )
 )
 
 output <- list(
   replications = reps,
   k2_taskids = k2_taskids,
-  k4_taskids = k4_taskids,
-  k2 = k2,
-  k4 = k4
+  k2 = k2
 )
 
 # SAVE ------------------------------------------------------------------------
@@ -337,36 +293,6 @@ saveRDS(
 .write_csv(
   k2$mplus_diagnostics$run,
   file.path(overview_folder, "mplus-diagnostics-run-k2.csv")
-)
-
-# K = 4 TABLES ----------------------------------------------------------------
-.write_csv(
-  k4$status_summary,
-  file.path(overview_folder, "status-summary-k4.csv")
-)
-.write_csv(
-  k4$boundary_parameter,
-  file.path(overview_folder, "boundary-parameter-k4.csv")
-)
-.write_csv(
-  k4$boundary_replication,
-  file.path(overview_folder, "boundary-replication-k4.csv")
-)
-.write_csv(
-  k4$runtime,
-  file.path(overview_folder, "runtime-k4.csv")
-)
-.write_csv(
-  k4$performance,
-  file.path(overview_folder, "performance-mcse-k4.csv")
-)
-.write_csv(
-  k4$mplus_diagnostics$parameter,
-  file.path(overview_folder, "mplus-diagnostics-parameter-k4.csv")
-)
-.write_csv(
-  k4$mplus_diagnostics$run,
-  file.path(overview_folder, "mplus-diagnostics-run-k4.csv")
 )
 
 message(

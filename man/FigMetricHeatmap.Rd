@@ -11,7 +11,8 @@ FigMetricHeatmap(results, metric_name, grey_scale = FALSE, values = FALSE)
 
 \item{metric_name}{Character string.
 \code{"coverage"} for coverage probability,
-\code{"abs_rel_bias"} for absolute value of the relative bias,
+\code{"abs_bias"} for absolute bias on the parameter scale,
+\code{"abs_rel_bias"} for the legacy mixed relative/absolute bias display,
 \code{"rmse"} for RMSE,
 \code{"power"} for statistical power, and
 \code{"type1_error"} for the Type I error rate.}

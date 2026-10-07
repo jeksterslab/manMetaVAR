@@ -15,8 +15,6 @@
 #'
 #' @param status A combined simulation status manifest containing
 #'   `elapsed_seconds` and status information.
-#' @param k4 Logical. If `TRUE`, summarize the four-variable feasibility
-#'   simulation; otherwise summarize the two-variable simulation.
 #'
 #' @return A list with two data frames: `replications`, containing the
 #'   replication-level runtime records, and `summary`, containing the number of
@@ -27,8 +25,7 @@
 #'
 #' @keywords manMetaVAR internal simulation summary diagnostics runtime
 #' @noRd
-.SumRuntimeDiagnostics <- function(status,
-                                   k4 = FALSE) {
+.SumRuntimeDiagnostics <- function(status) {
   if (is.null(status) || nrow(status) < 1L) {
     return(
       list(
@@ -142,16 +139,8 @@
     )
   }
 
-  stage1_type <- if (k4) {
-    "fit-dt-var-mx-k4"
-  } else {
-    "fit-dt-var-mx"
-  }
-  meta_type <- if (k4) {
-    "fit-meta-var-mx-k4"
-  } else {
-    "fit-meta-var-mx"
-  }
+  stage1_type <- "fit-dt-var-mx"
+  meta_type <- "fit-meta-var-mx"
 
   runtime <- list(
     runtime_for_scope(
@@ -181,15 +170,13 @@
       scope = scope_specification$scope,
       successful_only = scope_specification$successful_only
     )
-    if (!k4) {
-      runtime[[length(runtime) + 1L]] <- add_total(
-        stage1_type = stage1_type,
-        stage2_type = "fit-naive",
-        label = "Uncertainty-Uncorrected Total",
-        scope = scope_specification$scope,
-        successful_only = scope_specification$successful_only
-      )
-    }
+    runtime[[length(runtime) + 1L]] <- add_total(
+      stage1_type = stage1_type,
+      stage2_type = "fit-naive",
+      label = "Uncertainty-Uncorrected Total",
+      scope = scope_specification$scope,
+      successful_only = scope_specification$successful_only
+    )
   }
 
   runtime <- Filter(

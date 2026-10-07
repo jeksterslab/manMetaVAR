@@ -1,7 +1,6 @@
 data_analysis_adid2010_naive <- function(overwrite = FALSE) {
   set.seed(42)
 
-  # Find root directory.
   root <- rprojroot::is_rstudio_project
 
   input <- root$find_file(
@@ -48,6 +47,7 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
     )
 
     library(fitVARMxID)
+    library(OpenMx)
 
     stage1 <- readRDS(
       file = input
@@ -57,27 +57,6 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
 
     # ----------------------------------------------------------
     # Extract person-specific parameter estimates
-    #
-    # Parameter order:
-    #
-    #   Setpoints:
-    #     mu11
-    #     mu21
-    #
-    #   Lagged coefficients:
-    #     beta11
-    #     beta21
-    #     beta12
-    #     beta22
-    #
-    #   Process-noise covariance parameters:
-    #     psi11
-    #     psi21
-    #     psi22
-    #
-    # Variable indexing:
-    #   1 = negative affect
-    #   2 = positive affect
     # ----------------------------------------------------------
 
     data <- as.data.frame(
@@ -124,7 +103,6 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
       "psi22"
     )
 
-    # Make sure all columns are ordinary numeric vectors.
     data[] <- lapply(
       X = data,
       FUN = as.numeric
@@ -169,53 +147,192 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
     parameter_names <- colnames(data)
 
     # ----------------------------------------------------------
-    # Naive population estimates
-    #
-    # The person-specific Stage 1 point estimates are treated as
-    # observed multivariate data. Their Stage 1 sampling
-    # uncertainty is ignored.
+    # OpenMx saturated multivariate normal model
     # ----------------------------------------------------------
 
-    means <- colMeans(
-      x = data
+    mu_start <- matrix(
+      data = colMeans(data),
+      nrow = 1,
+      ncol = p
     )
 
-    covariances <- stats::cov(
-      x = data
+    mu_labels <- matrix(
+      data = paste0(
+        "mean_",
+        parameter_names
+      ),
+      nrow = 1,
+      ncol = p
     )
 
-    # stats::cov() uses the unbiased denominator n - 1.
-    covariance_denominator <- n - 1L
-
-    # ----------------------------------------------------------
-    # Analytic sampling covariance of the estimated means
-    #
-    # Var(xbar) = Sigma / n
-    #
-    # The sample covariance matrix is used as a plug-in estimate
-    # of Sigma.
-    # ----------------------------------------------------------
-
-    vcov_means <- covariances / n
-
-    se_means <- sqrt(
-      diag(vcov_means)
+    mu <- mxMatrix(
+      type = "Full",
+      nrow = 1,
+      ncol = p,
+      free = TRUE,
+      values = mu_start,
+      labels = mu_labels,
+      dimnames = list(
+        "mu",
+        parameter_names
+      ),
+      name = "mu"
     )
 
-    names(se_means) <- parameter_names
+    sigma_start <- stats::cov(data) * ((n - 1) / n)
+
+    sigma_labels <- matrix(
+      data = NA_character_,
+      nrow = p,
+      ncol = p
+    )
+
+    for (j in seq_len(p)) {
+      for (i in seq_len(p)) {
+        sigma_labels[i, j] <-
+          sigma_labels[j, i] <- paste0(
+            "sigma_",
+            parameter_names[min(i, j)],
+            "_",
+            parameter_names[max(i, j)]
+          )
+      }
+    }
+
+    sigma_lbound <- matrix(
+      data = NA_real_,
+      nrow = p,
+      ncol = p
+    )
+
+    diag(sigma_lbound) <- 0
+
+    sigma <- mxMatrix(
+      type = "Symm",
+      nrow = p,
+      ncol = p,
+      free = TRUE,
+      values = sigma_start,
+      labels = sigma_labels,
+      lbound = sigma_lbound,
+      dimnames = list(
+        parameter_names,
+        parameter_names
+      ),
+      name = "sigma"
+    )
+
+    model <- mxModel(
+      model = "Naive",
+      mu,
+      sigma,
+      mxData(
+        observed = data,
+        type = "raw"
+      ),
+      mxExpectationNormal(
+        covariance = "sigma",
+        means = "mu",
+        dimnames = parameter_names
+      ),
+      mxFitFunctionML()
+    )
+
+    # model <- mxRun(
+    #   model,
+    #   intervals = FALSE,
+    #   silent = TRUE
+    # )
+
+    model <- mxTryHard(
+      model,
+      extraTries = 1000,
+      greenOK = TRUE,
+      checkHess = TRUE,
+      bestInitsOutput = FALSE,
+      intervals = FALSE,
+      silent = TRUE
+    )
 
     # ----------------------------------------------------------
-    # Analytic sampling covariance of covariance estimates
-    #
-    # Under multivariate normality:
-    #
-    # Cov(S_ij, S_kl) =
-    #
-    #   (Sigma_ik Sigma_jl + Sigma_il Sigma_jk) / (n - 1)
-    #
-    # The sample covariance matrix is used as a plug-in estimate
-    # of Sigma.
+    # Extract estimates
     # ----------------------------------------------------------
+
+    estimates <- omxGetParameters(
+      model
+    )
+
+    vcov_estimates <- vcov(
+      model
+    )
+
+    if (
+      is.null(vcov_estimates) ||
+        any(dim(vcov_estimates) == 0L)
+    ) {
+      stop(
+        "vcov(model) could not be computed.",
+        call. = FALSE
+      )
+    }
+
+    standard_errors <- sqrt(
+      diag(vcov_estimates)
+    )
+
+    confidence_level <- 0.95
+
+    critical_value <- qnorm(
+      p = 1 - (1 - confidence_level) / 2
+    )
+
+    confidence_lower <- estimates -
+      critical_value * standard_errors
+
+    confidence_upper <- estimates +
+      critical_value * standard_errors
+
+    # ----------------------------------------------------------
+    # Means
+    # ----------------------------------------------------------
+
+    mean_names <- paste0(
+      "mean_",
+      parameter_names
+    )
+
+    means <- estimates[
+      mean_names
+    ]
+
+    se_means <- standard_errors[
+      mean_names
+    ]
+
+    vcov_means <- vcov_estimates[
+      mean_names,
+      mean_names,
+      drop = FALSE
+    ]
+
+    means_table <- data.frame(
+      parameter = parameter_names,
+      estimate = as.numeric(means),
+      se = as.numeric(se_means),
+      lower = as.numeric(
+        confidence_lower[mean_names]
+      ),
+      upper = as.numeric(
+        confidence_upper[mean_names]
+      ),
+      row.names = NULL
+    )
+
+    # ----------------------------------------------------------
+    # Covariances
+    # ----------------------------------------------------------
+
+    covariances <- model$sigma$values
 
     vech_indices <- which(
       lower.tri(
@@ -229,21 +346,11 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
       vech_indices
     )
 
-    covariance_names <- character(
-      length = q
-    )
-
-    covariance_vector <- numeric(
-      length = q
-    )
-
-    covariance_lhs <- character(
-      length = q
-    )
-
-    covariance_rhs <- character(
-      length = q
-    )
+    covariance_names <- character(q)
+    covariance_vector <- numeric(q)
+    covariance_lhs <- character(q)
+    covariance_rhs <- character(q)
+    se_covariance_vector <- numeric(q)
 
     for (a in seq_len(q)) {
       i <- vech_indices[a, 1L]
@@ -254,61 +361,46 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
 
       covariance_names[a] <- paste0(
         "sigma_",
-        parameter_names[i],
+        parameter_names[min(i, j)],
         "_",
-        parameter_names[j]
+        parameter_names[max(i, j)]
       )
 
-      covariance_vector[a] <- covariances[
-        i,
-        j
+      covariance_vector[a] <- estimates[
+        covariance_names[a]
+      ]
+
+      se_covariance_vector[a] <- standard_errors[
+        covariance_names[a]
       ]
     }
 
     names(covariance_vector) <- covariance_names
+    names(se_covariance_vector) <- covariance_names
 
-    vcov_covariances <- matrix(
-      data = NA_real_,
-      nrow = q,
-      ncol = q,
-      dimnames = list(
-        covariance_names,
-        covariance_names
-      )
+    missing_covariance_names <- setdiff(
+      covariance_names,
+      rownames(vcov_estimates)
     )
 
-    for (a in seq_len(q)) {
-      i <- vech_indices[a, 1L]
-      j <- vech_indices[a, 2L]
-
-      for (b in seq_len(q)) {
-        k <- vech_indices[b, 1L]
-        l <- vech_indices[b, 2L]
-
-        vcov_covariances[a, b] <- (
-          covariances[i, k] * covariances[j, l] +
-            covariances[i, l] * covariances[j, k]
-        ) / covariance_denominator
-      }
+    if (length(missing_covariance_names) > 0L) {
+      stop(
+        paste0(
+          "Missing covariance parameters in vcov(model):\n\n",
+          paste(
+            missing_covariance_names,
+            collapse = "\n"
+          )
+        ),
+        call. = FALSE
+      )
     }
 
-    se_covariance_vector <- sqrt(
-      diag(vcov_covariances)
-    )
-
-    # ----------------------------------------------------------
-    # Matrix of covariance standard errors
-    #
-    # SE(S_ij) =
-    #
-    #   sqrt(
-    #     (S_ii S_jj + S_ij^2) / (n - 1)
-    #   )
-    #
-    # For a variance:
-    #
-    # SE(S_ii) = S_ii sqrt(2 / (n - 1))
-    # ----------------------------------------------------------
+    vcov_covariances <- vcov_estimates[
+      covariance_names,
+      covariance_names,
+      drop = FALSE
+    ]
 
     se_covariances <- matrix(
       data = NA_real_,
@@ -320,116 +412,39 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
       )
     )
 
-    for (i in seq_len(p)) {
-      for (j in seq_len(p)) {
-        se_covariances[i, j] <- sqrt(
-          (
-            covariances[i, i] * covariances[j, j] +
-              covariances[i, j]^2
-          ) / covariance_denominator
-        )
-      }
+    for (a in seq_len(q)) {
+      i <- vech_indices[a, 1L]
+      j <- vech_indices[a, 2L]
+
+      se_covariances[i, j] <-
+        se_covariance_vector[a]
+
+      se_covariances[j, i] <-
+        se_covariance_vector[a]
     }
-
-    # ----------------------------------------------------------
-    # Joint estimate vector and sampling covariance matrix
-    #
-    # Under multivariate normality, the sample mean vector and
-    # sample covariance matrix are independent. Their analytic
-    # cross-covariance block is therefore zero.
-    # ----------------------------------------------------------
-
-    mean_names <- paste0(
-      "mean_",
-      parameter_names
-    )
-
-    mean_vector <- means
-    names(mean_vector) <- mean_names
-
-    estimates <- c(
-      mean_vector,
-      covariance_vector
-    )
-
-    vcov_estimates <- matrix(
-      data = 0,
-      nrow = p + q,
-      ncol = p + q,
-      dimnames = list(
-        names(estimates),
-        names(estimates)
-      )
-    )
-
-    vcov_estimates[
-      seq_len(p),
-      seq_len(p)
-    ] <- vcov_means
-
-    covariance_positions <- p + seq_len(q)
-
-    vcov_estimates[
-      covariance_positions,
-      covariance_positions
-    ] <- vcov_covariances
-
-    standard_errors <- sqrt(
-      diag(vcov_estimates)
-    )
-
-    # ----------------------------------------------------------
-    # Wald confidence intervals
-    #
-    # These are symmetric normal-theory intervals. For variance
-    # parameters, the lower bound can be negative.
-    # ----------------------------------------------------------
-
-    confidence_level <- 0.95
-
-    critical_value <- stats::qnorm(
-      p = 1 - (1 - confidence_level) / 2
-    )
-
-    confidence_lower <- estimates -
-      critical_value * standard_errors
-
-    confidence_upper <- estimates +
-      critical_value * standard_errors
-
-    # ----------------------------------------------------------
-    # Convenient parameter tables
-    # ----------------------------------------------------------
-
-    means_table <- data.frame(
-      parameter = parameter_names,
-      estimate = as.numeric(means),
-      se = as.numeric(se_means),
-      lower = as.numeric(
-        means - critical_value * se_means
-      ),
-      upper = as.numeric(
-        means + critical_value * se_means
-      ),
-      row.names = NULL
-    )
 
     covariances_table <- data.frame(
       lhs = covariance_lhs,
       rhs = covariance_rhs,
       parameter = covariance_names,
-      estimate = as.numeric(covariance_vector),
-      se = as.numeric(se_covariance_vector),
+      estimate = as.numeric(
+        covariance_vector
+      ),
+      se = as.numeric(
+        se_covariance_vector
+      ),
       lower = as.numeric(
-        covariance_vector -
-          critical_value * se_covariance_vector
+        confidence_lower[covariance_names]
       ),
       upper = as.numeric(
-        covariance_vector +
-          critical_value * se_covariance_vector
+        confidence_upper[covariance_names]
       ),
       row.names = NULL
     )
+
+    # ----------------------------------------------------------
+    # Full parameter table
+    # ----------------------------------------------------------
 
     estimates_table <- data.frame(
       parameter = names(estimates),
@@ -449,38 +464,30 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
     # ----------------------------------------------------------
 
     out <- list(
-      output = list(
-        n = n,
-        p = p,
-        parameter_names = parameter_names,
-        estimates = estimates,
-        standard_errors = standard_errors,
-        vcov = vcov_estimates,
-        means = means,
-        se_means = se_means,
-        vcov_means = vcov_means,
-        covariances = covariances,
-        se_covariances = se_covariances,
-        covariance_vector = covariance_vector,
-        se_covariance_vector = se_covariance_vector,
-        vcov_covariances = vcov_covariances,
-        tables = list(
-          estimates = estimates_table,
-          means = means_table,
-          covariances = covariances_table
-        ),
-        confidence_level = confidence_level,
-        covariance_denominator = covariance_denominator
+      output = model,
+      estimates = estimates,
+      standard_errors = standard_errors,
+      vcov = vcov_estimates,
+      means = means,
+      se_means = se_means,
+      vcov_means = vcov_means,
+      covariances = covariances,
+      se_covariances = se_covariances,
+      covariance_vector = covariance_vector,
+      se_covariance_vector = se_covariance_vector,
+      vcov_covariances = vcov_covariances,
+      tables = list(
+        estimates = estimates_table,
+        means = means_table,
+        covariances = covariances_table
       ),
+      confidence_level = confidence_level,
       data = data,
       elapsed = elapsed
     )
 
-    # Use a distinct class because output is no longer an
-    # OpenMx model and existing manmetavar.naive methods may
-    # assume that out$output is an MxModel object.
     class(out) <- c(
-      "manmetavar.naive.analytic",
+      "manmetavar.naive",
       class(out)
     )
 

@@ -5,22 +5,17 @@
                                     metavar,
                                     mplus,
                                     variance_tol,
-                                    eigen_tol,
-                                    k4 = FALSE) {
+                                    eigen_tol) {
   param <- .TaskParameters(taskid = taskid)
   heterogeneity <- param$heterogeneity
   specifications <- list()
   if (metavar) {
     specifications[[length(specifications) + 1L]] <- list(
-      output_type = if (k4) {
-        "fit-meta-var-mx-k4"
-      } else {
-        "fit-meta-var-mx"
-      },
+      output_type = "fit-meta-var-mx",
       method = "MetaVAR"
     )
   }
-  if (naive && !k4) {
+  if (naive) {
     specifications[[length(specifications) + 1L]] <- list(
       output_type = "fit-naive",
       method = "Uncertainty-Uncorrected"
@@ -28,19 +23,11 @@
   }
   if (mplus) {
     specifications[[length(specifications) + 1L]] <- list(
-      output_type = if (k4) {
-        "fit-mplus-k4"
-      } else {
-        "fit-mplus"
-      },
+      output_type = "fit-mplus",
       method = "Mplus DSEM Default"
     )
     specifications[[length(specifications) + 1L]] <- list(
-      output_type = if (k4) {
-        "fit-mplus-k4-priors"
-      } else {
-        "fit-mplus-priors"
-      },
+      output_type = "fit-mplus-priors",
       method = "Mplus DSEM Alternative Priors"
     )
   }
@@ -51,8 +38,7 @@
       taskid = taskid,
       reps = reps,
       output_folder = output_folder,
-      output_type = specification$output_type,
-      k4 = k4
+      output_type = specification$output_type
     )
     if (length(repids) < 1L) {
       next
@@ -68,8 +54,7 @@
           method = specification$method,
           heterogeneity = heterogeneity,
           variance_tol = variance_tol,
-          eigen_tol = eigen_tol,
-          k4 = k4
+          eigen_tol = eigen_tol
         )
       }
     )

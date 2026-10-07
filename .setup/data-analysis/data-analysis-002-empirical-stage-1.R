@@ -52,8 +52,25 @@ data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
       observed = c("na", "pa"),
       id = "id",
       center = TRUE,
+      seed = 42,
+      tries_explore = 1000,
+      tries_local = 1000,
+      max_attempts = 100,
       ncores = parallel::detectCores()
     )
+    # stage1 <- FitVARMxIDSave(
+    #   data = data,
+    #   observed = c("na", "pa"),
+    #   id = "id",
+    #   center = TRUE,
+    #   path = root$find_file(
+    #     ".setup",
+    #     "data-raw"
+    #   ),
+    #   overwrite = FALSE,
+    #   prefix = "adid2010-fitvarmx",
+    #   ncores = parallel::detectCores()
+    # )
     saveRDS(
       object = stage1,
       file = output

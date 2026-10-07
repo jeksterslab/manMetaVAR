@@ -257,7 +257,11 @@ FigMplusDiagnosticsOverview <- function(diagnostics,
     overview_plot <- overview_plot +
       ggplot2::facet_grid(
         rows = ggplot2::vars(heterogeneity_label),
-        cols = ggplot2::vars(diagnostic_panel, method)
+        cols = ggplot2::vars(diagnostic_panel, method),
+        labeller = ggplot2::labeller(method = c(
+          "BMLVAR-Default" = "Mplus DSEM: default",
+          "BMLVAR-Priors" = "Mplus DSEM: alternative"
+        ))
       )
   } else {
     overview_plot <- overview_plot +
@@ -490,24 +494,20 @@ FigMplusDiagnosticsOverview <- function(diagnostics,
     "time",
     "heterogeneity"
   )
-  group <- interaction(
-    x[group_names],
-    drop = TRUE,
-    lex.order = TRUE
+  # Avoid allocating one data frame per replication/block/diagnostic group.
+  # Diagnostic values are binary, so a positive group sum means any failure.
+  group <- do.call(
+    what = paste,
+    args = c(x[group_names], sep = "\r")
   )
-  pieces <- split(x = x, f = group, drop = TRUE)
-  out <- lapply(
-    X = pieces,
-    FUN = function(z) {
-      data.frame(
-        z[1, metadata, drop = FALSE],
-        value = as.numeric(any(z$value > 0)),
-        row.names = NULL,
-        check.names = FALSE
-      )
-    }
+  counts <- rowsum(
+    x = matrix(as.numeric(x$value > 0), ncol = 1L),
+    group = group,
+    reorder = FALSE
   )
-  out <- do.call(what = "rbind", args = out)
+  location <- match(rownames(counts), group)
+  out <- x[location, metadata, drop = FALSE]
+  out$value <- as.numeric(counts[, 1L] > 0)
   rownames(out) <- NULL
   out
 }

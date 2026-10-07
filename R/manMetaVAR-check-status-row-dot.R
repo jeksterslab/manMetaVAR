@@ -137,8 +137,7 @@
     {
       if (
         output_type %in% c(
-          "fit-dt-var-mx",
-          "fit-dt-var-mx-k4"
+          "fit-dt-var-mx"
         )
       ) {
         convergence_prop <- converged(
@@ -163,8 +162,7 @@
         )
       } else if (
         output_type %in% c(
-          "fit-meta-var-mx",
-          "fit-meta-var-mx-k4"
+          "fit-meta-var-mx"
         )
       ) {
         status_code <- metaDyn:::.CheckStatusCode(
@@ -219,9 +217,7 @@
       } else if (
         output_type %in% c(
           "fit-mplus",
-          "fit-mplus-priors",
-          "fit-mplus-k4",
-          "fit-mplus-k4-priors"
+          "fit-mplus-priors"
         )
       ) {
         normal_termination <- any(
