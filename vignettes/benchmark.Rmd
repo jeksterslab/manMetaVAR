@@ -16,7 +16,7 @@ vignette: >
 
 Two-stage approaches can offer an important computational advantage for intensive longitudinal modeling. In MetaVAR, Stage 1 consists of fitting person-specific models separately for each individual. Because these fits are independent, this step is **embarrassingly parallel**: the workload can be distributed naturally across cores on a multicore machine or across nodes in a high-performance computing environment. This makes the approach highly scalable when the number of individuals is large.
 
-By contrast, joint Bayesian multilevel VAR estimation is generally more computationally demanding. In the implementation benchmarked here, parallelization is more limited than in the two-stage setting because computation is tied largely to MCMC chain-level parallelism. As a result, even on machines with many available cores, hardware utilization may not scale as directly as it does for the person-specific estimation step in MetaVAR. For the Bayesian benchmark, BMLVAR was fit using Mplus Version 9 on Linux.
+By contrast, joint Bayesian multilevel VAR estimation is generally more computationally demanding. In the implementation benchmarked here, parallelization is more limited than in the two-stage setting because computation is tied largely to MCMC chain-level parallelism. As a result, even on machines with many available cores, hardware utilization may not scale as directly as it does for the person-specific estimation step in MetaVAR. For the Bayesian benchmark, BMLVAR was fit using Mplus Version 9.1 on Linux.
 
 This vignette benchmarks three approaches on the same dataset:
 
