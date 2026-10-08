@@ -60,7 +60,7 @@ summary(object, alpha = 0.05, digits = 4, ...)
 
 - alpha:
 
-  Numeric vector. Significance level \\\alpha\\.
+  Numeric vector. Significance level \\(\alpha\\).
 
 - digits:
 

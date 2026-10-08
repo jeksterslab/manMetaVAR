@@ -18,7 +18,7 @@ computation is tied largely to MCMC chain-level parallelism. As a
 result, even on machines with many available cores, hardware utilization
 may not scale as directly as it does for the person-specific estimation
 step in MetaVAR. For the Bayesian benchmark, BMLVAR was fit using Mplus
-Version 9 on Linux.
+Version 9.1 on Linux.
 
 This vignette benchmarks three approaches on the same dataset:
 
