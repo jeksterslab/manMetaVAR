@@ -22,7 +22,7 @@ hourly affective process rather than the full raw trajectory.
 The full preprocessing script used to generate the analysis dataset is
 available here:
 
-<https://raw.githubusercontent.com/jeksterslab/manMetaVAR/refs/heads/main/.setup/data-analysis/data-analysis-empirical-data-ema.R>
+<https://raw.githubusercontent.com/jeksterslab/manMetaVAR/refs/heads/main/.setup/data-analysis/data-analysis-001-empirical-data-ema.R>
 
 ## Stage 1: Person-Specific VAR
 
