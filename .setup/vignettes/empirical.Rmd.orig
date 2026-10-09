@@ -57,7 +57,7 @@ We then created per-occasion negative affect (NA) and positive affect (PA) compo
 
 The full preprocessing script used to generate the analysis dataset is available here:
 
-<https://raw.githubusercontent.com/jeksterslab/manMetaVAR/refs/heads/main/.setup/data-analysis/data-analysis-empirical-data-ema.R>
+<https://raw.githubusercontent.com/jeksterslab/manMetaVAR/refs/heads/main/.setup/data-analysis/data-analysis-001-empirical-data-ema.R>
 
 ```{r}
 #| include = FALSE
