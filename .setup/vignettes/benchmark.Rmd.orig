@@ -46,7 +46,7 @@ We expected the Uncorr approach to be the fastest because it performs the least 
 #| include = FALSE
 fn_benchmark <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-analysis",
   "benchmark.Rds"
 )
 benchmark <- readRDS(fn_benchmark)

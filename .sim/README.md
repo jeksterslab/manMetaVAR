@@ -202,3 +202,6 @@ simulate
 
 The local `.setup/data-process` scripts can then copy/process the final summary
 objects into package/manuscript data objects.
+Copy the summary files (`manMetaVAR-summary-*.Rds`) and the
+`diagnostics-overview/` folder to `.setup/data-external/` in the project. That
+folder is local only: it is never uploaded to Overleaf or made public.

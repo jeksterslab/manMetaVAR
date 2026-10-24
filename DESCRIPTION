@@ -37,8 +37,12 @@ Depends:
     OpenMx (>= 2.22.11),
     fitVARMxID (>= 1.0.6),
     metaDyn (>= 1.0.4)
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
 Imports:
     posterior,
+    Rcpp,
     stats,
     utils,
     simStateSpace (>= 1.2.16),
@@ -50,4 +54,4 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-Config/roxygen2/version: 8.1.0
+Config/roxygen2/version: 8.1.1.9000

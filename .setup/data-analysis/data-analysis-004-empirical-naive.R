@@ -5,13 +5,13 @@ data_analysis_adid2010_naive <- function(overwrite = FALSE) {
 
   input <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-stage-1.Rds"
   )
 
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-naive.Rds"
   )
 

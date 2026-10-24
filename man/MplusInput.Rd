@@ -75,7 +75,8 @@ Other Model Fitting Functions:
 \code{\link[=FitMetaVAR]{FitMetaVAR()}},
 \code{\link[=FitMplus]{FitMplus()}},
 \code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}},
-\code{\link[=FitNaive]{FitNaive()}}
+\code{\link[=FitNaive]{FitNaive()}},
+\code{\link[=LRTMetaVAR]{LRTMetaVAR()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

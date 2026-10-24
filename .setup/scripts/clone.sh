@@ -1,6 +1,12 @@
 #!/bin/bash
 
-git clone git@github.com:jeksterslab/manMetaVAR.git
-rm -rf "$PWD.git"
-mv manMetaVAR/.git "$PWD"
-rm -rf manMetaVAR
+# the SSH host: github-<owner> when ~/.ssh/config defines that alias (for
+# example on Roar), else github.com
+host="github.com"
+if grep -Eqs "^Host[[:space:]]+(.*[[:space:]])?github-jeksterslab([[:space:]]|$)" ~/.ssh/config; then
+  host="github-jeksterslab"
+fi
+git clone "git@${host}:jeksterslab/manMetaVAR.git"
+rm -rf "$PWD/.git"
+mv "manMetaVAR/.git" "$PWD"
+rm -rf "manMetaVAR"

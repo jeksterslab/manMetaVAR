@@ -38,9 +38,9 @@ data_process_results <- function(overwrite = FALSE,
   replications <- as.integer(replications)
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file("data")
-  data_raw_folder <- root$find_file(
+  data_external_folder <- root$find_file(
     ".setup",
-    "data-raw"
+    "data-external"
   )
   if (!dir.exists(data_folder)) {
     dir.create(
@@ -48,9 +48,9 @@ data_process_results <- function(overwrite = FALSE,
       recursive = TRUE
     )
   }
-  if (!dir.exists(data_raw_folder)) {
+  if (!dir.exists(data_external_folder)) {
     dir.create(
-      data_raw_folder,
+      data_external_folder,
       recursive = TRUE
     )
   }
@@ -91,7 +91,7 @@ data_process_results <- function(overwrite = FALSE,
     population <- data_environment$population
     rm(data_environment)
     summary_files <- list.files(
-      path = data_raw_folder,
+      path = data_external_folder,
       pattern = paste0(
         "^manMetaVAR-summary-",
         "(fit-meta-var-mx-(normal|robust|naive)|",

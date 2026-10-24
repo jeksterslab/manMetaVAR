@@ -4,12 +4,12 @@ data_analysis_adid2010_stage_2_random <- function(overwrite = FALSE) {
   root <- rprojroot::is_rstudio_project
   input <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-stage-1.Rds"
   )
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-stage-2-random.Rds"
   )
   source(
@@ -21,7 +21,7 @@ data_analysis_adid2010_stage_2_random <- function(overwrite = FALSE) {
   )
   raw_data <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-ema.txt"
   )
   if (!file.exists(output)) {

@@ -46,13 +46,15 @@ summary_errors <- lapply(
           taskid = taskid,
           reps = reps,
           output_folder = output_folder,
-          overwrite = overwrite,
+          overwrite = sum_overwrite,
           integrity = TRUE,
           naive = naive,
           metavar_normal = metavar_normal,
           metavar_robust = metavar_robust,
           mplus = mplus,
-          ncores = ncores
+          ncores = ncores,
+          lrt = lrt,
+          calibration = calibration
         )
         NULL
       },

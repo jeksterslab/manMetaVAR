@@ -9,6 +9,11 @@ metavar <- TRUE
 mplus <- TRUE
 metavar_normal <- TRUE
 metavar_robust <- TRUE
+# Summaries only: boundary LRT and Stage 1 calibration, and whether to
+# rewrite existing summary files (does not touch the simulation fits).
+lrt <- TRUE
+calibration <- TRUE
+sum_overwrite <- TRUE
 chains <- 2L
 iter <- 40000L
 fscores <- NULL

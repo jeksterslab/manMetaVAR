@@ -37,6 +37,7 @@ Other Model Fitting Functions:
 \code{\link[=FitMplus]{FitMplus()}},
 \code{\link[=FitMplusDiagnostics]{FitMplusDiagnostics()}},
 \code{\link[=FitNaive]{FitNaive()}},
+\code{\link[=LRTMetaVAR]{LRTMetaVAR()}},
 \code{\link[=MplusInput]{MplusInput()}}
 }
 \concept{Model Fitting Functions}

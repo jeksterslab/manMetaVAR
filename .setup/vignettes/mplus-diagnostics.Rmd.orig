@@ -31,7 +31,8 @@ library(manMetaVAR)
 
 ```{r, data}
 #| echo = FALSE
-data(diagnostics, package = "manMetaVAR")
+# combines data/diagnostics_default.rda and data/diagnostics_priors.rda
+diagnostics <- LoadMplusDiagnostics()
 ```
 
 ## Overview

@@ -9,7 +9,7 @@ data_analysis_adid2010_dsem_default <- function(overwrite = FALSE) {
   root <- rprojroot::is_rstudio_project
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-dsem-default.out"
   )
   source(
@@ -21,7 +21,7 @@ data_analysis_adid2010_dsem_default <- function(overwrite = FALSE) {
   )
   raw_data <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-ema.txt"
   )
   if (!file.exists(output)) {
@@ -43,11 +43,11 @@ data_analysis_adid2010_dsem_default <- function(overwrite = FALSE) {
       MKL_NUM_THREADS = "1",
       OPENBLAS_NUM_THREADS = "1"
     )
-    data_raw <- root$find_file(
+    data_private <- root$find_file(
       ".setup",
-      "data-raw"
+      "data-private"
     )
-    setwd(data_raw)
+    setwd(data_private)
     system(
       paste(
         "mplus",

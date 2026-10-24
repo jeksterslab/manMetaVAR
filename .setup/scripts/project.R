@@ -13,9 +13,14 @@
 #' | `ver`            | Version corresponding to packages in `pkg_ver`.     |
 #' | `ignore`         | Items to add to `.Rbuildignore`.                    |
 #' | `license`        | Options are `"mit"`, `"gpl3"`, or `NULL`            |
+#' | `type`           | Template type for `rProject::Template()`: one of    |
+#' |                  | `"rProject"`, `"cran"`, `"man"`, `"lib"`,           |
+#' |                  | `"talk"`, `"docker"`.                               |
 #'
 
 project <- "manMetaVAR"
+
+type <- "man"
 
 rproject_ver <- NULL
 

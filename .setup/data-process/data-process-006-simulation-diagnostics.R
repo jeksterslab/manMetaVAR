@@ -28,9 +28,9 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
 
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file("data")
-  data_raw_folder <- root$find_file(
+  data_external_folder <- root$find_file(
     ".setup",
-    "data-raw"
+    "data-external"
   )
   if (!dir.exists(data_folder)) {
     dir.create(
@@ -196,7 +196,7 @@ data_process_simulation_diagnostics <- function(overwrite = FALSE,
       "\\.Rds$"
     )
     k2_files <- list.files(
-      path = data_raw_folder,
+      path = data_external_folder,
       pattern = k2_pattern,
       full.names = TRUE
     )

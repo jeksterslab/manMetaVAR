@@ -4,7 +4,7 @@ data_analysis_benchmark <- function(overwrite = FALSE) {
   root <- rprojroot::is_rstudio_project
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-analysis",
     "benchmark.Rds"
   )
   vignette <- root$find_file(

@@ -4,7 +4,7 @@ data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
   root <- rprojroot::is_rstudio_project
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-stage-1.Rds"
   )
   source(
@@ -16,7 +16,7 @@ data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
   )
   raw_data <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-ema.txt"
   )
   if (!file.exists(output)) {
@@ -41,7 +41,7 @@ data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
     data <- readRDS(
       root$find_file(
         ".setup",
-        "data-raw",
+        "data-private",
         "adid2010-data-ema.Rds"
       )
     )
@@ -65,7 +65,7 @@ data_analysis_adid2010_stage_1 <- function(overwrite = FALSE) {
     #   center = TRUE,
     #   path = root$find_file(
     #     ".setup",
-    #     "data-raw"
+    #     "data-private"
     #   ),
     #   overwrite = FALSE,
     #   prefix = "adid2010-fitvarmx",

@@ -4,27 +4,27 @@ data_analysis_adid2010_data_ema <- function(overwrite = FALSE) {
   root <- rprojroot::is_rstudio_project
   output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-data-ema.Rds"
   )
   metadata_output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-data-ema-metadata.Rds"
   )
   mplus_output <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-data-ema-mplus.txt"
   )
   raw_data <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "adid2010-ema.txt"
   )
   plot_dir <- root$find_file(
     ".setup",
-    "data-raw",
+    "data-private",
     "plots"
   )
   write <- overwrite ||

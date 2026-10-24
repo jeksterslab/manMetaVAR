@@ -34,12 +34,12 @@ library(manMetaVAR)
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-data_raw <- root$find_file(
+data_dependencies <- root$find_file(
   ".setup",
-  "data-raw"
+  "data-dependencies"
 )
-if (!dir.exists(data_raw)) {
-  dir.create(data_raw, recursive = TRUE)
+if (!dir.exists(data_dependencies)) {
+  dir.create(data_dependencies, recursive = TRUE)
 }
 ```
 
@@ -47,7 +47,7 @@ if (!dir.exists(data_raw)) {
 #| include = FALSE
 fn_data <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-data.Rds"
 )
 if (!file.exists(fn_data)) {
@@ -75,7 +75,7 @@ data <- readRDS(fn_data)
 #| include = FALSE
 fn_dtvar <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-dtvar.Rds"
 )
 if (!file.exists(fn_dtvar)) {
@@ -100,7 +100,7 @@ dtvar <- readRDS(fn_dtvar)
 #| include = FALSE
 fn_metavar <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-metavar.Rds"
 )
 if (!file.exists(fn_metavar)) {
@@ -125,7 +125,7 @@ metavar <- readRDS(fn_metavar)
 #| include = FALSE
 fn_naive <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-naive.Rds"
 )
 if (!file.exists(fn_naive)) {
@@ -149,7 +149,7 @@ naive <- readRDS(fn_naive)
 #| include = FALSE
 fn_mplus_default <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-mplus-default.Rds"
 )
 if (!file.exists(fn_mplus_default)) {
@@ -175,7 +175,7 @@ mplus_default <- readRDS(fn_mplus_default)
 #| include = FALSE
 fn_mplus_prior <- root$find_file(
   ".setup",
-  "data-raw",
+  "data-dependencies",
   "sim-rep-mplus-prior.Rds"
 )
 if (!file.exists(fn_mplus_prior)) {
