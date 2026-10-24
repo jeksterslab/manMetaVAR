@@ -12,6 +12,12 @@
 #'   robust (sandwich) confidence intervals.
 #' @param naive Logical.
 #'   If `naive = TRUE`, summarize naive estimates.
+#' @param lrt Logical.
+#'   If `lrt = TRUE`, run the MetaVAR boundary likelihood ratio test
+#'   ([SumFitMetaVARLRT()]).
+#' @param calibration Logical.
+#'   If `calibration = TRUE`, summarize the calibration of the Stage 1
+#'   sampling variances ([SumStage1Calibration()]).
 #'
 #' @return The output is saved as an external file in `output_folder`.
 #'
@@ -27,7 +33,9 @@ Sum <- function(taskid,
                 metavar_normal,
                 metavar_robust,
                 mplus,
-                ncores) {
+                ncores,
+                lrt = FALSE,
+                calibration = FALSE) {
   .TaskParameters(taskid = taskid)
   reps <- .SumValidateReps(reps)
   output_folder <- file.path(
@@ -171,6 +179,32 @@ Sum <- function(taskid,
     attempt(
       "Naive",
       SumFitNaive(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+  }
+  if (lrt) {
+    attempt(
+      "MetaVAR LRT",
+      SumFitMetaVARLRT(
+        taskid,
+        reps,
+        output_folder,
+        overwrite,
+        integrity,
+        ncores
+      )
+    )
+  }
+  if (calibration) {
+    attempt(
+      "Stage 1 calibration",
+      SumStage1Calibration(
         taskid,
         reps,
         output_folder,

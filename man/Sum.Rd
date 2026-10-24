@@ -14,7 +14,9 @@ Sum(
   metavar_normal,
   metavar_robust,
   mplus,
-  ncores
+  ncores,
+  lrt = FALSE,
+  calibration = FALSE
 )
 }
 \arguments{
@@ -50,6 +52,14 @@ If \code{mplus = TRUE}, summarize the DSEM model.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
+
+\item{lrt}{Logical.
+If \code{lrt = TRUE}, run the MetaVAR boundary likelihood ratio test
+(\code{\link[=SumFitMetaVARLRT]{SumFitMetaVARLRT()}}).}
+
+\item{calibration}{Logical.
+If \code{calibration = TRUE}, summarize the calibration of the Stage 1
+sampling variances (\code{\link[=SumStage1Calibration]{SumStage1Calibration()}}).}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
