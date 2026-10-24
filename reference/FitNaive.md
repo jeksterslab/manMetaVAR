@@ -27,6 +27,7 @@ Other Model Fitting Functions:
 [`FitMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMetaVAR.md),
 [`FitMplus()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplus.md),
 [`FitMplusDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/FitMplusDiagnostics.md),
+[`LRTMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/LRTMetaVAR.md),
 [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
 
 ## Examples

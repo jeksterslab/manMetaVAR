@@ -51,7 +51,9 @@
 <span>  <span class="va">metavar_normal</span>,</span>
 <span>  <span class="va">metavar_robust</span>,</span>
 <span>  <span class="va">mplus</span>,</span>
-<span>  <span class="va">ncores</span></span>
+<span>  <span class="va">ncores</span>,</span>
+<span>  lrt <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  calibration <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -110,6 +112,18 @@ If <code>mplus = TRUE</code>, summarize the DSEM model.</p></dd>
 <dt id="arg-ncores">ncores<a class="anchor" aria-label="anchor" href="#arg-ncores"></a></dt>
 <dd><p>Positive integer.
 Number of cores to use.</p></dd>
+
+
+<dt id="arg-lrt">lrt<a class="anchor" aria-label="anchor" href="#arg-lrt"></a></dt>
+<dd><p>Logical.
+If <code>lrt = TRUE</code>, run the MetaVAR boundary likelihood ratio test
+(<code><a href="SumFitMetaVARLRT.html">SumFitMetaVARLRT()</a></code>).</p></dd>
+
+
+<dt id="arg-calibration">calibration<a class="anchor" aria-label="anchor" href="#arg-calibration"></a></dt>
+<dd><p>Logical.
+If <code>calibration = TRUE</code>, summarize the calibration of the Stage 1
+sampling variances (<code><a href="SumStage1Calibration.html">SumStage1Calibration()</a></code>).</p></dd>
 
 </dl></div>
     <div class="section level2">

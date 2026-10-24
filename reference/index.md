@@ -17,6 +17,8 @@
   : Posterior Diagnostics for FitMplus
 - [`FitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/FitNaive.md)
   : Naive
+- [`LRTMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/LRTMetaVAR.md)
+  : Boundary Likelihood Ratio Test for Transition Heterogeneity
 - [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
   : Create Mplus Input File
 
@@ -66,6 +68,8 @@
   : Summary
 - [`SumDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/SumDiagnostics.md)
   : Summarize Simulation Diagnostics
+- [`SumFitMetaVARLRT()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLRT.md)
+  : Summary: MetaVAR Boundary Likelihood Ratio Test
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
 - [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
@@ -80,8 +84,14 @@
   : Summary (FitMplus Diagnostics with User Defined Priors)
 - [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
   : Summary: Naive
+- [`SumStage1Calibration()`](https://github.com/jeksterslab/manMetaVAR/reference/SumStage1Calibration.md)
+  : Summary: Calibration of Stage 1 Sampling Variances
+- [`SumTolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/SumTolerance.md)
+  : Summary: Tolerance Rates for Transition Heterogeneity
 - [`TabMplusDiagSensitivity()`](https://github.com/jeksterslab/manMetaVAR/reference/TabMplusDiagSensitivity.md)
   : Bayesian Diagnostic Failure-Rate Sensitivity Table
+- [`Tolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/Tolerance.md)
+  : Tolerance Decisions for Between-Person Variances and Covariances
 - [`diagnostics_default`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   [`diagnostics_priors`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   : Bayesian Mplus Diagnostics Across Simulation Conditions
@@ -94,6 +104,8 @@
   : Summary
 - [`SumDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/SumDiagnostics.md)
   : Summarize Simulation Diagnostics
+- [`SumFitMetaVARLRT()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLRT.md)
+  : Summary: MetaVAR Boundary Likelihood Ratio Test
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
 - [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
@@ -108,6 +120,12 @@
   : Summary (FitMplus Diagnostics with User Defined Priors)
 - [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
   : Summary: Naive
+- [`SumStage1Calibration()`](https://github.com/jeksterslab/manMetaVAR/reference/SumStage1Calibration.md)
+  : Summary: Calibration of Stage 1 Sampling Variances
+- [`SumTolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/SumTolerance.md)
+  : Summary: Tolerance Rates for Transition Heterogeneity
+- [`Tolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/Tolerance.md)
+  : Tolerance Decisions for Between-Person Variances and Covariances
 
 ## Check Functions
 
@@ -136,6 +154,8 @@
 - [`diagnostics_default`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   [`diagnostics_priors`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   : Bayesian Mplus Diagnostics Across Simulation Conditions
+- [`diagnostics_criteria`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics_criteria.md)
+  : DSEM Posterior-Quality Failure Rates Under Three Criteria
 - [`model`](https://github.com/jeksterslab/manMetaVAR/reference/model.md)
   : Model Parameters
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
@@ -146,6 +166,8 @@
   : Simulation Results
 - [`simulation_diagnostics`](https://github.com/jeksterslab/manMetaVAR/reference/simulation_diagnostics.md)
   : Simulation Diagnostics
+- [`tolerance_rates`](https://github.com/jeksterslab/manMetaVAR/reference/tolerance_rates.md)
+  : Tolerance Rates for Transition Heterogeneity
 
 ## Figures
 
@@ -233,6 +255,8 @@
   : Naive
 - [`GenData()`](https://github.com/jeksterslab/manMetaVAR/reference/GenData.md)
   : Simulate Data
+- [`LRTMetaVAR()`](https://github.com/jeksterslab/manMetaVAR/reference/LRTMetaVAR.md)
+  : Boundary Likelihood Ratio Test for Transition Heterogeneity
 - [`MplusInput()`](https://github.com/jeksterslab/manMetaVAR/reference/MplusInput.md)
   : Create Mplus Input File
 - [`Sim()`](https://github.com/jeksterslab/manMetaVAR/reference/Sim.md)
@@ -261,6 +285,8 @@
   : Summary
 - [`SumDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/SumDiagnostics.md)
   : Summarize Simulation Diagnostics
+- [`SumFitMetaVARLRT()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLRT.md)
+  : Summary: MetaVAR Boundary Likelihood Ratio Test
 - [`SumFitMetaVARNormal()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARNormal.md)
   : Summary: Normal Theory (FitMetaVAR)
 - [`SumFitMetaVARRobust()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARRobust.md)
@@ -275,5 +301,11 @@
   : Summary (FitMplus Diagnostics with User Defined Priors)
 - [`SumFitNaive()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitNaive.md)
   : Summary: Naive
+- [`SumStage1Calibration()`](https://github.com/jeksterslab/manMetaVAR/reference/SumStage1Calibration.md)
+  : Summary: Calibration of Stage 1 Sampling Variances
+- [`SumTolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/SumTolerance.md)
+  : Summary: Tolerance Rates for Transition Heterogeneity
 - [`TabMplusDiagSensitivity()`](https://github.com/jeksterslab/manMetaVAR/reference/TabMplusDiagSensitivity.md)
   : Bayesian Diagnostic Failure-Rate Sensitivity Table
+- [`Tolerance()`](https://github.com/jeksterslab/manMetaVAR/reference/Tolerance.md)
+  : Tolerance Decisions for Between-Person Variances and Covariances

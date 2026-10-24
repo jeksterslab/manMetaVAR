@@ -15,7 +15,9 @@ Sum(
   metavar_normal,
   metavar_robust,
   mplus,
-  ncores
+  ncores,
+  lrt = FALSE,
+  calibration = FALSE
 )
 ```
 
@@ -63,6 +65,18 @@ Sum(
 - ncores:
 
   Positive integer. Number of cores to use.
+
+- lrt:
+
+  Logical. If `lrt = TRUE`, run the MetaVAR boundary likelihood ratio
+  test
+  ([`SumFitMetaVARLRT()`](https://github.com/jeksterslab/manMetaVAR/reference/SumFitMetaVARLRT.md)).
+
+- calibration:
+
+  Logical. If `calibration = TRUE`, summarize the calibration of the
+  Stage 1 sampling variances
+  ([`SumStage1Calibration()`](https://github.com/jeksterslab/manMetaVAR/reference/SumStage1Calibration.md)).
 
 ## Value
 
