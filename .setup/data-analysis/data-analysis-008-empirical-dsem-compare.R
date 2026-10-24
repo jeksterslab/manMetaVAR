@@ -14,6 +14,17 @@ data_analysis_adid2010_dsem_compare <- function(overwrite = FALSE) {
   if (file.exists(output) && !overwrite) {
     return(invisible(output))
   }
+  # The fits are private: skip where they are missing (the public repo).
+  if (
+    !file.exists(
+      file.path(
+        data_private,
+        "adid2010-stage-2-random.Rds"
+      )
+    )
+  ) {
+    return(invisible(NULL))
+  }
   # The stored Stage 2 model's algebra calls OpenMx functions
   # (mxRobustLog), which are found only when OpenMx is attached.
   library(OpenMx)

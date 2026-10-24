@@ -364,7 +364,7 @@ FigMetricHeatmap <- function(results,
   }
 
   # Labels show original metric values even when the fill is
-  # centered/clipped.
+  # centered or clipped.
   plot_data$value_label <- ifelse(
     is.finite(plot_data$raw_value),
     formatC(

@@ -15,6 +15,17 @@ data_analysis_adid2010_lrt <- function(overwrite = FALSE) {
   if (file.exists(output) && !overwrite) {
     return(invisible(output))
   }
+  # The fit is private: skip where it is missing (the public repo).
+  if (
+    !file.exists(
+      file.path(
+        data_private,
+        "adid2010-stage-2-random.Rds"
+      )
+    )
+  ) {
+    return(invisible(NULL))
+  }
   # The stored model's algebra calls OpenMx functions (mxRobustLog), which
   # are found only when OpenMx is attached.
   library(OpenMx)
