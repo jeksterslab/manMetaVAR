@@ -151,11 +151,17 @@
 
 - [`LoadMplusDiagnostics()`](https://github.com/jeksterslab/manMetaVAR/reference/LoadMplusDiagnostics.md)
   : Load Both Prior Conditions of the Bundled Mplus Diagnostics
+- [`calibration`](https://github.com/jeksterslab/manMetaVAR/reference/calibration.md)
+  : Calibration of Stage 1 Sampling Variances in the Simulation
 - [`diagnostics_default`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   [`diagnostics_priors`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics.md)
   : Bayesian Mplus Diagnostics Across Simulation Conditions
 - [`diagnostics_criteria`](https://github.com/jeksterslab/manMetaVAR/reference/diagnostics_criteria.md)
   : DSEM Posterior-Quality Failure Rates Under Three Criteria
+- [`dsem_converged`](https://github.com/jeksterslab/manMetaVAR/reference/dsem_converged.md)
+  : DSEM Recovery Over All and Over Converged Replications
+- [`lrt`](https://github.com/jeksterslab/manMetaVAR/reference/lrt.md) :
+  Boundary Likelihood Ratio Test in the Simulation
 - [`model`](https://github.com/jeksterslab/manMetaVAR/reference/model.md)
   : Model Parameters
 - [`params`](https://github.com/jeksterslab/manMetaVAR/reference/params.md)
