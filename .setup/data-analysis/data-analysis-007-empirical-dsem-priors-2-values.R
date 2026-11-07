@@ -58,6 +58,8 @@ data_analysis_adid2010_dsem_priors_2_values <- function() {
 
 data_analysis_adid2010_dsem_priors_2_inp <- function(n_prior = 212,
                                                      diagonal = FALSE,
+                                                     n_total = 212,
+                                                     iw_df = "weight",
                                                      name = "adid2010-dsem-priors-2",
                                                      overwrite = FALSE) {
   # Writes <name>.inp from adid2010-dsem-priors.inp,
@@ -72,6 +74,20 @@ data_analysis_adid2010_dsem_priors_2_inp <- function(n_prior = 212,
   # (data_analysis_adid2010_dsem_priors_2_inp(
   #   diagonal = TRUE, name = "adid2010-dsem-priors-3"
   # )).
+  # Location prior variances are the MetaVAR sampling variances times
+  # n_total / n_prior, so the location priors carry the same weight of
+  # n_prior persons (n_prior = n_total: the sampling variances, as in
+  # priors-2 and priors-3).
+  # With iw_df = "dimension", the covariance priors follow the data-based
+  # specification of Schuurman et al. (2016): IW(p * tau_sqr, p), the
+  # minimally informative df = p (n_prior then sets only the location
+  # priors).
+  # Weak versions (co-author comment, 2026-11-05):
+  # priors-4: n_prior = 1;
+  # priors-5: n_prior = 1, diagonal = TRUE;
+  # priors-6: n_prior = 1, diagonal = TRUE, iw_df = "dimension";
+  # priors-7: n_prior = 9 (df = p + 10), after priors-4 stopped.
+  stopifnot(iw_df %in% c("weight", "dimension"))
   root <- rprojroot::is_rstudio_project
   data_private <- root$find_file(
     ".setup",
@@ -89,12 +105,18 @@ data_analysis_adid2010_dsem_priors_2_inp <- function(n_prior = 212,
     formatC(x, digits = 6, format = "g")
   }
   normal <- function(label, mean, var) {
+    var <- var * n_total / n_prior
     sprintf("  %s ~ N(%s, %s);", label, f(mean), f(var))
   }
   iw <- function(labels, tau_sqr) {
     p <- nrow(tau_sqr)
-    df <- n_prior + p + 1
-    s <- n_prior * tau_sqr
+    if (iw_df == "dimension") {
+      df <- p
+      s <- p * tau_sqr
+    } else {
+      df <- n_prior + p + 1
+      s <- n_prior * tau_sqr
+    }
     if (diagonal) {
       s <- diag(diag(s), nrow = p)
     }
@@ -128,11 +150,24 @@ data_analysis_adid2010_dsem_priors_2_inp <- function(n_prior = 212,
     "",
     "  ! Data-informed priors centered on the MetaVAR estimates",
     sprintf(
-      "  ! (adid2010-stage-2-random.Rds); prior weight of %d persons.",
-      n_prior
+      "  ! (adid2010-stage-2-random.Rds); prior weight of %d %s.",
+      n_prior,
+      if (n_prior == 1) "person" else "persons"
     ),
-    "  ! Location priors: N(MetaVAR estimate, MetaVAR sampling variance).",
-    if (diagonal) {
+    if (n_prior == n_total) {
+      "  ! Location priors: N(MetaVAR estimate, MetaVAR sampling variance)."
+    } else {
+      c(
+        "  ! Location priors: N(MetaVAR estimate, MetaVAR sampling variance",
+        sprintf("  ! * %d / %d).", n_total, n_prior)
+      )
+    },
+    if (iw_df == "dimension") {
+      c(
+        "  ! Covariance priors: IW(p * diag(tau_sqr), p) (Schuurman et al.,",
+        "  ! 2016: data-based, minimally informative df = p)."
+      )
+    } else if (diagonal) {
       c(
         "  ! Covariance priors: IW(n * diag(tau_sqr), n + p + 1), prior mean",
         "  ! diag(tau_sqr): MetaVAR variances, zero covariances."

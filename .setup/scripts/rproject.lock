@@ -6,10 +6,16 @@ rproject_version <- "0.0.58"
 # the image: CI runs `image` (a digest), or `image_name`:latest
 # when it has no digest; packages the image lacks come from the
 # Posit Package Manager snapshot of `snapshot`
-image <- "docker.io/ijapesigan/docs@sha256:d8cc767bdb8dbfa35459bd481b034e29d012000b4a8df491e4722483b4f70239"
-image_name <- "docker.io/ijapesigan/docs"
-snapshot <- "2026-10-25"
+image <- "docker.io/ijapesigan/manmetavar"
+image_name <- "docker.io/ijapesigan/manmetavar"
+snapshot <- "2026-10-07"
 r_version <- "4.6.1"
 # packages the project adds (project.R): version or commit
 extra_cran <- c()
 extra_github <- c()
+# built in a proprietary add-on sif: CI runs the public image
+image_local <- "manmetavar-revision.sif"
+image_local_source <- "https://github.com/ijapesigan/docker-manmetavar-mplus"
+image_local_proprietary <- "unknown"
+sif_sha256 <- "4d2b9093ea819acd2c1ce89f7c412aba72aaade9471926c826e377ada6dda450"
+sif_built <- "2026-10-07"

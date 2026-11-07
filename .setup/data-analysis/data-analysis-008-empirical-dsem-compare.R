@@ -1,7 +1,7 @@
 data_analysis_adid2010_dsem_compare <- function(overwrite = FALSE) {
-  # Posterior summaries and diagnostics of the four empirical DSEM fits
-  # (default, custom, priors-2, priors-3) next to the MetaVAR values that
-  # centre the priors-2 and priors-3 priors.
+  # Posterior summaries and diagnostics of the empirical DSEM fits
+  # (default, custom, priors-2 to priors-7) next to the MetaVAR values that
+  # centre the priors-2 to priors-7 priors.
   root <- rprojroot::is_rstudio_project
   data_private <- root$find_file(
     ".setup",
@@ -40,8 +40,28 @@ data_analysis_adid2010_dsem_compare <- function(overwrite = FALSE) {
     default = "adid2010-dsem-default",
     priors = "adid2010-dsem-priors",
     priors_2 = "adid2010-dsem-priors-2",
-    priors_3 = "adid2010-dsem-priors-3"
+    priors_3 = "adid2010-dsem-priors-3",
+    priors_4 = "adid2010-dsem-priors-4",
+    priors_5 = "adid2010-dsem-priors-5",
+    priors_6 = "adid2010-dsem-priors-6",
+    priors_7 = "adid2010-dsem-priors-7"
   )
+  # priors-4 to priors-7 (weaker MetaVAR-centred priors, 2026-11-05) enter
+  # once their outputs are in .setup/data-private
+  fits <- fits[
+    file.exists(
+      file.path(
+        data_private,
+        paste0(fits, "-posterior.txt")
+      )
+    ) &
+      file.exists(
+        file.path(
+          data_private,
+          paste0(fits, ".out")
+        )
+      )
+  ]
   # order of the saved parameters ("Order of parameters saved" in the .out
   # files; the same in all four fits)
   parameter <- c(
